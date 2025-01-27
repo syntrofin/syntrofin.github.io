@@ -1622,6 +1622,7 @@ section#vision p i{
   font-size: 14px;
   font-weight: 600;
 }
+
 @media (max-width: 650px) {
     .mobile-buybtn .btn-info{
     width: 100%;
@@ -1691,24 +1692,27 @@ padding-top:20px;
 #tabs .nav-tabs .nav-link{
     font-size: 15px;
 }
+.contact-button {
+  padding: 10px 20px; /* Reduce padding on smaller screens */
+  font-size: 14px; /* Adjust font size if needed */
+}
 }
 
-/* 
-tbody {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
+button {
+  background-color: #007bff; /* Blue background color */
+  color: white;
+  padding: 15px 30px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
 
-}
-*/
 
-/* Borders */
-/* The margin declarations are used to simulate border-collapse:collapse */
-/* 
-tr {
-  margin: 0 0 -1px -1px; 
-  border: 0px solid black;
+button:hover {
+  background-color: #0069d9; /* Slightly darker blue on hover */
 }
-tbody:not(:empty) {
-  margin: 0 0 1px 1px;
-}
-*/
+
+
