@@ -47,11 +47,28 @@
       gtag('js', new Date());
       gtag('config', 'UA-113192487-1');
     </script>
-	  
 
-  </head>
-  <body id="page-top" data-gr-c-s-loaded="true">
-	  
+	<script>
+		function setBodyClass() {
+			// Define a breakpoint (e.g., 768px)
+			if (window.innerWidth < 768) {
+				document.body.classList.remove('desktop-only');
+				document.body.classList.add('mobile-only');
+			} else {
+				document.body.classList.remove('mobile-only');
+				document.body.classList.add('desktop-only');
+			}
+		}
+
+		// Run on load and on window resize
+		window.onload = setBodyClass;
+		window.onresize = setBodyClass;
+	</script>
+
+</head>
+	<!-- The body tag would look like this initially, but JavaScript changes the class -->
+	<body class="desktop-only" id="page-top" data-gr-c-s-loaded="true">
+	<!-- Desktop content here -->
     <!-- Stay in Place Logo and Top Menu -->
     <section>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: white;">
@@ -212,6 +229,39 @@
         </div>
       </div>
 </footer>
-    <!--Reached End of the visible page-->
-  </body>
+</body>
+<!--Reached End of the Desktop page-->
+
+<!-- Start of the Mobile page-->
+<body class="mobile-only" id="page-top" data-gr-c-s-loaded="true">
+	<!-- Mobile content here -->
+    <!-- Stay in Place Logo and Top Menu -->
+    <section>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: white;">
+        <div class="container navheader">
+          <!-- Logo -->
+          <a class="navbar-brand js-scroll-trigger" href="http://syntrofin.in/#page-top">
+            <img alt="" src="./syntrofin_files/img/syntrofinlogo6.png" width="300">
+          </a>
+
+          <!-- Menu -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="#Pre_Sales" class="nav-link js-scroll-trigger" style="color: #0176d3;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#Core_Services" class="nav-link js-scroll-trigger" style="color: #0176d3;">Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="#experience" class="nav-link js-scroll-trigger" style="color: #0176d3;">Experience</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+	</section>
+
+	
+</body>
 </html>
