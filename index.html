@@ -4,6 +4,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- other head elements -->
     <meta name="description" content="syntrofin">
     <meta name="author" content="syntrofin">
     <!-- Fav Icon -->
@@ -37,6 +39,50 @@
 	<link rel="stylesheet" href="./syntrofin_files/cssjs/font-awesome.css">
 	<link href="./syntrofin_files/cssjs/new-timeline.css" rel="stylesheet">
 	<link rel="stylesheet" href="./syntrofin_files/cssjs/simple-line-icons.css">
+
+    <style>
+        /* Base Styles (Desktop First Approach) */
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .cell {
+            /* Desktop Size: Around 50% width */
+            flex: 0 0 calc(50% - 10px);
+            background-color: white;
+            text-align: left;
+            box-sizing: border-box;
+            min-width: 0; /* Important flexbox fix for images */
+        }
+        
+        .cell img {
+            /* Image fills 100% of its container */
+            width: 80%;
+            height: auto;
+            border-radius: 5%;
+        }
+
+        /* --- MOBILE STYLES (The Solution) --- */
+        /* Changes the layout when the screen width is 600px or less */
+        @media (max-width: 600px) {
+            .container {
+                /* Stacks the children vertically instead of horizontally */
+                flex-direction: column;
+                gap: 0; /* Optional: adjust spacing for mobile */
+            }
+
+            .cell, .second-column {
+                /* Makes both columns take full width (100%) on mobile */
+                flex: 0 0 100%; 
+                margin-bottom: 15px; /* Adds vertical space between stacked items */
+            }
+        }
+    </style>
+
+
 	<!--
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -104,7 +150,7 @@
               <p>Streamline your quote-to-revenue process, optimize pricing and contracts, and accelerate revenue recognition with seamless Salesforce integration.</p>
 		  </div>
           <div class="cell" style="flex: 1; background-color: white;  text-align: left;   box-sizing: border-box; ">
-          	<img alt="" style="border-radius: 5%; width: 100%; height: auto;" src="./syntrofin_files/img/improve.png">  
+          	<img alt="" style="width: 100%;" src="./syntrofin_files/img/improve.png">  
 		  </div>
 	</div>		 
 	<br><br>
@@ -116,7 +162,7 @@
 	<br>
 	<div class="container" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 20px; width: 100%;">
   		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;">    
-	  		<img alt="" style="border-radius: 5%; width: 90%; height: auto;" src="./syntrofin_files/img/todayschallenges.png">  
+	  		<img alt="" src="./syntrofin_files/img/todayschallenges.png">  
 		</div>
 
 		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
@@ -142,7 +188,7 @@
             <p> We work closely with your <span style="color: #007bff;">Sales Operations</span> from opportunities to quotes, and close deals faster. With your <span style="color: #007bff;">Order Management</span> to streamline fulfillment for customers satisfaction. With Marketing Teams for better lead conversion. With <span style="color: #007bff;">Customer Success Teams</span> for Account Managements, and subscription management. With <span style="color: #007bff;">Finance</span> to revenue recognition, and billing processes, and with <span style="color: #007bff;">IT Teams</span> to provide support for integrations, customizations, and platform optimization. Together ensuring alignment with your broader ecosystem with Salesforce Revenue Cloud and CPQ solutions. </p>
 		</div>
  		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
-          <img alt="" style="border-radius: 5%; width: 90%; height: auto;" src="./syntrofin_files/img/streamline.png">  
+          <img alt="" src="./syntrofin_files/img/streamline.png">  
 		</div>
 	</div>		 
 	<br><br>
@@ -154,7 +200,7 @@
 	<br>
 	<div class="container" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 20px; width: 100%;">
 		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
-        	<img alt="" style="border-radius: 5%; width: 90%; height: auto;" src="./syntrofin_files/img/implementingfeatures.png">  
+        	<img alt="" src="./syntrofin_files/img/implementingfeatures.png">  
 		</div>
 		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
  			<p><span style="color: #007bff;">Scale</span> your business confidently with Salesforce solutions designed to support expansion. We conduct detailed interviews to hire the right people to drive your success for the projects. Empower your sales teams with tools for increased <span style="color: #007bff;">productivity</span>. Gain insights into customer trends and <span style="color: #007bff;">optimize</span> acquisition strategies. Improve customer <span style="color: #007bff;">retention</span> through personalized engagement. We help you unlock sustainable <span style="color: #007bff;">growth</span> by aligning technology, people, and processes.</p>
