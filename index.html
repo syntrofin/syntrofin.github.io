@@ -68,6 +68,13 @@
                 margin-bottom: 15px; /* Adds vertical space between stacked items */
             }
         }
+		.thin-image {
+        	height: 50px;  /* Restricts the height to 50 pixels */
+        	width: auto;   /* Automatically calculates width to maintain aspect ratio */
+        	/* Optional: Makes the image a block element so it respects margins better */
+        	display: block; 
+        	margin: 10px 0;
+    }
     </style>
 
 </head>
@@ -206,10 +213,8 @@
 	  
 <!-- SECTION - Experience -->
 <section id="experience" style="scroll-margin-top: 100px;">
-	<div class="container" style="display: flex; justify-content: space-between; gap: 10px;  ">
-        <div class="cell" style="flex: 1; background-color: white;  text-align: center;   box-sizing: border-box; ">
-        	<img alt="" style="width: auto; height: 20%;" src="./syntrofin_files/img/delivered.png">
-		 </div>
+	<div class="container" style="text-align: center;">
+       <img alt="" class="thin-image" src="./syntrofin_files/img/delivered.png">
     </div>
 	
       <div class="container" style="text-align: center;">
