@@ -57,8 +57,24 @@
 		*, ::after, ::before {
     		box-sizing: border-box;
 		}
+		
+	/* MOBILE, all sections, except customers */
+		        @media (max-width: 600px) {
+            .container {
+             
+                flex-direction: column;
+                gap: 0; 
+            }
+            .cell, .second-column {
+          
+                flex: 0 0 100%; 
+                margin-bottom: 15px; 
+            }
+        }
+		
+	/* MOBILE, section customers */	
 		@media (max-width: 600px) {
-    .container {
+    .customercontainer {
         /* Allow items to wrap to a second line */
         flex-wrap: wrap !important; 
         /* Ensure the container doesn't force a single column */
@@ -66,39 +82,20 @@
         justify-content: center !important;
     }
 
-    .cell {
-        /* 
-           Set width to calc(50% - gap). 
-           This forces exactly 2 items per row. 
-        */
+    .customercell {
+        /* Set width to calc(50% - gap). This forces exactly 2 items per row. */
         flex: 0 0 calc(50% - 15px) !important; 
         box-sizing: border-box;
     }
     
     /* Make images responsive so they don't break the 2-column layout */
-    .cell img {
+    .customercell img {
         max-width: 100%;
         height: auto !important;
     }
 }
 
-        /* --- MOBILE STYLES (The Solution) --- 
-      
-        @media (max-width: 600px) {
-            .container {
-             
-                flex-direction: column;
-                gap: 0; 
-            }
 
-            .cell, .second-column {
-          
-                flex: 0 0 100%; 
-                margin-bottom: 15px; 
-            }
-        }
-		*/
-		
 		.thin-image {
         	height: 50px;  /* Restricts the height to 50 pixels */
         	width: auto;   /* Automatically calculates width to maintain aspect ratio */
@@ -372,10 +369,10 @@ footer p {
 	
 <!-- Customer Row 1-->
 	<!-- Main Container set to Flexbox -->
-<div class="container" style="display: flex; justify-content: space-between; gap: 15px; background-color: #f9f9f9; padding: 10px;">
+<div class="customercontainer" style="display: flex; justify-content: space-between; gap: 15px; background-color: #f9f9f9; padding: 10px;">
 
     <!-- Column 1 -->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">ATS Life Sciences</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/at.png" alt="ATS Life Sciences">
@@ -383,7 +380,7 @@ footer p {
     </div>
 
     <!-- Column 2 -->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Clarivate</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/cl.png" alt="Clarivate">
@@ -391,7 +388,7 @@ footer p {
     </div>
 
     <!-- Column 3 -->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Trimble</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/tr.png" alt="Trimble">
@@ -399,7 +396,7 @@ footer p {
     </div>
 
     <!-- Column 4 -->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Iron Mountain</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/im.png" alt="Iron Mountain">
@@ -411,10 +408,10 @@ footer p {
 <!-- Customer Row 2-->
 	<!-- Main Container set to Flexbox -->
 <!-- <div class="container" style="display: flex; justify-content: space-between; gap: 15px; background-color: #f9f9f9; padding: 10px;">-->
-<div class="container" style="display: flex; justify-content: space-between; gap: 0px; padding: 0px;">
+<div class="customercontainer" style="display: flex; justify-content: space-between; gap: 0px; padding: 0px;">
 	
 	<!-- Column 1 	-->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Komatsu Mining</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/km.png" alt="Komatsu Mining">
@@ -423,7 +420,7 @@ footer p {
 
 
     <!-- Column 2 	-->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Pure Flash Storage</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/pu.png" alt="Pure Flash Storage">
@@ -432,7 +429,7 @@ footer p {
 
 
     <!-- Column 3 -->
-    <div class="cell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
+    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
         <figure style="margin: 0;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Extreme Networks</figcaption>
             <img style="height: 100px; width: auto;" src="./syntrofin_files/img/ex.png" alt="Extreme Networks">
@@ -441,7 +438,7 @@ footer p {
 
     <!-- Column 4 -->
 	<!-- Hide with div background: transparent and figure visibility: hidden; -->
-    <div class="cell" style="flex: 1; text-align: center; background: transparent;">
+    <div class="customercell" style="flex: 1; text-align: center; background: transparent;">
         <figure style="margin: 0; visibility: hidden;">
             <figcaption style="margin-bottom: 8px; font-weight: bold;">Partnership</figcaption>
 			 <img style="height: 100px; width: auto;" src="./syntrofin_files/img/bp.png" alt="">
