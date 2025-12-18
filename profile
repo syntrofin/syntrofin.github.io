@@ -169,311 +169,16 @@ footer p {
 }
 
 </style>
-
-
 </head>
-	<body>
-	<!-- Page content here -->
-    <section style="padding-top: 40px;">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: white;">
-        <div class="container navheader">
-          <!-- Logo -->
-          <a class="navbar-brand js-scroll-trigger" href="http://syntrofin.in/#page-top">
-            <img alt="" src="./syntrofin_files/img/syntrofinlogo8.png" width="300">
-          </a>
 
-          <!-- Menu -->
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a href="#Pre_Sales" class="nav-link js-scroll-trigger" style="color: #0176d3;">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="#Core_Services" class="nav-link js-scroll-trigger" style="color: #0176d3;">Services</a>
-              </li>
-              <li class="nav-item">
-                <a href="#experience" class="nav-link js-scroll-trigger" style="color: #0176d3;">Experience</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </section>
-
-
-<!-- SECTION - Pre-Sales - Company, Revenue, and Challenges -->
-<section id="Pre_Sales"  style="padding-top: 40px;">
-	<!-- revenue transformation 						brown red for first word; #d32f2f;-->
-	<div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 20px;  ">
-		  <div class="cell" style="flex: 1; background-color: white;  text-align: left;   box-sizing: border-box; ">
-             <h1 style="font-size: 3.5rem; font-weight: 900; line-height: 1.1;">
-  					<span style="color: #0070d2;">Fueling</span> the Revenue Engine <br>
-  					<span style="font-size: 1.5rem; font-weight: 400; color: #666;">for Global Enterprises</span>
-			</h1>
-			<p class="syntrofinpara">
-					Eliminate friction from quote-to-cash. We optimize pricing, contracts, and revenue recognition through seamless Salesforce integration.
-			</p>
-			<!--
-			  <h1 style="font-size: 41px;text-align: center;"><strong><span style="color: #032d60"> Delivering revenue transformation for enterprise organizations </span></strong></h1>
-			  <p class="syntrofinpara"  >
-				  Streamline your quote-to-revenue process, optimize pricing and contracts, and accelerate revenue recognition with seamless Salesforce integration.
-			  </p>
-			  -->
-		  </div>
-          <div class="cell" style="flex: 1; background-color: white;  text-align: right;   box-sizing: border-box; ">
-          	<img alt="" style="width: 100%;" src="./syntrofin_files/img/improve.png">  
-		  </div>
-	</div>		 
-	<br><br>
-
-	<!-- business shift, challenges -->
-	<div class="container" style="display: flex; justify-content: space-between; gap: 10px;"> 
-    	<div class="cell" style="flex: 1; background-color: white; text-align: center !important; box-sizing: border-box; "> 
-        	<h3 class="section-title"><span style="color: #0070d2;">Mapping the Gaps:</span>Understanding Today’s Revenue Engine Friction</h3> 
-    	</div> 
-	</div>
-
-
-	<br>
-	<div class="container" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 20px; width: 100%;">
-  		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;">    
-	  		<img alt="" src="./syntrofin_files/img/todayschallenges.png">  
-		</div>
-		<!-- light blue - #0176d3 --> 
-		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
-            <h5 class="syntrofinh5">Fragmented quote-to-order processes slow deal closure.</h5>
-            <h5 class="syntrofinh5" style="text-align: right; color:#666">Limited visibility into pipeline and revenue forecasts.</h5>
-            <h5 class="syntrofinh5" style="text-align:right;"> Manual approvals and misaligned teams increase errors and delays.</h5>
-			<h5 class="syntrofinh5" style="text-align: right; color:#666">Mapping data flow from Leads to Quote, BOM, Billing, and Finance poses significant challenges.</h5>
-            <h5 class="syntrofinh5">Without a unified system, revenue leakage and operational inefficiencies grow with every deal.</h5>
-		</div>
-	</div>	
-		<div class="container" style="padding-top:40px; display: flex; justify-content: space-between; gap: 10px;  ">
-        	<div class="cell" style="flex: 1; background-color: white;  text-align: center;   box-sizing: border-box; ">
-        		<button class = "syntrofinbutton">
-          			<a style="color: #eee; text-decoration: none;" href="mailto:wehearyou@syntrofin.com">Let's Discover!</a>
-        		</button>
-		 	</div>
-    	</div>
-</section>
-
-<!-- SECTION - Core Services - Solutioning processes, impleenting features-->
-<section id="Core_Services" style="padding-top:40px; scroll-margin-top: 100px;">
-	<!-- solutioning processes -->
-	<div class="container" style="text-align: center;">
-		<h3 style="font-family: 'Segoe UI', sans-serif; font-weight: 600; color: #333;">
-  			Solving <span style="color: #0070d2; font-weight: 400; margin: 0 5px;">&gt;</span> The Process
-		</h3>
-
-       <!--  <h3 style="color:#4684C6;">Strategic Revenue Architecture</h3>-->
-    </div>
-
-	<div class="container" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 20px; width: 100%;">
-		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
-            <p class="syntrofinpara"  > 
-				We move beyond platform configuration to architect the entire <span style="color: #007bff;">Quote-to-Cash (Q2C) lifecycle</span> , 
-				ensuring seamless process integrity from initial opportunity to final billing. We align <span style="color: #007bff;">Sales Operations</span> 
-				to accelerate quoting and deal closure, optimize <span style="color: #007bff;">Order Management</span>  for faster fulfillment, and synchronize 
-				<span style="color: #007bff;">Finance</span>  processes for compliant <span style="color: #007bff;">revenue recognition (ASC 606/IFRS 15)</span>. 
-				Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ solutions with your existing ERP and custom platforms 
-				to drive sustainable, scalable growth.
-			</p>
-		</div>
- 		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: right; box-sizing: border-box;"> 
-          <img alt="" src="./syntrofin_files/img/solutioningprocess.png">  
-		</div>
-	</div>		 
-	<br><br>
-
-	<!-- impleenting features -->
-		<div class="container" style="display: flex; justify-content: space-between; gap: 10px;"> 
-    	<div class="cell" style="flex: 1; background-color: white; text-align: right !important; box-sizing: border-box; "> 
-			<h3 style="font-family: 'Segoe UI', sans-serif; font-weight: 600; color: #333;">
-  			Executing <span style="color: #0070d2; font-weight: 400; margin: 0 5px;">&gt;&gt;</span> Governance
-		</h3>
-        	<!-- <h3 class="section-title" style="color: #4684C6">Sustainable Growth & Governance</h3> -->
-    	</div> 
-	</div>
-	<br>
-	<div class="container" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 20px; width: 100%;">
-		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
-        	<img alt="" src="./syntrofin_files/img/implementingfeatures.png">  
-		</div>
-		<div class="cell" style="flex: 0 0 calc(50% - 10px); background-color: white; text-align: left; box-sizing: border-box;"> 
- 			<p class="syntrofinpara"   style="margin-top: 0; margin-bottom: 0;">
-				We define the architectural blueprints necessary to <span style="color: #007bff;">scale your business confidently</span>, supporting aggressive market expansion 
-				and product innovation. Our approach includes rigorous <span style="color: #007bff;">DevOps and release governance</span> frameworks to ensure predictable platform optimization.
-			</p>
-			 <p class="syntrofinpara"   style="padding-left: 1em; margin-top: 0; margin-bottom: 0;">
-				We empower your organization by aligning technology with the right talent and processes, driving massive gains in sales team <span style="color: #007bff;">productivity</span> 
-				and improving customer <span style="color: #007bff;">retention</span> through harmonized data.
-			</p>
-			 <p class="syntrofinpara"   style="margin-top: 0; margin-bottom: 0;">
-				We provide the strategic oversight to rationalize fragmented ecosystems, ensuring technical resilience and predictable, sustainable growth.
-			</p>
-		</div>
-
-	</div>	
-			<div class="container" style="padding-top:40px; display: flex; justify-content: space-between; gap: 10px;  ">
-        	<div class="cell" style="flex: 1; background-color: white;  text-align: center;   box-sizing: border-box; ">
-        		<button class = "syntrofinbutton">
-          			<a style="color: #eee; text-decoration: none;" href="mailto:wehearyou@syntrofin.com">Let's Talk!</a>
-        		</button>
-		 	</div>
-    	</div>
-</section>
-		 
-<!-- SECTION - Longtem Success, Agent Force, Integration, Measure success -->
-<section id="success" style="scroll-margin-top: 50px;">
-	<div>
-    	<!-- Height is auto, Width is fixed narrow value -->
-		<h3 style="color:#032d60; text-align: center !important;">Including Longterm Success</h3>
-	</div>
-	<div style="text-align: center;">
-    	<!-- Height is auto, Width is fixed narrow value -->
-    	<img style="width: 200px; height: auto; display: block !important; margin: 0 auto !important;" alt="" src="./syntrofin_files/img/longterm.png">
-	</div><br>
-
-		<!--- Agent Force -->
-        <div class="container" style="display: flex; justify-content: space-between; gap: 10px;  ">
-          <div class="cell" style="flex: 1; background-color: white;  text-align: left;   box-sizing: border-box; ">
-            <h3 style="color:#6FA8DC;">&#x2705; Let AI Help Teams</h3>
-			<p class="syntrofinpara"  >Transform your sales operations with expert Salesforce Revenue Cloud and AI consulting. We optimize quote-to-cash, pricing, and AI-powered customer interactions to accelerate deals, and increase revenue.</p>
-			</div>
-			<!--- Lasting Integrations -->
-          <div class="cell" style="flex: 1; background-color: white;  text-align: left;   box-sizing: border-box; ">
-            <h3 style="color:#4684C6;">&#x2705; Lasting Integrations</h3>
-            <p class="syntrofinpara"  > Achieve seamless business connectivity with Salesforce integration expertise. We unify CRM, ERP, and marketing systems using APIs and middleware to deliver reliable data synchronization and a single source of truth. </p>
-          </div>
-			<!--- Measure success -->
-          <div class="cell" style="flex: 1; background-color: white;  text-align: left;   box-sizing: border-box; ">
-            <h3 style="color:#6FA8DC;">&#x2705; Measure Success</h3>
-            <p class="syntrofinpara"  >Drive long-term growth with a revenue strategy aligned to your goals. We define KPIs, identify opportunities, and build scalable Salesforce solutions that deliver measurable outcomes and competitive advantage. </p>
-          </div>
-        </div>
-</section>
-	  
-<!-- SECTION - Experience -->
-<section id="experience" style="scroll-margin-top: 50px;">
-	<div style="text-align: center;">
-    	<img style="width: 50px; height: auto; display: block !important; margin: 0 auto !important;" 
-         alt="" src="./syntrofin_files/img/delivered.png">
-	</div>
-	<div>
-    	<!-- Height is auto, Width is fixed narrow value -->
-		<h2 style="text-align: center; color: #333;">
-  			<span style="color: #0070d2;">Scaling</span> Revenue Excellence
-		</h2>
-		<!-- 
-		<h3 style="color:#032d60; text-align: center !important;">Delivered revenue transformation for enterprise organizations</h3>
-		-->
-	</div><br>
-
-	<!-- 
-	<img alt="" style="width: 90%; height: 90%" src="./syntrofin_files/img/sales_types.png">
-	<img alt="" style="width: 100%; height: 100%" src="./syntrofin_files/img/bus_scenarios.png">
-	<img alt="" style="width: 100%; height: 100%" src="./syntrofin_files/img/bill_models.png">
-	-->
-	
-<!-- Customer Row 1-->
-	<!-- Main Container set to Flexbox -->
-<div class="customercontainer" style="display: flex; justify-content: space-between; gap: 15px; background-color: #f9f9f9; padding: 10px;">
-
-    <!-- Column 1 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">ATS Life Sciences</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/at.png" alt="ATS Life Sciences">
-        </figure>
-    </div>
-
-    <!-- Column 2 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Clarivate</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/cl.png" alt="Clarivate">
-        </figure>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Trimble</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/tr.png" alt="Trimble">
-        </figure>
-    </div>
-
-    <!-- Column 4 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Iron Mountain</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/im.png" alt="Iron Mountain">
-        </figure>
-    </div>
-
+<body>
+<!-- Profile Page content here -->
+<section style="padding-left:40px;>
+<div style="text-align:center;" >
+	<h2>Profiles</h2>
 </div>
-<!-- Customer Row 2a-->
-	<!-- Main Container set to Flexbox -->
-<div class="customercontainer" style="display: flex; justify-content: space-between; gap: 15px; background-color: #f9f9f9; padding: 10px;">
-
-    <!-- Column 1 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Komatsu Mining</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/km.png" alt="Komatsu Mining">
-        </figure>
-    </div>
-
-    <!-- Column 2 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Pure Flash Storage</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/pu.png" alt="Pure Flash Storage">
-        </figure>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="customercell" style="flex: 1; text-align: center; background: white; padding: 10px; border: 1px solid #eee;">
-        <figure style="margin: 0;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Extreme Networks</figcaption>
-            <img style="height: 100px; width: auto;" src="./syntrofin_files/img/ex.png" alt="Extreme Networks">
-        </figure>
-    </div>
-
-    <!-- Column 4 -->
-	<!-- Hide with div background: transparent and figure visibility: hidden; -->
-    <div class="customercell" style="flex: 1; text-align: center; background: transparent;">
-        <figure style="margin: 0; visibility: hidden;">
-            <figcaption style="margin-bottom: 8px; font-weight: bold;">Partnership</figcaption>
-			 <img style="height: 100px; width: auto;" src="./syntrofin_files/img/bp.png" alt="">
-        </figure>
-    </div>
-
-</div>
-
-      
-      <br>
-      <br>
-
-	 <!-- Let's Talk Button -->
- 	 <div class="container" style="display: flex; justify-content: space-between; gap: 10px;  ">
-        <div class="cell" style="flex: 1; background-color: white;  text-align: center;   box-sizing: border-box; ">
-        	<button class = "syntrofinbutton">
-          		<a style="color: #eee; text-decoration: none;" href="mailto:wehearyou@syntrofin.com">Let's Innovate!</a>
-        	</button>
-		 </div>
-    </div>
-
-
-</section>
-    <br>
-	<!-- Profiles -->
-<section>
-	<div style="text-align:center;" >
-			<h2>Profiles</h2>
-	</div>
 	
-<div style="padding-left:10px;">
+<div class="container">
 <div>
 <h4>1. Enterprise Solutions Architect, ERP, Salesforce, Revenue Cloud Advanced</h4>
 <h5>ATS Corporation · Contract</h5>
@@ -485,8 +190,8 @@ footer p {
 	<li>Future-proofed the solution by centralizing quoting operations, while maintaining clean boundaries between design (PLM), ERP (JDE), and quoting data.</li>
 	</ul>
 		<span style="color: #6FA8DC;"><span style="color: #6FA8DC;">Skills:</span></span> Enterprise Solutions Design, ERP Integration (JD Edwards), MuleSoft Integration, PLM Systems, Data Architecture, Pricing Logic, Scalable Architecture, Salesforce CPQ, Automation Solutions, Technical Strategy, Quote-to-Cash (Q2C), Revenue Cloud Advanced, Stakeholder Management, Strategic Roadmaps.
-</div>
-<br>
+</div><br>
+
 <div>
 <h4>2. Enterprise Architect – Customer, Sales, Revenue Systems</h4>
 <h5>Clarivate · Contract</h5>
@@ -497,8 +202,8 @@ footer p {
 	<li>Delivered scalable CPQ/Billing deployment for global quoting and revenue management, enabling operational cost savings and system resilience through platform optimization.</li>
 	</ul>
 	<span style="color: #6FA8DC;">Skills:</span> Post-Merger Integration Strategy, Unified Architecture, CPQ and Billing Implementation, ERP Integration, Subscription Platforms, Revenue Management, Platform Optimization, Operational Cost Savings, Cloud Architecture, Enterprise Architecture, Q2C, Transformation.
-</div>
-	<br>
+</div><br>
+
 <div>
 <h4>3. Enterprise Architect – Sales and Revenue Clouds</h4>
 <h5>Iron Mountain · Contract</h5>
@@ -509,8 +214,8 @@ footer p {
 	<li>Improved quoting accuracy by 40%, through enterprise-scale architecture and data harmonization across global business units.</li>
 	</ul>
 	<span style="color: #6FA8DC;">Skills:</span> Global Rollout Strategy, Enterprise Architecture Principles, Data Governance, Pricing Engines Integration, Revenue Recognition, Salesforce CPQ, ERP Integration, Data Harmonization, Quoting Workflows, Stakeholder Management, Fortune 1000, Data Security, Technical Vision.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>4. Integration Architect – Salesforce & ERP Programs</h4>
 <h5>Kolvan Solutions · Full-time</h5>
@@ -521,8 +226,8 @@ footer p {
 	•	Enabled seamless quote-to-order flow, by implementing enterprise APIs and data transformation pipelines across multiple business units.</li>
 	</ul>
 	<span style="color: #6FA8DC;">Skills:</span> Integration Architecture, Reusable Integration Blueprints, Middleware (MuleSoft, Boomi), Legacy Systems Integration, API Design, Data Transformation, Technical Debt Reduction, Salesforce CPQ & Billing, Cross-Cloud Architecture, Enterprise APIs, Systems Integrator, Solution Architecture.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>5. Salesforce Principal Architect – Field Services, CPQ in Surface Mining</h4>
 <h5>Komatsu Mining · Contract</h5>
@@ -533,8 +238,8 @@ footer p {
 	<li>Planned and executed comprehensive knowledge transfer, to internal business, IT, and offshore support teams, ensuring seamless post-implementation operations and scalable solution maintenance.</li>
 	</ul>
 	<span style="color: #6FA8DC;">Skills:</span> Guided Selling, Salesforce CPQ, Field Services, Heavy Engineering, Product Configuration, Solution Architecture, Operational Efficiency, Customer Satisfaction, Knowledge Transfer, B2B Environment, API Models, Technical Leadership.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>6. Solution Architect – Salesforce CRM, Salesforce CPQ</h4>
 <h5>Pure Storage · Contract</h5>
@@ -545,8 +250,8 @@ footer p {
 	•	Supported partner system integrations, for real-time inventory, logistics, and shipment tracking updates via API connectors.</li>
 		</ul>
 	<span style="color: #6FA8DC;">Skills:</span> Quote-to-Order Process, Outsourced Manufacturing, Fulfillment Systems, Pricing Alignment, Configuration Data, Salesforce CPQ, Enterprise Data Storage, Business Analyst, API Connectors, Solution Architecture, Order Fulfillment Accuracy.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>7. Enterprise Information Technology Architect</h4>
 <h5>Merritos · Full-time</h5>
@@ -557,8 +262,8 @@ footer p {
 	•	Designed scalable integration frameworks, to connect custom CPQ with third-party payment gateways and partner platforms, enhancing customer onboarding processes through API-driven architectures.</li>
 	</ul>
 	<span style="color: #6FA8DC;">Skills:</span> Multi-Tiered Pricing Models, Subscription-Based Services, Partner Discount Structures, Custom CPQ, Payment Gateways Integration, API-Driven Architectures, EdTech Startup, Enterprise Architecture, B2B/B2C Platforms, Strategic Planning.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>8. Enterprise Architect – IT systems</h4>
 <h5>Truist · Full-time</h5>
@@ -570,8 +275,8 @@ footer p {
 	•	Co-innovated with SAP, to deliver the bank’s first financial system on SAP, and one of the earliest SAP Bank Analyzer implementations on SAP HANA.</li>
 	</ul>
 	<span style="color: #6FA8DC;">Skills:</span> SAP Landscape Architecture, Financial Systems Implementation, Regulatory Compliance (SEC), SAP HANA, Liquidity Risk Management, Vendor Evaluation & RFP Management, IT Landscape Modernization, Operational Risk Reduction, Enterprise Architecture, Budget Control, Banking, Strategic Leadership.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>9. SAP Solution Architect – SAP HRIS</h4>
 <h5>Serco</h5>
@@ -582,8 +287,8 @@ footer p {
 	•	Enabled seamless cross-country HR operations, through robust role-based access models.</li>
 		</ul>
 	<span style="color: #6FA8DC;">Skills:</span> SAP HR E-Recruiting, Data Residency Regulations, HR Process Automation, SAP HRIS, Compliance, Solution Architecture, Data Regulations, Role-Based Access Models, Defense Industry.
-</div>
-		<br>
+</div><br>
+
 <div>
 <h4>10. Enterprise Architect – SAP Operations</h4>
 <h5>Amtrak</h5>
@@ -596,16 +301,12 @@ footer p {
 	<span style="color: #6FA8DC;">Skills:</span> SAP Operations, SAP Implementations, Infrastructure Modernization, High Availability, Disaster Recovery, Business Continuity, IT Strategy, Legacy System Modernization, Cross-Vendor Integrations, Public Sector, Enterprise Architecture.
 </div>
 		
-	</div>
+	</div><br>
 </section>		
 		
-	<br>
 
-<!--Footer style="background-color: #032d60" -->
-<footer >
-          <p>SyntroFin © All Rights Reserved. Salesforce and Revenue Cloud are trademarks belonging to Salesforce Inc.
-		  </p>
-</footer>
+
+
 </body>
 <!--Reached End of the  page-->
 </html>
