@@ -61,8 +61,10 @@
     		box-sizing: border-box;
 		}
 		
-	/* MOBILE, all sections, except customers */
-		        @media (max-width: 600px) {
+	/* MOBILE, options */
+		        @media (max-width: 600px) 
+	{
+		/* All sections, except customers */
             .container {
                 flex-direction: column;
                 gap: 0; 
@@ -72,39 +74,36 @@
                 flex: 0 0 100%; 
                 margin-bottom: 15px; 
             }
-        }
-		
-	/* MOBILE, section customers */	
-@media (max-width: 600px) {
-    .customercontainer {
+
+		/* customers section*/	
+
+		.customercontainer {
         flex-wrap: wrap !important; 
         flex-direction: row !important; 
         justify-content: center !important;
         gap: 10px !important; /* Slightly smaller gap for tighter mobile look */
-    }
+    	}
 
-    .customercell {
+    	.customercell {
         flex: 0 0 calc(50% - 10px) !important; 
         padding: 5px !important; /* Reduced padding to make icons feel smaller */
         box-sizing: border-box;
-    }
-    
-    .customercell img {
+		}
+
+		.customercell img {
         /* Set a smaller maximum height for mobile */
         max-height: 60px !important; 
         width: auto !important;
         margin: 0 auto;
-    }
+    	}
 
-    .customercell figcaption {
+		.customercell figcaption {
         font-size: 0.85rem !important; /* Smaller text to match smaller icons */
         margin-bottom: 4px !important;
+    	}
     }
-}
-
-
-
-		.thin-image {
+		
+	.thin-image {
         	height: 50px;  /* Restricts the height to 50 pixels */
         	width: auto;   /* Automatically calculates width to maintain aspect ratio */
         	/* Optional: Makes the image a block element so it respects margins better */
@@ -126,7 +125,7 @@
 		
 	h1, h2, h3, h4, h5, h6 {
     font-family: 'Segoe UI', sans-serif;
-}
+	}
 
 	.navbar {
 		font-family: 'Segoe UI', sans-serif;
