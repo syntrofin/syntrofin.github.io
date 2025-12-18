@@ -31,14 +31,16 @@
 	-->
     <style>
         /* Base Styles (Desktop First Approach) */
-        .container {
+        .container,
+		.customercontainer {
             display: flex;
             align-items: center;
             gap: 20px;
             width: 100%;
         }
 
-        .cell {
+        .cell, 
+		.customercell{
             /* Desktop Size: Around 50% width */
             flex: 0 0 calc(50% - 10px);
             background-color: white;
@@ -47,7 +49,8 @@
             min-width: 0; /* Important flexbox fix for images */
         }
         
-        .cell img {
+        .cell img, 
+		.customer cell img{
             /* Image fills 100% of its container */
             width: 80%;
             height: auto;
