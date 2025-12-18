@@ -73,27 +73,33 @@
         }
 		
 	/* MOBILE, section customers */	
-		@media (max-width: 600px) {
+@media (max-width: 600px) {
     .customercontainer {
-        /* Allow items to wrap to a second line */
         flex-wrap: wrap !important; 
-        /* Ensure the container doesn't force a single column */
         flex-direction: row !important; 
         justify-content: center !important;
+        gap: 10px !important; /* Slightly smaller gap for tighter mobile look */
     }
 
     .customercell {
-        /* Set width to calc(50% - gap). This forces exactly 2 items per row. */
-        flex: 0 0 calc(50% - 15px) !important; 
+        flex: 0 0 calc(50% - 10px) !important; 
+        padding: 5px !important; /* Reduced padding to make icons feel smaller */
         box-sizing: border-box;
     }
     
-    /* Make images responsive so they don't break the 2-column layout */
     .customercell img {
-        max-width: 100%;
-        height: auto !important;
+        /* Set a smaller maximum height for mobile */
+        max-height: 60px !important; 
+        width: auto !important;
+        margin: 0 auto;
+    }
+
+    .customercell figcaption {
+        font-size: 0.85rem !important; /* Smaller text to match smaller icons */
+        margin-bottom: 4px !important;
     }
 }
+
 
 
 		.thin-image {
