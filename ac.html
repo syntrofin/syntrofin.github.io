@@ -5,77 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Accordion</title>
     <style>
-        .accordion-button {
-            background-color: #f2f2f2;
-            cursor: pointer;
-            padding: 15px;
-            width: 100%;
-            text-align: left;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            outline: none;
-            transition: background-color 0.3s ease;
-        }
+       /* 1. Hide all content sections by default */
+#Pre_Sales, #Core_Services, #experience {
+  display: none;
+}
 
-        .accordion-button:hover, .accordion-button.active {
-            background-color: #ddd;
-        }
+/* 2. Show only the section that is currently 'targeted' by the URL hash */
+#Pre_Sales:target, 
+#Core_Services:target, 
+#experience:target {
+  display: block;
+}
 
-        .accordion-content {
-            padding: 0 15px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-        }
-        
-        .accordion-content.show {
-            max-height: 500px; /* Needs to be larger than content height */
-            padding: 15px;
-        }
+/* 3. Optional: Set a default section to show when the page first loads (no hash) */
+#Pre_Sales {
+  display: block; /* Shows Home by default */
+}
+
+/* If any other section is targeted, hide the default Home section */
+:has(#Core_Services:target) #Pre_Sales,
+:has(#experience:target) #Pre_Sales {
+  display: none;
+}
+
     </style>
 </head>
 <body>
 
-<div class="accordion-container">
-    <button class="accordion-button">Section 1 Title</button>
-    <div class="accordion-content">
-        <p>Content for section 1.</p>
-    </div>
+<!-- Your Menu Section (Unchanged) -->
+<nav class="navbar ..."> 
+  ... links to #Pre_Sales, #Core_Services, #experience ...
+</nav>
 
-    <button class="accordion-button">Section 2 Title</button>
-    <div class="accordion-content">
-        <p>Content for section 2.</p>
-    </div>
+<!-- Content Sections Below Menu -->
+<div class="content-container" style="margin-top: 100px;"> <!-- Adjust margin for fixed nav -->
+  
+  <section id="Pre_Sales">
+    <h2>Home Section</h2>
+    <p>Content for Pre Sales...</p>
+  </section>
 
-    <button class="accordion-button">Section 3 Title</button>
-    <div class="accordion-content">
-        <p>Content for section 3.</p>
-    </div>
+  <section id="Core_Services">
+    <h2>Services Section</h2>
+    <p>Content for Core Services...</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience Section</h2>
+    <p>Content for Experience...</p>
+  </section>
+  
 </div>
 
-<script>
-    const accordionButtons = document.querySelectorAll('.accordion-button');
-
-    accordionButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Check if the current button is already active
-            const isActive = this.classList.contains('active');
-
-            // Collapse all sections first
-            accordionButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.nextElementSibling.classList.remove('show');
-            });
-
-            // If it wasn't active, expand the clicked section
-            if (!isActive) {
-                this.classList.add('active');
-                this.nextElementSibling.classList.add('show');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
