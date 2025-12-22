@@ -74,7 +74,9 @@
 			display: block; 
             width: auto; 
             height: 150px; 
-            border: 1px solid #00b0e4; 
-            border-radius: 9px;
+            border: 2px solid #00b0e4; 
+            border-radius: 29px;
+			background-clip: padding-box;
+
 		}
 
