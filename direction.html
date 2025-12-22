@@ -113,23 +113,6 @@ h2 {
          }
 
     </style>
-	<script>
-		document.querySelectorAll('.nav-link').forEach(link => {
-  		link.addEventListener('click', function(e) {
-    	e.preventDefault(); // This stops the jumping/moving up
-    	const targetId = this.getAttribute('href');
-    
-    	// Hide all sections
-    	document.querySelectorAll('section[id]').forEach(sec => sec.style.display = 'none');
-    
-    	// Show only the clicked one
-    	document.querySelector(targetId).style.display = 'block';
-  		});
-	});
-
-	</script>
-
-
 </head>
 <body>
 
@@ -244,5 +227,35 @@ h2 {
 <!--Reached End of the  page-->
 </div></section>
 
-</div></body></html>
+</div>
+    
+	<!-- ... keep content start static ... -->
+
+    <script>
+      // 1. Select all your menu links
+      const links = document.querySelectorAll('.nav-link');
+      // 2. Select all content sections
+      const sections = document.querySelectorAll('section[id]:not(#mainNav-container)');
+
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Prevent the browser from jumping to the #ID
+          e.preventDefault();
+
+          // Get the ID of the section to show (e.g., #Core_Services)
+          const targetId = this.getAttribute('href');
+
+          // Hide every section first
+          sections.forEach(sec => sec.style.display = 'none');
+
+          // Show only the one we want
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
 
