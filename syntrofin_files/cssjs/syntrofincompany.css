@@ -84,6 +84,7 @@
             border-radius: 15px;
 			background-clip: padding-box;
 			*/
+			background-color: white; 
 			  padding: 20px;           /* Creates 10px of space on all sides */
   border: 1px solid white;  /* #ccc Optional: Add an outer border */
 border-radius: 15px;
