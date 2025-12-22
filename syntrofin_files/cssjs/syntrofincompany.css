@@ -1,42 +1,37 @@
-		h2 {
+         body, html {
+         	font-family: 'Segoe UI', sans-serif;
+			color: #333333;
+         }
+	h2 {
          	margin-top: 10px;
          	margin-bottom: 10px;
 			font-size: 2.0rem;
 			 color: #0070d2;
          }
-		h3 {
+	h3 {
          	margin-top: 5px;
          	margin-bottom: 5px;
 			font-size: 1.6rem;
 			color: #00b0e4;
          }
-         h4 {
+    h4 {
          	margin-top: 0px;
          	margin-bottom: 5px;
 			font-size: 1.5rem;
          }
-         h5 {
+    h5 {
          	margin-top: 0;
          	margin-bottom: 0;
 			font-size: 1.2rem;
          }
-		h1, h2, h3, h4, h5, h6 {
-			line-height: 1.2;
-			font-weight: 200;
-    		letter-spacing: 1px;
-		}
 		  
-         body, html {
-         	font-family: 'Segoe UI', sans-serif;
-			color: #333333;
-         }
-         .profile{
+    .profile{
          	max-width: 1000px; 
          	margin-left: auto;
          	margin-right: auto;
          	min-height: 100vh;
          }
-         .company{
+    .company{
          	padding-top: 15px;
          	padding-left: 15px;
          	padding-bottom: 9px;
