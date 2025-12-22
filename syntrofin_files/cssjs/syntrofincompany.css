@@ -80,9 +80,11 @@
 			display: block; 
             width: auto; 
             height: 150px; 
+			/*
             border: 1px solid white;
             border-radius: 15px;
 			background-clip: padding-box;
+			*/
 
 		}
 
