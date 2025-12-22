@@ -32,25 +32,25 @@
     
     <style>
        /* 1. Hide all content sections by default */
-#Pre_Sales, #Core_Services, #experience {
+#atsl, #clarivate, #ironmountain {
   display: none;
 }
 
 /* 2. Show only the section that is currently 'targeted' by the URL hash */
-#Pre_Sales:target, 
-#Core_Services:target, 
-#experience:target {
+#atsl:target, 
+#clarivate:target, 
+#ironmountain:target {
   display: block;
 }
 
 /* 3. Optional: Set a default section to show when the page first loads (no hash) */
-#Pre_Sales {
+#atsl {
   display: block; /* Shows Home by default */
 }
 
 /* If any other section is targeted, hide the default Home section */
-:has(#Core_Services:target) #Pre_Sales,
-:has(#experience:target) #Pre_Sales {
+:has(#clarivate:target) #atsl,
+:has(#ironmountain:target) #atsl {
   display: none;
 }
 /* styles from company */
