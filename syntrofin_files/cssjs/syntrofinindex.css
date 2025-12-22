@@ -1,0 +1,136 @@
+ /* Base Styles (Desktop First Approach) */
+        .container,
+		.customercontainer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .cell, 
+		.customercell{
+            /* Desktop Size: Around 50% width */
+            flex: 0 0 calc(50% - 10px);
+            background-color: white;
+            text-align: left;
+            box-sizing: border-box;
+            min-width: 0; /* Important flexbox fix for images */
+        }
+        
+        .cell img, 
+		.customercell img{
+            /* Image fills 100% of its container */
+            width: 80%;
+            height: auto;
+            border-radius: 5%;
+        }
+		}
+		*, ::after, ::before {
+    		box-sizing: border-box;
+		}
+		
+	/* MOBILE, options */
+		        @media (max-width: 600px) 
+	{
+		/* All sections, except customers */
+            .container {
+                flex-direction: column;
+                gap: 0; 
+            }
+            .cell, .second-column {
+          
+                flex: 0 0 100%; 
+                margin-bottom: 15px; 
+            }
+
+		/* customers section*/	
+
+		.customercontainer {
+        flex-wrap: wrap !important; 
+        flex-direction: row !important; 
+        justify-content: center !important;
+        gap: 10px !important; /* Slightly smaller gap for tighter mobile look */
+    	}
+
+    	.customercell {
+        flex: 0 0 calc(50% - 10px) !important; 
+        padding: 5px !important; /* Reduced padding to make icons feel smaller */
+        box-sizing: border-box;
+		}
+
+		.customercell img {
+        /* Set a smaller maximum height for mobile */
+        max-height: 60px !important; 
+        width: auto !important;
+        margin: 0 auto;
+    	}
+
+		.customercell figcaption {
+        font-size: 0.85rem !important; /* Smaller text to match smaller icons */
+        margin-bottom: 4px !important;
+    	}
+    }
+		
+	.thin-image {
+        	height: 50px;  /* Restricts the height to 50 pixels */
+        	width: auto;   /* Automatically calculates width to maintain aspect ratio */
+        	/* Optional: Makes the image a block element so it respects margins better */
+			display: inline-block; 
+    	}
+
+	.syntrofinpara {
+		font-family: 'Segoe UI', sans-serif;
+    	font-size: 20px;
+    	line-height: 1.5;
+		margin-bottom: 20px;
+	    display: block;
+    	margin-block-start: 1em;
+    	margin-block-end: 1em;
+    	margin-inline-start: 0px;
+    	margin-inline-end: 0px;
+    	unicode-bidi: isolate;
+	}
+		
+	h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', sans-serif;
+	}
+
+	.navbar {
+		font-family: 'Segoe UI', sans-serif;
+        position: static !important; /* Forces the nav to follow normal document flow */
+        top: auto !important;         /* Removes any fixed top positioning */
+    }
+
+	body, html {
+    margin: 0;
+    padding: 0;
+	font-family: 'Segoe UI', sans-serif;
+}
+
+
+footer {
+    width: 100%; /* Makes the footer span the full width */
+    /* Other styling like background color, padding, etc. */
+    background-color: #032d60;
+    /* padding: 20px 0;  Adds some vertical space */
+}
+footer p {
+    font-size: 12px; /* Sets the font size for all paragraphs within the footer */
+    /* You can use 'em', 'rem', or percentages for responsive design */
+	color:white;
+}
+
+/* For a specific element within the footer, use a class or ID */
+.footer-title {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.syntrofinbutton {
+	background: radial-gradient(circle at center, #69bff8, #002E5D); 
+    padding: 25px 100px; 
+    border-radius: 10px; 
+    border: none; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+}
