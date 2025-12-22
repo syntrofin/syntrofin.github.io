@@ -61,10 +61,20 @@
     		unicode-bidi: isolate;
 			color: #333;
          }
-		img{
+		.img1{
+			display: block; 
+            width: auto; 
+            height: 150px; 
+			/*
+            border: 1px solid #f9f9f7; 
+            border-radius: 9px;
+			*/
+		}
+		.img2{
 			display: block; 
             width: auto; 
             height: 150px; 
             border: 1px solid #f9f9f7; 
             border-radius: 9px;
 		}
+
