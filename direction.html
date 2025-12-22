@@ -111,10 +111,24 @@ h2 {
     		unicode-bidi: isolate;
 			color: #333;
          }
-		.section{
-			scroll-margin-top: 160px; 
-		}
+
     </style>
+	<script>
+		document.querySelectorAll('.nav-link').forEach(link => {
+  		link.addEventListener('click', function(e) {
+    	e.preventDefault(); // This stops the jumping/moving up
+    	const targetId = this.getAttribute('href');
+    
+    	// Hide all sections
+    	document.querySelectorAll('section[id]').forEach(sec => sec.style.display = 'none');
+    
+    	// Show only the clicked one
+    	document.querySelector(targetId).style.display = 'block';
+  		});
+	});
+
+	</script>
+
 
 </head>
 <body>
