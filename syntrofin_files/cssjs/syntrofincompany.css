@@ -62,9 +62,11 @@
 			color: #333;
          }
 .image2-wrapper {
-  background-color: white; 
-/* 
-  display: inline-block;    Allows the div to wrap the image tightly */
+  		background-color: white; 
+	  	border: 1px solid white;  /* #ccc Optional: Add an outer border */
+		border-radius: 15px;
+		background-clip: padding-box;
+		/* display: inline-block;    Allows the div to wrap the image tightly */
 }
 		.img1{
 			display: block; 
@@ -85,9 +87,6 @@
 			background-clip: padding-box;
 			*/
 			background-color: white; 
-			  padding: 20px;           /* Creates 10px of space on all sides */
-  border: 1px solid white;  /* #ccc Optional: Add an outer border */
-border-radius: 15px;
-
+			padding: 20px;           
 		}
 
