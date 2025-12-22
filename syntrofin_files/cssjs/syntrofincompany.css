@@ -62,12 +62,14 @@
 			color: #333;
          }
 .image2-wrapper {
+	overflow-x: auto; 
 	/* 
   		background-color: white; 
 	  	border: 1px solid white;  
 		border-radius: 15px;
 		background-clip: padding-box;
-		display: inline-block;    */
+		display: inline-block;    
+	*/
 }
 		.img1{
 			display: block; 
