@@ -114,22 +114,24 @@ h2 {
 	color: #333;; background-color: #f9f9f7; display: flex; justify-content: center; align-items: center; 
  }
 		
-ul {
-  list-style-type: none !important; 
-  margin: 0 !important; 
-  padding: 0 !important; 
+/* Target the specific list with a class name */
+.no-indent-list {
+  padding: 0 !important; /* This overrides the 40px default or the Bootstrap default */
+  margin: 0 !important;
+  list-style-type: none !important;
 }
 
-li {
-  margin: 0 !important; 
+.no-indent-list li {
   padding: 0 !important;
+  margin: 0 !important;
 }
+
 </style>
 
 </head>
 <body>
-<div class="profile">
-<div class="accordion-container">
+<div class="profile" style="padding: 0!important; margin: 0!important;">
+<div class="accordion-container" style="padding: 0!important; margin: 0!important;">
  	<div class="accordion-item" onclick="toggleAccordionVertical(this)">
  		<h2>Section 1</h2>
  		<div class="content">
@@ -144,11 +146,11 @@ li {
  		</div>
  	</div>
 
-	<div class="accordion-item" onclick="toggleAccordionVertical(this)" style="padding: 0;">
+	<div class="accordion-item" onclick="toggleAccordionVertical(this)" style="padding: 0!important; margin: 0!important;">
  		<h2>Section 3</h2>
-		<div class="content" style="padding: 0;">
-			<ul>
-				<li>
+		<div class="content" style="padding: 0!important; margin: 0!important;">
+			<ul class="no-indent-list" style="padding: 0!important; margin: 0!important;">
+				<li style="padding: 0!important; margin: 0!important;">
 					<img src="https://www.syntrofin.com/syntrofin_files/img/at1.png" alt="logo" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 10px;">
 					<h4 style="display: inline;">97 Steps to Zero</h4>
 					<span style="margin-left: 40px;"></span>
