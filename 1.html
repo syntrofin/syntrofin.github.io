@@ -117,8 +117,13 @@ h2 {
 .accordion-container-vertical {
   display: flex;
   flex-direction: column; /* Stacks children vertically */
-  width: 100%;
-  gap: 5px; /* Space between sections */
+  width: 90%; /* Changed from 100% to 90% */
+  
+  /* Centers the container horizontally on the page */
+  margin-left: auto;
+  margin-right: auto;
+  
+  gap: 10px; /* Provides a gap between sections instead of a line */
 }
 
 .accordion-item {
@@ -127,25 +132,25 @@ h2 {
   border: 1px solid #ccc;
   padding: 10px;
   box-sizing: border-box;
+  
+  border-radius: 8px; /* Adds rounded corners to each section */
 }
 
 .accordion-item .content {
-  /* Initial state: height is 0, hidden */
   max-height: 0; 
   overflow: hidden;
-  transition: max-height 0.5s ease-out, opacity 0.3s ease-out; /* Smooth animation */
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
   opacity: 0;
-  padding: 0 10px; /* Optional padding for content */
+  padding: 0 10px; 
 }
 
 .accordion-item.active .content {
-  /* When 'active' class is added: max-height expands */
-  max-height: 200px; /* Must be larger than content height */
+  max-height: 200px;
   opacity: 1;
 }
 
 .accordion-item h2 {
-    margin-top: 0; /* Remove default H2 margin at the top */
+    margin-top: 0;
 }
 
 
