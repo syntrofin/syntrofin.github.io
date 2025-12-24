@@ -89,7 +89,7 @@ h3 {
 }
 
 .accordion-item .content {
-  max-height: 0; 
+   max-height: 0; 
   overflow: hidden;
   transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
   opacity: 0;
@@ -101,7 +101,8 @@ h3 {
 }
 		
 .accordion-item.active .content {
-  min-height: 200px;
+  /* min-height: 200px; this should work in theory, but staying at */
+	max-height: 1000px; /* Large enough to fit any list */
   opacity: 1;
 }
 
