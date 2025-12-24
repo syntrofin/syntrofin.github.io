@@ -114,15 +114,16 @@ h2 {
 	color: #333;; background-color: #f9f9f7; display: flex; justify-content: center; align-items: center; 
  }
 		
-ul.no-margin-list, ul.no-margin-list li {
-  margin: 0;
-  padding: 0;
-}
-		
-ul.no-margin-list {
-  list-style: none; /* also removes bullet points */
+ul {
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0;             /* Removes default top/bottom/left/right margins */
+  padding: 0;            /* Removes default left padding (indentation) */
 }
 
+li {
+  margin: 0;             /* Ensures list items don't add extra spacing */
+  padding: 0;            /* Ensures list items don't add extra spacing */
+}
 </style>
 
 </head>
