@@ -70,25 +70,7 @@ h2 {
          	margin-left: auto;
          	margin-right: auto;
          }
-         .company{
-         	padding-top: 15px;
-         	padding-left: 15px;
-         	padding-bottom: 9px;
-         	padding-right: 9px;
-         	border-radius: 25px; 
-         	overflow: hidden; 
-			font-family: 'Segoe UI', sans-serif;
-    		font-size: 20px;
-    		line-height: 1.5;
-    		margin-bottom: 20px;
-    		display: block;
-   			margin-block-start: 1em;
-    		margin-block-end: 1em;
-    		margin-inline-start: 0px;
-    		margin-inline-end: 0px;
-    		unicode-bidi: isolate;
-			color: #333;
-         }
+
 		
 .accordion-container-vertical {
   display: flex;
@@ -104,13 +86,13 @@ h2 {
 .accordion-item {
   cursor: pointer;
   background-color: #f1f1f1;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   padding: 10px;
   box-sizing: border-box;
   
   border-radius: 8px; /* Adds rounded corners to each section */
 	  /* --- NEW STYLES FOR GAP SIMULATION --- */
-  margin-bottom: 30px; /* Adds 30px space below each item */
+  margin-bottom: 15px; /* Adds 30px space below each item */
 }
 
 .accordion-item .content {
@@ -120,63 +102,83 @@ h2 {
   opacity: 0;
   padding: 0 30px; 
 }
-
+		
+.accordion-item h2 {
+    margin-top: 0;
+}
+		
 .accordion-item.active .content {
   max-height: 200px;
   opacity: 1;
 }
 
-.accordion-item h2 {
-    margin-top: 0;
-}
+ .accordion-item.active .content, .company{
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-bottom: 9px;
+	padding-right: 9px;
+	border-radius: 25px; 
+	overflow: hidden; 
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 20px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	unicode-bidi: isolate;
+	color: #333;
+ }
 </style>
 
 </head>
-<body>
-<div class="profile">
+<body><div class="profile">
 <div class="accordion-container">
- <div class="accordion-item" onclick="toggleAccordionVertical(this)">
- <h2>Section 1</h2>
- <div class="content">
- <p>This is the content for section 1.</p>
+ 	<div class="accordion-item" onclick="toggleAccordionVertical(this)">
+ 		<h2>Section 1</h2>
+ 		<div class="content">
+ 			<p>This is the content for section 1.</p>
+ 		</div>
  </div>
- </div>
+	
  <div class="accordion-item active" onclick="toggleAccordionVertical(this)">
- <h2>Section 2 (Open)</h2>
- <div class="content">
- <p>This section is open by default.</p>
+ 	<h2>Section 2 (Open)</h2>
+ 	<div class="content" style="background-color: #f9f9f7; display: flex; justify-content: center; align-items: center; height: 250px;">
+		<img src="https://www.syntrofin.com/syntrofin_files/img/1.png" alt="1" style="width: 50%; height: auto; vertical-align: middle;">
+ 	</div>
  </div>
- </div>
+	
  <div class="accordion-item" onclick="toggleAccordionVertical(this)">
- <h2>Section 3</h2>
- <div class="content">
- <p>This is the content for section 3.</p>
+ 	<h2>Section 3</h2>
+ 	<div class="content">
+ 		<p>This is the content for section 3.</p>
+ 	</div>
  </div>
- </div>
+	
 </div>
-	</div>
+</div>
 
 
     
 	<!-- ... keep content start static ... -->
 
-    <script>
+<script>
+	function toggleAccordionVertical(clickedElement) {
+		// 1. Get all accordion items within the new container
+		const items = clickedElement.parentNode.querySelectorAll('.accordion-item');
 
-		function toggleAccordionVertical(clickedElement) {
-  // 1. Get all accordion items within the new container
-  const items = clickedElement.parentNode.querySelectorAll('.accordion-item');
+		// 2. Loop through all items and remove the 'active' class
+		items.forEach(item => {
+		item.classList.remove('active');
+		});
 
-  // 2. Loop through all items and remove the 'active' class
-  items.forEach(item => {
-    item.classList.remove('active');
-  });
-
-  // 3. Add the 'active' class to the clicked element
-  clickedElement.classList.add('active');
+		// 3. Add the 'active' class to the clicked element
+		clickedElement.classList.add('active');
 }
-
-
-    </script>
-  </body>
+</script>
+	
+</body>
 </html>
 
