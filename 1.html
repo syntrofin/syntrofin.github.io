@@ -102,7 +102,7 @@ h2 {
 }
 		
 .accordion-item.active .content {
-  max-height: 200px;
+  min-height: 200px;
   opacity: 1;
 }
 
@@ -113,6 +113,16 @@ h2 {
 	margin-bottom: 20px; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;
 	color: #333;; background-color: #f9f9f7; display: flex; justify-content: center; align-items: center; 
  }
+		
+ul.no-margin-list, ul.no-margin-list li {
+  margin: 0;
+  padding: 0;
+}
+		
+ul.no-margin-list {
+  list-style: none; /* also removes bullet points */
+}
+
 </style>
 
 </head>
@@ -136,7 +146,7 @@ h2 {
 	<div class="accordion-item" onclick="toggleAccordionVertical(this)">
  		<h2>Section 3</h2>
 		<div class="content">
-			<ul style="list-style: none; padding: 0; margin: 0;">
+			<ul>
 				<li>
 					<img src="https://www.syntrofin.com/syntrofin_files/img/at1.png" alt="logo" style="width: 25px; height: 25px; vertical-align: middle; margin-right: 10px;">
 					<h4 style="display: inline;">97 Steps to Zero</h4>
