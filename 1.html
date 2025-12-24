@@ -114,18 +114,14 @@ h2 {
 
     </style>
    <style>
-     .accordion-container {
-  display: flex; /* Aligns child items in a row */
+.accordion-container-vertical {
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
   width: 100%;
-  gap: 10px; /* Space between divs */
+  gap: 5px; /* Space between sections */
 }
 
 .accordion-item {
-  /* Initial state: small width, but can grow */
-  flex-grow: 1;
-  max-width: 50px; /* Base collapsed width */
-  overflow: hidden;
-  transition: max-width 0.5s ease; /* Smooth animation */
   cursor: pointer;
   background-color: #f1f1f1;
   border: 1px solid #ccc;
@@ -133,20 +129,25 @@ h2 {
   box-sizing: border-box;
 }
 
-.accordion-item.active {
-  /* When 'active' class is added by JS, it expands */
-  max-width: 500px; /* Expanded width (must be large enough for content) */
-}
-
-/* Optional: hide the actual text content when collapsed if needed */
 .accordion-item .content {
+  /* Initial state: height is 0, hidden */
+  max-height: 0; 
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out; /* Smooth animation */
   opacity: 0;
-  transition: opacity 0.3s ease 0.2s; /* Delay fade-in slightly */
+  padding: 0 10px; /* Optional padding for content */
 }
 
 .accordion-item.active .content {
+  /* When 'active' class is added: max-height expands */
+  max-height: 200px; /* Must be larger than content height */
   opacity: 1;
 }
+
+.accordion-item h2 {
+    margin-top: 0; /* Remove default H2 margin at the top */
+}
+
 
    </style>
 </head>
