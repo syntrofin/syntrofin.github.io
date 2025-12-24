@@ -14,8 +14,7 @@ h5 { margin-top: 0; margin-bottom: 0; font-size: 1.2rem; }
 .accordion-item { cursor: pointer; background-color: #f9f9f7; border: 0px solid #ccc; border-radius: 8px; padding: 10px; box-sizing: border-box; margin-bottom: 15px; }
 .accordion-item .content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, opacity 0.3s ease-out; opacity: 0; padding: 0 30px; }
 .accordion-item h2 { margin-top: 0; }
-.accordion-item.active .content { max-height: 1000px; opacity: 1; }
-.accordion-item.active .content, .company { padding-top: 15px; padding-left: 15px; padding-bottom: 9px; padding-right: 9px; border-radius: 25px; font-family: 'Segoe UI', sans-serif; font-size: 20px; line-height: 1.5; unicode-bidi: isolate; margin-bottom: 20px; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; color: #333; background-color: #f9f9f7; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.accordion-item.active .content { max-height: 1000px; opacity: 1; padding-top: 15px; padding-left: 15px; padding-bottom: 9px; padding-right: 9px; border-radius: 25px; font-family: 'Segoe UI', sans-serif; font-size: 20px; line-height: 1.5; unicode-bidi: isolate; margin-bottom: 20px; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; color: #333; background-color: #f9f9f7; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .no-indent-list { padding: 0 !important; margin: 0 !important; list-style-type: none !important; width: 95%; }
 .no-indent-list li { padding: 0 !important; margin: 0 !important; }
 
