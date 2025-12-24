@@ -74,24 +74,18 @@ h2 {
 		
 .accordion-container-vertical {
   display: flex;
-  flex-direction: column; /* Stacks children vertically */
-  width: 100%; /* Changed from 100% to 90% */
-  
-  /* Centers the container horizontally on the page */
+  flex-direction: column; 
+  width: 100%; 
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .accordion-item {
   cursor: pointer;
-  background-color: #f1f1f1;
-  border: 0px solid #ccc;
+  background-color: #f9f9f7;
+  border: 0px solid #ccc; border-radius: 8px;
   padding: 10px;
   box-sizing: border-box;
-  
-  border-radius: 8px; /* Adds rounded corners to each section */
-	  /* --- NEW STYLES FOR GAP SIMULATION --- */
   margin-bottom: 15px; /* Adds 30px space below each item */
 }
 
@@ -113,23 +107,11 @@ h2 {
 }
 
  .accordion-item.active .content, .company{
-	padding-top: 15px;
-	padding-left: 15px;
-	padding-bottom: 9px;
-	padding-right: 9px;
-	border-radius: 25px; 
-	overflow: hidden; 
-	font-family: 'Segoe UI', sans-serif;
-	font-size: 20px;
-	line-height: 1.5;
-	margin-bottom: 20px;
-	display: block;
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	unicode-bidi: isolate;
-	color: #333;
+	padding-top: 15px; padding-left: 15px; padding-bottom: 9px; padding-right: 9px;
+	border-radius: 25px; overflow: hidden; display: block;
+	font-family: 'Segoe UI', sans-serif; font-size: 20px; line-height: 1.5; unicode-bidi: isolate;
+	margin-bottom: 20px; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;
+	color: #333;; background-color: #f9f9f7; display: flex; justify-content: center; align-items: center; height: 250px;
  }
 </style>
 
@@ -145,7 +127,7 @@ h2 {
 	
  <div class="accordion-item active" onclick="toggleAccordionVertical(this)">
  	<h2>Section 2 (Open)</h2>
- 	<div class="content" style="background-color: #f9f9f7; display: flex; justify-content: center; align-items: center; height: 250px;">
+ 	<div class="content">
 		<img src="https://www.syntrofin.com/syntrofin_files/img/1.png" alt="1" style="width: 50%; height: auto; vertical-align: middle;">
  	</div>
  </div>
@@ -156,14 +138,10 @@ h2 {
  		<p>This is the content for section 3.</p>
  	</div>
  </div>
-	
 </div>
 </div>
 
-
-    
 	<!-- ... keep content start static ... -->
-
 <script>
 	function toggleAccordionVertical(clickedElement) {
 		// 1. Get all accordion items within the new container
