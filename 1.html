@@ -178,29 +178,21 @@ h2 {
 	<!-- ... keep content start static ... -->
 
     <script>
-      // 1. Select all your menu links
-      const links = document.querySelectorAll('.nav-link');
-      // 2. Select all content sections
-      const sections = document.querySelectorAll('section[id]:not(#mainNav-container)');
 
-      links.forEach(link => {
-        link.addEventListener('click', function(e) {
-          // Prevent the browser from jumping to the #ID
-          e.preventDefault();
+		function toggleAccordionVertical(clickedElement) {
+  // 1. Get all accordion items within the new container
+  const items = clickedElement.parentNode.querySelectorAll('.accordion-item');
 
-          // Get the ID of the section to show (e.g., #Core_Services)
-          const targetId = this.getAttribute('href');
+  // 2. Loop through all items and remove the 'active' class
+  items.forEach(item => {
+    item.classList.remove('active');
+  });
 
-          // Hide every section first
-          sections.forEach(sec => sec.style.display = 'none');
+  // 3. Add the 'active' class to the clicked element
+  clickedElement.classList.add('active');
+}
 
-          // Show only the one we want
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            targetSection.style.display = 'block';
-          }
-        });
-      });
+
     </script>
   </body>
 </html>
