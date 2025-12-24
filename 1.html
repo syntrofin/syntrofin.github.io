@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- other head elements -->
+    <meta name="description" content="SyntroFin - Enterprise Revenue Life Cycle Management">
+    <meta name="author" content="SyntroFin">
+    <!-- Fav Icon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon?v=3">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3">
+    
+    <!-- Org and Title -->
+    <meta property="og:title" content="SyntroFin">
+    <meta property="og:url" content="http://www.syntrofin.com">
+    <meta property="og:description" content="SyntroFin - Enterprise Revenue Life Cycle Management">
+    <title>SyntroFin</title>
+	  
+    <!-- JavaScript -->
+    <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
+	<script async="" src="./syntrofin_files/cssjs/analytics.js"></script>
+	  
+	
+	 <!-- CSS -->
+	<link href="./syntrofin_files/cssjs/bootstrap.min.css" rel="stylesheet">
+	<link href="./syntrofin_files/cssjs/new-age.css" rel="stylesheet">
+	<link href="./syntrofin_files/cssjs/syntrofinindex.css rel="stylesheet">
+    <title>JS Accordion</title>
+    
+    <style>
+       /* 1. Hide all content sections by default */
+#atsl, #clarivate, #ironmountain {
+  display: none;
+}
+
+/* 2. Show only the section that is currently 'targeted' by the URL hash */
+#atsl:target, 
+#clarivate:target, 
+#ironmountain:target {
+  display: block;
+}
+
+/* 3. Optional: Set a default section to show when the page first loads (no hash) */
+#atsl {
+  display: block; /* Shows Home by default */
+}
+
+/* If any other section is targeted, hide the default Home section */
+:has(#clarivate:target) #atsl,
+:has(#ironmountain:target) #atsl {
+  display: none;
+}
+/* styles from company */
+h2 {
+         	margin-top: 10px;
+         	margin-bottom: 10px;
+			font-size: 2.0rem;
+			 color: #0070d2;
+         }
+		h3 {
+         	margin-top: 5px;
+         	margin-bottom: 5px;
+			font-size: 1.6rem;
+			color: #00b0e4;
+         }
+         h4 {
+         	margin-top: 0px;
+         	margin-bottom: 5px;
+			font-size: 1.5rem;
+         }
+         h5 {
+         	margin-top: 0;
+         	margin-bottom: 0;
+			font-size: 1.2rem;
+         }
+		.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+			line-height: 1.2;
+			font-weight: 200;
+    		letter-spacing: 1px;
+		}
+		  
+         body, html {
+         	font-family: 'Segoe UI', sans-serif;
+			color: #333333;
+         }
+         .profile{
+         	max-width: 1000px; 
+         	margin-left: auto;
+         	margin-right: auto;
+         	min-height: 100vh;
+         }
+         .company{
+         	padding-top: 15px;
+         	padding-left: 15px;
+         	padding-bottom: 9px;
+         	padding-right: 9px;
+         	border-radius: 25px; 
+         	overflow: hidden; 
+			font-family: 'Segoe UI', sans-serif;
+    		font-size: 20px;
+    		line-height: 1.5;
+    		margin-bottom: 20px;
+    		display: block;
+   			margin-block-start: 1em;
+    		margin-block-end: 1em;
+    		margin-inline-start: 0px;
+    		margin-inline-end: 0px;
+    		unicode-bidi: isolate;
+			color: #333;
+         }
+
+    </style>
+   <style>
+     .accordion-container {
+  display: flex; /* Aligns child items in a row */
+  width: 100%;
+  gap: 10px; /* Space between divs */
+}
+
+.accordion-item {
+  /* Initial state: small width, but can grow */
+  flex-grow: 1;
+  max-width: 50px; /* Base collapsed width */
+  overflow: hidden;
+  transition: max-width 0.5s ease; /* Smooth animation */
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.accordion-item.active {
+  /* When 'active' class is added by JS, it expands */
+  max-width: 500px; /* Expanded width (must be large enough for content) */
+}
+
+/* Optional: hide the actual text content when collapsed if needed */
+.accordion-item .content {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s; /* Delay fade-in slightly */
+}
+
+.accordion-item.active .content {
+  opacity: 1;
+}
+
+   </style>
+</head>
+<body>
+
+<div class="accordion-container">
+  <div class="accordion-item" onclick="toggleAccordion(this)">
+    <h2>Section 1</h2>
+    <div class="content">
+      <p>This is the content for section 1.</p>
+    </div>
+  </div>
+  <div class="accordion-item active" onclick="toggleAccordion(this)">
+    <h2>Section 2 (Open)</h2>
+     <div class="content">
+      <p>This section is open by default.</p>
+    </div>
+  </div>
+  <div class="accordion-item" onclick="toggleAccordion(this)">
+    <h2>Section 3</h2>
+     <div class="content">
+      <p>This is the content for section 3.</p>
+    </div>
+  </div>
+</div>
+
+    
+	<!-- ... keep content start static ... -->
+
+    <script>
+      // 1. Select all your menu links
+      const links = document.querySelectorAll('.nav-link');
+      // 2. Select all content sections
+      const sections = document.querySelectorAll('section[id]:not(#mainNav-container)');
+
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Prevent the browser from jumping to the #ID
+          e.preventDefault();
+
+          // Get the ID of the section to show (e.g., #Core_Services)
+          const targetId = this.getAttribute('href');
+
+          // Hide every section first
+          sections.forEach(sec => sec.style.display = 'none');
+
+          // Show only the one we want
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
