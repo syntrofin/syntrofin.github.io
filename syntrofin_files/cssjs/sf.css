@@ -1,0 +1,80 @@
+/* RESET & BASE */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+
+/* HEADER - Logo Left, Menu Right */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container2 {
+    display: flex;
+    justify-content: space-between; /* This pushes logo left, menu right */
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo-and-header { display: flex; align-items: center; }
+.logo-icon { height: 40px; width: auto; margin-right: 10px; }
+.company-name { font-size: 1.5rem; font-weight: bold; }
+.tagline { font-size: 0.8rem; color: #666; }
+
+.nav { display: flex; list-style: none; margin: 0; padding: 0; }
+.nav-item { margin-left: 20px; }
+.nav-link { text-decoration: none; font-weight: 500; }
+
+/* SINGLE COLUMN CONTENT STACK */
+.container2 {
+    display: block; /* Removes flex side-by-side */
+    width: 90%;
+    max-width: 800px; /* Comfortable reading width */
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.cell2 {
+    width: 100% !important;
+    margin-bottom: 30px;
+    text-align: center; /* Centers text for a clean stack */
+}
+
+/* Fix images so they don't go wild */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Fragmented Grid - Simple List */
+.fragmented-grid {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.fragment {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px dashed #ccc;
+    background: #f9f9f9;
+}
+
+/* HELPERS */
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.syntrofinh5 { margin: 15px 0; line-height: 1.4; }
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 600px) {
+    .navbar .container2 { flex-direction: column; text-align: center; }
+    .nav { margin-top: 10px; }
+    .nav-item { margin: 0 10px; }
+    .company-name { font-size: 1.2rem; }
+}
