@@ -27,45 +27,48 @@
 	<link href="./syntrofin_files/cssjs/new-age.css" rel="stylesheet">
 	<link href="./syntrofin_files/cssjs/syntrofinindex.css" rel="stylesheet">
 	<style>
+<style>
   .logo-container {
-    /* Uses Flexbox to align logo and text next to each other */
+    /* Aligns all items based on their bottom edges (flex-end) */
     display: flex;
-    align-items: center; /* Centers items vertically */
-    gap: 15px; /* Adds space between the logo and the text block */
-    max-width: 700px; /* Adjust as needed */
+    align-items: flex-end; /* CRITICAL CHANGE: Aligns tagline bottom with logo bottom */
+    gap: 15px;
+    max-width: 700px;
     padding: 20px;
   }
 
   .logo-icon {
-    /* Adjust the logo size as needed */
     width: 60px;
     height: auto;
+    /* Optional: Added slight margin-bottom to fine-tune alignment with text baseline */
+    margin-bottom: 2px;
   }
 
   .text-wrapper {
-    /* Ensures the name and tagline stack vertically */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Ensure content within wrapper aligns to the bottom */
   }
 
   .company-name {
-    /* Styling for the main name: Light Blue color */
-    color: #4dc2e6; /* Approximate blue color from image */
-    font-size: 2.2em; /* Adjust size to fit your design */
+    color: #4dc2e6; /* Blue color */
+    font-size: 4.2em;
     font-weight: 700;
-    font-family: "Aptos Display", "Aptos", "Helvetica Neue", Arial, sans-serif;
+    /* Using recommended webfonts for Aptos style */
+    font-family: "Segoe UI", "Inter", Arial, Helvetica, sans-serif;
     line-height: 1.1;
   }
 
   .tagline {
-    /* Styling for the tagline: Dark Gray color */
-    color: #333333; /* Approximate dark gray color from image */
-    font-size: 0.9em; /* Smaller size for the tagline */
+    color: #333333; /* Dark gray color */
+    font-size: 0.9em;
     font-weight: 500;
-    font-family: "Aptos Display", "Aptos", "Helvetica Neue", Arial, sans-serif;
-    margin-top: 5px; /* Space between name and tagline */
+    /* Using recommended webfonts for Aptos style */
+    font-family: "Segoe UI", "Inter", Arial, Helvetica, sans-serif;
+    margin-top: 5px; /* Adjust spacing between name and tagline */
   }
+</style>
+
 
 </style>
 
@@ -86,19 +89,18 @@
           </a>
 			  -->
  <!-- New Logo -->
+			 
 		<div class="logo-container">
-  <!-- 1. The Image Logo (Ensure you have this file saved) -->
-<img src="./syntrofin_files/img/syntrofinlogo8.png" width="300" alt="SyntroFin Logo" class="logo-icon">
-
-
-  <div class="text-wrapper">
-    <!-- 2. The Company Name (Text) -->
-    <div class="company-name">SyntroFin</div>
-
-    <!-- 3. The Tagline (Text) -->
-    <div class="tagline">Revenue Life Cycle Management Services</div>
-  </div>
-</div>
+  			<!-- 1. The Image Logo (Ensure you have this file saved) -->
+			<img src="./syntrofin_files/img/syntrofinlogor1.png" width="300" alt="SyntroFin Logo" class="logo-icon">
+  	
+  			<div class="text-wrapper">
+    			<!-- 2. The Company Name (Text) -->
+    			<div class="company-name">Syntro<span style=color:#46b0e1;">Fin</span></div>
+    			<!-- 3. The Tagline (Text) -->
+    			<div class="tagline">Enterprise Revenue Life Cycle Management</div>
+  			</div>
+		</div>
 
 
           <!-- Menu -->
