@@ -84,14 +84,11 @@ body {
 }
 
 .cell2center {
-    flex: 0 0 50%;    /* Do not grow, do not shrink, start at 50% */
-    max-width: 50%;   /* Hard limit at half the screen */
-    margin-bottom: 20px;
-    text-align: center;
-	background-color: white;  
-	box-sizing: border-box;
+    width: 100%;       /* Base width */
+    max-width: 50%;    /* Ceiling */
+    flex: 0 0 50%;     /* Flex constraint */
+    min-width: 0;      /* Magic fix for images */
 }
-
 
 img {
     max-width: 100%;
