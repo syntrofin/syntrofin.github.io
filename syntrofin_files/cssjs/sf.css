@@ -1,6 +1,14 @@
 
 * { box-sizing: border-box; }
-body { margin: 0; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+body { 
+    margin: 0 auto;           /* Centers the entire page */
+    max-width: 1200px;        /* Limits body width so it's not too wide on desktop */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
 
 /* HEADER - Logo Left, Menu Right */
 .navbar {
@@ -32,6 +40,7 @@ body { margin: 0; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
 .cell2 {
     width: 100% !important;
