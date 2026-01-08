@@ -29,45 +29,54 @@
 	<style>
 <style>
   .logo-container {
-    /* Aligns all items based on their bottom edges (flex-end) */
+    /* Uses Flexbox to align logo and text next to each other */
     display: flex;
-    align-items: flex-end; /* CRITICAL CHANGE: Aligns tagline bottom with logo bottom */
+    align-items: flex-end; /* Aligns bottom-to-bottom */
     gap: 15px;
-    max-width: 700px;
+    /* Ensure items DO NOT wrap onto the next line */
+    flex-wrap: nowrap; /* CRITICAL ADDITION */
+    /* Remove max-width restriction if necessary to allow it to spread out */
+    /* max-width: 700px; */
     padding: 20px;
   }
 
   .logo-icon {
-    width: 60px;
+    width: 300px;
     height: auto;
-    /* Optional: Added slight margin-bottom to fine-tune alignment with text baseline */
     margin-bottom: 2px;
+    /* Ensure icon does not shrink in a small container */
+    flex-shrink: 0;
   }
 
   .text-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Ensure content within wrapper aligns to the bottom */
+    justify-content: flex-end;
+    /* Ensure text wrapper can shrink but prioritize showing content */
+    min-width: 0;
   }
 
   .company-name {
-    color: #4dc2e6; /* Blue color */
+    color: #4dc2e6;
     font-size: 4.2em;
     font-weight: 700;
-    /* Using recommended webfonts for Aptos style */
     font-family: "Segoe UI", "Inter", Arial, Helvetica, sans-serif;
     line-height: 1.1;
+    /* Prevent the name from breaking lines in the middle of words */
+    white-space: nowrap;
   }
 
   .tagline {
-    color: #333333; /* Dark gray color */
+    color: #333333;
     font-size: 0.9em;
     font-weight: 500;
-    /* Using recommended webfonts for Aptos style */
     font-family: "Segoe UI", "Inter", Arial, Helvetica, sans-serif;
-    margin-top: 5px; /* Adjust spacing between name and tagline */
+    margin-top: 5px;
+    /* Allow the tagline to wrap onto multiple lines if container is small */
+    white-space: normal;
   }
 </style>
+
 
 
 </style>
@@ -92,7 +101,7 @@
 			 
 		<div class="logo-container">
   			<!-- 1. The Image Logo (Ensure you have this file saved) -->
-			<img src="./syntrofin_files/img/syntrofinlogor1.png" width="300" alt="SyntroFin Logo" class="logo-icon">
+			<img class="logo-icon" src="./syntrofin_files/img/syntrofinlogor1.png" alt="SyntroFin Logo">
   	
   			<div class="text-wrapper">
     			<!-- 2. The Company Name (Text) -->
