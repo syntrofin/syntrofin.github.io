@@ -134,6 +134,42 @@ img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* The Main Container for all tiles */
+.grid-container {
+    display: grid;
+    /* The Magic Line: Automatically adjusts columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 20px; /* This creates the margins/gutters between the tiles */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Tile Styling */
+.grid-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px; /* Optional: for a softer look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Tame the images inside the tiles */
+.grid-item img {
+    max-width: 100%;    /* Forces images to shrink to fit the tile */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto; /* Centers the image and adds space below */
+}
+
+/* Optional: style the text above the logos */
+.grid-item .logo-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+
 /* HELPERS */
 .left { text-align: left; }
 .center { text-align: center; }
