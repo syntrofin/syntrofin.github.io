@@ -84,10 +84,10 @@ body {
 }
 
 .cell2center {
-    width: 100%;       /* Base width */
-    max-width: 50%;    /* Ceiling */
-    flex: 0 0 50%;     /* Flex constraint */
-    min-width: 0;      /* Magic fix for images */
+    width: 50%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 50%; /* Your existing ceiling */
 }
 
 img {
