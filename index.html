@@ -26,11 +26,47 @@
 	<link href="./syntrofin_files/cssjs/bootstrap.min.css" rel="stylesheet">
 	<link href="./syntrofin_files/cssjs/new-age.css" rel="stylesheet">
 	<link href="./syntrofin_files/cssjs/syntrofinindex.css" rel="stylesheet">
-	  <style>
-  .aptos-heading {
-    font-family: "Aptos Display", "Aptos", "Helvetica Neue", Arial, sans-serif;
-    font-weight: bold; /* Aptos Display is often bold or extra bold */
+	<style>
+  .logo-container {
+    /* Uses Flexbox to align logo and text next to each other */
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 15px; /* Adds space between the logo and the text block */
+    max-width: 700px; /* Adjust as needed */
+    padding: 20px;
   }
+
+  .logo-icon {
+    /* Adjust the logo size as needed */
+    width: 60px;
+    height: auto;
+  }
+
+  .text-wrapper {
+    /* Ensures the name and tagline stack vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .company-name {
+    /* Styling for the main name: Light Blue color */
+    color: #4dc2e6; /* Approximate blue color from image */
+    font-size: 2.2em; /* Adjust size to fit your design */
+    font-weight: 700;
+    font-family: "Aptos Display", "Aptos", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    /* Styling for the tagline: Dark Gray color */
+    color: #333333; /* Approximate dark gray color from image */
+    font-size: 0.9em; /* Smaller size for the tagline */
+    font-weight: 500;
+    font-family: "Aptos Display", "Aptos", "Helvetica Neue", Arial, sans-serif;
+    margin-top: 5px; /* Space between name and tagline */
+  }
+
 </style>
 
 </head>
@@ -40,14 +76,30 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: white;">
         <div class="container navheader">
 			
-          <!-- Logo
+          <!-- Old Logo
 		 	note and keep it for future logo probabale: 	
-		  -->
+		
 			 <img alt="" src="./syntrofin_files/img/syntrofinlogo8.png" width="300">
 			<span class="aptos-heading" style="color: #2572bf;">Syntr&#244;</span><span class="aptos-heading" style="color: #598b4a;">Fin</span>
           <a class="navbar-brand js-scroll-trigger" href="http://syntrofin.in/#page-top">
             <img alt="" src="./syntrofin_files/img/syntrofinlogo8.png" width="300">
           </a>
+			  -->
+ <!-- New Logo -->
+		<div class="logo-container">
+  <!-- 1. The Image Logo (Ensure you have this file saved) -->
+<img src="./syntrofin_files/img/syntrofinlogo8.png" width="300" alt="SyntroFin Logo" class="logo-icon">
+
+
+  <div class="text-wrapper">
+    <!-- 2. The Company Name (Text) -->
+    <div class="company-name">SyntroFin</div>
+
+    <!-- 3. The Tagline (Text) -->
+    <div class="tagline">Revenue Life Cycle Management Services</div>
+  </div>
+</div>
+
 
           <!-- Menu -->
           <div class="collapse navbar-collapse" id="navbarResponsive">
