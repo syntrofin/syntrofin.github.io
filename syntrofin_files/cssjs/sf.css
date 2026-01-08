@@ -11,28 +11,59 @@ body {
 }
 
 /* HEADER - Logo Left, Menu Right */
-.navbar {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-	display: flex;
-    justify-content: space-between; /* This pushes logo left, menu right */
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
+/* Logo and Header */
+  .logo-and-header {
+    /* Uses Flexbox to align logo and text next to each other */
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 15px; /* Adds space between the logo and the text block */
+    max-width: 700px; /* Adjust as needed */
+    padding: 20px;
+  }
+
+  .logo-icon {
+    /* Adjust the logo size as needed */
+    width: 60px;
+    height: auto;
+  }
+
+  .text-wrapper {
+    /* Ensures the name and tagline stack vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .company-name {
+    /* Styling for the main name: Light Blue color */
+    color: #4dc2e6; /* Approximate blue color from image */
+    font-size: 2.8em; /* Adjust size to fit your design */
+    font-weight: 700;
+    /* Using generic sans-serif stack for compatibility. Consider loading webfonts like Inter or Segoe UI for closer match to Microsoft Aptos */
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    /* Styling for the tagline: Dark Gray color */
+    color: #333333; /* Approximate dark gray color from image */
+    font-size: 0.9em; /* Smaller size for the tagline */
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5px; /* Space between name and tagline */
+  }
+/* Fragmented Grid */
+.fragmented-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 20px;
+  padding: 20px;
 }
 
-.logo-and-header { display: flex; align-items: center; }
-.logo-icon { height: 40px; width: auto; margin-right: 10px; }
-.company-name { font-size: 1.5rem; font-weight: bold; }
-.tagline { font-size: 0.8rem; color: #666; }
-
-.nav { display: flex; list-style: none; margin: 0; padding: 0; }
-.nav-item { margin-left: 20px; }
-.nav-link { text-decoration: none; font-weight: 500; }
+.fragment {
+  padding: 15px;
+  border: 1px dashed #ccc; /* Visualizes the "fragmented" look */
+}
 
 .container2 {
 	display: flex;
@@ -58,19 +89,6 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
-/* Fragmented Grid - Simple List */
-.fragmented-grid {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-.fragment {
-    padding: 15px;
-    margin-bottom: 10px;
-    border: 1px dashed #ccc;
-    background: #f9f9f9;
 }
 
 .syntrofinbutton {
