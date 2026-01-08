@@ -78,21 +78,25 @@
 
         .cell2, 
 		{
-            /* Desktop Size: Around 50% width */
-            flex: 0 0 calc(50% - 10px);
-            background-color: white;
-            text-align: left;
-            box-sizing: border-box;
-            min-width: 0; /* Important flexbox fix for images */
-			border: 1px dashed #ccc; /* Visualizes the "fragmented" look */
+    /* Keep your desktop sizing */
+    flex: 0 0 calc(50% - 10px);
+    background-color: white;
+    text-align: left;
+    box-sizing: border-box;
+    border: 1px dashed #ccc;
+
+    /* ADD THIS: Essential to stop the image from pushing the cell width out */
+    min-width: 0; 
         }
         
         .cell2 img, 
 		{
-            /* Image fills 100% of its container */
-            width: 80%;
-            height: auto;
-            border-radius: 5%;
+/* CHANGE width: 80% to max-width: 100% */
+    /* This ensures the image NEVER exceeds the width of .cell2 */
+    max-width: 100%; 
+    height: auto;
+    border-radius: 5%;
+    display: block; /* Removes unwanted white space at bottom of image */
         }
 		}
 		*, ::after, ::before {
@@ -100,18 +104,15 @@
 		}
 		
 	/* MOBILE, options */
-		        @media (max-width: 600px) 
+		        @media (max-width: 768px) 
 	{
-		/* All sections, except customers */
-            .container2 {
-                flex-direction: column;
-                gap: 0; 
-            }
-            .cell2, .second-column2 {
-          
-                flex: 0 0 100%; 
-                margin-bottom: 15px; 
-            }
+    .container2 {
+        flex-direction: column; /* Stacks image on top of text */
+        max-width: 100%;
+    }
+    .cell2 {
+        flex: 0 0 100%; /* Cells take full width on mobile */
+    }
 
 		/* customers section*/	
 
