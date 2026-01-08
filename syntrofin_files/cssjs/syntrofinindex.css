@@ -4,7 +4,6 @@
     /* Uses Flexbox to align logo and text next to each other */
     display: flex;
     align-items: center; /* Centers items vertically */
-	  
     gap: 15px; /* Adds space between the logo and the text block */
     max-width: 700px; /* Adjust as needed */
     padding: 20px;
@@ -74,6 +73,7 @@
             gap: 20px;
             width: 100%;
 			 border: 1px  #ccc; /* Visualizes the "fragmented" look */
+			 max-width: 700px; /* Adjust as needed */
         }
 
         .cell2, 
