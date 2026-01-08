@@ -41,7 +41,30 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5px; /* Space between name and tagline */
   }
+/* Fragmented Grid */
+.fragmented-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 20px;
+  padding: 20px;
+}
 
+.cell {
+  padding: 15px;
+  border: 1px dashed #ccc; /* Visualizes the "fragmented" look */
+}
+
+/* Individual Alignments */
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+
+/* Mobile: Stack into 1 column for readability */
+@media (max-width: 768px) {
+  .fragmented-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Base Styles (Desktop First Approach) */
         .container,
