@@ -49,7 +49,7 @@
   padding: 20px;
 }
 
-.cell {
+.fragmented-cell {
   padding: 15px;
   border: 1px dashed #ccc; /* Visualizes the "fragmented" look */
 }
