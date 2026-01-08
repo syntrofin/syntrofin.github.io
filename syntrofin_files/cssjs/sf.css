@@ -114,6 +114,9 @@ img {
     justify-content: center !important;
 }
 .syntrofinh5 { margin: 15px 0; line-height: 1.4; }
+.mirror-horizontal {
+    transform: scaleX(-1);
+}
 
 /* MOBILE ADJUSTMENT */
 @media (max-width: 600px) {
