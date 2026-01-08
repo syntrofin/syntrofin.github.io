@@ -67,16 +67,16 @@
 }
 
 /* Base Styles (Desktop First Approach) */
-        .container,
-		.customercontainer {
+        .container2,
+		 {
             display: flex;
             align-items: center;
             gap: 20px;
             width: 100%;
         }
 
-        .cell, 
-		.customercell{
+        .cell2, 
+		{
             /* Desktop Size: Around 50% width */
             flex: 0 0 calc(50% - 10px);
             background-color: white;
@@ -85,8 +85,8 @@
             min-width: 0; /* Important flexbox fix for images */
         }
         
-        .cell img, 
-		.customercell img{
+        .cell2 img, 
+		{
             /* Image fills 100% of its container */
             width: 80%;
             height: auto;
@@ -101,11 +101,11 @@
 		        @media (max-width: 600px) 
 	{
 		/* All sections, except customers */
-            .container {
+            .container2 {
                 flex-direction: column;
                 gap: 0; 
             }
-            .cell, .second-column {
+            .cell2, .second-column2 {
           
                 flex: 0 0 100%; 
                 margin-bottom: 15px; 
