@@ -135,12 +135,13 @@ img {
 }
 
 /* The Main Container for all tiles */
+/* The Main Container for all tiles */
 .grid-container {
     display: grid;
-    /* The Magic Line: Automatically adjusts columns based on screen size */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    gap: 20px; /* This creates the margins/gutters between the tiles */
-    padding: 20px;
+    /* Reduced minimum width from 180px to 140px */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 15px; /* Slightly reduced margin between tiles */
+    padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -148,8 +149,8 @@ img {
 /* Individual Tile Styling */
 .grid-item {
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px; /* Optional: for a softer look */
+    padding: 10px; /* Reduced internal padding from 20px to 10px */
+    border-radius: 8px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
@@ -159,15 +160,16 @@ img {
     max-width: 100%;    /* Forces images to shrink to fit the tile */
     height: auto;
     display: block;
-    margin: 0 auto 10px auto; /* Centers the image and adds space below */
+    margin: 0 auto 8px auto; /* Centers the image and adds less space below */
 }
 
 /* Optional: style the text above the logos */
 .grid-item .logo-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* Slightly smaller text */
     color: #666;
     margin-bottom: 5px;
 }
+
 
 
 /* HELPERS */
