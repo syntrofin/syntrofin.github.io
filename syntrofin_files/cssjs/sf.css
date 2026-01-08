@@ -85,7 +85,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 columns */
   gap: 20px;
-  padding: 20px;
+  padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
 
 .fragment {
@@ -135,17 +135,16 @@ img {
 }
 
 /* The Main Container for all tiles */
-/* The Main Container for all tiles */
 .grid-container {
     display: grid;
     /* Reduced minimum width from 180px to 140px 
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
 	/* Changed max size from 1fr (flexible) to 150px (fixed ceiling) */
-    grid-template-columns: repeat(auto-fit, minmax(140px, 150px)); 
+    grid-template-columns: repeat(auto-fit, minmax(800px, 100px)); 
     gap: 15px; /* Slightly reduced margin between tiles */
-    padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
+	padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
 
 /* Individual Tile Styling */
