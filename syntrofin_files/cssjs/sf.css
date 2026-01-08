@@ -65,6 +65,15 @@ img {
     background: #f9f9f9;
 }
 
+.syntrofinbutton {
+	background: radial-gradient(circle at center, #69bff8, #002E5D); 
+    padding: 25px 100px; 
+    border-radius: 10px; 
+    border: none; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+}
+
 /* HELPERS */
 .left { text-align: left; }
 .center { text-align: center; }
