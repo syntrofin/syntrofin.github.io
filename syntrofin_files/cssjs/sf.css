@@ -144,6 +144,26 @@ img {
     margin: 0 auto;
 }
 
+/* Big Action Buttons */
+.goldbutton {
+    background: linear-gradient(180deg, #FFD700 0%, #F9A602 100%); 
+    color: #121212; /* Dark gray text is much more readable on yellow than white */
+    padding: 15px 45px; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block; 
+    text-decoration: none;
+    font-weight: 600; /* Making text bold helps it stand out on yellow */
+    transition: transform 0.2s ease; /* Adds a nice feel for 2026 */
+}
+
+/* Add a hover effect for a better user experience */
+.goldbutton:hover {
+    background: linear-gradient(180deg, #F9A602 0%, #E69500 100%);
+    transform: translateY(-2px);
+}
 .syntrofinbutton {
     background: radial-gradient(circle at center, #69bff8, #002E5D); 
     padding: 15px 45px; 
