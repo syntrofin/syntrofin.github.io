@@ -214,7 +214,7 @@ footer p {
   font-size: 1.17em;
   font-weight: bold;
   margin: 1em 0;     /* Shorthand for top/bottom 1em and left/right 0 */
-  color: #6FA8DC;
+	color: #333333;
 }
 
 /* HELPERS */
