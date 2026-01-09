@@ -82,16 +82,29 @@ body {
 
 /* Fragmented Grid */
 .fragmented-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns */
-  gap: 20px;
-  padding: 0 20px;    /* Provides the 20px "gap" on both sides */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Retains your 2-column layout */
+    gap: 20px;
+    padding: 0 20px;
 }
 
 .fragment {
-  padding: 15px;
-  border: 1px dashed #ccc; /* Visualizes the "fragmented" look */
+    padding: 15px;
+    /* Removed the dashed border for a cleaner look */
+    
+    /* ADDED STYLES FOR STICKY NOTE EFFECT */
+    background-color: #fffeee; /* A soft, classic sticky note yellow */
+    border-radius: 4px;        /* Slightly rounded corners */
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); /* Gives it depth/shadow */
+    transform: rotate(1deg);   /* Adds a subtle, casual tilt */
+    transition: transform 0.2s ease-in-out; /* Smooths the hover effect */
 }
+
+/* Optional: Add a hover effect so they move slightly when interacted with */
+.fragment:hover {
+    transform: rotate(-1deg) scale(1.02);
+}
+
 
 .container2 {
 	display: flex;
