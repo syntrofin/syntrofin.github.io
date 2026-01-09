@@ -11,8 +11,8 @@ body {
 }
 section{
 	scroll-margin-top: 50px;
-	margin-top: 10px;
-	margin-bottom: 32px;
+	padding-top: 10px;
+	padding-bottom: 32px;
 }
 /* HEADER - Logo Left, Menu Right */
 /* Logo and Header */
