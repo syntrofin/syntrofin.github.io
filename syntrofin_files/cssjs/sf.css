@@ -9,7 +9,9 @@ body {
     background-color: #fff;
     overflow-x: hidden;
 }
-
+section{
+	scroll-margin-top: 50px;
+}
 /* HEADER - Logo Left, Menu Right */
 /* Logo and Header */
   .logo-and-header {
