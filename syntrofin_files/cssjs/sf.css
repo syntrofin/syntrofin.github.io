@@ -202,18 +202,22 @@ footer p {
     color: #606060;             /* A soft, readable gray color */
 }
 
+.mimic-h3 {
+  display: block;        
+  font-size: 1.17em;    
+  margin-top: 1em;      
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;    
+}
 
 /* HELPERS */
 .left { text-align: left; }
 .center { text-align: center; }
 .right { text-align: right; }
-.justify-center {
-    justify-content: center !important;
-}
-.syntrofinh5 { margin: 15px 0; line-height: 1.4; }
-.mirror-horizontal {
-    transform: scaleX(-1);
-}
+.justify-center { justify-content: center !important; }
+.mirror-horizontal { transform: scaleX(-1); }
 
 /* MOBILE ADJUSTMENT */
 @media (max-width: 600px) {
