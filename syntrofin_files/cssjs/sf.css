@@ -162,6 +162,7 @@ img {
     max-width: 1200px;
     margin: 0 auto;
 	padding: 0 20px;    /* Provides the 20px "gap" on both sides */
+	justify-content: center; 
 }
 
 /* Individual Tile Styling */
