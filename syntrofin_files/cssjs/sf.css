@@ -155,7 +155,7 @@ img {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     display: inline-block; 
     text-decoration: none;
-    font-weight: 600; /* Making text bold helps it stand out on yellow */
+    /* font-weight: 600; Making text bold helps it stand out on yellow */
     transition: transform 0.2s ease; /* Adds a nice feel for 2026 */
 }
 
