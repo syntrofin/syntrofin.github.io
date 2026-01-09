@@ -164,7 +164,7 @@ img {
     background: linear-gradient(180deg, #F9A602 0%, #E69500 100%);
     transform: translateY(-2px);
 }
-.syntrofinbutton {
+.nebulabutton {
     background: radial-gradient(circle at center, #69bff8, #002E5D); 
     padding: 15px 45px; 
     border-radius: 8px; 
@@ -174,8 +174,46 @@ img {
     display: inline-block; 
     color: #fff;             
     text-decoration: none;  
+	transition: all 0.3s ease-in-out; /* Smooths the transition */
+}
+.nebulabutton:hover {
+    /* Increases the glow on hover */
+    box-shadow: 0 8px 20px rgba(0, 46, 93, 0.4); 
+    
+    /* Subtle 2026 lift effect */
+    transform: translateY(-2px) scale(1.02); 
+    
+    /* Brightens the center of the nebula slightly */
+    filter: brightness(1.1); 
 }
 
+.obsidianbutton {
+    /* Deep charcoal to near-black gradient */
+    background: linear-gradient(180deg, #2d2d2d 0%, #121212 100%);
+    
+    color: #ffffff;
+    padding: 15px 45px;
+    border-radius: 8px;
+    
+    /* A subtle 1px border makes dark buttons look sharper */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    /* Soft shadow with a slight "glow" effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.obsidianbutton:hover {
+    /* Lightens slightly on hover */
+    background: linear-gradient(180deg, #3d3d3d 0%, #1a1a1a 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+}
 
 /* The Main Container for all tiles */
 .grid-container {
