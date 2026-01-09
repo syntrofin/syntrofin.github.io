@@ -140,7 +140,7 @@ img {
     /* Reduced minimum width from 180px to 140px 
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
 	/* Changed max size from 1fr (flexible) to 150px (fixed ceiling) */
-    grid-template-columns: repeat(auto-fit, minmax(800px, 100px)); 
+    grid-template-columns: repeat(auto-fit, minmax(80px, 100px)); 
     gap: 15px; /* Slightly reduced margin between tiles */
     max-width: 1200px;
     margin: 0 auto;
