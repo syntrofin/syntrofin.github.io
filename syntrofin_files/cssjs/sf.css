@@ -73,6 +73,7 @@ section{
 .nav-link {
     text-decoration: none;   /* Removes the default underline (visible in image) */
     color: #0176d3;          /* Your desired link color */
+	color: #666;
     font-weight: 500;        /* Good weight for readability */
     padding: 5px 0;          /* Adds some clickable space */
     transition: color 0.3s ease; /* Smooth color change on hover */
