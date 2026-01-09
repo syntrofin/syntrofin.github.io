@@ -145,6 +145,32 @@ img {
 }
 
 /* Big Action Buttons */
+.ambergoldbutton {
+    /* Glowing bronze center to deep burnished edge */
+    background: radial-gradient(circle at center, #d49a46 0%, #a76d16 50%, #4a2f0a 100%);
+    
+    padding: 15px 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Adds a subtle glass rim */
+    cursor: pointer;
+    
+    /* Warm amber shadow for a 2026 "elevated" look */
+    box-shadow: 0 4px 15px rgba(74, 47, 10, 0.5);
+    
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for 2026 interactivity */
+.ambergoldbutton:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(167, 109, 22, 0.4);
+}
+
 .goldbutton {
     background: linear-gradient(180deg, #FFD700 0%, #F9A602 100%); 
     color: #121212; /* Dark gray text is much more readable on yellow than white */
