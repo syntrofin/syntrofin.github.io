@@ -171,6 +171,19 @@ img {
     margin-bottom: 5px;
 }
 
+footer {
+    background-color: #f4f4ff;  /* A very light blue/grey background */
+    padding: 30px 20px;         /* Generous space above and below text */
+    text-align: center;         /* Centers the text horizontally */
+    margin-top: 50px;           /* Adds space between content and footer */
+    border-top: 1px solid #eee; /* A subtle line separating it from the main page */
+}
+
+footer p {
+    margin: 0;                  /* Removes default paragraph margin for perfect centering */
+    font-size: 0.85rem;         /* Keeps the text concise and readable */
+    color: #606060;             /* A soft, readable gray color */
+}
 
 
 /* HELPERS */
