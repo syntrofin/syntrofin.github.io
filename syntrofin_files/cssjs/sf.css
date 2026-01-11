@@ -18,7 +18,7 @@ section{
 /* Logo and Header */
   .header-container {
     align-items: center; /* Centers items vertically */
-    max-width: 700px; /* Adjust as needed */
+    max-width: 1000px; /* Adjust as needed */
 	gap: 15px; /* Adds space between the logo and the text block */
     padding: 10px;
 	font-size: 36px;  /*fixed size and inside use relative sizes em */
@@ -29,48 +29,23 @@ section{
     justify-content: space-between; /* Pushes left group and Menu to opposite ends */
     align-items: center; /* Vertically centers content */
   }
-.logo-branding-group {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Space between logo and company name */
-}
-
-  .logo-icon {
-    /* Adjust the logo size as needed */
-    height: 0.9em;
-    width: auto;
-  }
-
-
-
-  .company-name {
-    /* Styling for the main name: Light Blue color */
-    /*color: #4dc2e6;  Approximate blue color from image */
-	color: #333;
-    font-size: 1em; /* Adjust size to fit your design */
-    font-weight: 700;
-    /* Using generic sans-serif stack for compatibility. Consider loading webfonts like Inter or Segoe UI for closer match to Microsoft Aptos */
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.1;
-  }
-.header-secondrow {
-    /* Grey bar row */
-    background-color: #e9ecef; /* Example grey color */
-    padding: 10px 20px;
-    /* This naturally takes full width and aligns text to the left by default */
-}
-  .tagline {
+  .tag-row {
     color: #A76D16; 	
 	font-size: 0.5em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
   }
-/* Optional styling for demo clarity */
-.logo-image, .company-name, .main-menu, .tagline {
-    /* Simple padding/margin for visual separation */
-    margin: 0;
-    padding: 0;
-}
+
+ /* 
+  .company-name {
+	color: #333;
+    font-size: 1em; 
+    font-weight: 700;
+   font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.1;
+  }
+*/
+
 
 /* Menu */
 .nav {
