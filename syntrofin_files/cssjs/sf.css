@@ -19,7 +19,6 @@ section{
 .header-container {
     display: flex;
     flex-direction: column; /* Stacks top and tagline rows */
-    gap: 1rem;              /* Space between the two rows */
     padding: 1rem;
 }
 
