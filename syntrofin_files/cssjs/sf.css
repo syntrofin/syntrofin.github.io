@@ -15,41 +15,43 @@ section{
 	padding-bottom: 32px;
 }
 /* HEADER - Logo Left, Menu Right */
-/* Logo and Header */
-  .header-container {
-    align-items: center; /* Centers items vertically */
-    max-width: 1000px; /* Adjust as needed */
-	gap: 15px; /* Adds space between the logo and the text block */
-    padding: 10px;
-	font-size: 36px; /*fixed*/
-  }
-  .header-firstrow {
-	padding: 10px 20px;
-    display: flex;
-    justify-content: space-between; /* Pushes left group and Menu to opposite ends */
-    align-items: center; /* Vertically centers content */
-  }
- .logo_image{
-	 height: 1em;
-	 width: auto;
- }
+/* Container defaults to vertical stacking for mobile */
+.responsive-header {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 15px;
+	font-size: 36px;
+}
 
-  .tag-row {
-    color: #A76D16; 	
-	font-size: 0.2em;
-    font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
+.col {
+  width: 100%;
+}
+.tagline{
+	font-size: 0.4em;
+}
+.logo {
+	font-size: 1em;
+}
+
+/* Switches to 3-column row on screens 768px and wider */
+@media (min-width: 768px) {
+  .responsive-header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
- /* 
-  .company-name {
-	color: #333;
-    font-size: 1em; 
-    font-weight: 700;
-   font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.1;
+  .col {
+    flex: 1; /* Ensures each column is exactly 1/3 width */
   }
-*/
+
+  .logo { text-align: left; }
+  .tagline { text-align: center; }
+  .menu { text-align: right; }
+}
+
 
 
 /* Menu */
@@ -58,7 +60,7 @@ section{
     list-style: none;        /* Removes the bullet points (visible in image) */
     margin: 0;               /* Removes default margin */
     padding: 0;              /* Removes default padding */
-		font-size: 0.2em;
+	font-size: 0.4em;
 }
 
 .nav-item {
