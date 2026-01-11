@@ -327,7 +327,7 @@ footer p {
         margin-top: 10px;
     }
 	.nav-link .nav-link:hover, .nav-link:focus { 
-	color: #D3D3D3;
+	color: #D3D3D3 !important;
 	}
 	.container2a {
         flex-direction: column; /* Stacks logo and menu on mobile */
