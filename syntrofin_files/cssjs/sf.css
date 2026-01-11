@@ -326,7 +326,7 @@ footer p {
         margin-left: 5px; /* Optional: remove spacing between menu items on mobile */
         margin-top: 10px;
     }
-	.nav-link .nav-link:hover, .nav-link:focus { 
+	.nav-link, .nav-link:hover, .nav-link:focus { 
 	color: #D3D3D3 !important;
 	}
 	.container2a {
