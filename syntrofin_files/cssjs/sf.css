@@ -41,7 +41,7 @@ section{
   .company-name {
     /* Styling for the main name: Light Blue color */
     /*color: #4dc2e6;  Approximate blue color from image */
-	  color: #333
+	color: #333;
     font-size: 2.8em; /* Adjust size to fit your design */
     font-weight: 700;
     /* Using generic sans-serif stack for compatibility. Consider loading webfonts like Inter or Segoe UI for closer match to Microsoft Aptos */
