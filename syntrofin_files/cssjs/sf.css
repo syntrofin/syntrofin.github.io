@@ -27,8 +27,8 @@ section{
 
   .logo-icon {
     /* Adjust the logo size as needed */
-    width: 1em;
-    height: auto;
+    height: 1em;
+    width: auto;
   }
 
   .text-wrapper {
@@ -51,8 +51,8 @@ section{
 
   .tagline {
     /* Styling for the tagline: Dark Gray color */
-    color: #069AD9; /* Approximate dark gray color from image */
-    font-size: 0.9em; /* Smaller size for the tagline */
+    color: #069AD9; 	/* Approximate dark gray color from image */
+    font-size: 0.9em; 	/* Smaller size for the tagline */
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5px; /* Space between name and tagline */
