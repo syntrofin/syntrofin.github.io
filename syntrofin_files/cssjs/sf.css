@@ -53,7 +53,12 @@ section{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.1;
   }
-
+.header-secondrow {
+    /* Grey bar row */
+    background-color: #e9ecef; /* Example grey color */
+    padding: 10px 20px;
+    /* This naturally takes full width and aligns text to the left by default */
+}
   .tagline {
     /* Styling for the tagline: Dark Gray color */
     color: #069AD9; 	/* Approximate dark gray color from image */
@@ -61,8 +66,6 @@ section{
 	font-size: 0.5em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 5px; /* Space between name and tagline */
-	  padding: 10px 20px;
   }
 /* Optional styling for demo clarity */
 .logo-image, .company-name, .main-menu, .tagline {
