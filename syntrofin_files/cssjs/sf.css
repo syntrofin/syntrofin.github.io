@@ -36,7 +36,9 @@ section{
     height: 36px; 
     aspect-ratio: auto; 
     display: block; 
-    margin-right: auto; /* Forces left alignment in flex container */
+	  /* Ensures the image aligns to the start (left) of the container */
+    place-self: start; 
+    margin: 0; /* Clears any conflicting margins */
 }
 
 /* Tagline Styling */
