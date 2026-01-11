@@ -1,36 +1,5 @@
 
 /* Logo and Header */
-		  .newlogo {
-  display: flex;
-  align-items: baseline; /* critical */
-  gap: 0.5em; /* ≈ width of letter “o” */
-}
-
-.newlogo-icon {
-  height: 1em;          /* MATCHES capital S height */
-  width: auto;
-}
-
-.newlogo-text {
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
-}
-
-/* Caret styling */
-.caret-o {
-  position: relative;
-  display: inline-block;
-}
-
-.caret-o .hat {
-  position: absolute;
-  top: -0.7em;          /* raises caret above Unicode */
-  left: 0;
-  font-size: 0.7em;
-  line-height: 1;
-}
   .logo-and-header {
     /* Uses Flexbox to align logo and text next to each other */
     display: flex;
@@ -54,13 +23,12 @@
   }
 
   .wordmark {
-    /* Styling for the main name: Light Blue color */
-    /* color: #4dc2e6; Approximate blue color from image */
-	  color: #333;
-    font-size: 2.8em;  /* Adjust size to fit your design */
+    /* 
+	color: #4dc2e6; 
+    font-family: Arial, Helvetica, sans-serif; 
+	*/
+    font-size: 2.8em;  
     font-weight: 700;
-    /* Using generic sans-serif stack for compatibility. Consider loading webfonts like Inter or Segoe UI for closer match to Microsoft Aptos */
-    /* font-family: Arial, Helvetica, sans-serif; */
 	font-family: 'Montserrat', sans-serif;
     line-height: 1.1;
   }
