@@ -21,7 +21,6 @@ section{
     max-width: 1000px; /* Adjust as needed */
 	gap: 15px; /* Adds space between the logo and the text block */
     padding: 10px;
-	font-size: 36px;  /*fixed size and inside use relative sizes em */
   }
   .header-firstrow {
 	padding: 10px 20px;
@@ -31,7 +30,7 @@ section{
   }
   .tag-row {
     color: #A76D16; 	
-	font-size: 0.5em;
+	font-size: 0.9em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
   }
