@@ -322,10 +322,14 @@ footer p {
         flex-direction: column; /* Stacks logo and menu on mobile */
     }
     .nav-item {
-        margin-left: 0; /* Optional: remove spacing between menu items on mobile */
+        margin-left: 5px; /* Optional: remove spacing between menu items on mobile */
         margin-top: 10px;
     }
 	.container2a {
         flex-direction: column; /* Stacks logo and menu on mobile */
     }
+	.logo{
+		place-self: center;
+		margin: 0 auto !important;
+	}
 }
