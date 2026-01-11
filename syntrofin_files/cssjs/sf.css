@@ -18,6 +18,7 @@ section{
 /* Logo and Header */
   .logo-and-header {
     /* Uses Flexbox to align logo and text next to each other */
+	font-size: 30px; 
     display: flex;
     align-items: center; /* Centers items vertically */
     gap: 15px; /* Adds space between the logo and the text block */
@@ -27,7 +28,7 @@ section{
 
   .logo-icon {
     /* Adjust the logo size as needed */
-    height: 1em;
+    height: 0.9em;
     width: auto;
   }
 
@@ -42,7 +43,7 @@ section{
     /* Styling for the main name: Light Blue color */
     /*color: #4dc2e6;  Approximate blue color from image */
 	color: #333;
-    font-size: 2.8em; /* Adjust size to fit your design */
+    font-size: 1em; /* Adjust size to fit your design */
     font-weight: 700;
     /* Using generic sans-serif stack for compatibility. Consider loading webfonts like Inter or Segoe UI for closer match to Microsoft Aptos */
     font-family: Arial, Helvetica, sans-serif;
@@ -53,7 +54,7 @@ section{
     /* Styling for the tagline: Dark Gray color */
     color: #069AD9; 	/* Approximate dark gray color from image */
     /*font-size: 0.9em; 	 Smaller size for the tagline */
-	style="font-size: 1.2rem;
+	font-size: 0.5em;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 5px; /* Space between name and tagline */
