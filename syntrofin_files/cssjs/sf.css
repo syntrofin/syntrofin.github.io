@@ -38,7 +38,7 @@ section{
     display: block; 
 	  /* Ensures the image aligns to the start (left) of the container */
     place-self: start; 
-    margin: 0; /* Clears any conflicting margins */
+    margin: 0 auto 15px 0 !important; 
 }
 
 /* Tagline Styling */
