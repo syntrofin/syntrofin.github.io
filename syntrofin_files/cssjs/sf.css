@@ -24,7 +24,8 @@ section{
 .header-container {
     display: flex;
     flex-direction: column; /* Stacks top and tagline rows */
-    padding: 1rem;
+	max-width: 1100px;
+    padding: 0 20px;
 }
 
 /* The top row uses flexbox for horizontal alignment */
