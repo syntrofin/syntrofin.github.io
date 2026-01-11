@@ -33,7 +33,8 @@ section{
 	font-size: 0.4em;
 }
 .logo {
-	font-size: 1em;
+	height: 1em;
+	width: auto;
 }
 
 /* Switches to 3-column row on screens 768px and wider */
