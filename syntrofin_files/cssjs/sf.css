@@ -27,7 +27,7 @@ section{
 
   .logo-icon {
     /* Adjust the logo size as needed */
-    width: 60px;
+    width: 1em;
     height: auto;
   }
 
@@ -40,7 +40,8 @@ section{
 
   .company-name {
     /* Styling for the main name: Light Blue color */
-    color: #4dc2e6; /* Approximate blue color from image */
+    /*color: #4dc2e6;  Approximate blue color from image */
+	  color: #333
     font-size: 2.8em; /* Adjust size to fit your design */
     font-weight: 700;
     /* Using generic sans-serif stack for compatibility. Consider loading webfonts like Inter or Segoe UI for closer match to Microsoft Aptos */
@@ -50,7 +51,7 @@ section{
 
   .tagline {
     /* Styling for the tagline: Dark Gray color */
-    color: #333333; /* Approximate dark gray color from image */
+    color: #069AD9; /* Approximate dark gray color from image */
     font-size: 0.9em; /* Smaller size for the tagline */
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
@@ -73,7 +74,7 @@ section{
 .nav-link {
     text-decoration: none;   /* Removes the default underline (visible in image) */
     /* color: #0176d3;           Your desired link color */
-	color: #666;
+	color: #46B0E1;
     font-weight: 500;        /* Good weight for readability */
     padding: 5px 0;          /* Adds some clickable space */
     transition: color 0.3s ease; /* Smooth color change on hover */
