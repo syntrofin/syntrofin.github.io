@@ -61,7 +61,6 @@ section{
     list-style: none;        /* Removes the bullet points (visible in image) */
     margin: 0;               /* Removes default margin */
     padding: 0;              /* Removes default padding */
-	font-size: 0.4em;
 }
 
 .nav-item {
