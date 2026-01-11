@@ -38,7 +38,7 @@ section{
 
 /* Logo Sizing */
 .logo { 
-    height: 57px; 
+    height: 64px; 
     aspect-ratio: auto; 
     display: block; 
 	  /* Ensures the image aligns to the start (left) of the container */
