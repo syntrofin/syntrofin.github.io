@@ -16,14 +16,14 @@ section{
 }
 /* HEADER - Logo Left, Menu Right */
 /* Container defaults to vertical stacking for mobile */
+.header {
+	  gap: 15px;
+  padding: 15px;
+	font-size: 36px;
+}
 .responsive-header {
   display: flex;
   flex-direction: column; 
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-  padding: 15px;
-	font-size: 36px;
 }
 
 .col {
@@ -49,7 +49,7 @@ section{
   }
 
   .logo { text-align: left; }
-  .tagline { text-align: center; }
+  .tagline { text-align: left; }
   .menu { text-align: right; }
 }
 
