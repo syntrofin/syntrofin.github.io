@@ -28,6 +28,41 @@
 	
 	 <!-- CSS -->
 	 <link href="./syntrofin_files/cssjs/sf.css" rel="stylesheet">
+	  <script>
+
+		  .logo {
+  display: flex;
+  align-items: baseline; /* critical */
+  gap: 0.5em; /* ≈ width of letter “o” */
+}
+
+.logo-icon {
+  height: 1em;          /* MATCHES capital S height */
+  width: auto;
+}
+
+.logo-text {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Caret styling */
+.caret-o {
+  position: relative;
+  display: inline-block;
+}
+
+.caret-o .hat {
+  position: absolute;
+  top: -0.7em;          /* raises caret above Unicode */
+  left: 0;
+  font-size: 0.7em;
+  line-height: 1;
+}
+
+	  </script>
 
 </head>
 <body>
@@ -35,11 +70,31 @@
 <nav class="navbar navbar-light" id="mainNav" style="background-color: white; padding: 5px 0;">
   <div class="container2 d-flex align-items-center justify-content-between">
     
-    <!-- Logo & Text Branding -->
+    <!-- Logo & Text Branding 
+	
     <div class="logo-and-header">
-      <img class="logo-icon" src="./syntrofin_files/img/syntrofinlogor1.png" alt="Logo" > 
-      <div class="text-wrapper">
-        <div class="company-name"><span style="color: #333;">Syntro</span><span style="color: #A76D16;">Fin</span></div>
+    	<img class="logo-icon" src="./syntrofin_files/img/syntrofinlogor1.png" alt="Logo" > 
+      	<div class="text-wrapper">
+   
+		  	<div class="wordmark">
+			  	Synt
+  				<span style="position: relative; display: inline-block;">
+    				o
+						<span style="position: absolute; top: -0.7em; left: 0; font-size: 0.7em;">
+							^
+						</span>
+  				</span>
+			  &nbsp;Fin
+		</div>
+	  -->
+		<div class="logo">
+  <img src="logo-icon.png" alt="Syntro Fin Icon" class="logo-icon">
+  <span class="logo-text">
+    Synt<span class="caret-o">o<span class="hat">^</span></span> Fin
+  </span>
+</div>
+
+			
 		 <!-- Old logo light blue color
 		<div class="company-name">Syntro<span style="color: #A76D16; #46b0e1;">Fin</span></div>
 		  -->
