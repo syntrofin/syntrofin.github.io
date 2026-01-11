@@ -33,19 +33,20 @@ section{
 
 /* Logo Sizing */
 .logo { 
-    height: 36px; /* Use specific pixel size if you want a fixed size */
+    height: 36px; 
     aspect-ratio: auto; 
     display: block; 
+    margin-right: auto; /* Forces left alignment in flex container */
 }
 
 /* Tagline Styling */
 .tagline { 
-    font-size: 1rem; /* Clear, readable size */
+    font-size: 1rem; 
     opacity: 0.8;
     text-align: left; /* Aligns with the logo */
 }
 
-/* Menu (Your previous styles, slightly cleaned up) */
+/* Menu (Your previous styles) */
 .nav {
     display: flex;          
     list-style: none;       
@@ -54,7 +55,7 @@ section{
 }
 
 .nav-item {
-    margin-left: 1.5rem; /* Spacing between menu links */
+    margin-left: 1.5rem; 
 }
 
 .nav-link {
