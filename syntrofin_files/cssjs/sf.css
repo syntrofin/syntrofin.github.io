@@ -151,6 +151,13 @@ img {
     margin: 0 auto;
 }
 
+/* container2a image Sizing */
+.img_mshrink { 
+    width: 100%; 
+	border-radius: 15px;
+    aspect-ratio: auto; 
+}
+
 /* Big Action Buttons */
 .ambergoldbutton {
     /* Glowing bronze center to deep burnished edge */
@@ -341,5 +348,10 @@ footer p {
 		place-self: center;
 		margin: 0 auto !important;
 	}
+	.img_mshrink { 
+    width: 50%; 
+	border-radius: 15px;
+    aspect-ratio: auto; 
+}
 	
 }
