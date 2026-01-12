@@ -322,13 +322,15 @@ footer p {
     .header-top {
         flex-direction: column; /* Stacks logo and menu on mobile */
     }
+	/* testing hiding nav  
     .nav-item {
-        margin-left: 5px; /* Optional: remove spacing between menu items on mobile */
+        margin-left: 5px; 
         margin-top: 10px;
     }
 	.nav-link, .nav-link:hover, .nav-link:focus { 
 	color: #D3D3D3 !important;
 	}
+	*/
 	.nav {
 		display: none;
 	}
