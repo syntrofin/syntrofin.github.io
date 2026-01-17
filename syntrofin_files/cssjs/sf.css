@@ -301,6 +301,51 @@ footer {
     border-top: 1px solid #eee; /* A subtle line separating it from the main page */
 }
 
+.feature-row {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 40px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        min-height: 400px;
+    }
+
+    /* Text Crayons */
+    .content-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
+    .content-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+    
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { 
+        margin-bottom: 15px; 
+        padding-left: 30px; 
+        position: relative; 
+        color: #1e293b;
+    }
+    
+    /* The "Bullet" Crayon - a nice blue accent */
+    .feature-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+    }
+
+    /* Image Crayon */
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    }
+
+    /* Mobile handling for the Master Brain */
+    @media (max-width: 768px) {
+
+    }
+
+
+
 footer p {
     margin: 0;                  /* Removes default paragraph margin for perfect centering */
     font-size: 0.85rem;         /* Keeps the text concise and readable */
@@ -352,6 +397,8 @@ footer p {
     width: 50%; 
 	border-radius: 15px;
     aspect-ratio: auto; 
-}
+	}
+	.feature-row { flex-direction: column; text-align: center; padding: 20px; }
+    .feature-list li { text-align: left; }
 	
 }
