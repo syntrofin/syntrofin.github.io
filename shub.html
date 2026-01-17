@@ -8,19 +8,31 @@
 </head>
 <body>
    <a href="https://login.salesforce.com/" style="
-    display: block;        
-    width: 200px;    
-    height: 65px;
-    text-align: center;
-    margin: 150px auto 0;
-    padding: 10px 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    /* 1. Layout & Vertical Alignment */
+    display: flex;
+    align-items: center;      /* Vertically centers text */
+    justify-content: center;   /* Horizontally centers text */
+    
+    /* 2. Positioning & Size */
+    width: 220px;
+    height: 60px;
+    margin: 150px auto 0;      /* Big gap from top and horizontally centered */
+    
+    /* 3. Subtle Shadow Effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    
+    /* 4. Styling */
+    background-color: #ffffff;
+    color: #333333;
     text-decoration: none;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-">SHub</a>
+    border-radius: 12px;
+    font-family: sans-serif;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+">
+    SHub
+</a>
+
 
 </body>
 </html>
