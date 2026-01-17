@@ -321,10 +321,23 @@ footer {
         position: relative; 
         color: #1e293b;
     }
-    
+    .stream-list { list-style: none; padding: 0; }
+    .stream-list li { 
+        margin-bottom: 15px; 
+        padding-left: 30px; 
+        position: relative; 
+        color: #1e293b;
+    }
     /* The "Bullet" Crayon - a nice blue accent */
     .feature-list li::before {
         content: "→";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+    }
+    .stream-list li::before {
+        content: "";
         position: absolute;
         left: 0;
         color: #3b82f6;
