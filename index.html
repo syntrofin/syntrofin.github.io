@@ -111,23 +111,12 @@
   				<span style="color: #5081d9;">Streamlining RLM Mechanics</span> 
 			</h1>
 		</div>
-	<!-- 
-	<div style="text-align: center;">
-    	<img style="width: 200px; height: auto; display: block !important; margin: 0 auto !important;" alt="" src="./syntrofin_files/img/longterm.png">
-	</div>
-	-->
 	<div class="container2a">
-		  <div id="stream1" class="cell2">
-			  <img alt="" class="img_mshrink" src="./syntrofin_files/img/str3.png" class="mirror-horizontal"> 
+		<div class="container2a feature-row">
+          <div id="stream1" class="cell2"">
 		  </div>
-        	<div id="stream2" style="padding-left:20px;">
-            	<p>Your architecture gets the underlying RLM frameworks that drive sustainable and scalable growth:</p>
-            	<ul class="stream-list">
-                	<li><strong>Architect Integrity:</strong> Protecting the end-to-end lifecycle from initial lead to final billing.</li>
-                	<li><strong>Empower Operations:</strong> Streamlining back-office workflows for faster order fulfillment.</li>
-                	<li><strong>Ensure Compliance:</strong> Automating complex revenue recognition across global platforms.</li>
-            </ul>
-        	</div>
+		  <div id="stream2" class="cell2">
+		  </div>
 	</div>	
 	</section>
 	
@@ -137,20 +126,11 @@
   				<span style="color: #5081d9;">Accelerating to Peak Performance</span> <!--#6FA8DC-->
 			</h1>
 		</div>
-		
 		<div class="container2a feature-row">
-          <div id="accelerate1" class="cell2" style="text-align: center; ">
-          	 <p style="padding-right:20px; text-align: left;">
-				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
-				 Our approach includes rigorous DevOps and release governance frameworks to ensure predictable platform optimization.
-				 We empower your organization by aligning technology with the right talent and processes, driving massive gains in sales team productivity and 
-				 improving customer retention through harmonized data. We provide the strategic oversight to rationalize fragmented ecosystems, 
-				 ensuring technical resilience and predictable, sustainable growth.
-			  </p>
+          <div id="accelerate1" class="cell2">
 		  </div>
 
-			<div id="accelerate2" class="cell2">
-			  <img alt="sameImage" class="img_mshrink"  src="./syntrofin_files/img/acc4.png">  
+		  <div id="accelerate2" class="cell2">
 		  </div>
 	</div>	
 	<br>
@@ -272,20 +252,26 @@
     const query = window.matchMedia("(max-width: 768px)");
 
     function updateLayout(e) {
+		const diva = document.getElementById("stream1");
+        const divb = document.getElementById("stream2");
         const div1 = document.getElementById("accelerate1");
         const div2 = document.getElementById("accelerate2");
-        if (!div1 || !div2) return;
+		const imgStr = `<img src="./syntrofin_files/img/str3.png" class="img-fluid" alt="Analytics">`;
+		const imgAcc = `<img src="./syntrofin_files/img/acc1.png" class="img-fluid" alt="Analytics">`;
 
-        const imgHtml = `<img src="./syntrofin_files/img/acc1.png" class="img-fluid" alt="Analytics">`;
-
+		// Desktop and Mobile
+        diva.innerHTML = imgStr;
+        divb.innerHTML = RLM_MECHANICS;
+        
+		if (!div1 || !div2) return;
         if (e.matches) {
             // Mobile: Image always on top
-            div1.innerHTML = imgHtml;
+            div1.innerHTML = imgAcc;
             div2.innerHTML = PEAK_PERFORMANCE; // Or RLM_MECHANICS
         } else {
             // Desktop: Clean side-by-side
             div1.innerHTML = PEAK_PERFORMANCE;
-            div2.innerHTML = imgHtml;
+            div2.innerHTML = imgAcc;
         }
     }
 
