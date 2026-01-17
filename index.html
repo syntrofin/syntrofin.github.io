@@ -5,15 +5,60 @@
 	<!-- charset and viewport -->
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
    
-	<!-- title and description -->
+	<!--  description -->
 	<meta name="description" content="SyntroFin specializes in Quote-to-Cash (Q2C) services, streamlining processes from opportunity to billing. Fix revenue leakage and boost growth today.">
     <meta name="author" content="SyntroFin">
-	<title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
+	
 	<meta property="og:url" content="http://www.syntrofin.com">
 	<meta property="org:description" content="SyntroFin specializes in Quote-to-Cash (Q2C) services, streamlining processes from opportunity to billing. Fix revenue leakage and boost growth today.">
     <meta property="og:title" content="SyntroFin - Enterprise Revenue Life Cycle Management Services">
+
+	<!-- title  -->
+	<title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
+	
+	<!-- The Assistant is summoned here, but waits to act -->
+    <script src="script.js" defer>
+		const query = window.matchMedia("(max-width: 768px)");
+		const accDiv1 = document.getElementById("accelerate1");
+		const accDiv2 = document.getElementById("accelerate2");
+		<!-- flip Image to left and text to right on mobile -->
+		function handleDeviceChange(e) {
+  			if (e.matches) {
+    			console.log("Switched to Mobile view");
+				accDiv1.innerHTML = `
+    				<img alt="" class="img_mshrink"  src="./syntrofin_files/img/acc4.png"> 
+			`;
+			accDiv2.innerHTML = `
+    			<p style="padding-right:20px; text-align: left;">
+				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
+				 Our approach includes rigorous DevOps and release governance frameworks to ensure predictable platform optimization.
+				 We empower your organization by aligning technology with the right talent and processes, driving massive gains in sales team productivity and 
+				 improving customer retention through harmonized data. We provide the strategic oversight to rationalize fragmented ecosystems, 
+				 ensuring technical resilience and predictable, sustainable growth.
+			  </p>
+			`;
+  			} else {
+				console.log("Switched to Mobile view");
+				accDiv2.innerHTML = `
+    				<img alt="" class="img_mshrink"  src="./syntrofin_files/img/acc4.png"> 
+			`;
+			accDiv1.innerHTML = `
+    			<p style="padding-right:20px; text-align: left;">
+				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
+				 Our approach includes rigorous DevOps and release governance frameworks to ensure predictable platform optimization.
+				 We empower your organization by aligning technology with the right talent and processes, driving massive gains in sales team productivity and 
+				 improving customer retention through harmonized data. We provide the strategic oversight to rationalize fragmented ecosystems, 
+				 ensuring technical resilience and predictable, sustainable growth.
+			  </p>
+			`;
+  			}
+	}
+
+// Modern 2026 syntax for listening to media changes
+query.addEventListener("change", handleDeviceChange);
+
+	</script>
 	  
     <!-- Fav Icon -->
 	<link rel="icon" type="image/x-icon" href="./syntrofin_files/favicon/favicon.ico?v=2">
@@ -107,8 +152,7 @@
 		  <div class="cell2">
 			  <img alt="" class="img_mshrink" src="./syntrofin_files/img/str3.png" class="mirror-horizontal"> 
 		  </div>
-          <div class="cell2" style="text-align: center; ">
-			               
+          <div class="cell2" style="text-align: center; ">           
           	 <p style="padding-left:20px; text-align: left;">
 				  We move beyond platform configuration to architect the entire Quote-to-Cash (Q2C) lifecycle , 
 				  ensuring seamless process integrity from initial opportunity to final billing. 
@@ -127,11 +171,9 @@
   				<span style="color: #5081d9;">Accelerating to Peak Performance</span> <!--#6FA8DC-->
 			</h1>
 		</div>
-	<div class="container2a">
-
 		
-
-          <div class="cell2" style="text-align: center; ">
+		<div class="container2a">
+          <div id="accelerate1" class="cell2" style="text-align: center; ">
           	 <p style="padding-right:20px; text-align: left;">
 				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
 				 Our approach includes rigorous DevOps and release governance frameworks to ensure predictable platform optimization.
@@ -141,7 +183,7 @@
 			  </p>
 		  </div>
 
-			<div class="cell2">
+			<div id="accelerate2" class="cell2">
 			  <img alt="" class="img_mshrink"  src="./syntrofin_files/img/acc4.png">  
 		  </div>
 	</div>	
