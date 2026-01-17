@@ -337,7 +337,7 @@ footer {
         font-weight: bold;
     }
     .stream-list li::before {
-        content: "";
+        content: "o";
         position: absolute;
         left: 0;
         color: #3b82f6;
