@@ -18,48 +18,34 @@
 	<title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
 	
 	<!-- The Assistant is summoned here, but waits to act -->
-    <script src="script.js" defer>
-		const query = window.matchMedia("(max-width: 768px)");
-		const accDiv1 = document.getElementById("accelerate1");
-		const accDiv2 = document.getElementById("accelerate2");
-		<!-- flip Image to left and text to right on mobile -->
-		function handleDeviceChange(e) {
-  			if (e.matches) {
-    			console.log("Switched to Mobile view");
-				accDiv1.innerHTML = `
-    				<img alt="" class="img_mshrink"  src="./syntrofin_files/img/acc4.png"> 
-			`;
-			accDiv2.innerHTML = `
-    			<p style="padding-right:20px; text-align: left;">
-				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
-				 Our approach includes rigorous DevOps and release governance frameworks to ensure predictable platform optimization.
-				 We empower your organization by aligning technology with the right talent and processes, driving massive gains in sales team productivity and 
-				 improving customer retention through harmonized data. We provide the strategic oversight to rationalize fragmented ecosystems, 
-				 ensuring technical resilience and predictable, sustainable growth.
-			  </p>
-			`;
-  			} else {
-				console.log("Switched to Mobile view");
-				accDiv2.innerHTML = `
-    				<img alt="" class="img_mshrink"  src="./syntrofin_files/img/acc4.png"> 
-			`;
-			accDiv1.innerHTML = `
-    			<p style="padding-right:20px; text-align: left;">
-				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
-				 Our approach includes rigorous DevOps and release governance frameworks to ensure predictable platform optimization.
-				 We empower your organization by aligning technology with the right talent and processes, driving massive gains in sales team productivity and 
-				 improving customer retention through harmonized data. We provide the strategic oversight to rationalize fragmented ecosystems, 
-				 ensuring technical resilience and predictable, sustainable growth.
-			  </p>
-			`;
-  			}
-	}
+    <!-- 1. Load the external assistant brain -->
+	<script src="script.js" defer></script>
 
-// Modern 2026 syntax for listening to media changes
-query.addEventListener("change", handleDeviceChange);
+	<!-- 2. Provide the specific instructions -->
+	<script defer>
+    const query = window.matchMedia("(max-width: 768px)");
+    const accDiv1 = document.getElementById("accelerate1");
+    const accDiv2 = document.getElementById("accelerate2");
 
+    // Correct JS comment syntax
+    function handleDeviceChange(e) {
+        if (e.matches) {
+            accDiv1.innerHTML = `<img alt="Mobile View" class="img_mshrink" src="./syntrofin_files/img/acc4.png">`;
+            accDiv2.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration to architect the entire Quote-to-Cash (Q2C) lifecycle, ensuring seamless process integrity from initial opportunity to final billing. We align Sales Operations to accelerate quoting and deal closure, optimize Order Management for faster fulfillment, and synchronize Finance processes for compliant revenue recognition (ASC 606/IFRS 15). Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ solutions with your existing ERP and custom platforms to drive sustainable, scalable growth.</p>
+			`;
+        } else {
+            console.log("Desktop view active");
+            accDiv2.innerHTML = `<img alt="Desktop View" class="img_mshrink" src="./syntrofin_files/img/acc4.png">`;
+            accDiv1.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration to architect the entire Quote-to-Cash (Q2C) lifecycle, ensuring seamless process integrity from initial opportunity to final billing. We align Sales Operations to accelerate quoting and deal closure, optimize Order Management for faster fulfillment, and synchronize Finance processes for compliant revenue recognition (ASC 606/IFRS 15). Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ solutions with your existing ERP and custom platforms to drive sustainable, scalable growth.</p>
+			`;
+        }
+    }
+    // Tell the assistant to watch for changes
+    query.addEventListener("change", handleDeviceChange);
+    // Call it once immediately to set the initial state
+    handleDeviceChange(query);
 	</script>
-	  
+ 
     <!-- Fav Icon -->
 	<link rel="icon" type="image/x-icon" href="./syntrofin_files/favicon/favicon.ico?v=2">
 	<link rel="shortcut icon" type="image/x-icon" href="./syntrofin_files/favicon/favicon.ico?v=2">
@@ -161,7 +147,8 @@ query.addEventListener("change", handleDeviceChange);
 				  Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ 
 				  solutions with your existing ERP and custom platforms to drive sustainable, scalable growth.
 			  </p>
-		  </div>
+
+		</div>
 	</div>	
 	</section>
 	
