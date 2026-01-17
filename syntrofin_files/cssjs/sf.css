@@ -309,6 +309,14 @@ footer {
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         min-height: 400px;
     }
+.stream-row {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 40px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        min-height: 400px;
+    }
 
     /* Text Crayons */
     .content-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
@@ -412,6 +420,8 @@ footer p {
     aspect-ratio: auto; 
 	}
 	.feature-row { flex-direction: column; text-align: center; padding: 20px; }
+	.stream-row { flex-direction: column; text-align: center; padding: 20px; }
     .feature-list li { text-align: left; }
+	.stream-list li { text-align: left; }
 	
 }
