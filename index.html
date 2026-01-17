@@ -18,11 +18,8 @@
 	<title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
 	
 	<!-- The Assistant is summoned here, but waits to act -->
-    <!-- 1. Load the external assistant brain -->
-	<script src="script.js" defer></script>
-
-	<!-- 2. Provide the specific instructions -->
 	<script defer>
+	// Provide the specific instructions 
     const query = window.matchMedia("(max-width: 768px)");
     const accDiv1 = document.getElementById("accelerate1");
     const accDiv2 = document.getElementById("accelerate2");
@@ -35,7 +32,7 @@
 			`;
         } else {
             console.log("Desktop view active");
-            accDiv2.innerHTML = `<img alt="Desktop View" class="img_mshrink" src="./syntrofin_files/img/acc3.png">`;
+            accDiv2.innerHTML = `<img alt="Desktop View" class="img_mshrink" src="./syntrofin_files/img/acc1.png">`;
             accDiv1.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration to architect the entire Quote-to-Cash (Q2C) lifecycle, ensuring seamless process integrity from initial opportunity to final billing. We align Sales Operations to accelerate quoting and deal closure, optimize Order Management for faster fulfillment, and synchronize Finance processes for compliant revenue recognition (ASC 606/IFRS 15). Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ solutions with your existing ERP and custom platforms to drive sustainable, scalable growth.</p>
 			`;
         }
