@@ -17,32 +17,6 @@
 	<!-- title  -->
 	<title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
 	
-	<!-- The Assistant is summoned here, but waits to act -->
-	<script defer>
-	// Provide the specific instructions 
-    const query = window.matchMedia("(max-width: 768px)");
-    const accDiv1 = document.getElementById("accelerate1");
-    const accDiv2 = document.getElementById("accelerate2");
-
-    // Correct JS comment syntax
-    function handleDeviceChange(e) {
-        if (e.matches) {
-            accDiv1.innerHTML = `<img alt="Mobile View" class="img_mshrink" src="./syntrofin_files/img/acc3.png">`;
-            accDiv2.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration to architect the entire Quote-to-Cash (Q2C) lifecycle, ensuring seamless process integrity from initial opportunity to final billing. We align Sales Operations to accelerate quoting and deal closure, optimize Order Management for faster fulfillment, and synchronize Finance processes for compliant revenue recognition (ASC 606/IFRS 15). Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ solutions with your existing ERP and custom platforms to drive sustainable, scalable growth.</p>
-			`;
-        } else {
-            console.log("Desktop view active");
-            accDiv2.innerHTML = `<img alt="Desktop View" class="img_mshrink" src="./syntrofin_files/img/acc1.png">`;
-            accDiv1.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration to architect the entire Quote-to-Cash (Q2C) lifecycle, ensuring seamless process integrity from initial opportunity to final billing. We align Sales Operations to accelerate quoting and deal closure, optimize Order Management for faster fulfillment, and synchronize Finance processes for compliant revenue recognition (ASC 606/IFRS 15). Our architecture governance secures the entire ecosystem, unifying Salesforce Revenue Cloud and CPQ solutions with your existing ERP and custom platforms to drive sustainable, scalable growth.</p>
-			`;
-        }
-    }
-    // Tell the assistant to watch for changes
-    query.addEventListener("change", handleDeviceChange);
-    // Call it once immediately to set the initial state
-    handleDeviceChange(query);
-	</script>
- 
     <!-- Fav Icon -->
 	<link rel="icon" type="image/x-icon" href="./syntrofin_files/favicon/favicon.ico?v=2">
 	<link rel="shortcut icon" type="image/x-icon" href="./syntrofin_files/favicon/favicon.ico?v=2">
@@ -263,6 +237,38 @@
 
 <!--Footer style="background-color: #032d60" -->
 <footer ><p>SyntroFin © All Rights Reserved. Salesforce and Revenue Cloud are trademarks belonging to Salesforce Inc.</p></footer>
+
+<script>
+    const query = window.matchMedia("(max-width: 768px)");
+
+    function handleDeviceChange(e) {
+        // Find the rooms ONLY when it's time to change them
+        const accDiv1 = document.getElementById("accelerate1");
+        const accDiv2 = document.getElementById("accelerate2");
+
+        // Safety check: if the rooms don't exist yet, wait
+        if (!accDiv1 || !accDiv2) {
+            console.error("Assistant Error: Rooms 'accelerate1' or 'accelerate2' not found!");
+            return;
+        }
+
+        if (e.matches) {
+            console.log("Mobile view active");
+            accDiv1.innerHTML = `<img alt="Mobile View" class="img_mshrink" src="./syntrofin_files/img/acc3.png">`;
+            accDiv2.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration...</p>`;
+        } else {
+            console.log("Desktop view active");
+            accDiv2.innerHTML = `<img alt="Desktop View" class="img_mshrink" src="./syntrofin_files/img/acc1.png">`;
+            accDiv1.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration...</p>`;
+        }
+    }
+
+    // Tell the assistant to watch for FUTURE changes
+    query.addEventListener("change", handleDeviceChange);
+
+    // Call it once IMMEDIATELY to check the current room status on load
+    handleDeviceChange(query);
+</script>
 
 </body>
 </html>
