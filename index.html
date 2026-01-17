@@ -141,7 +141,7 @@
 			</h1>
 		</div>
 		
-		<div class="container2a">
+		<div id="accelerate-section" class="container2a feature-row">
           <div id="accelerate1" class="cell2" style="text-align: center; ">
           	 <p style="padding-right:20px; text-align: left;">
 				We define the architectural blueprints necessary to scale your business confidently, supporting aggressive market expansion and product innovation. 
@@ -249,46 +249,61 @@
 <!--Footer style="background-color: #032d60" -->
 <footer ><p>SyntroFin © All Rights Reserved. Salesforce and Revenue Cloud are trademarks belonging to Salesforce Inc.</p></footer>
 
+<div id="accelerate-section" class="feature-row">
+    <div id="accelerate1"></div>
+    <div id="accelerate2"></div>
+</div>
+
 <script>
+    // Content for Header 1: Streamlining RLM Mechanics
+    const RLM_MECHANICS = `
+        <div class="content-box">
+            <h3>Streamlining RLM Mechanics</h3>
+            <p>We architect the underlying RLM frameworks that drive sustainable and scalable growth:</p>
+            <ul class="feature-list">
+                <li><strong>Architect Integrity:</strong> Protecting the end-to-end lifecycle from initial lead to final billing.</li>
+                <li><strong>Empower Operations:</strong> Streamlining back-office workflows for faster order fulfillment.</li>
+                <li><strong>Ensure Compliance:</strong> Automating complex revenue recognition across global platforms.</li>
+            </ul>
+        </div>`;
+
+    // Content for Header 2: Accelerating to Peak Performance
+    const PEAK_PERFORMANCE = `
+        <div class="content-box">
+            <h3>Accelerating to Peak Performance</h3>
+            <p>We move beyond simple configuration to unify and optimize your entire revenue ecosystem:</p>
+            <ul class="feature-list">
+                <li><strong>Boost Sales Velocity:</strong> Aligning operations to accelerate quoting and deal closure.</li>
+                <li><strong>Optimize Fulfillment:</strong> Orchestrating seamless management for zero-friction delivery.</li>
+                <li><strong>Financial Precision:</strong> Synchronizing real-time finance processes for audit-ready results.</li>
+            </ul>
+        </div>`;
+
     const query = window.matchMedia("(max-width: 768px)");
 
-    function handleDeviceChange(e) {
-        // Find the rooms ONLY when it's time to change them
-        const accDiv1 = document.getElementById("accelerate1");
-        const accDiv2 = document.getElementById("accelerate2");
+    function updateLayout(e) {
+        const div1 = document.getElementById("accelerate1");
+        const div2 = document.getElementById("accelerate2");
+        if (!div1 || !div2) return;
 
-        // Safety check: if the rooms don't exist yet, wait
-        if (!accDiv1 || !accDiv2) {
-            console.error("Assistant Error: Rooms 'accelerate1' or 'accelerate2' not found!");
-            return;
-        }
+        const imgHtml = `<img src="./syntrofin_files/img/acc1.png" class="img-fluid" alt="Analytics">`;
 
         if (e.matches) {
-            console.log("Mobile view active");
-            accDiv1.innerHTML = `<img alt="Mobile View" class="img_mshrink" src="./syntrofin_files/img/acc3.png">`;
-            accDiv2.innerHTML = `<p style="padding-left:20px; text-align: left;">We move beyond platform configuration...</p>`;
+            // Mobile: Image always on top
+            div1.innerHTML = imgHtml;
+            div2.innerHTML = PEAK_PERFORMANCE; // Or RLM_MECHANICS
         } else {
-            console.log("Desktop view active");
-            accDiv2.innerHTML = `<img alt="Desktop View" class="img_mshrink" src="./syntrofin_files/img/acc1.png">`;
-            accDiv1.innerHTML = `
-			            <div class="q2c-text">
-                <h3>Architecting Quote-to-Cash</h3>
-                <p>We move beyond simple configuration to unify your entire revenue ecosystem:</p>
-                <ul class="q2c-list">
-                    <li><strong>Accelerate Quoting:</strong> Aligning sales ops for faster deal closures.</li>
-                    <li><strong>Optimize Fulfillment:</strong> Seamless Order Management from opportunity to billing.</li>
-                    <li><strong>Ensure Compliance:</strong> Synchronized revenue recognition (ASC 606/IFRS 15).</li>
-                </ul>
-            </div>`;
+            // Desktop: Clean side-by-side
+            div1.innerHTML = PEAK_PERFORMANCE;
+            div2.innerHTML = imgHtml;
         }
     }
 
-    // Tell the assistant to watch for FUTURE changes
-    query.addEventListener("change", handleDeviceChange);
-
-    // Call it once IMMEDIATELY to check the current room status on load
-    handleDeviceChange(query);
+    // Initialize and Listen
+    query.addEventListener("change", updateLayout);
+    updateLayout(query);
 </script>
+
 
 </body>
 </html>
