@@ -295,23 +295,24 @@ img {
     margin-bottom: 5px;
 }
 .stackedcard-container {
-    display: flex; /* Uses Flexbox for easy column layout */
-    gap: -5px; /* Adds space between the cards */
-    padding: 20px;
-    /* This makes sure content wraps on small screens */
+    display: flex;
+    flex-direction: row; 
     flex-wrap: wrap; 
-	 flex-direction: row; 
+    gap: 15px; /* Use a positive number */
+    padding: 20px;
+    align-items: flex-start; /* Keeps the top-margin offsets working correctly */
 }
 
 .stackedcard {
-    flex: 1 1 300px; /* Grow, shrink, and start at 300px basis */
+    /* Change 300px to a percentage like 30% to force them to stay side-by-side */
+    flex: 1 1 calc(33.333% - 20px); 
     background-color: #f9f9f9;
     border-radius: 8px;
-    padding-left: 20px;
+    padding: 20px; /* Changed from padding-left to full padding for better look */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    /* Remove or increase max-width if you want them to fill the desktop width */
-    max-width: 100%; 
+    box-sizing: border-box; /* Ensure padding doesn't add to the width */
 }
+
 
 .stackedcard-title {
     color: #007bff; /* Example accent color */
