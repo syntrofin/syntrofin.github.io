@@ -296,7 +296,7 @@ img {
 }
 .stackedcard-container {
     display: flex; /* Uses Flexbox for easy column layout */
-    gap: 20px; /* Adds space between the cards */
+    gap: 0px; /* Adds space between the cards */
     padding: 20px;
     /* This makes sure content wraps on small screens */
     flex-wrap: wrap; 
@@ -317,7 +317,7 @@ img {
     flex: 1 1 300px; /* Grow, shrink, and start at 300px basis */
     background-color: #f9f9f9;
     border-radius: 8px;
-	padding: 0px;
+	padding-left: 40px;
     padding-top: 50px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     /* Remove or increase max-width if you want them to fill the desktop width */
