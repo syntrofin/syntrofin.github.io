@@ -317,8 +317,8 @@ img {
     flex: 1 1 300px; /* Grow, shrink, and start at 300px basis */
     background-color: #f9f9f9;
     border-radius: 8px;
-	margin-left: 20px;
-    margin-top: 50px;
+	margin-top: 50px;
+	padding-left: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     /* Remove or increase max-width if you want them to fill the desktop width */
     max-width: 100%; 
