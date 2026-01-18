@@ -443,7 +443,7 @@ footer p {
     .stackedcard {
         flex: none; /* Resets flex properties for full width */
         max-width: 100%; /* Ensures cards take up full mobile width */
-		margin-top: 0px;
+		margin-top: 0px !important;
     }
 	.logo{
 		place-self: center;
