@@ -324,14 +324,19 @@ footer {
         align-items: center;
         gap: 20px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        min-height: 400px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+        /* min-height: 400px; */
     }
+
 .stream-row {
         display: flex;
         align-items: center;
         gap: 20px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        min-height: 400px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+        /* min-height: 400px; */
     }
 
     /* Text Crayons */
