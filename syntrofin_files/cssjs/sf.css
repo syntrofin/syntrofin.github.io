@@ -330,8 +330,8 @@ footer {
 .stream-row {
         display: flex;
         align-items: center;
-        gap: 50px;
-        padding: 40px;
+        gap: 20px;
+        padding: 20px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         min-height: 400px;
     }
