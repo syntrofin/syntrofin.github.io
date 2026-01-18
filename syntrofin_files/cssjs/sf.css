@@ -307,18 +307,7 @@ img {
     flex: 1 1 300px; /* Grow, shrink, and start at 300px basis */
     background-color: #f9f9f9;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    /* Remove or increase max-width if you want them to fill the desktop width */
-    max-width: 100%; 
-}
-
-.stackedcard2 {
-    flex: 1 1 300px; /* Grow, shrink, and start at 300px basis */
-    background-color: #f9f9f9;
-    border-radius: 8px;
-	margin-top: 50px;
-	padding-left: 20px;
+    padding-left: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     /* Remove or increase max-width if you want them to fill the desktop width */
     max-width: 100%; 
@@ -454,6 +443,7 @@ footer p {
     .stackedcard {
         flex: none; /* Resets flex properties for full width */
         max-width: 100%; /* Ensures cards take up full mobile width */
+		margin-top: 0px;
     }
 	.logo{
 		place-self: center;
