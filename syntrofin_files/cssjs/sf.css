@@ -304,13 +304,13 @@ img {
 }
 
 .stackedcard {
-    flex: 1; /* Makes each card grow equally on desktop */
+    flex: 1 1 300px; /* Grow, shrink, and start at 300px basis */
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    /* Ensures text is readable by limiting width on larger screens */
-    max-width: 400px; 
+    /* Remove or increase max-width if you want them to fill the desktop width */
+    max-width: 100%; 
 }
 
 .stackedcard-title {
