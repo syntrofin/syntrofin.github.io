@@ -339,9 +339,9 @@ footer {
         /* min-height: 400px; */
     }
 
-    /* Text Crayons */
-    .content-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
-    .content-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+	.service-box {background-color: #f9f9f9;}
+    .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
+    .service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
     
     .feature-list { list-style: none; padding: 0; }
     .feature-list li { 
