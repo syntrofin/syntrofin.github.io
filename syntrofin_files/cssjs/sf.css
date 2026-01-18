@@ -310,6 +310,7 @@ img {
     color: #565656; /* Example accent color */
     margin-bottom: 15px;
     font-size: 1.2em;
+	font-weight: 300;
 }
 footer {
     background-color: #f4f4ff;  /* A very light blue/grey background */
