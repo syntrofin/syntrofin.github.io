@@ -48,14 +48,6 @@ section{
     margin: 0 auto 5px 0 !important; 
 }
 
-/* Tagline Styling */
-.tagline { 
-    font-size: 1rem; 
-    opacity: 0.8;
-    text-align: left; /* Aligns with the logo */
-	color: #d1e6ee;
-}
-
 /* Menu (Your previous styles) */
 .nav {
     display: flex;          
@@ -138,11 +130,11 @@ section{
 	box-sizing: border-box;
 }
 
-.cell2center {
+.center50 {
     width: 50%;
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 50%; /* Your existing ceiling */
+    max-width: 50%; 
 	text-align: center;
 }
 
@@ -408,6 +400,9 @@ footer p {
 }
 
 /* HELPERS */
+.heroslogan{ font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
+.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
+}
 .left { text-align: left; }
 .center { text-align: center; }
 .right { text-align: right; }
@@ -445,6 +440,7 @@ footer p {
         flex: none; /* Resets flex properties for full width */
         max-width: 100%; /* Ensures cards take up full mobile width */
 		margin-top: 0px !important;
+		border-top: none !important;
 		border-radius: 8px;
     }
 	.logo{
@@ -460,5 +456,6 @@ footer p {
 	.stream-row { flex-direction: column; text-align: center; padding: 20px; }
     .feature-list li { text-align: left; }
 	.stream-list li { text-align: left; }
+	.heroslogan{ font-size: 2.5rem;}
 	
 }
