@@ -294,7 +294,29 @@ img {
     color: #666;
     margin-bottom: 5px;
 }
+.stackedcard-container {
+    display: flex; /* Uses Flexbox for easy column layout */
+    gap: 20px; /* Adds space between the cards */
+    padding: 20px;
+    /* This makes sure content wraps on small screens */
+    flex-wrap: wrap; 
+}
 
+.stackedcard {
+    flex: 1; /* Makes each card grow equally on desktop */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    /* Ensures text is readable by limiting width on larger screens */
+    max-width: 400px; 
+}
+
+.stackedcard-title {
+    color: #007bff; /* Example accent color */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
 footer {
     background-color: #f4f4ff;  /* A very light blue/grey background */
     padding: 30px 20px;         /* Generous space above and below text */
@@ -411,6 +433,15 @@ footer p {
 	}
 	.container2a {
         flex-direction: column; /* Stacks logo and menu on mobile */
+    }
+	.stackedcard-container {
+        flex-direction: column; /* Stacks items vertically on mobile */
+        gap: 15px; /* Adjust spacing for mobile stacking */
+    }
+
+    .stackedcard {
+        flex: none; /* Resets flex properties for full width */
+        max-width: 100%; /* Ensures cards take up full mobile width */
     }
 	.logo{
 		place-self: center;
