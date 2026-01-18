@@ -122,7 +122,7 @@ section{
 }
 .cell2 {
     width: 100% !important;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: center; /* Centers text for a clean stack */
 	flex: 1; 
 	background-color: white;  
@@ -322,8 +322,8 @@ footer {
 .feature-row {
         display: flex;
         align-items: center;
-        gap: 50px;
-        padding: 40px;
+        gap: 20px;
+        padding: 20px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         min-height: 400px;
     }
