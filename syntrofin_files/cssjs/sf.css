@@ -322,9 +322,10 @@ img {
     font-size: 1.2em;
 	font-weight: 300;
 	text-align:center;
-	margin: 0; padding: 0;
-	padding-top: 15px;
-    padding-bottom: 12px;
+	margin: 0 auto; 
+	padding: 0;
+	padding-top: 3px;
+    padding-bottom: 2px;
 }
 footer {
     background-color: #f4f4ff;  /* A very light blue/grey background */
