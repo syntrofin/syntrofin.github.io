@@ -329,6 +329,8 @@ img {
 	padding: 0;
 	padding-top: 3px;
     padding-bottom: 2px;
+	border-top: 1px solid #727272; 
+	border-bottom: 1px solid #727272; 
 }
 footer {
     background-color: #f4f4ff;  /* A very light blue/grey background */
