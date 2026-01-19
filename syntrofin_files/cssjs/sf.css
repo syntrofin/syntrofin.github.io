@@ -301,8 +301,8 @@ img {
     display: flex;
     flex-direction: row; 
     flex-wrap: wrap; 
-    gap: 5px; /* Use a positive number */
-    padding: 5px;
+    gap: 10px; /* Use a positive number */
+    padding: 10px;
     align-items: flex-start; /* Keeps the top-margin offsets working correctly */
 }
 
@@ -311,7 +311,7 @@ img {
     flex: 1 1 calc(33.333% - 20px); 
     background-color: #f9f9f9;
     /* border-radius: 4px; */
-    padding: 5px; /* Changed from padding-left to full padding for better look */
+    padding: 10px; /* Changed from padding-left to full padding for better look */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     box-sizing: border-box; /* Ensure padding doesn't add to the width */
 }
