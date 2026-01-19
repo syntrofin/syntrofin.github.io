@@ -20,120 +20,45 @@ section{
 	padding-bottom: 32px;
 }
 /* HEADER - Logo Left, Menu Right */
-/* Container stacks the two rows vertically */
-/* Center the group within its parent */
-
 .header-container {
-    display: flex;
-    flex-direction: row; /* Stacks top and tagline rows */
+    display: flex;             /* Activates Flexbox on the main header */
+    justify-content: space-between; /* Pushes the logo/title to the left, and the menu to the far right */
+    align-items: center;       /* Vertically centers all items */
 	max-width: 1100px;
     padding: 0 20px;
 	padding-top: 10px;
+    width: 100%;               /* Ensure it uses full width to allow space-between to work */
+    margin: 0 auto;            /* Optional: Centers the entire header on a wide screen */
 }
 
+/* You can simplify .title-top now that the main container handles layout */
 .title-top {
     display: flex;
-    flex-direction: row; /* Stacks the title group above the menu */
-    align-items: center;    /* Centers everything horizontally */
-    justify-content: space-between; /* Pushes the first item (logo/title) to the start and the last item (menu) to the end */
-    padding: 0 20px;              /* Optional: Adds some breathing room on the sides */
+    align-items: center;
 }
 
-/* Center the logo and title relative to each other */
+/* Keep the rest of the styles */
 .logo-title-group {
     display: flex;
-    align-items: center;    /* Vertically aligns logo and text middle */
-    justify-content: center; /* Horizontally centers them as a unit */
-    gap: 15px;              /* Adds space between logo and text */
-    margin-bottom: 10px;    /* Space before the menu starts */
+    align-items: center;
+    gap: 15px;
 }
 
 .title-logo {
-    height: 50px;           /* Adjust size as needed */
+    height: 50px;
     width: auto;
 }
 
 .titleslogan {
-    margin: 0;              /* Removes default browser spacing */
+    margin: 0;
 }
 
-
-/* The top row uses flexbox for horizontal alignment */
-.header-top {
-    display: flex;
-    justify-content: space-between; /* Pushes logo left, menu right */
-	flex-direction: row; 
-    align-items: center;            /* Vertically centers items in this row */
-    width: 100%;
-}
-
-/* Logo Sizing */
-.logo { 
-    height: 64px; 
-    aspect-ratio: auto; 
-    display: block; 
-	  /* Ensures the image aligns to the start (left) of the container */
-    place-self: start; 
-    margin: 0 auto 5px 0 !important; 
-}
-.rev-engine-logo-1 {
-  font-family: 'Montserrat', 'Futura', 'Century Gothic', sans-serif;
-  font-size: 48px; /* Adjust size as needed */
-  font-weight: 700; /* Bold */
-  color: #333; /* Dark gray color */
-  text-transform: uppercase;
-  letter-spacing: -1px; /* Tighter spacing for a logo feel */
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.rev-engine-logo-1:hover {
-  color: #007bff; /* Change color on hover (e.g., a blue accent) */
-}
-.rev-engine-logo-2 {
-  font-family: 'Century Gothic', 'Futura', sans-serif;
-  font-size: 52px;
-  font-weight: 700; /* Bold */
-  color: #1a1a1a;
-  text-transform: capitalize; /* "RevEngine" */
-  letter-spacing: 0.5px;
-  border-bottom: 3px solid #FF5733; /* A colored line underneath */
-  padding-bottom: 5px;
-}
-
-.rev-engine-logo-3 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 44px;
-  font-weight: 300; /* Light weight for a modern look */
-  color: #000;
-  display: inline-block;
-  position: relative;
-}
-
-.rev-engine-logo-3::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #4CAF50; /* Green accent line */
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.rev-engine-logo-3:hover::after {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
-/* Menu (Your previous styles) */
 .nav {
-    display: flex;          
-    list-style: none;       
-    margin: 0;              
-    padding: 0;             
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
 }
 
 .nav-item {
