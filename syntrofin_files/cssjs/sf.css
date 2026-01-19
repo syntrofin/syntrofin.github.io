@@ -50,7 +50,7 @@ section{
 }
 
 .title-logo {
-	transform: scaleX(-1);
+	transform: scaleX(-1) rotate(-15deg);
     height: 50px;
     width: auto;
 }
