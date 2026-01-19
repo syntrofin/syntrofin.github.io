@@ -47,6 +47,20 @@ section{
     place-self: start; 
     margin: 0 auto 5px 0 !important; 
 }
+.rev-engine-logo-1 {
+  font-family: 'Montserrat', 'Futura', 'Century Gothic', sans-serif;
+  font-size: 48px; /* Adjust size as needed */
+  font-weight: 700; /* Bold */
+  color: #333; /* Dark gray color */
+  text-transform: uppercase;
+  letter-spacing: -1px; /* Tighter spacing for a logo feel */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.rev-engine-logo-1:hover {
+  color: #007bff; /* Change color on hover (e.g., a blue accent) */
+}
 
 /* Menu (Your previous styles) */
 .nav {
