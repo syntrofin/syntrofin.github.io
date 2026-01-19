@@ -317,6 +317,8 @@ img {
     padding: 10px; /* Changed from padding-left to full padding for better look */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     box-sizing: border-box; /* Ensure padding doesn't add to the width */
+	border-top: 1px solid #727272; 
+	border-bottom: 1px solid #727272; 
 }
 
 
@@ -329,8 +331,6 @@ img {
 	padding: 0;
 	padding-top: 3px;
     padding-bottom: 2px;
-	border-top: 1px solid #727272; 
-	border-bottom: 1px solid #727272; 
 }
 footer {
     background-color: #f4f4ff;  /* A very light blue/grey background */
