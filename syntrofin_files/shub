@@ -1,12 +1,113 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Redirect to another page after 0 seconds
-    <meta http-equiv="refresh" content="0; url=https://login.salesforce.com/"> 
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Tiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        .environments-container {
+            /* Use flexbox on the parent container */
+            display: flex;
+            /* Distribute available space evenly */
+            justify-content: space-between;
+            /* Allow tiles to wrap onto the next line on smaller screens */
+            flex-wrap: wrap; 
+            gap: 20px; /* Space between the tiles */
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tile {
+            /* Each tile should take up roughly one-third of the space */
+            flex: 1; 
+            min-width: 250px; /* Prevents tiles from becoming too narrow */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+            border-left: 5px solid #0076bf; /* Color bar on the left */
+        }
+
+        .tile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .environment-name {
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            /* In a real scenario, this would be an SVG or image */
+            background-color: #0076bf; 
+            border-radius: 50%;
+        }
+
+        .email, .type, .url {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .url a {
+            color: #0076bf;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
+
+    <h1>Environments (3)</h1>
+
+    <div class="environments-container">
+        <!-- Tile 1 -->
+        <div class="tile">
+            <div class="tile-header">
+                <span class="environment-name"><div class="icon"></div>Syntrofin</span>
+                <!-- Icons for favorite/edit can go here -->
+            </div>
+            <div class="email">ravi.gandavarapu@syntrofin.com</div>
+            <div class="type">Salesforce: Production</div>
+            <div class="url"><a href="https://syntrofin.my.salesforce.com">https://syntrofin.my.salesforce.com</a></div>
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="tile">
+            <div class="tile-header">
+                <span class="environment-name"><div class="icon"></div>Syntrofin LLC</span>
+            </div>
+            <div class="email">rg@syntrofin.com</div>
+            <div class="type">Salesforce: Free Edition</div>
+            <div class="url"><a href="https://syntrofinllc2-dev-ed.develop.my.salesforce.com">https://syntrofinllc2-dev-ed.develop.my.sales...</a></div>
+        </div>
+
+        <!-- Tile 3 (The new one you requested) -->
+        <div class="tile">
+            <div class="tile-header">
+                <span class="environment-name"><div class="icon"></div>New Environment</span>
+            </div>
+            <div class="email">user@example.com</div>
+            <div class="type">Salesforce: Sandbox</div>
+            <div class="url"><a href="https://newenv.my.salesforce.com">https://newenv.my.salesforce.com</a></div>
+        </div>
+    </div>
+
 </body>
 </html>
 
