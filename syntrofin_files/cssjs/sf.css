@@ -166,7 +166,7 @@ img {
 /* Big Action Buttons */
 .actionbuttondiv {
 	text-align: center;
-	padding-top:20px;
+	padding: 20px;
 }
 .ambergoldbutton {
     /* Glowing bronze center to deep burnished edge */
