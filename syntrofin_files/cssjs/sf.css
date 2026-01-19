@@ -302,7 +302,10 @@ img {
     flex-direction: row; 
     flex-wrap: wrap; 
     gap: 10px; /* Use a positive number */
-    padding: 10px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
     align-items: flex-start; /* Keeps the top-margin offsets working correctly */
 }
 
