@@ -164,6 +164,10 @@ img {
 }
 
 /* Big Action Buttons */
+.actionbuttondiv {
+	text-align: center;
+	padding-top:20px;
+}
 .ambergoldbutton {
     /* Glowing bronze center to deep burnished edge */
     background: radial-gradient(circle at center, #d49a46 0%, #a76d16 50%, #4a2f0a 100%);
