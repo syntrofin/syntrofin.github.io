@@ -35,6 +35,8 @@ section{
     display: flex;
     flex-direction: row; /* Stacks the title group above the menu */
     align-items: center;    /* Centers everything horizontally */
+    justify-content: space-between; /* Pushes the first item (logo/title) to the start and the last item (menu) to the end */
+    padding: 0 20px;              /* Optional: Adds some breathing room on the sides */
 }
 
 /* Center the logo and title relative to each other */
