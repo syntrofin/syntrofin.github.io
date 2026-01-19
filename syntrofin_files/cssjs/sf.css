@@ -34,6 +34,7 @@ section{
 /* You can simplify .title-top now that the main container handles layout */
 .title-top {
     display: flex;
+	justify-content: space-between;
     align-items: center;
 }
 
