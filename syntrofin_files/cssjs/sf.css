@@ -21,13 +21,40 @@ section{
 }
 /* HEADER - Logo Left, Menu Right */
 /* Container stacks the two rows vertically */
+/* Center the group within its parent */
+
 .header-container {
     display: flex;
-    flex-direction: column; /* Stacks top and tagline rows */
+    flex-direction: row; /* Stacks top and tagline rows */
 	max-width: 1100px;
     padding: 0 20px;
 	padding-top: 10px;
 }
+
+.title-top {
+    display: flex;
+    flex-direction: column; /* Stacks the title group above the menu */
+    align-items: center;    /* Centers everything horizontally */
+}
+
+/* Center the logo and title relative to each other */
+.logo-title-group {
+    display: flex;
+    align-items: center;    /* Vertically aligns logo and text middle */
+    justify-content: center; /* Horizontally centers them as a unit */
+    gap: 15px;              /* Adds space between logo and text */
+    margin-bottom: 10px;    /* Space before the menu starts */
+}
+
+.title-logo {
+    height: 50px;           /* Adjust size as needed */
+    width: auto;
+}
+
+.titleslogan {
+    margin: 0;              /* Removes default browser spacing */
+}
+
 
 /* The top row uses flexbox for horizontal alignment */
 .header-top {
