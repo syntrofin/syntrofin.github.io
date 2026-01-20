@@ -85,53 +85,37 @@ section{
 
 
 /* Fragmented Grid */
-.fragmented-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; 
-	grid-auto-rows: min-content; 
-    gap: 20px;
-    padding: 0 20px;
-	padding-top: 32px;
-	padding-bottom: 32px;
-    justify-content: center; 
-    align-items: start; 
-}
-
 .fragment {
-display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligns content to the top of the box */
-    align-items: center;        /* Keeps content horizontally centered */
-    align-self: start;          /* Keeps the box at the top of the grid cell */
+    /* Vertical: Aligns content to the top of the box */
+    justify-content: flex-start; 
+    /* Horizontal: Centers content inside the box */
+    align-items: center;        
+    /* Prevents the box from stretching to fill row height */
+    align-self: start;          
     padding: 15px;
     background-color: #fffeee; 
     border-radius: 4px;        
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    /* Keeps original height; rotation does not affect layout flow */
+    height: auto;
     transform: rotate(1deg);   
     transition: transform 0.2s ease-in-out; 
 }
 
 .grid-image {
-    width: 33.3%;           
+    max-width: 100%; /* Prevents image from pushing column width */
     height: auto;           
     display: block;        
     margin-bottom: 10px;    
 }
-.leftingrid { 
-    grid-column: 1;
-    text-align: left; 
-}
-.centeringrid { 
-    grid-column: 2; 
-    text-align: center; 
-}
-.rightingrid { 
-    grid-column: 3; 
-    text-align: right; 
-}
 
+/* Specific column placements */
+.leftingrid { grid-column: 1; text-align: left; }
+.centeringrid { grid-column: 2; text-align: center; }
+.rightingrid { grid-column: 3; text-align: right; }
 
-/* Optional: Add a hover effect so they move slightly when interacted with */
 .fragment:hover {
     transform: rotate(-1deg) scale(1.02);
 }
