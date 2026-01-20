@@ -60,17 +60,14 @@
     </head>
   
      <body>
-
+<h1>Event Organizing Company</h1>
 <!-- Section, Company -->
 <section id="company">
 <h2>Customer</h2>
 <!-- Customer -->
-<p class="question" id="q3">
-Customers - Paid: Event Sponors, Booths and Visitors
+<p class="question" id="qa1">
+Customer - Paid: Event Sponors, Booths and Visitors
 </p>
-    <ul class="norma">
-      <li></li>
-    </ul>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, you are moving away from a simple "sale" and toward a <strong>Revenue Lifecycle</strong>. Your three personas have very different "Journeys" and "Selling Models." </p>
     <p> Here is how you structure these three distinct flows: </p>
     <p>
@@ -234,12 +231,9 @@ Customers - Paid: Event Sponors, Booths and Visitors
     <p> Since you have both B2B (Sponsors) and high-volume (Attendees) flows, would you like me to show how <strong>RCA manages the "Order to Asset" transition</strong>for an Exhibitor who wants to reuse the same booth setup for your next event? </p>
 
 <!-- Delivery -->
-<p class="question" id="q4">
-Coming to fulfilment - Staged delivery
+<p class="question" id="qa2">
+Staged delivery
 </p>
-    <ul class="norma">
-      <li></li>
-    </ul>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RCA)</strong>, handling staged delivery for multi-event sponsorships or long-running events is significantly more robust than in legacy CPQ. You move away from "Order and forget" to a managed <strong>Lifecycle</strong>. </p>
     <p> To handle your specific scenario—where a sponsor buys two events at once but the "delivery" (marketing assets, physical booth setup, and lead reports) happens in stages—you use a combination of <strong>Dynamic Revenue Orchestrator (DRO)</strong>and <strong>Order Splitting</strong>. </p>
     <p>
@@ -498,7 +492,7 @@ Coming to fulfilment - Staged delivery
     <p> Would you like me to show you how to build a <strong>Profitability Calculation</strong>inside the <strong>Pricing Procedure</strong>that flags a quote for "Manager Approval" if the cost of the Band and Catering exceeds 40% of the Sponsorship revenue? </p>
  
     <!-- Products -->
-    <p class="question" id="q1">
+    <p class="question" id="qa3">
       Event organizer company, Products
     </p>
     <p> For an event organizer, <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability. </p>
@@ -644,8 +638,8 @@ Coming to fulfilment - Staged delivery
     <p> Would you like me to create a specific <strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume? </p>
 
          <!-- Pricing -->
-<p class="question" id="q1">      
-Price Adjustment Based on Volume
+<p class="question" id="qa4">      
+Pricing
 </p>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a <strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive <strong>Price Adjustment Matrix</strong>records. </p>
     <p> This allows you to change the unit price dynamically based on the quantity of tickets purchased without creating complex price rules. </p>
@@ -778,8 +772,8 @@ Price Adjustment Based on Volume
          
     <!-- Section, RCA Excersize -->
     <h2>RCA Excersize</h2>
-    <p class="question" id="q5"> 
-    RCA Excersize - 
+    <p class="question" id="qb1"> 
+    Quote
     </p>
     <p> To help you practice with <strong>Revenue Cloud Advanced (RCA/RLM)</strong>, let’s build out a quote for the <strong>"Spring 2026 Event - University ABC."</strong>This exercise focuses on the new object model: <strong>Product Selling Models</strong>, <strong>Attribute-Based Pricing</strong>, and <strong>Advanced Bundling</strong>. </p>
     <p>
@@ -983,7 +977,9 @@ Price Adjustment Based on Volume
       <strong>Would you like me to provide the "Decomposition Rule" logic for the "Power &amp; WiFi" product so you can see how it triggers a work order after the event ends?</strong>
     </p>
         
-    <p class="question"> yes </p>
+    <p class="question" id="qb2"> 
+       Decomposition Rule
+    </p>
     <p> To practice the <strong>Decomposition Rule</strong>logic, you need to configure how the system transforms a single "Sold Product" into specific "Execution Tasks." </p>
     <p> In <strong>Revenue Cloud Advanced (RLM)</strong>, this is handled by the <strong>Dynamic Revenue Orchestrator (DRO)</strong>. Unlike a simple workflow, DRO understands dependencies—meaning it knows you can't bill for electricity until the event is actually over. </p>
     <p>
@@ -1131,7 +1127,9 @@ Price Adjustment Based on Volume
     <p>
       <strong>Would you like me to show you the "Technical Attributes" setup? This would allow you to capture the specific "WiFi Network Name (SSID)" for the University ABC event directly on the Quote.</strong>
     </p>
-    <p class="question"> yes </p>
+    
+    <p class="question" id="qb3"> 
+        Technical Product Attributes </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -1184,7 +1182,9 @@ Price Adjustment Based on Volume
     </p>
     <p> Would you like me to show you how to structure a <strong>Price Matrix</strong>that changes the cost of the WiFi based on theMAC Address Limitattribute (e.g., $10 per extra device)? </p>
     
-    <p class="question"> Not needed, but can you procceed to order, DRO and Revrec </p>
+    <p class="question" id="qb4">  
+       Order, DRO and Revrec 
+    </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -1340,10 +1340,12 @@ Price Adjustment Based on Volume
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like to walk through a <strong>Billing Policy</strong>configuration that ties the final $10,000 payment to the "Post-Event Stats" delivery step in DRO? </p>
-    <p class="question"> yes </p>
-    <ul class="norma">
-      <li></li>
-    </ul>
+    
+   <p class="question" id="qb5"> 
+      Billing Policy 
+   </p>
+         
+
     <p> In <strong>Revenue Cloud Advanced (RCA)</strong>, tying your final invoice to a specific task in <strong>DRO</strong>is the ultimate way to ensure "Billing Accuracy." This prevents the common problem of invoicing a sponsor before you’ve actually delivered their lead reports or post-event data. </p>
     <p> For the <strong>University ABC</strong>event, here is how you would configure that <strong>Milestone-Based Billing</strong>policy: </p>
     <p>
@@ -1493,7 +1495,11 @@ Price Adjustment Based on Volume
     <p>
       <strong>Would you like me to generate a "Final Review Checklist" of the specific RLM Objects you should verify in your practice org to ensure this entire flow is airtight?</strong>
     </p>
-    <p class="question"> yes </p>
+         
+    <p class="question" id="qb6"> 
+       RLM Objects
+    </p>
+         
     <p> To wrap up your <strong>Revenue Cloud Advanced (RLM)</strong>practice for the <strong>University ABC</strong>event, here is your structural checklist. Verifying these objects ensures your architecture can handle the complex "Quote-to-Cash" lifecycle you've designed. </p>
     <p>
       <strong>The RLM Architecture Checklist</strong>
@@ -1536,7 +1542,11 @@ Price Adjustment Based on Volume
     <p>
       <strong>Would you like me to help you draft the "Business Requirements Document" (BRD) snippet for this University ABC project that you could use to explain this architecture to a stakeholder?</strong>
     </p>
-    <p class="question"> yes </p>
+
+    <h2>Business Requirements</h2>
+    <p class="question" id="qc1">  
+        BRD 
+    </p>
     <p> To help you communicate the value of this architecture to a stakeholder (like a Program Director or CFO), here is a professional <strong>Business Requirements Document (BRD)</strong>snippet. This summarizes how <strong>Salesforce Revenue Cloud Advanced</strong>solves the specific challenges of your event business. </p>
     <p>
       <strong>Project: University ABC Expo - Revenue Lifecycle Transformation</strong>
@@ -1661,7 +1671,11 @@ Price Adjustment Based on Volume
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you are a <strong>Principal Architect</strong>, would you like me to create the <strong>"System Context Diagram"</strong>description that shows how this RLM setup interacts with an external <strong>ERP (like SAP)</strong>for the "Live Band" and "Catering" procurement? </p>
-    <p class="question"> yes </p>
+    
+    <p class="question" id="qc2"> 
+           System Context Diagram
+    </p>
+         
     <p> To complete your architectural vision, here is the <strong>System Context Diagram</strong>and integration strategy. This shows how <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>serves as the "Commercial Hub," while the <strong>ERP (e.g., SAP or Oracle)</strong>acts as the "Execution Hub" for procurement and costs. </p>
     <p>
       <strong>System Context: The RLM-ERP Bridge</strong>
@@ -1801,7 +1815,12 @@ Price Adjustment Based on Volume
       <strong>What's next for your practice?</strong>
     </p>
     <p> Now that the architecture is defined, would you like me to help you write a <strong>UAT (User Acceptance Testing) Script</strong>to verify that a "Canceled Event" in Salesforce correctly triggers a "Stop Payment" request in the ERP? </p>
-    <p class="question"> yes </p>
+
+         
+    <p class="question" id="qc3"> 
+       User Acceptance Test
+    </p>
+         
     <p> To test the robustness of your <strong>Salesforce RLM</strong>and <strong>ERP</strong>integration, your <strong>User Acceptance Testing (UAT)</strong>needs to focus on the "Failure Paths"—specifically how a cancellation or change in the event scope propagates through the financial and fulfillment layers. </p>
     <p> Here is a structured UAT script designed for a Principal Architect to verify the <strong>University ABC</strong>event flow. </p>
     <p>
@@ -1946,7 +1965,10 @@ Price Adjustment Based on Volume
     <p>
       <strong>Would you like me to help you summarize these "Lessons Learned" into a professional "Project Portfolio" blurb that you can use to showcase your expertise in Revenue Cloud Advanced?</strong>
     </p>
-    <p class="question"> yes </p>
+         
+    <p class="question" id="qc4"> 
+       Lessons Learned
+    </p>
     <p> To help you showcase this architectural deep-dive, here is a professional <strong>Project Portfolio Summary</strong>. This is designed to highlight your ability to handle the "New Generation" of Salesforce Quote-to-Cash (RLM) while solving real-world business complexities like staged fulfillment and ERP synchronization. </p>
     <p>
       <strong>Project Showcase: Revenue Lifecycle Transformation</strong>
@@ -2001,7 +2023,10 @@ Price Adjustment Based on Volume
     </p>
     <p> Since you are currently writing a book on <strong>Revenue Cloud</strong>, would you like me to help you draft a <strong>"Comparison Table"</strong>for your book that highlights the 5 most critical differences between <strong>Legacy CPQ</strong>and <strong>Advanced RLM</strong>based on this event scenario? </p>
     
-   <p class="question"> May be not. but one question, did you cover in DRO if delivery is staged and not one time </p>
+   <p class="question" id="qc5"> 
+       DRO, staged delivery
+   </p>
+         
     <p> Yes, we touched on it, but let's look closer at how <strong>DRO (Dynamic Revenue Orchestrator)</strong>handles the "Staged" nature of your University event. This is the most significant departure from legacy systems. </p>
     <p> In the legacy world, once an order was "Activated," it was essentially a flat record. In <strong>Revenue Cloud Advanced</strong>, the delivery is a living, multi-stage process. </p>
     <p>
@@ -2103,7 +2128,11 @@ Price Adjustment Based on Volume
     <p>
       <strong>Would you like me to draft a "Technical Diagram Description" that shows how the status of a specific DRO Orchestration Item (like "Booth Ready") updates the Asset record to "Installed"?</strong>
     </p>
-    <p class="question"> yes </p>
+         
+    <p class="question" id="qc6"> 
+        Technical Diagram Description 
+    </p>
+         
     <p> In <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, the connection between <strong>DRO (Dynamic Revenue Orchestrator)</strong>and <strong>Asset Management</strong>is what enables "staged" visibility. This process is called <strong>Assetization</strong>. </p>
     <p> For the <strong>University ABC</strong>event, you don't want the "Booth" to show as an active asset the moment the contract is signed. You want it to appear as "Active" only when the physical setup is complete. </p>
     <p>
@@ -2205,7 +2234,11 @@ Price Adjustment Based on Volume
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you've mastered the delivery and asset side, would you like me to show you how to configure a <strong>Revenue Adjustment</strong>in the event that one of these "Stages" is delivered late and the customer is entitled to a <strong>Service Level Agreement (SLA) Credit</strong>? </p>
-    <p class="question"> yes </p>
+    
+   <p class="question" id="qc7"> 
+     Revenue Adjustment
+         </p>
+         
     <p> In <strong>Revenue Cloud Advanced</strong>, handling an <strong>SLA Credit</strong>for a late staged delivery (like the "ROI Report" being delivered 4 days late) is a powerful way to demonstrate the "Lifecycle" part of RLM. </p>
     <p> Instead of a manual, messy credit memo, you use a <strong>Revenue Adjustment</strong>triggered by the <strong>DRO (Dynamic Revenue Orchestrator)</strong>timeline. </p>
     <p>
@@ -2265,8 +2298,16 @@ Price Adjustment Based on Volume
     <p>
       <strong>Next Step Recommendation</strong>
     </p>
-    <p> Since we've covered the full circle from Quote to Credit, would you like me to help you draft a <strong>"Troubleshooting Guide"</strong>for your book on how to identify why a <strong>Billing Schedule</strong>might fail to generate after an SLA adjustment? </p>
-    <p class="question"> yes </p>
+
+  
+        <p> Since we've covered the full circle from Quote to Credit, would you like me to help you draft a <strong>"Troubleshooting Guide"</strong>for your book on how to identify why a <strong>Billing Schedule</strong>might fail to generate after an SLA adjustment? </p>
+     
+    <h2>Troubleshooting</h2>
+         
+    <p class="question" id="qd1"> 
+       Troubleshooting Guide
+    </p>
+         
     <p> In your book, troubleshooting the "Financial Handshake" is a critical chapter. When an SLA credit is applied mid-orchestration, the <strong>Billing Schedule</strong>is the most sensitive record in the chain. If it fails to update or generate, it’s usually because the link between the <strong>Price Adjustment</strong>and the <strong>Billing Treatment</strong>has been broken. </p>
     <p> Here is a troubleshooting guide you can use for your book or as a reference for your current project. </p>
     <p>
@@ -2376,7 +2417,11 @@ Price Adjustment Based on Volume
     <p>
       <strong>Would you like me to help you draft a "Final Architecture Diagram" for the book that synthesizes everything we've discussed—from the University ABC Quote all the way to this SLA Credit?</strong>
     </p>
-    <p class="question"> yes </p>
+         
+    <p class="question" id="qd1"> 
+        Final Architecture Diagram 
+    </p>
+         
     <p> This final architecture diagram represents the complete "Lead-to-Revenue" lifecycle you've architected for the <strong>University ABC</strong>project. It serves as the master blueprint for how <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>handles complex, staged event delivery. </p>
     <p>
       <strong>The "University ABC" Master Blueprint</strong>
@@ -2441,7 +2486,12 @@ Price Adjustment Based on Volume
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since we've completed the full architectural journey, would you like me to help you draft the <strong>"Conclusion"</strong>or <strong>"Summary Chapter"</strong>for your book that ties all these advanced concepts together into a vision for the future of Quote-to-Cash? </p>
-    <p class="question"> yes </p>
+    
+<h2>Conclusion</h2>    
+   <p class="question" id="qe1"> 
+       Summary 
+   </p>
+         
     <p> This concluding chapter tie-ins the "University ABC" case study with the broader evolution of the Salesforce platform. For your book, this section serves as the "North Star" for readers, moving them from technical implementation to strategic architectural thinking. </p>
     <p>
       <strong>Final Chapter: The Era of the Unified Revenue Lifecycle</strong>
@@ -2617,7 +2667,10 @@ Price Adjustment Based on Volume
     </p>
     <p> Would you like to see how to handle <strong>Global Taxation (VAT/GST)</strong>for a sponsor based in Europe attending your US-based event, specifically regarding "Reverse Charge" logic? </p>
     
-    <p class="question"> How I may use agent force here </p>
+    <p class="question" id="qe2"> 
+       Agentforce
+    </p>
+         
     <p> In the context of your <strong>University ABC</strong>event and the architecture we've built, <strong>Agentforce</strong>(Salesforce's suite of autonomous AI agents) acts as the "Intelligent Glue" between your complex RLM data and the humans involved. </p>
     <p> Because you have staged fulfillment, technical attributes, and SLA-driven billing, Agentforce can move beyond simple chatbots to become <strong>Autonomous Operators</strong>. </p>
     <p>
@@ -2739,7 +2792,12 @@ Price Adjustment Based on Volume
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to help you draft a <strong>"Prompt Template"</strong>for an Agentforce agent that allows a Sales Rep to ask for the "Profitability Health" of the University ABC event by pulling data from both <strong>RLM</strong>and your <strong>SAP actual costs</strong>? </p>
-    <p class="question"> yes </p>
+    
+         
+   <p class="question" id="qe3"> 
+        Prompt Template 
+    </p>
+         
     <p> To pull this off, you’ll be using <strong>Agentforce Service Agents</strong>and <strong>Sales Operations Agents</strong>. Because you’ve architected a "Unified Revenue Lifecycle," the agent has a single, high-fidelity data set to query across both the commercial (RLM) and financial (ERP) layers. </p>
     <p> Below is a prompt template and the underlying logic to enable a "Profitability Health" query for your <strong>University ABC</strong>event. </p>
     <p>
@@ -2843,7 +2901,12 @@ Price Adjustment Based on Volume
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to help you design a <strong>"Custom Action"</strong>for this agent that allows it to automatically <strong>re-negotiate</strong>a discount for a future event if the current event's margin is exceptionally high? </p>
-    <p class="question"> yes </p>
+    
+         
+   <p class="question" id="qe4"> 
+        Customer Action 
+    </p>
+         
     <p> To implement a <strong>"Dynamic Re-negotiation" Custom Action</strong>, you are essentially bridging the gap between <strong>Agentforce’s reasoning</strong>and the <strong>Pricing Procedures</strong>of Revenue Cloud Advanced. This allows the AI to not just report on data, but to proactively adjust the commercial strategy for the next event in the University ABC series. </p>
     <p>
       <strong>1. The Logic: "The Profit-to-Discount" Bridge</strong>
@@ -2955,7 +3018,11 @@ Price Adjustment Based on Volume
             <p> I can help you draft the <strong>"UAT Script for the AI Agent"</strong>to ensure it doesn't accidentally offer discounts to low-margin sponsors. Would you like to see that? </p>
 
               <h2> Agents</h2>
-           <p class="question"> How would I configure these three agents from start </p>
+              
+           <p class="question" id="qe5"> 
+               Configure three agents from start 
+           </p>
+              
             <p> To configure these three agents (the <strong>Exhibitor Success Agent</strong>, the <strong>SLA Watchdog</strong>, and the <strong>Finance/Compliance Agent</strong>) from scratch, you follow a unified four-step "Foundational Build." </p>
             <p> In the 2026 Agentforce ecosystem, you aren't writing code; you are defining <strong>Topics</strong>, <strong>Actions</strong>, and <strong>Grounding</strong>. </p>
             <p>
@@ -3114,7 +3181,11 @@ Price Adjustment Based on Volume
               <strong>Next Step Recommendation</strong>
             </p>
             <p> Since you are a <strong>Principal Architect</strong>, would you like me to show you how to configure the <strong>"Agent Guardrails"</strong>? This ensures that the Finance Agent cannot accidentally share margin data with an external Exhibitor. </p>
-            <p class="question"> yes </p>
+            
+        <p class="question" id="qe6">  
+            Agent Guard Rails
+        </p>
+              
             <p> In your architecture, <strong>Agent Guardrails</strong>are the "Security Layer" that ensures your agents don't suffer from "data leakage." Because your agents have access to sensitive RLM data (margins, SLA penalties, and internal SAP costs), you must prevent the <strong>Exhibitor Success Agent</strong>(external) from ever seeing the <strong>Finance Agent’s</strong>(internal) data. </p>
             <p> Here is how you configure these guardrails from the ground up. </p>
             <p>
@@ -3251,7 +3322,11 @@ Price Adjustment Based on Volume
               <strong>Next Step Recommendation</strong>
             </p>
             <p> Would you like me to help you draft a <strong>"Security Audit Log"</strong>query that allows you to see every time an agent was asked a "forbidden" question about margins or costs? </p>
-            <p class="question"> yes </p>
+            
+       <p class="question" id="qe7"> 
+            Security Audit Log
+       </p>
+              
             <p> To monitor the security of your agents, you will use the <strong>Einstein Trust Layer Audit Trail</strong>combined with <strong>Data Cloud</strong>or <strong>Custom Objects</strong>. In a complex <strong>Revenue Cloud Advanced</strong>environment, you need to track when an agent correctly "refused" to answer a question about internal costs or margins. </p>
             <p> Here is how you configure the audit query and the monitoring dashboard. </p>
             <p>
@@ -5460,6 +5535,7 @@ Price Adjustment Based on Volume
     </table>
   </body>
 </html>
+
 
 
 
