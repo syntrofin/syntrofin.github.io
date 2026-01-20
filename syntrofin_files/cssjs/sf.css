@@ -7,7 +7,7 @@
 
 body { 
     margin: 0 auto;           /* Centers the entire page */
-    max-width: 1200px;        /* Limits body width so it's not too wide on desktop */
+    max-width: 1100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     line-height: 1.6;
     color: #333;
@@ -23,7 +23,6 @@ section{
 .header-container {
     display: flex;             /* Activates Flexbox on the main header */
     align-items: center;       /* Vertically centers all items */
-	max-width: 1100px;
     padding: 0 20px;
 	padding-top: 10px;
     width: 100%;               /* Ensure it uses full width to allow space-between to work */
@@ -35,7 +34,6 @@ section{
     display: flex;
 	justify-content: space-between;
     align-items: center;
-	max-width: 1100px;
     padding: 0 20px;
 	padding-top: 10px;
     width: 100%;              
@@ -113,12 +111,10 @@ section{
     transform: rotate(-1deg) scale(1.02);
 }
 
-
 .container2 {
 	display: flex;
     justify-content: space-between; 
     align-items: center;
-    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
