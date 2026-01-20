@@ -1,9 +1,9 @@
-HTML
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
+<html lang="en-US"><head></head><body>HTML
+
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <title>
 </title>
 <style>
@@ -51,54 +51,34 @@ margin-bottom: 1em;
 color: blue; /* Apply your desired blue color */
 }
 </style>
-</head>
-<body>
-<p >
+
+
+<p>
 <strong>Conversation with Gemini</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 <u>Event organizer company and salesforce Revenue cloud advanced - Can you give how products and bundles are structured for this</u>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 For an event organizer,<strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability.
 </p>
-<p >
+<p>
 Below is a breakdown of how you would structure these products and bundles using the latest RCA/RLM objects and logic.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Core Architecture Components</strong>
 </p>
-<p >
+<p>
 Instead of just a list of SKUs, RCA uses a layered approach:
 </p>
 <ul class="norma">
@@ -112,112 +92,108 @@ Instead of just a list of SKUs, RCA uses a layered approach:
 <strong>Product Selling Models:</strong>Defines<em>how</em>it is sold (e.g.,<strong>One-Time</strong>for a ticket,<strong>Subscription</strong>for a multi-event pass, or<strong>Usage-Based</strong>for lead retrieval services).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Product Bundle Structure (Event Example)</strong>
 </p>
-<p >
+<p>
 For an organizer, a bundle might represent an<strong>"All-Access Exhibitor Package."</strong>
 </p>
-<p >
+<p>
 <strong>The Bundle: "Platinum Exhibitor Package"</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Component Type
 </p>
 </td>
 <td>
-<p >
+<p>
 Example Product
 </p>
 </td>
 <td>
-<p >
+<p>
 Configuration Logic (Cardinality)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Main Bundle (Parent)</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Platinum Exhibitor Package
 </p>
 </td>
 <td>
-<p >
+<p>
 Configure During Sale = Allowed
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Component Group: Space</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 10x20 Booth, 10x10 Booth
 </p>
 </td>
 <td>
-<p >
+<p>
 Min: 1, Max: 1 (Ensures they pick exactly one)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Component Group: Add-ons</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Power Supply, Carpet, Furniture
 </p>
 </td>
 <td>
-<p >
+<p>
 Min: 0, Max: 10 (Optional items)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Component Group: Tickets</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 VIP Pass, Speaker Pass, GA Pass
 </p>
 </td>
 <td>
-<p >
+<p>
 Min: 2, Max: 10 (Quantity limits)
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>3. Dynamic Attribute Modeling</strong>
 </p>
-<p >
+<p>
 One of RCA’s biggest strengths is<strong>Attribute-Based Pricing</strong>. Instead of creating 50 SKUs for different booth sizes or locations, you create one "Booth" product with<strong>Attributes</strong>.
 </p>
 <ul class="norma">
@@ -231,13 +207,11 @@ One of RCA’s biggest strengths is<strong>Attribute-Based Pricing</strong>. Ins
 <strong>Logic:</strong>A "Premium" location attribute can trigger a<strong>Price Adjustment Matrix</strong>that adds a 20% surcharge to the base list price automatically.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Advanced Configuration &amp; Rules</strong>
 </p>
-<p >
+<p>
 For an event organizer, certain products shouldn't exist together. RCA uses the<strong>Constraint Rules Engine</strong>(the new CML-based engine) to handle this:
 </p>
 <ul class="norma">
@@ -251,13 +225,11 @@ For an event organizer, certain products shouldn't exist together. RCA uses the<
 <strong>Qualification Rules:</strong>Restrict certain "VIP Early Bird" products so they are only visible if the Quote date is before a specific event deadline.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>5. Fulfillment &amp; Orchestration (DRO)</strong>
 </p>
-<p >
+<p>
 Since events often involve physical setups (booths) and digital deliverables (website logos), you use<strong>Dynamic Revenue Orchestrator (DRO)</strong>:
 </p>
 <ul class="olo">
@@ -271,190 +243,156 @@ Since events often involve physical setups (booths) and digital deliverables (we
 <strong>Physical Plan:</strong>Generates a task for the floor manager to reserve Booth #402 and coordinate power setup.
 </li>
 </ul>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to create a specific<strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a<strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive<strong>Price Adjustment Matrix</strong>records.
 </p>
-<p >
+<p>
 This allows you to change the unit price dynamically based on the quantity of tickets purchased without creating complex price rules.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Decision Matrix (The Logic)</strong>
 </p>
-<p >
+<p>
 Imagine you are selling<strong>GA Tickets</strong>for a large conference. You want to reward bulk buyers with lower unit prices. You would create a matrix calledEvent_Ticket_Volume_Pricing.
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Input: Minimum Quantity
 </p>
 </td>
 <td>
-<p >
+<p>
 Input: Maximum Quantity
 </p>
 </td>
 <td>
-<p >
+<p>
 Output: Adjustment Type
 </p>
 </td>
 <td>
-<p >
+<p>
 Output: Adjustment Value
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 1
 </p>
 </td>
 <td>
-<p >
+<p>
 10
 </p>
 </td>
 <td>
-<p >
+<p>
 Percentage
 </p>
 </td>
 <td>
-<p >
+<p>
 0%
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 11
 </p>
 </td>
 <td>
-<p >
+<p>
 50
 </p>
 </td>
 <td>
-<p >
+<p>
 Percentage
 </p>
 </td>
 <td>
-<p >
+<p>
 10%
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 51
 </p>
 </td>
 <td>
-<p >
+<p>
 100
 </p>
 </td>
 <td>
-<p >
+<p>
 Percentage
 </p>
 </td>
 <td>
-<p >
+<p>
 20%
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 101
 </p>
 </td>
 <td>
-<p >
+<p>
 9999
 </p>
 </td>
 <td>
-<p >
+<p>
 Fixed Price
 </p>
 </td>
 <td>
-<p >
+<p>
 $150.00 
 </p>
 </td>
 </tr>
-</table>
+</tbody></table>
 <ul class="norma">
 <li>
 <strong>Row 2 Example:</strong>If a customer buys 25 tickets, the system finds the row where 25 is between 11 and 50 and applies a 10% discount.
@@ -463,13 +401,11 @@ $150.00
 <strong>Row 4 Example:</strong>For massive corporate orders (101+), the system overrides the list price and sets it to a flat<strong>$150.00</strong>per ticket.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Integration with "Pricing Procedures"</strong>
 </p>
-<p >
+<p>
 Unlike legacy CPQ, which runs a "Calculated Formula," RCA uses<strong>Pricing Procedures</strong>(a flow-like tool). Here is how the step-by-step logic works in the engine:
 </p>
 <ul class="olo">
@@ -486,13 +422,11 @@ Unlike legacy CPQ, which runs a "Calculated Formula," RCA uses<strong>Pricing Pr
 <strong>Calculate Net Price:</strong>The engine performs the math: 250.00−(250.00×0.20)=200.00     .
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Why this is better for Event Organizers</strong>
 </p>
-<p >
+<p>
 Using this "Advanced" approach offers three major benefits over the old way:
 </p>
 <ul class="norma">
@@ -506,93 +440,49 @@ Using this "Advanced" approach offers three major benefits over the old way:
 <strong>Performance:</strong>The Business Rules Engine evaluates these tiers in milliseconds, even for quotes with hundreds of line items, avoiding the "calculation lag" often seen in legacy CPQ.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Would you like me to...</strong>
 </p>
-<p >
+<p>
 Would you like me to show you how to layer an<strong>Attribute-Based adjustment</strong>(like a "VIP Floor" surcharge) on top of this volume-based discount?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 who are my here - complete event charged to event sponserer, booths to companies/groups to showcase and people to buy tickets
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
 <ul class="norma">
 <li>
 
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, you are moving away from a simple "sale" and toward a<strong>Revenue Lifecycle</strong>. Your three personas have very different "Journeys" and "Selling Models."
 </p>
-<p >
+<p>
 Here is how you structure these three distinct flows:
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Sponsor (B2B / Strategic Partnership)</strong>
 </p>
 <ul class="norma">
@@ -617,7 +507,7 @@ Here is how you structure these three distinct flows:
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>2. The Exhibitor (B2B / Transactional Space)</strong>
 </p>
 <ul class="norma">
@@ -647,7 +537,7 @@ Here is how you structure these three distinct flows:
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>3. The Attendee (B2C or B2B / Volume High-Frequency)</strong>
 </p>
 <ul class="norma">
@@ -677,192 +567,146 @@ Here is how you structure these three distinct flows:
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary Table: Personas in RCA</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Persona
 </p>
 </td>
 <td>
-<p >
+<p>
 Primary Object
 </p>
 </td>
 <td>
-<p >
+<p>
 Key RCA Feature
 </p>
 </td>
 <td>
-<p >
+<p>
 Pricing Logic
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Sponsor</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Contract / Order
 </p>
 </td>
 <td>
-<p >
+<p>
 DRO (Fulfillment)
 </p>
 </td>
 <td>
-<p >
+<p>
 Negotiated / Manual Adjustment
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Exhibitor</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Order / Asset
 </p>
 </td>
 <td>
-<p >
+<p>
 Product Attributes
 </p>
 </td>
 <td>
-<p >
+<p>
 Matrix-based (Zone/Size)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Attendee</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Order
 </p>
 </td>
 <td>
-<p >
+<p>
 Pricing Procedure
 </p>
 </td>
 <td>
-<p >
+<p>
 Volume Tiers / Early Bird
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since you have both B2B (Sponsors) and high-volume (Attendees) flows, would you like me to show how<strong>RCA manages the "Order to Asset" transition</strong>for an Exhibitor who wants to reuse the same booth setup for your next event?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Coming to fulfilment - sometime event may be longer or sponsor might buy two eevents once- the delivery is in stages typically
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
 <ul class="norma">
 <li>
 
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Salesforce Revenue Cloud Advanced (RCA)</strong>, handling staged delivery for multi-event sponsorships or long-running events is significantly more robust than in legacy CPQ. You move away from "Order and forget" to a managed<strong>Lifecycle</strong>.
 </p>
-<p >
+<p>
 To handle your specific scenario—where a sponsor buys two events at once but the "delivery" (marketing assets, physical booth setup, and lead reports) happens in stages—you use a combination of<strong>Dynamic Revenue Orchestrator (DRO)</strong>and<strong>Order Splitting</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Order Decomposition (The "Stages")</strong>
 </p>
-<p >
+<p>
 When the Sponsor signs a deal for "Event A (Spring)" and "Event B (Fall)," the system creates one Order. However, RCA uses<strong>Decomposition Rules</strong>to break that single order into multiple<strong>Fulfillment Orders</strong>.
 </p>
 <ul class="norma">
@@ -873,106 +717,106 @@ When the Sponsor signs a deal for "Event A (Spring)" and "Event B (Fall)," the s
 <strong>Fulfillment Order 2 (Fall):</strong>Contains the Booth and Logo for the second event.
 </li>
 </ul>
-<p >
+<p>
 This allows your team to track the status of the Spring event as "Fulfilled" while the Fall event remains "In Progress."
 </p>
-<p >
+<p>
 <strong>2. Orchestration Plans (The "Steps")</strong>
 </p>
-<p >
+<p>
 Within each fulfillment order,<strong>DRO</strong>manages the specific steps (Orchestration Items) required to deliver the value. For an event sponsor, these stages often look like this:
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Stage
 </p>
 </td>
 <td>
-<p >
+<p>
 Orchestration Item
 </p>
 </td>
 <td>
-<p >
+<p>
 Trigger / Dependency
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 1: Pre-Event</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Collect Branding Assets
 </p>
 </td>
 <td>
-<p >
+<p>
 Manual Task (Marketing Team)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 2: Setup</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Booth Construction
 </p>
 </td>
 <td>
-<p >
+<p>
 Milestone (2 Days before Event)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 3: During</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Lead Scanners Active
 </p>
 </td>
 <td>
-<p >
+<p>
 Automated (Event Start Date)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 4: Post-Event</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 ROI Report Delivery
 </p>
 </td>
 <td>
-<p >
+<p>
 Automated (Event End Date + 1 Day)
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>3. Revenue Recognition &amp; Billing Ties</strong>
 </p>
-<p >
+<p>
 Because the delivery is in stages, you don't want to bill the sponsor for everything at once, or you may need to recognize revenue only as each stage is completed.
 </p>
 <ul class="norma">
@@ -983,19 +827,17 @@ Because the delivery is in stages, you don't want to bill the sponsor for everyt
 <strong>Assetization:</strong>Only after the "Booth Construction" step is marked complete in DRO does the system "Assetize" the product, which can then trigger the final billing and revenue recognition for that specific stage.
 </li>
 </ul>
-<p >
+<p>
 <strong>4. Handling Long Events (Extended Delivery)</strong>
 </p>
-<p >
+<p>
 If an event lasts for 3 months, you can use<strong>Usage-Based Selling Models</strong>for the ongoing services (like daily booth cleaning or concierge support). The system will keep the fulfillment order open and generate "Billing across the stage" based on periodic usage uploads.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>How this applies to your previous architectures</strong>
 </p>
-<p >
+<p>
 Given your experience with<strong>Pure Storage</strong>and the<strong>Car Manufacturing</strong>decomposition model, you can think of the "Event Sponsorship" as the "Vehicle Build."
 </p>
 <ul class="norma">
@@ -1006,93 +848,51 @@ Given your experience with<strong>Pure Storage</strong>and the<strong>Car Manufa
 <strong>Orchestration:</strong>Each Event has its own "Build" (Pre-event tasks) and "Shipment" (Event execution).
 </li>
 </ul>
-<p >
+<p>
 <strong>Would you like me to map out a specific DRO Orchestration Plan for a "Diamond Sponsorship" that covers both the Digital and Physical stages of a two-event deal?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 organization also has to pay for Dinner &amp; Drinks,
 </p>
-<p >
+<p>
 Entertainment: live local bands, sometime event place and others
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
 <ul class="norma">
 <li>
 
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 In an event management context within<strong>Salesforce Revenue Cloud Advanced (RCA)</strong>, the costs you mentioned—Dinner &amp; Drinks, Live Bands, and Venue Rental—represent the "Buy" side of the house.
 </p>
-<p >
+<p>
 To manage these effectively alongside your revenue, you need to bridge the gap between<strong>Salesforce RLM</strong>(Revenue Lifecycle Management) and your<strong>ERP/Procurement</strong>system. Here is how to architect this:
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Internal Cost Components (The "COGS" Strategy)</strong>
 </p>
-<p >
+<p>
 Drawing on your experience with<strong>cost allocation for REIT compliance</strong>(like your work at Iron Mountain), you can treat these expenses as<strong>Internal Cost Lines</strong>attached to your Customer Quote.
 </p>
 <ul class="norma">
@@ -1114,10 +914,10 @@ Drawing on your experience with<strong>cost allocation for REIT compliance</stro
 <strong>The Object:</strong>Use a custom<strong>Cost Component</strong>object linked to theQuote Line Item. This allows you to calculate<strong>Gross Margin</strong>in real-time before the Sales Rep even sends the quote to the sponsor.
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Handling "Dynamic" Costs (The Live Band &amp; Venue)</strong>
 </p>
-<p >
+<p>
 Unlike a standard product, the cost of a "Live Local Band" or a "Venue" might fluctuate.
 </p>
 <ul class="norma">
@@ -1139,13 +939,11 @@ Unlike a standard product, the cost of a "Live Local Band" or a "Venue" might fl
 <strong>The Matrix:</strong>Use a<strong>Decision Matrix</strong>to look up the cost. If "Tier = Local" and "Duration = 4 hours," the matrix returns an internal cost of $2,000, which is then subtracted from the Revenue on your Profitability Dashboard.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Fulfillment vs. Procurement (DRO Integration)</strong>
 </p>
-<p >
+<p>
 This is where<strong>Dynamic Revenue Orchestrator (DRO)</strong>becomes powerful. You aren't just delivering a logo to a website; you are triggering a procurement workflow:
 </p>
 <ul class="olo">
@@ -1159,13 +957,11 @@ This is where<strong>Dynamic Revenue Orchestrator (DRO)</strong>becomes powerful
 <strong>Dependency Logic:</strong>The "Exhibitor Setup" stage cannot start until the "Venue Secured" orchestration item is marked as<strong>Complete</strong>.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Expense Recovery (The "Sponsor-Pays" Model)</strong>
 </p>
-<p >
+<p>
 If you are passing these costs directly to a specific sponsor (e.g., "Dinner Sponsored by Google"), you use<strong>Pass-Through Pricing</strong>:
 </p>
 <ul class="norma">
@@ -1176,155 +972,119 @@ If you are passing these costs directly to a specific sponsor (e.g., "Dinner Spo
 <strong>Billing:</strong>The<strong>Billing Policy</strong>in RCA is set to "Bill on Fulfillment." As soon as the Catering Company sends the final invoice and it's uploaded into the system, RCA generates the invoice for the Sponsor.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of Architectural Flow</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Item
 </p>
 </td>
 <td>
-<p >
+<p>
 RCA Role
 </p>
 </td>
 <td>
-<p >
+<p>
 Fulfillment Action (DRO)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Dinner &amp; Drinks</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Usage-Based Product
 </p>
 </td>
 <td>
-<p >
+<p>
 Trigger Catering PO in ERP
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Live Bands</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 One-Time Internal Cost
 </p>
 </td>
 <td>
-<p >
+<p>
 Assign Operations Task for Booking
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Venue Space</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Facility Attribute
 </p>
 </td>
 <td>
-<p >
+<p>
 Link to Floor Map / CAD Layout
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to show you how to build a<strong>Profitability Calculation</strong>inside the<strong>Pricing Procedure</strong>that flags a quote for "Manager Approval" if the cost of the Band and Catering exceeds 40% of the Sponsorship revenue?
 </p>
-<p >
+<p>
 Cary, NC, USA
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Can you take one event, say for example - "Sprint 2020 event - University ABC" - and give me products to quote to revenue excersize with dummy customers - for me to practice on Revenue cloud Advanced
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To help you practice with<strong>Revenue Cloud Advanced (RCA/RLM)</strong>, let’s build out a quote for the<strong>"Spring 2026 Event - University ABC."</strong>This exercise focuses on the new object model:<strong>Product Selling Models</strong>,<strong>Attribute-Based Pricing</strong>, and<strong>Advanced Bundling</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The Scenario</strong>
 </p>
-<p >
+<p>
 <strong>University ABC</strong>is hosting a career and technology expo. You are quoting three different "customers" (Personas) within one exercise to see how the engine handles different logic.
 </p>
-<p >
+<p>
 <strong>1. The Customer Personas</strong>
 </p>
 <ul class="norma">
@@ -1338,112 +1098,108 @@ To help you practice with<strong>Revenue Cloud Advanced (RCA/RLM)</strong>, let�
 <strong>Customer C (The Attendee):</strong>"Alumni Group" — Buying a bulk block of 50 tickets.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. The Product Catalog (Setup for Practice)</strong>
 </p>
-<p >
+<p>
 Configure these products in your practice org to see how the<strong>Pricing engine</strong>behaves:
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Product Name
 </p>
 </td>
 <td>
-<p >
+<p>
 Selling Model
 </p>
 </td>
 <td>
-<p >
+<p>
 Attribute / Logic
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Diamond Sponsorship</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 One-Time
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Bundle:</strong>Includes Logo Placement, 10 VIP Passes, and Premium Booth.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Booth Space</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 One-Time
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Attribute:</strong>Location(Premium, Standard, Economy).
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Power &amp; WiFi</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Usage-Based
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Logic:</strong>Billed post-event based onKilowatts_Consumed.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Entry Ticket</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 One-Time
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Pricing Procedure:</strong>Tiered volume discount (1-10, 11-50, 51+).
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>3. Exercise: Creating the Quote</strong>
 </p>
-<p >
+<p>
 Imagine you are opening the<strong>Quote UI</strong>in RLM. Here is how you should configure the lines for each persona to exercise the system:
 </p>
-<p >
+<p>
 <strong>Exercise A: The "Sponsor" Quote</strong>
 </p>
 <ul class="norma">
@@ -1465,7 +1221,7 @@ Imagine you are opening the<strong>Quote UI</strong>in RLM. Here is how you shou
 <strong>Revenue exercise:</strong>Observe how the<strong>Revenue Recognition</strong>rule spreads the $50,000 price across "Pre-event marketing" and "Event-day delivery."
 </li>
 </ul>
-<p >
+<p>
 <strong>Exercise B: The "Exhibitor" Quote (Attribute-Based Pricing)</strong>
 </p>
 <ul class="norma">
@@ -1487,7 +1243,7 @@ Imagine you are opening the<strong>Quote UI</strong>in RLM. Here is how you shou
 <strong>Fulfillment exercise:</strong>Look at the<strong>Order Decomposition</strong>. One order should create a "Floor Map Task" for the Premium location.
 </li>
 </ul>
-<p >
+<p>
 <strong>Exercise C: The "Attendee" Quote (Volume Pricing)</strong>
 </p>
 <ul class="norma">
@@ -1506,13 +1262,11 @@ Imagine you are opening the<strong>Quote UI</strong>in RLM. Here is how you shou
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Fulfillment &amp; Internal Costs (The "Double Entry")</strong>
 </p>
-<p >
+<p>
 To practice the "Dinner &amp; Drinks" and "Entertainment" costs you mentioned:
 </p>
 <ul class="olo">
@@ -1523,13 +1277,11 @@ To practice the "Dinner &amp; Drinks" and "Entertainment" costs you mentioned:
 <strong>View Margin:</strong>Look at theTotal Marginfield on the Quote. Even though you are charging the sponsor $50,000, the system should show a lower "Profit" because it subtracted the $2,500 for the band and $1,500 for the dinner.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of Data Points for your Quote</strong>
 </p>
-<p >
+<p>
 If you are typing this into a spreadsheet or a dev org to practice, use these numbers:
 </p>
 <ul class="norma">
@@ -1549,79 +1301,45 @@ If you are typing this into a spreadsheet or a dev org to practice, use these nu
 <strong>Total Quote Value:</strong><strong>$15,000</strong>
 </li>
 </ul>
-<p >
+<p>
 <strong>Would you like me to provide the "Decomposition Rule" logic for the "Power &amp; WiFi" product so you can see how it triggers a work order after the event ends?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To practice the<strong>Decomposition Rule</strong>logic, you need to configure how the system transforms a single "Sold Product" into specific "Execution Tasks."
 </p>
-<p >
+<p>
 In<strong>Revenue Cloud Advanced (RLM)</strong>, this is handled by the<strong>Dynamic Revenue Orchestrator (DRO)</strong>. Unlike a simple workflow, DRO understands dependencies—meaning it knows you can't bill for electricity until the event is actually over.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The Decomposition Flow: "Power &amp; WiFi"</strong>
 </p>
-<p >
+<p>
 For the<strong>University ABC</strong>event, your "Power &amp; WiFi" product is unique because it is a<strong>Usage-Based</strong>model. Here is how you set up the decomposition logic:
 </p>
-<p >
+<p>
 <strong>1. The Decomposition Rule</strong>
 </p>
-<p >
+<p>
 You will create a rule that says:
 </p>
 <ul class="norma">
@@ -1640,109 +1358,107 @@ You will create a rule that says:
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>2. The Orchestration Plan</strong>
 </p>
-<p >
+<p>
 This plan dictates the timeline of delivery. You can practice setting up these three specific steps:
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Step Number
 </p>
 </td>
 <td>
-<p >
+<p>
 Orchestration Item
 </p>
 </td>
 <td>
-<p >
+<p>
 Dependency
 </p>
 </td>
 <td>
-<p >
+<p>
 Logic Type
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Step 10</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Dispatch Electrician</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 None
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Manual Task:</strong>Tech must confirm cables are laid at the booth.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Step 20</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Activate Service</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Step 10 Complete
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Automated:</strong>System sends a signal to the WiFi gateway to allow the Exhibitor's MAC address.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Step 30</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Usage Capture</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Event End Date
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Callout:</strong>System pings the meter to pull the final "Kilowatts Used" and pushes it to the<strong>Billing Engine</strong>.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Practice Exercise: The "Post-Event" Billing Trigger</strong>
 </p>
-<p >
+<p>
 To simulate the end of the<strong>University ABC</strong>event, try this exercise in your logic:
 </p>
 <ul class="olo">
@@ -1764,13 +1480,11 @@ To simulate the end of the<strong>University ABC</strong>event, try this exercis
 <strong>The "Staged" Invoice:</strong>Since the "Booth" was already paid for, this creates a<strong>"Usage-Only" Invoice</strong>that is sent to the customer 3 days after the event ends.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Key Objects for your "Practice Org" Search</strong>
 </p>
-<p >
+<p>
 If you are looking through the App Launcher to find where to configure this, look for:
 </p>
 <ul class="norma">
@@ -1784,105 +1498,61 @@ If you are looking through the App Launcher to find where to configure this, loo
 <strong>Pricing Procedures:</strong>Where the final usage math happens.
 </li>
 </ul>
-<p >
+<p>
 <strong>Would you like me to show you the "Technical Attributes" setup? This would allow you to capture the specific "WiFi Network Name (SSID)" for the University ABC event directly on the Quote.</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
 <ul class="norma">
 <li>
 
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Revenue Cloud Advanced (RCA)</strong>, you can move away from the "Manual BOM" headache you solved at Komatsu and the "T-Shirt Sizing" model you built for Pure Storage by using<strong>Technical Attributes</strong>.
 </p>
-<p >
+<p>
 For the<strong>University ABC</strong>event, you don't want the Sales Rep to just sell "WiFi." You want them to capture the specific technical requirements that the Fulfillment team (the "Electricians" and "IT Staff") need to actually deliver the service.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Technical Attribute Setup</strong>
 </p>
-<p >
+<p>
 Unlike "Commercial Attributes" (which change price),<strong>Technical Attributes</strong>are designed for the "downstream" teams.
 </p>
-<p >
+<p>
 <strong>Product:</strong>High-Speed Event WiFi | Attribute Name | Data Type | Requirement | User Action | | :--- | :--- | :--- | :--- | |<strong>SSID Name</strong>| Text | Required | Sales Rep enters "ABC_Sponsor_Name" | |<strong>MAC Address Limit</strong>| Number | Required | Rep enters "50" | |<strong>Network Security</strong>| Picklist | Optional | Selection: WPA3, Open, or VPN-Only |
 </p>
-<p >
+<p>
 <strong>Why this matters for your practice:</strong>In your Pure Storage project, you had to decouple the quote from the physical BOM. Here, the Technical Attribute acts as the "Bridge." The Sales Rep sells the<em>service</em>(WiFi), but the<em>technical details</em>(SSID) travel directly with the Order to the Fulfillment team.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Mapping to the Fulfillment Order (DRO)</strong>
 </p>
-<p >
+<p>
 Once the quote is signed, RCA uses<strong>Attribute Mapping</strong>to push these values into the<strong>Fulfillment Order Item</strong>.
 </p>
 <ul class="olo">
@@ -1896,13 +1566,11 @@ Once the quote is signed, RCA uses<strong>Attribute Mapping</strong>to push thes
 <strong>DRO Task:</strong>The "IT Provisioning" task in the Orchestration Plan now includes a dynamic instruction:<em>"Set up Cisco AP with SSID: CloudSystems_Spring26."</em>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Practice Exercise: The "Dynamic SSID" Scenario</strong>
 </p>
-<p >
+<p>
 Try to architect this logic in your mind (or a dev org):
 </p>
 <ul class="norma">
@@ -1913,108 +1581,62 @@ Try to architect this logic in your mind (or a dev org):
 <strong>The Validation:</strong>If theSSIDattribute contains any special characters like!@#, the system should throw a<strong>Validation Error</strong>on the quote, preventing the rep from submitting a name that the WiFi router can't handle.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Assetization (The SSOT Asset Engine)</strong>
 </p>
-<p >
+<p>
 Remember the "Asset Creation Engine" you built for hardware genealogy? RCA does this natively.
 </p>
-<p >
+<p>
 When the University ABC event is over, that "WiFi Service" can be<strong>Assetized</strong>. The Asset record will store the specific SSID and MAC limit used. If that same sponsor comes back for the "Fall 2026 Event," you can use the<strong>"Amend" or "Renew"</strong>flow to pull those technical attributes forward, so they don't have to re-enter their IT specs.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to show you how to structure a<strong>Price Matrix</strong>that changes the cost of the WiFi based on theMAC Address Limitattribute (e.g., $10 per extra device)?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Not needed, but can you procceed to order, DRO and Revrec
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
 <ul class="norma">
 <li>
 
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 Moving into the<strong>Order </strong><strong> DRO </strong><strong> RevRec</strong>phase for the<strong>University ABC</strong>event allows you to apply the "Decoupled Architecture" you’ve used in the past.
 </p>
-<p >
+<p>
 In<strong>Revenue Cloud Advanced (RLM)</strong>, the Order is no longer just a "receipt"—it is the<strong>Master Controller</strong>for delivery and financial recognition.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Order &amp; Decomposition (The Bridge)</strong>
 </p>
-<p >
+<p>
 When you click "Create Order" from your University ABC Quote, RLM generates a<strong>Standard Order</strong>. This is where your<strong>Decomposition Rules</strong>perform "Surgery" on the data:
 </p>
 <ul class="norma">
@@ -2028,118 +1650,114 @@ When you click "Create Order" from your University ABC Quote, RLM generates a<st
 <strong>The "Tickets" Line:</strong>Decomposes into an<strong>Access Fulfillment Order</strong>(QR code generation).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Dynamic Revenue Orchestrator (DRO)</strong>
 </p>
-<p >
+<p>
 Using the<strong>Fulfillment Orchestrator</strong>role of DRO, you manage the "Dependency Chain." For an event, timing is everything.
 </p>
-<p >
+<p>
 <strong>Sample Orchestration Plan for "Diamond Sponsorship"</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Step
 </p>
 </td>
 <td>
-<p >
+<p>
 Action
 </p>
 </td>
 <td>
-<p >
+<p>
 Logic / System
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 1</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Validate Logo</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Manual task for University ABC Marketing.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 2</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Provision Digital Banner</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Callout to Event App (API).
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 3</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>On-Site Handover</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Mobile app confirmation from the booth manager.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 4</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Post-Event Stats</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Push "Lead Count" data to Sponsor's Portal.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>The "Surgical" Edge:</strong>If the Sponsor fails to provide their logo (Stage 1), DRO can<strong>Auto-Hold</strong>the "On-Site Handover" task, preventing the booth from being finished until the branding is approved.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Revenue Recognition (RevRec)</strong>
 </p>
-<p >
+<p>
 For events,<strong>ASC 606</strong>compliance is critical because you are often getting paid months before the "performance obligation" is met.
 </p>
-<p >
+<p>
 <strong>Revenue Recognition Rules in RLM:</strong>
 </p>
 <ul class="norma">
@@ -2153,10 +1771,10 @@ For events,<strong>ASC 606</strong>compliance is critical because you are often 
 <strong>The "Usage" Component (WiFi):</strong>Revenue is recognized<strong>As Invoiced</strong>based on actual consumption data.
 </li>
 </ul>
-<p >
+<p>
 <strong>Accounting Example:</strong>
 </p>
-<p >
+<p>
 If the Diamond Sponsorship is $50,000:
 </p>
 <ul class="olo">
@@ -2173,13 +1791,11 @@ If the Diamond Sponsorship is $50,000:
 <strong>The "RevRec Schedule":</strong>RLM automatically generates these schedules, similar to the deferral configurations you’ve managed for global compliance in the past.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Practicing the "Divestiture-Ready" Structure</strong>
 </p>
-<p >
+<p>
 Since you mentioned staged delivery, you can practice<strong>Order Splitting</strong>:
 </p>
 <ul class="norma">
@@ -2187,96 +1803,52 @@ Since you mentioned staged delivery, you can practice<strong>Order Splitting</st
 If the "Fall Event" is canceled but the "Spring Event" is complete, you can<strong>Cancel</strong>only the specific<strong>Fulfillment Order</strong>associated with the Fall event without "breaking" the accounting for the work already delivered in the Spring.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like to walk through a<strong>Billing Policy</strong>configuration that ties the final $10,000 payment to the "Post-Event Stats" delivery step in DRO?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
 <ul class="norma">
 <li>
 
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Revenue Cloud Advanced (RCA)</strong>, tying your final invoice to a specific task in<strong>DRO</strong>is the ultimate way to ensure "Billing Accuracy." This prevents the common problem of invoicing a sponsor before you’ve actually delivered their lead reports or post-event data.
 </p>
-<p >
+<p>
 For the<strong>University ABC</strong>event, here is how you would configure that<strong>Milestone-Based Billing</strong>policy:
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Billing Policy Configuration</strong>
 </p>
-<p >
+<p>
 Following the pattern you’ve used for multi-treatment billing schedules, you would set up a<strong>Billing Policy</strong>with two distinct<strong>Billing Treatments</strong>:
 </p>
 <ul class="norma">
@@ -2287,10 +1859,10 @@ Following the pattern you’ve used for multi-treatment billing schedules, you w
 <strong>Treatment 2 (Final Performance):</strong>20% of the total, tied to a<strong>Milestone</strong>.
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Connecting DRO to Billing (The "Link")</strong>
 </p>
-<p >
+<p>
 This is where the manual trigger logic you've handled in the past becomes automated via DRO.
 </p>
 <ul class="olo">
@@ -2304,131 +1876,127 @@ This is where the manual trigger logic you've handled in the past becomes automa
 <strong>The Result:</strong>This automation updates theBilling Target Dateon the second<strong>Billing Schedule</strong>record to today’s date.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. The "Staged" Execution Flow</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Stage
 </p>
 </td>
 <td>
-<p >
+<p>
 Orchestration Status
 </p>
 </td>
 <td>
-<p >
+<p>
 Billing Action
 </p>
 </td>
 <td>
-<p >
+<p>
 Invoice Status
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Pre-Event</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Order Activated
 </p>
 </td>
 <td>
-<p >
+<p>
 Treatment 1 Runs
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Invoice #1 ($40k) Sent</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>During Event</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Setup Complete
 </p>
 </td>
 <td>
-<p >
+<p>
 No Billing Action
 </p>
 </td>
 <td>
-<p >
+<p>
 <em>Waiting...</em>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Post-Event</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Report Drafted
 </p>
 </td>
 <td>
-<p >
+<p>
 No Billing Action
 </p>
 </td>
 <td>
-<p >
+<p>
 <em>Waiting...</em>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Handover</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Report Marked "Delivered"</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Treatment 2 Triggered</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Invoice #2 ($10k) Sent</strong>
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>4. Practice Exercise: The "Partial Fulfillment" Scenario</strong>
 </p>
-<p >
+<p>
 To really test your architecture, imagine the University ABC event happens, but the "Live Band" (Entertainment) you promised had to cancel.
 </p>
 <ul class="norma">
@@ -2450,79 +2018,43 @@ The<strong>Billing Schedule</strong>for Treatment 2 (the final 20%) automaticall
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of the "Golden Path" for University ABC</strong>
 </p>
-<p >
+<p>
 By the end of this exercise, you have moved from a<strong>Quote</strong>(with attributes) →<strong>Order</strong>(decomposed) →<strong>DRO</strong>(orchestrated steps) →<strong>Billing &amp; RevRec</strong>(tied to milestones).
 </p>
-<p >
+<p>
 <strong>Would you like me to generate a "Final Review Checklist" of the specific RLM Objects you should verify in your practice org to ensure this entire flow is airtight?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To wrap up your<strong>Revenue Cloud Advanced (RLM)</strong>practice for the<strong>University ABC</strong>event, here is your structural checklist. Verifying these objects ensures your architecture can handle the complex "Quote-to-Cash" lifecycle you've designed.
 </p>
-<p >
+<p>
 <strong>The RLM Architecture Checklist</strong>
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Product &amp; Pricing Foundation</strong>
 </p>
 <ul class="norma">
@@ -2536,7 +2068,7 @@ To wrap up your<strong>Revenue Cloud Advanced (RLM)</strong>practice for the<str
 [ ]<strong>Product Attributes:</strong>Can the Sales Rep select "Premium" for the Booth and see an immediate price change via the<strong>Attribute-Based Pricing</strong>logic?
 </li>
 </ul>
-<p >
+<p>
 <strong>2. The Configuration Engine</strong>
 </p>
 <ul class="norma">
@@ -2547,7 +2079,7 @@ To wrap up your<strong>Revenue Cloud Advanced (RLM)</strong>practice for the<str
 [ ]<strong>Attribute Metadata:</strong>Is the "SSID" field for the WiFi set as a<strong>Technical Attribute</strong>so it doesn't appear on the customer's PDF but stays on the internal Order?
 </li>
 </ul>
-<p >
+<p>
 <strong>3. Order &amp; Orchestration (DRO)</strong>
 </p>
 <ul class="norma">
@@ -2561,7 +2093,7 @@ To wrap up your<strong>Revenue Cloud Advanced (RLM)</strong>practice for the<str
 [ ]<strong>Fulfillment State:</strong>When you mark the "ROI Report" as<strong>Complete</strong>, does the Order Item status move to "Fulfilled"?
 </li>
 </ul>
-<p >
+<p>
 <strong>4. Finance &amp; Revenue</strong>
 </p>
 <ul class="norma">
@@ -2575,184 +2107,144 @@ To wrap up your<strong>Revenue Cloud Advanced (RLM)</strong>practice for the<str
 [ ]<strong>Revenue Recognition Treatment:</strong>Is the "Logo Placement" revenue spread daily (Linear) while the "Dinner &amp; Drinks" is recognized upon the event date (Point-in-Time)?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Practice Tip: The "Audit Trail"</strong>
 </p>
-<p >
+<p>
 In your practice org, navigate to the<strong>Revenue Transaction Error Log</strong>. If your Billing Policy or RevRec doesn't fire, RCA logs the specific reason here. Given your experience troubleshooting complex "Quote-to-Cash" failures, this log is your best friend for debugging why a milestone didn't trigger an invoice.
 </p>
-<p >
+<p>
 <strong>Would you like me to help you draft the "Business Requirements Document" (BRD) snippet for this University ABC project that you could use to explain this architecture to a stakeholder?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To help you communicate the value of this architecture to a stakeholder (like a Program Director or CFO), here is a professional<strong>Business Requirements Document (BRD)</strong>snippet. This summarizes how<strong>Salesforce Revenue Cloud Advanced</strong>solves the specific challenges of your event business.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Project: University ABC Expo - Revenue Lifecycle Transformation</strong>
 </p>
-<p >
+<p>
 <strong>1. Executive Summary</strong>
 </p>
-<p >
+<p>
 The goal is to automate the end-to-end lifecycle for the<strong>Spring 2026 University ABC Event</strong>. By moving from a static CPQ model to<strong>Salesforce RLM (Revenue Lifecycle Management)</strong>, we are enabling dynamic attribute-based pricing, automated staged fulfillment via DRO, and milestone-based billing to ensure 100% financial accuracy between event delivery and invoicing.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Functional Requirements</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Requirement ID
 </p>
 </td>
 <td>
-<p >
+<p>
 Feature
 </p>
 </td>
 <td>
-<p >
+<p>
 Business Value / Outcome
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>FR-01</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Attribute-Based Pricing</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Eliminates SKU proliferation by using a single "Booth" product with location-based price modifiers (Premium vs. Standard).
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>FR-02</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Technical Attributes</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Captures IT specs (SSID, MAC limits) during the sales process and passes them directly to the provisioning team.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>FR-03</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Staged Fulfillment (DRO)</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Decomposes a single Sponsorship order into multiple execution tracks (Marketing, Logistics, and Data) with hard dependencies.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>FR-04</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Milestone Billing</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Ties the final 20% payment to the "Post-Event ROI Report" delivery, preventing premature invoicing and customer disputes.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>3. Data Flow Architecture</strong>
 </p>
-<p >
+<p>
 <strong>The Core Workflow:</strong>
 </p>
 <ul class="olo">
@@ -2769,10 +2261,8 @@ Ties the final 20% payment to the "Post-Event ROI Report" delivery, preventing p
 <strong>Close-Out:</strong>The event completion triggers the<strong>Usage Engine</strong>for WiFi consumption and the<strong>Billing Engine</strong>for the final milestone payment.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Key Performance Indicators (KPIs)</strong>
 </p>
 <ul class="norma">
@@ -2786,175 +2276,137 @@ Ties the final 20% payment to the "Post-Event ROI Report" delivery, preventing p
 <strong>Revenue Integrity:</strong>Real-time visibility into deferred vs. recognized revenue for multi-event sponsorships.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since you are a<strong>Principal Architect</strong>, would you like me to create the<strong>"System Context Diagram"</strong>description that shows how this RLM setup interacts with an external<strong>ERP (like SAP)</strong>for the "Live Band" and "Catering" procurement?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To complete your architectural vision, here is the<strong>System Context Diagram</strong>and integration strategy. This shows how<strong>Salesforce Revenue Cloud Advanced (RLM)</strong>serves as the "Commercial Hub," while the<strong>ERP (e.g., SAP or Oracle)</strong>acts as the "Execution Hub" for procurement and costs.
 </p>
-<p >
+<p>
 <strong>System Context: The RLM-ERP Bridge</strong>
 </p>
-<p >
+<p>
 In your University ABC scenario, Salesforce owns the<strong>Customer Relationship and Revenue</strong>, while the ERP owns the<strong>Vendor Relationship and Cost</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Integration Touchpoints</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Direction
 </p>
 </td>
 <td>
-<p >
+<p>
 Integration Object
 </p>
 </td>
 <td>
-<p >
+<p>
 Purpose
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>SF </strong>➔<strong> ERP</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Purchase Requisition</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Triggered by<strong>DRO</strong>when the "Diamond Sponsorship" is sold. Informs ERP to book the "Live Band" and "Catering."
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>ERP </strong>➔<strong> SF</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Cost Component</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Once the Band is paid, the ERP pushes the<em>actual</em>cost back to the SF Order to calculate final event margin.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>SF </strong>➔<strong> ERP</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Invoice Data</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 RLM generates the Invoice; the ERP records it in the<strong>General Ledger (GL)</strong>for financial reporting.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>ERP </strong>➔<strong> SF</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Payment Status</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 ERP confirms when the Sponsor has paid, allowing SF to mark the Asset as "Active."
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>2. The "Buy-Side" Orchestration Logic</strong>
 </p>
-<p >
+<p>
 You can practice this "Procure-to-Pay" logic within your<strong>DRO Orchestration Plan</strong>:
 </p>
 <ul class="olo">
@@ -2973,13 +2425,11 @@ You can practice this "Procure-to-Pay" logic within your<strong>DRO Orchestratio
 <strong>Dependency:</strong>The "Event Day Setup" task in Salesforce is<strong>Blocked</strong>until the ERP sends a "PO Confirmed" status back to Salesforce.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Managing Internal Costs (The "Band &amp; Dinner" Flow)</strong>
 </p>
-<p >
+<p>
 To ensure the "University ABC" event is actually profitable, you use the<strong>Pricing Procedure</strong>to fetch data from the ERP:
 </p>
 <ul class="norma">
@@ -2996,13 +2446,11 @@ To ensure the "University ABC" event is actually profitable, you use the<strong>
 <strong>The Result:</strong>If the "Live Band" went into overtime and the margin dropped below 20%, a<strong>Salesforce Flow</strong>alerts the Account Executive to renegotiate or review the sponsor tier for the next event.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Summary of the Unified Architecture</strong>
 </p>
-<p >
+<p>
 By integrating RLM with your ERP in this way, you create a<strong>Closed-Loop System</strong>:
 </p>
 <ul class="norma">
@@ -3016,228 +2464,192 @@ By integrating RLM with your ERP in this way, you create a<strong>Closed-Loop Sy
 <strong>Finance</strong>sees the revenue recognition and vendor payments in sync.
 </li>
 </ul>
-<p >
+<p>
 <strong>What's next for your practice?</strong>
 </p>
-<p >
+<p>
 Now that the architecture is defined, would you like me to help you write a<strong>UAT (User Acceptance Testing) Script</strong>to verify that a "Canceled Event" in Salesforce correctly triggers a "Stop Payment" request in the ERP?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To test the robustness of your<strong>Salesforce RLM</strong>and<strong>ERP</strong>integration, your<strong>User Acceptance Testing (UAT)</strong>needs to focus on the "Failure Paths"—specifically how a cancellation or change in the event scope propagates through the financial and fulfillment layers.
 </p>
-<p >
+<p>
 Here is a structured UAT script designed for a Principal Architect to verify the<strong>University ABC</strong>event flow.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>UAT Script: Event Cancellation &amp; Financial Synchronization</strong>
 </p>
-<p >
+<p>
 <strong>Test Case ID:</strong>RLM-ERP-005
 </p>
-<p >
+<p>
 <strong>Scenario:</strong>Full Cancellation of "Spring 2026 Event" after Order Activation.
 </p>
-<p >
+<p>
 <strong>Role:</strong>Event Administrator / Finance Manager.
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Step #
 </p>
 </td>
 <td>
-<p >
+<p>
 Action
 </p>
 </td>
 <td>
-<p >
+<p>
 Expected Result
 </p>
 </td>
 <td>
-<p >
+<p>
 Technical Verification (The "Under the Hood")
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>1</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Navigate to the<strong>Order</strong>for "University ABC" and select<strong>"Cancel Order."</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Order Status changes to "Canceled"; Fulfillment Orders move to "Aborted."
 </p>
 </td>
 <td>
-<p >
+<p>
 Check that<strong>DRO Orchestration Items</strong>are set toDiscarded.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>2</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Review the<strong>Billing Schedules</strong>associated with the Sponsorship.
 </p>
 </td>
 <td>
-<p >
+<p>
 All "Pending" Billing Schedules are automatically canceled or set to $0.
 </p>
 </td>
 <td>
-<p >
+<p>
 Verify theTotal Amounton the Billing Schedule reflects the cancellation.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>3</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Check the<strong>ERP Integration Log</strong>.
 </p>
 </td>
 <td>
-<p >
+<p>
 An outbound message is sent to the ERP to cancel the<strong>Purchase Requisition</strong>for the Band/Catering.
 </p>
 </td>
 <td>
-<p >
+<p>
 Confirm the JSON payload contains theOriginal_PO_NumberandCancel_Action.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>4</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Inspect the<strong>Revenue Recognition Schedule</strong>.
 </p>
 </td>
 <td>
-<p >
+<p>
 Future revenue periods are zeroed out; already recognized revenue remains for audit.
 </p>
 </td>
 <td>
-<p >
+<p>
 Verify the<strong>Revenue Transaction</strong>records show a "Reversal" entry for the current month.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>5</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Verify<strong>Asset State</strong>.
 </p>
 </td>
 <td>
-<p >
+<p>
 The "Booth" and "WiFi" Assets are marked as "Obsolete" or "Canceled."
 </p>
 </td>
 <td>
-<p >
+<p>
 Ensure theLifecycle Statuson the Asset record is updated via the RLM Asset Engine.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Why this Test Matters for your Practice</strong>
 </p>
-<p >
+<p>
 In your past work with<strong>Clarivate</strong>(merging systems) and<strong>Iron Mountain</strong>, you likely dealt with "zombie data"—orders that were canceled in one system but still being billed or fulfilled in another.
 </p>
-<p >
+<p>
 <strong>By running this UAT script, you are confirming three critical architectural points:</strong>
 </p>
 <ul class="olo">
@@ -3251,13 +2663,11 @@ In your past work with<strong>Clarivate</strong>(merging systems) and<strong>Iro
 <strong>Procurement Loop:</strong>You aren't paying the "Live Band" for a show that was called off, saving the company direct COGS (Cost of Goods Sold).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of the "Sprint 2026" Exercise</strong>
 </p>
-<p >
+<p>
 You have now architected:
 </p>
 <ul class="norma">
@@ -3274,85 +2684,51 @@ A<strong>Financial Model</strong>that ties billing to actual performance.
 An<strong>Integration Strategy</strong>that keeps your ERP and Salesforce in sync.
 </li>
 </ul>
-<p >
+<p>
 <strong>Would you like me to help you summarize these "Lessons Learned" into a professional "Project Portfolio" blurb that you can use to showcase your expertise in Revenue Cloud Advanced?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To help you showcase this architectural deep-dive, here is a professional<strong>Project Portfolio Summary</strong>. This is designed to highlight your ability to handle the "New Generation" of Salesforce Quote-to-Cash (RLM) while solving real-world business complexities like staged fulfillment and ERP synchronization.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Project Showcase: Revenue Lifecycle Transformation</strong>
 </p>
-<p >
+<p>
 <strong>Role:</strong>Principal Architect (Quote-to-Cash &amp; RLM)<strong>Platform:</strong>Salesforce Revenue Cloud Advanced (RCA/RLM), Dynamic Revenue Orchestrator (DRO), SAP ERP
 </p>
-<p >
+<p>
 <strong>The Challenge</strong>
 </p>
-<p >
+<p>
 A global event organization struggled with "SKU bloat" and disconnected fulfillment. High-value sponsorships were sold as fixed bundles, but delivery happened in stages (Marketing, Logistics, Post-Event). Invoicing was often disconnected from actual performance, leading to payment disputes and inaccurate revenue recognition.
 </p>
-<p >
+<p>
 <strong>The Solution: A Decoupled Revenue Architecture</strong>
 </p>
-<p >
+<p>
 I architected a "Lead-to-Revenue" solution using the latest<strong>Salesforce RLM</strong>framework to move the organization from a transactional sales model to a managed lifecycle model.
 </p>
-<p >
+<p>
 <strong>Key Architectural Pillars:</strong>
 </p>
 <ul class="norma">
@@ -3372,7 +2748,7 @@ I architected a "Lead-to-Revenue" solution using the latest<strong>Salesforce RL
 <strong>Automated ASC 606 Compliance:</strong>Configured Revenue Recognition treatments to distinguish between point-in-time revenue (booth space) and over-time revenue (branding/marketing services).
 </li>
 </ul>
-<p >
+<p>
 <strong>Business Impact</strong>
 </p>
 <ul class="norma">
@@ -3386,79 +2762,43 @@ I architected a "Lead-to-Revenue" solution using the latest<strong>Salesforce RL
 <strong>Financial Integrity:</strong>Provided the CFO with real-time margin visibility per event, accounting for all internal COGS and vendor expenses.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since you are currently writing a book on<strong>Revenue Cloud</strong>, would you like me to help you draft a<strong>"Comparison Table"</strong>for your book that highlights the 5 most critical differences between<strong>Legacy CPQ</strong>and<strong>Advanced RLM</strong>based on this event scenario?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 May be not. but one question, did you cover in DRO if delivery is staged and not one time
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Yes, we touched on it, but let's look closer at how<strong>DRO (Dynamic Revenue Orchestrator)</strong>handles the "Staged" nature of your University event. This is the most significant departure from legacy systems.
 </p>
-<p >
+<p>
 In the legacy world, once an order was "Activated," it was essentially a flat record. In<strong>Revenue Cloud Advanced</strong>, the delivery is a living, multi-stage process.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Decomposition (The "Order Splitting")</strong>
 </p>
-<p >
+<p>
 When the order for "Spring 2026 Event" is placed, DRO doesn't see one line item; it performs<strong>Decomposition</strong>. It breaks that single "Diamond Sponsorship" into distinct<strong>Fulfillment Order Items</strong>based on their "Nature of Delivery."
 </p>
 <ul class="norma">
@@ -3472,86 +2812,86 @@ When the order for "Spring 2026 Event" is placed, DRO doesn't see one line item;
 <strong>Stage 3 (Post-Event Data):</strong>Attendee list, lead scanning report.
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Orchestration Plans (The "Dependency Chain")</strong>
 </p>
-<p >
+<p>
 This is where the "Staged" logic lives. You define a<strong>Plan</strong>that says these stages cannot overlap or must follow a specific sequence.
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Fulfillment Stage
 </p>
 </td>
 <td>
-<p >
+<p>
 Action Type
 </p>
 </td>
 <td>
-<p >
+<p>
 Dependency Logic
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 1: Digital</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Automated Callout
 </p>
 </td>
 <td>
-<p >
+<p>
 Starts as soon as the Order is Activated.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 2: Setup</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Manual Task
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Blocked</strong>until Stage 1 is marked "Complete" (ensures we have their logo before we print the booth banners).
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Stage 3: Post-Event</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Event Trigger
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Paused</strong>until the "Event End Date" passes.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>3. The "Partial Fulfillment" Trigger</strong>
 </p>
-<p >
+<p>
 Because delivery is staged, DRO allows for<strong>Partial Fulfillment</strong>.
 </p>
 <ul class="norma">
@@ -3565,94 +2905,56 @@ This status change can trigger a<strong>Billing Schedule</strong>for just that s
 The overall Order remains "In Progress" until the final stage (the ROI report) is delivered.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Real-World Handling: "The Stage Shift"</strong>
 </p>
-<p >
+<p>
 For an event architect, things change. What if the University ABC event is postponed by a month?
 </p>
-<p >
+<p>
 In a "One-Time" delivery model, you'd have to cancel and re-order. In<strong>DRO</strong>, you simply update the<strong>Orchestration Item</strong>dates. The system automatically shifts the "Setup" and "Post-Event" stages downstream, while the "Digital" stage (which is already live) remains unaffected.
 </p>
-<p >
+<p>
 <strong>How this fits into your book</strong>
 </p>
-<p >
+<p>
 If you're writing about this, the "Staged Delivery" section should emphasize that<strong>RLM moves the "Source of Truth" for fulfillment from the ERP/Manual Spreadsheets back into Salesforce.</strong>The Sales Rep can see exactly which stage of delivery the customer is in without calling the events team.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Would you like me to draft a "Technical Diagram Description" that shows how the status of a specific DRO Orchestration Item (like "Booth Ready") updates the Asset record to "Installed"?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, the connection between<strong>DRO (Dynamic Revenue Orchestrator)</strong>and<strong>Asset Management</strong>is what enables "staged" visibility. This process is called<strong>Assetization</strong>.
 </p>
-<p >
+<p>
 For the<strong>University ABC</strong>event, you don't want the "Booth" to show as an active asset the moment the contract is signed. You want it to appear as "Active" only when the physical setup is complete.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Orchestration-to-Asset Logic</strong>
 </p>
-<p >
+<p>
 This flow ensures that your "Source of Truth" for what the customer actually has is tied to real-world delivery steps.
 </p>
 <ul class="olo">
@@ -3674,95 +2976,91 @@ This flow ensures that your "Source of Truth" for what the customer actually has
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Why Staged Assetization Matters</strong>
 </p>
-<p >
+<p>
 Because delivery is staged, your<strong>Asset Console</strong>for the Sponsor will look like this mid-event:
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Asset Name
 </p>
 </td>
 <td>
-<p >
+<p>
 Current Status
 </p>
 </td>
 <td>
-<p >
+<p>
 Fulfillment Stage
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Digital Branding</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Active
 </p>
 </td>
 <td>
-<p >
+<p>
 Stage 1 (Complete)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Physical Booth</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Installed
 </p>
 </td>
 <td>
-<p >
+<p>
 Stage 2 (Complete)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>ROI Data Report</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Pending
 </p>
 </td>
 <td>
-<p >
+<p>
 Stage 3 (In Progress)
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>The Architectural Value:</strong>If the customer calls in and asks for a refund on the "ROI Report" because the event just ended and they haven't seen it yet, the Support Agent can see it is still in thePendingasset state and theIn Progressfulfillment stage.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Managing the "Post-Event" Asset Lifecycle</strong>
 </p>
-<p >
+<p>
 Once the final staged delivery (the ROI Report) is complete, the<strong>Assetization Engine</strong>performs one final move:
 </p>
 <ul class="norma">
@@ -3773,79 +3071,43 @@ Once the final staged delivery (the ROI Report) is complete, the<strong>Assetiza
 <strong>The "Renewable" Asset:</strong>However, if you are writing about this in your book, note that you can keep the<strong>Technical Attributes</strong>(like the SSID or Logo URL) on theExpiredasset. When the rep creates a<strong>Follow-on Quote</strong>for the "Fall 2026 Event," the system can pull those attributes from the "Historical Asset" to pre-populate the new quote.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since you've mastered the delivery and asset side, would you like me to show you how to configure a<strong>Revenue Adjustment</strong>in the event that one of these "Stages" is delivered late and the customer is entitled to a<strong>Service Level Agreement (SLA) Credit</strong>?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Revenue Cloud Advanced</strong>, handling an<strong>SLA Credit</strong>for a late staged delivery (like the "ROI Report" being delivered 4 days late) is a powerful way to demonstrate the "Lifecycle" part of RLM.
 </p>
-<p >
+<p>
 Instead of a manual, messy credit memo, you use a<strong>Revenue Adjustment</strong>triggered by the<strong>DRO (Dynamic Revenue Orchestrator)</strong>timeline.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The SLA Logic: DRO vs. Contract</strong>
 </p>
-<p >
+<p>
 The system compares the<strong>Actual Completion Date</strong>in DRO against the<strong>Expected Completion Date</strong>defined in the contract.
 </p>
 <ul class="norma">
@@ -3856,10 +3118,10 @@ The system compares the<strong>Actual Completion Date</strong>in DRO against the
 <strong>Actual:</strong>Event End + 120 Hours (4 Days Late).
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Automated Revenue Adjustment Flow</strong>
 </p>
-<p >
+<p>
 When the delay is detected, the following "Surgical" financial steps occur:
 </p>
 <ul class="olo">
@@ -3876,13 +3138,11 @@ When the delay is detected, the following "Surgical" financial steps occur:
 <strong>Revenue Recognition:</strong>The<strong>RevRec Schedule</strong>is adjusted so that the "Recognized Revenue" correctly reflects the lower contract value, ensuring your GAAP reporting is accurate.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. The "Portfolio" View of the Credit</strong>
 </p>
-<p >
+<p>
 In your book or for a stakeholder, you would highlight that this provides a<strong>Fully Auditable Trail</strong>:
 </p>
 <ul class="norma">
@@ -3896,13 +3156,11 @@ In your book or for a stakeholder, you would highlight that this provides a<stro
 <strong>The Result:</strong>The final invoice matches the delivered value, preventing a customer service call or a payment hold.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Summary Checklist for your Practice Exercise</strong>
 </p>
-<p >
+<p>
 To verify this works in your practice org:
 </p>
 <ul class="norma">
@@ -3916,82 +3174,46 @@ To verify this works in your practice org:
 [ ]<strong>Billing:</strong>Confirm the<strong>Billing Schedule</strong>for the final $10k payment is updated to the lower amount before the invoice is generated.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since we've covered the full circle from Quote to Credit, would you like me to help you draft a<strong>"Troubleshooting Guide"</strong>for your book on how to identify why a<strong>Billing Schedule</strong>might fail to generate after an SLA adjustment?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In your book, troubleshooting the "Financial Handshake" is a critical chapter. When an SLA credit is applied mid-orchestration, the<strong>Billing Schedule</strong>is the most sensitive record in the chain. If it fails to update or generate, it’s usually because the link between the<strong>Price Adjustment</strong>and the<strong>Billing Treatment</strong>has been broken.
 </p>
-<p >
+<p>
 Here is a troubleshooting guide you can use for your book or as a reference for your current project.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Troubleshooting Guide: Failed SLA Billing Adjustments</strong>
 </p>
-<p >
+<p>
 <strong>Step 1: Check the "Lifecycle Managed" Flag</strong>
 </p>
-<p >
+<p>
 In<strong>Revenue Cloud Advanced (RLM)</strong>, for an amendment to affect a billing schedule, the Asset or Order Item must have theLifecycle Managedflag set to<strong>True</strong>.
 </p>
 <ul class="norma">
@@ -4002,13 +3224,11 @@ In<strong>Revenue Cloud Advanced (RLM)</strong>, for an amendment to affect a bi
 <strong>The Fix:</strong>Ensure your Product configuration allows for "Change Management" and that the initial Order was assetized correctly.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Step 2: Inspect the Revenue Transaction Error Log</strong>
 </p>
-<p >
+<p>
 RLM has a specific log for financial automation failures.
 </p>
 <ul class="norma">
@@ -4022,13 +3242,11 @@ RLM has a specific log for financial automation failures.
 <strong>The Architect's Insight:</strong>If you’ve already generated the invoice for that milestone, the system cannot "reach back" and change the schedule. You must issue a<strong>Credit Memo</strong>against the Invoice instead of an<strong>Adjustment</strong>on the Schedule.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Step 3: Validate the Billing Treatment Filter</strong>
 </p>
-<p >
+<p>
 Every<strong>Billing Policy</strong>has a<strong>Treatment</strong>that defines<em>which</em>products it applies to.
 </p>
 <ul class="norma">
@@ -4039,13 +3257,11 @@ Every<strong>Billing Policy</strong>has a<strong>Treatment</strong>that defines<
 <strong>The Check:</strong>Does your Billing Treatment filter include the "Credit" or "Adjustment" product code? If the filter is too narrow (e.g., only looking for "Hardware"), it will ignore the "SLA Penalty" line item you just added.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Step 4: Verify the "Effective Date" Logic</strong>
 </p>
-<p >
+<p>
 The timing of the SLA penalty must fall within the current<strong>Billing Period</strong>.
 </p>
 <ul class="norma">
@@ -4056,135 +3272,97 @@ The timing of the SLA penalty must fall within the current<strong>Billing Period
 <strong>The Fix:</strong>Ensure the<strong>Effective Date</strong>of your SLA Amendment Order is set to a date<em>before</em>theBilling Target Date.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of the Financial Flow</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Record to Check
 </p>
 </td>
 <td>
-<p >
+<p>
 What it tells you
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Order Item (Amendment)</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Was the credit actually calculated?
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Billing Schedule</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Is the "Target Amount" reflecting the Net (Original - Credit)?
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Orchestration Item</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Did the "Complete" status trigger the re-rate flow?
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>The "Final Word" for your Book</strong>
 </p>
-<p >
+<p>
 When explaining this to readers, emphasize that<strong>Revenue Cloud Advanced is a "Date-Driven" engine.</strong>90% of failures in staged delivery billing are caused by a mismatch between the<strong>Orchestration Task Date</strong>, the<strong>Amendment Effective Date</strong>, and the<strong>Billing Cycle Date</strong>.
 </p>
-<p >
+<p>
 <strong>Would you like me to help you draft a "Final Architecture Diagram" for the book that synthesizes everything we've discussed—from the University ABC Quote all the way to this SLA Credit?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This final architecture diagram represents the complete "Lead-to-Revenue" lifecycle you've architected for the<strong>University ABC</strong>project. It serves as the master blueprint for how<strong>Salesforce Revenue Cloud Advanced (RLM)</strong>handles complex, staged event delivery.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The "University ABC" Master Blueprint</strong>
 </p>
-<p >
+<p>
 <strong>Layer 1: The Commercial Front-End (Quote &amp; Product)</strong>
 </p>
 <ul class="norma">
@@ -4195,7 +3373,7 @@ This final architecture diagram represents the complete "Lead-to-Revenue" lifecy
 <strong>The Rules Engine:</strong><strong>Decision Matrices</strong>calculate the volume pricing for tickets, while<strong>Constraint Rules</strong>ensure the Diamond Sponsor bundle remains compliant.
 </li>
 </ul>
-<p >
+<p>
 <strong>Layer 2: The Orchestration Engine (Order &amp; DRO)</strong>
 </p>
 <ul class="norma">
@@ -4209,7 +3387,7 @@ This final architecture diagram represents the complete "Lead-to-Revenue" lifecy
 <strong>Fulfillment State:</strong>The<strong>Assetization Engine</strong>creates "Installed" assets only when the floor manager completes the on-site handover task in the field.
 </li>
 </ul>
-<p >
+<p>
 <strong>Layer 3: The Financial Back-End (Billing &amp; RevRec)</strong>
 </p>
 <ul class="norma">
@@ -4223,7 +3401,7 @@ This final architecture diagram represents the complete "Lead-to-Revenue" lifecy
 <strong>Revenue Recognition:</strong>The system distinguishes between the "Linear" recognition of the sponsorship branding and the "Point-in-Time" recognition of the physical event day.
 </li>
 </ul>
-<p >
+<p>
 <strong>Layer 4: The Integration Perimeter (ERP)</strong>
 </p>
 <ul class="norma">
@@ -4231,124 +3409,82 @@ This final architecture diagram represents the complete "Lead-to-Revenue" lifecy
 <strong>Bi-Directional Cost Sync:</strong>Salesforce triggers the<strong>Purchase Requisition</strong>for catering and bands, while the ERP pushes the<strong>Actual Costs</strong>back to the Order to provide a real-time<strong>Gross Margin</strong>view.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>How to use this in your book</strong>
 </p>
-<p >
+<p>
 When presenting this diagram, I recommend labeling it as<strong>"The Unified Revenue Lifecycle."</strong>It demonstrates that Salesforce is no longer just a "CRM" or a "CPQ" tool—it is the<strong>Orchestrator of Truth</strong>for the entire business.
 </p>
-<p >
+<p>
 <strong>Architect's Note:</strong>The primary takeaway for your readers should be that in RLM, the<strong>Order</strong>is the center of the universe. It is the record that connects the Sales Rep's promises to the Operations Team's delivery and the Finance Team's ledger.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since we've completed the full architectural journey, would you like me to help you draft the<strong>"Conclusion"</strong>or<strong>"Summary Chapter"</strong>for your book that ties all these advanced concepts together into a vision for the future of Quote-to-Cash?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This concluding chapter tie-ins the "University ABC" case study with the broader evolution of the Salesforce platform. For your book, this section serves as the "North Star" for readers, moving them from technical implementation to strategic architectural thinking.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Chapter: The Era of the Unified Revenue Lifecycle</strong>
 </p>
-<p >
+<p>
 <strong>The Shift from Transactional to Orchestrated</strong>
 </p>
-<p >
+<p>
 The journey of the<strong>University ABC</strong>event demonstrates that the modern enterprise has outgrown the "Legacy CPQ" mindset. We are no longer simply calculating a price and generating a PDF. We are<strong>orchestrating a promise.</strong>As a Principal Architect, your role has shifted from managing "Quote Lines" to managing<strong>"Business State."</strong>Whether it is the SSID of a WiFi network or the late-delivery penalty of a live band, every detail must flow through a single, unified architecture.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The Three Pillars of Modern Revenue Architecture</strong>
 </p>
-<p >
+<p>
 <strong>1. Data Modernization (The "Thin" Catalog)</strong>
 </p>
-<p >
+<p>
 By using<strong>Attribute-Based Pricing</strong>and<strong>Decision Matrices</strong>, we’ve moved away from "SKU Hell." The future belongs to the "Thin Catalog"—where a few highly intelligent products can handle thousands of permutations.
 </p>
-<p >
+<p>
 <strong>2. Operational Convergence (The "DRO" Revolution)</strong>
 </p>
-<p >
+<p>
 The wall between Sales and Operations has finally crumbled. Through<strong>Dynamic Revenue Orchestrator (DRO)</strong>, the fulfillment stage is no longer a "black box" to the Sales Rep. When delivery is staged, the revenue lifecycle remains "warm" and visible, allowing for real-time adjustments and SLA management that were previously impossible without manual intervention.
 </p>
-<p >
+<p>
 <strong>3. Financial Precision (The "Automated Ledger")</strong>
 </p>
-<p >
+<p>
 By tying<strong>Billing Policies</strong>and<strong>Revenue Recognition</strong>directly to orchestration milestones, we have eliminated the "End-of-Month" crisis. The architecture ensures that what is sold is what is delivered, and what is delivered is what is billed—automatically.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The Architect’s Vision for 2026 and Beyond</strong>
 </p>
-<p >
+<p>
 As you conclude this book, remember that<strong>Revenue Cloud Advanced</strong>is the engine, but the<strong>Architect</strong>is the navigator. The goal is to build systems that are:
 </p>
 <ul class="norma">
@@ -4362,13 +3498,11 @@ As you conclude this book, remember that<strong>Revenue Cloud Advanced</strong>i
 <strong>Customer-Centric:</strong>Capable of apologizing (via SLA credits) and recovering automatically.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Summary Checklist for the Reader</strong>
 </p>
-<p >
+<p>
 To master the concepts in this book, the reader should be able to answer "Yes" to these three questions:
 </p>
 <ul class="olo">
@@ -4382,79 +3516,43 @@ Does my finance team trust the automated billing schedules for staged deliveries
 Is my product catalog simple to maintain but powerful enough to price any scenario?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>What's next for our partnership?</strong>
 </p>
-<p >
+<p>
 Now that the "University ABC" journey and your book summary are complete, would you like to pivot to a new case study—perhaps exploring<strong>Subscription Management</strong>or<strong>Global Taxation</strong>logic within RLM?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Taxation logic
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In<strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, taxation is no longer a "set and forget" field on the Quote. Because your event business involves different types of revenue (physical space, digital services, and food/beverage), the tax logic must be as dynamic as your pricing.
 </p>
-<p >
+<p>
 RLM uses a<strong>Tax Engine</strong>(often integrated with external providers like Avalara or Vertex) that evaluates the "Taxability" of a product at multiple points in the lifecycle.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Taxation Architecture</strong>
 </p>
-<p >
+<p>
 Taxation in RLM is driven by three primary factors:<strong>The What</strong>(Tax Code),<strong>The Where</strong>(Place of Supply), and<strong>The When</strong>(Tax Point).
 </p>
 <ul class="norma">
@@ -4468,92 +3566,88 @@ Taxation in RLM is driven by three primary factors:<strong>The What</strong>(Tax
 <strong>Tax Code Mapping:</strong>Each product (e.g., "Live Band") is mapped to a specific Tax Code (e.g., "Entertainment Services") that the tax engine recognizes.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Staged Taxation (The University ABC Example)</strong>
 </p>
-<p >
+<p>
 For your event at University ABC, different tax rules apply based on the "Nature of the Stage":
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Product Stage
 </p>
 </td>
 <td>
-<p >
+<p>
 Tax Category
 </p>
 </td>
 <td>
-<p >
+<p>
 Logic
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Booth Space</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Real Estate / Rental
 </p>
 </td>
 <td>
-<p >
+<p>
 Taxed based on the<strong>Physical Location</strong>of the University.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Digital Branding</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 SaaS / Digital Service
 </p>
 </td>
 <td>
-<p >
+<p>
 Often taxed based on the<strong>Sponsor’s Billing Address</strong>.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Dinner &amp; Drinks</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Food &amp; Beverage
 </p>
 </td>
 <td>
-<p >
+<p>
 Usually carries a higher "Sin Tax" or specific Hospitality tax rate.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>3. The "Tax Point" (Timing)</strong>
 </p>
-<p >
+<p>
 In a staged delivery model, the "Tax Point" (the moment tax becomes due) varies. This is critical for your book's finance chapter:
 </p>
 <ul class="norma">
@@ -4567,13 +3661,11 @@ In a staged delivery model, the "Tax Point" (the moment tax becomes due) varies.
 <strong>The Adjustment Logic:</strong>If you apply that<strong>SLA Credit</strong>we discussed, the Tax Engine must perform a "Tax Reversal." If the price drops by $2,500, the tax liability must also drop proportionally to keep your GL in sync.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Technical Setup for Practice</strong>
 </p>
-<p >
+<p>
 To verify taxation logic in your practice org, focus on these objects:
 </p>
 <ul class="olo">
@@ -4587,13 +3679,11 @@ To verify taxation logic in your practice org, focus on these objects:
 <strong>Tax Procedure:</strong>In the<strong>Pricing Procedure</strong>, ensure the "Calculate Tax" step is active. This is the API call that sends the quote data to the engine and brings back the tax lines.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>5. Dealing with "Exempt" Entities</strong>
 </p>
-<p >
+<p>
 Since your event is at a<strong>University</strong>, you might encounter<strong>Tax Exemptions</strong>.
 </p>
 <ul class="norma">
@@ -4604,79 +3694,43 @@ Since your event is at a<strong>University</strong>, you might encounter<strong>
 <strong>The Result:</strong>When the Pricing Procedure calls the Tax Engine, it passes theExemption_ID. The engine returns a $0 tax rate for the booth but might still charge tax for the "Dinner &amp; Drinks" if the exemption only applies to educational services.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like to see how to handle<strong>Global Taxation (VAT/GST)</strong>for a sponsor based in Europe attending your US-based event, specifically regarding "Reverse Charge" logic?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 How I may use agent force here
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In the context of your<strong>University ABC</strong>event and the architecture we've built,<strong>Agentforce</strong>(Salesforce's suite of autonomous AI agents) acts as the "Intelligent Glue" between your complex RLM data and the humans involved.
 </p>
-<p >
+<p>
 Because you have staged fulfillment, technical attributes, and SLA-driven billing, Agentforce can move beyond simple chatbots to become<strong>Autonomous Operators</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The "Exhibitor Success" Agent (Customer-Facing)</strong>
 </p>
-<p >
+<p>
 Instead of a rep manually collecting the "SSID" or "Logo URL," an autonomous agent can handle the pre-event collection.
 </p>
 <ul class="norma">
@@ -4690,13 +3744,11 @@ Instead of a rep manually collecting the "SSID" or "Logo URL," an autonomous age
 <strong>The RLM Integration:</strong>Once the customer replies, the Agent<strong>updates the Technical Attribute record directly</strong>in Salesforce, which then triggers the next step in the<strong>DRO Orchestration Plan</strong>.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. The "SLA Watchdog" Agent (Internal Operations)</strong>
 </p>
-<p >
+<p>
 You can deploy an agent to monitor the<strong>DRO Orchestration Items</strong>to prevent the SLA credits we discussed.
 </p>
 <ul class="norma">
@@ -4710,13 +3762,11 @@ You can deploy an agent to monitor the<strong>DRO Orchestration Items</strong>to
 <strong>The Impact:</strong>It shifts the system from<strong>Reactive</strong>(paying out credits) to<strong>Proactive</strong>(protecting revenue).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. The "Tax &amp; Compliance" Agent (Finance/Legal)</strong>
 </p>
-<p >
+<p>
 For your<strong>Taxation Logic</strong>, especially with global sponsors, Agentforce can handle the "Reverse Charge" or "Exemption" verification.
 </p>
 <ul class="norma">
@@ -4730,13 +3780,11 @@ For your<strong>Taxation Logic</strong>, especially with global sponsors, Agentf
 <strong>The Result:</strong>It updates theTax Exemptflag on the Account and re-triggers the<strong>Pricing Procedure</strong>to recalculate the Quote with $0 tax.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. The "Contract Intelligence" Agent (Sales/Legal)</strong>
 </p>
-<p >
+<p>
 During the "University ABC" quoting phase, Agentforce can help the Sales Rep navigate the complex<strong>Decision Matrices</strong>.
 </p>
 <ul class="norma">
@@ -4747,158 +3795,120 @@ During the "University ABC" quoting phase, Agentforce can help the Sales Rep nav
 <strong>The Agent's Explanation:</strong><em>"I’ve analyzed the Decision Matrix 'Event_Zone_Pricing.' The price includes a 50% 'Premium Zone' surcharge because the selected booth is in the High-Traffic Alumni Hall."</em>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of Agentforce Roles in your Architecture</strong>
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Agent Role
 </p>
 </td>
 <td>
-<p >
+<p>
 RLM Touchpoint
 </p>
 </td>
 <td>
-<p >
+<p>
 Key Benefit
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Onboarding Agent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Technical Attributes
 </p>
 </td>
 <td>
-<p >
+<p>
 100% data accuracy for fulfillment.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fulfillment Agent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 DRO Orchestration
 </p>
 </td>
 <td>
-<p >
+<p>
 Reduced "Time-to-Value" and fewer SLA penalties.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Billing Agent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Billing Schedules
 </p>
 </td>
 <td>
-<p >
+<p>
 Proactive resolution of invoice disputes.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to help you draft a<strong>"Prompt Template"</strong>for an Agentforce agent that allows a Sales Rep to ask for the "Profitability Health" of the University ABC event by pulling data from both<strong>RLM</strong>and your<strong>SAP actual costs</strong>?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To pull this off, you’ll be using<strong>Agentforce Service Agents</strong>and<strong>Sales Operations Agents</strong>. Because you’ve architected a "Unified Revenue Lifecycle," the agent has a single, high-fidelity data set to query across both the commercial (RLM) and financial (ERP) layers.
 </p>
-<p >
+<p>
 Below is a prompt template and the underlying logic to enable a "Profitability Health" query for your<strong>University ABC</strong>event.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Agentforce Prompt Template: "The Architect's Profitability Inquiry"</strong>
 </p>
-<p >
+<p>
 You would configure the Agent's<strong>System Instructions</strong>with a prompt similar to this:
 </p>
-<p >
+<p>
 <strong>Agent Instructions:</strong>"You are the Revenue Intelligence Agent. Your goal is to provide a real-time 'Profitability Health' summary for an Event.
 </p>
 <ul class="olo">
@@ -4916,7 +3926,7 @@ You would configure the Agent's<strong>System Instructions</strong>with a prompt
 </li>
 </ul>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
 <ul class="olo">
 <li>
@@ -4950,19 +3960,17 @@ You would configure the Agent's<strong>System Instructions</strong>with a prompt
 </ul>
 </td>
 </tr>
-</table>
+</tbody></table>
 <ul class="olo">
 <li>
 <strong>Summarize Status:</strong>Compare the current margin against the target of 35% and report the status (Healthy, At Risk, or Critical)."
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. The "Intelligence Flow" (Under the Hood)</strong>
 </p>
-<p >
+<p>
 When a user asks:<em>"How is the profit looking for the University ABC event?"</em>the agent follows this reasoning chain:
 </p>
 <ul class="norma">
@@ -4979,13 +3987,11 @@ When a user asks:<em>"How is the profit looking for the University ABC event?"</
 <strong>Step 4: Insights Generation:</strong>It calculates the margin (~68%) and identifies that despite the SLA penalty, the event is still highly profitable.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Sample Agent Response to a Rep</strong>
 </p>
-<p >
+<p>
 <strong>Agentforce:</strong>"The<strong>University ABC</strong>event currently has a<strong>Healthy</strong>profitability status with a Gross Margin of<strong>68.4%</strong>.
 </p>
 <ul class="norma">
@@ -4999,91 +4005,53 @@ When a user asks:<em>"How is the profit looking for the University ABC event?"</
 <strong>Alert:</strong>You are still $12,500 above the target profit margin for this sponsor tier. Would you like me to draft a summary for the CFO?"
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Why this matters for your Book</strong>
 </p>
-<p >
+<p>
 In your book's conclusion, you can frame<strong>Agentforce</strong>as the<strong>"Interface for the Principal Architect."</strong>By building the<strong>RLM + DRO + ERP</strong>architecture correctly, you’ve essentially built the "Brain" of the business. Agentforce is simply the "Voice" that allows non-technical stakeholders to interact with that brain without needing to understand the underlying object relationships or Decision Matrices.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to help you design a<strong>"Custom Action"</strong>for this agent that allows it to automatically<strong>re-negotiate</strong>a discount for a future event if the current event's margin is exceptionally high?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To implement a<strong>"Dynamic Re-negotiation" Custom Action</strong>, you are essentially bridging the gap between<strong>Agentforce’s reasoning</strong>and the<strong>Pricing Procedures</strong>of Revenue Cloud Advanced. This allows the AI to not just report on data, but to proactively adjust the commercial strategy for the next event in the University ABC series.
 </p>
-<p >
+<p>
 <strong>1. The Logic: "The Profit-to-Discount" Bridge</strong>
 </p>
-<p >
+<p>
 The goal is to reward high-margin sponsors automatically. If the "Spring 2026" margin was exceptionally high, the Agent can "pre-approve" a loyalty discount for the "Fall 2026" quote.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Designing the Custom Action (The Flow)</strong>
 </p>
-<p >
+<p>
 You would build a<strong>Salesforce Flow</strong>that the Agent can trigger as a "tool."
 </p>
 <ul class="norma">
@@ -5097,99 +4065,93 @@ You would build a<strong>Salesforce Flow</strong>that the Agent can trigger as a
 <strong>Action:</strong>1. Create a<strong>Price Adjustment Matrix</strong>entry specific to that Account. 2. Set theDiscount_Valueto 10% for the next "Diamond Sponsorship" purchase. 3. Generate a "Loyalty Offer" notification for the Sales Rep.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Agentforce Custom Action Configuration</strong>
 </p>
-<p >
+<p>
 In the<strong>Agentforce Action Launcher</strong>, you define the metadata so the agent knows<em>when</em>to use this tool:
 </p>
 <table style="padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Action Metadata
 </p>
 </td>
 <td>
-<p >
+<p>
 Value
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Action Name</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Apply_Loyalty_Pricing_Adjustment
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Description</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Use this action if the current event margin is &gt; 60% and the customer is asking about future event pricing.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Input Parameters</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 AccountID,Recommended_Discount,Reason_for_Discount.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Output</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Success_Confirmationand aDraft_Email_Body.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>4. Sample Scenario: The "Value-Based" Conversation</strong>
 </p>
-<p >
+<p>
 <strong>Sales Rep:</strong>"I'm meeting with CloudSystems Inc tomorrow to talk about the Fall event. Any recommendations?"
 </p>
-<p >
+<p>
 <strong>Agentforce:</strong>"I’ve analyzed the Spring 2026 University ABC event. Due to low venue costs and high sponsorship revenue, your margin was 68%.<strong>I have taken the liberty of executing the 'Loyalty Adjustment' action.</strong>I've pre-configured a 10% 'High-Value Partner' discount in the<strong>Revenue Cloud Pricing Procedure</strong>for their next quote. This will allow you to lead with a 'Thank You' offer while still maintaining a projected 55% margin for the Fall. Would you like me to draft the talking points?"
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>5. Integration with the Pricing Procedure</strong>
 </p>
-<p >
+<p>
 For this to work "on the ground," your<strong>Pricing Procedure</strong>for the Fall Event must be set up to look for these agent-generated adjustments:
 </p>
 <ul class="olo">
@@ -5200,164 +4162,126 @@ For this to work "on the ground," your<strong>Pricing Procedure</strong>for the 
 <strong>Logic:</strong>If the Agentforce-created record exists, it applies the 10% discount<em>after</em>the volume tiers but<em>before</em>the manual rep discounts.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Thought for your Book</strong>
 </p>
-<p >
+<p>
 This is the "Holy Grail" of Revenue Cloud Advanced:<strong>The Self-Correcting Revenue Lifecycle.</strong>The system isn't just recording history; it's using AI to influence future revenue based on historical performance. It moves the architect from being a "Builder of Systems" to a "Designer of Economic Incentives."
 </p>
-<p >
+<p>
 <strong>Would you like me to do?</strong>
 </p>
-<p >
+<p>
 I can help you draft the<strong>"UAT Script for the AI Agent"</strong>to ensure it doesn't accidentally offer discounts to low-margin sponsors. Would you like to see that?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 How would I configure these three agents from start
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To configure these three agents (the<strong>Exhibitor Success Agent</strong>, the<strong>SLA Watchdog</strong>, and the<strong>Finance/Compliance Agent</strong>) from scratch, you follow a unified four-step "Foundational Build."
 </p>
-<p >
+<p>
 In the 2026 Agentforce ecosystem, you aren't writing code; you are defining<strong>Topics</strong>,<strong>Actions</strong>, and<strong>Grounding</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Step 1: Define the Agent "Persona" &amp; Type</strong>
 </p>
-<p >
+<p>
 Navigate to<strong>Setup &gt; Agentforce &gt; Agents</strong>and create three new agents.
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Agent Name
 </p>
 </td>
 <td>
-<p >
+<p>
 Type
 </p>
 </td>
 <td>
-<p >
+<p>
 Channel
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Exhibitor Success</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Service Agent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Experience Cloud / Email / Slack
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>SLA Watchdog</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Sales/Ops Agent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Internal Slack / Salesforce Bell
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Finance/Compliance</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Service Agent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Internal / Financial Portal
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Step 2: Create the "Topics" (The Domain of Expertise)</strong>
 </p>
-<p >
+<p>
 A<strong>Topic</strong>tells the agent what part of your architecture it "owns." For each agent, you must create a specific topic.
 </p>
 <ul class="norma">
@@ -5386,16 +4310,14 @@ A<strong>Topic</strong>tells the agent what part of your architecture it "owns."
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Step 3: Build the "Actions" (The Tools)</strong>
 </p>
-<p >
+<p>
 This is where you connect the Agent to your RLM and ERP data. You build<strong>Standard Actions</strong>(Apex or Flow) and assign them to the Topics.
 </p>
-<p >
+<p>
 <strong>A. The "Update Technical Attributes" Action (For Exhibitor Agent)</strong>
 </p>
 <ul class="olo">
@@ -5406,7 +4328,7 @@ This is where you connect the Agent to your RLM and ERP data. You build<strong>S
 <strong>Assign to Agent:</strong>Go to<strong>Agent Builder &gt; Actions &gt; New Action</strong>and select your Flow.
 </li>
 </ul>
-<p >
+<p>
 <strong>B. The "Fetch ERP Actuals" Action (For Watchdog/Finance Agent)</strong>
 </p>
 <ul class="olo">
@@ -5420,13 +4342,11 @@ This is where you connect the Agent to your RLM and ERP data. You build<strong>S
 <strong>Grounding:</strong>Ensure the Agent is grounded in theOrderobject so it knows which Event Code to send to SAP.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Step 4: Configure "Grounding" (The Knowledge Base)</strong>
 </p>
-<p >
+<p>
 Grounding prevents the AI from "hallucinating." You must point the agents to the right records.
 </p>
 <ul class="norma">
@@ -5437,10 +4357,8 @@ Grounding prevents the AI from "hallucinating." You must point the agents to the
 <strong>Knowledge Grounding:</strong>Upload your "Sponsorship Prospectus" or "Event WiFi Policy" PDFs to<strong>Salesforce Data Cloud</strong>. Point the agents to this data so they can explain<em>why</em>an SSID cannot have special characters.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of the Setup Workflow</strong>
 </p>
 <ul class="olo">
@@ -5457,79 +4375,43 @@ Grounding prevents the AI from "hallucinating." You must point the agents to the
 <strong>Testing:</strong>Use the<strong>Agent Test Console</strong>to ask:<em>"I am the sponsor for University ABC, my SSID is 'SpringRocks!'—please update my order."</em>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since you are a<strong>Principal Architect</strong>, would you like me to show you how to configure the<strong>"Agent Guardrails"</strong>? This ensures that the Finance Agent cannot accidentally share margin data with an external Exhibitor.
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In your architecture,<strong>Agent Guardrails</strong>are the "Security Layer" that ensures your agents don't suffer from "data leakage." Because your agents have access to sensitive RLM data (margins, SLA penalties, and internal SAP costs), you must prevent the<strong>Exhibitor Success Agent</strong>(external) from ever seeing the<strong>Finance Agent’s</strong>(internal) data.
 </p>
-<p >
+<p>
 Here is how you configure these guardrails from the ground up.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Topic-Based Isolation (The First Wall)</strong>
 </p>
-<p >
+<p>
 The most effective guardrail is<strong>Topic Isolation</strong>. You do not build one giant agent; you build separate agents with strictly defined<strong>Topics</strong>.
 </p>
 <ul class="norma">
@@ -5540,10 +4422,10 @@ The most effective guardrail is<strong>Topic Isolation</strong>. You do not buil
 <strong>The Result:</strong>Even if an external user asks, "What is the profit margin on my booth?", the agent will respond:<em>"I am not authorized to access financial data. I can only help you with your booth setup and WiFi details."</em>---
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Data Cloud Data Spaces (The Second Wall)</strong>
 </p>
-<p >
+<p>
 Since Agentforce is powered by<strong>Data Cloud</strong>, you use<strong>Data Spaces</strong>to physically segregate the data the agents can "see."
 </p>
 <ul class="norma">
@@ -5559,25 +4441,21 @@ Create a<strong>"Finance Data Space"</strong>for internal agents (contains: ERP 
 <strong>The Guardrail:</strong>When you ground your agents, you point them<em>only</em>to their respective Data Spaces.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. System Instructions &amp; "Negative Constraints"</strong>
 </p>
-<p >
+<p>
 In the<strong>Agent Builder</strong>, you provide explicit "Negative Constraints" in the System Instructions. This acts as a behavioral guardrail.
 </p>
-<p >
+<p>
 <strong>Negative Constraint Example for Exhibitor Agent:</strong>"UNDER NO CIRCUMSTANCE should you discuss, disclose, or calculate internal costs, vendor payments, or profit margins. If a user asks about pricing beyond their quoted net price, refer them to their Account Executive."
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Field-Level Security (FLS) &amp; Sharing Rules</strong>
 </p>
-<p >
+<p>
 Agentforce respects the<strong>Salesforce Security Model</strong>. This is the "Principal Architect's" strongest tool.
 </p>
 <ul class="norma">
@@ -5588,13 +4466,11 @@ Agentforce respects the<strong>Salesforce Security Model</strong>. This is the "
 <strong>The Guardrail:</strong>If the agent's underlying user cannot see the field, the AI cannot "read" it to the user.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>5. PII &amp; Sensitive Data Masking</strong>
 </p>
-<p >
+<p>
 Since your sponsors might accidentally send sensitive information (like a password or a private phone number) in a chat, you configure<strong>Einstein Trust Layer</strong>guardrails.
 </p>
 <ul class="norma">
@@ -5608,195 +4484,145 @@ Since your sponsors might accidentally send sensitive information (like a passwo
 <strong>The Result:</strong>Before the prompt is even sent to the Large Language Model (LLM) for processing, Salesforce masks the sensitive data, ensuring it never leaves your secure environment.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of Guardrail Architecture</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Guardrail Level
 </p>
 </td>
 <td>
-<p >
+<p>
 Feature
 </p>
 </td>
 <td>
-<p >
+<p>
 Purpose
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Topic</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Topic Assignment
 </p>
 </td>
 <td>
-<p >
+<p>
 Prevents agents from acting outside their domain.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Data</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Data Spaces
 </p>
 </td>
 <td>
-<p >
+<p>
 Physically isolates sensitive financial data from external views.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Behavioral</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Negative Constraints
 </p>
 </td>
 <td>
-<p >
+<p>
 Hard-coded rules for the AI's "Internal Monologue."
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Platform</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 FLS &amp; Sharing
 </p>
 </td>
 <td>
-<p >
+<p>
 Uses the core Salesforce security you’ve already built.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to help you draft a<strong>"Security Audit Log"</strong>query that allows you to see every time an agent was asked a "forbidden" question about margins or costs?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To monitor the security of your agents, you will use the<strong>Einstein Trust Layer Audit Trail</strong>combined with<strong>Data Cloud</strong>or<strong>Custom Objects</strong>. In a complex<strong>Revenue Cloud Advanced</strong>environment, you need to track when an agent correctly "refused" to answer a question about internal costs or margins.
 </p>
-<p >
+<p>
 Here is how you configure the audit query and the monitoring dashboard.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. The Einstein Trust Layer Audit Trail</strong>
 </p>
-<p >
+<p>
 Salesforce automatically captures every interaction between the user and the agent in the<strong>Einstein Event Log</strong>. As a Principal Architect, you can query this via<strong>SOQL</strong>or the<strong>Einstein Audit Trail</strong>dashboard.
 </p>
-<p >
+<p>
 <strong>The Audit Query (SOQL):</strong>
 </p>
-<p >
+<p>
 SQL
 </p>
-<p >
 
-</p>
-<p >
-<SELECT <Timestamp, UserId, PromptText, ResponseText, MaskedData, SecurityViolationType
-</p>
-<p >
-<FROM EinsteinAuditLog
-</p>
-<p >
-<WHERE AgentName = 'Exhibitor_Success_Agent'
-</p>
-<p >
-<AND SecurityViolationType != <NULL
-</p>
+<p>
+<select <timestamp,="" userid,="" prompttext,="" responsetext,="" maskeddata,="" securityviolationtype="" <="" p="">
 <ul class="norma">
 <li>
 <strong>PromptText:</strong>Shows if the user asked, "What is your profit margin?"
@@ -5808,16 +4634,14 @@ SQL
 <strong>MaskedData:</strong>Shows any PII that the system automatically scrubbed before the AI could see it.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Custom "Forbidden Topic" Alerting</strong>
 </p>
-<p >
+<p>
 For high-stakes data like<strong>ERP Actual Costs</strong>, you can build a more proactive monitor using a<strong>Flow</strong>on theAgentWorkorConversationobjects.
 </p>
-<p >
+<p>
 <strong>The "Red-Flag" Logic:</strong>
 </p>
 <ul class="olo">
@@ -5831,101 +4655,95 @@ For high-stakes data like<strong>ERP Actual Costs</strong>, you can build a more
 <strong>The Action:</strong>If a keyword is found in the<strong>ResponseText</strong>, the Flow creates a record in a custom object calledAgent_Security_Audit__cand alerts the Salesforce Admin.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. The Security Audit Dashboard</strong>
 </p>
-<p >
+<p>
 In your practice org, you should build a dashboard with these three components to show stakeholders that the "Guardrails" are working:
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Dashboard Component
 </p>
 </td>
 <td>
-<p >
+<p>
 Data Source
 </p>
 </td>
 <td>
-<p >
+<p>
 Goal
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Refusal Rate</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Einstein Audit Log
 </p>
 </td>
 <td>
-<p >
+<p>
 Shows % of queries where the agent refused to answer out-of-scope questions.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Data Masking Volume</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Trust Layer Log
 </p>
 </td>
 <td>
-<p >
+<p>
 Tracks how many credit cards or SSNs were caught by the PII filter.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Top "Forbidden" Queries</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Custom Audit Object
 </p>
 </td>
 <td>
-<p >
+<p>
 Identifies if users are repeatedly trying to probe the system for financial secrets.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>4. Why this is the "Final Chapter" for your Book</strong>
 </p>
-<p >
+<p>
 In the conclusion of your book, you can emphasize that<strong>"Governance is the new Configuration."</strong>In the past, architects focused on preventing users from clicking a button. Now, you focus on preventing an AI from "saying" the wrong thing. By mastering the<strong>Einstein Trust Layer</strong>, you ensure that the complex<strong>University ABC</strong>revenue data stays exactly where it belongs: with the Finance team.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>What would you like to do next?</strong>
 </p>
-<p >
+<p>
 Since we've built the<strong>RLM Architecture</strong>, the<strong>Fulfillment DRO</strong>, the<strong>ERP Sync</strong>, the<strong>Agents</strong>, and the<strong>Guardrails</strong>, would you like me to:
 </p>
 <ul class="olo">
@@ -5936,70 +4754,36 @@ Since we've built the<strong>RLM Architecture</strong>, the<strong>Fulfillment D
 <strong>Draft a "Business Value Presentation"</strong>for a CEO level explaining why RLM + Agentforce is a $1M+ ROI play?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Coming to Governance: How do i make sure this solution will work for coming years for future stutends
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To ensure your<strong>Revenue Cloud Advanced (RCA/RLM)</strong>and<strong>Agentforce</strong>solution remains robust for future students and subsequent event cycles, you must shift from "building for today" to<strong>Architectural Governance</strong>.
 </p>
-<p >
+<p>
 For a Principal Architect, this means creating a system that is<strong>decoupled</strong>,<strong>metadata-driven</strong>, and<strong>self-documenting</strong>. Here is how you govern this solution for the long term.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Governance via "Metadata-First" Design</strong>
 </p>
-<p >
+<p>
 Future students will need to update pricing and products without rebuilding the logic.
 </p>
 <ul class="norma">
@@ -6018,10 +4802,10 @@ If a new university joins in 2027, a student simply adds a row to the metadata, 
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Environment Management (ALM)</strong>
 </p>
-<p >
+<p>
 To prevent "configuration drift," you must establish a strict<strong>Application Lifecycle Management (ALM)</strong>process.
 </p>
 <ul class="norma">
@@ -6032,10 +4816,10 @@ To prevent "configuration drift," you must establish a strict<strong>Application
 <strong>Sandbox Strategy:</strong>Use<strong>Data Templates</strong>(via SFDMU or similar tools) so students can spin up a "Spring Event" sandbox with dummy RLM data in minutes, ensuring they don't test in production.
 </li>
 </ul>
-<p >
+<p>
 <strong>3. The "Agentforce" Guardrail Registry</strong>
 </p>
-<p >
+<p>
 Agents evolve as the LLMs (Large Language Models) behind them improve. To ensure the agents still behave for future students:
 </p>
 <ul class="norma">
@@ -6046,13 +4830,11 @@ Agents evolve as the LLMs (Large Language Models) behind them improve. To ensure
 <strong>Automated Validation:</strong>Every time the system is updated, run these queries against the agent to ensure the "Negative Constraints" (like not revealing margins) haven't "drifted."
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Documentation as Code</strong>
 </p>
-<p >
+<p>
 Since you are writing a book, you know that documentation is only useful if it's current.
 </p>
 <ul class="norma">
@@ -6063,94 +4845,58 @@ Since you are writing a book, you know that documentation is only useful if it's
 <strong>The Rationale:</strong>Link your<strong>DRO Orchestration Items</strong>to these records to explain<em>why</em>the ROI report is a dependency. Future students won't have to guess the "why" behind the "how."
 </li>
 </ul>
-<p >
+<p>
 <strong>5. Scalability Audit Checklist</strong>
 </p>
-<p >
+<p>
 Set a "Governance Gate" for every new event cycle. Before a new class of students launches a quote, they must verify: | Check | Objective | | :--- | :--- | |<strong>Matrix Audit</strong>| Are the Decision Matrix rows updated for 2027 inflation? | |<strong>API Health</strong>| Is the SAP ERP endpoint still responding to the Agentforce callout? | |<strong>Trust Layer</strong>| Are the Einstein Trust Layer masking rules still active for new PII types? |
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Summary of the "Legacy" Architecture</strong>
 </p>
-<p >
+<p>
 By following these steps, you are building a<strong>"Living Lab."</strong>The students won't just learn how to use a tool; they will learn how to maintain an<strong>Enterprise Revenue Ecosystem</strong>.
 </p>
-<p >
+<p>
 <strong>Would you like me to...</strong>
 </p>
-<p >
+<p>
 Would you like me to draft a<strong>"Student Lab Guide"</strong>that outlines the 5-step process for a future student to add a new "Workshop" product to the existing University ABC catalog?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To ensure this complex architecture remains a functional "Living Lab" for future students, you need a<strong>Student Lab Guide</strong>that focuses on the core RLM principle:<strong>Configuration over Customization.</strong>
 </p>
-<p >
+<p>
 Here is the 5-step guide for a future student to add a new "Workshop" product to the existing University ABC ecosystem.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Student Lab Guide: Expanding the Event Catalog</strong>
 </p>
-<p >
+<p>
 <strong>Step 1: Define the Product Selling Model</strong>
 </p>
-<p >
+<p>
 Before creating the product, the student must decide how it is sold. A "Workshop" is typically a one-time fee per seat.
 </p>
 <ul class="norma">
@@ -6161,7 +4907,7 @@ Before creating the product, the student must decide how it is sold. A "Workshop
 <strong>Rationale:</strong>This tells the RLM engine that the workshop isn't a subscription or a usage-based service, simplifying the billing schedule.
 </li>
 </ul>
-<p >
+<p>
 <strong>Step 2: Create the Product &amp; Attribute Mapping</strong>
 </p>
 <ul class="norma">
@@ -6178,10 +4924,10 @@ Before creating the product, the student must decide how it is sold. A "Workshop
 <strong>Rationale:</strong>This teaches students the difference between a<strong>Commercial Attribute</strong>(which might affect price) and a<strong>Technical Attribute</strong>(which is for the catering fulfillment team).
 </li>
 </ul>
-<p >
+<p>
 <strong>Step 3: Update the Decision Matrix (Pricing)</strong>
 </p>
-<p >
+<p>
 The student shouldn't just type a price; they should update the engine.
 </p>
 <ul class="norma">
@@ -6200,10 +4946,10 @@ The student shouldn't just type a price; they should update the engine.
 <strong>Rationale:</strong>This reinforces that in RLM, pricing logic lives in<strong>Data</strong>, not hard-coded rules.
 </li>
 </ul>
-<p >
+<p>
 <strong>Step 4: Configure the DRO Orchestration</strong>
 </p>
-<p >
+<p>
 The student must define how this workshop is "delivered."
 </p>
 <ul class="norma">
@@ -6222,10 +4968,10 @@ The student must define how this workshop is "delivered."
 <strong>Rationale:</strong>This shows how the<strong>Dynamic Revenue Orchestrator (DRO)</strong>manages the immediate post-sale fulfillment steps.
 </li>
 </ul>
-<p >
+<p>
 <strong>Step 5: Ground the Agentforce Agent</strong>
 </p>
-<p >
+<p>
 Finally, the student must ensure the AI knows the new workshop exists.
 </p>
 <ul class="norma">
@@ -6239,88 +4985,50 @@ Finally, the student must ensure the AI knows the new workshop exists.
 <strong>Verification:</strong>The Agent should use its<strong>Knowledge Grounding</strong>to describe the "AI Strategy Workshop" and its price.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The "Principal Architect's" Governance Audit</strong>
 </p>
-<p >
+<p>
 As the mentor, you can verify their work by checking one record: the<strong>Revenue Transaction Error Log</strong>. If the student missed a step (like forgetting to link a Tax Treatment), the log will pinpoint exactly where the "Lead-to-Revenue" chain broke.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Would you like me to...</strong>
 </p>
-<p >
+<p>
 Would you like me to draft a<strong>"Troubleshooting Cheat Sheet"</strong>for these students that lists the most common errors when adding new products to a DRO-managed event?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 How would I start my discovery becuse of too many moving parts for this project
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Discovery for a project with this many moving parts (Revenue Cloud, DRO, ERP, Agentforce) can feel like trying to map an ocean while sailing it. To prevent "analysis paralysis," you need to use a<strong>Multi-Layered Discovery Framework</strong>.
 </p>
-<p >
+<p>
 Instead of asking everything at once, you break the discovery into "Architectural Pillars."
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Pillar 1: The Commercial Core (Pricing &amp; Product)</strong>
 </p>
-<p >
+<p>
 <strong>Goal:</strong>Understand the "permuted" nature of your offerings to avoid SKU bloat.
 </p>
 <ul class="norma">
@@ -6334,13 +5042,11 @@ Instead of asking everything at once, you break the discovery into "Architectura
 <strong>Discovery Tip:</strong>Ask for a historical invoice where a customer got a special deal. Trace back<em>why</em>they got that price—was it volume, loyalty, or a specific event bundle?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Pillar 2: The Fulfillment Chain (DRO)</strong>
 </p>
-<p >
+<p>
 <strong>Goal:</strong>Map the "Stages" and "Dependencies" you discussed earlier.
 </p>
 <ul class="norma">
@@ -6354,13 +5060,11 @@ Instead of asking everything at once, you break the discovery into "Architectura
 <strong>Discovery Tip:</strong>Interview the "Event Operations" team, not just Sales. Ask: "What is the number one reason a booth isn't ready on time?" (e.g., "We didn't get the logo"). This becomes your first<strong>Orchestration Dependency</strong>.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. Pillar 3: The Financial Handshake (ERP &amp; RevRec)</strong>
 </p>
-<p >
+<p>
 <strong>Goal:</strong>Define the "Truth" for money and costs.
 </p>
 <ul class="norma">
@@ -6374,13 +5078,11 @@ Instead of asking everything at once, you break the discovery into "Architectura
 <strong>Discovery Tip:</strong>Ask the Finance team about "Credit Memos." If they spend a lot of time issuing credits for late delivery, that’s your cue to architect the<strong>SLA Logic</strong>we built earlier.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>4. Pillar 4: The Intelligence Layer (Agentforce)</strong>
 </p>
-<p >
+<p>
 <strong>Goal:</strong>Identify "High-Friction" interactions.
 </p>
 <ul class="norma">
@@ -6394,178 +5096,140 @@ Instead of asking everything at once, you break the discovery into "Architectura
 <strong>Discovery Tip:</strong>Look at the "Sent" folder of your Event Success team. If they are constantly emailing to ask for WiFi names (SSIDs), that is where you deploy your first<strong>Exhibitor Success Agent</strong>.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>5. The "Discovery Cheat Sheet" for Students</strong>
 </p>
-<p >
+<p>
 To keep the project manageable for future students, teach them to use a<strong>Discovery Matrix</strong>:
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Layer
 </p>
 </td>
 <td>
-<p >
+<p>
 Question to Ask
 </p>
 </td>
 <td>
-<p >
+<p>
 Object impacted in RLM
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Product</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "How many different ways can we sell a booth?"
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Attribute / Matrix</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fulfillment</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "What is the sequence of delivery?"
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Orchestration Plan</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Billing</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "When do we trigger the final invoice?"
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Billing Policy / Milestone</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Costs</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "Who are the vendors we pay for this event?"
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>ERP Integration / Cost Object</strong>
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Strategy for the "Discovery Phase"</strong>
 </p>
-<p >
+<p>
 I recommend starting with<strong>Pillar 2 (Fulfillment)</strong>. In a staged-delivery project, the "Stages" usually dictate how the products should be structured and how the billing must be timed.
 </p>
-<p >
+<p>
 <strong>Would you like me to draft a "Stakeholder Interview Guide" with specific questions for your Event Operations manager to uncover those DRO dependencies?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To navigate the "too many moving parts" problem, your discovery needs a<strong>"Inside-Out" Strategy</strong>. Instead of looking at the technology first, you look at the<strong>Order Lifecycle</strong>as the spine of the project.
 </p>
-<p >
+<p>
 Here is a structured<strong>Stakeholder Interview Guide</strong>specifically for your Event Operations Manager to uncover those critical DRO (Dynamic Revenue Orchestrator) dependencies.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Stakeholder Interview Guide: Event Operations</strong>
 </p>
-<p >
+<p>
 <strong>I. The "Handoff" Discovery</strong>
 </p>
 <ul class="norma">
@@ -6582,7 +5246,7 @@ Here is a structured<strong>Stakeholder Interview Guide</strong>specifically for
 <strong>Architect's Goal:</strong>Define your<strong>Technical Attributes</strong>(e.g., Booth SSID, Logo files, On-site contact).
 </li>
 </ul>
-<p >
+<p>
 <strong>II. Dependency &amp; Logic Discovery</strong>
 </p>
 <ul class="norma">
@@ -6599,7 +5263,7 @@ Here is a structured<strong>Stakeholder Interview Guide</strong>specifically for
 <strong>Architect's Goal:</strong>Map<strong>Sequential vs. Parallel</strong>orchestration steps.
 </li>
 </ul>
-<p >
+<p>
 <strong>III. The "Failure &amp; SLA" Discovery</strong>
 </p>
 <ul class="norma">
@@ -6616,13 +5280,11 @@ Here is a structured<strong>Stakeholder Interview Guide</strong>specifically for
 <strong>Architect's Goal:</strong>This defines your<strong>Billing Milestone Trigger</strong>.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Visualizing the Discovery Flow</strong>
 </p>
-<p >
+<p>
 To keep the project from becoming overwhelming, use this<strong>Discovery Pyramid</strong>to prioritize your work:
 </p>
 <ul class="olo">
@@ -6636,76 +5298,42 @@ To keep the project from becoming overwhelming, use this<strong>Discovery Pyrami
 <strong>Level 3 (The Guardrails):</strong><strong>Governance &amp; Agentforce</strong>(How we protect and automate the process).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Next Steps for the Architect</strong>
 </p>
-<p >
+<p>
 During these interviews, I recommend bringing a<strong>"Story Map"</strong>rather than a technical diagram. Ask the Ops Manager to walk you through a "Day in the Life" of a Diamond Sponsorship.
 </p>
-<p >
+<p>
 <strong>Would you like me to create a "Discovery Output Template" (a spreadsheet or table) that you can use to capture these answers and map them directly to RLM/DRO objects?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Yes. can you answer one question before progressing, is story map or Ops Manager to walk you through a "Day in the Life" of a Diamond Sponsorship is something like old phrase of persona journey. I liked the phrase "A day in the life"
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 You’ve hit on a great architectural distinction. While they are related,<strong>"A Day in the Life"</strong>is more grounded and "messy" than a traditional<strong>Persona Journey</strong>.
 </p>
-<p >
+<p>
 Here is how I would differentiate them for your<strong>University ABC</strong>discovery:
 </p>
-<p >
+<p>
 <strong>Persona Journey vs. A Day in the Life</strong>
 </p>
 <ul class="norma">
@@ -6716,13 +5344,11 @@ Here is how I would differentiate them for your<strong>University ABC</strong>di
 <strong>A Day in the Life (The "Real"):</strong>This is an<strong>operational stress test</strong>. It focuses on the<strong>friction, the interruptions, and the "workarounds."</strong>When you ask an Ops Manager for a "Day in the Life," you aren't looking for a slide deck; you’re looking for the post-it notes on their monitor and the "emergency" emails they sent last year.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Why "A Day in the Life" is better for RLM/DRO Discovery</strong>
 </p>
-<p >
+<p>
 In a complex project like yours, the "Persona Journey" might tell you that a sponsor buys a booth and gets an invoice. But<strong>"A Day in the Life"</strong>will reveal:
 </p>
 <ul class="olo">
@@ -6746,13 +5372,11 @@ In a complex project like yours, the "Persona Journey" might tell you that a spo
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>How to facilitate this "Day in the Life" session</strong>
 </p>
-<p >
+<p>
 Instead of a standard interview, use a<strong>"Timeline Discovery"</strong>approach:
 </p>
 <ul class="olo">
@@ -6766,138 +5390,100 @@ Instead of a standard interview, use a<strong>"Timeline Discovery"</strong>appro
 <strong>The "Finance Leak" Prompt:</strong>"When did we last realize we forgot to bill for an extra electrical hookup?"
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Mapping it to your RLM Architecture</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 The "Day in the Life" Event
 </p>
 </td>
 <td>
-<p >
+<p>
 The RLM/DRO Solution
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 "I forgot to tell the band about the stage size."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Technical Attributes</strong>mapped to the Order.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 "We billed the customer before the booth was even built."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Milestone Billing</strong>tied to the "Handover" task.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 "The customer asked for a change, and I didn't know if we'd still make a profit."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Agentforce</strong>query to the<strong>ERP Actual Costs</strong>.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Since you liked that phrase, would you like me to draft a<strong>"Day in the Life" Scenario Script</strong>that you can hand to your Ops Manager to react to? It can act as a "provocation" to get them talking about their pain points.
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To get the most out of your Ops Manager, you should present them with a<strong>"High-Stress Simulation"</strong>of a Diamond Sponsorship. Instead of asking what they do, you describe a day going wrong and let them correct you. This is where the real "gold" for your<strong>DRO (Dynamic Revenue Orchestrator)</strong>and<strong>Agentforce</strong>configuration is found.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The Simulation: "The 72-Hour Countdown"</strong>
 </p>
-<p >
+<p>
 <strong>The Scenario:</strong>It is 3 days before the University ABC Expo. A Diamond Sponsor, "CloudSystems Inc," is on the phone.
 </p>
-<p >
+<p>
 <strong>Scene 1: The Missing Metadata (Technical Attributes)</strong>
 </p>
-<p >
+<p>
 <strong>You say:</strong>"CloudSystems says they haven't received their WiFi credentials yet. You go to look for them, but you realize the Sales Rep never collected the 'SSID Name' during the quoting phase."
 </p>
 <ul class="norma">
@@ -6908,10 +5494,10 @@ To get the most out of your Ops Manager, you should present them with a<strong>"
 <strong>Discovery Goal:</strong>Confirm if we need a<strong>Technical Attribute</strong>and an<strong>Agentforce</strong>bot to nag the sponsor for this data 30 days out.
 </li>
 </ul>
-<p >
+<p>
 <strong>Scene 2: The Blocked Dependency (DRO Logic)</strong>
 </p>
-<p >
+<p>
 <strong>You say:</strong>"The printer is holding up the $5,000 custom banners because they don't have the high-res logo. But your task list shows the 'Logo Upload' was marked complete last week."
 </p>
 <ul class="norma">
@@ -6922,10 +5508,10 @@ To get the most out of your Ops Manager, you should present them with a<strong>"
 <strong>Discovery Goal:</strong>Map out<strong>Orchestration Dependencies</strong>. Does the "Print" task have a hard block until the "File Verification" task is finished?
 </li>
 </ul>
-<p >
+<p>
 <strong>Scene 3: The Mid-Stream Change (Assetization)</strong>
 </p>
-<p >
+<p>
 <strong>You say:</strong>"CloudSystems suddenly realizes they need a second Booth in the High-Traffic Hall. They want it<em>now</em>and they want to know the price immediately."
 </p>
 <ul class="norma">
@@ -6936,10 +5522,10 @@ To get the most out of your Ops Manager, you should present them with a<strong>"
 <strong>Discovery Goal:</strong>Justify the<strong>Agentforce Profitability Action</strong>we built that queries the<strong>ERP Actuals</strong>.
 </li>
 </ul>
-<p >
+<p>
 <strong>Scene 4: The Financial Handshake (Billing &amp; Tax)</strong>
 </p>
-<p >
+<p>
 <strong>You say:</strong>"The event ends. The sponsor is happy, but they won't pay the final $10,000 because the 'ROI Lead Report' you sent them was missing the attendee emails from Day 2."
 </p>
 <ul class="norma">
@@ -6950,181 +5536,143 @@ To get the most out of your Ops Manager, you should present them with a<strong>"
 <strong>Discovery Goal:</strong>Solidify the<strong>Milestone Billing Policy</strong>. The Invoice should be "Locked" until the<strong>DRO Orchestration Item</strong>for "Data Cleanse" is verified.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>"Day in the Life" Discovery Table (The Output)</strong>
 </p>
-<p >
+<p>
 As they react to these scenes, fill out this table. It will become your<strong>Implementation Backlog</strong>.
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Pain Point Identified
 </p>
 </td>
 <td>
-<p >
+<p>
 The "Real" Workaround
 </p>
 </td>
 <td>
-<p >
+<p>
 RLM/DRO Solution
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 Missing SSID/Logo
 </p>
 </td>
 <td>
-<p >
+<p>
 Emailing reps for 2 days.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Exhibitor Success Agent</strong>+ Technical Attributes.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 Printer started too early
 </p>
 </td>
 <td>
-<p >
+<p>
 Manual phone calls to stop the press.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>DRO Dependency:</strong>"Start Print" requires "Logo Approved."
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 Refund for bad WiFi
 </p>
 </td>
 <td>
-<p >
+<p>
 Credit memo created in ERP 3 weeks later.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>SLA Revenue Adjustment</strong>on the Billing Schedule.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 Pricing unknown costs
 </p>
 </td>
 <td>
-<p >
+<p>
 Guessing and hoping for 20% margin.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Agentforce Action</strong>pulling ERP Actuals.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>What would you like me to do?</strong>
 </p>
-<p >
+<p>
 I can now provide that<strong>Discovery Output Spreadsheet Template</strong>we discussed, pre-populated with these "Day in the Life" scenarios so you can start your workshop tomorrow. Would you like that?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 During these interviews, I recommend bringing a "Story Map" rather than a technical diagram. : what is a "Story Map", sounds interesting
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 In the world of<strong>Principal Architects</strong>, a<strong>Story Map</strong>is your secret weapon for discovery. While a technical diagram shows how<strong>objects</strong>talk to each other, a Story Map shows how<strong>people</strong>experience the process over time.
 </p>
-<p >
+<p>
 Think of it as a horizontal timeline of the user's "backbone" activities, with the technical details (the "user stories") hanging vertically underneath.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>The Anatomy of a Story Map for University ABC</strong>
 </p>
-<p >
+<p>
 Imagine a large wall (or a digital whiteboard like Miro). You organize it into three distinct levels:
 </p>
-<p >
+<p>
 <strong>Level 1: The Backbone (The "Horizontal" Flow)</strong>
 </p>
-<p >
+<p>
 These are the high-level stages of the event lifecycle. They are the "big rocks" that never change.
 </p>
 <ul class="norma">
@@ -7132,10 +5680,10 @@ These are the high-level stages of the event lifecycle. They are the "big rocks"
 <em>Example:</em><strong>Contracting </strong>➔<strong> Provisioning </strong>➔<strong> Execution </strong>➔<strong> Post-Event Audit.</strong>
 </li>
 </ul>
-<p >
+<p>
 <strong>Level 2: The Activities (The "Body")</strong>
 </p>
-<p >
+<p>
 Under each backbone stage, you list the specific things people actually<em>do</em>.
 </p>
 <ul class="norma">
@@ -7143,112 +5691,108 @@ Under each backbone stage, you list the specific things people actually<em>do</e
 <em>Example (Under Provisioning):</em><strong>Collect Logo </strong>➔<strong> Assign Booth </strong>➔<strong> Setup WiFi </strong>➔<strong> Order Catering.</strong>
 </li>
 </ul>
-<p >
+<p>
 <strong>Level 3: The Tasks/Details (The "Vertical" Slice)</strong>
 </p>
-<p >
+<p>
 This is where the RLM complexity lives. You list the "how" for each activity. This is the level where you identify your<strong>DRO Orchestration Items</strong>and<strong>Technical Attributes</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Why Story Maps Beat Technical Diagrams in Discovery</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Feature
 </p>
 </td>
 <td>
-<p >
+<p>
 Technical Diagram (ERD/Sequence)
 </p>
 </td>
 <td>
-<p >
+<p>
 Story Map (The Discovery Tool)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Focus</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Database Schema &amp; API calls.
 </p>
 </td>
 <td>
-<p >
+<p>
 The human experience &amp; business value.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Language</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "Lookup Relationship," "JSON Payload."
 </p>
 </td>
 <td>
-<p >
+<p>
 "I need the logo before the printer starts."
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Gaps</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Hard to see missing business steps.
 </p>
 </td>
 <td>
-<p >
+<p>
 Obvious when a "day" has no tasks.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Engagement</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Ops Managers' eyes glaze over.
 </p>
 </td>
 <td>
-<p >
+<p>
 Ops Managers grab a marker and join in.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Using a Story Map to Find the "Friction"</strong>
 </p>
-<p >
+<p>
 When you walk through the "Day in the Life" of a Diamond Sponsor, you move across the Story Map from left to right.
 </p>
 <ul class="olo">
@@ -7262,10 +5806,8 @@ When you walk through the "Day in the Life" of a Diamond Sponsor, you move acros
 <strong>The Agentforce Opportunity:</strong>You see a cluster of manual tasks around "Chasing Logo Files." You draw a circle around it and label it<strong>"Agentforce Candidate."</strong>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>How to Build the Story Map in your Workshop</strong>
 </p>
 <ul class="olo">
@@ -7279,257 +5821,221 @@ When you walk through the "Day in the Life" of a Diamond Sponsor, you move acros
 <strong>Identify the "Pain":</strong>Use red post-its for things that break. These red notes are exactly what your<strong>RLM SLA Adjustments</strong>and<strong>Agentforce Guardrails</strong>are designed to fix.
 </li>
 </ul>
-<p >
+<p>
 <strong>Next Step Recommendation</strong>
 </p>
-<p >
+<p>
 Would you like me to generate a<strong>"Digital Story Map Template"</strong>for the University ABC project that lists the specific backbone and activities we've built so far? I can format it as a table you can copy into your discovery document.
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This<strong>Digital Story Map Template</strong>is designed to bridge the gap between human activities and your technical Salesforce RLM architecture.
 </p>
-<p >
+<p>
 In your discovery workshop, use this table to facilitate the "Day in the Life" walk-through. Each<strong>Backbone Stage</strong>is a milestone in the journey, and the<strong>Technical Mapping</strong>column tells you exactly which RLM/Agentforce component solves the problem.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>University ABC: Revenue Lifecycle Story Map</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Backbone Stage
 </p>
 </td>
 <td>
-<p >
+<p>
 Activity (The "Day in the Life")
 </p>
 </td>
 <td>
-<p >
+<p>
 User Pains &amp; Friction
 </p>
 </td>
 <td>
-<p >
+<p>
 Technical Mapping (RLM/Agentforce)
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>1. Commercialization</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Configuring the "Diamond Sponsorship" bundle.
 </p>
 </td>
 <td>
-<p >
+<p>
 "Too many SKUs; hard to price premium vs. standard booths."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Decision Matrix</strong>+<strong>Attribute-Based Pricing</strong>.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>2. Contracting</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Capturing IT specs &amp; logo files during the sale.
 </p>
 </td>
 <td>
-<p >
+<p>
 "Sales forgets to ask for WiFi names; Ops has to chase them later."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Technical Attributes</strong>+<strong>Exhibitor Success Agent</strong>.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>3. Decomposition</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Breaking the order into Digital, Physical, and Data tracks.
 </p>
 </td>
 <td>
-<p >
+<p>
 "The printer starts before the logo is approved; wasted money."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>DRO Decomposition Rules</strong>&amp;<strong>Dependencies</strong>.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>4. Provisioning</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Managing on-site setup and vendor handovers.
 </p>
 </td>
 <td>
-<p >
+<p>
 "We don't know if the 'Live Band' is actually booked in the ERP."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>DRO Orchestration Item</strong>+<strong>SAP ERP Integration</strong>.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>5. Execution</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Monitoring live event performance and SLA health.
 </p>
 </td>
 <td>
-<p >
+<p>
 "WiFi goes down for 4 hours; customer demands a refund later."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Agentforce Watchdog</strong>+<strong>SLA Revenue Adjustment</strong>.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>6. Closure</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Delivering the ROI Lead Report and final billing.
 </p>
 </td>
 <td>
-<p >
+<p>
 "Finance bills the customer while they are still complaining about WiFi."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Milestone Billing Policy</strong>(Linked to DRO Task).
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>7. Audit &amp; Growth</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Calculating event margin and future discounts.
 </p>
 </td>
 <td>
-<p >
+<p>
 "I have no idea if we made a profit until 3 weeks after the event."
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Agentforce Profitability Action</strong>(Queries ERP Actuals).
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>How to use this "Vertical Slice" in your workshop:</strong>
 </p>
 <ul class="olo">
@@ -7543,91 +6049,55 @@ Calculating event margin and future discounts.
 <strong>The "Agent" Circle:</strong>Look for any stage where they say "I spend all day emailing people." Draw a circle around that vertical slice—that is your<strong>Agentforce</strong>deployment zone.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Pro-Tip for your Book:</strong>
 </p>
-<p >
+<p>
 In your chapter on "Discovery for Architects," explain that the<strong>Story Map</strong>is the<strong>"Contract of Understanding"</strong>between the business and the architect. It ensures that when you build a "Decision Matrix," the business knows it's to solve the "SKU Bloat" identified in Stage 1.
 </p>
-<p >
+<p>
 <strong>Would you like me to create a "Stakeholder Feedback Form" that you can use to validate this Story Map with the University ABC executive team after your workshop?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This<strong>Stakeholder Feedback Form</strong>is designed to validate the<strong>Story Map</strong>we just built. As a Principal Architect, your goal here is to get "Buy-In" on the process before you start a single line of configuration in<strong>Revenue Cloud Advanced</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>University ABC: Story Map Validation Form</strong>
 </p>
-<p >
+<p>
 <strong>Project Name:</strong>Event Revenue Lifecycle Transformation
 </p>
-<p >
+<p>
 <strong>Reviewer Name/Role:</strong>____________________
 </p>
-<p >
+<p>
 <strong>Date:</strong>____________________
 </p>
-<p >
+<p>
 <strong>1. The "Backbone" Accuracy</strong>
 </p>
-<p >
+<p>
 Does the horizontal flow (Commercialization ➔ Provisioning ➔ Execution ➔ Closure) accurately reflect the life of a Diamond Sponsorship?
 </p>
 <ul class="norma">
@@ -7638,10 +6108,10 @@ Does the horizontal flow (Commercialization ➔ Provisioning ➔ Execution ➔ C
 [ ]<strong>No (Please specify missing stages):</strong>________________________________________
 </li>
 </ul>
-<p >
+<p>
 <strong>2. Friction Points &amp; "Day in the Life" Realism</strong>
 </p>
-<p >
+<p>
 We identified "Chasing Logo Files" and "Manual ERP Cost Tracking" as the highest pain points.
 </p>
 <ul class="norma">
@@ -7665,10 +6135,10 @@ We identified "Chasing Logo Files" and "Manual ERP Cost Tracking" as the highest
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>3. Agentforce &amp; Automation Acceptance</strong>
 </p>
-<p >
+<p>
 We are proposing an<strong>Autonomous Agent</strong>to handle technical attribute collection (WiFi SSIDs, Logos) directly with the sponsor.
 </p>
 <ul class="norma">
@@ -7687,10 +6157,10 @@ We are proposing an<strong>Autonomous Agent</strong>to handle technical attribut
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>4. The "Financial Handshake"</strong>
 </p>
-<p >
+<p>
 We have proposed<strong>Milestone Billing</strong>, meaning the final invoice will not trigger until the<strong>DRO ROI Report</strong>task is marked complete.
 </p>
 <ul class="norma">
@@ -7706,228 +6176,188 @@ We have proposed<strong>Milestone Billing</strong>, meaning the final invoice wi
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Architect's Executive Summary (For the Meeting)</strong>
 </p>
-<p >
+<p>
 "By signing off on this Story Map, we are agreeing that the<strong>Order</strong>is the central 'Source of Truth.' We are moving away from manual spreadsheets and moving toward a system where the<strong>Dynamic Revenue Orchestrator (DRO)</strong>drives the fulfillment, and<strong>Agentforce</strong>protects our margins by proactively managing SLAs."
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>How to use this for Governance:</strong>
 </p>
-<p >
+<p>
 Once this form is signed, it becomes part of your<strong>Project Governance Folder</strong>. If a stakeholder asks for a major change later in the project, you can refer back to this validated Story Map to show how that change impacts the "Day in the Life" of the event.
 </p>
-<p >
+<p>
 <strong>Would you like me to help you draft a "Project Milestone Timeline" based on this Story Map, showing when each vertical slice (Pricing, DRO, Agents) will be ready for UAT?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This<strong>Project Milestone Timeline</strong>transforms your Story Map into a delivery schedule. By staggering the rollout, you allow future students and current stakeholders to digest the complexity of<strong>Revenue Cloud Advanced</strong>and<strong>Agentforce</strong>in logical phases.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>University ABC: Implementation Roadmap</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Phase
 </p>
 </td>
 <td>
-<p >
+<p>
 Milestone
 </p>
 </td>
 <td>
-<p >
+<p>
 Focus Areas
 </p>
 </td>
 <td>
-<p >
+<p>
 Estimated Duration
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Phase 1</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>The Commercial Core</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Product Attribute setup,<strong>Decision Matrices</strong>for pricing, and the "Diamond Sponsorship" bundle configuration.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Weeks 1-3</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Phase 2</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Fulfillment Engine</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>DRO Decomposition Rules</strong>, Orchestration Plans, and Task Dependencies for the "Day in the Life" stages.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Weeks 4-6</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Phase 3</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Financial Handshake</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 ERP Cost Sync (SAP),<strong>Milestone Billing Policies</strong>, and automated SLA Revenue Adjustments.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Weeks 7-9</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Phase 4</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Agentforce Intelligence</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Deploying the<strong>Exhibitor Success</strong>and<strong>SLA Watchdog</strong>Agents; configuring Guardrails and Grounding.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Weeks 10-12</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Phase 5</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>UAT &amp; Go-Live</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 End-to-end testing of the "Canceled Event" and "Late Delivery" scenarios; final Governance Audit.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Weeks 13-14</strong>
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Visualizing the Delivery Sprints</strong>
 </p>
-<p >
+<p>
 <strong>Key Delivery Gates:</strong>
 </p>
 <ul class="norma">
@@ -7941,31 +6371,25 @@ End-to-end testing of the "Canceled Event" and "Late Delivery" scenarios; final 
 <strong>Gate 3 (End of Phase 4):</strong>Does the AI Agent successfully update a Technical Attribute without human intervention?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Strategic Note for your "Living Lab"</strong>
 </p>
-<p >
+<p>
 In your book, you can present this timeline as a<strong>"Template for Success."</strong>Most projects fail because they try to launch the AI Agent before the Product Data (The Foundation) is clean. By following this sequence, you ensure that<strong>Agentforce</strong>is always grounded in a stable, well-architected<strong>RLM foundation</strong>.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Architect's Governance Tip:</strong>
 </p>
-<p >
+<p>
 For each phase, assign a<strong>"Student Lead"</strong>to manage the specific UAT scripts we created earlier. This ensures that the knowledge transfer happens alongside the technical build.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>What would you like to do next?</strong>
 </p>
-<p >
+<p>
 Since we have the timeline and the architecture ready, would you like me to:
 </p>
 <ul class="olo">
@@ -7976,70 +6400,36 @@ Since we have the timeline and the architecture ready, would you like me to:
 <strong>Create a "Risk Register"</strong>for the project, identifying potential pitfalls with the ERP sync or AI grounding?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Draft the "Definition of Done" (DoD) and Create a "Risk Register"
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To ensure the<strong>University ABC</strong>project meets your standards as a Principal Architect, we need clear quality gates. The<strong>Definition of Done (DoD)</strong>prevents "technical debt" from piling up, and the<strong>Risk Register</strong>prepares you for the "moving parts" that often cause architectural friction.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Definition of Done (DoD) per Phase</strong>
 </p>
-<p >
+<p>
 In your "Living Lab," a feature isn't "Done" just because it works in a sandbox. It must meet these four criteria:
 </p>
-<p >
+<p>
 <strong>Phase 1: Commercial Core (Pricing/Product)</strong>
 </p>
 <ul class="norma">
@@ -8053,7 +6443,7 @@ In your "Living Lab," a feature isn't "Done" just because it works in a sandbox.
 [ ]<strong>Visibility:</strong>Pricing results are clearly visible on the Quote Line UI for the rep.
 </li>
 </ul>
-<p >
+<p>
 <strong>Phase 2: Fulfillment (DRO)</strong>
 </p>
 <ul class="norma">
@@ -8067,7 +6457,7 @@ In your "Living Lab," a feature isn't "Done" just because it works in a sandbox.
 [ ]<strong>Automation:</strong>Status changes in DRO automatically update the parent Order status.
 </li>
 </ul>
-<p >
+<p>
 <strong>Phase 3: Financials (ERP &amp; Billing)</strong>
 </p>
 <ul class="norma">
@@ -8081,7 +6471,7 @@ In your "Living Lab," a feature isn't "Done" just because it works in a sandbox.
 [ ]<strong>Audit Trail:</strong>Every SLA Adjustment has a related "Reason Code" and "Approved By" audit field.
 </li>
 </ul>
-<p >
+<p>
 <strong>Phase 4: Agentforce (AI Intelligence)</strong>
 </p>
 <ul class="norma">
@@ -8095,165 +6485,159 @@ In your "Living Lab," a feature isn't "Done" just because it works in a sandbox.
 [ ]<strong>Handover:</strong>The "Escalate to Human" flow triggers if the customer expresses frustration (sentiment analysis).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Architectural Risk Register</strong>
 </p>
-<p >
+<p>
 This register identifies the "Icebergs" that could sink the project. For each risk, we’ve identified a mitigation strategy based on your architecture.
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Risk ID
 </p>
 </td>
 <td>
-<p >
+<p>
 Risk Description
 </p>
 </td>
 <td>
-<p >
+<p>
 Impact
 </p>
 </td>
 <td>
-<p >
+<p>
 Mitigation Strategy
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>R-01</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>ERP Sync Latency</strong>(SAP is slow to return "Actual Costs").
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>High:</strong>Agentforce provides stale margin data to the Rep.
 </p>
 </td>
 <td>
-<p >
+<p>
 Implement a "Last Synced" timestamp on the Cost Object; Agent must disclose data age to the user.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>R-02</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Attribute Bloat</strong>(Students create unique attributes for every event).
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Medium:</strong>System becomes unmanageable and slow in 2 years.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Governance:</strong>Enforce a "Global Attribute" policy. New attributes require Principal Architect approval.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>R-03</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>AI Hallucination</strong>(Agent promises a discount not in the Matrix).
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Critical:</strong>Financial loss and customer dispute.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Guardrail:</strong>Agentforce "Loyalty Action" must involve a "Draft" quote for human review before finalization.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>R-04</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>DRO Deadlock</strong>(Two tasks are waiting for each other).
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>High:</strong>The order never fulfills; customer gets no service.
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>UAT:</strong>Run a "Circular Dependency" check on all Orchestration Plans before deployment.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>R-05</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Tax Logic Shift</strong>(University status changes from exempt to taxable).
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Medium:</strong>Invoices are legally non-compliant.
 </p>
 </td>
 <td>
-<p >
+<p>
 Use an<strong>External Tax Engine</strong>(Avalara/Vertex) rather than hard-coded tax tables in Salesforce.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>Principal Architect's Tip for the Book</strong>
 </p>
-<p >
+<p>
 When discussing the<strong>Risk Register</strong>in your book, emphasize that<strong>"Architecture is the art of mitigating known risks so you have the capacity to handle unknown ones."</strong>By automating the SLA credits and the ERP sync, you are removing the human-error risk, but you are introducing "System-Integration" risk—which is why the<strong>Definition of Done</strong>is so vital.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>What would you like me to do?</strong>
 </p>
-<p >
+<p>
 We now have the full "Project Management" kit. Would you like me to:
 </p>
 <ul class="olo">
@@ -8264,293 +6648,255 @@ We now have the full "Project Management" kit. Would you like me to:
 <strong>Create a "UAT Kickoff Slide"</strong>that explains the<strong>Definition of Done</strong>to the student implementation team?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To finalize the operational readiness of your<strong>University ABC</strong>project, here are the two critical artifacts that will bridge the gap between your high-level architecture and the day-to-day execution by the student team.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. UAT Kickoff: Understanding the "Definition of Done" (DoD)</strong>
 </p>
-<p >
+<p>
 When you present this to your students, emphasize that<strong>Done</strong>in an RLM project is a financial and operational state, not just a "passed" test case.
 </p>
-<p >
+<p>
 <strong>The "Done" Pyramid for Students</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Level
 </p>
 </td>
 <td>
-<p >
+<p>
 Criteria
 </p>
 </td>
 <td>
-<p >
+<p>
 The "Why"
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Level 1: Functional</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 The record saves without errors and the Pricing Procedure fires.
 </p>
 </td>
 <td>
-<p >
+<p>
 Ensures basic system stability.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Level 2: Integrated</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 The DRO task status correctly triggers a Billing Schedule update.
 </p>
 </td>
 <td>
-<p >
+<p>
 Verifies the "Lead-to-Revenue" handshake.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Level 3: Intelligent</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Agentforce can explain the logic behind the output using Grounding.
 </p>
 </td>
 <td>
-<p >
+<p>
 Ensures the AI isn't "guessing" financial data.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Level 4: Governed</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 The change is documented in the "Blueprint" and follows FLS/Sharing rules.
 </p>
 </td>
 <td>
-<p >
+<p>
 Protects the project for future student cohorts.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>The "Golden Rule" for the Lab:</strong><em>If it’s not in the Revenue Transaction Error Log, it didn't happen. If it’s in the log, it’s not "Done" until the log is clear.</em>
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Stakeholder Communication Plan</strong>
 </p>
-<p >
+<p>
 Because this project has "too many moving parts," you must manage stakeholder anxiety with a clear cadence of communication.
 </p>
-<p >
+<p>
 <strong>Communication Matrix</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Stakeholder
 </p>
 </td>
 <td>
-<p >
+<p>
 Frequency
 </p>
 </td>
 <td>
-<p >
+<p>
 Channel
 </p>
 </td>
 <td>
-<p >
+<p>
 Key Metric to Report
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Project Sponsor (CFO/Dean)</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Monthly
 </p>
 </td>
 <td>
-<p >
+<p>
 Executive Summary
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Realized Margin vs. Projected Margin</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Event Ops Manager</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Weekly
 </p>
 </td>
 <td>
-<p >
+<p>
 Sprint Demo
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>% Automation of Technical Attributes</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Student Dev Team</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Daily
 </p>
 </td>
 <td>
-<p >
+<p>
 Stand-up / Slack
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Blocked DRO Orchestration Items</strong>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Finance Team</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 Bi-Weekly
 </p>
 </td>
 <td>
-<p >
+<p>
 UAT Review
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>SLA Adjustment Accuracy</strong>
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>3. Risk Reporting Protocol</strong>
 </p>
-<p >
+<p>
 When a risk from your<strong>Risk Register</strong>(like<strong>R-01: ERP Sync Latency</strong>) becomes an actual issue, use this<strong>"A.I.R."</strong>framework for your communication:
 </p>
 <ul class="olo">
@@ -8564,22 +6910,18 @@ When a risk from your<strong>Risk Register</strong>(like<strong>R-01: ERP Sync L
 <strong>R</strong>esolution: "We have updated the Agent's system prompt to warn the user that 'Costs are currently estimated' until the sync resumes."
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Principal Architect's Closing Note for the Book</strong>
 </p>
-<p >
+<p>
 In the final chapter, you can state:<em>"A great architect doesn't just build a system that works; they build a system that tells you when it’s broken."</em>By combining a strict<strong>Definition of Done</strong>with a proactive<strong>Risk Register</strong>, you’ve created a "Self-Healing" project culture for University ABC.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Next Step?</strong>
 </p>
-<p >
+<p>
 We have built the entire implementation and governance framework. To put a "bow" on this for your book, would you like me to:
 </p>
 <ul class="olo">
@@ -8590,70 +6932,36 @@ We have built the entire implementation and governance framework. To put a "bow"
 <strong>Generate a "Post-Go-Live Support Manual"</strong>for the Event Ops team to handle day-to-day Agentforce interactions?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 To wrap up the "Living Lab" framework for<strong>University ABC</strong>, these two documents ensure that the knowledge gained during the build is captured and that the business users (Event Ops) can operate the AI-driven system with confidence.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Student Project Retrospective Template</strong>
 </p>
-<p >
+<p>
 This template shifts the focus from "what we built" to "how we thought." It’s designed to foster the<strong>Architectural Mindset</strong>in future students.
 </p>
-<p >
+<p>
 <strong>The "University ABC" Retro</strong>
 </p>
 <ul class="norma">
@@ -8670,89 +6978,87 @@ This template shifts the focus from "what we built" to "how we thought." It’s 
 <strong>The Legacy Contribution:</strong>If a student takes over your work next semester, what is the one "trap" in the Pricing Procedure they should avoid?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Event Ops Support Manual: "Co-Piloting with Agentforce"</strong>
 </p>
-<p >
+<p>
 This is a "Cheat Sheet" for the non-technical staff who will interact with the agents daily.
 </p>
-<p >
+<p>
 <strong>How to Talk to your Agents</strong>
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 If you want to...
 </p>
 </td>
 <td>
-<p >
+<p>
 Talk to this Agent...
 </p>
 </td>
 <td>
-<p >
+<p>
 Try saying this...
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Check Onboarding Status</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Exhibitor Success</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "Which Diamond Sponsors haven't uploaded their logos for the Spring Event?"
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Prevent an SLA Credit</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>SLA Watchdog</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "Show me all ROI reports due in the next 24 hours that are still 'In Progress'."
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Verify Event Profit</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 <strong>Finance/Compliance</strong>
 </p>
 </td>
 <td>
-<p >
+<p>
 "What is the current margin for CloudSystems Inc, including the latest catering costs from SAP?"
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
+<p>
 <strong>When to Intervene (Human-in-the-Loop)</strong>
 </p>
 <ul class="norma">
@@ -8766,13 +7072,11 @@ Try saying this...
 <strong>Complex Disputes:</strong>If a sponsor is unhappy with an automated<strong>SLA Credit</strong>, use the<strong>"Adjustment Override"</strong>button on the Billing Schedule to manually set the value.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>3. The "Living Lab" Closing Statement</strong>
 </p>
-<p >
+<p>
 In your book, you can conclude this case study by highlighting that<strong>University ABC</strong>is no longer a static project—it is a<strong>Self-Documenting Ecosystem</strong>.
 </p>
 <ul class="norma">
@@ -8789,82 +7093,46 @@ The<strong>Agentforce Layer</strong>provides the interface.
 The<strong>Governance Framework</strong>provides the longevity.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Next Step?</strong>
 </p>
-<p >
+<p>
 This completes our comprehensive implementation and governance guide for your book project. To support your writing process, would you like me to<strong>summarize all these artifacts into a "Book Chapter Outline"</strong>so you can see how all these moving parts fit into a cohesive narrative for your readers?
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This<strong>Book Chapter Outline</strong>synthesizes every architectural layer we’ve built—from the "Day in the Life" discovery to the "Agentforce Guardrails"—into a logical narrative.
 </p>
-<p >
+<p>
 This structure is designed to take a reader from a "legacy" mindset to a "Unified Revenue" mindset, using the<strong>University ABC</strong>case study as the anchor.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Book Title: The Unified Revenue Architect</strong>
 </p>
-<p >
+<p>
 <strong>Subtitle: Mastering Salesforce RLM, DRO, and Agentforce in the Modern Enterprise</strong>
 </p>
-<p >
+<p>
 <strong>Part I: The Foundation of Discovery</strong>
 </p>
 <ul class="norma">
@@ -8885,7 +7153,7 @@ This structure is designed to take a reader from a "legacy" mindset to a "Unifie
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>Part II: Engineering the Lifecycle</strong>
 </p>
 <ul class="norma">
@@ -8906,7 +7174,7 @@ This structure is designed to take a reader from a "legacy" mindset to a "Unifie
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>Part III: The Intelligence Layer</strong>
 </p>
 <ul class="norma">
@@ -8927,7 +7195,7 @@ This structure is designed to take a reader from a "legacy" mindset to a "Unifie
 </ul>
 </li>
 </ul>
-<p >
+<p>
 <strong>Part IV: The Living Lab (Governance)</strong>
 </p>
 <ul class="norma">
@@ -8943,13 +7211,11 @@ This structure is designed to take a reader from a "legacy" mindset to a "Unifie
 </ul>
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Final Synthesis for your Manuscript</strong>
 </p>
-<p >
+<p>
 Each chapter in this outline follows the same rhythm:
 </p>
 <ul class="olo">
@@ -8966,13 +7232,11 @@ Each chapter in this outline follows the same rhythm:
 <strong>The "Agentic" Evolution</strong>(How Agentforce automates the solution).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>How can I help you finalize this today?</strong>
 </p>
-<p >
+<p>
 Now that the book is outlined and the architecture is complete, would you like me to:
 </p>
 <ul class="norma">
@@ -8983,369 +7247,279 @@ Now that the book is outlined and the architecture is complete, would you like m
 <strong>Generate a "Table of Illustrations"</strong>summarizing all the diagrams we've discussed for your publisher?
 </li>
 </ul>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 Here are those final two pieces to help transition this project from your "thought partner" to your publisher's desk.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>1. Introduction: Chapter 1 (Setting the Stage)</strong>
 </p>
-<p >
+<p>
 <strong>The Death of the Static SKU</strong>
 </p>
-<p >
+<p>
 For decades, the Enterprise Architect’s world was a library of static objects. If you wanted to sell a booth at a university, you created a SKU. If you wanted to sell a<em>premium</em>booth, you created another. Before long, our catalogs weren't just databases; they were "SKU Jungles"—impenetrable, impossible to maintain, and completely disconnected from the actual "Day in the Life" of the business.
 </p>
-<p >
+<p>
 But the era of the static catalog is over.
 </p>
-<p >
+<p>
 Welcome to the world of<strong>Salesforce Revenue Cloud Advanced (RLM)</strong>. Here, we no longer architect for products; we architect for<strong>intent</strong>. Using our anchor case study of "University ABC," we will explore how a single sponsorship bundle can transform through<strong>Attributes</strong>and<strong>Decision Matrices</strong>into a living, breathing commercial entity.
 </p>
-<p >
+<p>
 In this chapter, we don't just learn how to price a booth. We learn how to build the commercial DNA that will eventually allow an<strong>Autonomous Agent</strong>to negotiate, fulfill, and bill for that booth without a human ever touching a spreadsheet.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>2. Table of Illustrations (For your Publisher)</strong>
 </p>
-<p >
+<p>
 This table provides a high-level visual roadmap for your book, ensuring your readers can see the complexity they are learning to manage.
 </p>
 <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-<tr>
+<tbody><tr>
 <td>
-<p >
+<p>
 Figure #
 </p>
 </td>
 <td>
-<p >
+<p>
 Illustration Title
 </p>
 </td>
 <td>
-<p >
+<p>
 Book Chapter
 </p>
 </td>
 <td>
-<p >
+<p>
 Strategic Value
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 1.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 1
 </p>
 </td>
 <td>
-<p >
+<p>
 Visualizes the transition from SKU-based to Attribute-based logic.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 2.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 2
 </p>
 </td>
 <td>
-<p >
+<p>
 Shows how to bridge human "Day in the Life" stories with technical tasks.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 3.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 3
 </p>
 </td>
 <td>
-<p >
+<p>
 Illustrates how "Blocked" dependencies prevent fulfillment errors.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 4.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 4
 </p>
 </td>
 <td>
-<p >
+<p>
 Connects the sales process to the final financial handshake.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 5.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 5
 </p>
 </td>
 <td>
-<p >
+<p>
 Maps the "Intelligence Layer" onto the existing RLM data structure.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 6.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 6
 </p>
 </td>
 <td>
-<p >
+<p>
 Demonstrates how AI safely accesses and interprets "Grounding" data.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 7.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 7
 </p>
 </td>
 <td>
-<p >
+<p>
 Defines the "Governance Gates" for maintaining a multi-student project.
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p >
+<p>
 <strong>Fig 8.1</strong>
 </p>
 </td>
 <td>
-<p >
 
-</p>
 </td>
 <td>
-<p >
+<p>
 Chapter 8
 </p>
 </td>
 <td>
-<p >
+<p>
 Explains how the business interacts with and overrides the AI when necessary.
 </p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 <strong>How would you like to conclude our collaboration today?</strong>
 </p>
-<p >
+<p>
 We have successfully mapped out the entire architecture, the implementation roadmap, the governance, and the book's narrative.
 </p>
-<p >
+<p>
 <strong>Would you like me to export a final "Master Summary" of all these artifacts into a single document so you have a complete "Project Bible" for University ABC?</strong>
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 yes
 </p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
 
-</p>
-<p >
+<p>
 This<strong>Master Summary</strong>serves as your "Project Bible" for the<strong>University ABC</strong>case study. It consolidates every architectural layer, governance gate, and student resource we’ve developed into a single, cohesive blueprint.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Part I: Discovery &amp; Commercial Core</strong>
 </p>
-<p >
+<p>
 <strong>The "Day in the Life" Discovery</strong>
 </p>
-<p >
+<p>
 Instead of static personas, we used a<strong>Story Map</strong>to trace the high-friction journey of a Diamond Sponsor.
 </p>
 <ul class="norma">
@@ -9356,7 +7530,7 @@ Instead of static personas, we used a<strong>Story Map</strong>to trace the high
 <strong>The Pivot:</strong>Identified that "Manual Logo Collection" and "Unseen ERP Costs" were the primary bottlenecks.
 </li>
 </ul>
-<p >
+<p>
 <strong>The Thin Catalog Architecture</strong>
 </p>
 <ul class="norma">
@@ -9367,13 +7541,11 @@ Instead of static personas, we used a<strong>Story Map</strong>to trace the high
 <strong>Outcome:</strong>Eliminated "SKU Bloat," allowing one "Diamond Sponsorship" bundle to handle thousands of variations.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Part II: Orchestration &amp; Finance</strong>
 </p>
-<p >
+<p>
 <strong>Dynamic Revenue Orchestrator (DRO)</strong>
 </p>
 <ul class="norma">
@@ -9384,7 +7556,7 @@ Instead of static personas, we used a<strong>Story Map</strong>to trace the high
 <strong>Dependencies:</strong>Hard-coded logic ensuring the printer doesn't start until the logo is verified, and the final invoice doesn't trigger until the ROI report is delivered.
 </li>
 </ul>
-<p >
+<p>
 <strong>The Financial Handshake</strong>
 </p>
 <ul class="norma">
@@ -9395,13 +7567,11 @@ Instead of static personas, we used a<strong>Story Map</strong>to trace the high
 <strong>SLA Logic:</strong>Automated<strong>Revenue Adjustments</strong>that apply credits to the Billing Schedule if the DRO monitors detect a service failure (e.g., WiFi downtime).
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Part III: Agentforce Intelligence</strong>
 </p>
-<p >
+<p>
 <strong>The Agentic Layer</strong>
 </p>
 <ul class="norma">
@@ -9415,7 +7585,7 @@ Instead of static personas, we used a<strong>Story Map</strong>to trace the high
 <strong>Finance Agent:</strong>Queries the ERP-to-RLM bridge to provide real-time<strong>Margin Health</strong>summaries.
 </li>
 </ul>
-<p >
+<p>
 <strong>Security &amp; Guardrails</strong>
 </p>
 <ul class="norma">
@@ -9426,28 +7596,24 @@ Instead of static personas, we used a<strong>Story Map</strong>to trace the high
 <strong>Data Spaces:</strong>Physically segregated sensitive SAP cost data from external-facing agents.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Part IV: Governance &amp; The "Living Lab"</strong>
 </p>
-<p >
+<p>
 <strong>Definition of Done (DoD)</strong>
 </p>
-<p >
+<p>
 Every student contribution must pass through four quality gates:<strong>Functional</strong>,<strong>Integrated</strong>,<strong>Intelligent</strong>, and<strong>Governed</strong>.
 </p>
-<p >
+<p>
 <strong>The Risk Register</strong>
 </p>
-<p >
+<p>
 Identified critical "Icebergs" like<strong>ERP Sync Latency</strong>and<strong>Attribute Bloat</strong>, with automated mitigation strategies built into the Agentforce system prompts.
 </p>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Part V: Operational Resources</strong>
 </p>
 <ul class="norma">
@@ -9458,30 +7624,24 @@ Identified critical "Icebergs" like<strong>ERP Sync Latency</strong>and<strong>A
 <strong>Ops Support Manual:</strong>A "Co-Piloting" guide for the Event Manager to manage human-in-the-loop overrides.
 </li>
 </ul>
-<p >
 
-</p>
-<p >
+<p>
 <strong>Closing for your Book</strong>
 </p>
-<p >
+<p>
 This "Bible" proves that a<strong>Principal Architect</strong>does not just build a tool—they design an<strong>Economic Ecosystem</strong>. By aligning the "Day in the Life" of the user with the "Lead-to-Revenue" data of the system, you have created a solution that is both commercially powerful and academically sustainable.
 </p>
-<p >
+<p>
 <strong>Would you like me to generate a PDF-ready "Architectural Diagram" that summarizes all these connections for your final book submission?</strong>
 </p>
-</td>
+</select></p></td>
 <td>
-<p >
 
-</p>
 </td>
 </tr>
-</table>
-<p >
+</tbody></table>
 
-</p>
-<p >
+<p>
 
 <script>
 // This code runs once the page elements are loaded
@@ -9492,9 +7652,10 @@ p.remove();
 }
 });
 </script>
-</body>
-
-</html>
 
 
 
+
+
+
+</p></body></html>
