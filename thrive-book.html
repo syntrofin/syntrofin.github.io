@@ -63,8 +63,8 @@
     <p>
       <strong>Conversation with Gemini</strong>
     </p>
-    <p class="question">
-      Event organizer company and salesforce Revenue cloud advanced - Can you give how products and bundles are structured for this
+    <p class="question" id="q1">
+      Event organizer company
     </p>
     <p> For an event organizer, <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability. </p>
     <p> Below is a breakdown of how you would structure these products and bundles using the latest RCA/RLM objects and logic. </p>
@@ -207,7 +207,10 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to create a specific <strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume? </p>
-    <p class="question"> yes </p>
+    
+<p class="question" id="q1">      
+Price Adjustment Based on Volume
+</p>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a <strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive <strong>Price Adjustment Matrix</strong>records. </p>
     <p> This allows you to change the unit price dynamically based on the quantity of tickets purchased without creating complex price rules. </p>
     <p>
@@ -334,7 +337,9 @@
     </p>
     <p> Would you like me to show you how to layer an <strong>Attribute-Based adjustment</strong>(like a "VIP Floor" surcharge) on top of this volume-based discount? </p>
     
-<p class="question"> who are my here - complete event charged to event sponserer, booths to companies/groups to showcase and people to buy tickets </p>
+<p class="question" id="q3">
+Customers - Paid: Event Sponors, Booths and Visitors
+</p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -500,7 +505,9 @@
     </p>
     <p> Since you have both B2B (Sponsors) and high-volume (Attendees) flows, would you like me to show how <strong>RCA manages the "Order to Asset" transition</strong>for an Exhibitor who wants to reuse the same booth setup for your next event? </p>
     
-    <p class="question"> Coming to fulfilment - sometime event may be longer or sponsor might buy two eevents once- the delivery is in stages typically </p>
+<p class="question" id="q4">
+Coming to fulfilment - Staged delivery
+</p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -760,8 +767,11 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to show you how to build a <strong>Profitability Calculation</strong>inside the <strong>Pricing Procedure</strong>that flags a quote for "Manager Approval" if the cost of the Band and Catering exceeds 40% of the Sponsorship revenue? </p>
-    
-    <p class="question"> Can you take one event, say for example - "Sprint 2020 event - University ABC" - and give me products to quote to revenue excersize with dummy customers - for me to practice on Revenue cloud Advanced </p>
+
+    <h2>RCA Excersize</h2>
+    <p class="question" id="q5"> 
+    RCA Excersize - 
+    </p>
     <p> To help you practice with <strong>Revenue Cloud Advanced (RCA/RLM)</strong>, let’s build out a quote for the <strong>"Spring 2026 Event - University ABC."</strong>This exercise focuses on the new object model: <strong>Product Selling Models</strong>, <strong>Attribute-Based Pricing</strong>, and <strong>Advanced Bundling</strong>. </p>
     <p>
       <strong>The Scenario</strong>
@@ -963,6 +973,7 @@
     <p>
       <strong>Would you like me to provide the "Decomposition Rule" logic for the "Power &amp; WiFi" product so you can see how it triggers a work order after the event ends?</strong>
     </p>
+        
     <p class="question"> yes </p>
     <p> To practice the <strong>Decomposition Rule</strong>logic, you need to configure how the system transforms a single "Sold Product" into specific "Execution Tasks." </p>
     <p> In <strong>Revenue Cloud Advanced (RLM)</strong>, this is handled by the <strong>Dynamic Revenue Orchestrator (DRO)</strong>. Unlike a simple workflow, DRO understands dependencies—meaning it knows you can't bill for electricity until the event is actually over. </p>
@@ -5440,6 +5451,7 @@
     </table>
   </body>
 </html>
+
 
 
 
