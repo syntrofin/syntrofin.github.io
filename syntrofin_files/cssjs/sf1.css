@@ -1,0 +1,603 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body { 
+    margin: 0 auto;           /* Centers the entire page */
+    max-width: 1100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+section{
+	scroll-margin-top: 50px;
+	padding-top: 10px;
+	padding-bottom: 32px;
+}
+/* HEADER - Logo Left, Menu Right */
+.header-container {
+    display: flex;             /* Activates Flexbox on the main header */
+    align-items: center;       /* Vertically centers all items */
+    padding: 0 20px;
+	padding-top: 10px;
+    width: 100%;               /* Ensure it uses full width to allow space-between to work */
+    margin: 0 auto;            /* Optional: Centers the entire header on a wide screen */
+}
+
+/* You can simplify .title-top now that the main container handles layout */
+.title-top {
+    display: flex;
+	justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+	padding-top: 10px;
+    width: 100%;              
+    margin: 0 auto;            
+}
+
+/* Keep the rest of the styles */
+.logo-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-logo {
+	transform: rotate(-35deg) scaleX(-1) ;
+    height: 50px;
+    width: auto;
+}
+
+.titleslogan {
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav-item {
+    margin-left: 1.5rem; 
+}
+
+.nav-link {
+    text-decoration: none;   
+    color: #46B0E1;
+    font-weight: 500;        
+    padding: 5px 0;          
+    transition: color 0.3s ease; 
+}
+
+.nav-link:hover, .nav-link:focus {
+    /*color: #002e5d; */      
+	color: #46B0E1;
+    text-decoration: none; 
+}
+
+
+/* Fragmented Grid */
+.fragment {
+    display: flex;
+    flex-direction: column;
+    /* Vertical: Aligns content to the top of the box */
+    justify-content: flex-start; 
+    /* Horizontal: Centers content inside the box */
+    align-items: center;        
+    /* Prevents the box from stretching to fill row height */
+    align-self: start;          
+    padding: 15px;
+    background-color: #fffeee; 
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    /* Keeps original height; rotation does not affect layout flow */
+    height: auto;
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out; 
+}
+
+.grid-image {
+    max-width: 100%; /* Prevents image from pushing column width */
+    height: auto;           
+    display: block;        
+    margin-bottom: 10px;    
+}
+
+/* Specific column placements */
+.leftingrid { grid-column: 1; text-align: left; }
+.centeringrid { grid-column: 2; text-align: center; }
+.rightingrid { grid-column: 3; text-align: right; }
+
+.fragment:hover {
+    transform: rotate(-1deg) scale(1.02);
+}
+
+/* Fragmented Grid Old
+.fragmented-grid {
+    display: grid;
+	grid-template-columns: repeat(3, 1fr);  
+    gap: 20px;
+    padding: 0 20px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	
+}
+.fragment {
+    padding: 15px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: center; 
+    text-align: center;
+    background-color: #fffeee; 
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out; 
+}
+*/
+
+.container2 {
+	display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;    /* Provides the 20px "gap" on both sides */
+}
+
+.cell2 {
+    width: 100% !important;
+    margin-bottom: 10px;
+    text-align: center; /* Centers text for a clean stack */
+	flex: 1; 
+	text-align: left;   
+	box-sizing: border-box;
+}
+
+.center50 {
+    width: 50%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 50%; 
+	text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* container2a image Sizing */
+.img_mshrink { 
+    width: 100%; 
+	/* border-radius: 15px; */
+    aspect-ratio: auto; 
+}
+
+/* Big Action Buttons */
+.actionbuttondiv {
+	text-align: center;
+	padding: 20px;
+}
+.ambergoldbutton {
+    /* Glowing bronze center to deep burnished edge */
+    background: radial-gradient(circle at center, #d49a46 0%, #a76d16 50%, #4a2f0a 100%);
+    
+    padding: 15px 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Adds a subtle glass rim */
+    cursor: pointer;
+    
+    /* Warm amber shadow for a 2026 "elevated" look */
+    box-shadow: 0 4px 15px rgba(74, 47, 10, 0.5);
+    
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+     /* font-weight: 600; */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for 2026 interactivity */
+.ambergoldbutton:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(167, 109, 22, 0.4);
+}
+
+.goldbutton {
+    background: linear-gradient(180deg, #FFD700 0%, #F9A602 100%); 
+    color: #121212; /* Dark gray text is much more readable on yellow than white */
+    padding: 15px 45px; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block; 
+    text-decoration: none;
+    /* font-weight: 600; Making text bold helps it stand out on yellow */
+    transition: transform 0.2s ease; /* Adds a nice feel for 2026 */
+}
+
+/* Add a hover effect for a better user experience */
+.goldbutton:hover {
+    background: linear-gradient(180deg, #F9A602 0%, #E69500 100%);
+    transform: translateY(-2px);
+}
+.nebulabutton {
+    background: radial-gradient(circle at center, #69bff8, #002E5D); 
+    padding: 15px 45px; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block; 
+    color: #fff;             
+    text-decoration: none;  
+	transition: all 0.3s ease-in-out; /* Smooths the transition */
+}
+.nebulabutton:hover {
+    /* Increases the glow on hover */
+    box-shadow: 0 8px 20px rgba(0, 46, 93, 0.4); 
+    
+    /* Subtle 2026 lift effect */
+    transform: translateY(-2px) scale(1.02); 
+    
+    /* Brightens the center of the nebula slightly */
+    filter: brightness(1.1); 
+}
+
+.obsidianbutton {
+    /* Deep charcoal to near-black gradient */
+    background: linear-gradient(180deg, #2d2d2d 0%, #121212 100%);
+    
+    color: #ffffff;
+    padding: 15px 45px;
+    border-radius: 8px;
+    
+    /* A subtle 1px border makes dark buttons look sharper */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    /* Soft shadow with a slight "glow" effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.obsidianbutton:hover {
+    /* Lightens slightly on hover */
+    background: linear-gradient(180deg, #3d3d3d 0%, #1a1a1a 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+}
+
+/* The Main Container for all tiles */
+.grid-container {
+    display: grid;
+    /* Reduced minimum width from 180px to 140px 
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
+	/* Changed max size from 1fr (flexible) to 150px (fixed ceiling) */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 100px)); 
+    gap: 15px; /* Slightly reduced margin between tiles */
+    max-width: 1200px;
+    margin: 0 auto;
+	padding: 0 20px;    /* Provides the 20px "gap" on both sides */
+	justify-content: center; 
+}
+
+/* Individual Tile Styling */
+.grid-item {
+    background-color: #f9f9f9; 
+    padding: 10px; 
+    text-align: center;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box; 
+}
+.grid-item img {
+    max-width: 100%;    /* Forces images to shrink to fit the tile */
+    height: auto;
+    display: block;
+    margin: 0 auto 8px auto; /* Centers the image and adds less space below */
+}
+
+/* Optional: style the text above the logos */
+.grid-item .logo-text {
+    font-size: 0.75rem; /* Slightly smaller text */
+    color: #666;
+    margin-bottom: 5px;
+}
+.stackedcard-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    gap: 10px; /* Use a positive number */
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+    align-items: flex-start; /* Keeps the top-margin offsets working correctly */
+}
+
+.stackedcard {
+    /* Change 300px to a percentage like 30% to force them to stay side-by-side */
+    flex: 1 1 calc(33.333% - 20px); 
+    background-color: #f9f9f9;
+    /* border-radius: 4px; */
+    padding: 10px; /* Changed from padding-left to full padding for better look */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box; 
+	border-top: 1px solid #727272; 
+}
+
+
+.stackedcard-title {
+    color: #565656; /* Example accent color */
+    font-size: 1.2em;
+	font-weight: 300;
+	text-align:center;
+	margin: 0 auto; 
+	padding: 0;
+	padding-top: 3px;
+    padding-bottom: 2px;
+	border-bottom: 1px solid #727272; 
+}
+footer {
+    background-color: #f4f4ff;  /* A very light blue/grey background */
+    padding: 30px 20px;         /* Generous space above and below text */
+    text-align: center;         /* Centers the text horizontally */
+    margin-top: 50px;           /* Adds space between content and footer */
+    border-top: 1px solid #eee; /* A subtle line separating it from the main page */
+}
+
+
+.smallentrance-div {
+	margin: 0 auto; 
+	background-color: white; 
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
+}
+
+/* 1. Ensure columns are pinned to the top */
+.smallentrance-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* CRITICAL: Prevents columns from stretching */
+    width: 100%;
+}
+
+/* 1. Base style for all columns */
+.smallentrance-cell {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    /* Adds vertical space between fragments or images inside the column */
+    row-gap: 20px; 
+}
+
+.smallentrance-cell:nth-child(1) {
+    flex: 1;
+    justify-content: center; 
+    align-items: center; 
+}
+/* 2. Middle column specific centering */
+/* FIX: Corrected center column logic */
+.smallentrance-cell:nth-child(2) {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;     /* Horizontally center content */
+    /* Ensure column has some height to center within if content is short */
+    min-height: 100%; 
+}
+
+/* FIX: Ensure the image fills its container but doesn't get massive */
+.smallentrance-image {
+    width: 100%;       /* Force image to fill its 2-ratio column */
+    max-width: 500px;  /* Control the absolute largest it can be */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;
+    flex-shrink: 0;    /* Prevent the image from shrinking under any pressure */
+}
+
+/* FIX: Space between fragments */
+.smallentrance-cell {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;     /* Modern way to add space between fragments */
+}
+
+.smallentrance-cell:nth-child(3) {
+    flex: 1;
+    justify-content: center; 
+    align-items: center; 
+}
+/*
+.smallentrance-cell:nth-child(3) .smallentrance-fragment {
+    align-self: flex-end;
+}
+*/
+/* 3. Fragment styling */
+.smallentrance-fragment {
+    align-self: flex-start; 
+	background-color: #fffeee; 
+    padding: 15px;
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out;
+}
+.smallentrance-fragment:hover {
+    transform: rotate(-1deg) scale(1.02);
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.solutiondiv {
+	margin: 0 auto; 
+	background-color: #f3fafe; 
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
+}
+
+.feature-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        /* min-height: 400px; */
+    }
+
+.stream-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        /* min-height: 400px; */
+    }
+
+	.service-box {background-color: #f3fafe;}
+    .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
+    .service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+    
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { 
+        margin-bottom: 15px; 
+        padding-left: 30px; 
+        position: relative; 
+        color: #1e293b;
+    }
+    .stream-list { list-style: none; padding: 0; }
+    .stream-list li { 
+        margin-bottom: 15px; 
+        padding-left: 30px; 
+        position: relative; 
+        color: #1e293b;
+    }
+    /* The "Bullet" Crayon - a nice blue accent */
+    .feature-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+    }
+    .stream-list li::before {
+        content: "o";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+    }
+
+    /* Image Crayon */
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 9px;
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
+    }
+
+    /* Mobile handling for the Master Brain */
+    @media (max-width: 768px) {
+
+    }
+
+
+
+footer p {
+    margin: 0;                  /* Removes default paragraph margin for perfect centering */
+    font-size: 0.85rem;         /* Keeps the text concise and readable */
+    color: #606060;             /* A soft, readable gray color */
+}
+
+.mimic-h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;     /* Shorthand for top/bottom 1em and left/right 0 */
+	color: #333333;
+}
+
+/* HELPERS */
+.heroslogan{ font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
+.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
+}
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.justify-center { justify-content: center !important; }
+.mirror-horizontal { transform: scaleX(-1); }
+
+/* MOBILE ADJUSTMENT */
+/* Media query for screens larger than a specific breakpoint (e.g., 600px) */
+/* Add this at the bottom of your CSS file */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column; /* Stacks logo and menu on mobile */
+    }
+	/* testing hiding nav  
+    .nav-item {
+        margin-left: 5px; 
+        margin-top: 10px;
+    }
+	.nav-link, .nav-link:hover, .nav-link:focus { 
+	color: #D3D3D3 !important;
+	}
+	*/
+	.nav {
+		display: none;
+	}
+	.container2a {
+        flex-direction: column; /* Stacks logo and menu on mobile */
+    }
+	.stackedcard-container {
+        flex-direction: column; /* Stacks items vertically on mobile */
+        gap: 15px; /* Adjust spacing for mobile stacking */
+    }
+
+    .stackedcard {
+        flex: none; /* Resets flex properties for full width */
+        max-width: 100%; /* Ensures cards take up full mobile width */
+		margin-top: 0px !important;
+		border-top: none !important;
+		border-radius: 8px;
+    }
+	.logo{
+		place-self: center;
+		margin: 0 auto !important;
+	}
+	.img_mshrink { 
+    width: 50%; 
+	border-radius: 15px;
+    aspect-ratio: auto; 
+	}
+	.feature-row { flex-direction: column; text-align: center; padding: 20px; }
+	.stream-row { flex-direction: column; text-align: center; padding: 20px; }
+    .feature-list li { text-align: left; }
+	.stream-list li { text-align: left; }
+	.heroslogan{ font-size: 2.5rem;}
+	
+}
