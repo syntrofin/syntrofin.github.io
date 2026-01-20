@@ -402,6 +402,41 @@ footer {
     flex: 2; /* Center column gets 2 parts of the space (twice as large) */
 }
 
+.smallentrance-cell {
+    width: 100% !important;
+    margin-bottom: 10px;
+    text-align: center; /* Centers text for a clean stack */
+	flex: 1; 
+	text-align: left;   
+	box-sizing: border-box;
+}
+
+.smallentrance-fragment {
+    display: flex;
+    flex-direction: column;
+    /* Vertical: Aligns content to the top of the box */
+    justify-content: flex-start; 
+    /* Horizontal: Centers content inside the box */
+    align-items: center;        
+    /* Prevents the box from stretching to fill row height */
+    align-self: start;          
+    padding: 15px;
+    background-color: #fffeee; 
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    /* Keeps original height; rotation does not affect layout flow */
+    height: auto;
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out; 
+}
+
+.smallentrance-image {
+    max-width: 100%; /* Prevents image from pushing column width */
+    height: auto;           
+    display: block;        
+    margin-bottom: 10px;    
+}
+
 .solutiondiv {
 	margin: 0 auto; 
 	background-color: #f3fafe; 
