@@ -153,7 +153,7 @@ section{
     padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
 
-.cell2 {
+.cell2, smallentrance-cell {
     width: 100% !important;
     margin-bottom: 10px;
     text-align: center; /* Centers text for a clean stack */
@@ -371,6 +371,35 @@ footer {
     text-align: center;         /* Centers the text horizontally */
     margin-top: 50px;           /* Adds space between content and footer */
     border-top: 1px solid #eee; /* A subtle line separating it from the main page */
+}
+
+
+.smallentrance-div {
+	margin: 0 auto; 
+	background-color: #f3fafe; 
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
+}
+
+.smallentrance-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Forces all columns to stay pinned at the top */
+    width: 100%;
+}
+
+/* 3. Set the 1:2:1 width ratio */
+.smallentrance-cell:nth-child(1), 
+.smallentrance-cell:nth-child(3) {
+    flex: 1; /* Left and Right columns get 1 part of the space */
+}
+
+.cell2:nth-child(2) {
+    flex: 2; /* Center column gets 2 parts of the space (twice as large) */
 }
 
 .solutiondiv {
