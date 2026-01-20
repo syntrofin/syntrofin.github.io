@@ -93,24 +93,47 @@ section{
     padding: 0 20px;
 	padding-top: 32px;
 	padding-bottom: 32px;
-    /* CHANGE 2: Center the *entire grid* horizontally within its container */
     justify-content: center; 
-    /* CHANGE 3: Align all items to the *start* (top) of their cells, preventing vertical stretching */
     align-items: start; 
 }
 
 .fragment {
-	display: flex;
+display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-	align-self: start; 
+    justify-content: flex-start; /* Aligns content to the top of the box */
+    align-items: center;        /* Keeps content horizontally centered */
+    align-self: start;          /* Keeps the box at the top of the grid cell */
     padding: 15px;
     background-color: #fffeee; 
     border-radius: 4px;        
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
     transform: rotate(1deg);   
     transition: transform 0.2s ease-in-out; 
+}
+
+.grid-image {
+    width: 33.3%;           
+    height: auto;           
+    display: block;        
+    margin-bottom: 10px;    
+}
+.leftingrid { 
+    grid-column: 1;
+    text-align: left; 
+}
+.centeringrid { 
+    grid-column: 2; 
+    text-align: center; 
+}
+.rightingrid { 
+    grid-column: 3; 
+    text-align: right; 
+}
+
+
+/* Optional: Add a hover effect so they move slightly when interacted with */
+.fragment:hover {
+    transform: rotate(-1deg) scale(1.02);
 }
 
 /* Fragmented Grid Old
@@ -137,29 +160,6 @@ section{
     transition: transform 0.2s ease-in-out; 
 }
 */
-.grid-image {
-    width: 33.3%;           /* Shrink to 1/3 of its container */
-    height: auto;           /* Maintain aspect ratio */
-    display: block;         /* Remove extra space below image */
-    margin-bottom: 10px;    /* Optional space between image and text */
-}
-.leftingrid { 
-    grid-column: 1; /* Always Column 1 */
-    text-align: left; 
-}
-.centeringrid { 
-    grid-column: 2; /* Always Column 2 */
-    text-align: center; 
-}
-.rightingrid { 
-    grid-column: 3; /* Always Column 3 */
-    text-align: right; 
-}
-
-/* Optional: Add a hover effect so they move slightly when interacted with */
-.fragment:hover {
-    transform: rotate(-1deg) scale(1.02);
-}
 
 .container2 {
 	display: flex;
