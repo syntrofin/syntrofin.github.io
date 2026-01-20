@@ -23,22 +23,50 @@
         display: none;
       }
 
-        table {
+    table {
           width: 100%;
           border-collapse: collapse;
+          margin: 20px 0;
+          font-family: sans-serif;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Soft outer shadow */
         }
-
-        td,
-        th {
-          padding: 8px;
+        
+        /* Header Styling */
+        thead tr {
+          background-color: #009879; /* Modern primary color */
+          color: #ffffff;
           text-align: left;
-          border: 1px solid #ddd;
+          font-weight: bold;
+        }
+        
+        th, td {
+          padding: 12px 15px; /* Added breathing room */
+        }
+        
+        /* Row Borders & Stripes */
+        tbody tr {
+          border-bottom: 1px solid #dddddd;
+        }
+        
+        tbody tr:nth-of-type(even) {
+          background-color: #f3f3f3; /* Subtle zebra stripes for readability */
+        }
+        
+        /* Interactive Hover Effect */
+        tbody tr:hover {
+          background-color: #f1f1f1; /* Highlighting row on hover */
+          cursor: pointer;
+        }
+        
+        /* Last Row Accent */
+        tbody tr:last-of-type {
+          border-bottom: 2px solid #009879;
         }
 
-      .table-container {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-        }    
+        h2 {
+          text-align: center;
+        }
+ 
       .question {
           display: block;
           font-size: 1.17em;
@@ -5587,6 +5615,7 @@ Pricing
     </table>
   </body>
 </html>
+
 
 
 
