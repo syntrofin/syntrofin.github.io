@@ -122,21 +122,12 @@ section{
     margin: 0 auto;
     padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
-.container2a {
-	display: flex;
-	flex-direction: row; 
-    justify-content: space-between; 
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;    /* Provides the 20px "gap" on both sides */
-}
+
 .cell2 {
     width: 100% !important;
     margin-bottom: 10px;
     text-align: center; /* Centers text for a clean stack */
 	flex: 1; 
-	background-color: #f9f9f9;  
 	text-align: left;   
 	box-sizing: border-box;
 }
@@ -376,7 +367,7 @@ footer {
         /* min-height: 400px; */
     }
 
-	.service-box {background-color: #f9f9f9;}
+	.service-box {background-color: #f3fafe;}
     .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
     .service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
     
