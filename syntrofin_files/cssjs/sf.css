@@ -87,8 +87,8 @@ section{
 /* Fragmented Grid */
 .fragmented-grid {
     display: grid;
-    /* CHANGE 1: Define three columns with the middle one being larger (2fr vs 1fr) */
     grid-template-columns: 1fr 2fr 1fr; 
+	grid-auto-rows: min-content; 
     gap: 20px;
     padding: 0 20px;
 	padding-top: 32px;
