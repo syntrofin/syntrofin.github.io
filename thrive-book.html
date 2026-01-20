@@ -11,7 +11,11 @@ body { font-family:Calibri; font-size:12pt }
 p:empty {
   display: none;
 }
-  li:empty {
+li:blank {
+  display: none;
+}
+ul:not(:has(li:not(:blank))), 
+ol:not(:has(li:not(:blank))) {
   display: none;
 }
 
@@ -9483,4 +9487,5 @@ This "Bible" proves that a<strong>Principal Architect</strong>does not just buil
 </body>
 
 </html>
+
 
