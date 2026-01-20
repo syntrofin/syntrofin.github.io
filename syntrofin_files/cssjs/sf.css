@@ -87,23 +87,35 @@ section{
 /* Fragmented Grid */
 .fragmented-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Retains your 2-column layout */
+    /*grid-template-columns: 1fr 1fr;  Retains your 2-column layout */
+	grid-template-columns: repeat(3, 1fr);  /* 3-column layout */
     gap: 20px;
     padding: 0 20px;
 	padding-top: 32px;
 	padding-bottom: 32px;
+	
 }
 
 .fragment {
     padding: 15px;
-    /* Removed the dashed border for a cleaner look */
-    
+    display: flex;
+    flex-direction: column; /* Stack image on top of text */
+    align-items: center;    /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    /* ... existing styles (background, shadow, etc.) ... */
     /* ADDED STYLES FOR STICKY NOTE EFFECT */
     background-color: #fffeee; /* A soft, classic sticky note yellow */
     border-radius: 4px;        /* Slightly rounded corners */
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); /* Gives it depth/shadow */
     transform: rotate(1deg);   /* Adds a subtle, casual tilt */
     transition: transform 0.2s ease-in-out; /* Smooths the hover effect */
+}
+.grid-image {
+    width: 33.3%;           /* Shrink to 1/3 of its container */
+    height: auto;           /* Maintain aspect ratio */
+    display: block;         /* Remove extra space below image */
+    margin-bottom: 10px;    /* Optional space between image and text */
 }
 
 /* Optional: Add a hover effect so they move slightly when interacted with */
