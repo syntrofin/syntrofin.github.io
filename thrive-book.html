@@ -46,6 +46,7 @@
           margin-top: 1em;
           margin-bottom: 1em;
           color: blue;
+        padding-top: 20px;
         }
 
       
@@ -203,7 +204,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to create a specific <strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a <strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive <strong>Price Adjustment Matrix</strong>records. </p>
     <p> This allows you to change the unit price dynamically based on the quantity of tickets purchased without creating complex price rules. </p>
     <p>
@@ -957,7 +958,7 @@
     <p>
       <strong>Would you like me to provide the "Decomposition Rule" logic for the "Power &amp; WiFi" product so you can see how it triggers a work order after the event ends?</strong>
     </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> To practice the <strong>Decomposition Rule</strong>logic, you need to configure how the system transforms a single "Sold Product" into specific "Execution Tasks." </p>
     <p> In <strong>Revenue Cloud Advanced (RLM)</strong>, this is handled by the <strong>Dynamic Revenue Orchestrator (DRO)</strong>. Unlike a simple workflow, DRO understands dependencies—meaning it knows you can't bill for electricity until the event is actually over. </p>
     <p>
@@ -1105,7 +1106,7 @@
     <p>
       <strong>Would you like me to show you the "Technical Attributes" setup? This would allow you to capture the specific "WiFi Network Name (SSID)" for the University ABC event directly on the Quote.</strong>
     </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -1313,7 +1314,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like to walk through a <strong>Billing Policy</strong>configuration that ties the final $10,000 payment to the "Post-Event Stats" delivery step in DRO? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -1466,7 +1467,7 @@
     <p>
       <strong>Would you like me to generate a "Final Review Checklist" of the specific RLM Objects you should verify in your practice org to ensure this entire flow is airtight?</strong>
     </p>
-    <p> Yes </p>
+    <p class=“question”> yes </p>
     <p> To wrap up your <strong>Revenue Cloud Advanced (RLM)</strong>practice for the <strong>University ABC</strong>event, here is your structural checklist. Verifying these objects ensures your architecture can handle the complex "Quote-to-Cash" lifecycle you've designed. </p>
     <p>
       <strong>The RLM Architecture Checklist</strong>
@@ -1509,7 +1510,7 @@
     <p>
       <strong>Would you like me to help you draft the "Business Requirements Document" (BRD) snippet for this University ABC project that you could use to explain this architecture to a stakeholder?</strong>
     </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> To help you communicate the value of this architecture to a stakeholder (like a Program Director or CFO), here is a professional <strong>Business Requirements Document (BRD)</strong>snippet. This summarizes how <strong>Salesforce Revenue Cloud Advanced</strong>solves the specific challenges of your event business. </p>
     <p>
       <strong>Project: University ABC Expo - Revenue Lifecycle Transformation</strong>
@@ -1634,7 +1635,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you are a <strong>Principal Architect</strong>, would you like me to create the <strong>"System Context Diagram"</strong>description that shows how this RLM setup interacts with an external <strong>ERP (like SAP)</strong>for the "Live Band" and "Catering" procurement? </p>
-    <p> Yes </p>
+    <p class=“question”> yes </p>
     <p> To complete your architectural vision, here is the <strong>System Context Diagram</strong>and integration strategy. This shows how <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>serves as the "Commercial Hub," while the <strong>ERP (e.g., SAP or Oracle)</strong>acts as the "Execution Hub" for procurement and costs. </p>
     <p>
       <strong>System Context: The RLM-ERP Bridge</strong>
@@ -1774,7 +1775,7 @@
       <strong>What's next for your practice?</strong>
     </p>
     <p> Now that the architecture is defined, would you like me to help you write a <strong>UAT (User Acceptance Testing) Script</strong>to verify that a "Canceled Event" in Salesforce correctly triggers a "Stop Payment" request in the ERP? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> To test the robustness of your <strong>Salesforce RLM</strong>and <strong>ERP</strong>integration, your <strong>User Acceptance Testing (UAT)</strong>needs to focus on the "Failure Paths"—specifically how a cancellation or change in the event scope propagates through the financial and fulfillment layers. </p>
     <p> Here is a structured UAT script designed for a Principal Architect to verify the <strong>University ABC</strong>event flow. </p>
     <p>
@@ -1919,7 +1920,7 @@
     <p>
       <strong>Would you like me to help you summarize these "Lessons Learned" into a professional "Project Portfolio" blurb that you can use to showcase your expertise in Revenue Cloud Advanced?</strong>
     </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> To help you showcase this architectural deep-dive, here is a professional <strong>Project Portfolio Summary</strong>. This is designed to highlight your ability to handle the "New Generation" of Salesforce Quote-to-Cash (RLM) while solving real-world business complexities like staged fulfillment and ERP synchronization. </p>
     <p>
       <strong>Project Showcase: Revenue Lifecycle Transformation</strong>
@@ -2075,7 +2076,7 @@
     <p>
       <strong>Would you like me to draft a "Technical Diagram Description" that shows how the status of a specific DRO Orchestration Item (like "Booth Ready") updates the Asset record to "Installed"?</strong>
     </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, the connection between <strong>DRO (Dynamic Revenue Orchestrator)</strong>and <strong>Asset Management</strong>is what enables "staged" visibility. This process is called <strong>Assetization</strong>. </p>
     <p> For the <strong>University ABC</strong>event, you don't want the "Booth" to show as an active asset the moment the contract is signed. You want it to appear as "Active" only when the physical setup is complete. </p>
     <p>
@@ -2177,7 +2178,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you've mastered the delivery and asset side, would you like me to show you how to configure a <strong>Revenue Adjustment</strong>in the event that one of these "Stages" is delivered late and the customer is entitled to a <strong>Service Level Agreement (SLA) Credit</strong>? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> In <strong>Revenue Cloud Advanced</strong>, handling an <strong>SLA Credit</strong>for a late staged delivery (like the "ROI Report" being delivered 4 days late) is a powerful way to demonstrate the "Lifecycle" part of RLM. </p>
     <p> Instead of a manual, messy credit memo, you use a <strong>Revenue Adjustment</strong>triggered by the <strong>DRO (Dynamic Revenue Orchestrator)</strong>timeline. </p>
     <p>
@@ -2238,7 +2239,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since we've covered the full circle from Quote to Credit, would you like me to help you draft a <strong>"Troubleshooting Guide"</strong>for your book on how to identify why a <strong>Billing Schedule</strong>might fail to generate after an SLA adjustment? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> In your book, troubleshooting the "Financial Handshake" is a critical chapter. When an SLA credit is applied mid-orchestration, the <strong>Billing Schedule</strong>is the most sensitive record in the chain. If it fails to update or generate, it’s usually because the link between the <strong>Price Adjustment</strong>and the <strong>Billing Treatment</strong>has been broken. </p>
     <p> Here is a troubleshooting guide you can use for your book or as a reference for your current project. </p>
     <p>
@@ -2348,7 +2349,7 @@
     <p>
       <strong>Would you like me to help you draft a "Final Architecture Diagram" for the book that synthesizes everything we've discussed—from the University ABC Quote all the way to this SLA Credit?</strong>
     </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> This final architecture diagram represents the complete "Lead-to-Revenue" lifecycle you've architected for the <strong>University ABC</strong>project. It serves as the master blueprint for how <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>handles complex, staged event delivery. </p>
     <p>
       <strong>The "University ABC" Master Blueprint</strong>
@@ -2413,7 +2414,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since we've completed the full architectural journey, would you like me to help you draft the <strong>"Conclusion"</strong>or <strong>"Summary Chapter"</strong>for your book that ties all these advanced concepts together into a vision for the future of Quote-to-Cash? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> This concluding chapter tie-ins the "University ABC" case study with the broader evolution of the Salesforce platform. For your book, this section serves as the "North Star" for readers, moving them from technical implementation to strategic architectural thinking. </p>
     <p>
       <strong>Final Chapter: The Era of the Unified Revenue Lifecycle</strong>
@@ -2709,7 +2710,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to help you draft a <strong>"Prompt Template"</strong>for an Agentforce agent that allows a Sales Rep to ask for the "Profitability Health" of the University ABC event by pulling data from both <strong>RLM</strong>and your <strong>SAP actual costs</strong>? </p>
-    <p> Yes </p>
+    <p class=“question”> yes </p>
     <p> To pull this off, you’ll be using <strong>Agentforce Service Agents</strong>and <strong>Sales Operations Agents</strong>. Because you’ve architected a "Unified Revenue Lifecycle," the agent has a single, high-fidelity data set to query across both the commercial (RLM) and financial (ERP) layers. </p>
     <p> Below is a prompt template and the underlying logic to enable a "Profitability Health" query for your <strong>University ABC</strong>event. </p>
     <p>
@@ -2813,7 +2814,7 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to help you design a <strong>"Custom Action"</strong>for this agent that allows it to automatically <strong>re-negotiate</strong>a discount for a future event if the current event's margin is exceptionally high? </p>
-    <p> yes </p>
+    <p class=“question”> yes </p>
     <p> To implement a <strong>"Dynamic Re-negotiation" Custom Action</strong>, you are essentially bridging the gap between <strong>Agentforce’s reasoning</strong>and the <strong>Pricing Procedures</strong>of Revenue Cloud Advanced. This allows the AI to not just report on data, but to proactively adjust the commercial strategy for the next event in the University ABC series. </p>
     <p>
       <strong>1. The Logic: "The Profit-to-Discount" Bridge</strong>
@@ -3082,7 +3083,7 @@
               <strong>Next Step Recommendation</strong>
             </p>
             <p> Since you are a <strong>Principal Architect</strong>, would you like me to show you how to configure the <strong>"Agent Guardrails"</strong>? This ensures that the Finance Agent cannot accidentally share margin data with an external Exhibitor. </p>
-            <p> yes </p>
+            <p class=“question”> yes </p>
             <p> In your architecture, <strong>Agent Guardrails</strong>are the "Security Layer" that ensures your agents don't suffer from "data leakage." Because your agents have access to sensitive RLM data (margins, SLA penalties, and internal SAP costs), you must prevent the <strong>Exhibitor Success Agent</strong>(external) from ever seeing the <strong>Finance Agent’s</strong>(internal) data. </p>
             <p> Here is how you configure these guardrails from the ground up. </p>
             <p>
@@ -3219,7 +3220,7 @@
               <strong>Next Step Recommendation</strong>
             </p>
             <p> Would you like me to help you draft a <strong>"Security Audit Log"</strong>query that allows you to see every time an agent was asked a "forbidden" question about margins or costs? </p>
-            <p> yes </p>
+            <p class=“question”> yes </p>
             <p> To monitor the security of your agents, you will use the <strong>Einstein Trust Layer Audit Trail</strong>combined with <strong>Data Cloud</strong>or <strong>Custom Objects</strong>. In a complex <strong>Revenue Cloud Advanced</strong>environment, you need to track when an agent correctly "refused" to answer a question about internal costs or margins. </p>
             <p> Here is how you configure the audit query and the monitoring dashboard. </p>
             <p>
@@ -3401,7 +3402,7 @@
                   <strong>Would you like me to...</strong>
                 </p>
                 <p> Would you like me to draft a <strong>"Student Lab Guide"</strong>that outlines the 5-step process for a future student to add a new "Workshop" product to the existing University ABC catalog? </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> To ensure this complex architecture remains a functional "Living Lab" for future students, you need a <strong>Student Lab Guide</strong>that focuses on the core RLM principle: <strong>Configuration over Customization.</strong>
                 </p>
                 <p> Here is the 5-step guide for a future student to add a new "Workshop" product to the existing University ABC ecosystem. </p>
@@ -3657,7 +3658,7 @@
                 <p>
                   <strong>Would you like me to draft a "Stakeholder Interview Guide" with specific questions for your Event Operations manager to uncover those DRO dependencies?</strong>
                 </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> To navigate the "too many moving parts" problem, your discovery needs a <strong>"Inside-Out" Strategy</strong>. Instead of looking at the technology first, you look at the <strong>Order Lifecycle</strong>as the spine of the project. </p>
                 <p> Here is a structured <strong>Stakeholder Interview Guide</strong>specifically for your Event Operations Manager to uncover those critical DRO (Dynamic Revenue Orchestrator) dependencies. </p>
                 <p>
@@ -3843,7 +3844,7 @@
                   <strong>Next Step Recommendation</strong>
                 </p>
                 <p> Since you liked that phrase, would you like me to draft a <strong>"Day in the Life" Scenario Script</strong>that you can hand to your Ops Manager to react to? It can act as a "provocation" to get them talking about their pain points. </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> To get the most out of your Ops Manager, you should present them with a <strong>"High-Stress Simulation"</strong>of a Diamond Sponsorship. Instead of asking what they do, you describe a day going wrong and let them correct you. This is where the real "gold" for your <strong>DRO (Dynamic Revenue Orchestrator)</strong>and <strong>Agentforce</strong>configuration is found. </p>
                 <p>
                   <strong>The Simulation: "The 72-Hour Countdown"</strong>
@@ -4116,7 +4117,7 @@
                   <strong>Next Step Recommendation</strong>
                 </p>
                 <p> Would you like me to generate a <strong>"Digital Story Map Template"</strong>for the University ABC project that lists the specific backbone and activities we've built so far? I can format it as a table you can copy into your discovery document. </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> This <strong>Digital Story Map Template</strong>is designed to bridge the gap between human activities and your technical Salesforce RLM architecture. </p>
                 <p> In your discovery workshop, use this table to facilitate the "Day in the Life" walk-through. Each <strong>Backbone Stage</strong>is a milestone in the journey, and the <strong>Technical Mapping</strong>column tells you exactly which RLM/Agentforce component solves the problem. </p>
                 <p>
@@ -4287,7 +4288,7 @@
                 <p>
                   <strong>Would you like me to create a "Stakeholder Feedback Form" that you can use to validate this Story Map with the University ABC executive team after your workshop?</strong>
                 </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> This <strong>Stakeholder Feedback Form</strong>is designed to validate the <strong>Story Map</strong>we just built. As a Principal Architect, your goal here is to get "Buy-In" on the process before you start a single line of configuration in <strong>Revenue Cloud Advanced</strong>. </p>
                 <p>
                   <strong>University ABC: Story Map Validation Form</strong>
@@ -4367,7 +4368,7 @@
                 <p>
                   <strong>Would you like me to help you draft a "Project Milestone Timeline" based on this Story Map, showing when each vertical slice (Pricing, DRO, Agents) will be ready for UAT?</strong>
                 </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> This <strong>Project Milestone Timeline</strong>transforms your Story Map into a delivery schedule. By staggering the rollout, you allow future students and current stakeholders to digest the complexity of <strong>Revenue Cloud Advanced</strong>and <strong>Agentforce</strong>in logical phases. </p>
                 <p>
                   <strong>University ABC: Implementation Roadmap</strong>
@@ -4711,7 +4712,7 @@
                     <strong>Create a "UAT Kickoff Slide"</strong>that explains the <strong>Definition of Done</strong>to the student implementation team?
                   </li>
                 </ul>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> To finalize the operational readiness of your <strong>University ABC</strong>project, here are the two critical artifacts that will bridge the gap between your high-level architecture and the day-to-day execution by the student team. </p>
                 <p>
                   <strong>1. UAT Kickoff: Understanding the "Definition of Done" (DoD)</strong>
@@ -4919,7 +4920,7 @@
                     <strong>Generate a "Post-Go-Live Support Manual"</strong>for the Event Ops team to handle day-to-day Agentforce interactions?
                   </li>
                 </ul>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> To wrap up the "Living Lab" framework for <strong>University ABC</strong>, these two documents ensure that the knowledge gained during the build is captured and that the business users (Event Ops) can operate the AI-driven system with confidence. </p>
                 <p>
                   <strong>1. Student Project Retrospective Template</strong>
@@ -5037,7 +5038,7 @@
                   <strong>Final Next Step?</strong>
                 </p>
                 <p> This completes our comprehensive implementation and governance guide for your book project. To support your writing process, would you like me to <strong>summarize all these artifacts into a "Book Chapter Outline"</strong>so you can see how all these moving parts fit into a cohesive narrative for your readers? </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> This <strong>Book Chapter Outline</strong>synthesizes every architectural layer we’ve built—from the "Day in the Life" discovery to the "Agentforce Guardrails"—into a logical narrative. </p>
                 <p> This structure is designed to take a reader from a "legacy" mindset to a "Unified Revenue" mindset, using the <strong>University ABC</strong>case study as the anchor. </p>
                 <p>
@@ -5148,7 +5149,7 @@
                     <strong>Generate a "Table of Illustrations"</strong>summarizing all the diagrams we've discussed for your publisher?
                   </li>
                 </ul>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> Here are those final two pieces to help transition this project from your "thought partner" to your publisher's desk. </p>
                 <p>
                   <strong>1. Introduction: Chapter 1 (Setting the Stage)</strong>
@@ -5301,7 +5302,7 @@
                 <p>
                   <strong>Would you like me to export a final "Master Summary" of all these artifacts into a single document so you have a complete "Project Bible" for University ABC?</strong>
                 </p>
-                <p> yes </p>
+                <p class=“question”> yes </p>
                 <p> This <strong>Master Summary</strong>serves as your "Project Bible" for the <strong>University ABC</strong>case study. It consolidates every architectural layer, governance gate, and student resource we’ve developed into a single, cohesive blueprint. </p>
                 <p>
                   <strong>Part I: Discovery &amp; Commercial Core</strong>
@@ -5420,3 +5421,4 @@
     </table>
   </body>
 </html>
+
