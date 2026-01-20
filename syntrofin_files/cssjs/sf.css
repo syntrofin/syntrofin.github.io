@@ -385,56 +385,50 @@ footer {
 	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
 }
 
+/* 1. Ensure columns are pinned to the top */
 .smallentrance-row {
     display: flex;
     gap: 20px;
-    align-items: flex-start; /* Forces all columns to stay pinned at the top */
+    align-items: flex-start; /* CRITICAL: Prevents columns from stretching */
     width: 100%;
 }
 
-/* 3. Set the 1:2:1 width ratio */
-.smallentrance-cell:nth-child(1), 
-.smallentrance-cell:nth-child(3) {
-    flex: 1; /* Left and Right columns get 1 part of the space */
-}
-
-.cell2:nth-child(2) {
-    flex: 2; /* Center column gets 2 parts of the space (twice as large) */
-}
-
+/* 2. Base column behavior */
 .smallentrance-cell {
-    width: 100% !important;
-    margin-bottom: 10px;
-    text-align: center; /* Centers text for a clean stack */
-	flex: 1; 
-	text-align: left;   
-	box-sizing: border-box;
-}
-
-.smallentrance-fragment {
     display: flex;
     flex-direction: column;
-    /* Vertical: Aligns content to the top of the box */
-    justify-content: flex-start; 
-    /* Horizontal: Centers content inside the box */
-    align-items: center;        
-    /* Prevents the box from stretching to fill row height */
-    align-self: start;          
-    padding: 15px;
-    background-color: #fffeee; 
-    border-radius: 4px;        
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
-    /* Keeps original height; rotation does not affect layout flow */
-    height: auto;
-    transform: rotate(1deg);   
-    transition: transform 0.2s ease-in-out; 
+    box-sizing: border-box;
 }
 
+/* 3. SET THE RATIOS (Corrected Selectors) */
+.smallentrance-cell:nth-child(1), 
+.smallentrance-cell:nth-child(3) {
+    flex: 1; /* Side columns take 1 part */
+}
+
+/* FIX: Target the middle column with the correct class name */
+.smallentrance-cell:nth-child(2) {
+    flex: 2; /* Center column is twice as wide */
+    align-items: center; /* Centers the image horizontally */
+}
+
+/* 4. Force image to respect its container */
 .smallentrance-image {
-    max-width: 100%; /* Prevents image from pushing column width */
-    height: auto;           
-    display: block;        
-    margin-bottom: 10px;    
+    width: 100%;       /* Scale to column width */
+    max-width: 500px;  /* Adjust as needed */
+    height: auto;
+    display: block;
+}
+
+/* 5. Fragment styling with top alignment inside columns */
+.smallentrance-fragment {
+    margin-bottom: 20px;
+    background-color: #fffeee; 
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(1deg); /* Cosmetic rotation */
+    align-self: flex-start; /* Extra insurance for top-alignment */
 }
 
 .solutiondiv {
