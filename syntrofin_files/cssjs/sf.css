@@ -25,6 +25,11 @@ img {
     display: block;
     margin: 0 auto;
 }
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.justify-center { justify-content: center !important; }
+.mirror-horizontal { transform: scaleX(-1); }
 
 .actionbuttondiv {
 	text-align: center;
@@ -40,7 +45,6 @@ img {
     width: 100%;               /* Ensure it uses full width to allow space-between to work */
     margin: 0 auto;            /* Optional: Centers the entire header on a wide screen */
 }
-
 .title-top {
     display: flex;
 	justify-content: space-between;
@@ -55,15 +59,16 @@ img {
     align-items: center;
     gap: 15px;
 }
-
 .title-logo {
 	transform: rotate(-35deg) scaleX(-1) ;
     height: 50px;
     width: auto;
 }
-
 .titleslogan {
     margin: 0;
+}
+.heroslogan{ font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
+.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
 }
 
 .nav {
@@ -276,71 +281,9 @@ img {
     filter: brightness(1.1); 
 }
 
-/* Section - Tech, Execute */
+/* Section - Engineered */
 
-.obsidianbutton {
-    /* Deep charcoal to near-black gradient */
-    background: linear-gradient(180deg, #2d2d2d 0%, #121212 100%);
-    
-    color: #ffffff;
-    padding: 15px 45px;
-    border-radius: 8px;
-    
-    /* A subtle 1px border makes dark buttons look sharper */
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    
-    cursor: pointer;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    
-    /* Soft shadow with a slight "glow" effect */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.obsidianbutton:hover {
-    /* Lightens slightly on hover */
-    background: linear-gradient(180deg, #3d3d3d 0%, #1a1a1a 100%);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-    transform: translateY(-1px);
-}
-
-/* The Main Container for all tiles */
-.grid-container {
-    display: grid;
-    /* Reduced minimum width from 180px to 140px 
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
-	/* Changed max size from 1fr (flexible) to 150px (fixed ceiling) */
-    grid-template-columns: repeat(auto-fit, minmax(80px, 100px)); 
-    gap: 15px; /* Slightly reduced margin between tiles */
-    max-width: 1200px;
-    margin: 0 auto;
-	padding: 0 20px;    /* Provides the 20px "gap" on both sides */
-	justify-content: center; 
-}
-
-/* Individual Tile Styling */
-.grid-item {
-    background-color: #f9f9f9; 
-    padding: 10px; 
-    text-align: center;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    box-sizing: border-box; 
-}
-.grid-item img {
-    max-width: 100%;    /* Forces images to shrink to fit the tile */
-    height: auto;
-    display: block;
-    margin: 0 auto 8px auto; /* Centers the image and adds less space below */
-}
-
-/* Optional: style the text above the logos */
-.grid-item .logo-text {
-    font-size: 0.75rem; /* Slightly smaller text */
-    color: #666;
-    margin-bottom: 5px;
-}
+/* tech, execute */
 .stackedcard-container {
     display: flex;
     flex-direction: row; 
@@ -363,8 +306,6 @@ img {
     box-sizing: border-box; 
 	border-top: 1px solid #727272; 
 }
-
-
 .stackedcard-title {
     color: #565656; /* Example accent color */
     font-size: 1.2em;
@@ -376,6 +317,59 @@ img {
     padding-bottom: 2px;
 	border-bottom: 1px solid #727272; 
 }
+
+/* Customer Tiles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 100px)); 
+    gap: 15px; /* Slightly reduced margin between tiles */
+    max-width: 1200px;
+    margin: 0 auto;
+	padding: 0 20px;    /* Provides the 20px "gap" on both sides */
+	justify-content: center; 
+}
+
+.grid-item {
+    background-color: #f9f9f9; 
+    padding: 10px; 
+    text-align: center;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box; 
+}
+.grid-item img {
+    max-width: 100%;    /* Forces images to shrink to fit the tile */
+    height: auto;
+    display: block;
+    margin: 0 auto 8px auto; /* Centers the image and adds less space below */
+}
+.grid-item .logo-text {
+    font-size: 0.75rem; /* Slightly smaller text */
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Obsidian Button */
+.obsidianbutton {
+    background: linear-gradient(180deg, #2d2d2d 0%, #121212 100%);
+    color: #ffffff;
+    padding: 15px 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.obsidianbutton:hover {
+    background: linear-gradient(180deg, #3d3d3d 0%, #1a1a1a 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Footer */
 footer {
     background-color: #f4f4ff;  /* A very light blue/grey background */
     padding: 30px 20px;         /* Generous space above and below text */
@@ -384,69 +378,28 @@ footer {
     border-top: 1px solid #eee; /* A subtle line separating it from the main page */
 }
 
-
-
-
-
-
-    /* Mobile handling for the Master Brain */
-    @media (max-width: 768px) {
-
-    }
-
-
-
 footer p {
     margin: 0;                  /* Removes default paragraph margin for perfect centering */
     font-size: 0.85rem;         /* Keeps the text concise and readable */
     color: #606060;             /* A soft, readable gray color */
 }
 
-.mimic-h3 {
-  display: block;
-  font-size: 1.17em;
-  font-weight: bold;
-  margin: 1em 0;     /* Shorthand for top/bottom 1em and left/right 0 */
-	color: #333333;
-}
-
-/* HELPERS */
-.heroslogan{ font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
-.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
-}
-.left { text-align: left; }
-.center { text-align: center; }
-.right { text-align: right; }
-.justify-center { justify-content: center !important; }
-.mirror-horizontal { transform: scaleX(-1); }
-
-/* MOBILE ADJUSTMENT */
-/* Media query for screens larger than a specific breakpoint (e.g., 600px) */
-/* Add this at the bottom of your CSS file */
+/* Mobile handling Assistant for the Master Brain */
+/* Add this at the bottom of your CSS file, These are NOT repetitions to delete, these for mobile */
 @media (max-width: 768px) {
     .header-top {
         flex-direction: column; /* Stacks logo and menu on mobile */
     }
-	/* testing hiding nav  
-    .nav-item {
-        margin-left: 5px; 
-        margin-top: 10px;
-    }
-	.nav-link, .nav-link:hover, .nav-link:focus { 
-	color: #D3D3D3 !important;
-	}
-	*/
 	.nav {
 		display: none;
 	}
 	.container2a {
-        flex-direction: column; /* Stacks logo and menu on mobile */
+        flex-direction: column; 
     }
 	.stackedcard-container {
-        flex-direction: column; /* Stacks items vertically on mobile */
-        gap: 15px; /* Adjust spacing for mobile stacking */
+        flex-direction: column; 
+        gap: 15px; 
     }
-
     .stackedcard {
         flex: none; /* Resets flex properties for full width */
         max-width: 100%; /* Ensures cards take up full mobile width */
@@ -468,5 +421,4 @@ footer p {
     .feature-list li { text-align: left; }
 	.stream-list li { text-align: left; }
 	.heroslogan{ font-size: 2.5rem;}
-	
 }
