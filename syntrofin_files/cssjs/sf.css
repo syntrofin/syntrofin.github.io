@@ -306,17 +306,7 @@ img {
     text-align: center;
 	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     box-sizing: border-box; 
-
-	/* 
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    */
 }
-
-/* Tame the images inside the tiles */
 .grid-item img {
     max-width: 100%;    /* Forces images to shrink to fit the tile */
     height: auto;
@@ -402,17 +392,27 @@ footer {
     row-gap: 20px; 
 }
 
-/* 2. Middle column specific centering */
-.smallentrance-cell:nth-child(2) {
-    flex: 2;
-    /* Vertically centers the image in the middle column */
+.smallentrance-cell:nth-child(1) {
+    flex: 1;
     justify-content: center; 
     align-items: center; 
 }
+/* 2. Middle column specific centering */
+.smallentrance-cell:nth-child(2) {
+    flex: 2;
+    justify-content: center; 
+    align-items: center; 
+}
+.smallentrance-cell:nth-child(3) {
+    flex: 1;
+    justify-content: center; 
+    align-items: center; 
+}
+/*
 .smallentrance-cell:nth-child(3) .smallentrance-fragment {
     align-self: flex-end;
 }
-
+*/
 /* 3. Fragment styling */
 .smallentrance-fragment {
     background-color: #fffeee; 
