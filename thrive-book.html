@@ -9471,10 +9471,20 @@ td, th {
 				
 			</p>
 	<p style="bottom: 10px; right: 10px; position: absolute;"><a href="https://wordtohtml.net/?utm_source=wth_free_doc_conversion_link&utm_medium=external" target="_blank" style="font-size:11px; color: #d0d0d0">Converted to HTML with WordToHTML.net</a> | <a href="https://documentconverter.pro/?utm_source=wth_free_doc_conversion_link&utm_medium=external" target="_blank" style="font-size:11px; color: #d0d0d0">Document Converter for Windows</a></p>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4581d6a58cf94e929fad52deda295622","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
+<script>
+  // This code runs once the page elements are loaded
+  document.querySelectorAll("p").forEach(p => {
+    // textContent.trim() checks for actual text, ignoring spaces
+    if (p.textContent.trim() === "") {
+      p.remove();
+    }
+  });
+</script>
+							
+							</body>
 
 </html>
+
 
 
 
