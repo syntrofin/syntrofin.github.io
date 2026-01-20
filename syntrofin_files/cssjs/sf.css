@@ -100,17 +100,17 @@ section{
 }
 
 .fragment {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	align-self: start; 
     padding: 15px;
     background-color: #fffeee; 
     border-radius: 4px;        
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
     transform: rotate(1deg);   
     transition: transform 0.2s ease-in-out; 
-    /* CHANGE 4: Use flexbox for perfect internal centering of content (e.g., text, image) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Fragmented Grid Old
