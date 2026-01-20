@@ -87,30 +87,56 @@ section{
 /* Fragmented Grid */
 .fragmented-grid {
     display: grid;
-    /*grid-template-columns: 1fr 1fr;  Retains your 2-column layout */
-	grid-template-columns: repeat(3, 1fr);  /* 3-column layout */
+    /* CHANGE 1: Define three columns with the middle one being larger (2fr vs 1fr) */
+    grid-template-columns: 1fr 2fr 1fr; 
+    gap: 20px;
+    padding: 0 20px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+    /* CHANGE 2: Center the *entire grid* horizontally within its container */
+    justify-content: center; 
+    /* CHANGE 3: Align all items to the *start* (top) of their cells, preventing vertical stretching */
+    align-items: start; 
+}
+
+.fragment {
+    padding: 15px;
+    background-color: #fffeee; 
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out; 
+    /* CHANGE 4: Use flexbox for perfect internal centering of content (e.g., text, image) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fragmented Grid Old
+.fragmented-grid {
+    display: grid;
+	grid-template-columns: repeat(3, 1fr);  
     gap: 20px;
     padding: 0 20px;
 	padding-top: 32px;
 	padding-bottom: 32px;
 	
 }
-
 .fragment {
     padding: 15px;
     display: flex;
-    flex-direction: column; /* Stack image on top of text */
-    align-items: center;    /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: center; 
     text-align: center;
-    /* ... existing styles (background, shadow, etc.) ... */
-    /* ADDED STYLES FOR STICKY NOTE EFFECT */
-    background-color: #fffeee; /* A soft, classic sticky note yellow */
-    border-radius: 4px;        /* Slightly rounded corners */
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); /* Gives it depth/shadow */
-    transform: rotate(1deg);   /* Adds a subtle, casual tilt */
-    transition: transform 0.2s ease-in-out; /* Smooths the hover effect */
+    background-color: #fffeee; 
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out; 
 }
+*/
 .grid-image {
     width: 33.3%;           /* Shrink to 1/3 of its container */
     height: auto;           /* Maintain aspect ratio */
