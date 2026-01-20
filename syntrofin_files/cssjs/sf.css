@@ -1,4 +1,4 @@
-
+/* 1. Common - body,section, img */
 *,
 *::before,
 *::after {
@@ -19,7 +19,19 @@ section{
 	padding-top: 10px;
 	padding-bottom: 32px;
 }
-/* HEADER - Logo Left, Menu Right */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.actionbuttondiv {
+	text-align: center;
+	padding: 20px;
+}
+
+/* 2. Title - Logo Left, Menu Right */
 .header-container {
     display: flex;             /* Activates Flexbox on the main header */
     align-items: center;       /* Vertically centers all items */
@@ -29,7 +41,6 @@ section{
     margin: 0 auto;            /* Optional: Centers the entire header on a wide screen */
 }
 
-/* You can simplify .title-top now that the main container handles layout */
 .title-top {
     display: flex;
 	justify-content: space-between;
@@ -39,8 +50,6 @@ section{
     width: 100%;              
     margin: 0 auto;            
 }
-
-/* Keep the rest of the styles */
 .logo-title-group {
     display: flex;
     align-items: center;
@@ -77,75 +86,13 @@ section{
     transition: color 0.3s ease; 
 }
 
-.nav-link:hover, .nav-link:focus {
-    /*color: #002e5d; */      
+.nav-link:hover, .nav-link:focus { 
 	color: #46B0E1;
     text-decoration: none; 
 }
 
-
-/* Fragmented Grid */
-.fragment {
-    display: flex;
-    flex-direction: column;
-    /* Vertical: Aligns content to the top of the box */
-    justify-content: flex-start; 
-    /* Horizontal: Centers content inside the box */
-    align-items: center;        
-    /* Prevents the box from stretching to fill row height */
-    align-self: start;          
-    padding: 15px;
-    background-color: #fffeee; 
-    border-radius: 4px;        
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
-    /* Keeps original height; rotation does not affect layout flow */
-    height: auto;
-    transform: rotate(1deg);   
-    transition: transform 0.2s ease-in-out; 
-}
-
-.grid-image {
-    max-width: 100%; /* Prevents image from pushing column width */
-    height: auto;           
-    display: block;        
-    margin-bottom: 10px;    
-}
-
-/* Specific column placements */
-.leftingrid { grid-column: 1; text-align: left; }
-.centeringrid { grid-column: 2; text-align: center; }
-.rightingrid { grid-column: 3; text-align: right; }
-
-.fragment:hover {
-    transform: rotate(-1deg) scale(1.02);
-}
-
-/* Fragmented Grid Old
-.fragmented-grid {
-    display: grid;
-	grid-template-columns: repeat(3, 1fr);  
-    gap: 20px;
-    padding: 0 20px;
-	padding-top: 32px;
-	padding-bottom: 32px;
-	
-}
-.fragment {
-    padding: 15px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;   
-    justify-content: center; 
-    text-align: center;
-    background-color: #fffeee; 
-    border-radius: 4px;        
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
-    transform: rotate(1deg);   
-    transition: transform 0.2s ease-in-out; 
-}
-*/
-
-.container2 {
+/* SECTION - Intro*/
+.intro-row {
 	display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -153,7 +100,7 @@ section{
     padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
 
-.cell2 {
+.intro-cell {
     width: 100% !important;
     margin-bottom: 10px;
     text-align: center; /* Centers text for a clean stack */
@@ -162,78 +109,155 @@ section{
 	box-sizing: border-box;
 }
 
-.center50 {
-    width: 50%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: 50%; 
-	text-align: center;
+/* Section, Small Entrance */
+
+.smallentrance-div {
+    margin: 0 auto; 
+    background-color: white; 
+    text-align: center;
+    padding: 10px 30px; /* Combined top/bottom and left/right */
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.smallentrance-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Keeps all columns pinned to the top */
+    width: 100%;
+}
+
+.smallentrance-cell {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    row-gap: 20px; /* Space between sticky notes */
+    flex: 1;       /* Sets default width for side columns */
+}
+.smallentrance-cell:nth-child(2) {
+    flex: 2;                 /* Double width */
+    justify-content: center; /* Vertical center for image */
+    align-items: center;     /* Horizontal center for image */
+    min-height: 100%; 
+}
+.smallentrance-image {
+    width: 100%;       
+    max-width: 500px;  
+    height: auto;      
     display: block;
-    margin: 0 auto;
+    flex-shrink: 0;    
+}
+.smallentrance-fragment {
+    background-color: #fffeee; 
+    padding: 15px;
+    border-radius: 4px;        
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
+    transform: rotate(1deg);   
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    align-self: flex-start; /* Prevents notes from stretching to full column width */
+    position: relative;     /* Helps with z-index on hover */
+    text-align: left;     
+}
+.smallentrance-fragment:hover {
+    transform: rotate(-1deg) scale(1.05);
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    cursor: pointer;
 }
 
-/* container2a image Sizing */
-.img_mshrink { 
-    width: 100%; 
-	/* border-radius: 15px; */
-    aspect-ratio: auto; 
-}
-
-/* Big Action Buttons */
-.actionbuttondiv {
-	text-align: center;
-	padding: 20px;
-}
+/* Button - AmberGold */
 .ambergoldbutton {
-    /* Glowing bronze center to deep burnished edge */
     background: radial-gradient(circle at center, #d49a46 0%, #a76d16 50%, #4a2f0a 100%);
-    
     padding: 15px 45px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.15); /* Adds a subtle glass rim */
     cursor: pointer;
-    
-    /* Warm amber shadow for a 2026 "elevated" look */
     box-shadow: 0 4px 15px rgba(74, 47, 10, 0.5);
-    
     display: inline-block;
     color: #ffffff;
     text-decoration: none;
-     /* font-weight: 600; */
     transition: all 0.3s ease;
 }
-
-/* Hover effect for 2026 interactivity */
 .ambergoldbutton:hover {
     filter: brightness(1.15);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(167, 109, 22, 0.4);
 }
 
-.goldbutton {
-    background: linear-gradient(180deg, #FFD700 0%, #F9A602 100%); 
-    color: #121212; /* Dark gray text is much more readable on yellow than white */
-    padding: 15px 45px; 
-    border-radius: 8px; 
-    border: none; 
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    display: inline-block; 
-    text-decoration: none;
-    /* font-weight: 600; Making text bold helps it stand out on yellow */
-    transition: transform 0.2s ease; /* Adds a nice feel for 2026 */
+/* Section, Solutions */
+.solutiondiv {
+	margin: 0 auto; 
+	background-color: #f3fafe; 
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
 }
+.cell2 {
+    width: 100% !important;
+    margin-bottom: 10px;
+    text-align: center; /* Centers text for a clean stack */
+	flex: 1; 
+	text-align: left;   
+	box-sizing: border-box;
+}
+.feature-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        /* min-height: 400px; */
+    }
 
-/* Add a hover effect for a better user experience */
-.goldbutton:hover {
-    background: linear-gradient(180deg, #F9A602 0%, #E69500 100%);
-    transform: translateY(-2px);
-}
+.stream-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        /* min-height: 400px; */
+    }
+
+
+	.service-box {background-color: #f3fafe;}
+    .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
+    .service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+    
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { 
+        margin-bottom: 15px; 
+        padding-left: 30px; 
+        position: relative; 
+        color: #1e293b;
+    }
+    .stream-list { list-style: none; padding: 0; }
+    .stream-list li { 
+        margin-bottom: 15px; 
+        padding-left: 30px; 
+        position: relative; 
+        color: #1e293b;
+    }
+    .feature-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+    }
+    .stream-list li::before {
+        content: "o";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 9px;
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
+    }
+
+/* Button - Nebula */
 .nebulabutton {
     background: radial-gradient(circle at center, #69bff8, #002E5D); 
     padding: 15px 45px; 
@@ -247,15 +271,12 @@ img {
 	transition: all 0.3s ease-in-out; /* Smooths the transition */
 }
 .nebulabutton:hover {
-    /* Increases the glow on hover */
     box-shadow: 0 8px 20px rgba(0, 46, 93, 0.4); 
-    
-    /* Subtle 2026 lift effect */
     transform: translateY(-2px) scale(1.02); 
-    
-    /* Brightens the center of the nebula slightly */
     filter: brightness(1.1); 
 }
+
+/* Section - Tech, Execute */
 
 .obsidianbutton {
     /* Deep charcoal to near-black gradient */
@@ -364,158 +385,9 @@ footer {
 }
 
 
-.smallentrance-div {
-	margin: 0 auto; 
-	background-color: white; 
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 30px;
-	padding-right: 30px;
-	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
-}
-
-/* 1. Ensure columns are pinned to the top */
-.smallentrance-row {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start; /* CRITICAL: Prevents columns from stretching */
-    width: 100%;
-}
-
-/* 1. Base style for all columns */
-.smallentrance-cell {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    /* Adds vertical space between fragments or images inside the column */
-    row-gap: 20px; 
-}
-
-.smallentrance-cell:nth-child(1) {
-    flex: 1;
-    justify-content: center; 
-    align-items: center; 
-}
-/* 2. Middle column specific centering */
-/* FIX: Corrected center column logic */
-.smallentrance-cell:nth-child(2) {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center content */
-    align-items: center;     /* Horizontally center content */
-    /* Ensure column has some height to center within if content is short */
-    min-height: 100%; 
-}
-
-/* FIX: Ensure the image fills its container but doesn't get massive */
-.smallentrance-image {
-    width: 100%;       /* Force image to fill its 2-ratio column */
-    max-width: 500px;  /* Control the absolute largest it can be */
-    height: auto;      /* Maintain aspect ratio */
-    display: block;
-    flex-shrink: 0;    /* Prevent the image from shrinking under any pressure */
-}
-
-/* FIX: Space between fragments */
-.smallentrance-cell {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;     /* Modern way to add space between fragments */
-}
-
-.smallentrance-cell:nth-child(3) {
-    flex: 1;
-    justify-content: center; 
-    align-items: center; 
-}
-/*
-.smallentrance-cell:nth-child(3) .smallentrance-fragment {
-    align-self: flex-end;
-}
-*/
-/* 3. Fragment styling */
-.smallentrance-fragment {
-    background-color: #fffeee; 
-    padding: 15px;
-    border-radius: 4px;        
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2); 
-    transform: rotate(1deg);   
-    transition: transform 0.2s ease-in-out;
-    /* Ensures fragment doesn't stretch to fill column width */
-    align-self: flex-start; 
-}
 
 
-.solutiondiv {
-	margin: 0 auto; 
-	background-color: #f3fafe; 
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 30px;
-	padding-right: 30px;
-	align-items: flex-start; /* Keeps the top-margin offsets working correctly */
-}
 
-.feature-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        /* min-height: 400px; */
-    }
-
-.stream-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        /* min-height: 400px; */
-    }
-
-	.service-box {background-color: #f3fafe;}
-    .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
-    .service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
-    
-    .feature-list { list-style: none; padding: 0; }
-    .feature-list li { 
-        margin-bottom: 15px; 
-        padding-left: 30px; 
-        position: relative; 
-        color: #1e293b;
-    }
-    .stream-list { list-style: none; padding: 0; }
-    .stream-list li { 
-        margin-bottom: 15px; 
-        padding-left: 30px; 
-        position: relative; 
-        color: #1e293b;
-    }
-    /* The "Bullet" Crayon - a nice blue accent */
-    .feature-list li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: #3b82f6;
-        font-weight: bold;
-    }
-    .stream-list li::before {
-        content: "o";
-        position: absolute;
-        left: 0;
-        color: #3b82f6;
-        font-weight: bold;
-    }
-
-    /* Image Crayon */
-    .img-fluid {
-        max-width: 100%;
-        height: auto;
-        border-radius: 9px;
-        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
-    }
 
     /* Mobile handling for the Master Brain */
     @media (max-width: 768px) {
