@@ -153,7 +153,7 @@ section{
     padding: 0 20px;    /* Provides the 20px "gap" on both sides */
 }
 
-.cell2, smallentrance-cell {
+.cell2 {
     width: 100% !important;
     margin-bottom: 10px;
     text-align: center; /* Centers text for a clean stack */
@@ -398,11 +398,33 @@ footer {
     align-items: center; 
 }
 /* 2. Middle column specific centering */
+/* FIX: Corrected center column logic */
 .smallentrance-cell:nth-child(2) {
     flex: 2;
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;     /* Horizontally center content */
+    /* Ensure column has some height to center within if content is short */
+    min-height: 100%; 
 }
+
+/* FIX: Ensure the image fills its container but doesn't get massive */
+.smallentrance-image {
+    width: 100%;       /* Force image to fill its 2-ratio column */
+    max-width: 500px;  /* Control the absolute largest it can be */
+    height: auto;      /* Maintain aspect ratio */
+    display: block;
+    flex-shrink: 0;    /* Prevent the image from shrinking under any pressure */
+}
+
+/* FIX: Space between fragments */
+.smallentrance-cell {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;     /* Modern way to add space between fragments */
+}
+
 .smallentrance-cell:nth-child(3) {
     flex: 1;
     justify-content: center; 
@@ -425,12 +447,6 @@ footer {
     align-self: flex-start; 
 }
 
-.smallentrance-image {
-    width: 100%;       /* Scale to column width */
-    max-width: 500px;  /* Adjust as needed */
-    height: auto;
-    display: block;
-}
 
 .solutiondiv {
 	margin: 0 auto; 
