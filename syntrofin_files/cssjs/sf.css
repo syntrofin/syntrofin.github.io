@@ -71,17 +71,21 @@ img {
 .heroslogan{ font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
 .tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
 }
+
 /* Menu */
 .nav {
-    display: flex;
-    list-style: none;
+    display: flex !important;   /* Forces horizontal layout */
+    list-style: none !important; /* Removes the bullet dots */
+    list-style-type: none !important; /* Extra insurance against bullets */
     padding: 0;
     margin: 0;
     gap: 20px;
+    flex-direction: row;        /* Ensures it stays horizontal */
 }
 
 .nav-item {
     margin-left: 1.5rem; 
+    list-style: none;
 }
 
 .nav-link {
