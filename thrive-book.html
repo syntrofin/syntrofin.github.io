@@ -60,283 +60,11 @@
     </head>
   
      <body>
-    <p>
-      <strong>Conversation with Gemini</strong>
-    </p>
-    <p class="question" id="q1">
-      Event organizer company
-    </p>
-    <p> For an event organizer, <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability. </p>
-    <p> Below is a breakdown of how you would structure these products and bundles using the latest RCA/RLM objects and logic. </p>
-    <p>
-      <strong>1. Core Architecture Components</strong>
-    </p>
-    <p> Instead of just a list of SKUs, RCA uses a layered approach: </p>
-    <ul class="norma">
-      <li>
-        <strong>Product2:</strong>The foundation for every "Event," "Booth," or "Ticket."
-      </li>
-      <li>
-        <strong>Product Classifications:</strong>A template for shared attributes. For example, a "Sponsorship" classification could hold common attributes likeEvent_DateorVisibility_Level.
-      </li>
-      <li>
-        <strong>Product Selling Models:</strong>Defines <em>how</em>it is sold (e.g., <strong>One-Time</strong>for a ticket, <strong>Subscription</strong>for a multi-event pass, or <strong>Usage-Based</strong>for lead retrieval services).
-      </li>
-    </ul>
-    <p>
-      <strong>2. Product Bundle Structure (Event Example)</strong>
-    </p>
-    <p> For an organizer, a bundle might represent an <strong>"All-Access Exhibitor Package."</strong>
-    </p>
-    <p>
-      <strong>The Bundle: "Platinum Exhibitor Package"</strong>
-    </p>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <p> Component Type </p>
-          </td>
-          <td>
-            <p> Example Product </p>
-          </td>
-          <td>
-            <p> Configuration Logic (Cardinality) </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Main Bundle (Parent)</strong>
-            </p>
-          </td>
-          <td>
-            <p> Platinum Exhibitor Package </p>
-          </td>
-          <td>
-            <p> Configure During Sale = Allowed </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Component Group: Space</strong>
-            </p>
-          </td>
-          <td>
-            <p> 10x20 Booth, 10x10 Booth </p>
-          </td>
-          <td>
-            <p> Min: 1, Max: 1 (Ensures they pick exactly one) </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Component Group: Add-ons</strong>
-            </p>
-          </td>
-          <td>
-            <p> Power Supply, Carpet, Furniture </p>
-          </td>
-          <td>
-            <p> Min: 0, Max: 10 (Optional items) </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Component Group: Tickets</strong>
-            </p>
-          </td>
-          <td>
-            <p> VIP Pass, Speaker Pass, GA Pass </p>
-          </td>
-          <td>
-            <p> Min: 2, Max: 10 (Quantity limits) </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      <strong>3. Dynamic Attribute Modeling</strong>
-    </p>
-    <p> One of RCA’s biggest strengths is <strong>Attribute-Based Pricing</strong>. Instead of creating 50 SKUs for different booth sizes or locations, you create one "Booth" product with <strong>Attributes</strong>. </p>
-    <ul class="norma">
-      <li>
-        <strong>Attribute 1: Location</strong>(Picklist: Premium/Standard/Corner)
-      </li>
-      <li>
-        <strong>Attribute 2: Hall Number</strong>(Text/Number)
-      </li>
-      <li>
-        <strong>Logic:</strong>A "Premium" location attribute can trigger a <strong>Price Adjustment Matrix</strong>that adds a 20% surcharge to the base list price automatically.
-      </li>
-    </ul>
-    <p>
-      <strong>4. Advanced Configuration &amp; Rules</strong>
-    </p>
-    <p> For an event organizer, certain products shouldn't exist together. RCA uses the <strong>Constraint Rules Engine</strong>(the new CML-based engine) to handle this: </p>
-    <ul class="norma">
-      <li>
-        <strong>Exclude Rule:</strong>If the "Digital Only Sponsorship" is selected, the "Physical Booth Space" is automatically excluded or hidden.
-      </li>
-      <li>
-        <strong>Require Rule:</strong>Selecting "Gala Dinner Sponsorship" automatically requires adding at least one "VIP Guest Ticket."
-      </li>
-      <li>
-        <strong>Qualification Rules:</strong>Restrict certain "VIP Early Bird" products so they are only visible if the Quote date is before a specific event deadline.
-      </li>
-    </ul>
-    <p>
-      <strong>5. Fulfillment &amp; Orchestration (DRO)</strong>
-    </p>
-    <p> Since events often involve physical setups (booths) and digital deliverables (website logos), you use <strong>Dynamic Revenue Orchestrator (DRO)</strong>: </p>
-    <ul class="olo">
-      <li>
-        <strong>Order Decomposition:</strong>When the "Exhibitor Package" is ordered, DRO breaks it into two fulfillment plans.
-      </li>
-      <li>
-        <strong>Digital Plan:</strong>Notifies the marketing team to get the logo for the website.
-      </li>
-      <li>
-        <strong>Physical Plan:</strong>Generates a task for the floor manager to reserve Booth #402 and coordinate power setup.
-      </li>
-    </ul>
-    <p>
-      <strong>Next Step Recommendation</strong>
-    </p>
-    <p> Would you like me to create a specific <strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume? </p>
-    
-<p class="question" id="q1">      
-Price Adjustment Based on Volume
-</p>
-    <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a <strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive <strong>Price Adjustment Matrix</strong>records. </p>
-    <p> This allows you to change the unit price dynamically based on the quantity of tickets purchased without creating complex price rules. </p>
-    <p>
-      <strong>1. The Decision Matrix (The Logic)</strong>
-    </p>
-    <p> Imagine you are selling <strong>GA Tickets</strong>for a large conference. You want to reward bulk buyers with lower unit prices. You would create a matrix calledEvent_Ticket_Volume_Pricing. </p>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <p> Input: Minimum Quantity </p>
-          </td>
-          <td>
-            <p> Input: Maximum Quantity </p>
-          </td>
-          <td>
-            <p> Output: Adjustment Type </p>
-          </td>
-          <td>
-            <p> Output: Adjustment Value </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p> 1 </p>
-          </td>
-          <td>
-            <p> 10 </p>
-          </td>
-          <td>
-            <p> Percentage </p>
-          </td>
-          <td>
-            <p> 0% </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p> 11 </p>
-          </td>
-          <td>
-            <p> 50 </p>
-          </td>
-          <td>
-            <p> Percentage </p>
-          </td>
-          <td>
-            <p> 10% </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p> 51 </p>
-          </td>
-          <td>
-            <p> 100 </p>
-          </td>
-          <td>
-            <p> Percentage </p>
-          </td>
-          <td>
-            <p> 20% </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p> 101 </p>
-          </td>
-          <td>
-            <p> 9999 </p>
-          </td>
-          <td>
-            <p> Fixed Price </p>
-          </td>
-          <td>
-            <p> $150.00 </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <ul class="norma">
-      <li>
-        <strong>Row 2 Example:</strong>If a customer buys 25 tickets, the system finds the row where 25 is between 11 and 50 and applies a 10% discount.
-      </li>
-      <li>
-        <strong>Row 4 Example:</strong>For massive corporate orders (101+), the system overrides the list price and sets it to a flat <strong>$150.00</strong>per ticket.
-      </li>
-    </ul>
-    <p>
-      <strong>2. Integration with "Pricing Procedures"</strong>
-    </p>
-    <p> Unlike legacy CPQ, which runs a "Calculated Formula," RCA uses <strong>Pricing Procedures</strong>(a flow-like tool). Here is how the step-by-step logic works in the engine: </p>
-    <ul class="olo">
-      <li>
-        <strong>Lookup Base Price:</strong>The system pulls the $250.00 list price from the Pricebook.
-      </li>
-      <li>
-        <strong>Call Decision Matrix:</strong>The procedure sends theQuantity(e.g., 60) to theEvent_Ticket_Volume_Pricingmatrix.
-      </li>
-      <li>
-        <strong>Apply Adjustment:</strong>The matrix returns "20% Discount."
-      </li>
-      <li>
-        <strong>Calculate Net Price:</strong>The engine performs the math: 250.00−(250.00×0.20)=200.00     .
-      </li>
-    </ul>
-    <p>
-      <strong>3. Why this is better for Event Organizers</strong>
-    </p>
-    <p> Using this "Advanced" approach offers three major benefits over the old way: </p>
-    <ul class="norma">
-      <li>
-        <strong>No Deployment Hassle:</strong>Decision Matrices are data-driven. You can update your "Early Bird" or "Bulk" tiers by uploading a CSV without needing a developer or a deployment cycle.
-      </li>
-      <li>
-        <strong>Attribute Synergy:</strong>You can add another column to the matrix for <strong>"Member Status."</strong>IfMember_Status == True, the discount could be 30% instead of 20% for the same quantity.
-      </li>
-      <li>
-        <strong>Performance:</strong>The Business Rules Engine evaluates these tiers in milliseconds, even for quotes with hundreds of line items, avoiding the "calculation lag" often seen in legacy CPQ.
-      </li>
-    </ul>
-    <p>
-      <strong>Would you like me to...</strong>
-    </p>
-    <p> Would you like me to show you how to layer an <strong>Attribute-Based adjustment</strong>(like a "VIP Floor" surcharge) on top of this volume-based discount? </p>
-    
+
+<!-- Section, Company -->
+<section id="company">
+<h2>Customer</h2>
+<!-- Customer -->
 <p class="question" id="q3">
 Customers - Paid: Event Sponors, Booths and Visitors
 </p>
@@ -504,7 +232,8 @@ Customers - Paid: Event Sponors, Booths and Visitors
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you have both B2B (Sponsors) and high-volume (Attendees) flows, would you like me to show how <strong>RCA manages the "Order to Asset" transition</strong>for an Exhibitor who wants to reuse the same booth setup for your next event? </p>
-    
+
+<!-- Delivery -->
 <p class="question" id="q4">
 Coming to fulfilment - Staged delivery
 </p>
@@ -767,7 +496,287 @@ Coming to fulfilment - Staged delivery
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to show you how to build a <strong>Profitability Calculation</strong>inside the <strong>Pricing Procedure</strong>that flags a quote for "Manager Approval" if the cost of the Band and Catering exceeds 40% of the Sponsorship revenue? </p>
+ 
+    <!-- Products -->
+    <p class="question" id="q1">
+      Event organizer company, Products
+    </p>
+    <p> For an event organizer, <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability. </p>
+    <p> Below is a breakdown of how you would structure these products and bundles using the latest RCA/RLM objects and logic. </p>
+    <p>
+      <strong>1. Core Architecture Components</strong>
+    </p>
+    <p> Instead of just a list of SKUs, RCA uses a layered approach: </p>
+    <ul class="norma">
+      <li>
+        <strong>Product2:</strong>The foundation for every "Event," "Booth," or "Ticket."
+      </li>
+      <li>
+        <strong>Product Classifications:</strong>A template for shared attributes. For example, a "Sponsorship" classification could hold common attributes likeEvent_DateorVisibility_Level.
+      </li>
+      <li>
+        <strong>Product Selling Models:</strong>Defines <em>how</em>it is sold (e.g., <strong>One-Time</strong>for a ticket, <strong>Subscription</strong>for a multi-event pass, or <strong>Usage-Based</strong>for lead retrieval services).
+      </li>
+    </ul>
+    <p>
+      <strong>2. Product Bundle Structure (Event Example)</strong>
+    </p>
+    <p> For an organizer, a bundle might represent an <strong>"All-Access Exhibitor Package."</strong>
+    </p>
+    <p>
+      <strong>The Bundle: "Platinum Exhibitor Package"</strong>
+    </p>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <p> Component Type </p>
+          </td>
+          <td>
+            <p> Example Product </p>
+          </td>
+          <td>
+            <p> Configuration Logic (Cardinality) </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Main Bundle (Parent)</strong>
+            </p>
+          </td>
+          <td>
+            <p> Platinum Exhibitor Package </p>
+          </td>
+          <td>
+            <p> Configure During Sale = Allowed </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Component Group: Space</strong>
+            </p>
+          </td>
+          <td>
+            <p> 10x20 Booth, 10x10 Booth </p>
+          </td>
+          <td>
+            <p> Min: 1, Max: 1 (Ensures they pick exactly one) </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Component Group: Add-ons</strong>
+            </p>
+          </td>
+          <td>
+            <p> Power Supply, Carpet, Furniture </p>
+          </td>
+          <td>
+            <p> Min: 0, Max: 10 (Optional items) </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Component Group: Tickets</strong>
+            </p>
+          </td>
+          <td>
+            <p> VIP Pass, Speaker Pass, GA Pass </p>
+          </td>
+          <td>
+            <p> Min: 2, Max: 10 (Quantity limits) </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>3. Dynamic Attribute Modeling</strong>
+    </p>
+    <p> One of RCA’s biggest strengths is <strong>Attribute-Based Pricing</strong>. Instead of creating 50 SKUs for different booth sizes or locations, you create one "Booth" product with <strong>Attributes</strong>. </p>
+    <ul class="norma">
+      <li>
+        <strong>Attribute 1: Location</strong>(Picklist: Premium/Standard/Corner)
+      </li>
+      <li>
+        <strong>Attribute 2: Hall Number</strong>(Text/Number)
+      </li>
+      <li>
+        <strong>Logic:</strong>A "Premium" location attribute can trigger a <strong>Price Adjustment Matrix</strong>that adds a 20% surcharge to the base list price automatically.
+      </li>
+    </ul>
+    <p>
+      <strong>4. Advanced Configuration &amp; Rules</strong>
+    </p>
+    <p> For an event organizer, certain products shouldn't exist together. RCA uses the <strong>Constraint Rules Engine</strong>(the new CML-based engine) to handle this: </p>
+    <ul class="norma">
+      <li>
+        <strong>Exclude Rule:</strong>If the "Digital Only Sponsorship" is selected, the "Physical Booth Space" is automatically excluded or hidden.
+      </li>
+      <li>
+        <strong>Require Rule:</strong>Selecting "Gala Dinner Sponsorship" automatically requires adding at least one "VIP Guest Ticket."
+      </li>
+      <li>
+        <strong>Qualification Rules:</strong>Restrict certain "VIP Early Bird" products so they are only visible if the Quote date is before a specific event deadline.
+      </li>
+    </ul>
+    <p>
+      <strong>5. Fulfillment &amp; Orchestration (DRO)</strong>
+    </p>
+    <p> Since events often involve physical setups (booths) and digital deliverables (website logos), you use <strong>Dynamic Revenue Orchestrator (DRO)</strong>: </p>
+    <ul class="olo">
+      <li>
+        <strong>Order Decomposition:</strong>When the "Exhibitor Package" is ordered, DRO breaks it into two fulfillment plans.
+      </li>
+      <li>
+        <strong>Digital Plan:</strong>Notifies the marketing team to get the logo for the website.
+      </li>
+      <li>
+        <strong>Physical Plan:</strong>Generates a task for the floor manager to reserve Booth #402 and coordinate power setup.
+      </li>
+    </ul>
+    <p>
+      <strong>Next Step Recommendation</strong>
+    </p>
+    <p> Would you like me to create a specific <strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume? </p>
 
+         <!-- Pricing -->
+<p class="question" id="q1">      
+Price Adjustment Based on Volume
+</p>
+    <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a <strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive <strong>Price Adjustment Matrix</strong>records. </p>
+    <p> This allows you to change the unit price dynamically based on the quantity of tickets purchased without creating complex price rules. </p>
+    <p>
+      <strong>1. The Decision Matrix (The Logic)</strong>
+    </p>
+    <p> Imagine you are selling <strong>GA Tickets</strong>for a large conference. You want to reward bulk buyers with lower unit prices. You would create a matrix calledEvent_Ticket_Volume_Pricing. </p>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <p> Input: Minimum Quantity </p>
+          </td>
+          <td>
+            <p> Input: Maximum Quantity </p>
+          </td>
+          <td>
+            <p> Output: Adjustment Type </p>
+          </td>
+          <td>
+            <p> Output: Adjustment Value </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p> 1 </p>
+          </td>
+          <td>
+            <p> 10 </p>
+          </td>
+          <td>
+            <p> Percentage </p>
+          </td>
+          <td>
+            <p> 0% </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p> 11 </p>
+          </td>
+          <td>
+            <p> 50 </p>
+          </td>
+          <td>
+            <p> Percentage </p>
+          </td>
+          <td>
+            <p> 10% </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p> 51 </p>
+          </td>
+          <td>
+            <p> 100 </p>
+          </td>
+          <td>
+            <p> Percentage </p>
+          </td>
+          <td>
+            <p> 20% </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p> 101 </p>
+          </td>
+          <td>
+            <p> 9999 </p>
+          </td>
+          <td>
+            <p> Fixed Price </p>
+          </td>
+          <td>
+            <p> $150.00 </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="norma">
+      <li>
+        <strong>Row 2 Example:</strong>If a customer buys 25 tickets, the system finds the row where 25 is between 11 and 50 and applies a 10% discount.
+      </li>
+      <li>
+        <strong>Row 4 Example:</strong>For massive corporate orders (101+), the system overrides the list price and sets it to a flat <strong>$150.00</strong>per ticket.
+      </li>
+    </ul>
+    <p>
+      <strong>2. Integration with "Pricing Procedures"</strong>
+    </p>
+    <p> Unlike legacy CPQ, which runs a "Calculated Formula," RCA uses <strong>Pricing Procedures</strong>(a flow-like tool). Here is how the step-by-step logic works in the engine: </p>
+    <ul class="olo">
+      <li>
+        <strong>Lookup Base Price:</strong>The system pulls the $250.00 list price from the Pricebook.
+      </li>
+      <li>
+        <strong>Call Decision Matrix:</strong>The procedure sends theQuantity(e.g., 60) to theEvent_Ticket_Volume_Pricingmatrix.
+      </li>
+      <li>
+        <strong>Apply Adjustment:</strong>The matrix returns "20% Discount."
+      </li>
+      <li>
+        <strong>Calculate Net Price:</strong>The engine performs the math: 250.00−(250.00×0.20)=200.00     .
+      </li>
+    </ul>
+    <p>
+      <strong>3. Why this is better for Event Organizers</strong>
+    </p>
+    <p> Using this "Advanced" approach offers three major benefits over the old way: </p>
+    <ul class="norma">
+      <li>
+        <strong>No Deployment Hassle:</strong>Decision Matrices are data-driven. You can update your "Early Bird" or "Bulk" tiers by uploading a CSV without needing a developer or a deployment cycle.
+      </li>
+      <li>
+        <strong>Attribute Synergy:</strong>You can add another column to the matrix for <strong>"Member Status."</strong>IfMember_Status == True, the discount could be 30% instead of 20% for the same quantity.
+      </li>
+      <li>
+        <strong>Performance:</strong>The Business Rules Engine evaluates these tiers in milliseconds, even for quotes with hundreds of line items, avoiding the "calculation lag" often seen in legacy CPQ.
+      </li>
+    </ul>
+    <p>
+      <strong>Would you like me to...</strong>
+    </p>
+    <p> Would you like me to show you how to layer an <strong>Attribute-Based adjustment</strong>(like a "VIP Floor" surcharge) on top of this volume-based discount? </p>
+
+
+</section>
+         
+    <!-- Section, RCA Excersize -->
     <h2>RCA Excersize</h2>
     <p class="question" id="q5"> 
     RCA Excersize - 
@@ -5451,6 +5460,7 @@ Coming to fulfilment - Staged delivery
     </table>
   </body>
 </html>
+
 
 
 
