@@ -117,6 +117,18 @@ section{
     display: block;         /* Remove extra space below image */
     margin-bottom: 10px;    /* Optional space between image and text */
 }
+.leftingrid { 
+    grid-column: 1; /* Always Column 1 */
+    text-align: left; 
+}
+.centeringrid { 
+    grid-column: 2; /* Always Column 2 */
+    text-align: center; 
+}
+.rightingrid { 
+    grid-column: 3; /* Always Column 3 */
+    text-align: right; 
+}
 
 /* Optional: Add a hover effect so they move slightly when interacted with */
 .fragment:hover {
