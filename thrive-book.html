@@ -63,8 +63,8 @@
     <p>
       <strong>Conversation with Gemini</strong>
     </p>
-    <p>
-      <u>Event organizer company and salesforce Revenue cloud advanced - Can you give how products and bundles are structured for this</u>
+    <p class="question">
+      Event organizer company and salesforce Revenue cloud advanced - Can you give how products and bundles are structured for this
     </p>
     <p> For an event organizer, <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability. </p>
     <p> Below is a breakdown of how you would structure these products and bundles using the latest RCA/RLM objects and logic. </p>
@@ -333,7 +333,8 @@
       <strong>Would you like me to...</strong>
     </p>
     <p> Would you like me to show you how to layer an <strong>Attribute-Based adjustment</strong>(like a "VIP Floor" surcharge) on top of this volume-based discount? </p>
-    <p> who are my here - complete event charged to event sponserer, booths to companies/groups to showcase and people to buy tickets </p>
+    
+<p class="question"> who are my here - complete event charged to event sponserer, booths to companies/groups to showcase and people to buy tickets </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -498,7 +499,8 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you have both B2B (Sponsors) and high-volume (Attendees) flows, would you like me to show how <strong>RCA manages the "Order to Asset" transition</strong>for an Exhibitor who wants to reuse the same booth setup for your next event? </p>
-    <p> Coming to fulfilment - sometime event may be longer or sponsor might buy two eevents once- the delivery is in stages typically </p>
+    
+    <p class="question"> Coming to fulfilment - sometime event may be longer or sponsor might buy two eevents once- the delivery is in stages typically </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -758,8 +760,8 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to show you how to build a <strong>Profitability Calculation</strong>inside the <strong>Pricing Procedure</strong>that flags a quote for "Manager Approval" if the cost of the Band and Catering exceeds 40% of the Sponsorship revenue? </p>
-    <p> Cary, NC, USA </p>
-    <p> Can you take one event, say for example - "Sprint 2020 event - University ABC" - and give me products to quote to revenue excersize with dummy customers - for me to practice on Revenue cloud Advanced </p>
+    
+    <p class="question"> Can you take one event, say for example - "Sprint 2020 event - University ABC" - and give me products to quote to revenue excersize with dummy customers - for me to practice on Revenue cloud Advanced </p>
     <p> To help you practice with <strong>Revenue Cloud Advanced (RCA/RLM)</strong>, let’s build out a quote for the <strong>"Spring 2026 Event - University ABC."</strong>This exercise focuses on the new object model: <strong>Product Selling Models</strong>, <strong>Attribute-Based Pricing</strong>, and <strong>Advanced Bundling</strong>. </p>
     <p>
       <strong>The Scenario</strong>
@@ -1161,7 +1163,8 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like me to show you how to structure a <strong>Price Matrix</strong>that changes the cost of the WiFi based on theMAC Address Limitattribute (e.g., $10 per extra device)? </p>
-    <p> Not needed, but can you procceed to order, DRO and Revrec </p>
+    
+    <p class="question"> Not needed, but can you procceed to order, DRO and Revrec </p>
     <ul class="norma">
       <li></li>
     </ul>
@@ -1977,7 +1980,8 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Since you are currently writing a book on <strong>Revenue Cloud</strong>, would you like me to help you draft a <strong>"Comparison Table"</strong>for your book that highlights the 5 most critical differences between <strong>Legacy CPQ</strong>and <strong>Advanced RLM</strong>based on this event scenario? </p>
-    <p> May be not. but one question, did you cover in DRO if delivery is staged and not one time </p>
+    
+   <p class="question"> May be not. but one question, did you cover in DRO if delivery is staged and not one time </p>
     <p> Yes, we touched on it, but let's look closer at how <strong>DRO (Dynamic Revenue Orchestrator)</strong>handles the "Staged" nature of your University event. This is the most significant departure from legacy systems. </p>
     <p> In the legacy world, once an order was "Activated," it was essentially a flat record. In <strong>Revenue Cloud Advanced</strong>, the delivery is a living, multi-stage process. </p>
     <p>
@@ -2469,7 +2473,8 @@
       <strong>What's next for our partnership?</strong>
     </p>
     <p> Now that the "University ABC" journey and your book summary are complete, would you like to pivot to a new case study—perhaps exploring <strong>Subscription Management</strong>or <strong>Global Taxation</strong>logic within RLM? </p>
-    <p> Taxation logic </p>
+    
+    <p class="question"> Taxation logic </p>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, taxation is no longer a "set and forget" field on the Quote. Because your event business involves different types of revenue (physical space, digital services, and food/beverage), the tax logic must be as dynamic as your pricing. </p>
     <p> RLM uses a <strong>Tax Engine</strong>(often integrated with external providers like Avalara or Vertex) that evaluates the "Taxability" of a product at multiple points in the lifecycle. </p>
     <p>
@@ -2591,7 +2596,8 @@
       <strong>Next Step Recommendation</strong>
     </p>
     <p> Would you like to see how to handle <strong>Global Taxation (VAT/GST)</strong>for a sponsor based in Europe attending your US-based event, specifically regarding "Reverse Charge" logic? </p>
-    <p> How I may use agent force here </p>
+    
+    <p class="question"> How I may use agent force here </p>
     <p> In the context of your <strong>University ABC</strong>event and the architecture we've built, <strong>Agentforce</strong>(Salesforce's suite of autonomous AI agents) acts as the "Intelligent Glue" between your complex RLM data and the humans involved. </p>
     <p> Because you have staged fulfillment, technical attributes, and SLA-driven billing, Agentforce can move beyond simple chatbots to become <strong>Autonomous Operators</strong>. </p>
     <p>
@@ -2927,7 +2933,9 @@
               <strong>Would you like me to do?</strong>
             </p>
             <p> I can help you draft the <strong>"UAT Script for the AI Agent"</strong>to ensure it doesn't accidentally offer discounts to low-margin sponsors. Would you like to see that? </p>
-            <p> How would I configure these three agents from start </p>
+
+              <h2> Agents</h2>
+           <p class="question"> How would I configure these three agents from start </p>
             <p> To configure these three agents (the <strong>Exhibitor Success Agent</strong>, the <strong>SLA Watchdog</strong>, and the <strong>Finance/Compliance Agent</strong>) from scratch, you follow a unified four-step "Foundational Build." </p>
             <p> In the 2026 Agentforce ecosystem, you aren't writing code; you are defining <strong>Topics</strong>, <strong>Actions</strong>, and <strong>Grounding</strong>. </p>
             <p>
@@ -3339,7 +3347,9 @@
                     <strong>Draft a "Business Value Presentation"</strong>for a CEO level explaining why RLM + Agentforce is a $1M+ ROI play?
                   </li>
                 </ul>
-                <p> Coming to Governance: How do i make sure this solution will work for coming years for future stutends </p>
+
+                  <h2>Governance</h2>
+                <p class="question">Coming to Governance: How do i make sure this solution will work for coming years for future stutends </p>
                 <p> To ensure your <strong>Revenue Cloud Advanced (RCA/RLM)</strong>and <strong>Agentforce</strong>solution remains robust for future students and subsequent event cycles, you must shift from "building for today" to <strong>Architectural Governance</strong>. </p>
                 <p> For a Principal Architect, this means creating a system that is <strong>decoupled</strong>, <strong>metadata-driven</strong>, and <strong>self-documenting</strong>. Here is how you govern this solution for the long term. </p>
                 <p>
@@ -3502,7 +3512,9 @@
                   <strong>Would you like me to...</strong>
                 </p>
                 <p> Would you like me to draft a <strong>"Troubleshooting Cheat Sheet"</strong>for these students that lists the most common errors when adding new products to a DRO-managed event? </p>
-                <p> How would I start my discovery becuse of too many moving parts for this project </p>
+                
+                  <h2>Discovery</h2>
+               <p class="question"> How would I start my discovery becuse of too many moving parts for this project </p>
                 <p> Discovery for a project with this many moving parts (Revenue Cloud, DRO, ERP, Agentforce) can feel like trying to map an ocean while sailing it. To prevent "analysis paralysis," you need to use a <strong>Multi-Layered Discovery Framework</strong>. </p>
                 <p> Instead of asking everything at once, you break the discovery into "Architectural Pillars." </p>
                 <p>
@@ -3741,7 +3753,8 @@
                 <p>
                   <strong>Would you like me to create a "Discovery Output Template" (a spreadsheet or table) that you can use to capture these answers and map them directly to RLM/DRO objects?</strong>
                 </p>
-                <p> Yes. can you answer one question before progressing, is story map or Ops Manager to walk you through a "Day in the Life" of a Diamond Sponsorship is something like old phrase of persona journey. I liked the phrase "A day in the life" </p>
+                  
+                <p class="question"> Yes. can you answer one question before progressing, is story map or Ops Manager to walk you through a "Day in the Life" of a Diamond Sponsorship is something like old phrase of persona journey. I liked the phrase "A day in the life" </p>
                 <p> You’ve hit on a great architectural distinction. While they are related, <strong>"A Day in the Life"</strong>is more grounded and "messy" than a traditional <strong>Persona Journey</strong>. </p>
                 <p> Here is how I would differentiate them for your <strong>University ABC</strong>discovery: </p>
                 <p>
@@ -3986,7 +3999,8 @@
                   <strong>What would you like me to do?</strong>
                 </p>
                 <p> I can now provide that <strong>Discovery Output Spreadsheet Template</strong>we discussed, pre-populated with these "Day in the Life" scenarios so you can start your workshop tomorrow. Would you like that? </p>
-                <p> During these interviews, I recommend bringing a "Story Map" rather than a technical diagram. : what is a "Story Map", sounds interesting </p>
+                
+                <p class="question"> During these interviews, I recommend bringing a "Story Map" rather than a technical diagram. : what is a "Story Map", sounds interesting </p>
                 <p> In the world of <strong>Principal Architects</strong>, a <strong>Story Map</strong>is your secret weapon for discovery. While a technical diagram shows how <strong>objects</strong>talk to each other, a Story Map shows how <strong>people</strong>experience the process over time. </p>
                 <p> Think of it as a horizontal timeline of the user's "backbone" activities, with the technical details (the "user stories") hanging vertically underneath. </p>
                 <p>
@@ -4533,7 +4547,8 @@
                     <strong>Create a "Risk Register"</strong>for the project, identifying potential pitfalls with the ERP sync or AI grounding?
                   </li>
                 </ul>
-                <p> Draft the "Definition of Done" (DoD) and Create a "Risk Register" </p>
+                  
+                <p class="question"> Draft the "Definition of Done" (DoD) and Create a "Risk Register" </p>
                 <p> To ensure the <strong>University ABC</strong>project meets your standards as a Principal Architect, we need clear quality gates. The <strong>Definition of Done (DoD)</strong>prevents "technical debt" from piling up, and the <strong>Risk Register</strong>prepares you for the "moving parts" that often cause architectural friction. </p>
                 <p>
                   <strong>1. Definition of Done (DoD) per Phase</strong>
@@ -5302,8 +5317,9 @@
                   <strong>How would you like to conclude our collaboration today?</strong>
                 </p>
                 <p> We have successfully mapped out the entire architecture, the implementation roadmap, the governance, and the book's narrative. </p>
-                <p>
-                  <strong>Would you like me to export a final "Master Summary" of all these artifacts into a single document so you have a complete "Project Bible" for University ABC?</strong>
+                
+                  <p>
+                  <strong>Would you like me to export a final "Master Summary" of all these artifacts into a single document so you have a complete "Project Gita" for University ABC?</strong>
                 </p>
                 <p class="question"> yes </p>
                 <p> This <strong>Master Summary</strong>serves as your "Project Bible" for the <strong>University ABC</strong>case study. It consolidates every architectural layer, governance gate, and student resource we’ve developed into a single, cohesive blueprint. </p>
@@ -5424,6 +5440,7 @@
     </table>
   </body>
 </html>
+
 
 
 
