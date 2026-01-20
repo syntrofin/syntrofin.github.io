@@ -9483,9 +9483,18 @@ This "Bible" proves that a<strong>Principal Architect</strong>does not just buil
 </p>
 <p >
 
-
+<script>
+// This code runs once the page elements are loaded
+document.querySelectorAll("p").forEach(p => {
+// textContent.trim() checks for actual text, ignoring spaces
+if (p.textContent.trim() === "") {
+p.remove();
+}
+});
+</script>
 </body>
 
 </html>
+
 
 
