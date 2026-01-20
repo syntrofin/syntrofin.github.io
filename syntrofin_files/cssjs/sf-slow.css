@@ -1,0 +1,368 @@
+/* 1. Common - body, section, img */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto; /* Centers the entire page */
+    max-width: 1100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+section {
+    scroll-margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 32px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
+.justify-center { justify-content: center !important; }
+.mirror-horizontal { transform: scaleX(-1); }
+.actionbuttondiv {
+    text-align: center;
+    padding: 20px;
+}
+
+/* 2. Header, Logo, and Menu */
+.header-container, .title-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-logo {
+    transform: rotate(-35deg) scaleX(-1);
+    height: 50px;
+    width: auto;
+}
+
+.titleslogan { margin: 0; }
+.heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
+.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
+
+/* Menu (The fix for bullets and vertical layout) */
+.nav {
+    display: flex !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.nav-item {
+    margin-left: 1.5rem;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #46B0E1;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #46B0E1;
+    text-decoration: none;
+}
+
+/* 3. SECTION - Intro */
+.intro-row, .feature-row, .stream-row {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.intro-cell, .cell2 { /* Merged old .cell2 with .intro-cell styles */
+    width: 100% !important;
+    margin-bottom: 10px;
+    text-align: left;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+/* 4. Section - Small Entrance (Sticky Notes Layout) */
+.smallentrance-div {
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    padding: 10px 30px;
+}
+
+.smallentrance-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Keeps columns pinned to the top */
+    width: 100%;
+}
+
+.smallentrance-cell {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    row-gap: 20px; /* Space between sticky notes/image */
+    flex: 1; /* Sets default width for side columns */
+}
+
+/* Middle column is the only exception */
+.smallentrance-cell:nth-child(2) {
+    flex: 2; /* Double width */
+    justify-content: center; /* Vertical center for image */
+    align-items: center;     /* Horizontal center for image */
+    min-height: 100%;
+}
+
+/* Image Styling */
+.smallentrance-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Sticky Note Fragments */
+.smallentrance-fragment {
+    background-color: #fffeee;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(1deg);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    align-self: flex-start; /* Ensures notes align left within column */
+    position: relative;
+    text-align: left;
+}
+
+.smallentrance-fragment:hover {
+    transform: rotate(-1deg) scale(1.05);
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* 5. Solutions & Feature Lists (from PDF pages 5/6) */
+.solutiondiv {
+    margin: 0 auto; 
+    background-color: #f3fafe; 
+    text-align: center;
+    padding: 10px 30px; 
+}
+.service-box {background-color: #f3fafe;}
+.service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
+.service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+
+.feature-list, .stream-list { list-style: none; padding: 0; }
+
+.feature-list li, .stream-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #1e293b;
+}
+
+.feature-list li::before { content: "→"; }
+.stream-list li::before { content: "o"; }
+
+.feature-list li::before, .stream-list li::before {
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+/* 6. Button Styles (AmberGold, Nebula, Obsidian) */
+.ambergoldbutton, .nebulabutton, .obsidianbutton {
+    padding: 15px 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.ambergoldbutton {
+    background: radial-gradient(circle at center, #d49a46 0%, #a76d16 50%, #4a2f0a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(74, 47, 10, 0.5);
+}
+
+.ambergoldbutton:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(167, 109, 22, 0.4);
+}
+
+.nebulabutton {
+    background: radial-gradient(circle at center, #69bff8, #002E5D);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nebulabutton:hover {
+    box-shadow: 0 8px 20px rgba(0, 46, 93, 0.4);
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.1);
+}
+
+.obsidianbutton {
+    background: linear-gradient(180deg, #2d2d2d 0%, #121212 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.obsidianbutton:hover {
+    background: linear-gradient(180deg, #3d3d3d 0%, #1a1a1a 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-1px);
+}
+
+/* 7. Stacked Cards & Grid Containers (PDF pages 7/8) */
+.stackedcard-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 20px;
+    align-items: flex-start;
+}
+
+.stackedcard {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    border-top: 1px solid #727272;
+}
+
+.stackedcard-title {
+    color: #565656;
+    font-size: 1.2em;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3px 0 2px 0;
+    border-bottom: 1px solid #727272;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 100px));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+.grid-item .logo-text {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* 8. Footer (PDF page 9) */
+footer {
+    background-color: #f4f4ff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #eee;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #606060;
+}
+
+/* 9. Mobile Handling @media (max-width: 768px) */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+    }
+    .nav {
+        display: none; /* Menu is hidden on mobile, likely replaced by a hamburger menu in HTML */
+    }
+    .container2a {
+        flex-direction: column;
+    }
+    .stackedcard-container, .feature-row, .stream-row {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px; /* Ensures padding is correct on mobile stack */
+    }
+    .stackedcard {
+        flex: none;
+        max-width: 100%;
+        margin-top: 0px !important;
+        border-top: none !important;
+        border-radius: 8px;
+    }
+    .logo {
+        place-self: center;
+        margin: 0 auto !important;
+    }
+    .img_mshrink {
+        width: 50%;
+        border-radius: 15px;
+        aspect-ratio: auto;
+    }
+    .feature-list li, .stream-list li {
+        text-align: left;
+    }
+    .heroslogan { font-size: 2.5rem; }
+}
