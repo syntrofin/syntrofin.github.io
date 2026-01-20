@@ -140,14 +140,6 @@ section{
 	text-align: center;
 }
 
-.solutiondiv {
-max-width: 1100px; 
-	margin: 0 auto; 
-	padding: 0 17.5px; 
-	background-color: #f3fafe; 
-	text-align: center;
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -351,13 +343,21 @@ footer {
     border-top: 1px solid #eee; /* A subtle line separating it from the main page */
 }
 
+.solutiondiv {
+	margin: 0 auto; 
+	background-color: #f3fafe; 
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 .feature-row {
         display: flex;
         align-items: center;
         gap: 20px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-		padding-top: 10px;
-		padding-bottom: 10px;
         /* min-height: 400px; */
     }
 
@@ -366,8 +366,6 @@ footer {
         align-items: center;
         gap: 20px;
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-		padding-top: 10px;
-		padding-bottom: 10px;
         /* min-height: 400px; */
     }
 
