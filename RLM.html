@@ -33,6 +33,100 @@
 </head>
 <body>
 
+<!-- RLM Life Cycle -->
+	<h1>RLM Life Cycle</h1>
+	<h2>Life Cycle Process Steps</h2>
+<div class="lifecycle-container">
+    <div class="title">Revenue Life Cycle</div>
+
+    <!-- Quote Stage -->
+    <div class="stage-row">
+        <div class="stage-box quote-box">Quote</div>
+        <div class="process-steps">
+            <div class="step">Created</div>
+            <div class="step">Configured</div>
+            <div class="step">Priced</div>
+            <div class="step">Negotiated</div>
+            <div class="step">Discounted</div>
+            <div class="step">Approved</div>
+        </div>
+    </div>
+    <div class="stage-row" style="margin-top: -15px;">
+        <div class="stage-box" style="visibility: hidden;">Quote</div>
+        <div class="process-steps">
+            <div class="step">Printed</div>
+            <div class="step">Agreed</div>
+            <div class="step">Signed</div>
+        </div>
+    </div>
+
+    <!-- Order Stage -->
+    <div class="annotation">DecomposedOrderLines created FulfillmentOrderLines created Asset records created</div>
+    <div class="stage-row">
+        <div class="stage-box order-box">Order</div>
+        <div class="process-steps">
+            <div class="step">Decomposed</div>
+            <div class="step">Orchestrated</div>
+            <div class="step">Fulfilled/Provisioned</div>
+            <div class="step">Assetized</div>
+            <div class="step">Activated</div>
+        </div>
+    </div>
+     <div class="stage-row" style="margin-top: -15px;">
+        <div class="stage-box" style="visibility: hidden;">Order</div>
+        <div class="process-steps">
+            <div class="step">Next Bill date set</div>
+            <div class="step">Revenue Transactions created</div>
+            <div class="step">Billing Transactions created</div>
+        </div>
+    </div>
+
+    <!-- Invoice Stage -->
+    <div class="stage-row">
+        <div class="stage-box invoice-box">Invoice</div>
+        <div class="process-steps">
+            <div class="step">Selected/Grouped</div>
+            <div class="step">Mediated</div>
+            <div class="step">Rated</div>
+            <div class="step">Prorated</div>
+            <div class="step">Taxed</div>
+            <div class="step">Consolidated</div>
+        </div>
+    </div>
+    <div class="stage-row" style="margin-top: -15px;">
+        <div class="stage-box" style="visibility: hidden;">Invoice</div>
+        <div class="process-steps">
+            <div class="step">Generated</div>
+            <div class="step">Posted</div>
+            <div class="step">Order dated rolled</div>
+        </div>
+    </div>
+
+    <!-- RevRec Stage -->
+    <div class="stage-row">
+        <div class="stage-box revrec-box">RevRec</div>
+        <div class="process-steps">
+            <div class="step">Identified (POB)</div>
+            <div class="step">Allocated</div>
+            <div class="step">Amortized</div>
+            <div class="step">Adjusted</div>
+            <div class="step">GL Mapped</div>
+            <div class="step">Recognized</div>
+        </div>
+    </div>
+
+    <!-- Payment Stage -->
+    <div class="stage-row">
+        <div class="stage-box payment-box">Payment</div>
+        <div class="process-steps">
+            <div class="step">Authorized</div>
+            <div class="step">Settled</div>
+            <div class="step">Dunning-Applied</div>
+            <div class="step">Reconciled</div>
+        </div>
+    </div>
+</div>
+	
 	<!-- RLM Elements Table -->
 	<h1>RLM Elements Table</h1>
 	<h2>RLM Architect & Developer Reference Table</h2>
