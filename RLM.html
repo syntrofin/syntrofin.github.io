@@ -106,5 +106,109 @@
     </ul>
   </div>
 </div>
+
+<h2>Order</h2>
+
+<div class="flow-chart">
+  <!-- Section 1 -->
+  <div class="box">
+    <div class="title">INPUT EVENTS</div>
+    <ul>
+      <li>• Accepted Quote (optional)</li>
+      <li>• Direct Order</li>
+      <li>• Amendment / Cancellation</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 2 -->
+  <div class="box">
+    <div class="title">ORDER NORMALIZATION & CONTROL</div>
+    <ul>
+      <li>• Contract formation</li>
+      <li>• Obligation decomposition</li>
+      <li>• Term anchoring (start / end / duration)</li>
+      <li>• Change & amendment rules</li>
+      <li>• Commercial truth finalization</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 3: Two Column Split -->
+  <div class="split-container">
+    <div class="box secondary">
+      <div class="title">COMMERCIAL ASSET<br><small>(System of Record)</small></div>
+      <ul>
+        <li>• What was sold</li>
+        <li>• Contractual scope</li>
+        <li>• Pricing commitment</li>
+      </ul>
+    </div>
+    <div class="box secondary">
+      <div class="title">OBLIGATION DEFINITION<br><small>(Performance Duties)</small></div>
+      <ul>
+        <li>• What must be delivered</li>
+        <li>• When & how</li>
+        <li>• Change boundaries</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Fan Out Separator -->
+  <div class="fan-out-line">
+    <span>FAN-OUT</span>
+  </div>
+
+  <!-- Section 4: Grid Fan-Out -->
+  <div class="fan-out-grid">
+    <div class="box fan-box">
+      <div class="title">FINANCE / MID-OFFICE</div>
+      <ul>
+        <li>• Deferred revenue seeds</li>
+        <li>• Margin / COGS hooks</li>
+        <li>• Compliance visibility</li>
+      </ul>
+    </div>
+
+    <div class="box fan-box">
+      <div class="title">REVENUE ENGINE HANDSHAKE</div>
+      <ul>
+        <li>• Recognition rules</li>
+        <li>• Timing constraints</li>
+        <li>• Reversal boundaries</li>
+      </ul>
+    </div>
+
+    <div class="box fan-box">
+      <div class="title">MANUFACTURING / PROVISIONING</div>
+      <ul>
+        <li>• Build / config freeze</li>
+        <li>• BOM / routing references</li>
+      </ul>
+    </div>
+
+    <div class="box fan-box">
+      <div class="title">LOGISTICS / FULFILLMENT</div>
+      <ul>
+        <li>• Shipment eligibility</li>
+        <li>• Delivery milestones</li>
+        <li>• Partial fulfillment rules</li>
+      </ul>
+    </div>
+
+    <div class="box fan-box" style="grid-column: span 2; width: 50%; justify-self: center;">
+      <div class="title">SERVICE / OPERATIONS</div>
+      <ul>
+        <li>• Service Assets (inactive)</li>
+        <li>• Subscription instances</li>
+        <li>• Warranty anchors</li>
+        <li>• Support entitlements</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
