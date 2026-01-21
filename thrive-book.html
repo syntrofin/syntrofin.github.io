@@ -82,6 +82,28 @@
          padding-bottom: 20px; 
         }
 
+       /* Define ultra-light neutral tones */
+        :root {
+            --bg-light: #ffffff;      /* Pure white */
+            --bg-alt: #f8fafc;        /* Ultra-light slate/blue tint */
+        }
+        
+        /* Base styling for all sections */
+        .customer, .rca, .brd, .trb, .sum, .gov, .disc, .lastmile {
+            border-bottom: 1px solid #edf2f7; /* Optional subtle divider */
+        }
+        
+        /* Pattern: White background */
+        .customer, .brd, .sum, .disc {
+            background-color: var(--bg-light);
+        }
+        
+        /* Pattern: Ultra-light tinted background */
+        .rca, .trb, .gov, .lastmile {
+            background-color: var(--bg-alt);
+        }
+
+
       .question {
           display: block;
           font-size: 1.17em;
@@ -91,7 +113,7 @@
           color: blue;
         padding-top: 20px;
         }
-
+    
       
       @media (max-width: 900px) {
         img {
@@ -400,9 +422,6 @@ Staged delivery
  <p class="question" id="qa2a">
      Money Going Out
  </p>
-    <ul class="norma">
-      <li></li>
-    </ul>
     <p> In an event management context within <strong>Salesforce Revenue Cloud Advanced (RCA)</strong>, the costs you mentioned—Dinner &amp; Drinks, Live Bands, and Venue Rental—represent the "Buy" side of the house. </p>
     <p> To manage these effectively alongside your revenue, you need to bridge the gap between <strong>Salesforce RLM</strong>(Revenue Lifecycle Management) and your <strong>ERP/Procurement</strong>system. Here is how to architect this: </p>
     <p>
@@ -820,7 +839,7 @@ Pricing
     <!-- Section, RCA Excersize -->
     <h2>RCA Excersize</h2>
     
-<section  class="rcahandson" id="rcahandson">
+<section  class="rca" id="rcahandson">
     <p class="question" id="qb1"> 
     Quote
     </p>
@@ -1179,9 +1198,7 @@ Pricing
     
     <p class="question" id="qb3"> 
         Technical Product Attributes </p>
-    <ul class="norma">
-      <li></li>
-    </ul>
+
     <p> In <strong>Revenue Cloud Advanced (RCA)</strong>, you can move away from the "Manual BOM" headache you solved at Komatsu and the "T-Shirt Sizing" model you built for Pure Storage by using <strong>Technical Attributes</strong>. </p>
     <p> For the <strong>University ABC</strong>event, you don't want the Sales Rep to just sell "WiFi." You want them to capture the specific technical requirements that the Fulfillment team (the "Electricians" and "IT Staff") need to actually deliver the service. </p>
     <p>
@@ -1234,9 +1251,7 @@ Pricing
     <p class="question" id="qb4">  
        Order, DRO and Revrec 
     </p>
-    <ul class="norma">
-      <li></li>
-    </ul>
+
     <p> Moving into the <strong>Order </strong>
       <strong> DRO </strong>
       <strong> RevRec</strong>phase for the <strong>University ABC</strong>event allows you to apply the "Decoupled Architecture" you’ve used in the past.
@@ -5654,6 +5669,7 @@ Pricing
 </section>
   </body>
 </html>
+
 
 
 
