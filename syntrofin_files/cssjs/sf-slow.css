@@ -114,9 +114,10 @@ img {
 
 /* 4. Section - Small Entrance (Sticky Notes Layout) */
 .smallentrance-div {
+    margin: 20px;
+    padding: 20px;
     background-color: #002143;
     text-align: center;
-    padding: 20px;
 }
 
 .smallentrance-row {
@@ -173,10 +174,11 @@ img {
 
 /* 5. Solutions & Feature Lists (from PDF pages 5/6) */
 .solutiondiv {
-    margin: 0 auto; 
+    margin: 20px;
+    padding: 20px;
     background-color: #f3fafe; 
     text-align: center;
-    padding: 20px;
+    
 }
 .service-box {background-color: #f3fafe;}
 .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
