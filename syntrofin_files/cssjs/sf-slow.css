@@ -72,13 +72,14 @@ img {
     padding: 20px;
 }
 
-/* 2. Header, Logo, and Menu */
-.header-container, .title-top {
+ .title-top {
+    max-width:90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    width: 100%;
+    padding: 20px;
+    
 }
 
 .logo-title-group {
