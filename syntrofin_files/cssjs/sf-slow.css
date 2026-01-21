@@ -13,7 +13,7 @@ html, body {
 
 /* all margins at one place */
 
-.smallentrance-div, solutiondiv {
+.smallentrance-div, .solutiondiv {
     width: 100%;    
     margin: 20px;   /* Margin is still outside, so use with care on 100% width */
     padding: 20px;  /* Padding is now INSIDE the 100% width */
