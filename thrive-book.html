@@ -89,17 +89,28 @@
         
         /* Base styling for all sections */
         .customer, .rca, .brd, .trb, .sum, .gov, .disc, .appendix {
-            border-bottom: 1px solid #edf2f7; /* Optional subtle divider */
+            /* Optional subtle divider */
         }
         
-        /* Pattern: tint background */
-        .customer, .brd, .sum, .disc {
+
+        .customer, .brd, .appendix {
             background-color: #f8fafc; 
+             border-bottom: 1px solid #edf2f7;
         }
         
-        /* Pattern: Ultra-light yellow background */
-        .rca, .trb, .gov, .appendix {
+        .disc, .trb {
             background-color: #fffeeb;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+                .rca {
+            background-color: #fffeeb;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+                .agf {
+            background-color: #f8fafc;
+            border-bottom: 1px solid #edf2f7;
         }
 
       .question {
@@ -5714,6 +5725,7 @@ Pricing
          </script>
   </body>
 </html>
+
 
 
 
