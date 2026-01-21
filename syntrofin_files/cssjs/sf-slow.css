@@ -3,9 +3,14 @@
     box-sizing: border-box;
 }
 
+html, body, section, div
+{
+    width: 100%;
+     margin: 0;
+}
 body {
     margin: 0 auto; /* Centers the entire page */
-    max-width: 1100px;
+    /* max-width: 1100px;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
@@ -101,9 +106,9 @@ img {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.intro-cell, .cell2 { /* Merged old .cell2 with .intro-cell styles */
+.intro-cell, .cell2 {
     width: 100% !important;
-    margin-bottom: 10px;
+    margin:0;
     text-align: left;
     flex: 1;
     box-sizing: border-box;
@@ -111,7 +116,6 @@ img {
 
 /* 4. Section - Small Entrance (Sticky Notes Layout) */
 .smallentrance-div {
-    margin: 0 auto;
     background-color: #002143;
     text-align: center;
     padding: 10px 30px;
