@@ -32,6 +32,8 @@
 
 </head>
 <body>
+	<h1>RLM Flows</h1>
+	<h2>Revenue</h2>
 <div class="flow-chart">
   <!-- Section 1 -->
   <div class="box">
@@ -209,6 +211,194 @@
     </div>
   </div>
 </div>
+
+	<h2>Quote</h2>
+
+<div class="flow-chart">
+  <!-- Catalog Section -->
+  <div class="box gray-border">
+    <div class="title">CATALOG OFFERING</div>
+    <ul>
+      <li>• Products</li>
+      <li>• Attributes</li>
+      <li>• Eligibility Rules</li>
+      <li>• Base Pricing Inputs</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Entry Point Section -->
+  <div class="box">
+    <div class="title">QUOTE ENTRY POINT</div>
+    <ul>
+      <li>• UI (Sales / Partner / API)</li>
+      <li>• Guided Selling (optional)</li>
+      <li>• Amend / Reprice / Simulate</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- DRO Section (Orchestration) -->
+  <div class="box highlight-dro">
+    <div class="dro-label">================ DRO (Quote Orchestration) ================</div>
+    <ul>
+      <li>• State Control (Draft → Review → Approved)</li>
+      <li>• Invocation Sequencing</li>
+      <li>• Compensation / Rollback</li>
+      <li>• Entry-point neutrality (UI / API)</li>
+    </ul>
+    <div class="dro-label">==========================================================</div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Pricing Section -->
+  <div class="box">
+    <div class="title">PRICING PROCEDURES</div>
+    <ul>
+      <li>• Base Price Determination</li>
+      <li>• Discount & Adjustment Logic</li>
+      <li>• Bundling / Attribute Pricing</li>
+      <li>• Promotions</li>
+      <li>• Non-binding estimates</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Policy Section -->
+  <div class="box">
+    <div class="title">POLICY & GOVERNANCE</div>
+    <ul>
+      <li>• Approval Policies</li>
+      <li>• Margin / Discount Thresholds</li>
+      <li>• Exception Handling</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Artifact Section -->
+  <div class="box secondary">
+    <div class="title">SALES INTENT ARTIFACT</div>
+    <ul>
+      <li>• Quote</li>
+      <li>• Non-binding Prices</li>
+      <li>• Conditional Terms</li>
+      <li>• Expiration / Validity</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Output Section -->
+  <div class="box output">
+    <div class="title">OUTPUT PROJECTIONS</div>
+    <ul>
+      <li>• Order Preview (Simulation)</li>
+      <li>• Revenue Preview (Forecast only)</li>
+      <li>• <i>No Assets / No Obligations</i></li>
+    </ul>
+  </div>
+</div>
+
+<h2>Billing</h2>
+	<div class="flow-chart">
+  <!-- Section 1: Inputs -->
+  <div class="box gray-border">
+    <div class="title">INPUTS</div>
+    <ul>
+      <li>• Performance Obligations (Orders)</li>
+      <li>• Assets / Subscriptions</li>
+      <li>• Usage Events (if applicable)</li>
+      <li>• Contractual Billing Terms</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 2: DRO Billing Orchestration -->
+  <div class="box highlight-dro">
+    <div class="dro-label">================ DRO (Billing Orchestration) =================</div>
+    <ul>
+      <li>• Schedule Control</li>
+      <li>• Event-driven Billing</li>
+      <li>• Amend / Cancel Handling</li>
+      <li>• Retroactive Adjustments</li>
+      <li>• Compensation Logic</li>
+    </ul>
+    <div class="dro-label">=============================================================</div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 3: Pricing Procedures -->
+  <div class="box">
+    <div class="title">PRICING PROCEDURES</div>
+    <ul>
+      <li>• Final Price Enforcement</li>
+      <li>• Proration Logic</li>
+      <li>• Usage Rating</li>
+      <li>• Taxes & Fees</li>
+      <li>• Credits / Adjustments</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 4: Billing Schedule Engine -->
+  <div class="box">
+    <div class="title">BILLING SCHEDULE ENGINE</div>
+    <ul>
+      <li>• One-time</li>
+      <li>• Recurring</li>
+      <li>• Milestone-based</li>
+      <li>• Usage-based</li>
+      <li>• Hybrid</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 5: Invoice Generation -->
+  <div class="box secondary">
+    <div class="title">INVOICE GENERATION</div>
+    <ul>
+      <li>• Invoice Lines</li>
+      <li>• Charge Grouping</li>
+      <li>• Currency & Tax Application</li>
+      <li>• Legal Invoice Artifact</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 6: Receivable -->
+  <div class="box secondary">
+    <div class="title">RECEIVABLE</div>
+    <ul>
+      <li>• AR Posting</li>
+      <li>• Payment Tracking</li>
+      <li>• Dunning / Collections</li>
+      <li>• Cash Application</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 7: Output Projections -->
+  <div class="box output">
+    <div class="title">OUTPUT PROJECTIONS</div>
+    <ul>
+      <li>• Cash Forecast</li>
+      <li>• Revenue Input (Deferred / Earned)</li>
+      <li>• Audit Trail</li>
+    </ul>
+  </div>
+</div>
+
 
 </body>
 </html>
