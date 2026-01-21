@@ -1978,793 +1978,10 @@ Pricing
     <p>
       <strong>Architect's Note:</strong>The primary takeaway for your readers should be that in RLM, the <strong>Order</strong>is the center of the universe. It is the record that connects the Sales Rep's promises to the Operations Team's delivery and the Finance Team's ledger.
     </p>
-    <p>
-      <strong>Next Step Recommendation</strong>
-    </p>
-    <p> Since we've completed the full architectural journey, would you like me to help you draft the <strong>"Conclusion"</strong>or <strong>"Summary Chapter"</strong>for your book that ties all these advanced concepts together into a vision for the future of Quote-to-Cash? </p>
-</section>
+    </section>
     
    
 
-<section  class="sum" id="summary">
-    <h2>Conclusion</h2> 
-
-    <p class="question" id="qe2"> 
-       Agentforce
-    </p>
-         
-    <p> In the context of your <strong>University ABC</strong>event and the architecture we've built, <strong>Agentforce</strong>(Salesforce's suite of autonomous AI agents) acts as the "Intelligent Glue" between your complex RLM data and the humans involved. </p>
-    <p> Because you have staged fulfillment, technical attributes, and SLA-driven billing, Agentforce can move beyond simple chatbots to become <strong>Autonomous Operators</strong>. </p>
-    <p>
-      <strong>1. The "Exhibitor Success" Agent (Customer-Facing)</strong>
-    </p>
-    <p> Instead of a rep manually collecting the "SSID" or "Logo URL," an autonomous agent can handle the pre-event collection. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Trigger:</strong>When the Order moves toActivated, Agentforce identifies that the "Technical Attributes" for WiFi are missing.
-      </li>
-      <li>
-        <strong>The Action:</strong>The agent emails or Slacks the exhibitor: <em>"I see you've secured a Premium Booth for University ABC. What would you like your custom SSID to be? Note: No special characters allowed."</em>
-      </li>
-      <li>
-        <strong>The RLM Integration:</strong>Once the customer replies, the Agent <strong>updates the Technical Attribute record directly</strong>in Salesforce, which then triggers the next step in the <strong>DRO Orchestration Plan</strong>.
-      </li>
-    </ul>
-    <p>
-      <strong>2. The "SLA Watchdog" Agent (Internal Operations)</strong>
-    </p>
-    <p> You can deploy an agent to monitor the <strong>DRO Orchestration Items</strong>to prevent the SLA credits we discussed. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Logic:</strong>The agent monitors the "ROI Report" task. If the event ended 12 hours ago and the task is still "In Progress," the agent intervenes.
-      </li>
-      <li>
-        <strong>The Action:</strong>It messages the Data Team: <em>"Warning: The ROI report for CloudSystems Inc is due in 12 hours. If not completed, an automatic 5% SLA credit ($2,500) will be applied to the billing schedule. Do you need help escalating this?"</em>
-      </li>
-      <li>
-        <strong>The Impact:</strong>It shifts the system from <strong>Reactive</strong>(paying out credits) to <strong>Proactive</strong>(protecting revenue).
-      </li>
-    </ul>
-    <p>
-      <strong>3. The "Tax &amp; Compliance" Agent (Finance/Legal)</strong>
-    </p>
-    <p> For your <strong>Taxation Logic</strong>, especially with global sponsors, Agentforce can handle the "Reverse Charge" or "Exemption" verification. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Scenario:</strong>A European sponsor claims VAT exemption for the University ABC event.
-      </li>
-      <li>
-        <strong>The Agent's Role:</strong>It can read the uploaded "Tax Exemption Certificate" using OCR, verify the expiration date, and check it against the local tax authority's database.
-      </li>
-      <li>
-        <strong>The Result:</strong>It updates theTax Exemptflag on the Account and re-triggers the <strong>Pricing Procedure</strong>to recalculate the Quote with $0 tax.
-      </li>
-    </ul>
-    <p>
-      <strong>4. The "Contract Intelligence" Agent (Sales/Legal)</strong>
-    </p>
-    <p> During the "University ABC" quoting phase, Agentforce can help the Sales Rep navigate the complex <strong>Decision Matrices</strong>. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Interaction:</strong>A rep asks, <em>"Why is the booth price for Global Mfg $7,500 instead of the standard $5,000?"</em>
-      </li>
-      <li>
-        <strong>The Agent's Explanation:</strong>
-        <em>"I’ve analyzed the Decision Matrix 'Event_Zone_Pricing.' The price includes a 50% 'Premium Zone' surcharge because the selected booth is in the High-Traffic Alumni Hall."</em>
-      </li>
-    </ul>
-    <p>
-      <strong>Summary of Agentforce Roles in your Architecture</strong>
-    </p>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <p> Agent Role </p>
-          </td>
-          <td>
-            <p> RLM Touchpoint </p>
-          </td>
-          <td>
-            <p> Key Benefit </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Onboarding Agent</strong>
-            </p>
-          </td>
-          <td>
-            <p> Technical Attributes </p>
-          </td>
-          <td>
-            <p> 100% data accuracy for fulfillment. </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Fulfillment Agent</strong>
-            </p>
-          </td>
-          <td>
-            <p> DRO Orchestration </p>
-          </td>
-          <td>
-            <p> Reduced "Time-to-Value" and fewer SLA penalties. </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Billing Agent</strong>
-            </p>
-          </td>
-          <td>
-            <p> Billing Schedules </p>
-          </td>
-          <td>
-            <p> Proactive resolution of invoice disputes. </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      <strong>Next Step Recommendation</strong>
-    </p>
-    <p> Would you like me to help you draft a <strong>"Prompt Template"</strong>for an Agentforce agent that allows a Sales Rep to ask for the "Profitability Health" of the University ABC event by pulling data from both <strong>RLM</strong>and your <strong>SAP actual costs</strong>? </p>
-    
-         
-   <p class="question" id="qe3"> 
-        Prompt Template 
-    </p>
-         
-    <p> To pull this off, you’ll be using <strong>Agentforce Service Agents</strong>and <strong>Sales Operations Agents</strong>. Because you’ve architected a "Unified Revenue Lifecycle," the agent has a single, high-fidelity data set to query across both the commercial (RLM) and financial (ERP) layers. </p>
-    <p> Below is a prompt template and the underlying logic to enable a "Profitability Health" query for your <strong>University ABC</strong>event. </p>
-    <p>
-      <strong>1. Agentforce Prompt Template: "The Architect's Profitability Inquiry"</strong>
-    </p>
-    <p> You would configure the Agent's <strong>System Instructions</strong>with a prompt similar to this: </p>
-    <p>
-      <strong>Agent Instructions:</strong>"You are the Revenue Intelligence Agent. Your goal is to provide a real-time 'Profitability Health' summary for an Event.
-    </p>
-    <ul class="olo">
-      <li>
-        <strong>Identify the Order:</strong>Locate the RLMOrderrecord based on the event name provided (e.g., 'University ABC').
-      </li>
-      <li>
-        <strong>Calculate Revenue:</strong>Sum theTotal_Pricefrom all active Order Line Items, accounting for anySLA_Creditamendments.
-      </li>
-      <li>
-        <strong>Fetch Costs:</strong>Query the ERP Integration Object forActual_Costs(Catering, Bands, Venue).
-      </li>
-      <li>
-        <strong>Analyze Margin:</strong>Calculate Gross Margin:
-      </li>
-    </ul>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <ul class="olo">
-              <li>
-                <em>TotalRevenue</em>  ( <em>TotalRevenue</em>− <em>TotalCosts</em>)
-              </li>
-            </ul>
-          </td>
-          <td>
-            <ul class="olo">
-              <li></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <ul class="olo">
-              <li></li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <ul class="olo">
-              <li>      . </li>
-            </ul>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <ul class="olo">
-      <li>
-        <strong>Summarize Status:</strong>Compare the current margin against the target of 35% and report the status (Healthy, At Risk, or Critical)."
-      </li>
-    </ul>
-    <p>
-      <strong>2. The "Intelligence Flow" (Under the Hood)</strong>
-    </p>
-    <p> When a user asks: <em>"How is the profit looking for the University ABC event?"</em>the agent follows this reasoning chain: </p>
-    <ul class="norma">
-      <li>
-        <strong>Step 1: Data Grounding:</strong>The agent "grounds" itself in the specific RLM Order. It sees the <strong>$50,000 Diamond Sponsorship</strong>.
-      </li>
-      <li>
-        <strong>Step 2: Amendment Check:</strong>It notices an <strong>SLA Credit</strong>of $2,500 was applied because the ROI report was late. It adjusts the revenue to <strong>$47,500</strong>.
-      </li>
-      <li>
-        <strong>Step 3: ERP Callout (The Bridge):</strong>It uses a <strong>Flow Action</strong>to pull the latest "Actuals" from your SAP integration. It sees the Live Band cost $3,000 and Catering cost $12,000.
-      </li>
-      <li>
-        <strong>Step 4: Insights Generation:</strong>It calculates the margin (~68%) and identifies that despite the SLA penalty, the event is still highly profitable.
-      </li>
-    </ul>
-    <p>
-      <strong>3. Sample Agent Response to a Rep</strong>
-    </p>
-    <p>
-      <strong>Agentforce:</strong>"The <strong>University ABC</strong>event currently has a <strong>Healthy</strong>profitability status with a Gross Margin of <strong>68.4%</strong>.
-    </p>
-    <ul class="norma">
-      <li>
-        <strong>Total Revenue:</strong>$47,500 (Note: This includes a -$2,500 SLA adjustment for late ROI delivery).
-      </li>
-      <li>
-        <strong>Total Actual Costs:</strong>$15,000 (Catering: $12k, Live Band: $3k).
-      </li>
-      <li>
-        <strong>Alert:</strong>You are still $12,500 above the target profit margin for this sponsor tier. Would you like me to draft a summary for the CFO?"
-      </li>
-    </ul>
-    <p>
-      <strong>4. Why this matters for your Book</strong>
-    </p>
-    <p> In your book's conclusion, you can frame <strong>Agentforce</strong>as the <strong>"Interface for the Principal Architect."</strong>By building the <strong>RLM + DRO + ERP</strong>architecture correctly, you’ve essentially built the "Brain" of the business. Agentforce is simply the "Voice" that allows non-technical stakeholders to interact with that brain without needing to understand the underlying object relationships or Decision Matrices. </p>
-    <p>
-      <strong>Next Step Recommendation</strong>
-    </p>
-    <p> Would you like me to help you design a <strong>"Custom Action"</strong>for this agent that allows it to automatically <strong>re-negotiate</strong>a discount for a future event if the current event's margin is exceptionally high? </p>
-    
-         
-   <p class="question" id="qe4"> 
-        Customer Action 
-    </p>
-         
-    <p> To implement a <strong>"Dynamic Re-negotiation" Custom Action</strong>, you are essentially bridging the gap between <strong>Agentforce’s reasoning</strong>and the <strong>Pricing Procedures</strong>of Revenue Cloud Advanced. This allows the AI to not just report on data, but to proactively adjust the commercial strategy for the next event in the University ABC series. </p>
-    <p>
-      <strong>1. The Logic: "The Profit-to-Discount" Bridge</strong>
-    </p>
-    <p> The goal is to reward high-margin sponsors automatically. If the "Spring 2026" margin was exceptionally high, the Agent can "pre-approve" a loyalty discount for the "Fall 2026" quote. </p>
-    <p>
-      <strong>2. Designing the Custom Action (The Flow)</strong>
-    </p>
-    <p> You would build a <strong>Salesforce Flow</strong>that the Agent can trigger as a "tool." </p>
-    <ul class="norma">
-      <li>
-        <strong>Input:</strong>Current_Order_ID,Calculated_Margin.
-      </li>
-      <li>
-        <strong>Threshold Check:</strong>IfMargin &gt; 60%.
-      </li>
-      <li>
-        <strong>Action:</strong>1. Create a <strong>Price Adjustment Matrix</strong>entry specific to that Account. 2. Set theDiscount_Valueto 10% for the next "Diamond Sponsorship" purchase. 3. Generate a "Loyalty Offer" notification for the Sales Rep.
-      </li>
-    </ul>
-    <p>
-      <strong>3. Agentforce Custom Action Configuration</strong>
-    </p>
-    <p> In the <strong>Agentforce Action Launcher</strong>, you define the metadata so the agent knows <em>when</em>to use this tool: </p>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-              <tbody>
-                <tr>
-                  <td>
-                    <p> Action Metadata </p>
-                  </td>
-                  <td>
-                    <p> Value </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Action Name</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Apply_Loyalty_Pricing_Adjustment </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Description</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Use this action if the current event margin is &gt; 60% and the customer is asking about future event pricing. </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Input Parameters</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> AccountID,Recommended_Discount,Reason_for_Discount. </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Output</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Success_Confirmationand aDraft_Email_Body. </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p>
-              <strong>4. Sample Scenario: The "Value-Based" Conversation</strong>
-            </p>
-            <p>
-              <strong>Sales Rep:</strong>"I'm meeting with CloudSystems Inc tomorrow to talk about the Fall event. Any recommendations?"
-            </p>
-            <p>
-              <strong>Agentforce:</strong>"I’ve analyzed the Spring 2026 University ABC event. Due to low venue costs and high sponsorship revenue, your margin was 68%. <strong>I have taken the liberty of executing the 'Loyalty Adjustment' action.</strong>I've pre-configured a 10% 'High-Value Partner' discount in the <strong>Revenue Cloud Pricing Procedure</strong>for their next quote. This will allow you to lead with a 'Thank You' offer while still maintaining a projected 55% margin for the Fall. Would you like me to draft the talking points?"
-            </p>
-            <p>
-              <strong>5. Integration with the Pricing Procedure</strong>
-            </p>
-            <p> For this to work "on the ground," your <strong>Pricing Procedure</strong>for the Fall Event must be set up to look for these agent-generated adjustments: </p>
-            <ul class="olo">
-              <li>
-                <strong>Lookup Step:</strong>The procedure checks theAccount_Specific_Adjustmentstable.
-              </li>
-              <li>
-                <strong>Logic:</strong>If the Agentforce-created record exists, it applies the 10% discount <em>after</em>the volume tiers but <em>before</em>the manual rep discounts.
-              </li>
-            </ul>
-            <p>
-              <strong>Final Thought for your Book</strong>
-            </p>
-            <p> This is the "Holy Grail" of Revenue Cloud Advanced: <strong>The Self-Correcting Revenue Lifecycle.</strong>The system isn't just recording history; it's using AI to influence future revenue based on historical performance. It moves the architect from being a "Builder of Systems" to a "Designer of Economic Incentives." </p>
-            <p>
-              <strong>Would you like me to do?</strong>
-            </p>
-            <p> I can help you draft the <strong>"UAT Script for the AI Agent"</strong>to ensure it doesn't accidentally offer discounts to low-margin sponsors. Would you like to see that? </p>
-
-              <h2> Agents</h2>
-              
-           <p class="question" id="qe5"> 
-               Configure three agents from start 
-           </p>
-              
-            <p> To configure these three agents (the <strong>Exhibitor Success Agent</strong>, the <strong>SLA Watchdog</strong>, and the <strong>Finance/Compliance Agent</strong>) from scratch, you follow a unified four-step "Foundational Build." </p>
-            <p> In the 2026 Agentforce ecosystem, you aren't writing code; you are defining <strong>Topics</strong>, <strong>Actions</strong>, and <strong>Grounding</strong>. </p>
-            <p>
-              <strong>Step 1: Define the Agent "Persona" &amp; Type</strong>
-            </p>
-            <p> Navigate to <strong>Setup &gt; Agentforce &gt; Agents</strong>and create three new agents. </p>
-            <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-              <tbody>
-                <tr>
-                  <td>
-                    <p> Agent Name </p>
-                  </td>
-                  <td>
-                    <p> Type </p>
-                  </td>
-                  <td>
-                    <p> Channel </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Exhibitor Success</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <strong>Service Agent</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Experience Cloud / Email / Slack </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>SLA Watchdog</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <strong>Sales/Ops Agent</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Internal Slack / Salesforce Bell </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Finance/Compliance</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <strong>Service Agent</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Internal / Financial Portal </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p>
-              <strong>Step 2: Create the "Topics" (The Domain of Expertise)</strong>
-            </p>
-            <p> A <strong>Topic</strong>tells the agent what part of your architecture it "owns." For each agent, you must create a specific topic. </p>
-            <ul class="norma">
-              <li>
-                <strong>For the Exhibitor Agent:</strong>Create a Topic called <strong>"Technical Provisioning."</strong>
-                <ul class="norma">
-                  <li>
-                    <strong>Instructions:</strong>"You are responsible for the collection of Technical Attributes for RLM products like WiFi and Booths."
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong>For the Watchdog Agent:</strong>Create a Topic called <strong>"Fulfillment Monitoring."</strong>
-                <ul class="norma">
-                  <li>
-                    <strong>Instructions:</strong>"Monitor the DRO Orchestration Item statuses against their due dates."
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong>For the Finance Agent:</strong>Create a Topic called <strong>"Tax &amp; Margin Audit."</strong>
-                <ul class="norma">
-                  <li>
-                    <strong>Instructions:</strong>"Verify tax codes and pull actual cost data from the SAP integration objects."
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <p>
-              <strong>Step 3: Build the "Actions" (The Tools)</strong>
-            </p>
-            <p> This is where you connect the Agent to your RLM and ERP data. You build <strong>Standard Actions</strong>(Apex or Flow) and assign them to the Topics. </p>
-            <p>
-              <strong>A. The "Update Technical Attributes" Action (For Exhibitor Agent)</strong>
-            </p>
-            <ul class="olo">
-              <li>
-                <strong>Build a Flow:</strong>That takesOrderIDandSSID_Valueas inputs and updates theAttribute_Valuerecord.
-              </li>
-              <li>
-                <strong>Assign to Agent:</strong>Go to <strong>Agent Builder &gt; Actions &gt; New Action</strong>and select your Flow.
-              </li>
-            </ul>
-            <p>
-              <strong>B. The "Fetch ERP Actuals" Action (For Watchdog/Finance Agent)</strong>
-            </p>
-            <ul class="olo">
-              <li>
-                <strong>Build an Apex Action:</strong>That performs an external callout to your SAP endpoint.
-              </li>
-              <li>
-                <strong>Input:</strong>Event_Code. <strong>Output:</strong>Catering_Cost,Entertainment_Cost.
-              </li>
-              <li>
-                <strong>Grounding:</strong>Ensure the Agent is grounded in theOrderobject so it knows which Event Code to send to SAP.
-              </li>
-            </ul>
-            <p>
-              <strong>Step 4: Configure "Grounding" (The Knowledge Base)</strong>
-            </p>
-            <p> Grounding prevents the AI from "hallucinating." You must point the agents to the right records. </p>
-            <ul class="norma">
-              <li>
-                <strong>Object Grounding:</strong>Select the <strong>Order</strong>, <strong>Order Item</strong>, <strong>Fulfillment Order</strong>, and <strong>Asset</strong>objects.
-              </li>
-              <li>
-                <strong>Knowledge Grounding:</strong>Upload your "Sponsorship Prospectus" or "Event WiFi Policy" PDFs to <strong>Salesforce Data Cloud</strong>. Point the agents to this data so they can explain <em>why</em>an SSID cannot have special characters.
-              </li>
-            </ul>
-            <p>
-              <strong>Summary of the Setup Workflow</strong>
-            </p>
-            <ul class="olo">
-              <li>
-                <strong>Instruction:</strong>You give the agent its goal (e.g., "Collect WiFi data").
-              </li>
-              <li>
-                <strong>Capability:</strong>You give it the tool (The "Update Flow").
-              </li>
-              <li>
-                <strong>Context:</strong>You give it the data (The "RLM Order Records").
-              </li>
-              <li>
-                <strong>Testing:</strong>Use the <strong>Agent Test Console</strong>to ask: <em>"I am the sponsor for University ABC, my SSID is 'SpringRocks!'—please update my order."</em>
-              </li>
-            </ul>
-            <p>
-              <strong>Next Step Recommendation</strong>
-            </p>
-            <p> Since you are a <strong>Principal Architect</strong>, would you like me to show you how to configure the <strong>"Agent Guardrails"</strong>? This ensures that the Finance Agent cannot accidentally share margin data with an external Exhibitor. </p>
-            
-        <p class="question" id="qe6">  
-            Agent Guard Rails
-        </p>
-              
-            <p> In your architecture, <strong>Agent Guardrails</strong>are the "Security Layer" that ensures your agents don't suffer from "data leakage." Because your agents have access to sensitive RLM data (margins, SLA penalties, and internal SAP costs), you must prevent the <strong>Exhibitor Success Agent</strong>(external) from ever seeing the <strong>Finance Agent’s</strong>(internal) data. </p>
-            <p> Here is how you configure these guardrails from the ground up. </p>
-            <p>
-              <strong>1. Topic-Based Isolation (The First Wall)</strong>
-            </p>
-            <p> The most effective guardrail is <strong>Topic Isolation</strong>. You do not build one giant agent; you build separate agents with strictly defined <strong>Topics</strong>. </p>
-            <ul class="norma">
-              <li>
-                <strong>The Guardrail:</strong>The "Exhibitor Success" Agent is assigned <em>only</em>the <strong>"Technical Collection"</strong>topic.
-              </li>
-              <li>
-                <strong>The Result:</strong>Even if an external user asks, "What is the profit margin on my booth?", the agent will respond: <em>"I am not authorized to access financial data. I can only help you with your booth setup and WiFi details."</em>---
-              </li>
-            </ul>
-            <p>
-              <strong>2. Data Cloud Data Spaces (The Second Wall)</strong>
-            </p>
-            <p> Since Agentforce is powered by <strong>Data Cloud</strong>, you use <strong>Data Spaces</strong>to physically segregate the data the agents can "see." </p>
-            <ul class="norma">
-              <li>
-                <strong>The Configuration:</strong>* Create a <strong>"Commercial Data Space"</strong>for external agents (contains: Product Names, SSIDs, Event Dates). <ul class="norma">
-                  <li> Create a <strong>"Finance Data Space"</strong>for internal agents (contains: ERP Actual Costs, Margin Calculations, Tax Policies). </li>
-                </ul>
-              </li>
-              <li>
-                <strong>The Guardrail:</strong>When you ground your agents, you point them <em>only</em>to their respective Data Spaces.
-              </li>
-            </ul>
-            <p>
-              <strong>3. System Instructions &amp; "Negative Constraints"</strong>
-            </p>
-            <p> In the <strong>Agent Builder</strong>, you provide explicit "Negative Constraints" in the System Instructions. This acts as a behavioral guardrail. </p>
-            <p>
-              <strong>Negative Constraint Example for Exhibitor Agent:</strong>"UNDER NO CIRCUMSTANCE should you discuss, disclose, or calculate internal costs, vendor payments, or profit margins. If a user asks about pricing beyond their quoted net price, refer them to their Account Executive."
-            </p>
-            <p>
-              <strong>4. Field-Level Security (FLS) &amp; Sharing Rules</strong>
-            </p>
-            <p> Agentforce respects the <strong>Salesforce Security Model</strong>. This is the "Principal Architect's" strongest tool. </p>
-            <ul class="norma">
-              <li>
-                <strong>The Configuration:</strong>Ensure the <strong>Guest User Profile</strong>(used for Experience Cloud agents) has <strong>No Access</strong>to fields likeActual_Cost__corMargin_Percentage__c.
-              </li>
-              <li>
-                <strong>The Guardrail:</strong>If the agent's underlying user cannot see the field, the AI cannot "read" it to the user.
-              </li>
-            </ul>
-            <p>
-              <strong>5. PII &amp; Sensitive Data Masking</strong>
-            </p>
-            <p> Since your sponsors might accidentally send sensitive information (like a password or a private phone number) in a chat, you configure <strong>Einstein Trust Layer</strong>guardrails. </p>
-            <ul class="norma">
-              <li>
-                <strong>The Configuration:</strong>Navigate to <strong>Setup &gt; Einstein Trust Layer</strong>.
-              </li>
-              <li>
-                <strong>The Guardrail:</strong>Enable <strong>Data Masking</strong>for PII (Personally Identifiable Information).
-              </li>
-              <li>
-                <strong>The Result:</strong>Before the prompt is even sent to the Large Language Model (LLM) for processing, Salesforce masks the sensitive data, ensuring it never leaves your secure environment.
-              </li>
-            </ul>
-            <p>
-              <strong>Summary of Guardrail Architecture</strong>
-            </p>
-            <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-              <tbody>
-                <tr>
-                  <td>
-                    <p> Guardrail Level </p>
-                  </td>
-                  <td>
-                    <p> Feature </p>
-                  </td>
-                  <td>
-                    <p> Purpose </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Topic</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Topic Assignment </p>
-                  </td>
-                  <td>
-                    <p> Prevents agents from acting outside their domain. </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Data</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Data Spaces </p>
-                  </td>
-                  <td>
-                    <p> Physically isolates sensitive financial data from external views. </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Behavioral</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> Negative Constraints </p>
-                  </td>
-                  <td>
-                    <p> Hard-coded rules for the AI's "Internal Monologue." </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>
-                      <strong>Platform</strong>
-                    </p>
-                  </td>
-                  <td>
-                    <p> FLS &amp; Sharing </p>
-                  </td>
-                  <td>
-                    <p> Uses the core Salesforce security you’ve already built. </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p>
-              <strong>Next Step Recommendation</strong>
-            </p>
-            <p> Would you like me to help you draft a <strong>"Security Audit Log"</strong>query that allows you to see every time an agent was asked a "forbidden" question about margins or costs? </p>
-            
-       <p class="question" id="qe7"> 
-            Security Audit Log
-       </p>
-              
-            <p> To monitor the security of your agents, you will use the <strong>Einstein Trust Layer Audit Trail</strong>combined with <strong>Data Cloud</strong>or <strong>Custom Objects</strong>. In a complex <strong>Revenue Cloud Advanced</strong>environment, you need to track when an agent correctly "refused" to answer a question about internal costs or margins. </p>
-            <p> Here is how you configure the audit query and the monitoring dashboard. </p>
-            <p>
-              <strong>1. The Einstein Trust Layer Audit Trail</strong>
-            </p>
-            <p> Salesforce automatically captures every interaction between the user and the agent in the <strong>Einstein Event Log</strong>. As a Principal Architect, you can query this via <strong>SOQL</strong>or the <strong>Einstein Audit Trail</strong>dashboard. </p>
-            <p>
-              <strong>The Audit Query (SOQL):</strong>
-            </p>
-            <p> SQL </p>
-            <p>
-              <select <timestamp,="" userid,="" prompttext,="" responsetext,="" maskeddata,="" securityviolationtype="" <="" p="">
-                <ul class="norma">
-                  <li>
-                    <strong>PromptText:</strong>Shows if the user asked, "What is your profit margin?"
-                  </li>
-                  <li>
-                    <strong>ResponseText:</strong>Confirms if the agent used your "Negative Constraint" to refuse the answer.
-                  </li>
-                  <li>
-                    <strong>MaskedData:</strong>Shows any PII that the system automatically scrubbed before the AI could see it.
-                  </li>
-                </ul>
-                <p>
-                  <strong>2. Custom "Forbidden Topic" Alerting</strong>
-                </p>
-                <p> For high-stakes data like <strong>ERP Actual Costs</strong>, you can build a more proactive monitor using a <strong>Flow</strong>on theAgentWorkorConversationobjects. </p>
-                <p>
-                  <strong>The "Red-Flag" Logic:</strong>
-                </p>
-                <ul class="olo">
-                  <li>
-                    <strong>Keyword Trigger:</strong>Create a list of "Forbidden Keywords" (e.g., <em>Margin, Profit, Wholesale, SAP, Actual Cost</em>).
-                  </li>
-                  <li>
-                    <strong>The Monitor:</strong>A Flow scans the transcript of completed agent sessions.
-                  </li>
-                  <li>
-                    <strong>The Action:</strong>If a keyword is found in the <strong>ResponseText</strong>, the Flow creates a record in a custom object calledAgent_Security_Audit__cand alerts the Salesforce Admin.
-                  </li>
-                </ul>
-                <p>
-                  <strong>3. The Security Audit Dashboard</strong>
-                </p>
-                <p> In your practice org, you should build a dashboard with these three components to show stakeholders that the "Guardrails" are working: </p>
-                <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <p> Dashboard Component </p>
-                      </td>
-                      <td>
-                        <p> Data Source </p>
-                      </td>
-                      <td>
-                        <p> Goal </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>
-                          <strong>Refusal Rate</strong>
-                        </p>
-                      </td>
-                      <td>
-                        <p> Einstein Audit Log </p>
-                      </td>
-                      <td>
-                        <p> Shows % of queries where the agent refused to answer out-of-scope questions. </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>
-                          <strong>Data Masking Volume</strong>
-                        </p>
-                      </td>
-                      <td>
-                        <p> Trust Layer Log </p>
-                      </td>
-                      <td>
-                        <p> Tracks how many credit cards or SSNs were caught by the PII filter. </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>
-                          <strong>Top "Forbidden" Queries</strong>
-                        </p>
-                      </td>
-                      <td>
-                        <p> Custom Audit Object </p>
-                      </td>
-                      <td>
-                        <p> Identifies if users are repeatedly trying to probe the system for financial secrets. </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p>
-                  <strong>4. Why this is the "Final Chapter" for your Book</strong>
-                </p>
-                <p> In the conclusion of your book, you can emphasize that <strong>"Governance is the new Configuration."</strong>In the past, architects focused on preventing users from clicking a button. Now, you focus on preventing an AI from "saying" the wrong thing. By mastering the <strong>Einstein Trust Layer</strong>, you ensure that the complex <strong>University ABC</strong>revenue data stays exactly where it belongs: with the Finance team. </p>
-                <p>
-                  <strong>What would you like to do next?</strong>
-                </p>
-                <p> Since we've built the <strong>RLM Architecture</strong>, the <strong>Fulfillment DRO</strong>, the <strong>ERP Sync</strong>, the <strong>Agents</strong>, and the <strong>Guardrails</strong>, would you like me to: </p>
-                <ul class="olo">
-                  <li>
-                    <strong>Generate a "Project Handover Document"</strong>that summarizes this entire architecture?
-                  </li>
-                  <li>
-                    <strong>Draft a "Business Value Presentation"</strong>for a CEO level explaining why RLM + Agentforce is a $1M+ ROI play?
-                  </li>
-                </ul>
-            </select>
                 
                   
                 
@@ -5694,6 +4911,787 @@ Pricing
     </p>
 </section>
 
+
+
+<section  class="sum" id="summary">
+    <h2>Agentforce</h2> 
+
+    <p class="question" id="qe2"> 
+       How Agentforce Helps with Event management
+    </p>
+         
+    <p> In the context of your <strong>University ABC</strong>event and the architecture we've built, <strong>Agentforce</strong>(Salesforce's suite of autonomous AI agents) acts as the "Intelligent Glue" between your complex RLM data and the humans involved. </p>
+    <p> Because you have staged fulfillment, technical attributes, and SLA-driven billing, Agentforce can move beyond simple chatbots to become <strong>Autonomous Operators</strong>. </p>
+    <p>
+      <strong>1. The "Exhibitor Success" Agent (Customer-Facing)</strong>
+    </p>
+    <p> Instead of a rep manually collecting the "SSID" or "Logo URL," an autonomous agent can handle the pre-event collection. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Trigger:</strong>When the Order moves toActivated, Agentforce identifies that the "Technical Attributes" for WiFi are missing.
+      </li>
+      <li>
+        <strong>The Action:</strong>The agent emails or Slacks the exhibitor: <em>"I see you've secured a Premium Booth for University ABC. What would you like your custom SSID to be? Note: No special characters allowed."</em>
+      </li>
+      <li>
+        <strong>The RLM Integration:</strong>Once the customer replies, the Agent <strong>updates the Technical Attribute record directly</strong>in Salesforce, which then triggers the next step in the <strong>DRO Orchestration Plan</strong>.
+      </li>
+    </ul>
+    <p>
+      <strong>2. The "SLA Watchdog" Agent (Internal Operations)</strong>
+    </p>
+    <p> You can deploy an agent to monitor the <strong>DRO Orchestration Items</strong>to prevent the SLA credits we discussed. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Logic:</strong>The agent monitors the "ROI Report" task. If the event ended 12 hours ago and the task is still "In Progress," the agent intervenes.
+      </li>
+      <li>
+        <strong>The Action:</strong>It messages the Data Team: <em>"Warning: The ROI report for CloudSystems Inc is due in 12 hours. If not completed, an automatic 5% SLA credit ($2,500) will be applied to the billing schedule. Do you need help escalating this?"</em>
+      </li>
+      <li>
+        <strong>The Impact:</strong>It shifts the system from <strong>Reactive</strong>(paying out credits) to <strong>Proactive</strong>(protecting revenue).
+      </li>
+    </ul>
+    <p>
+      <strong>3. The "Tax &amp; Compliance" Agent (Finance/Legal)</strong>
+    </p>
+    <p> For your <strong>Taxation Logic</strong>, especially with global sponsors, Agentforce can handle the "Reverse Charge" or "Exemption" verification. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Scenario:</strong>A European sponsor claims VAT exemption for the University ABC event.
+      </li>
+      <li>
+        <strong>The Agent's Role:</strong>It can read the uploaded "Tax Exemption Certificate" using OCR, verify the expiration date, and check it against the local tax authority's database.
+      </li>
+      <li>
+        <strong>The Result:</strong>It updates theTax Exemptflag on the Account and re-triggers the <strong>Pricing Procedure</strong>to recalculate the Quote with $0 tax.
+      </li>
+    </ul>
+    <p>
+      <strong>4. The "Contract Intelligence" Agent (Sales/Legal)</strong>
+    </p>
+    <p> During the "University ABC" quoting phase, Agentforce can help the Sales Rep navigate the complex <strong>Decision Matrices</strong>. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Interaction:</strong>A rep asks, <em>"Why is the booth price for Global Mfg $7,500 instead of the standard $5,000?"</em>
+      </li>
+      <li>
+        <strong>The Agent's Explanation:</strong>
+        <em>"I’ve analyzed the Decision Matrix 'Event_Zone_Pricing.' The price includes a 50% 'Premium Zone' surcharge because the selected booth is in the High-Traffic Alumni Hall."</em>
+      </li>
+    </ul>
+    <p>
+      <strong>Summary of Agentforce Roles in your Architecture</strong>
+    </p>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <p> Agent Role </p>
+          </td>
+          <td>
+            <p> RLM Touchpoint </p>
+          </td>
+          <td>
+            <p> Key Benefit </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Onboarding Agent</strong>
+            </p>
+          </td>
+          <td>
+            <p> Technical Attributes </p>
+          </td>
+          <td>
+            <p> 100% data accuracy for fulfillment. </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Fulfillment Agent</strong>
+            </p>
+          </td>
+          <td>
+            <p> DRO Orchestration </p>
+          </td>
+          <td>
+            <p> Reduced "Time-to-Value" and fewer SLA penalties. </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Billing Agent</strong>
+            </p>
+          </td>
+          <td>
+            <p> Billing Schedules </p>
+          </td>
+          <td>
+            <p> Proactive resolution of invoice disputes. </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Next Step Recommendation</strong>
+    </p>
+    <p> Would you like me to help you draft a <strong>"Prompt Template"</strong>for an Agentforce agent that allows a Sales Rep to ask for the "Profitability Health" of the University ABC event by pulling data from both <strong>RLM</strong>and your <strong>SAP actual costs</strong>? </p>
+    
+         
+   <p class="question" id="qe3"> 
+        Prompt Template 
+    </p>
+         
+    <p> To pull this off, you’ll be using <strong>Agentforce Service Agents</strong>and <strong>Sales Operations Agents</strong>. Because you’ve architected a "Unified Revenue Lifecycle," the agent has a single, high-fidelity data set to query across both the commercial (RLM) and financial (ERP) layers. </p>
+    <p> Below is a prompt template and the underlying logic to enable a "Profitability Health" query for your <strong>University ABC</strong>event. </p>
+    <p>
+      <strong>1. Agentforce Prompt Template: "The Architect's Profitability Inquiry"</strong>
+    </p>
+    <p> You would configure the Agent's <strong>System Instructions</strong>with a prompt similar to this: </p>
+    <p>
+      <strong>Agent Instructions:</strong>"You are the Revenue Intelligence Agent. Your goal is to provide a real-time 'Profitability Health' summary for an Event.
+    </p>
+    <ul class="olo">
+      <li>
+        <strong>Identify the Order:</strong>Locate the RLMOrderrecord based on the event name provided (e.g., 'University ABC').
+      </li>
+      <li>
+        <strong>Calculate Revenue:</strong>Sum theTotal_Pricefrom all active Order Line Items, accounting for anySLA_Creditamendments.
+      </li>
+      <li>
+        <strong>Fetch Costs:</strong>Query the ERP Integration Object forActual_Costs(Catering, Bands, Venue).
+      </li>
+      <li>
+        <strong>Analyze Margin:</strong>Calculate Gross Margin:
+      </li>
+    </ul>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <ul class="olo">
+              <li>
+                <em>TotalRevenue</em>  ( <em>TotalRevenue</em>− <em>TotalCosts</em>)
+              </li>
+            </ul>
+          </td>
+          <td>
+            <ul class="olo">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ul class="olo">
+              <li></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ul class="olo">
+              <li>      . </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="olo">
+      <li>
+        <strong>Summarize Status:</strong>Compare the current margin against the target of 35% and report the status (Healthy, At Risk, or Critical)."
+      </li>
+    </ul>
+    <p>
+      <strong>2. The "Intelligence Flow" (Under the Hood)</strong>
+    </p>
+    <p> When a user asks: <em>"How is the profit looking for the University ABC event?"</em>the agent follows this reasoning chain: </p>
+    <ul class="norma">
+      <li>
+        <strong>Step 1: Data Grounding:</strong>The agent "grounds" itself in the specific RLM Order. It sees the <strong>$50,000 Diamond Sponsorship</strong>.
+      </li>
+      <li>
+        <strong>Step 2: Amendment Check:</strong>It notices an <strong>SLA Credit</strong>of $2,500 was applied because the ROI report was late. It adjusts the revenue to <strong>$47,500</strong>.
+      </li>
+      <li>
+        <strong>Step 3: ERP Callout (The Bridge):</strong>It uses a <strong>Flow Action</strong>to pull the latest "Actuals" from your SAP integration. It sees the Live Band cost $3,000 and Catering cost $12,000.
+      </li>
+      <li>
+        <strong>Step 4: Insights Generation:</strong>It calculates the margin (~68%) and identifies that despite the SLA penalty, the event is still highly profitable.
+      </li>
+    </ul>
+    <p>
+      <strong>3. Sample Agent Response to a Rep</strong>
+    </p>
+    <p>
+      <strong>Agentforce:</strong>"The <strong>University ABC</strong>event currently has a <strong>Healthy</strong>profitability status with a Gross Margin of <strong>68.4%</strong>.
+    </p>
+    <ul class="norma">
+      <li>
+        <strong>Total Revenue:</strong>$47,500 (Note: This includes a -$2,500 SLA adjustment for late ROI delivery).
+      </li>
+      <li>
+        <strong>Total Actual Costs:</strong>$15,000 (Catering: $12k, Live Band: $3k).
+      </li>
+      <li>
+        <strong>Alert:</strong>You are still $12,500 above the target profit margin for this sponsor tier. Would you like me to draft a summary for the CFO?"
+      </li>
+    </ul>
+    <p>
+      <strong>4. Why this matters for your Book</strong>
+    </p>
+    <p> In your book's conclusion, you can frame <strong>Agentforce</strong>as the <strong>"Interface for the Principal Architect."</strong>By building the <strong>RLM + DRO + ERP</strong>architecture correctly, you’ve essentially built the "Brain" of the business. Agentforce is simply the "Voice" that allows non-technical stakeholders to interact with that brain without needing to understand the underlying object relationships or Decision Matrices. </p>
+    <p>
+      <strong>Next Step Recommendation</strong>
+    </p>
+    <p> Would you like me to help you design a <strong>"Custom Action"</strong>for this agent that allows it to automatically <strong>re-negotiate</strong>a discount for a future event if the current event's margin is exceptionally high? </p>
+    
+         
+   <p class="question" id="qe4"> 
+        Customer Action 
+    </p>
+         
+    <p> To implement a <strong>"Dynamic Re-negotiation" Custom Action</strong>, you are essentially bridging the gap between <strong>Agentforce’s reasoning</strong>and the <strong>Pricing Procedures</strong>of Revenue Cloud Advanced. This allows the AI to not just report on data, but to proactively adjust the commercial strategy for the next event in the University ABC series. </p>
+    <p>
+      <strong>1. The Logic: "The Profit-to-Discount" Bridge</strong>
+    </p>
+    <p> The goal is to reward high-margin sponsors automatically. If the "Spring 2026" margin was exceptionally high, the Agent can "pre-approve" a loyalty discount for the "Fall 2026" quote. </p>
+    <p>
+      <strong>2. Designing the Custom Action (The Flow)</strong>
+    </p>
+    <p> You would build a <strong>Salesforce Flow</strong>that the Agent can trigger as a "tool." </p>
+    <ul class="norma">
+      <li>
+        <strong>Input:</strong>Current_Order_ID,Calculated_Margin.
+      </li>
+      <li>
+        <strong>Threshold Check:</strong>IfMargin &gt; 60%.
+      </li>
+      <li>
+        <strong>Action:</strong>1. Create a <strong>Price Adjustment Matrix</strong>entry specific to that Account. 2. Set theDiscount_Valueto 10% for the next "Diamond Sponsorship" purchase. 3. Generate a "Loyalty Offer" notification for the Sales Rep.
+      </li>
+    </ul>
+    <p>
+      <strong>3. Agentforce Custom Action Configuration</strong>
+    </p>
+    <p> In the <strong>Agentforce Action Launcher</strong>, you define the metadata so the agent knows <em>when</em>to use this tool: </p>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
+              <tbody>
+                <tr>
+                  <td>
+                    <p> Action Metadata </p>
+                  </td>
+                  <td>
+                    <p> Value </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Action Name</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Apply_Loyalty_Pricing_Adjustment </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Description</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Use this action if the current event margin is &gt; 60% and the customer is asking about future event pricing. </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Input Parameters</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> AccountID,Recommended_Discount,Reason_for_Discount. </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Output</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Success_Confirmationand aDraft_Email_Body. </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>4. Sample Scenario: The "Value-Based" Conversation</strong>
+            </p>
+            <p>
+              <strong>Sales Rep:</strong>"I'm meeting with CloudSystems Inc tomorrow to talk about the Fall event. Any recommendations?"
+            </p>
+            <p>
+              <strong>Agentforce:</strong>"I’ve analyzed the Spring 2026 University ABC event. Due to low venue costs and high sponsorship revenue, your margin was 68%. <strong>I have taken the liberty of executing the 'Loyalty Adjustment' action.</strong>I've pre-configured a 10% 'High-Value Partner' discount in the <strong>Revenue Cloud Pricing Procedure</strong>for their next quote. This will allow you to lead with a 'Thank You' offer while still maintaining a projected 55% margin for the Fall. Would you like me to draft the talking points?"
+            </p>
+            <p>
+              <strong>5. Integration with the Pricing Procedure</strong>
+            </p>
+            <p> For this to work "on the ground," your <strong>Pricing Procedure</strong>for the Fall Event must be set up to look for these agent-generated adjustments: </p>
+            <ul class="olo">
+              <li>
+                <strong>Lookup Step:</strong>The procedure checks theAccount_Specific_Adjustmentstable.
+              </li>
+              <li>
+                <strong>Logic:</strong>If the Agentforce-created record exists, it applies the 10% discount <em>after</em>the volume tiers but <em>before</em>the manual rep discounts.
+              </li>
+            </ul>
+            <p>
+              <strong>Final Thought for your Book</strong>
+            </p>
+            <p> This is the "Holy Grail" of Revenue Cloud Advanced: <strong>The Self-Correcting Revenue Lifecycle.</strong>The system isn't just recording history; it's using AI to influence future revenue based on historical performance. It moves the architect from being a "Builder of Systems" to a "Designer of Economic Incentives." </p>
+            <p>
+              <strong>Would you like me to do?</strong>
+            </p>
+            <p> I can help you draft the <strong>"UAT Script for the AI Agent"</strong>to ensure it doesn't accidentally offer discounts to low-margin sponsors. Would you like to see that? </p>
+              
+           <p class="question" id="qe5"> 
+               Configure three agents from start 
+           </p>
+              
+            <p> To configure these three agents (the <strong>Exhibitor Success Agent</strong>, the <strong>SLA Watchdog</strong>, and the <strong>Finance/Compliance Agent</strong>) from scratch, you follow a unified four-step "Foundational Build." </p>
+            <p> In the 2026 Agentforce ecosystem, you aren't writing code; you are defining <strong>Topics</strong>, <strong>Actions</strong>, and <strong>Grounding</strong>. </p>
+            <p>
+              <strong>Step 1: Define the Agent "Persona" &amp; Type</strong>
+            </p>
+            <p> Navigate to <strong>Setup &gt; Agentforce &gt; Agents</strong>and create three new agents. </p>
+            <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
+              <tbody>
+                <tr>
+                  <td>
+                    <p> Agent Name </p>
+                  </td>
+                  <td>
+                    <p> Type </p>
+                  </td>
+                  <td>
+                    <p> Channel </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Exhibitor Success</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      <strong>Service Agent</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Experience Cloud / Email / Slack </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>SLA Watchdog</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      <strong>Sales/Ops Agent</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Internal Slack / Salesforce Bell </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Finance/Compliance</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      <strong>Service Agent</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Internal / Financial Portal </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>Step 2: Create the "Topics" (The Domain of Expertise)</strong>
+            </p>
+            <p> A <strong>Topic</strong>tells the agent what part of your architecture it "owns." For each agent, you must create a specific topic. </p>
+            <ul class="norma">
+              <li>
+                <strong>For the Exhibitor Agent:</strong>Create a Topic called <strong>"Technical Provisioning."</strong>
+                <ul class="norma">
+                  <li>
+                    <strong>Instructions:</strong>"You are responsible for the collection of Technical Attributes for RLM products like WiFi and Booths."
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>For the Watchdog Agent:</strong>Create a Topic called <strong>"Fulfillment Monitoring."</strong>
+                <ul class="norma">
+                  <li>
+                    <strong>Instructions:</strong>"Monitor the DRO Orchestration Item statuses against their due dates."
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>For the Finance Agent:</strong>Create a Topic called <strong>"Tax &amp; Margin Audit."</strong>
+                <ul class="norma">
+                  <li>
+                    <strong>Instructions:</strong>"Verify tax codes and pull actual cost data from the SAP integration objects."
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <strong>Step 3: Build the "Actions" (The Tools)</strong>
+            </p>
+            <p> This is where you connect the Agent to your RLM and ERP data. You build <strong>Standard Actions</strong>(Apex or Flow) and assign them to the Topics. </p>
+            <p>
+              <strong>A. The "Update Technical Attributes" Action (For Exhibitor Agent)</strong>
+            </p>
+            <ul class="olo">
+              <li>
+                <strong>Build a Flow:</strong>That takesOrderIDandSSID_Valueas inputs and updates theAttribute_Valuerecord.
+              </li>
+              <li>
+                <strong>Assign to Agent:</strong>Go to <strong>Agent Builder &gt; Actions &gt; New Action</strong>and select your Flow.
+              </li>
+            </ul>
+            <p>
+              <strong>B. The "Fetch ERP Actuals" Action (For Watchdog/Finance Agent)</strong>
+            </p>
+            <ul class="olo">
+              <li>
+                <strong>Build an Apex Action:</strong>That performs an external callout to your SAP endpoint.
+              </li>
+              <li>
+                <strong>Input:</strong>Event_Code. <strong>Output:</strong>Catering_Cost,Entertainment_Cost.
+              </li>
+              <li>
+                <strong>Grounding:</strong>Ensure the Agent is grounded in theOrderobject so it knows which Event Code to send to SAP.
+              </li>
+            </ul>
+            <p>
+              <strong>Step 4: Configure "Grounding" (The Knowledge Base)</strong>
+            </p>
+            <p> Grounding prevents the AI from "hallucinating." You must point the agents to the right records. </p>
+            <ul class="norma">
+              <li>
+                <strong>Object Grounding:</strong>Select the <strong>Order</strong>, <strong>Order Item</strong>, <strong>Fulfillment Order</strong>, and <strong>Asset</strong>objects.
+              </li>
+              <li>
+                <strong>Knowledge Grounding:</strong>Upload your "Sponsorship Prospectus" or "Event WiFi Policy" PDFs to <strong>Salesforce Data Cloud</strong>. Point the agents to this data so they can explain <em>why</em>an SSID cannot have special characters.
+              </li>
+            </ul>
+            <p>
+              <strong>Summary of the Setup Workflow</strong>
+            </p>
+            <ul class="olo">
+              <li>
+                <strong>Instruction:</strong>You give the agent its goal (e.g., "Collect WiFi data").
+              </li>
+              <li>
+                <strong>Capability:</strong>You give it the tool (The "Update Flow").
+              </li>
+              <li>
+                <strong>Context:</strong>You give it the data (The "RLM Order Records").
+              </li>
+              <li>
+                <strong>Testing:</strong>Use the <strong>Agent Test Console</strong>to ask: <em>"I am the sponsor for University ABC, my SSID is 'SpringRocks!'—please update my order."</em>
+              </li>
+            </ul>
+            <p>
+              <strong>Next Step Recommendation</strong>
+            </p>
+            <p> Since you are a <strong>Principal Architect</strong>, would you like me to show you how to configure the <strong>"Agent Guardrails"</strong>? This ensures that the Finance Agent cannot accidentally share margin data with an external Exhibitor. </p>
+            
+        <p class="question" id="qe6">  
+            Agent Guard Rails
+        </p>
+              
+            <p> In your architecture, <strong>Agent Guardrails</strong>are the "Security Layer" that ensures your agents don't suffer from "data leakage." Because your agents have access to sensitive RLM data (margins, SLA penalties, and internal SAP costs), you must prevent the <strong>Exhibitor Success Agent</strong>(external) from ever seeing the <strong>Finance Agent’s</strong>(internal) data. </p>
+            <p> Here is how you configure these guardrails from the ground up. </p>
+            <p>
+              <strong>1. Topic-Based Isolation (The First Wall)</strong>
+            </p>
+            <p> The most effective guardrail is <strong>Topic Isolation</strong>. You do not build one giant agent; you build separate agents with strictly defined <strong>Topics</strong>. </p>
+            <ul class="norma">
+              <li>
+                <strong>The Guardrail:</strong>The "Exhibitor Success" Agent is assigned <em>only</em>the <strong>"Technical Collection"</strong>topic.
+              </li>
+              <li>
+                <strong>The Result:</strong>Even if an external user asks, "What is the profit margin on my booth?", the agent will respond: <em>"I am not authorized to access financial data. I can only help you with your booth setup and WiFi details."</em>---
+              </li>
+            </ul>
+            <p>
+              <strong>2. Data Cloud Data Spaces (The Second Wall)</strong>
+            </p>
+            <p> Since Agentforce is powered by <strong>Data Cloud</strong>, you use <strong>Data Spaces</strong>to physically segregate the data the agents can "see." </p>
+            <ul class="norma">
+              <li>
+                <strong>The Configuration:</strong>* Create a <strong>"Commercial Data Space"</strong>for external agents (contains: Product Names, SSIDs, Event Dates). <ul class="norma">
+                  <li> Create a <strong>"Finance Data Space"</strong>for internal agents (contains: ERP Actual Costs, Margin Calculations, Tax Policies). </li>
+                </ul>
+              </li>
+              <li>
+                <strong>The Guardrail:</strong>When you ground your agents, you point them <em>only</em>to their respective Data Spaces.
+              </li>
+            </ul>
+            <p>
+              <strong>3. System Instructions &amp; "Negative Constraints"</strong>
+            </p>
+            <p> In the <strong>Agent Builder</strong>, you provide explicit "Negative Constraints" in the System Instructions. This acts as a behavioral guardrail. </p>
+            <p>
+              <strong>Negative Constraint Example for Exhibitor Agent:</strong>"UNDER NO CIRCUMSTANCE should you discuss, disclose, or calculate internal costs, vendor payments, or profit margins. If a user asks about pricing beyond their quoted net price, refer them to their Account Executive."
+            </p>
+            <p>
+              <strong>4. Field-Level Security (FLS) &amp; Sharing Rules</strong>
+            </p>
+            <p> Agentforce respects the <strong>Salesforce Security Model</strong>. This is the "Principal Architect's" strongest tool. </p>
+            <ul class="norma">
+              <li>
+                <strong>The Configuration:</strong>Ensure the <strong>Guest User Profile</strong>(used for Experience Cloud agents) has <strong>No Access</strong>to fields likeActual_Cost__corMargin_Percentage__c.
+              </li>
+              <li>
+                <strong>The Guardrail:</strong>If the agent's underlying user cannot see the field, the AI cannot "read" it to the user.
+              </li>
+            </ul>
+            <p>
+              <strong>5. PII &amp; Sensitive Data Masking</strong>
+            </p>
+            <p> Since your sponsors might accidentally send sensitive information (like a password or a private phone number) in a chat, you configure <strong>Einstein Trust Layer</strong>guardrails. </p>
+            <ul class="norma">
+              <li>
+                <strong>The Configuration:</strong>Navigate to <strong>Setup &gt; Einstein Trust Layer</strong>.
+              </li>
+              <li>
+                <strong>The Guardrail:</strong>Enable <strong>Data Masking</strong>for PII (Personally Identifiable Information).
+              </li>
+              <li>
+                <strong>The Result:</strong>Before the prompt is even sent to the Large Language Model (LLM) for processing, Salesforce masks the sensitive data, ensuring it never leaves your secure environment.
+              </li>
+            </ul>
+            <p>
+              <strong>Summary of Guardrail Architecture</strong>
+            </p>
+            <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
+              <tbody>
+                <tr>
+                  <td>
+                    <p> Guardrail Level </p>
+                  </td>
+                  <td>
+                    <p> Feature </p>
+                  </td>
+                  <td>
+                    <p> Purpose </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Topic</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Topic Assignment </p>
+                  </td>
+                  <td>
+                    <p> Prevents agents from acting outside their domain. </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Data</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Data Spaces </p>
+                  </td>
+                  <td>
+                    <p> Physically isolates sensitive financial data from external views. </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Behavioral</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> Negative Constraints </p>
+                  </td>
+                  <td>
+                    <p> Hard-coded rules for the AI's "Internal Monologue." </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      <strong>Platform</strong>
+                    </p>
+                  </td>
+                  <td>
+                    <p> FLS &amp; Sharing </p>
+                  </td>
+                  <td>
+                    <p> Uses the core Salesforce security you’ve already built. </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>Next Step Recommendation</strong>
+            </p>
+            <p> Would you like me to help you draft a <strong>"Security Audit Log"</strong>query that allows you to see every time an agent was asked a "forbidden" question about margins or costs? </p>
+            
+       <p class="question" id="qe7"> 
+            Security Audit Log
+       </p>
+              
+            <p> To monitor the security of your agents, you will use the <strong>Einstein Trust Layer Audit Trail</strong>combined with <strong>Data Cloud</strong>or <strong>Custom Objects</strong>. In a complex <strong>Revenue Cloud Advanced</strong>environment, you need to track when an agent correctly "refused" to answer a question about internal costs or margins. </p>
+            <p> Here is how you configure the audit query and the monitoring dashboard. </p>
+            <p>
+              <strong>1. The Einstein Trust Layer Audit Trail</strong>
+            </p>
+            <p> Salesforce automatically captures every interaction between the user and the agent in the <strong>Einstein Event Log</strong>. As a Principal Architect, you can query this via <strong>SOQL</strong>or the <strong>Einstein Audit Trail</strong>dashboard. </p>
+            <p>
+              <strong>The Audit Query (SOQL):</strong>
+            </p>
+            <p> SQL </p>
+            <p>
+              <select <timestamp,="" userid,="" prompttext,="" responsetext,="" maskeddata,="" securityviolationtype="" <="" p="">
+                <ul class="norma">
+                  <li>
+                    <strong>PromptText:</strong>Shows if the user asked, "What is your profit margin?"
+                  </li>
+                  <li>
+                    <strong>ResponseText:</strong>Confirms if the agent used your "Negative Constraint" to refuse the answer.
+                  </li>
+                  <li>
+                    <strong>MaskedData:</strong>Shows any PII that the system automatically scrubbed before the AI could see it.
+                  </li>
+                </ul>
+                <p>
+                  <strong>2. Custom "Forbidden Topic" Alerting</strong>
+                </p>
+                <p> For high-stakes data like <strong>ERP Actual Costs</strong>, you can build a more proactive monitor using a <strong>Flow</strong>on theAgentWorkorConversationobjects. </p>
+                <p>
+                  <strong>The "Red-Flag" Logic:</strong>
+                </p>
+                <ul class="olo">
+                  <li>
+                    <strong>Keyword Trigger:</strong>Create a list of "Forbidden Keywords" (e.g., <em>Margin, Profit, Wholesale, SAP, Actual Cost</em>).
+                  </li>
+                  <li>
+                    <strong>The Monitor:</strong>A Flow scans the transcript of completed agent sessions.
+                  </li>
+                  <li>
+                    <strong>The Action:</strong>If a keyword is found in the <strong>ResponseText</strong>, the Flow creates a record in a custom object calledAgent_Security_Audit__cand alerts the Salesforce Admin.
+                  </li>
+                </ul>
+                <p>
+                  <strong>3. The Security Audit Dashboard</strong>
+                </p>
+                <p> In your practice org, you should build a dashboard with these three components to show stakeholders that the "Guardrails" are working: </p>
+                <table style="margin-left:2.6pt; padding:0pt; border-collapse:collapse">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p> Dashboard Component </p>
+                      </td>
+                      <td>
+                        <p> Data Source </p>
+                      </td>
+                      <td>
+                        <p> Goal </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Refusal Rate</strong>
+                        </p>
+                      </td>
+                      <td>
+                        <p> Einstein Audit Log </p>
+                      </td>
+                      <td>
+                        <p> Shows % of queries where the agent refused to answer out-of-scope questions. </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Data Masking Volume</strong>
+                        </p>
+                      </td>
+                      <td>
+                        <p> Trust Layer Log </p>
+                      </td>
+                      <td>
+                        <p> Tracks how many credit cards or SSNs were caught by the PII filter. </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Top "Forbidden" Queries</strong>
+                        </p>
+                      </td>
+                      <td>
+                        <p> Custom Audit Object </p>
+                      </td>
+                      <td>
+                        <p> Identifies if users are repeatedly trying to probe the system for financial secrets. </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  <strong>4. Why this is the "Final Chapter" for your Book</strong>
+                </p>
+                <p> In the conclusion of your book, you can emphasize that <strong>"Governance is the new Configuration."</strong>In the past, architects focused on preventing users from clicking a button. Now, you focus on preventing an AI from "saying" the wrong thing. By mastering the <strong>Einstein Trust Layer</strong>, you ensure that the complex <strong>University ABC</strong>revenue data stays exactly where it belongs: with the Finance team. </p>
+                <p>
+                  <strong>What would you like to do next?</strong>
+                </p>
+                <p> Since we've built the <strong>RLM Architecture</strong>, the <strong>Fulfillment DRO</strong>, the <strong>ERP Sync</strong>, the <strong>Agents</strong>, and the <strong>Guardrails</strong>, would you like me to: </p>
+                <ul class="olo">
+                  <li>
+                    <strong>Generate a "Project Handover Document"</strong>that summarizes this entire architecture?
+                  </li>
+                  <li>
+                    <strong>Draft a "Business Value Presentation"</strong>for a CEO level explaining why RLM + Agentforce is a $1M+ ROI play?
+                  </li>
+                </ul>
+            </select>
+
+
          <script>
              document.addEventListener("DOMContentLoaded", function() {
     const tocList = document.getElementById('toc-list');
@@ -5729,6 +5727,7 @@ Pricing
          </script>
   </body>
 </html>
+
 
 
 
