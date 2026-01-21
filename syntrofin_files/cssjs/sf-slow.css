@@ -1,19 +1,45 @@
-/* 1. Common - body, section, img */
-* {
+/* common to all */
+*, *::before, *::after {
     box-sizing: border-box;
 }
-
-html, body, section, div, nav
-{
+* {
+    box-sizing: border-box; /* Prevents padding from adding to width */
+    margin: 0;
+    padding: 0;
+}
+html, body {
     width: 100%;
-     margin: 0;
+}
+
+/* all margins at one place */
+
+.smallentrance-div, solutiondiv {
+    width: 100%;    /* Stays exactly 100% wide */
+    margin: 20px;   /* Margin is still outside, so use with care on 100% width */
+    padding: 20px;  /* Padding is now INSIDE the 100% width */
 }
 .header-container, .title-top, img, .intro-row, .feature-row, .stream-row, .intro-cell, .cell2  {
         margin: 0 auto;
 }
-.smallentrance-div, solutiondiv {
-    margin: 20px;
-    padding:20px;
+.nav-item {
+    margin-left: 1.5rem;
+}
+.grid-item img {
+    margin: 0 auto 8px auto;
+}
+.grid-item .logo-text {
+    margin-bottom: 5px;
+}
+footer {
+    margin-top: 50px;
+}
+footer p {
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .stackedcard, .logo  {
+        margin-top: 0px !important;
+    }
 }
 
 body {
@@ -81,7 +107,6 @@ img {
 }
 
 .nav-item {
-    margin-left: 1.5rem;
     list-style: none;
 }
 
@@ -302,13 +327,11 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 8px auto;
 }
 
 .grid-item .logo-text {
     font-size: 0.75rem;
     color: #666;
-    margin-bottom: 5px;
 }
 
 /* 8. Footer (PDF page 9) */
@@ -316,12 +339,10 @@ footer {
     background-color: #f4f4ff;
     padding: 30px 20px;
     text-align: center;
-    margin-top: 50px;
     border-top: 1px solid #eee;
 }
 
 footer p {
-    margin: 0;
     font-size: 0.85rem;
     color: #606060;
 }
@@ -345,13 +366,11 @@ footer p {
     .stackedcard {
         flex: none;
         max-width: 100%;
-        margin-top: 0px !important;
         border-top: none !important;
         border-radius: 8px;
     }
     .logo {
         place-self: center;
-        margin: 0 auto !important;
     }
     .img_mshrink {
         width: 50%;
