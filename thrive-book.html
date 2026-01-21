@@ -5,6 +5,11 @@
        <title></title>
       
     <style>
+      html {
+           scroll-behavior: smooth;
+             scroll-padding-top: 20px; /* Adjust based on your header height */
+      }
+            
       body {
         font-family: Calibri;
         font-size: 12pt
@@ -107,7 +112,25 @@
         padding-top: 20px;
         }
     
-      
+
+        #toc-container {
+            position: sticky;
+            top: 20px;
+            float: left; /* Sidebar layout */
+            width: 200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 15px;
+            background: #fdfdfd; /* Ultra-light background */
+            border-right: 1px solid #ddd;
+            margin-right: 30px;
+        }
+        
+        #toc-list { list-style: none; padding: 0; }
+        #toc-list li { margin: 8px 0; }
+        #toc-list a { text-decoration: none; color: #333; font-size: 0.9rem; }
+        #toc-list a:hover { color: #007bff; }
+
       @media (max-width: 900px) {
         img {
           max-width: 100%;
@@ -5667,8 +5690,43 @@ Pricing
       </tbody>
     </table>
 </section>
+
+         <script>
+             document.addEventListener("DOMContentLoaded", function() {
+    const tocList = document.getElementById('toc-list');
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach(section => {
+        // Create Main Section Link
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${section.id}`;
+        link.textContent = section.id.charAt(0).toUpperCase() + section.id.slice(1);
+        li.appendChild(link);
+
+        // Optional: Find nested questions for sub-links
+        const questions = section.querySelectorAll('.question');
+        if (questions.length > 0) {
+            const subUl = document.createElement('ul');
+            questions.forEach(q => {
+                const subLi = document.createElement('li');
+                const subLink = document.createElement('a');
+                subLink.href = `#${q.id}`;
+                subLink.textContent = q.id; // e.g., "qa1"
+                subLi.appendChild(subLink);
+                subUl.appendChild(subLi);
+            });
+            li.appendChild(subUl);
+        }
+
+        tocList.appendChild(li);
+    });
+});
+
+         </script>
   </body>
 </html>
+
 
 
 
