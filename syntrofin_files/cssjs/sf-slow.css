@@ -3,11 +3,19 @@
     box-sizing: border-box;
 }
 
-html, body, section, div
+html, body, section, div, nav
 {
     width: 100%;
      margin: 0;
 }
+.header-container, .title-top, img, .intro-row, .feature-row, .stream-row, .intro-cell, .cell2  {
+        margin: 0 auto;
+}
+.smallentrance-div, solutiondiv {
+    margin: 20px;
+    padding:20px;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -17,7 +25,7 @@ body {
 }
 
 section {
-    scroll-margin-top: 50px;
+    scroll--top: 50px;
     padding-top: 10px;
     padding-bottom: 32px;
 }
@@ -26,7 +34,6 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
 }
 
 .left { text-align: left; }
@@ -46,7 +53,6 @@ img {
     align-items: center;
     padding: 10px 20px;
     width: 100%;
-    margin: 0 auto;
 }
 
 .logo-title-group {
@@ -61,7 +67,7 @@ img {
     width: auto;
 }
 
-.titleslogan { margin: 0; }
+
 .heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
 .tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
 
@@ -70,8 +76,6 @@ img {
     display: flex !important;
     list-style: none !important;
     list-style-type: none !important;
-    padding: 0;
-    margin: 0;
     gap: 20px;
     flex-direction: row;
 }
@@ -98,7 +102,6 @@ img {
 .intro-row, .feature-row, .stream-row {
     display: flex;
     align-items: center;
-    margin: 0 auto;
     padding: 0 20px;
     gap: 20px;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -106,7 +109,6 @@ img {
 
 .intro-cell, .cell2 {
     width: 100% !important;
-    margin:0;
     text-align: left;
     flex: 1;
     box-sizing: border-box;
@@ -114,8 +116,6 @@ img {
 
 /* 4. Section - Small Entrance (Sticky Notes Layout) */
 .smallentrance-div {
-    margin: 20px;
-    padding: 20px;
     background-color: #002143;
     text-align: center;
 }
@@ -174,20 +174,16 @@ img {
 
 /* 5. Solutions & Feature Lists (from PDF pages 5/6) */
 .solutiondiv {
-    margin: 20px;
-    padding: 20px;
     background-color: #f3fafe; 
     text-align: center;
-    
 }
 .service-box {background-color: #f3fafe;}
-.service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
-.service-box p { color: #475569; line-height: 1.6; margin-bottom: 20px; font-size: 1.1rem; }
+.service-box h3 { color: #0f172a; font-size: 1.8rem; }
+.service-box p { color: #475569; line-height: 1.6; font-size: 1.1rem; }
 
 .feature-list, .stream-list { list-style: none; padding: 0; }
 
 .feature-list li, .stream-list li {
-    margin-bottom: 15px;
     padding-left: 30px;
     position: relative;
     color: #1e293b;
@@ -282,7 +278,6 @@ img {
     font-size: 1.2em;
     font-weight: 300;
     text-align: center;
-    margin: 0 auto;
     padding: 3px 0 2px 0;
     border-bottom: 1px solid #727272;
 }
@@ -292,8 +287,6 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(80px, 100px));
     gap: 15px;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
     justify-content: center;
 }
 
