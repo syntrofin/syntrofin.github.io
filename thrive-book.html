@@ -183,13 +183,12 @@
       <ul>
             <li><a href="#qa1">Who are Customers - Paid: Event Sponors, Booths and Visitors</a></li>
             <li><a href="#qa2">Staged delivery</a></li>
-            <li><a href="#qa2a">Money Going Out</a></li>
-            <li><a href="#qa3">Event organizer company, Products</a></li>
-            <li><a href="#qa4">Pricing</a></li>
-            <li><a href="#qe1">Summary</a></li>
-            <li><a href="#">Taxation logic</a></li
-            
-            <li><a href="#qe7">Security Audit Log</a></li>
+            <li><a href="#qa3">Money Going Out</a></li>
+            <li><a href="#qa4">Event organizer company, Products</a></li>
+            <li><a href="#qa5">Taxation logic</a></li>
+            <li><a href="#qa5">Pricing</a></li>
+            <li><a href="#qa6">Summary</a></li>
+
       </ul>
     </li>
 
@@ -268,6 +267,7 @@
         <li><a href="#qe4">Customer Action</a></li>
         <li><a href="#qe5">Configure three agents from start</a></li>
         <li><a href="#qe6">Agent Guard Rails</a></li>
+        <li><a href="#qe7">Einsten Audit Log</a></li>
       </ul>
     </li>
   </ul>
@@ -568,7 +568,7 @@ Staged delivery
     </p>
 
 <!-- Money going out -->
- <p class="question" id="qa2a">
+ <p class="question" id="qa3">
      Money Going Out
  </p>
     <p> In an event management context within <strong>Salesforce Revenue Cloud Advanced (RCA)</strong>, the costs you mentioned—Dinner &amp; Drinks, Live Bands, and Venue Rental—represent the "Buy" side of the house. </p>
@@ -707,7 +707,7 @@ Staged delivery
     <p> Would you like me to show you how to build a <strong>Profitability Calculation</strong>inside the <strong>Pricing Procedure</strong>that flags a quote for "Manager Approval" if the cost of the Band and Catering exceeds 40% of the Sponsorship revenue? </p>
  
     <!-- Products -->
-    <p class="question" id="qa3">
+    <p class="question" id="qa4">
       Event organizer company, Products
     </p>
     <p> For an event organizer, <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>moves beyond the traditional CPQ "fixed bundle" model to a more dynamic, attribute-driven architecture. This is particularly useful for events where offerings like sponsorships, booth spaces, and tickets have high variability. </p>
@@ -852,8 +852,132 @@ Staged delivery
     </p>
     <p> Would you like me to create a specific <strong>Price Adjustment Matrix</strong>example for tiered ticket pricing based on purchase volume? </p>
 
+    <!-- Taxation Logic -->
+    <p class="question" id="qa6"> Taxation logic </p>
+    <p> In <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, taxation is no longer a "set and forget" field on the Quote. Because your event business involves different types of revenue (physical space, digital services, and food/beverage), the tax logic must be as dynamic as your pricing. </p>
+    <p> RLM uses a <strong>Tax Engine</strong>(often integrated with external providers like Avalara or Vertex) that evaluates the "Taxability" of a product at multiple points in the lifecycle. </p>
+    <p>
+      <strong>1. The Taxation Architecture</strong>
+    </p>
+    <p> Taxation in RLM is driven by three primary factors: <strong>The What</strong>(Tax Code), <strong>The Where</strong>(Place of Supply), and <strong>The When</strong>(Tax Point). </p>
+    <ul class="norma">
+      <li>
+        <strong>Tax Engine (Connector):</strong>RLM uses a standard integration to call external tax services during the Quote and Billing stages.
+      </li>
+      <li>
+        <strong>Tax Policy:</strong>A record in Salesforce that defines <em>how</em>and <em>when</em>to calculate tax for a specific product.
+      </li>
+      <li>
+        <strong>Tax Code Mapping:</strong>Each product (e.g., "Live Band") is mapped to a specific Tax Code (e.g., "Entertainment Services") that the tax engine recognizes.
+      </li>
+    </ul>
+    <p>
+      <strong>2. Staged Taxation (The University ABC Example)</strong>
+    </p>
+    <p> For your event at University ABC, different tax rules apply based on the "Nature of the Stage": </p>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <p> Product Stage </p>
+          </td>
+          <td>
+            <p> Tax Category </p>
+          </td>
+          <td>
+            <p> Logic </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Booth Space</strong>
+            </p>
+          </td>
+          <td>
+            <p> Real Estate / Rental </p>
+          </td>
+          <td>
+            <p> Taxed based on the <strong>Physical Location</strong>of the University. </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Digital Branding</strong>
+            </p>
+          </td>
+          <td>
+            <p> SaaS / Digital Service </p>
+          </td>
+          <td>
+            <p> Often taxed based on the <strong>Sponsor’s Billing Address</strong>. </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Dinner &amp; Drinks</strong>
+            </p>
+          </td>
+          <td>
+            <p> Food &amp; Beverage </p>
+          </td>
+          <td>
+            <p> Usually carries a higher "Sin Tax" or specific Hospitality tax rate. </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>3. The "Tax Point" (Timing)</strong>
+    </p>
+    <p> In a staged delivery model, the "Tax Point" (the moment tax becomes due) varies. This is critical for your book's finance chapter: </p>
+    <ul class="norma">
+      <li>
+        <strong>At Invoice (Standard):</strong>Tax is calculated when the $40k deposit invoice is generated.
+      </li>
+      <li>
+        <strong>At Fulfillment (Revenue Point):</strong>For the "ROI Report," the tax might not be finalized until the report is actually delivered and the final $10k is billed.
+      </li>
+      <li>
+        <strong>The Adjustment Logic:</strong>If you apply that <strong>SLA Credit</strong>we discussed, the Tax Engine must perform a "Tax Reversal." If the price drops by $2,500, the tax liability must also drop proportionally to keep your GL in sync.
+      </li>
+    </ul>
+    <p>
+      <strong>4. Technical Setup for Practice</strong>
+    </p>
+    <p> To verify taxation logic in your practice org, focus on these objects: </p>
+    <ul class="olo">
+      <li>
+        <strong>Tax Address Provider:</strong>Ensure theLegal Entityof University ABC and theBilling Addressof the Sponsor are populated.
+      </li>
+      <li>
+        <strong>Tax Treatment:</strong>Link your "Booth Space" product to a Tax Treatment that specifies "Physical Location" as the tax basis.
+      </li>
+      <li>
+        <strong>Tax Procedure:</strong>In the <strong>Pricing Procedure</strong>, ensure the "Calculate Tax" step is active. This is the API call that sends the quote data to the engine and brings back the tax lines.
+      </li>
+    </ul>
+    <p>
+      <strong>5. Dealing with "Exempt" Entities</strong>
+    </p>
+    <p> Since your event is at a <strong>University</strong>, you might encounter <strong>Tax Exemptions</strong>. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Logic:</strong>You store the "Tax Exemption Certificate" on the Account record.
+      </li>
+      <li>
+        <strong>The Result:</strong>When the Pricing Procedure calls the Tax Engine, it passes theExemption_ID. The engine returns a $0 tax rate for the booth but might still charge tax for the "Dinner &amp; Drinks" if the exemption only applies to educational services.
+      </li>
+    </ul>
+    <p>
+      <strong>Next Step Recommendation</strong>
+    </p>
+    <p> Would you like to see how to handle <strong>Global Taxation (VAT/GST)</strong>for a sponsor based in Europe attending your US-based event, specifically regarding "Reverse Charge" logic? </p>
+ 
          <!-- Pricing -->
-<p class="question" id="qa4">      
+<p class="question" id="qa6">      
 Pricing
 </p>
     <p> In <strong>Salesforce Revenue Cloud Advanced (RCA/RLM)</strong>, tiered pricing is no longer managed via "Discount Schedules" as it was in legacy CPQ. Instead, you use a <strong>Decision Matrix</strong>(part of the Business Rules Engine) to drive <strong>Price Adjustment Matrix</strong>records. </p>
@@ -983,7 +1107,7 @@ Pricing
     <p> Would you like me to show you how to layer an <strong>Attribute-Based adjustment</strong>(like a "VIP Floor" surcharge) on top of this volume-based discount? </p>
 
 
-       <p class="question" id="qe1"> 
+       <p class="question" id="qa6"> 
        Summary 
    </p>
          
@@ -1039,129 +1163,7 @@ Pricing
     </p>
     <p> Now that the "University ABC" journey and your book summary are complete, would you like to pivot to a new case study—perhaps exploring <strong>Subscription Management</strong>or <strong>Global Taxation</strong>logic within RLM? </p>
     
-    <p class="question"> Taxation logic </p>
-    <p> In <strong>Salesforce Revenue Cloud Advanced (RLM)</strong>, taxation is no longer a "set and forget" field on the Quote. Because your event business involves different types of revenue (physical space, digital services, and food/beverage), the tax logic must be as dynamic as your pricing. </p>
-    <p> RLM uses a <strong>Tax Engine</strong>(often integrated with external providers like Avalara or Vertex) that evaluates the "Taxability" of a product at multiple points in the lifecycle. </p>
-    <p>
-      <strong>1. The Taxation Architecture</strong>
-    </p>
-    <p> Taxation in RLM is driven by three primary factors: <strong>The What</strong>(Tax Code), <strong>The Where</strong>(Place of Supply), and <strong>The When</strong>(Tax Point). </p>
-    <ul class="norma">
-      <li>
-        <strong>Tax Engine (Connector):</strong>RLM uses a standard integration to call external tax services during the Quote and Billing stages.
-      </li>
-      <li>
-        <strong>Tax Policy:</strong>A record in Salesforce that defines <em>how</em>and <em>when</em>to calculate tax for a specific product.
-      </li>
-      <li>
-        <strong>Tax Code Mapping:</strong>Each product (e.g., "Live Band") is mapped to a specific Tax Code (e.g., "Entertainment Services") that the tax engine recognizes.
-      </li>
-    </ul>
-    <p>
-      <strong>2. Staged Taxation (The University ABC Example)</strong>
-    </p>
-    <p> For your event at University ABC, different tax rules apply based on the "Nature of the Stage": </p>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <p> Product Stage </p>
-          </td>
-          <td>
-            <p> Tax Category </p>
-          </td>
-          <td>
-            <p> Logic </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Booth Space</strong>
-            </p>
-          </td>
-          <td>
-            <p> Real Estate / Rental </p>
-          </td>
-          <td>
-            <p> Taxed based on the <strong>Physical Location</strong>of the University. </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Digital Branding</strong>
-            </p>
-          </td>
-          <td>
-            <p> SaaS / Digital Service </p>
-          </td>
-          <td>
-            <p> Often taxed based on the <strong>Sponsor’s Billing Address</strong>. </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Dinner &amp; Drinks</strong>
-            </p>
-          </td>
-          <td>
-            <p> Food &amp; Beverage </p>
-          </td>
-          <td>
-            <p> Usually carries a higher "Sin Tax" or specific Hospitality tax rate. </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      <strong>3. The "Tax Point" (Timing)</strong>
-    </p>
-    <p> In a staged delivery model, the "Tax Point" (the moment tax becomes due) varies. This is critical for your book's finance chapter: </p>
-    <ul class="norma">
-      <li>
-        <strong>At Invoice (Standard):</strong>Tax is calculated when the $40k deposit invoice is generated.
-      </li>
-      <li>
-        <strong>At Fulfillment (Revenue Point):</strong>For the "ROI Report," the tax might not be finalized until the report is actually delivered and the final $10k is billed.
-      </li>
-      <li>
-        <strong>The Adjustment Logic:</strong>If you apply that <strong>SLA Credit</strong>we discussed, the Tax Engine must perform a "Tax Reversal." If the price drops by $2,500, the tax liability must also drop proportionally to keep your GL in sync.
-      </li>
-    </ul>
-    <p>
-      <strong>4. Technical Setup for Practice</strong>
-    </p>
-    <p> To verify taxation logic in your practice org, focus on these objects: </p>
-    <ul class="olo">
-      <li>
-        <strong>Tax Address Provider:</strong>Ensure theLegal Entityof University ABC and theBilling Addressof the Sponsor are populated.
-      </li>
-      <li>
-        <strong>Tax Treatment:</strong>Link your "Booth Space" product to a Tax Treatment that specifies "Physical Location" as the tax basis.
-      </li>
-      <li>
-        <strong>Tax Procedure:</strong>In the <strong>Pricing Procedure</strong>, ensure the "Calculate Tax" step is active. This is the API call that sends the quote data to the engine and brings back the tax lines.
-      </li>
-    </ul>
-    <p>
-      <strong>5. Dealing with "Exempt" Entities</strong>
-    </p>
-    <p> Since your event is at a <strong>University</strong>, you might encounter <strong>Tax Exemptions</strong>. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Logic:</strong>You store the "Tax Exemption Certificate" on the Account record.
-      </li>
-      <li>
-        <strong>The Result:</strong>When the Pricing Procedure calls the Tax Engine, it passes theExemption_ID. The engine returns a $0 tax rate for the booth but might still charge tax for the "Dinner &amp; Drinks" if the exemption only applies to educational services.
-      </li>
-    </ul>
-    <p>
-      <strong>Next Step Recommendation</strong>
-    </p>
-    <p> Would you like to see how to handle <strong>Global Taxation (VAT/GST)</strong>for a sponsor based in Europe attending your US-based event, specifically regarding "Reverse Charge" logic? </p>
-    
+   
 </section>
 
                  
@@ -5678,7 +5680,7 @@ Pricing
             <p> Would you like me to help you draft a <strong>"Security Audit Log"</strong>query that allows you to see every time an agent was asked a "forbidden" question about margins or costs? </p>
             
        <p class="question" id="qe7"> 
-            Security Audit Log
+            Einstein Audit Log
        </p>
               
             <p> To monitor the security of your agents, you will use the <strong>Einstein Trust Layer Audit Trail</strong>combined with <strong>Data Cloud</strong>or <strong>Custom Objects</strong>. In a complex <strong>Revenue Cloud Advanced</strong>environment, you need to track when an agent correctly "refused" to answer a question about internal costs or margins. </p>
@@ -5811,6 +5813,7 @@ console.log(tocItems);
          </script>
   </body>
 </html>
+
 
 
 
