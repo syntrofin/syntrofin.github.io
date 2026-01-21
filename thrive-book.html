@@ -5777,13 +5777,23 @@ Pricing
 </section>
 
 <script>
+    /*
+    Summary of Duration Tweaks:
+        Snap-to Speed (Very Fast): duration: 250
+        Standard Menu Speed (Recommended): duration: 400
+        Cinematic Speed (Slower): duration: 900 
+    Enjoy your snappy, custom-speed navigation!
+    T-Shirt Sizing:
+        Speed setting: 300 is fast, 800 is medium, 1500 is slow
+    */
+
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          // Speed setting: 300 is fast, 800 is medium, 1500 is slow
-          modernSmoothScroll(target, 400); 
+          // 
+          modernSmoothScroll(target, 900); 
         }
       });
     });
@@ -5814,6 +5824,7 @@ Pricing
 </script>
 </body>
 </html>
+
 
 
 
