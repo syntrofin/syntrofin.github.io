@@ -141,7 +141,6 @@ img {
 
 /* 4. Section - Small Entrance (Sticky Notes Layout) */
 .smallentrance-div {
-    background-color: #002143;
     text-align: center;
 }
 
@@ -197,12 +196,12 @@ img {
     cursor: pointer;
 }
 
-/* 5. Solutions & Feature Lists (from PDF pages 5/6) */
+/* 5. Solutions & Feature Lists (from PDF pages 5/6) #f3fafe; */
 .solutiondiv {
-    background-color: #f3fafe; 
+    background-color: white;
     text-align: center;
 }
-.service-box {background-color: #f3fafe;}
+.service-box {background-color: white;}
 .service-box h3 { color: #0f172a; font-size: 1.8rem; }
 .service-box p { color: #475569; line-height: 1.6; font-size: 1.1rem; }
 
