@@ -8,8 +8,8 @@
       
     <style>
       html {
-           scroll-behavior: smooth;
-             scroll-padding-top: 20px; /* Adjust based on your header height */
+        scroll-behavior: auto !important;
+        scroll-padding-top: 20px; 
       }
             
       body {
@@ -127,26 +127,24 @@
     
 
        .toc ul {
-  list-style-type: none; /* Removes default bullets */
-  padding-left: 20px;    /* Indents the main topics */
-}
-
-.toc ul ul {
-  list-style-type: disc; /* Adds bullets to sub-topics */
-  padding-left: 30px;    /* Indents sub-topics further right */
-  margin-top: 5px;
-}
-
-.toc a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.toc a:hover {
-  text-decoration: underline;
-}
-
-
+          list-style-type: none; /* Removes default bullets */
+          padding-left: 20px;    /* Indents the main topics */
+        }
+        
+        .toc ul ul {
+          list-style-type: disc; /* Adds bullets to sub-topics */
+          padding-left: 30px;    /* Indents sub-topics further right */
+          margin-top: 5px;
+        }
+        
+        .toc a {
+          text-decoration: none;
+          color: #007bff;
+        }
+        
+        .toc a:hover {
+          text-decoration: underline;
+        }
 
 
       @media (max-width: 900px) {
@@ -160,20 +158,6 @@
   
 <body>
 <h1>An Event Organizing Company</h1>
-
-<nav>
-  <h2>Table of Contents</h2>
-  <ul>
-    <li><a href="#customer">Customer</a></li>
-    <li><a href="#discovery">Discovery</a></li>
-    <li><a href="#brd">BRD</a></li>
-    <li><a href="#governance">Governance</a></li>
-    <li><a href="#appendix">Appendix</a></li>
-    <li><a href="#rca">RCA</a></li>
-    <li><a href="#agf">AGF</a></li>
-  </ul>
-</nav>
-
 <nav class="toc">
   <h2>Table of Contents</h2>
   <ul>
@@ -267,7 +251,7 @@
         <li><a href="#qe4">Customer Action</a></li>
         <li><a href="#qe5">Configure three agents from start</a></li>
         <li><a href="#qe6">Agent Guard Rails</a></li>
-        <li><a href="#qe7">Einsten Audit Log</a></li>
+        <li><a href="#qe7">Einstein Audit Log</a></li>
       </ul>
     </li>
   </ul>
@@ -5813,6 +5797,7 @@ console.log(tocItems);
          </script>
   </body>
 </html>
+
 
 
 
