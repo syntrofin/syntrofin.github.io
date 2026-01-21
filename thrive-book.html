@@ -1788,132 +1788,7 @@ Pricing
       <li> [ ] <strong>Automation:</strong>Create a Flow that triggers an <strong>Amendment</strong>ifActual_Date &gt; Due_Date. </li>
       <li> [ ] <strong>Billing:</strong>Confirm the <strong>Billing Schedule</strong>for the final $10k payment is updated to the lower amount before the invoice is generated. </li>
     </ul>
-    <p>
-      <strong>Next Step Recommendation</strong>
-    </p>
-
-  
-        <p> Since we've covered the full circle from Quote to Credit, would you like me to help you draft a <strong>"Troubleshooting Guide"</strong>for your book on how to identify why a <strong>Billing Schedule</strong>might fail to generate after an SLA adjustment? </p>
-</section>
     
-    
-<!-- Section, Troubleshooting -->
-<section  class="trb" id="troubleshoot">
-    <h2>Troubleshooting</h2>
-    <p class="question" id="qd1"> 
-       Troubleshooting Guide
-    </p>
-         
-    <p> In your book, troubleshooting the "Financial Handshake" is a critical chapter. When an SLA credit is applied mid-orchestration, the <strong>Billing Schedule</strong>is the most sensitive record in the chain. If it fails to update or generate, it’s usually because the link between the <strong>Price Adjustment</strong>and the <strong>Billing Treatment</strong>has been broken. </p>
-    <p> Here is a troubleshooting guide you can use for your book or as a reference for your current project. </p>
-    <p>
-      <strong>Troubleshooting Guide: Failed SLA Billing Adjustments</strong>
-    </p>
-    <p>
-      <strong>Step 1: Check the "Lifecycle Managed" Flag</strong>
-    </p>
-    <p> In <strong>Revenue Cloud Advanced (RLM)</strong>, for an amendment to affect a billing schedule, the Asset or Order Item must have theLifecycle Managedflag set to <strong>True</strong>. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Symptom:</strong>You create the credit amendment, but the original Billing Schedule remains at the full amount.
-      </li>
-      <li>
-        <strong>The Fix:</strong>Ensure your Product configuration allows for "Change Management" and that the initial Order was assetized correctly.
-      </li>
-    </ul>
-    <p>
-      <strong>Step 2: Inspect the Revenue Transaction Error Log</strong>
-    </p>
-    <p> RLM has a specific log for financial automation failures. </p>
-    <ul class="norma">
-      <li>
-        <strong>Where to look:</strong>Search for the <strong>Revenue Transaction Error Log</strong>object in the App Launcher.
-      </li>
-      <li>
-        <strong>Common Error:</strong>
-        <em>"The Billing Schedule is currently Locked by a finalized Invoice."</em>
-      </li>
-      <li>
-        <strong>The Architect's Insight:</strong>If you’ve already generated the invoice for that milestone, the system cannot "reach back" and change the schedule. You must issue a <strong>Credit Memo</strong>against the Invoice instead of an <strong>Adjustment</strong>on the Schedule.
-      </li>
-    </ul>
-    <p>
-      <strong>Step 3: Validate the Billing Treatment Filter</strong>
-    </p>
-    <p> Every <strong>Billing Policy</strong>has a <strong>Treatment</strong>that defines <em>which</em>products it applies to. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Symptom:</strong>The credit is recorded on the Order, but the Billing Engine ignores it.
-      </li>
-      <li>
-        <strong>The Check:</strong>Does your Billing Treatment filter include the "Credit" or "Adjustment" product code? If the filter is too narrow (e.g., only looking for "Hardware"), it will ignore the "SLA Penalty" line item you just added.
-      </li>
-    </ul>
-    <p>
-      <strong>Step 4: Verify the "Effective Date" Logic</strong>
-    </p>
-    <p> The timing of the SLA penalty must fall within the current <strong>Billing Period</strong>. </p>
-    <ul class="norma">
-      <li>
-        <strong>The Logic:</strong>If the event ended on June 1st and your billing period for the final milestone is June 15th, an adjustment dated June 20th will not be picked up by the current schedule.
-      </li>
-      <li>
-        <strong>The Fix:</strong>Ensure the <strong>Effective Date</strong>of your SLA Amendment Order is set to a date <em>before</em>theBilling Target Date.
-      </li>
-    </ul>
-    <p>
-      <strong>Summary of the Financial Flow</strong>
-    </p>
-    <table style="padding:0pt; border-collapse:collapse">
-      <tbody>
-        <tr>
-          <td>
-            <p> Record to Check </p>
-          </td>
-          <td>
-            <p> What it tells you </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Order Item (Amendment)</strong>
-            </p>
-          </td>
-          <td>
-            <p> Was the credit actually calculated? </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Billing Schedule</strong>
-            </p>
-          </td>
-          <td>
-            <p> Is the "Target Amount" reflecting the Net (Original - Credit)? </p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>
-              <strong>Orchestration Item</strong>
-            </p>
-          </td>
-          <td>
-            <p> Did the "Complete" status trigger the re-rate flow? </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      <strong>The "Final Word" for your Book</strong>
-    </p>
-    <p> When explaining this to readers, emphasize that <strong>Revenue Cloud Advanced is a "Date-Driven" engine.</strong>90% of failures in staged delivery billing are caused by a mismatch between the <strong>Orchestration Task Date</strong>, the <strong>Amendment Effective Date</strong>, and the <strong>Billing Cycle Date</strong>. </p>
-    <p>
-      <strong>Would you like me to help you draft a "Final Architecture Diagram" for the book that synthesizes everything we've discussed—from the University ABC Quote all the way to this SLA Credit?</strong>
-    </p>
-         
     <p class="question" id="qd1"> 
         Final Architecture Diagram 
     </p>
@@ -1978,13 +1853,8 @@ Pricing
     <p>
       <strong>Architect's Note:</strong>The primary takeaway for your readers should be that in RLM, the <strong>Order</strong>is the center of the universe. It is the record that connects the Sales Rep's promises to the Operations Team's delivery and the Finance Team's ledger.
     </p>
-    </section>
-    
+</section>
    
-
-                
-                  
-                
             <section  class="gov" id="governance">
                 <h2>Governance</h2>
                 <p class="question" id="qf1"> 
@@ -2157,7 +2027,115 @@ Pricing
                   <strong>Would you like me to...</strong>
                 </p>
                 <p> Would you like me to draft a <strong>"Troubleshooting Cheat Sheet"</strong>for these students that lists the most common errors when adding new products to a DRO-managed event? </p>
-
+    <p class="question" id="qd1"> 
+       Troubleshooting Guide
+    </p>
+         
+    <p> In your book, troubleshooting the "Financial Handshake" is a critical chapter. When an SLA credit is applied mid-orchestration, the <strong>Billing Schedule</strong>is the most sensitive record in the chain. If it fails to update or generate, it’s usually because the link between the <strong>Price Adjustment</strong>and the <strong>Billing Treatment</strong>has been broken. </p>
+    <p> Here is a troubleshooting guide you can use for your book or as a reference for your current project. </p>
+    <p>
+      <strong>Troubleshooting Guide: Failed SLA Billing Adjustments</strong>
+    </p>
+    <p>
+      <strong>Step 1: Check the "Lifecycle Managed" Flag</strong>
+    </p>
+    <p> In <strong>Revenue Cloud Advanced (RLM)</strong>, for an amendment to affect a billing schedule, the Asset or Order Item must have theLifecycle Managedflag set to <strong>True</strong>. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Symptom:</strong>You create the credit amendment, but the original Billing Schedule remains at the full amount.
+      </li>
+      <li>
+        <strong>The Fix:</strong>Ensure your Product configuration allows for "Change Management" and that the initial Order was assetized correctly.
+      </li>
+    </ul>
+    <p>
+      <strong>Step 2: Inspect the Revenue Transaction Error Log</strong>
+    </p>
+    <p> RLM has a specific log for financial automation failures. </p>
+    <ul class="norma">
+      <li>
+        <strong>Where to look:</strong>Search for the <strong>Revenue Transaction Error Log</strong>object in the App Launcher.
+      </li>
+      <li>
+        <strong>Common Error:</strong>
+        <em>"The Billing Schedule is currently Locked by a finalized Invoice."</em>
+      </li>
+      <li>
+        <strong>The Architect's Insight:</strong>If you’ve already generated the invoice for that milestone, the system cannot "reach back" and change the schedule. You must issue a <strong>Credit Memo</strong>against the Invoice instead of an <strong>Adjustment</strong>on the Schedule.
+      </li>
+    </ul>
+    <p>
+      <strong>Step 3: Validate the Billing Treatment Filter</strong>
+    </p>
+    <p> Every <strong>Billing Policy</strong>has a <strong>Treatment</strong>that defines <em>which</em>products it applies to. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Symptom:</strong>The credit is recorded on the Order, but the Billing Engine ignores it.
+      </li>
+      <li>
+        <strong>The Check:</strong>Does your Billing Treatment filter include the "Credit" or "Adjustment" product code? If the filter is too narrow (e.g., only looking for "Hardware"), it will ignore the "SLA Penalty" line item you just added.
+      </li>
+    </ul>
+    <p>
+      <strong>Step 4: Verify the "Effective Date" Logic</strong>
+    </p>
+    <p> The timing of the SLA penalty must fall within the current <strong>Billing Period</strong>. </p>
+    <ul class="norma">
+      <li>
+        <strong>The Logic:</strong>If the event ended on June 1st and your billing period for the final milestone is June 15th, an adjustment dated June 20th will not be picked up by the current schedule.
+      </li>
+      <li>
+        <strong>The Fix:</strong>Ensure the <strong>Effective Date</strong>of your SLA Amendment Order is set to a date <em>before</em>theBilling Target Date.
+      </li>
+    </ul>
+    <p>
+      <strong>Summary of the Financial Flow</strong>
+    </p>
+    <table style="padding:0pt; border-collapse:collapse">
+      <tbody>
+        <tr>
+          <td>
+            <p> Record to Check </p>
+          </td>
+          <td>
+            <p> What it tells you </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Order Item (Amendment)</strong>
+            </p>
+          </td>
+          <td>
+            <p> Was the credit actually calculated? </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Billing Schedule</strong>
+            </p>
+          </td>
+          <td>
+            <p> Is the "Target Amount" reflecting the Net (Original - Credit)? </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <strong>Orchestration Item</strong>
+            </p>
+          </td>
+          <td>
+            <p> Did the "Complete" status trigger the re-rate flow? </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>The "Final Word" for your Book</strong>
+    </p>
         </section>
               
                  
@@ -5727,6 +5705,7 @@ Pricing
          </script>
   </body>
 </html>
+
 
 
 
