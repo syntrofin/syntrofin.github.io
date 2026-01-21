@@ -116,7 +116,7 @@ img {
 .smallentrance-div {
     background-color: #002143;
     text-align: center;
-    padding: 10px 30px;
+    padding: 20px;
 }
 
 .smallentrance-row {
@@ -176,7 +176,7 @@ img {
     margin: 0 auto; 
     background-color: #f3fafe; 
     text-align: center;
-    padding: 10px 30px; 
+    padding: 20px;
 }
 .service-box {background-color: #f3fafe;}
 .service-box h3 { color: #0f172a; font-size: 1.8rem; margin-bottom: 20px; }
