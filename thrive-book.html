@@ -5793,66 +5793,16 @@ Pricing
 
 
          <script>
-             document.addEventListener("DOMContentLoaded", function() {
-    const tocList = document.getElementById('toc-list');
-    const sections = document.querySelectorAll('section');
-
-    sections.forEach(section => {
-        // Create Main Section Link
-        const li = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = `#${section.id}`;
-        link.textContent = section.id.charAt(0).toUpperCase() + section.id.slice(1);
-        li.appendChild(link);
-
-        // Optional: Find nested questions for sub-links
-        const questions = section.querySelectorAll('.question');
-        if (questions.length > 0) {
-            const subUl = document.createElement('ul');
-            questions.forEach(q => {
-                const subLi = document.createElement('li');
-                const subLink = document.createElement('a');
-                subLink.href = `#${q.id}`;
-                subLink.textContent = q.id; // e.g., "qa1"
-                subLi.appendChild(subLink);
-                subUl.appendChild(subLi);
-            });
-            li.appendChild(subUl);
-        }
-
-        tocList.appendChild(li);
-    });
+let tocItems = "";
+// Loop through every paragraph with the class 'question'
+document.querySelectorAll('p.question').forEach(el => {
+  let id = el.id;
+  let text = el.innerText || "Question Text"; // Gets the actual text inside the <p>
+  tocItems += `<li><a href="#${id}">${text}</a></li>\n`;
 });
+console.log(tocItems);
 
          </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
