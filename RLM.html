@@ -127,62 +127,54 @@
     </div>
 </div>
 	
-	<!-- RLM Elements Table -->
-	<h1>RLM Elements Table</h1>
-	<h2>RLM Architect & Developer Reference Table</h2>
-	
-	<table class="rlm-table">
+<!-- RLM Developer Table -->
+<h2>RLM Architect & Developer Reference Table (2026) - Detailed Technical View</h2>
+
+<table class="rlm-table-tech">
     <thead>
         <tr>
             <th>Lifecycle Stage</th>
-            <th>Correct Name</th>
             <th>Governing Concern</th>
-            <th>Technical Tooling (RCA)</th>
-            <th>Developer Specifics</th>
+            <th>Technical Objects & API Names</th>
+            <th>Developer Specifics (Key Relationships & Fields)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td class="stage-label">Pre-quote</td>
-            <td><strong>Catalog Offering</strong></td>
+            <td class="stage-label-tech">Pre-quote</td>
             <td>Market supply</td>
-            <td><span class="tech-item">Product Catalog Management</span><span class="pill">Product2</span> <span class="pill">Catalog</span></td>
-            <td><b>Attribute Logic:</b> Dynamic metadata via <i>ProductAttributeDefinition</i>.</td>
+            <td class="api-group"><span class="api-name">Product2</span> (Product)<br><span class="api-name">Catalog</span><br><span class="api-name">ProductAttributeDefinition</span></td>
+            <td><b>Core Objects:</b> <span class="api-name">Product2</span> defines the item; <span class="api-name">Catalog</span> organizes the market view. Attributes use metadata-based fields associated via <span class="api-name">ProductAttributeDefinition</span> for dynamic configuration.</td>
         </tr>
         <tr>
-            <td class="stage-label">Quote</td>
-            <td><strong>Sales Intent</strong></td>
+            <td class="stage-label-tech">Quote</td>
             <td>Willingness to sell</td>
-            <td><span class="tech-item">Salesforce Pricing Engine</span><span class="pill">ContextDefinition</span> <span class="pill">PriceProcedure</span></td>
-            <td><b>Context Service:</b> Global mapping of transactional data to pricing rules.</td>
+            <td class="api-group"><span class="api-name">Pricebook2</span> (Price Book)<br><span class="api-name">PricebookEntry</span> (PBE)<br><span class="api-name">ContextDefinition</span><br><span class="api-name">PriceProcedure</span></td>
+            <td><b>Pricing Core:</b> Developer must use correct <span class="api-name">PricebookEntryId</span>. The new pricing engine uses <span class="api-name">PriceProcedure</span> logic and Decision Tables to derive the final <span class="api-name">UnitPrice</span>.</td>
         </tr>
         <tr>
-            <td class="stage-label">Order</td>
-            <td><strong>Performance Obligation</strong></td>
+            <td class="stage-label-tech">Order</td>
             <td>Legal duty</td>
-            <td><span class="tech-item">Dynamic Revenue Orchestrator</span><span class="pill">FulfillmentOrder</span> <span class="pill">OrderAction</span></td>
-            <td><b>Order Decomposition:</b> Automated split of commercial items to technical tasks.</td>
+            <td class="api-group"><span class="api-name">Order</span><br><span class="api-name">OrderItem</span> (Order Product)<br><span class="api-name">FulfillmentOrder</span></td>
+            <td><b>Order Management:</b> <span class="api-name">OrderItem</span> records *require* the <span class="api-name">PricebookEntryId</span>. Developers use the <span class="api-name">FulfillmentOrder</span> object to manage decomposition and orchestration actions via <span class="api-name">OrderAction</span>.</td>
         </tr>
         <tr>
-            <td class="stage-label">Delivery</td>
-            <td><strong>Entitlement / Asset</strong></td>
+            <td class="stage-label-tech">Delivery</td>
             <td>Right to use</td>
-            <td><span class="tech-item">Asset Lifecycle Management</span><span class="pill">Asset</span> <span class="pill">AssetStatePeriod</span></td>
-            <td><b>Asset-First:</b> Source of truth for renewals and Ramp Deal amendments.</td>
+            <td class="api-group"><span class="api-name">Asset</span><br><span class="api-name">AssetStatePeriod</span></td>
+            <td><b>Asset-First:</b> Assets managed via ALM capabilities. The <span class="api-name">AssetStatePeriod</span> object helps manage ramps and usage entitlements in real-time.</td>
         </tr>
         <tr>
-            <td class="stage-label">Invoice</td>
-            <td><strong>Receivable</strong></td>
+            <td class="stage-label-tech">Invoice</td>
             <td>Liquidity</td>
-            <td><span class="tech-item">Billing Schedule Engine</span><span class="pill">BillingTransaction</span> <span class="pill">UsageSummary</span></td>
-            <td><b>Native High-Volume:</b> Billing automation without legacy batch constraints.</td>
+            <td class="api-group"><span class="api-name">BillingTransaction</span><br><span class="api-name">UsageSummary</span><br><span class="api-name">BillRun</span> (Legacy)</td>
+            <td><b>Billing & Usage:</b> Integrate external usage data into <span class="api-name">UsageSummary</span> records. <span class="api-name">BillingTransaction</span> handles charges, replacing older Invoice Statements.</td>
         </tr>
         <tr>
-            <td class="stage-label">Revenue</td>
-            <td><strong>Earned Value</strong></td>
+            <td class="stage-label-tech">Revenue</td>
             <td>Accounting truth</td>
-            <td><span class="tech-item">Revenue Recognition Engine</span><span class="pill">RevenueSchedule</span> <span class="pill">Agentforce</span></td>
-            <td><b>Agentforce:</b> AI-assisted revenue reconciliation and forecasting.</td>
+            <td class="api-group"><span class="api-name">RevenueSchedule</span><br><span class="api-name">DeferredRevenue</span><br><span class="api-name">PerformanceObligation</span></td>
+            <td><b>Compliance:</b> Automation creates <span class="api-name">RevenueSchedule</span> and <span class="api-name">DeferredRevenue</span> based on POB status to ensure ASC 606/IFRS 15 compliance.</td>
         </tr>
     </tbody>
 </table>
