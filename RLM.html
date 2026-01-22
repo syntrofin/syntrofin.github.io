@@ -135,7 +135,7 @@
 <table class="rlm-table-tech">
     <thead>
         <tr>
-			<th>rtnagar</th>
+			<th>Lifecycle Concern</th>
             <th>Lifecycle Stage</th>
             <th>Governing Concern</th>
             <th>Technical Objects & API Names</th>
@@ -145,42 +145,42 @@
 	
     <tbody>
         <tr>
-			<td class="stage-label-tech">rtnagar</td>
+			<td class="stage-label-tech">Catalog Offering</td>
             <td class="stage-label-tech">Pre-quote</td>
             <td>Market supply</td>
             <td class="api-group"><span class="api-name">Product2</span> (Product)<br><span class="api-name">Catalog</span><br><span class="api-name">ProductAttributeDefinition</span></td>
             <td><b>Core Objects:</b> <span class="api-name">Product2</span> defines the item; <span class="api-name">Catalog</span> organizes the market view. Attributes use metadata-based fields associated via <span class="api-name">ProductAttributeDefinition</span> for dynamic configuration.</td>
         </tr>
         <tr>
-			<td class="stage-label-tech">rtnagar</td>
+			<td class="stage-label-tech">Sales Intent</td>
             <td class="stage-label-tech">Quote</td>
             <td>Willingness to sell</td>
             <td class="api-group"><span class="api-name">Pricebook2</span> (Price Book)<br><span class="api-name">PricebookEntry</span> (PBE)<br><span class="api-name">ContextDefinition</span><br><span class="api-name">PriceProcedure</span></td>
             <td><b>Pricing Core:</b> Developer must use correct <span class="api-name">PricebookEntryId</span>. The new pricing engine uses <span class="api-name">PriceProcedure</span> logic and Decision Tables to derive the final <span class="api-name">UnitPrice</span>.</td>
         </tr>
         <tr>
-			<td class="stage-label-tech">rtnagar</td>
+			<td class="stage-label-tech">Performance Obligation</td>
             <td class="stage-label-tech">Order</td>
             <td>Legal duty</td>
             <td class="api-group"><span class="api-name">Order</span><br><span class="api-name">OrderItem</span> (Order Product)<br><span class="api-name">FulfillmentOrder</span></td>
             <td><b>Order Management:</b> <span class="api-name">OrderItem</span> records *require* the <span class="api-name">PricebookEntryId</span>. Developers use the <span class="api-name">FulfillmentOrder</span> object to manage decomposition and orchestration actions via <span class="api-name">OrderAction</span>.</td>
         </tr>
         <tr>
-			<td class="stage-label-tech">rtnagar</td>
+			<td class="stage-label-tech">Entitlement / Asset</td>
             <td class="stage-label-tech">Delivery</td>
             <td>Right to use</td>
             <td class="api-group"><span class="api-name">Asset</span><br><span class="api-name">AssetStatePeriod</span></td>
             <td><b>Asset-First:</b> Assets managed via ALM capabilities. The <span class="api-name">AssetStatePeriod</span> object helps manage ramps and usage entitlements in real-time.</td>
         </tr>
         <tr>
-			<td class="stage-label-tech">rtnagar</td>
+			<td class="stage-label-tech">Receivable</td>
             <td class="stage-label-tech">Invoice</td>
             <td>Liquidity</td>
             <td class="api-group"><span class="api-name">BillingTransaction</span><br><span class="api-name">UsageSummary</span><br><span class="api-name">BillRun</span> (Legacy)</td>
             <td><b>Billing & Usage:</b> Integrate external usage data into <span class="api-name">UsageSummary</span> records. <span class="api-name">BillingTransaction</span> handles charges, replacing older Invoice Statements.</td>
         </tr>
         <tr>
-			<td class="stage-label-tech">rtnagar</td>
+			<td class="stage-label-tech">Earned Value</td>
             <td class="stage-label-tech">Revenue</td>
             <td>Accounting truth</td>
             <td class="api-group"><span class="api-name">RevenueSchedule</span><br><span class="api-name">DeferredRevenue</span><br><span class="api-name">PerformanceObligation</span></td>
