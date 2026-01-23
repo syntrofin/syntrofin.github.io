@@ -4,6 +4,12 @@ h1 {
 h2 {
   text-align:left;
 }
+hr {
+  border: none; /* Remove default border */
+  background-color: #ccc; /* Set the line color */
+  height: 1px; /* Set the line thickness */
+  margin: 1em 0; /* Add vertical spacing */
+}
 /*body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }*/
   .lifecycle-container { max-width: 900px; margin: auto; }
   .title { text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 30px; color: #333; }
