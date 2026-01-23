@@ -212,78 +212,93 @@
 <br><hr>
 <!-- RLM Flows -->
 	<h1>RLM Flows</h1>
-	<h2>Revenue</h2>
+<h2>Quote</h2>
+
 <div class="flow-chart">
-  <!-- Section 1 -->
-  <div class="box">
-    <div class="title">INPUT EVENTS</div>
+  <!-- Catalog Section -->
+  <div class="box gray-border">
+    <div class="title">CATALOG OFFERING</div>
     <ul>
-      <li>Quote Accepted (opt)</li>
-      <li>Order Created</li>
-      <li>Usage Event</li>
-      <li>Milestone Completed</li>
-      <li>Amendment / Cancel</li>
+      <li>• Products</li>
+      <li>• Attributes</li>
+      <li>• Eligibility Rules</li>
+      <li>• Base Pricing Inputs</li>
     </ul>
   </div>
 
   <div class="arrow">▼</div>
 
-  <!-- Section 2 -->
+  <!-- Entry Point Section -->
   <div class="box">
-    <div class="title">RULES & CONSTRAINTS (CONTROL)</div>
+    <div class="title">QUOTE ENTRY POINT</div>
     <ul>
-      <li>Approval Policies <span>← Throttle</span></li>
-      <li>Contract Terms <span>← Gearbox</span></li>
-      <li>Accounting Rules <span>← Safety Limits</span></li>
-      <li>Recognition Policy <span>← Governors</span></li>
+      <li>• UI (Sales / Partner / API)</li>
+      <li>• Guided Selling (optional)</li>
+      <li>• Amend / Reprice / Simulate</li>
     </ul>
   </div>
 
   <div class="arrow">▼</div>
 
-  <!-- Section 3 -->
-  <div class="box highlight">
-    <div class="title">STATE TRANSITION ENGINE (ECU)</div>
-    <p>Determines if transition is allowed</p>
-    <div class="states">
-      <span>Quoted</span> • <span>Ordered</span> • <span>Entitled</span> • 
-      <span>Fulfilled</span> • <span>Billed</span> • <span>Recognized</span>
-    </div>
+  <!-- DRO Section (Orchestration) -->
+  <div class="box highlight-dro">
+    <div class="dro-label">Quote Orchestration</div>
+    <ul>
+      <li>• State Control (Draft → Review → Approved)</li>
+      <li>• Invocation Sequencing</li>
+      <li>• Compensation / Rollback</li>
+      <li>• Entry-point neutrality (UI / API)</li>
+    </ul>
   </div>
 
   <div class="arrow">▼</div>
 
-  <!-- Section 4: Split Row -->
-  <div class="split-container">
-    <div class="column">
-      <div class="box secondary">
-        <div class="title">ENTITLEMENT</div>
-        <ul>
-          <li>Activate service</li>
-          <li>Grant access</li>
-        </ul>
-      </div>
-    </div>
-    <div class="column">
-      <div class="box secondary">
-        <div class="title">BILLING</div>
-        <ul>
-          <li>Invoice generation</li>
-          <li>Payment schedules</li>
-        </ul>
-      </div>
-    </div>
+  <!-- Pricing Section -->
+  <div class="box">
+    <div class="title">PRICING PROCEDURES</div>
+    <ul>
+      <li>• Base Price Determination</li>
+      <li>• Discount & Adjustment Logic</li>
+      <li>• Bundling / Attribute Pricing</li>
+      <li>• Promotions</li>
+      <li>• Non-binding estimates</li>
+    </ul>
   </div>
 
   <div class="arrow">▼</div>
 
-  <!-- Section 5 -->
+  <!-- Policy Section -->
+  <div class="box">
+    <div class="title">POLICY & GOVERNANCE</div>
+    <ul>
+      <li>• Approval Policies</li>
+      <li>• Margin / Discount Thresholds</li>
+      <li>• Exception Handling</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Artifact Section -->
+  <div class="box">
+    <div class="title">SALES INTENT ARTIFACT</div>
+    <ul>
+      <li>• Quote</li>
+      <li>• Non-binding Prices</li>
+      <li>• Conditional Terms</li>
+      <li>• Expiration / Validity</li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Output Section -->
   <div class="box output">
-    <div class="title">REVENUE RECOGNITION (OUTPUT)</div>
+    <div class="title">OUTPUT PROJECTIONS</div>
     <ul>
-      <li>Deferred → Earned</li>
-      <li>Time / Usage / Milestone based</li>
-      <li>Reversals handled</li>
+      <li>• Order Preview (Simulation)</li>
+      <li>• Revenue Preview (Forecast only)</li>
+      <li>• <i>No Assets / No Obligations</i></li>
     </ul>
   </div>
 </div>
@@ -395,98 +410,7 @@
 </div>
 
 <br><hr>
-<h2>Quote</h2>
 
-<div class="flow-chart">
-  <!-- Catalog Section -->
-  <div class="box gray-border">
-    <div class="title">CATALOG OFFERING</div>
-    <ul>
-      <li>• Products</li>
-      <li>• Attributes</li>
-      <li>• Eligibility Rules</li>
-      <li>• Base Pricing Inputs</li>
-    </ul>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <!-- Entry Point Section -->
-  <div class="box">
-    <div class="title">QUOTE ENTRY POINT</div>
-    <ul>
-      <li>• UI (Sales / Partner / API)</li>
-      <li>• Guided Selling (optional)</li>
-      <li>• Amend / Reprice / Simulate</li>
-    </ul>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <!-- DRO Section (Orchestration) -->
-  <div class="box highlight-dro">
-    <div class="dro-label">Quote Orchestration</div>
-    <ul>
-      <li>• State Control (Draft → Review → Approved)</li>
-      <li>• Invocation Sequencing</li>
-      <li>• Compensation / Rollback</li>
-      <li>• Entry-point neutrality (UI / API)</li>
-    </ul>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <!-- Pricing Section -->
-  <div class="box">
-    <div class="title">PRICING PROCEDURES</div>
-    <ul>
-      <li>• Base Price Determination</li>
-      <li>• Discount & Adjustment Logic</li>
-      <li>• Bundling / Attribute Pricing</li>
-      <li>• Promotions</li>
-      <li>• Non-binding estimates</li>
-    </ul>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <!-- Policy Section -->
-  <div class="box">
-    <div class="title">POLICY & GOVERNANCE</div>
-    <ul>
-      <li>• Approval Policies</li>
-      <li>• Margin / Discount Thresholds</li>
-      <li>• Exception Handling</li>
-    </ul>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <!-- Artifact Section -->
-  <div class="box">
-    <div class="title">SALES INTENT ARTIFACT</div>
-    <ul>
-      <li>• Quote</li>
-      <li>• Non-binding Prices</li>
-      <li>• Conditional Terms</li>
-      <li>• Expiration / Validity</li>
-    </ul>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <!-- Output Section -->
-  <div class="box output">
-    <div class="title">OUTPUT PROJECTIONS</div>
-    <ul>
-      <li>• Order Preview (Simulation)</li>
-      <li>• Revenue Preview (Forecast only)</li>
-      <li>• <i>No Assets / No Obligations</i></li>
-    </ul>
-  </div>
-</div>
-
-<br><hr>
 <h2>Billing</h2>
 	<div class="flow-chart">
   <!-- Section 1: Inputs -->
@@ -581,6 +505,81 @@
   </div>
 </div>
 
+<br><hr>
+<h2>Revenue</h2>
+<div class="flow-chart">
+  <!-- Section 1 -->
+  <div class="box">
+    <div class="title">INPUT EVENTS</div>
+    <ul>
+      <li>Quote Accepted (opt)</li>
+      <li>Order Created</li>
+      <li>Usage Event</li>
+      <li>Milestone Completed</li>
+      <li>Amendment / Cancel</li>
+    </ul>
+  </div>
 
+  <div class="arrow">▼</div>
+
+  <!-- Section 2 -->
+  <div class="box">
+    <div class="title">RULES & CONSTRAINTS (CONTROL)</div>
+    <ul>
+      <li>Approval Policies <span>← Throttle</span></li>
+      <li>Contract Terms <span>← Gearbox</span></li>
+      <li>Accounting Rules <span>← Safety Limits</span></li>
+      <li>Recognition Policy <span>← Governors</span></li>
+    </ul>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 3 -->
+  <div class="box highlight">
+    <div class="title">STATE TRANSITION ENGINE (ECU)</div>
+    <p>Determines if transition is allowed</p>
+    <div class="states">
+      <span>Quoted</span> • <span>Ordered</span> • <span>Entitled</span> • 
+      <span>Fulfilled</span> • <span>Billed</span> • <span>Recognized</span>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 4: Split Row -->
+  <div class="split-container">
+    <div class="column">
+      <div class="box secondary">
+        <div class="title">ENTITLEMENT</div>
+        <ul>
+          <li>Activate service</li>
+          <li>Grant access</li>
+        </ul>
+      </div>
+    </div>
+    <div class="column">
+      <div class="box secondary">
+        <div class="title">BILLING</div>
+        <ul>
+          <li>Invoice generation</li>
+          <li>Payment schedules</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <!-- Section 5 -->
+  <div class="box output">
+    <div class="title">REVENUE RECOGNITION (OUTPUT)</div>
+    <ul>
+      <li>Deferred → Earned</li>
+      <li>Time / Usage / Milestone based</li>
+      <li>Reversals handled</li>
+    </ul>
+  </div>
+</div>
 </body>
 </html>
