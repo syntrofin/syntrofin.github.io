@@ -20,7 +20,7 @@ hr {
   .order-box { background-color: #4f81bd; }
   .asset-box { background-color: #4f81bd; }
   .invoice-box { background-color: #00A36C;}
-  .revrec-box { background-color: ##222222; }
+  .revrec-box { background-color: #222222; }
   .payment-box { background-color: #c0504d; }
   /* Match colors */
   .opp-title, .quote-title, .order-title, .asset-title, .invoice-title, .revrec-title, .payment-title {font-weight: 700;}
@@ -29,7 +29,7 @@ hr {
   .order-title { color: #4f81bd; }
   .asset-title { color: #4f81bd; }
   .invoice-title { color: #00A36C;}
-  .revrec-title { color: ##222222; }
+  .revrec-title { color: #222222; }
   .payment-title { color: #c0504d; }
 
   .process-steps { display: flex; flex-wrap: wrap; gap: 5px; font-size: 14px; }
