@@ -41,6 +41,16 @@
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   overflow: hidden;
+
+	  /* Multiple thin borders create the "edge of the pages" look */
+  border-bottom: 4px solid #d2c5b1;
+  border-right: 3px solid #d2c5b1;
+  border-left: 3px solid #d2c5b1;
+  
+  /* This shadow mimics the book's cover beneath the paper */
+  box-shadow: 
+    0 10px 20px rgba(0,0,0,0.2), 
+    0 0 0 8px #5d4037; /* The '8px #5d4037' is your book cover! */
 }
 
 /* 2. Base Page Styling */
