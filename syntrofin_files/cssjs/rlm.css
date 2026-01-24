@@ -42,7 +42,7 @@ hr {
   .rlm-table-tech th { background-color: #f3f2f2; color: #514f4d; text-align: left; padding: 12px; border-bottom: 2px solid #d8dde6; text-transform: uppercase; letter-spacing: 0.05em; }
   .rlm-table-tech td { padding: 12px; border-bottom: 1px solid #d8dde6; vertical-align: top; }
   .rlm-table-tech tr:hover { background-color: #faffff; }
-  .stage-label-tech { font-weight: 700; }
+  .stage-label-tech { }
   .api-name { font-family: 'Courier New', monospace; font-weight: bold; color: #c7254e; }
   .api-group { margin-bottom: 8px; }
 
