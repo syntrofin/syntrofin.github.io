@@ -29,9 +29,44 @@
 	
 	 <!-- CSS -->
 	 <link href="./syntrofin_files/cssjs/rlm.css" rel="stylesheet">
+	  <style>
+		  .book-container {
+    display: flex; /* Makes the child elements sit side-by-side */
+    width: 80%; /* Adjust container width as needed */
+    margin: 20px auto; /* Centers the book on the screen */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 500px; /* Set a fixed height for a book effect */
+}
+
+.left-page, .right-page {
+    flex: 1; /* Each page takes up equal space */
+    padding: 20px;
+    overflow-y: auto; /* Adds scrollbar if content exceeds page height */
+    background-color: #f9f9f9;
+}
+
+.left-page {
+    border-right: 1px solid #ddd; /* A subtle border for the "spine" */
+}
+
+	  </style>
 
 </head>
 <body>
+<!-- My Story -->
+<div class="book-container">
+    <div class="left-page">
+        <!-- Content for the left page goes here -->
+        <h2>Chapter 1: Page One</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="right-page">
+        <!-- Content for the right page goes here -->
+        <h2>Chapter 1: Page Two</h2>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
 
 <!-- CRV -->
 <div class="lifecycle-container">
