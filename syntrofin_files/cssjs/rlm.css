@@ -45,8 +45,12 @@ hr {
   .stage-label-tech { }
   .api-name { font-family: 'Courier New', monospace; font-weight: bold; color: #c7254e; }
   .api-group { margin-bottom: 8px; }
-
-
+  .revrec{
+    margin-left: auto; margin-right: auto;
+  }
+  .revrec td, .revrec th {
+    padding: 10px; /* Adjust the pixel value as needed */
+  }
 .flow-chart {
   display: flex;
   flex-direction: column;
