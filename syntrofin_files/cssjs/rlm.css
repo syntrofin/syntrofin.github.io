@@ -1,3 +1,79 @@
+/* 1. The Outer Container (The Tabletop) */
+.book-container {
+  display: flex;
+  width: 85%;
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #fff;
+  /* Deep shadow for a 3D "lifted" effect */
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+
+	/* 
+  Multiple thin borders create the "edge of the pages" look 
+  border-bottom: 4px solid #d2c5b1;
+  border-right: 3px solid #d2c5b1;
+  border-left: 3px solid #d2c5b1;
+
+  This shadow mimics the book's cover beneath the paper, The '8px #5d4037' is your book cover!
+  box-shadow: 
+    0 10px 20px rgba(0,0,0,0.2), 
+    0 0 0 8px #5d4037; 
+  */
+}
+
+/* 2. Base Page Styling */
+.page {
+  flex: 1;
+  position: relative; /* Essential for page number placement */
+  padding: 60px 50px;
+  background-color: #fdfaf0; /* Aged paper color */
+  min-height: 450px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  color: #2a2316;
+}
+
+/* 3. The Spine & Realistic Curvature */
+.left-page {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  /* Shadow mimicking the page dipping into the spine */
+  box-shadow: inset -20px 0 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+.right-page {
+  box-shadow: inset 20px 0 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Page Number Positioning (Outer Corners) */
+.page-number {
+  position: absolute;
+  bottom: 25px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.left-page .page-number { left: 30px; }
+.right-page .page-number { right: 30px; }
+
+/* 5. Typography Details */
+p {
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1.5em;
+}
+
+/* Drop Cap for the Left Page */
+.left-page p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-right: 10px;
+  color: #5d4037; /* Leather/Ink color */
+}
+
 h1 {
   text-align:center;
 }
