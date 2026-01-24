@@ -32,6 +32,7 @@
   min-height: 450px;
   font-family: "Libre Baskerville", Georgia, serif;
   color: #2a2316;
+  min-width: 0; 
 }
 
 /* 3. The Spine & Realistic Curvature */
@@ -43,6 +44,12 @@
 
 .right-page {
   box-shadow: inset 20px 0 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+.page-image{
+   max-width: 100%; /* Prevents the image from being wider than its parent div */
+  height: auto;    /* Keeps the image proportional so it doesn't stretch */
+  display: block;  /* Removes extra whitespace below the image */
 }
 
 /* 4. Page Number Positioning (Outer Corners) */
