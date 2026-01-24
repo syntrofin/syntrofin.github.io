@@ -51,6 +51,10 @@ hr {
   .revrec td, .revrec th {
     padding: 10px; /* Adjust the pixel value as needed */
   }
+  .thin-z {
+    font-family: Arial, Helvetica, sans-serif; /* Specify common sans-serif fonts */
+    font-weight: 100; /* The thinnest weight available */
+  }
 .flow-chart {
   display: flex;
   flex-direction: column;
