@@ -53,7 +53,8 @@ hr {
   }
   .thin-z {
     font-family: Arial, Helvetica, sans-serif; /* Specify common sans-serif fonts */
-    font-weight: 100; /* The thinnest weight available */
+    font-weight: 250; /* The thinnest weight available */
+    font-size: 100;
   }
 .flow-chart {
   display: flex;
