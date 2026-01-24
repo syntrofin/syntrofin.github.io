@@ -30,25 +30,70 @@
 	 <!-- CSS -->
 	 <link href="./syntrofin_files/cssjs/rlm.css" rel="stylesheet">
 	  <style>
-		  .book-container {
-    display: flex; /* Makes the child elements sit side-by-side */
-    width: 80%; /* Adjust container width as needed */
-    margin: 20px auto; /* Centers the book on the screen */
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    height: 500px; /* Set a fixed height for a book effect */
+/* 1. The Outer Container (The Tabletop) */
+.book-container {
+  display: flex;
+  width: 85%;
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #fff;
+  /* Deep shadow for a 3D "lifted" effect */
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.left-page, .right-page {
-    flex: 1; /* Each page takes up equal space */
-    padding: 20px;
-    overflow-y: auto; /* Adds scrollbar if content exceeds page height */
-    background-color: #f9f9f9;
+/* 2. Base Page Styling */
+.page {
+  flex: 1;
+  position: relative; /* Essential for page number placement */
+  padding: 60px 50px;
+  background-color: #fdfaf0; /* Aged paper color */
+  min-height: 450px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  color: #2a2316;
 }
 
+/* 3. The Spine & Realistic Curvature */
 .left-page {
-    border-right: 1px solid #ddd; /* A subtle border for the "spine" */
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  /* Shadow mimicking the page dipping into the spine */
+  box-shadow: inset -20px 0 30px -15px rgba(0, 0, 0, 0.15);
 }
+
+.right-page {
+  box-shadow: inset 20px 0 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+/* 4. Page Number Positioning (Outer Corners) */
+.page-number {
+  position: absolute;
+  bottom: 25px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.left-page .page-number { left: 30px; }
+.right-page .page-number { right: 30px; }
+
+/* 5. Typography Details */
+p {
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1.5em;
+}
+
+/* Drop Cap for the Left Page */
+.left-page p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-right: 10px;
+  color: #5d4037; /* Leather/Ink color */
+}
+
 
 	  </style>
 
@@ -56,17 +101,23 @@
 <body>
 <!-- My Story -->
 <div class="book-container">
-    <div class="left-page">
-        <!-- Content for the left page goes here -->
-        <h2>Chapter 1: Page One</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <!-- Left Page -->
+  <div class="page left-page">
+    <div class="page-content">
+      <p>Once upon a time in a digital world, designers sought to mimic the tactile feel of paper...</p>
     </div>
-    <div class="right-page">
-        <!-- Content for the right page goes here -->
-        <h2>Chapter 1: Page Two</h2>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <span class="page-number">1</span>
+  </div>
+
+  <!-- Right Page -->
+  <div class="page right-page">
+    <div class="page-content">
+      <p>They used gradients for curvature and shadows for depth, bringing the soul of a physical book to the screen.</p>
     </div>
+    <span class="page-number">2</span>
+  </div>
 </div>
+
 
 <!-- CRV -->
 <div class="lifecycle-container">
