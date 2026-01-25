@@ -1,10 +1,19 @@
-	.normal-page {
+th, td {
+  padding: 15px;
+}
+.normal-page {
 	  /* The long, narrow shape of a palm leaf */
 	  max-width: 800px;
 	  min-height: 150px;
 	  margin: 40px auto;
 	  padding: 30px 60px;
 	  background: white; 
+
+	  font-family: 'Courier New', Courier, serif;
+  	color: #2b1d0e;
+  	line-height: 1.8;
+  	text-align: justify;
+  	position: relative;
 	}
 		 .palm-leaf {
   /* The long, narrow shape of a palm leaf */
