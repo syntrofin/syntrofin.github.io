@@ -29,11 +29,60 @@
 	
 	 <!-- CSS -->
 	 <link href="./syntrofin_files/cssjs/rlm.css" rel="stylesheet">
+	 <style>
+
+		 .palm-leaf {
+  /* The long, narrow shape of a palm leaf */
+  max-width: 800px;
+  min-height: 150px;
+  margin: 40px auto;
+  padding: 30px 60px;
+  
+  /* Weathered yellowish-brown color */
+  background: #d4b483; 
+  background-image: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.05) 0%, 
+    transparent 10%, 
+    transparent 90%, 
+    rgba(0,0,0,0.05) 100%
+  );
+  
+  /* Texture and subtle leaf fibers */
+  border: 1px solid #b58d53;
+  border-radius: 5px / 50px; /* Slight horizontal curvature */
+  box-shadow: 
+    3px 3px 10px rgba(0,0,0,0.3),
+    0 0 40px rgba(139, 69, 19, 0.2) inset;
+    
+  /* Typography: Serif or Monospace feels more like 'etched' script */
+  font-family: 'Courier New', Courier, serif;
+  color: #2b1d0e;
+  line-height: 1.8;
+  text-align: justify;
+  position: relative;
+}
+
+/* Simulated punch hole for the binding string */
+.palm-leaf::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  width: 12px;
+  height: 12px;
+  background: #2b1d0e;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+	 </style>
 </head>
 <body>
 <br/>
 <div class="book-container">
-<p>What is Hinduism</p>
+<div class="palm-leaf"> <p>What is Hinduism</p></div>
 <p></p>
 <p><a href="#_Toc220247009">One Take Away</a></p>
 <p><a href="#_Toc220247010">Meditation Core</a></p>
