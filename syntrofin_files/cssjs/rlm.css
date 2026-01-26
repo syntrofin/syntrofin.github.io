@@ -1,6 +1,11 @@
 .maincontent {
   display: none;
 }
+.login {
+  width: 300px; /* A defined width is required */
+  margin: 0 auto; /* Centers the block horizontally */
+}
+
 /* 1. The Outer Container (The Tabletop) */
 .book-container {
   display: flex;
