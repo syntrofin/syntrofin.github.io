@@ -28,7 +28,63 @@
 	<script async="" src="./syntrofin_files/cssjs/analytics.js"></script>
 	
 	 <!-- CSS -->
-	 <link href="./syntrofin_files/cssjs/sf-slow.css" rel="stylesheet">
+
+	<style>
+        body {
+            /* 2. Leave space in the page left and right */
+            padding: 0 20px;
+            font-family: sans-serif;
+            background-color: #f4f4f4; /* Added for contrast */
+        }
+
+        table {
+            /* 3. Reduce font size a bit */
+            font-size: 0.9em;
+            width: 100%;
+            border-collapse: collapse; /* This merges borders */
+            margin-top: 20px; /* Added some top margin */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Added subtle shadow */
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Added subtle border */
+        }
+
+        thead tr {
+            background-color: #009879; /* Header color */
+            color: #ffffff;
+            text-align: left;
+        }
+
+        /* 1. Give alternate *rows* different background color (standard styling) */
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3; /* Light gray for even rows */
+        }
+
+        tbody tr:nth-of-type(odd) {
+            background-color: #ffffff; /* White for odd rows */
+        }
+
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #009879; /* Stronger bottom border */
+        }
+
+        /* 4. Gaps between columns: border-collapse: separate combined with border-spacing would create gaps, 
+           but usually you want borders to touch in a single table structure. 
+           The padding above provides visual separation within cells. 
+           If you truly want physical gaps, use the below code instead of border-collapse: collapse: */
+        /*
+        table {
+            border-collapse: separate;
+            border-spacing: 0 10px; 
+        }
+        tbody tr {
+            margin-bottom: 10px;
+        }
+        */
+    </style>
 
 </head>
 <body>
