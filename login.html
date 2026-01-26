@@ -1,64 +1,65 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Syntrofin Demo Login</title>
-  <link rel="stylesheet" href="./syntrofin_files/cssjs/login.css">
-</head>
-<body>
-  <h1>Login Demo (Soft Check)</h1>
-  <p>This demo does not check GitHub — it only simulates login.</p>
-  <button id="login-btn">Login</button>
-
-  <script src="./syntrofin_files/cssjs/login.js"></script>
-  <script>
-      document.getElementById('login-btn').addEventListener('click', () => {
-          softLogin(); 
-      });
-  </script>
-</body>
-</html>
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Login Page</title>
+    <title>Syntrofin Demo Login</title>
+    <!-- Use relative paths for Vercel deployment efficiency -->
+    <link rel="stylesheet" href="./syntrofin_files/cssjs/login.css">
 </head>
 <body>
-    <h1>Test Login Page</h1>
+    <h1>Syntrofin Login (Soft Check)</h1>
 
-    <input id="user" placeholder="User ID">
-    <input id="pass" type="password" placeholder="Password">
-    <button onclick="login()">Login</button>
+    <div class="login-container">
+        <input id="user" placeholder="User ID" autocomplete="username">
+        <input id="pass" type="password" placeholder="Password" autocomplete="current-password">
+        <button id="login-btn">Login</button>
+    </div>
 
     <script>
+      // 2026 Best Practice: Use async/await with robust error handling
       async function login() {
         const user = document.getElementById('user').value;
         const pass = document.getElementById('pass').value;
 
-        // Call your live Vercel API endpoint
-        const response = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: user, password: pass })
-        });
+        // Visual feedback
+        const btn = document.getElementById('login-btn');
+        btn.disabled = true;
+        btn.innerText = "Checking...";
 
-        const result = await response.json();
+        try {
+          // CALLING THE VERCEL API:
+          // Use a relative path so it works in both Development and Production
+          const response = await fetch('/api/auth', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: user, password: pass })
+          });
 
-        if (result.auth === "yes") {
-          console.log("Success! Welcome.");
-          alert("Success! Welcome.");
-          // You are now authenticated! Proceed to hidden content.
-        } else {
-          console.log("Access Denied.");
-          alert("Access Denied.");
+          if (!response.ok) throw new Error('Network response was not ok');
+
+          const result = await response.json();
+
+          // Check for the "yes" flag from your Vercel Function
+          if (result.auth === "yes") {
+            console.log("Success! Welcome.");
+            alert("Success! Welcome.");
+            // Example: window.location.href = "/dashboard";
+          } else {
+            console.warn("Access Denied.");
+            alert("Access Denied: Invalid Credentials.");
+          }
+        } catch (error) {
+          console.error("API Call Failed:", error);
+          alert("Connection Error. Please try again later.");
+        } finally {
+          btn.disabled = false;
+          btn.innerText = "Login";
         }
       }
+
+      // Modern event listener separation
+      document.getElementById('login-btn').addEventListener('click', login);
     </script>
 </body>
 </html>
-
