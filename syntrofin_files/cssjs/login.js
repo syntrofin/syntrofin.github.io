@@ -29,7 +29,7 @@ function refreshLoginTime() {
 }
 
 // Soft login function
-function softLogin(username = 'abcd') {
+function softLogin(username = 'syntrofin') {
     const now = Date.now();
     localStorage.setItem('github_logged_in', JSON.stringify({ status: 'yes', timestamp: now }));
     localStorage.setItem('github_user', JSON.stringify({ login: username }));
