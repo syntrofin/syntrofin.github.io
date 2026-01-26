@@ -1,10 +1,39 @@
 .maincontent {
   display: none;
 }
+/* 1. Center the container block itself on the page (horizontal center) */
 .login {
-  width: 300px; /* A defined width is required */
-  margin: 0 auto; /* Centers the block horizontally */
+    width: 300px; /* Define a width */
+    margin: 0 auto; /* Centers the block horizontally */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a nice depth effect */
+    text-align: center; /* Centers the H1 text */
 }
+
+/* 2. Style the inputs within the container */
+.login input {
+    display: block; /* Makes each input take its own line */
+    width: 100%; /* Makes inputs stretch to container width */
+    padding: 10px;
+    margin-bottom: 10px; /* Adds space between inputs */
+    box-sizing: border-box; /* Ensures padding is included in the width calculation */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* 3. Style the button within the container */
+.login button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 
 /* 1. The Outer Container (The Tabletop) */
 .book-container {
