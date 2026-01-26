@@ -23,6 +23,21 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="./syntrofin_files/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./syntrofin_files/favicon/favicon-16x16.png">
 
+	<!-- Inside the <head> section of page1.html (or the page in the image) -->
+	<script>
+    function checkAuthCookie() {
+        // This checks if the specific authentication cookie is present
+        if (!document.cookie.includes('isAuthenticated=true')) {
+            // If the cookie is missing, immediately redirect to login.html
+            // Make sure the redirect_to parameter is correct for this specific page!
+            window.location.href = 'login.html?redirect_to=/storybook.html';
+        }
+    }
+    // Run the check as soon as the script loads
+    checkAuthCookie();
+	</script>
+
+
     <!-- JavaScript -->
     <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
 	<script async="" src="./syntrofin_files/cssjs/analytics.js"></script>
