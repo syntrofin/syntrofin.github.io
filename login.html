@@ -3,35 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Syntrofin Demo Login</title>
-  <style>
-    body { font-family: Arial; text-align: center; padding: 50px; }
-    button { padding: 10px 20px; font-size: 18px; cursor: pointer; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <h1>Login Demo (Soft Check)</h1>
-  <p>This demo does not verify GitHub — it just stores a temporary login flag for demo purposes.</p>
+  <p>This demo does not check GitHub — it only simulates login.</p>
   <button id="login-btn">Login</button>
 
+  <script src="/js/main.js"></script>
   <script>
-    const loginBtn = document.getElementById('login-btn');
-
-    loginBtn.addEventListener('click', () => {
-      const now = Date.now();
-      const loginData = {
-        status: 'yes',
-        timestamp: now
-      };
-      localStorage.setItem('github_logged_in', JSON.stringify(loginData));
-
-      // Optional: store demo username
-      localStorage.setItem('github_user', JSON.stringify({ login: 'abcd' }));
-
-      // Redirect back to the page user originally wanted
-      const redirectAfterLogin = localStorage.getItem('post_login_redirect') || '/';
-      localStorage.removeItem('post_login_redirect');
-      window.location.href = redirectAfterLogin;
-    });
+      document.getElementById('login-btn').addEventListener('click', () => {
+          softLogin(); // default demo username 'abcd'
+      });
   </script>
 </body>
 </html>
