@@ -68,112 +68,63 @@ body{
 	ul {
   padding-left: 80px;     /* More indent to show hierarchy */
 }
-/*
-	<p class="strategy">Industries and Challenges</p>
+.toc {
+  position: sticky;
+  top: 20px;
+  max-width: 250px;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-left: 3px solid #007bff;
+  font-family: sans-serif;
+}
 
-<p class="strategy">Sales Strategies</p>
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-<p class="strategy">Sales &nbsp;Product types</p>
+.toc li {
+  margin-bottom: 0.8rem;
+}
 
-<p class="strategy">Salesforce RLM &nbsp;Products from technical configuration point of view</p>
+.toc a {
+  text-decoration: none;
+  color: #495057;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
 
-<p class="strategy">Sales Strategies</p>
+.toc a:hover {
+  color: #007bff;
+}
 
-<p class="strategy">Price book Configurations</p>
-
-<p class="strategy">Discount strategies</p>
-
-<p class="strategy">Discount configurations in Salesforce RLM</p>
-
-<p class="strategy">Order strategies</p>
-
-<p class="strategy">Order, Salesforce Revenue cloud advanced technical configurations</p>
-
-<p class="strategy">Contract strategies</p>
-
-<p class="strategy">Asset strategies</p>
-
-<p class="strategy">Asset , different revenue cloud advanced configurations</p>
-
-<p class="strategy">Invoice/billing strategies</p>
-
-<p class="strategy">Revenue recognition strategies</p>
-
-<p class="strategy">Different success criteria</p>
-
-<p class="strategy">Project strategies</p>
-
-<p class="strategy">Kick start the project as a principal architect</p>
-
-<p class="strategy">Architectural governance strategies</p>
-
-<p class="strategy">Project ending strategies</p>
-
-—————————————
-
-<!-- Industry (Building) -->
-<p class="strategy" id="industry">&#127981;&nbsp;Industries and Challenges</p>
-
-<!-- Sales (Target/Bullseye) -->
-<p class="strategy">&#127919;&nbsp;Sales Strategies</p>
-
-<!-- Products (Package/Box) -->
-<p class="strategy">&#128230;&nbsp;Sales &nbsp;Product types</p>
-
-<!-- Technical Config (Gears) -->
-<p class="strategy">&#9881;&nbsp;Salesforce RLM &nbsp;Products from technical configuration point of view</p>
-
-<!-- Sales Strategies (Chart Up) -->
-<p class="strategy">&#128200;&nbsp;Sales Strategies</p>
-
-<!-- Price Books (Tag) -->
-<p class="strategy">&#127911;&nbsp;Price book Configurations</p>
-
-<!-- Discounts (Percentage/Scissors) -->
-<p class="strategy">&#9986;&nbsp;Discount strategies</p>
-
-<!-- Discount Config (Robot/Automation) -->
-<p class="strategy">&#129302;&nbsp;Discount configurations in Salesforce RLM</p>
-
-<!-- Orders (Shopping Cart) -->
-<p class="strategy">&#128722;&nbsp;Order strategies</p>
-
-<!-- Advanced Config (Brain/Circuit) -->
-<p class="strategy">&#129504;&nbsp;Order, Salesforce Revenue cloud advanced technical configurations</p>
-
-<!-- Contracts (Link/Handshake) -->
-<p class="strategy">&#128279;&nbsp;Contract strategies</p>
-
-<!-- Assets (Safe/Vault) -->
-<p class="strategy">&#127974;&nbsp;Asset strategies</p>
-
-<!-- Asset Technical (Wrench/Tools) -->
-<p class="strategy">&#128295;&nbsp;Asset , different revenue cloud advanced configurations</p>
-
-<!-- Billing (Receipt/Invoice) -->
-<p class="strategy">&#129534;&nbsp;Invoice/billing strategies</p>
-
-<!-- Revenue (Money Bag) -->
-<p class="strategy">&#128176;&nbsp;Revenue recognition strategies</p>
-
-<!-- Success (Sparkles/Star) -->
-<p class="strategy">&#10024;&nbsp;Different success criteria</p>
-
-<!-- Project Strategy (Map) -->
-<p class="strategy">&#128506;&nbsp;Project strategies</p>
-
-<!-- Principal Architect (Crown/Leader) -->
-<p class="strategy">&#128081;&nbsp;Kick start the project as a principal architect</p>
-
-<!-- Governance (Shield/Lock) -->
-<p class="strategy">&#128737;&nbsp;Architectural governance strategies</p>
-
-<!-- Project Ending (Checkered Flag) -->
-<p class="strategy">&#127937;&nbsp;Project ending strategies</p>
-	*/
 </style>
 </head>
 <body>
+
+	<nav class="toc">
+  <ul>
+    <li><a href="#industry">Industry</a></li>
+    <li><a href="#salesstr">Sales Strategy</a></li>
+    <li><a href="#prdtype">Product Type</a></li>
+    <li><a href="#prdcfg">Product Configuration</a></li>
+    <li><a href="#pricebookcfg">Pricebook Configuration</a></li>
+    <li><a href="#discstr">Discount Strategy</a></li>
+    <li><a href="#disccfg">Discount Configuration</a></li>
+    <li><a href="#orderstr">Order Strategy</a></li>
+    <li><a href="#ordercfg">Order Configuration</a></li>
+    <li><a href="#ctrstr">Contract Strategy</a></li>
+    <li><a href="#assetstr">Asset Strategy</a></li>
+    <li><a href="#assetcfg">Asset Configuration</a></li>
+    <li><a href="#billstr">Billing Strategy</a></li>
+    <li><a href="#revrecstr">Revenue Recognition Strategy</a></li>
+    <li><a href="#successctr">Success Center</a></li>
+    <li><a href="#projectstr">Project Strategy</a></li>
+    <li><a href="#kick">Kickoff</a></li>
+    <li><a href="#gov">Governance</a></li>
+  </ul>
+</nav>
 
 
 <!-- Industry (Building) --> 
@@ -921,7 +872,7 @@ body{
 
 
 <!-- Technical Config (Gears) --> 
-<p class="strategy" id="prdtech">&#9881;&nbsp;Salesforce RLM &nbsp;Products from technical configuration point of view</p>
+<p class="strategy" id="prdcfg">&#9881;&nbsp;Salesforce RLM &nbsp;Products from technical configuration point of view</p>
 
 <p class="strategy-type">Attribute-Driven Product</p>
 
@@ -1833,7 +1784,7 @@ Must post via
 
 
 <!-- Discount Config (Robot/Automation) -->
-<p class="strategy" id="disctech">&#129302;&nbsp;Discount configurations in Salesforce RLM</p>
+<p class="strategy" id="disccfg">&#129302;&nbsp;Discount configurations in Salesforce RLM</p>
 
 
 
@@ -3330,7 +3281,7 @@ Asset tracked through
 <p class="strategy-detail">&nbsp;</p>
 
 <!-- Asset Technical (Wrench/Tools) -->
-<p class="strategy" id="assettech">&#128295;&nbsp;Asset , different revenue cloud advanced configurations</p>
+<p class="strategy" id="assetcfg">&#128295;&nbsp;Asset , different revenue cloud advanced configurations</p>
 
 <p class="strategy-type">One-Time Asset</p>
 
