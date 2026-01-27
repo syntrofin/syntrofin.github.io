@@ -49,13 +49,12 @@ body{
 /* Strategy Detail: Smaller than type, but larger than standard text */
 .strategy-detail {
   font-size: 1.2rem;      /* Roughly 19px */
-  padding-left: 40px;     /* More indent to show hierarchy */
-	padding-top: 20px;    
+  padding-left: 40px;     /* More indent to show hierarchy */   
   text-align: left;       /* Explicitly left aligned */
 	color: #555555; 
 }
 	.purpose{
-		 padding-left: 30px; 
+		 padding-left: 40px; 
 	}
 	ul {
   padding-left: 80px;     /* More indent to show hierarchy */
@@ -1154,7 +1153,7 @@ Child products are
 <p class="strategy-type">Standard Price Book</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Default Salesforce price book; every product must have a standard price.
 </p>
 
@@ -1181,7 +1180,7 @@ Default Salesforce price book; every product must have a standard price.
 <p class="strategy-type">Custom Price Book</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 User-defined price book for a specific context.
 </p>
 
@@ -1212,7 +1211,7 @@ Can be
 <p class="strategy-type">Active vs Inactive Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Price books can be
 <strong>active</strong>
 (usable for quoting) or
@@ -1240,7 +1239,7 @@ Inactive price books
 <p class="strategy-type">Multi-Currency Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Price books configured per currency.
 </p>
 
@@ -1268,7 +1267,7 @@ Price books configured per currency.
 <p class="strategy-type">Tiered / Volume-Based Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Price changes based on quantity or volume purchased.
 </p>
 
@@ -1300,7 +1299,7 @@ Often implemented with
 <p class="strategy-type">Contract / Subscription Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Price book tied to
 <strong>specific contract terms or subscription models</strong>
 .
@@ -1334,7 +1333,7 @@ Tightly integrated with
 <p class="strategy-type">Partner / Channel Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Price books for specific
 <strong>partners, resellers, or channels</strong>
 .
@@ -1364,7 +1363,7 @@ Price books for specific
 <p class="strategy-type">Promotional / Discounted Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Temporary price books for campaigns or promotions.
 </p>
 
@@ -1393,7 +1392,7 @@ Temporary price books for campaigns or promotions.
 <p class="strategy-type">Advanced / Dynamic Price Books</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Programmatically populated price books, often via CPQ rules or external ERP integration.
 </p>
 
@@ -1725,7 +1724,7 @@ Must post via
 <p class="strategy-type">Quote Line Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount applied
 <strong>directly to a quote line</strong>
 (individual product).
@@ -1763,7 +1762,7 @@ Can require
 <p class="strategy-type">Quote / Opportunity Level Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount applied to
 <strong>entire quote or opportunity</strong>
 rather than individual lines.
@@ -1794,7 +1793,7 @@ rather than individual lines.
 <p class="strategy-type">Contract / Account-Level Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount
 <strong>persisted at account or contract</strong>
 for multiple quotes/orders.
@@ -1824,7 +1823,7 @@ for multiple quotes/orders.
 <p class="strategy-type">Volume / Tier-Based Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount
 <strong>automatically applied based on quantity thresholds</strong>
 .
@@ -1857,7 +1856,7 @@ Implemented via
 <p class="strategy-type">Dynamic / Rule-Based Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount
 <strong>applied automatically based on business rules</strong>
 .
@@ -1887,7 +1886,7 @@ Discount
 <p class="strategy-type">Manual / Approval-Based Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount
 <strong>entered by a sales rep and subject to approval</strong>
 .
@@ -1924,7 +1923,7 @@ RLM ensures
 <p class="strategy-type">Product Bundle / Composite Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount applied to
 <strong>bundled products</strong>
 or
@@ -1959,7 +1958,7 @@ Managed via
 <p class="strategy-type">Prepayment / Early Payment Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount applied
 <strong>at invoice or subscription start</strong>
 for advance payment.
@@ -1992,7 +1991,7 @@ Often modeled on
 <p class="strategy-type">Rebate / Post-Invoice Discount</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discount applied
 <strong>after invoice</strong>
 , as a credit or adjustment.
@@ -4289,7 +4288,7 @@ Adjust original revenue allocation
 <p class="strategy-type">Revenue Accuracy</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Revenue recognized in Salesforce RLM matches contracts, orders, and invoices.
 </p>
 
@@ -4311,7 +4310,7 @@ Revenue recognized in Salesforce RLM matches contracts, orders, and invoices.
 <p class="strategy-type">Quote-to-Cash Cycle Efficiency</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Speed and accuracy of moving from quote → order → invoice → revenue recognition.
 </p>
 
@@ -4333,7 +4332,7 @@ Speed and accuracy of moving from quote → order → invoice → revenue recogn
 <p class="strategy-type">Billing &amp; Invoicing Accuracy</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Invoices correctly generated according to pricing, discount, and contract rules.
 </p>
 
@@ -4354,7 +4353,7 @@ Invoices correctly generated according to pricing, discount, and contract rules.
 <p class="strategy-type">Subscription &amp; Asset Lifecycle Management</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Orders, subscriptions, and assets are tracked and updated accurately through their lifecycle.
 </p>
 
@@ -4376,7 +4375,7 @@ Orders, subscriptions, and assets are tracked and updated accurately through the
 <p class="strategy-type">Discount &amp; Pricing Compliance</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Discounts, pricing, and promotions applied according to rules and approvals.
 </p>
 
@@ -4398,7 +4397,7 @@ Discounts, pricing, and promotions applied according to rules and approvals.
 <p class="strategy-type">Multi-Element &amp; Bundle Revenue Accuracy</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Revenue properly allocated across bundles or composite products.
 </p>
 
@@ -4420,7 +4419,7 @@ Revenue properly allocated across bundles or composite products.
 <p class="strategy-type">Usage &amp; Consumption Tracking</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Usage-based revenue correctly captured, billed, and recognized.
 </p>
 
@@ -4442,7 +4441,7 @@ Usage-based revenue correctly captured, billed, and recognized.
 <p class="strategy-type">Operational &amp; User Adoption</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 Internal teams successfully use Revenue Cloud for intended processes.
 </p>
 
@@ -4464,7 +4463,7 @@ Internal teams successfully use Revenue Cloud for intended processes.
 <p class="strategy-type">Reporting &amp; Audit Readiness</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 System provides accurate, transparent data for audits and reporting.
 </p>
 
@@ -4486,7 +4485,7 @@ System provides accurate, transparent data for audits and reporting.
 <p class="strategy-type">Customer &amp; Partner Satisfaction</p>
 
 <p>
-<strong>Definition:</strong>
+<strong class="purpose">Definition:</strong>
 System supports smooth billing, subscriptions, and partner interactions.
 </p>
 
