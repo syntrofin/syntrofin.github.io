@@ -1,0 +1,174 @@
+
+body {
+    padding: 0 20px;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+table {
+    font-size: 0.9em;
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    border-bottom: 1px solid #ddd;
+}
+td {
+    border-bottom: none;
+}
+thead th {
+    background-color: #009879; /* Header color */
+    color: #ffffff;
+}
+
+/* --- Alternating Column Styling --- */
+
+/* Style for odd-numbered columns (1st, 3rd, 5th, etc.) */
+th:nth-child(odd), 
+td:nth-child(odd) {
+    background-color: #e0f2fe; /* Very light blue */
+}
+
+/* Style for even-numbered columns (2nd, 4th, 6th, etc.) */
+th:nth-child(even), 
+td:nth-child(even) {
+    background-color: #ffffff; /* White background */
+}
+
+/* Ensure headers still look distinct */
+thead th:nth-child(odd),
+thead th:nth-child(even) {
+     background-color: #009879;
+     color: white;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Strategy Type: The second level */
+.strategy-type {
+font-size: 1.5rem;      /* Roughly 24px */
+padding-left: 20px;     /* Indent from the left edge */
+padding-top: 40px;  
+text-align: left;       /* Explicitly left aligned */
+margin-bottom: 5px;     /* Small gap before the detail */
+color: #003366; 
+text-decoration: underline;
+}
+
+/* Strategy Detail: the third level */
+.strategy-detail {
+font-size: 1.2rem;      /* Roughly 19px */
+padding-left: 40px;     /* More indent to show hierarchy */   
+text-align: left;       /* Explicitly left aligned */
+color: #555555; 
+}
+/* Strategy : The largest level */
+.strategy {
+font-size: 1.8rem;      /* Roughly 24px */
+padding-left: 10px;     /* Indent from the left edge */
+padding-top: 40px;  
+text-align: left;       /* Explicitly left aligned */
+margin-bottom: 5px;     /* Small gap before the detail */
+text-decoration: none;
+margin-top: 4rem; 
+scroll-margin-top: 60px; 
+font-weight: bold;
+}
+.purpose{
+padding-left: 40px; 
+}
+ul {
+padding-left: 80px;     /* More indent to show hierarchy */
+}
+/* 1. Global smooth scrolling behavior */
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 60px; /* Offset for anchors */
+}
+
+/* 2. Main layout container (The Two Columns) */
+.main-layout-container {
+display: flex; 
+width: 100%;
+}
+
+/* 3. The Navigation (Left Column, Always Visible/Floating) */
+.toc {
+width: 250px; 
+min-width: 250px;
+position: sticky; /* Keeps it in the visible area as you scroll */
+top: 0; /* Sticks to the top edge of the viewport */
+height: 100vh; /* Optional: Makes the nav take full screen height */
+overflow-y: auto; /* Optional: Adds scrollbar to nav if items overflow */
+
+/* Styling from before */
+padding: 1.5rem;
+background-color: #fcfcfc;
+border-right: 1px solid #e1e4e8; /* Changed border to the right side */
+}
+
+/* 4. The Main Content Area (Right Column) */
+.main-content-area {
+flex-grow: 1; /* Takes all remaining space */
+padding: 20px; /* Add internal padding */
+}
+
+
+.toc ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.toc li {
+margin-bottom: 0.8rem;
+}
+
+.toc a {
+text-decoration: none;
+color: #495057;
+font-size: 0.95rem;
+transition: color 0.2s;
+}
+
+.toc a:hover {
+color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
