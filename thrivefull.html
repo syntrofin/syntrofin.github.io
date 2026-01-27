@@ -76,6 +76,12 @@ body{
   background: #f8f9fa;
   border-left: 3px solid #007bff;
   font-family: sans-serif;
+	  width: 250px; 
+  min-width: 250px; /* Prevents it from shrinking too much */
+  
+  /* Add styling from previous suggestions (sticky position, padding, colors, etc.) */
+  position: sticky; 
+  top: 0;
 }
 
 .toc ul {
@@ -99,10 +105,28 @@ body{
   color: #007bff;
 }
 
+.main-layout-container {
+  display: flex; /* Activates a side-by-side layout */
+  width: 100%;
+}
+
+.main-content-area {
+  /* The main content area will take up the rest of the available space */
+  flex-grow: 1; 
+  padding-left: 20px; /* Add some space between the nav and text */
+}
+
+/* Also remember the smooth scroll offset we discussed earlier */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Helps when jumping to anchors */
+}
+
+
 </style>
 </head>
 <body>
-
+<div class="main-layout-container">
 <nav class="toc">
   <p class="toc-title">Table of Contents</p>
   <ul>
@@ -130,7 +154,7 @@ body{
 </nav>
 
 
-
+<main class="main-content-area">
 <!-- Industry (Building) --> 
 <p class="strategy" id="industry">&#127981;&nbsp;Industries and Challenges</p>
 
@@ -5770,7 +5794,9 @@ team map the quote, order, subscription, and revenue recognition flows clearly, 
 and streamlining billing."
 </em>
 </p>
+</main>
 
+</div>
 
 </body>
 </html>
