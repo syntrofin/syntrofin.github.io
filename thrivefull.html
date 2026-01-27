@@ -35,7 +35,7 @@
 body{
 	padding-left: 20px;     /* Indent from the left edge */
 }
-	/* Strategy Type: The largest level */
+	/* Strategy Type: The second level */
 .strategy-type {
   font-size: 1.5rem;      /* Roughly 24px */
   padding-left: 20px;     /* Indent from the left edge */
@@ -46,12 +46,21 @@ body{
 	text-decoration: underline;
 }
 
-/* Strategy Detail: Smaller than type, but larger than standard text */
+/* Strategy Detail: the third level */
 .strategy-detail {
   font-size: 1.2rem;      /* Roughly 19px */
   padding-left: 40px;     /* More indent to show hierarchy */   
   text-align: left;       /* Explicitly left aligned */
 	color: #555555; 
+}
+		/* Strategy : The largest level */
+.strategy {
+  font-size: 1.8rem;      /* Roughly 24px */
+  padding-left: 10px;     /* Indent from the left edge */
+	padding-top: 40px;  
+  text-align: left;       /* Explicitly left aligned */
+  margin-bottom: 5px;     /* Small gap before the detail */
+	text-decoration: none;
 }
 	.purpose{
 		 padding-left: 40px; 
@@ -64,11 +73,7 @@ body{
 </head>
 <body>
 
-<br/>
-
-
-
-<h1><a>Industries and Challenges</a></h1>
+<p class="strategy>Industries and Challenges</p>
 
 <p class="strategy-type">SaaS / Software / Cloud Services</p>
 
@@ -225,7 +230,7 @@ body{
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Sales Strategies</a></h1>
+<p class="strategy>Sales Strategies</p>
 
 <p class="strategy-type">Transactional Sales</p>
 
@@ -515,9 +520,9 @@ body{
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Sales &nbsp;Product types</a></h1>
+<p class="strategy>Sales &nbsp;Product types</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">One-Time (Non-Recurring) Products</p>
 
@@ -808,9 +813,9 @@ body{
 <li>Immediate or usage-based</li>
 </ul>
 
-<p>&nbsp;</p>
 
-<h1><a>Salesforce RLM &nbsp;Products from technical configuration point of view</a></h1>
+
+<p class="strategy>Salesforce RLM &nbsp;Products from technical configuration point of view</p>
 
 <p class="strategy-type">Attribute-Driven Product</p>
 
@@ -903,9 +908,9 @@ Child products are
 <li>Revenue allocation required</li>
 </ul>
 
-<p>&nbsp;</p>
 
-<h1><a>Sales Strategies</a></h1>
+
+<p class="strategy>Sales Strategies</p>
 
 <p class="strategy-type">Transactional Sales</p>
 
@@ -1146,9 +1151,9 @@ Child products are
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Price book Configurations</a></h1>
+<p class="strategy>Price book Configurations</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Standard Price Book</p>
 
@@ -1411,11 +1416,11 @@ Programmatically populated price books, often via CPQ rules or external ERP inte
 <li>Dynamic bundles and hybrid products</li>
 </ul>
 
-<p>&nbsp;</p>
 
-<h1><a>Discount strategies</a></h1>
 
-<p>&nbsp;</p>
+<p class="strategy>Discount strategies</p>
+
+
 
 <p class="strategy-type">Line-Item Discount</p>
 
@@ -1715,11 +1720,11 @@ Must post via
 <li>Revenue recognition may be delayed</li>
 </ul>
 
-<p>&nbsp;</p>
 
-<h1><a>Discount configurations in Salesforce RLM</a></h1>
 
-<p>&nbsp;</p>
+<p class="strategy>Discount configurations in Salesforce RLM</p>
+
+
 
 <p class="strategy-type">Quote Line Discount</p>
 
@@ -2024,9 +2029,9 @@ in CPQ / RLM
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Order strategies</a></h1>
+<p class="strategy>Order strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">One-Time / Immediate Fulfillment Order</p>
 
@@ -2301,9 +2306,9 @@ in CPQ / RLM
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Order, Salesforce Revenue cloud advanced technical configurations</a></h1>
+<p class="strategy>Order, Salesforce Revenue cloud advanced technical configurations</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Standard / One-Time Order</p>
 
@@ -2653,9 +2658,9 @@ Can split between partner and company
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Contract strategies</a></h1>
+<p class="strategy>Contract strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Standard / Fixed-Term Contract</p>
 
@@ -2930,9 +2935,9 @@ Continuous contract with
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Asset strategies</a></h1>
+<p class="strategy>Asset strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">One-Time Asset</p>
 
@@ -3209,7 +3214,7 @@ Asset tracked through
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Asset , different revenue cloud advanced configurations</a></h1>
+<p class="strategy>Asset , different revenue cloud advanced configurations</p>
 
 <p class="strategy-type">One-Time Asset</p>
 
@@ -3507,9 +3512,9 @@ Can generate recurring or milestone-based charges
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Invoice/billing strategies</a></h1>
+<p class="strategy>Invoice/billing strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">One-Time / Immediate Billing</p>
 
@@ -3886,9 +3891,9 @@ Adjusted to reflect net impact
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Revenue recognition strategies</a></h1>
+<p class="strategy>Revenue recognition strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Immediate / Upfront Revenue Recognition</p>
 
@@ -4279,11 +4284,11 @@ Adjust original revenue allocation
 </li>
 </ul>
 
-<p>&nbsp;</p>
 
-<h1><a>Different success criteria</a></h1>
 
-<p>&nbsp;</p>
+<p class="strategy>Different success criteria</p>
+
+
 
 <p class="strategy-type">Revenue Accuracy</p>
 
@@ -4506,9 +4511,9 @@ System supports smooth billing, subscriptions, and partner interactions.
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Project strategies</a></h1>
+<p class="strategy>Project strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Greenfield Implementation</p>
 
@@ -4763,9 +4768,9 @@ Start by implementing
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Kick start the project as a principal architect</a></h1>
+<p class="strategy>Kick start the project as a principal architect</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Greenfield Strategic Kickoff</p>
 
@@ -5056,11 +5061,11 @@ Dynamic bundles, usage-based billing, and amendments must be architected for sca
 </li>
 </ol>
 
-<p>&nbsp;</p>
 
-<h1><a>Architectural governance strategies</a></h1>
 
-<p>&nbsp;</p>
+<p class="strategy>Architectural governance strategies</p>
+
+
 
 <p class="strategy-type">Standards-Based Governance</p>
 
@@ -5367,9 +5372,9 @@ Form
 
 <p class="strategy-detail">&nbsp;</p>
 
-<h1><a>Project ending strategies</a></h1>
+<p class="strategy>Project ending strategies</p>
 
-<p>&nbsp;</p>
+
 
 <p class="strategy-type">Big Bang / Full Cutover</p>
 
@@ -5687,6 +5692,6 @@ and streamlining billing."
 </em>
 </p>
 
-<p>&nbsp;</p>
+
 </body>
 </html>
