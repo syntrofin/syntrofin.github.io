@@ -51,8 +51,11 @@ body{
   text-align: left;       /* Explicitly left aligned */
 	color: #555555; 
 }
+	.purpose{
+		 padding-left: 40px; 
+	}
 	ul {
-  padding-left: 60px;     /* More indent to show hierarchy */
+  padding-left: 80px;     /* More indent to show hierarchy */
 }
 
 </style>
@@ -2303,7 +2306,7 @@ in CPQ / RLM
 <p class="strategy-type">Standard / One-Time Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Single delivery, one-time invoice.
 </p>
 
@@ -2343,7 +2346,7 @@ Recognized at invoice delivery
 <p class="strategy-type">Recurring / Subscription Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Represents subscription-based products billed periodically.
 </p>
 
@@ -2384,7 +2387,7 @@ Spread over subscription term
 <p class="strategy-type">Amendment / Change Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Modify an existing subscription mid-term.
 </p>
 
@@ -2430,7 +2433,7 @@ System tracks
 <p class="strategy-type">Renewal Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Extend subscription beyond term.
 </p>
 
@@ -2470,7 +2473,7 @@ Continues seamlessly
 <p class="strategy-type">Evergreen / Continuous Billing Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Subscription with no fixed end date; cancellation triggers termination.
 </p>
 
@@ -2505,7 +2508,7 @@ Continuous recognition per billing period
 <p class="strategy-type">Dynamic Bundle Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Supports rule-driven product bundles.
 </p>
 
@@ -2540,7 +2543,7 @@ Can be mixed (some one-time, some recurring)
 <p class="strategy-type">Usage / Consumption-Based Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Billing based on actual usage.
 </p>
 
@@ -2578,7 +2581,7 @@ Supports
 <p class="strategy-type">Milestone / Project-Based Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Revenue recognized upon milestone completion.
 </p>
 
@@ -2614,7 +2617,7 @@ Optional if milestone spans subscription period
 <p class="strategy-type">Channel / Partner Order</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Orders originating from partners/resellers.
 </p>
 
@@ -3209,7 +3212,7 @@ Asset tracked through
 <p class="strategy-type">One-Time Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Represents a delivered product with
 <strong>one-time fulfillment and revenue</strong>
 .
@@ -3251,7 +3254,7 @@ Full revenue recognized at delivery
 <p class="strategy-type">Recurring / Subscription-Linked Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Asset exists
 <strong>for the duration of a subscription</strong>
 .
@@ -3289,7 +3292,7 @@ Recurring charge type
 <p class="strategy-type">Usage-Based / Consumption Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Asset consumed over time or by usage.
 </p>
 
@@ -3325,7 +3328,7 @@ Aligned with usage period
 <p class="strategy-type">Amendable / Upgradeable Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Supports
 <strong>mid-life modifications</strong>
 (quantity, tier, or feature).
@@ -3359,7 +3362,7 @@ Adjusted for added or removed components
 <p class="strategy-type">Dynamic / Bundled Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Asset composed of
 <strong>multiple child products</strong>
 , some added dynamically.
@@ -3397,7 +3400,7 @@ May mix one-time and recurring charges
 <p class="strategy-type">Evergreen / Continuous Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Asset exists
 <strong>indefinitely until terminated</strong>
 .
@@ -3431,7 +3434,7 @@ Continuous per billing period
 <p class="strategy-type">Entitlement / License Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Represents
 <strong>access rights rather than physical delivery</strong>
 .
@@ -3465,7 +3468,7 @@ Based on contract/subscription duration
 <p class="strategy-type">Lifecycle / Maintenance Asset</p>
 
 <p>
-<strong>Purpose:</strong>
+<strong class="purpose">Purpose:</strong>
 Asset tracked through
 <strong>multiple lifecycle events</strong>
 (maintenance, service, upgrade).
