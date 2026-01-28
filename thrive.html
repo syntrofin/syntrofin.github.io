@@ -77,6 +77,19 @@
 	.stock tbody tr:last-of-type {
 	    border-bottom: 2px solid #009879;
 	}
+	  .revrec {
+    border-collapse: collapse; /* Collapse borders to single line */
+    width: 100%;
+  }
+  .revrec th, .revrec td {
+    border: 1px solid red; /* Set all borders to 1px solid red */
+    padding: 8px; /* Add some padding for readability */
+    text-align: left; /* Align text to the left */
+    vertical-align: top; /* Align text to top of cell */
+  }
+  .revrec th {
+    font-weight: bold; /* Ensure header cells are bold */
+  }
 	</style>
 </head>
 	
@@ -422,7 +435,7 @@
   </tbody>
 </table>
 
-<table class="stock">
+<table class="revrec">
   <thead>
     <tr>
       <th rowspan="2">Treatment Field</th>
