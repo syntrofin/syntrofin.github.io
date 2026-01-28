@@ -39,9 +39,11 @@
         <input id="pass" type="password" placeholder="Password" autocomplete="current-password">
         <button id="login-btn">Login</button>
     </div>
+	<div id="test-msg" style="color: red; margin-top: 10px;"></div>
 </div>
+
 <div class="maincontent">
-	
+
 <!-- I'm a Storyteller -->
 <div "style="display: flex; justify-content: center; align-items: center; height: 100vh;">
   <!-- Added display: flex and justify-content for horizontal centering -->
@@ -356,6 +358,12 @@
   function showContent() {
     const loginBox = document.querySelector('.login');
     const mainContent = document.querySelector('.maincontent');
+	const testMsg = document.getElementById('test-msg');
+
+loginBtn.addEventListener('click', () => {
+  // This will show immediately when you click for testing
+  testMsg.textContent = "Login button was clicked!";
+});
     
     if (loginBox) loginBox.style.display = 'none';
     if (mainContent) mainContent.style.display = 'block';
@@ -369,9 +377,10 @@
         method: 'GET',
         credentials: 'include' 
       });
-		
+		const checkString = await check.text(); 
 		console.log("pass check response is below:");
-		console.log(check);
+		console.log(checkString);
+		testMsg.textContent = checkString;
 		
       if (check.ok) {
 		  console.log("pass succeeded");
