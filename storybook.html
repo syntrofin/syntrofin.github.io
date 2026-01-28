@@ -369,19 +369,22 @@
         method: 'GET',
         credentials: 'include' 
       });
-
+		
+		console.log("pass check response is below:");
+		console.log(check);
+		
       if (check.ok) {
 		  console.log("pass succeeded");
         showContent();
       } else {
 		  console.log("pass failed");
         if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
-           window.location.href = "https://www.syntrofin.com"; 
+           /* window.location.href = "https://www.syntrofin.com"; */
         }
       }
     } catch (err) {
 		console.log("pass errored");
-      console.error("Auth check failed:", err);
+        console.error("Auth check failed:", err);
     }
   };
 
