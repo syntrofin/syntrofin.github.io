@@ -163,6 +163,59 @@
 
 <p>By engineering it this way, Salesforce allows you to build a system that is as Smart as SAP (complex rules) but as Scalable as Netflix (stateless web components).</p>
 
+
+
+<hr class="section-divider">
+
+<p class="text-h1">Omni Classes Can be Extended</p>
+<p>To extend OmniStudio, you don't "edit" their code; you inherit their engine. When you create a custom LWC to sit inside an OmniScript, you extend the <code>OmniscriptBaseMixin</code>. This gives your custom component "magical" access to the 900-line JSON data bus.</p>
+
+<p>Here is the architectural pattern for extending the "Engine":</p>
+
+<p class="text-h2">The JavaScript: Connecting to the "Brain"</p>
+<p>By using the <code>OmniscriptBaseMixin</code>, your custom LWC automatically listens to the master JSON tree.</p>
+<div class="code-block">
+<pre>
+import { LightningElement } from 'lwc';
+import { OmniscriptBaseMixin } from 'omnistudio/omniscriptBaseMixin';
+
+export default class CustomQuoteLine extends OmniscriptBaseMixin(LightningElement) {
+ // This allows you to read from and write to the 900-line JSON
+ handleUpdate() {
+  const myData = { "LinePrice": 100.00 };
+  // This "pumps" data back into the OmniScript JSON DataTree
+  this.omniUpdateDataJson(myData); 
+  // This tells the OmniScript engine to re-run any formulas or BRE logic that depend on this value
+  this.omniApplyCallResp(myData);
+ }
+}
+</pre>
+</div>
+
+<p class="text-h2">The HTML: Staying "Light"</p>
+<p>Your custom LWC only needs to render the specific UI you want. The OmniStudio Engine handles the "stepping" (Next/Previous buttons) and the global save logic.</p>
+<div class="code-block">
+<pre>
+<template>
+ <div class="custom-row">
+  <!-- Accessing data directly from the JSON bus -->
+  <p>Current Price: {omniJsonData.LinePrice}</p>
+  <button onclick={handleUpdate}>Apply Discount</button>
+ </div>
+</template>
+</pre>
+</div>
+
+<h3>Why this is Architecurally Significant:</h3>
+<ul>
+  <li>Zero-Event Logic: In standard LWC, you would have to fire a CustomEvent, bubble it up to a parent, and handle it. In OmniStudio, <code>omniUpdateDataJson</code> updates the Central State (the JSON Tree) directly.</li>
+  <li>The "Stateless" Handshake: Even though your component is custom, it remains stateless. If the user refreshes the page, the OmniScript engine re-inflates your component using the latest JSON snapshot.</li>
+  <li>Bulk-Aware: Because you are tied to the <code>omniJsonData</code> proxy, your component can "see" all 900 lines if needed, allowing you to build custom aggregations or validations right in the browser.</li>
+</ul>
+
+<h3>The "Engine" Advantage</h3>
+<p>This is how Salesforce handles the "Stateless, Intelligent" requirement. You can build a highly "Dumb" UI component, but as soon as you wrap it in the <code>OmniscriptBaseMixin</code>, it becomes "Intelligent" by tapping into the server-side Integration Procedures and BRE that OmniStudio orchestrates.</p>
+
 <hr class="section-divider">
 
 <p class="text-h1">Omni is Not a Bunch of Custom Made LWC Components - This is a Big Misconception!</p>
@@ -226,57 +279,5 @@
     <li><strong>Server-Side Execution:</strong> Integration Procedures (IPs) are designed to minimize round-trip latency by 30–50% by executing multiple business logic actions in a single server-side call.</li>
     <li><strong>JSON-First Data Flow:</strong> The architecture is centered around a hierarchical, nested JSON data structure that allows for complex data handling without custom Apex.</li>
 </ul>
-
-<hr class="section-divider">
-
-<p class="text-h1">Omni Classes Can be Extended</p>
-<p>To extend OmniStudio, you don't "edit" their code; you inherit their engine. When you create a custom LWC to sit inside an OmniScript, you extend the <code>OmniscriptBaseMixin</code>. This gives your custom component "magical" access to the 900-line JSON data bus.</p>
-
-<p>Here is the architectural pattern for extending the "Engine":</p>
-
-<p class="text-h2">The JavaScript: Connecting to the "Brain"</p>
-<p>By using the <code>OmniscriptBaseMixin</code>, your custom LWC automatically listens to the master JSON tree.</p>
-<div class="code-block">
-<pre>
-import { LightningElement } from 'lwc';
-import { OmniscriptBaseMixin } from 'omnistudio/omniscriptBaseMixin';
-
-export default class CustomQuoteLine extends OmniscriptBaseMixin(LightningElement) {
- // This allows you to read from and write to the 900-line JSON
- handleUpdate() {
-  const myData = { "LinePrice": 100.00 };
-  // This "pumps" data back into the OmniScript JSON DataTree
-  this.omniUpdateDataJson(myData); 
-  // This tells the OmniScript engine to re-run any formulas or BRE logic that depend on this value
-  this.omniApplyCallResp(myData);
- }
-}
-</pre>
-</div>
-
-<p class="text-h2">The HTML: Staying "Light"</p>
-<p>Your custom LWC only needs to render the specific UI you want. The OmniStudio Engine handles the "stepping" (Next/Previous buttons) and the global save logic.</p>
-<div class="code-block">
-<pre>
-<template>
- <div class="custom-row">
-  <!-- Accessing data directly from the JSON bus -->
-  <p>Current Price: {omniJsonData.LinePrice}</p>
-  <button onclick={handleUpdate}>Apply Discount</button>
- </div>
-</template>
-</pre>
-</div>
-
-<h3>Why this is Architecurally Significant:</h3>
-<ul>
-  <li>Zero-Event Logic: In standard LWC, you would have to fire a CustomEvent, bubble it up to a parent, and handle it. In OmniStudio, <code>omniUpdateDataJson</code> updates the Central State (the JSON Tree) directly.</li>
-  <li>The "Stateless" Handshake: Even though your component is custom, it remains stateless. If the user refreshes the page, the OmniScript engine re-inflates your component using the latest JSON snapshot.</li>
-  <li>Bulk-Aware: Because you are tied to the <code>omniJsonData</code> proxy, your component can "see" all 900 lines if needed, allowing you to build custom aggregations or validations right in the browser.</li>
-</ul>
-
-<h3>The "Engine" Advantage</h3>
-<p>This is how Salesforce handles the "Stateless, Intelligent" requirement. You can build a highly "Dumb" UI component, but as soon as you wrap it in the <code>OmniscriptBaseMixin</code>, it becomes "Intelligent" by tapping into the server-side Integration Procedures and BRE that OmniStudio orchestrates.</p>
-
 </body>
 </html>
