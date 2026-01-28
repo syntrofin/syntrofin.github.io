@@ -368,7 +368,6 @@
       const check = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
         method: 'GET',
         credentials: 'include' 
-		  console.log("pass response");
       });
 
       if (check.ok) {
@@ -397,7 +396,6 @@
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include', 
       body: JSON.stringify({ userId: user, password: pass })
-		console.log("manual login response");
     });
 
     if (response.ok) {
