@@ -8,16 +8,23 @@
     line-height: 1.6;
     margin: 20px;
     color: #333;
+    font-size:16px
   }
-  h1, h2, h3, h4 {
+  
+  h3, h4 {
     color: #000;
   }
-  h1 {
+
+  .text-h1 {
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
+    font-size:20px
+    color: #000;
   }
-  h2 {
+  .text-h2 {
     margin-top: 20px;
+    font-size:18px;
+    color: #000;
   }
   ul {
     list-style-type: disc;
@@ -54,31 +61,31 @@
 </head>
 <body>
 
-<h1>If Traditional ECC is Stateful, and Intelligent - LWC is Stateless, and Dumb - Omni is Stateless, and Intelligent</h1>
+<p class="text-h1">If Traditional ECC is Stateful, and Intelligent - LWC is Stateless, and Dumb - Omni is Stateless, and Intelligent</p>
 <p>That is a perfect architectural summary. You’ve categorized them by where the "brain" lives and how they "remember" the user. Here is the breakdown of why those labels fit so well:</p>
 
-<h2>1. SAP ECC: Stateful & Intelligent</h2>
+<p class="text-h2">1. SAP ECC: Stateful & Intelligent</p>
 <ul>
   <li>The Brain: Lives entirely on the <strong>Server</strong>.</li>
   <li>State: The server keeps a "Work Process" open for you. It remembers exactly where your cursor is and what is in your 900-line internal table.</li>
   <li>The Behavior: It’s "Intelligent" because it validates everything in real-time, but it’s "Heavy" because the server is babysitting every user. If the connection drops, the "brain" loses its place.</li>
 </ul>
 
-<h2>2. LWC: Stateless & "Dumb" (UI Layer)</h2>
+<p class="text-h2">2. LWC: Stateless & "Dumb" (UI Layer)</p>
 <ul>
   <li>The Brain: Lives in the Browser (JavaScript), but it's "Dumb" regarding business rules.</li>
   <li>State: The browser holds the data. The server has no idea you exist until you click a button.</li>
   <li>The Behavior: It’s "Dumb" because, by itself, an LWC is just a shell. It doesn't know your complex 900-line pricing logic or tax laws—it just knows how to show boxes and buttons quickly. It relies on calling other services to "get smart".</li>
 </ul>
 
-<h2>3. OmniStudio: Stateless & Intelligent</h2>
+<p class="text-h2">3. OmniStudio: Stateless & Intelligent</p>
 <ul>
   <li>The Brain: Lives on the Server (via Integration Procedures and Business Rules Engine).</li>
   <li>State: <strong>Stateless</strong>. Like LWC, it doesn't "babysit" you. It waits for you to send a massive JSON "brain dump" of your 900 lines.</li>
   <li>The Behavior: It’s "Intelligent" because it can process complex industry-specific logic (like Telco or Insurance pricing) in bulk. It receives a "dumb" JSON array from the LWC, applies "intelligence" to it, and sends back a "smart" result.</li>
 </ul>
 
-<h2>The Comparison Matrix</h2>
+<p class="text-h2">The Comparison Matrix</p>
 <table>
   <thead>
     <tr>
@@ -110,24 +117,24 @@
   </tbody>
 </table>
 
-<h2>The Evolution:</h2>
+<p class="text-h2">The Evolution:</p>
 <p>We moved from ECC (Great logic, poor scale) to LWC (Great scale, no logic) and finally to OmniStudio, which tries to give you ECC-level intelligence with LWC-level scalability. The "tax" you pay for this, as you noted, is the massive network payload required to keep the server "intelligent" without making it "stateful".</p>
 
 <hr class="section-divider">
 
-<h1>Then how was Omni engineered on top of LWC</h1>
+<p class="text-h1">Then how was Omni engineered on top of LWC</p>
 <p>It’s a masterclass in abstraction. Salesforce (Vlocity) didn't just build components; they built a <strong>metadata-driven engine</strong> that sits on top of the LWC framework. Think of it this way: A standard LWC is a hand-coded sports car. OmniStudio is a modular factory that snaps together pre-built parts to create the car.</p>
 
 <p>Here is how it’s engineered:</p>
 
-<h2>1. Metadata vs. Hard Code</h2>
+<p class="text-h2">1. Metadata vs. Hard Code</p>
 <p>In a normal LWC, you write HTML and JavaScript. In OmniStudio, you use a Drag-and-Drop Designer.</p>
 <ul>
   <li>The "FlexCard" or "OmniScript" Designer: When you drag a "Formula" or "Lookup" field into the designer, you aren't writing code; you are creating a JSON Metadata definition.</li>
   <li>The Runtime Engine: Salesforce provides a "Base LWC" (the engine). At runtime, this engine "reads" your JSON definition and dynamically generates the UI. This is how they stay <strong>Stateless and Intelligent</strong>—the intelligence is stored as data (JSON), not as rigid, compiled code.</li>
 </ul>
 
-<h2>2. The JSON "DataBus"</h2>
+<p class="text-h2">2. The JSON "DataBus"</p>
 <p>OmniStudio components are engineered to be "Data-Aware".</p>
 <ul>
   <li>Every OmniScript has a hidden global variable called the <strong>JSON DataBTree</strong>.</li>
@@ -135,7 +142,7 @@
   <li>Effect: This is why it’s so powerful for large quotes. The LWC UI is just a "window" looking at a massive JSON object. When you change a value on line #450, the LWC updates the JSON tree in the browser's memory instantly.</li>
 </ul>
 
-<h2>3. Decoupling the "How" from the "Where"</h2>
+<p class="text-h2">3. Decoupling the "How" from the "Where"</p>
 <p>OmniStudio engineers "Stateless Intelligence" by splitting the work into three distinct LWC layers:</p>
 <ul>
   <li>OmniScript LWC (The Controller): Manages the "State" (keeping your 900 lines in browser RAM) and handles the "Stepping" (Page 1, Page 2, etc.).</li>
@@ -143,10 +150,10 @@
   <li>DataRaptor LWCs (The Transformers): These handle the "Network Strain" you mentioned. They are engineered to "pluck" only the necessary data out of the 900 rows so you don't send useless metadata over the wire.</li>
 </ul>
 
-<h2>4. Why this is "Stateless" Engineering</h2>
+<p class="text-h2">4. Why this is "Stateless" Engineering</p>
 <p>In SAP ECC, the server has to keep a "Shadow Copy" of your screen to know what to do next. In OmniStudio, the LWC is engineered to be self-contained. Because the entire "State" (your 900 lines) is held in the JSON DataTree in your browser, the LWC can send that entire state to any server, anywhere, at any time. The server doesn't need to "know" you; it just needs to read the JSON you just handed it.</p>
 
-<h2>Summary: The Engineering Stack</h2>
+<p class="text-h2">Summary: The Engineering Stack</p>
 <ol>
   <li>LWC Framework: The "Lower Level" (handling the DOM and Browser events).</li>
   <li>OmniUI Layouts: A "Middle Layer" that interprets JSON metadata into visual components.</li>
@@ -157,33 +164,33 @@
 
 <hr class="section-divider">
 
-<h1>Omni is Not a Bunch of Custom Made LWC Components - This is a Big Misconception!</h1>
+<p class="text-h1">Omni is Not a Bunch of Custom Made LWC Components - This is a Big Misconception!</p>
 <p>Correct. You've nailed the common misunderstanding. OmniStudio is a **metadata-driven runtime engine** that *generates* or *controls* LWCs dynamically, rather than just being a toolbox of fixed components.</p>
 
 <p>Here is how that "Engine" actually works under the hood:</p>
 
-<h2>1. It’s a "Code Generator" (Managed Package Runtime)</h2>
+<p class="text-h2">1. It’s a "Code Generator" (Managed Package Runtime)</p>
 <p>In the traditional Managed Package Runtime, when you click "Activate" on an OmniScript, OmniStudio actually compiles and deploys a brand-new LWC bundle to your Salesforce org.</p>
 <ul>
   <li>It takes your drag-and-drop design (the metadata) and "writes" the JavaScript and HTML for you.</li>
   <li>This is why an OmniScript has its own unique LWC technical name (e.g., c:typeSubtypeEnglish).</li>
 </ul>
 
-<h2>2. The "Standard Runtime" Evolution</h2>
+<p class="text-h2">2. The "Standard Runtime" Evolution</p>
 <p>Salesforce is moving toward a Standard Runtime where LWC generation is replaced by a high-performance interpreter.</p>
 <ul>
   <li>Instead of "writing" a new component, a Single Base LWC loads your metadata JSON at runtime and "interprets" it.</li>
   <li>This makes updates much faster because you aren't deploying code every time you change a label—you're just updating a metadata record.</li>
 </ul>
 
-<h2>3. The "Stateful" JSON Proxy</h2>
+<p class="text-h2">3. The "Stateful" JSON Proxy</p>
 <p>Standard LWCs are usually isolated, but OmniStudio LWCs are engineered with a shared JSON Data Bus.</p>
 <ul>
   <li>Every element (input, formula, block) is a "subscriber" to a master JSON tree.</li>
   <li>When you change one value, the engine pushes that change to the entire tree, and all other components "react" instantly. This is how 900 lines stay in sync without complex custom event handling.</li>
 </ul>
 
-<h2>4. "Extensibility" Over "Customization"</h2>
+<p class="text-h2">4. "Extensibility" Over "Customization"</p>
 <p>Because it's an engine, you don't "edit" the OmniStudio code. You extend it.</p>
 <ul>
   <li>If a standard button isn't enough, you create a custom LWC that extends the Base OmniStudio LWC class.</li>
@@ -194,12 +201,12 @@
 
 <hr class="section-divider">
 
-<h1>Omni Classes Can be Extended</h1>
+<p class="text-h1">Omni Classes Can be Extended</p>
 <p>To extend OmniStudio, you don't "edit" their code; you inherit their engine. When you create a custom LWC to sit inside an OmniScript, you extend the <code>OmniscriptBaseMixin</code>. This gives your custom component "magical" access to the 900-line JSON data bus.</p>
 
 <p>Here is the architectural pattern for extending the "Engine":</p>
 
-<h2>1. The JavaScript: Connecting to the "Brain"</h2>
+<p class="text-h2">1. The JavaScript: Connecting to the "Brain"</p>
 <p>By using the <code>OmniscriptBaseMixin</code>, your custom LWC automatically listens to the master JSON tree.</p>
 <div class="code-block">
 <pre>
@@ -219,7 +226,7 @@ export default class CustomQuoteLine extends OmniscriptBaseMixin(LightningElemen
 </pre>
 </div>
 
-<h2>2. The HTML: Staying "Light"</h2>
+<p class="text-h2">2. The HTML: Staying "Light"</p>
 <p>Your custom LWC only needs to render the specific UI you want. The OmniStudio Engine handles the "stepping" (Next/Previous buttons) and the global save logic.</p>
 <div class="code-block">
 <pre>
