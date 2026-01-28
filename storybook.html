@@ -41,69 +41,6 @@
         <input id="pass" type="password" placeholder="Password" autocomplete="current-password">
         <button id="login-btn">Login</button>
     </div>
-
-    <!-- START OF JAVASCRIPT CODE -->
-    <script>
-		// THE LOGIN TEXT (POST)
-		const response = await fetch('https://auth-phi-seven.vercel.app', {
-		  method: 'POST',
-		  headers: { 'Content-Type': 'application/json' },
-		  credentials: 'include', // BRINGS THE PASS TO THE CONVERSATION
-		  body: JSON.stringify({ userId: user, password: pass })
-		});
-		
-		// THE AUTOMATED CHECK (GET) - Run this on window.onload
-		const check = await fetch('https://auth-phi-seven.vercel.app', {
-		  method: 'GET',
-		  credentials: 'include' // ATTACH THE PASS FROM THE VAULT
-		});
-	 /*
-      // The main function that runs when the button is clicked
-      async function login() {
-        const user = document.getElementById('user').value;
-        const pass = document.getElementById('pass').value;
-
-        // Visual feedback
-        const btn = document.getElementById('login-btn');
-        btn.disabled = true;
-        btn.innerText = "Checking...";
-
-        try {
-          // CALLING THE VERCEL API: Use your specific absolute URL
-          const response = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: user, password: pass })
-          });
-
-          if (!response.ok) throw new Error('Network response was not ok');
-
-          const result = await response.json();
-
-          // Check for the "yes" flag from your Vercel Function
-          if (result.auth === "yes") {
-            console.log("Success! Welcome.");
-          	document.querySelector('.login').style.display = 'none';
-  			document.querySelector('.maincontent').style.display = 'block';
-          } else {
-            console.warn("Access Denied.");
-            alert("Access Denied: Invalid Credentials.");
-          }
-        } catch (error) {
-          console.error("API Call Failed:", error);
-          alert("Connection Error. Please try again later.");
-        } finally {
-          // Re-enable button after attempt
-          btn.disabled = false;
-          btn.innerText = "Login";
-        }
-      }
-
-      // Attach the event listener to the button
-      document.getElementById('login-btn').addEventListener('click', login);
-	  */
-    </script>
-    <!-- END OF JAVASCRIPT CODE -->
 </div>
 <div class="maincontent">
 	
@@ -416,5 +353,37 @@
 	</table></br>
 </div>
 </div>
+
+<script>
+  function showContent() {
+    const loginBox = document.querySelector('.login');
+    const mainContent = document.querySelector('.maincontent');
+    
+    if (loginBox) loginBox.style.display = 'none';
+    if (mainContent) mainContent.style.display = 'block';
+  }
+
+  window.onload = async () => {
+    try {
+      // NOTE: Added '/api/auth' to the URL
+      const check = await fetch('https://auth-phi-seven.vercel.app', {
+        method: 'GET',
+        credentials: 'include' 
+      });
+
+      if (check.ok) {
+        showContent();
+      } else {
+        // Only redirect if you are NOT already on the login page
+        if (window.location.pathname !== "/") {
+           window.location.href = "https://www.syntrofin.com"; 
+        }
+      }
+    } catch (err) {
+      console.error("Auth check failed:", err);
+    }
+  };
+</script>
+
 </body>
 </html>
