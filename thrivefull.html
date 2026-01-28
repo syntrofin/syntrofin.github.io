@@ -126,12 +126,10 @@ color: #007bff;
   <p class="toc-title">Table of Contents</p>
   <ul>
     <li><a href="#industry">🏭 Industries and Challenges</a></li>
-    <li><a href="#salesst">📈  Sales Strategies</a></li>
+    <li><a href="#salesst">📈 Sales Strategies</a></li>
     <li><a href="#prdtype">📦 Sales Product types</a></li>
-    <li><a href="#prdcfg">⚙ Salesforce RLM Products</a></li>
     <li><a href="#pricebookcfg">🎧 Price book Configurations</a></li>
     <li><a href="#discstr">✂ Discount strategies</a></li>
-    <li><a href="#disccfg">🤖 Discount configurations</a></li>
     <li><a href="#orderstr">🛒 Order strategies</a></li>
     <li><a href="#ordercfg">🧠 Order technical configurations</a></li>
     <li><a href="#ctrstr">🔗 Contract strategies</a></li>
@@ -598,10 +596,7 @@ color: #007bff;
 <p class="strategy-detail">&nbsp;</p>
 
 <!-- Products (Package/Box) --> 
-<p class="strategy" id="prdtype">&#128230;&nbsp;Sales &nbsp;Product types</p>
-
-
-
+<p class="strategy" id="prdtype">&#128230;&nbsp;Sales Product types</p>
 <p class="strategy-type">One-Time (Non-Recurring) Products</p>
 
 <p class="strategy-detail">What it is</p>
@@ -892,10 +887,7 @@ color: #007bff;
 </ul>
 
 
-
-<!-- Technical Config (Gears) --> 
-<p class="strategy" id="prdcfg">&#9881;&nbsp;Salesforce RLM &nbsp;Products from technical configuration point of view</p>
-
+<h2 style="text-align:center">Salesforce RLM Product Types</h2>
 <p class="strategy-type">Attribute-Driven Product</p>
 
 <p class="strategy-detail">What changes</p>
@@ -1559,317 +1551,8 @@ Must post via
 </ul>
 
 
-
-<!-- Discount Config (Robot/Automation) -->
-<p class="strategy" id="disccfg">&#129302;&nbsp;Discount configurations in Salesforce RLM</p>
-
-
-
-<p class="strategy-type">Quote Line Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount applied
-<strong>directly to a quote line</strong>
-(individual product).
-</p>
-
-<p class="strategy-detail">Configuration in RLM / CPQ</p>
-
-<ul>
-<li>Field: Discount (%) or Discount Amount on Quote Line</li>
-<li>
-Can be
-<strong>manual or automated</strong>
-via CPQ Price Rules
-</li>
-<li>
-Can require
-<strong>approval if exceeding thresholds</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Reduces line price before invoice</li>
-<li>Impacts revenue recognition at line level</li>
-</ul>
-
-<p class="strategy-detail">Typical Use Cases</p>
-
-<ul>
-<li>Product-specific promotions</li>
-<li>Bulk or seat-level discount</li>
-</ul>
-
-<p class="strategy-type">Quote / Opportunity Level Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount applied to
-<strong>entire quote or opportunity</strong>
-rather than individual lines.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>Field: Quote Discount % (applies to all lines)</li>
-<li>Can be overridden by line-level discount rules</li>
-<li>Approval workflows often mandatory</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Adjusts total quote amount</li>
-<li>Revenue recognition still split by line, but net price is reduced</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Strategic account discounts</li>
-<li>End-of-quarter incentives</li>
-</ul>
-
-<p class="strategy-type">Contract / Account-Level Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount
-<strong>persisted at account or contract</strong>
-for multiple quotes/orders.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>Account Price Book or Contract-specific discount</li>
-<li>Can define % or amount per product or product family</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Ensures consistent discounting for all quotes under account/contract</li>
-<li>Supports subscription renewals without manual discount</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Enterprise agreements</li>
-<li>Partner or channel pricing</li>
-</ul>
-
-<p class="strategy-type">Volume / Tier-Based Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount
-<strong>automatically applied based on quantity thresholds</strong>
-.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>
-Implemented via
-<strong>Price Rules or CPQ Block Pricing</strong>
-</li>
-<li>Can be step pricing or block pricing</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Quote line price changes automatically as quantity increases</li>
-<li>May impact revenue allocation if line splits across tiers</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Bulk licensing or subscriptions</li>
-<li>Consumable products</li>
-</ul>
-
-<p class="strategy-type">Dynamic / Rule-Based Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount
-<strong>applied automatically based on business rules</strong>
-.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>CPQ Price Rule evaluates conditions (account type, opportunity size, region, product combination)</li>
-<li>Can apply line-level or quote-level discount</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Conditional discounts only when rules match</li>
-<li>Supports complex business logic like “10% off if subscription &gt; 1 year and product = SaaS bundle”</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Promotional campaigns</li>
-<li>Customer loyalty programs</li>
-</ul>
-
-<p class="strategy-type">Manual / Approval-Based Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount
-<strong>entered by a sales rep and subject to approval</strong>
-.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>
-Enable
-<strong>Approval Workflow</strong>
-on Quote Lines
-</li>
-<li>Set thresholds per role or region</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Discount applied only after approval</li>
-<li>
-RLM ensures
-<strong>auditability for revenue recognition</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Competitive bids</li>
-<li>Exceptions outside standard pricing</li>
-</ul>
-
-<p class="strategy-type">Product Bundle / Composite Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount applied to
-<strong>bundled products</strong>
-or
-<strong>dynamic bundles</strong>
-.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>Can be allocated across child products</li>
-<li>
-Managed via
-<strong>Bundle configuration rules</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Each child product may have its own revenue recognition</li>
-<li>Allocation ensures revenue matches legal/financial obligations</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Software suites</li>
-<li>Telecom plans</li>
-</ul>
-
-<p class="strategy-type">Prepayment / Early Payment Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount applied
-<strong>at invoice or subscription start</strong>
-for advance payment.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>
-Often modeled on
-<strong>Order or Invoice object</strong>
-</li>
-<li>Can be percentage or fixed</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Reduces invoice amount upfront</li>
-<li>Impacts revenue recognition depending on order terms</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Annual subscription prepay</li>
-<li>Early settlement incentives</li>
-</ul>
-
-<p class="strategy-type">Rebate / Post-Invoice Discount</p>
-
-<p>
-<strong class="purpose">Definition:</strong>
-Discount applied
-<strong>after invoice</strong>
-, as a credit or adjustment.
-</p>
-
-<p class="strategy-detail">Configuration</p>
-
-<ul>
-<li>
-Modeled as
-<strong>Adjustment line item</strong>
-in CPQ / RLM
-</li>
-<li>Can be recurring or one-time</li>
-</ul>
-
-<p class="strategy-detail">Behavior</p>
-
-<ul>
-<li>Revenue recognition may need adjustment</li>
-<li>Tracks separately for audit</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Channel rebates</li>
-<li>Loyalty programs</li>
-</ul>
-
-<p class="strategy-detail">&nbsp;</p>
-
 <!-- Orders (Shopping Cart) -->
-<p class="strategy" id="orderstr">&#128722;&nbsp;Order strategies</p>
+<p class="strategy" id="orderstr">&#128722;&nbsp;Order Strategies</p>
 
 
 
