@@ -27,11 +27,59 @@
     <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
 	<script async="" src="./syntrofin_files/cssjs/analytics.js"></script>
 	
-	<!-- CSS -->
-	<link href="./syntrofin_files/cssjs/thrive.css" rel="stylesheet">
-
-	  
+	<!-- Thrive CSS -->
+	<script>
+	body {
+	    padding: 0 20px;
+	    font-family: sans-serif;
+	    background-color: #f4f4f4;
+	}
+	table {
+	    font-size: 0.9em;
+	    width: 100%;
+	    border-collapse: collapse; 
+	    margin-top: 20px;
+	    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+	}
+	th, td {
+	    padding: 12px 15px;
+	    text-align: left;
+	    border-bottom: 1px solid #ddd;
+	}
+	th {
+	    border-bottom: 1px solid #ddd;
+	}
+	td {
+	    border-bottom: none;
+	}
+	thead th {
+	    background-color: #009879; /* Header color */
+	    color: #ffffff;
+	}
+	
+	/* --- Alternating Column Styling --- */
+	/* Style for odd-numbered columns (1st, 3rd, 5th, etc.) */
+	th:nth-child(odd), 
+	td:nth-child(odd) {
+	    background-color: #e0f2fe; /* Very light blue */
+	}
+	/* Style for even-numbered columns (2nd, 4th, 6th, etc.) */
+	th:nth-child(even), 
+	td:nth-child(even) {
+	    background-color: #ffffff; /* White background */
+	}
+	/* Ensure headers still look distinct */
+	thead th:nth-child(odd),
+	thead th:nth-child(even) {
+	     background-color: #009879;
+	     color: white;
+	}
+	tbody tr:last-of-type {
+	    border-bottom: 2px solid #009879;
+	}
+	</script>
 </head>
+	
 <body>
 <p><h1 style="text-align:center; color:#CC7357;">Thrive RLM Framework</h1></p>
 
