@@ -44,6 +44,20 @@
 
     <!-- START OF JAVASCRIPT CODE -->
     <script>
+		// THE LOGIN TEXT (POST)
+		const response = await fetch('https://auth-phi-seven.vercel.app', {
+		  method: 'POST',
+		  headers: { 'Content-Type': 'application/json' },
+		  credentials: 'include', // BRINGS THE PASS TO THE CONVERSATION
+		  body: JSON.stringify({ userId: user, password: pass })
+		});
+		
+		// THE AUTOMATED CHECK (GET) - Run this on window.onload
+		const check = await fetch('https://auth-phi-seven.vercel.app', {
+		  method: 'GET',
+		  credentials: 'include' // ATTACH THE PASS FROM THE VAULT
+		});
+	 /*
       // The main function that runs when the button is clicked
       async function login() {
         const user = document.getElementById('user').value;
@@ -87,6 +101,7 @@
 
       // Attach the event listener to the button
       document.getElementById('login-btn').addEventListener('click', login);
+	  */
     </script>
     <!-- END OF JAVASCRIPT CODE -->
 </div>
