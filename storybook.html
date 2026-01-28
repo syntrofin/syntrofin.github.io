@@ -366,7 +366,7 @@
   window.onload = async () => {
     try {
       // NOTE: Added '/api/auth' to the URL
-      const check = await fetch('https://auth-phi-seven.vercel.app', {
+      const check = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
         method: 'GET',
         credentials: 'include' 
       });
