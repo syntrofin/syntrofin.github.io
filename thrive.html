@@ -34,47 +34,47 @@
 	    font-family: sans-serif;
 	    background-color: #f4f4f4;
 	}
-	table {
+	.stock {
 	    font-size: 0.9em;
 	    width: 100%;
 	    border-collapse: collapse; 
 	    margin-top: 20px;
 	    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
 	}
-	th, td {
+	.stock th, .stock td {
 	    padding: 12px 15px;
 	    text-align: left;
 	    border-bottom: 1px solid #ddd;
 	}
-	th {
+	.stock th {
 	    border-bottom: 1px solid #ddd;
 	}
-	td {
+	.stock td {
 	    border-bottom: none;
 	}
-	thead th {
+	.stock thead th {
 	    background-color: #009879; /* Header color */
 	    color: #ffffff;
 	}
 	
 	/* --- Alternating Column Styling --- */
 	/* Style for odd-numbered columns (1st, 3rd, 5th, etc.) */
-	th:nth-child(odd), 
-	td:nth-child(odd) {
+	.stock th:nth-child(odd), 
+	.stock td:nth-child(odd) {
 	    background-color: #e0f2fe; /* Very light blue */
 	}
 	/* Style for even-numbered columns (2nd, 4th, 6th, etc.) */
-	th:nth-child(even), 
-	td:nth-child(even) {
+	.stock th:nth-child(even), 
+	.stock td:nth-child(even) {
 	    background-color: #ffffff; /* White background */
 	}
 	/* Ensure headers still look distinct */
-	thead th:nth-child(odd),
-	thead th:nth-child(even) {
+	.stock thead th:nth-child(odd),
+	.stock thead th:nth-child(even) {
 	     background-color: #009879;
 	     color: white;
 	}
-	tbody tr:last-of-type {
+	.stock tbody tr:last-of-type {
 	    border-bottom: 2px solid #009879;
 	}
 	</style>
@@ -87,7 +87,7 @@
 
 <!-- section Industry and Project -->
 <p><h1>Industry and Project</h1></p>
-<table>
+<table class="stock">
   <thead>
     <tr>
       <th>Industries and Challenges</th>
@@ -173,7 +173,7 @@
 
 <!-- section Sales, Price and Discounts -->
 <p><h1>Sales, Price and Discounts</h1></p>
-<table>
+<table class="stock">
   <thead>
     <tr>
       <th>Sales Strategies</th>
@@ -242,7 +242,7 @@
 
 <!-- section Order, Contract, and Products -->
 <p><h1>Order, Contract, and Products</h1></p>
-<table>
+<table class="stock">
   <thead>
     <tr>
       <th>Order strategies</th>
@@ -328,7 +328,7 @@
 
 <!-- section Money and Assets -->
 <p><h1>Money and Assets</h1></p>
-<table>
+<table class="stock">
   <thead>
     <tr>
       <th>Revenue recognition strategies</th>
@@ -421,6 +421,125 @@
     </tr>
   </tbody>
 </table>
+
+<table class="stock">
+  <thead>
+    <tr>
+      <th rowspan="2">Treatment Field</th>
+      <th colspan="2">Impacts What</th>
+      <th rowspan="2">Gap</th>
+      <th colspan="5">Possible values on Treatment</th>
+    </tr>
+    <tr>
+      <th>Impacts How</th>
+      <th></th> <!-- Empty header cell for alignment -->
+      <th>Invoice</th>
+      <th>Manual</th>
+      <th>Fulfillment</th>
+      <th>Shipment</th>
+      <th>Milestone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">Revenue Recognition Event</td>
+      <td>POB</td>
+      <td>Tells the POB event name that triggers Revenue is recognized. POB is a state machine.</td>
+      <td></td>
+      <td>Manual</td>
+      <td>Fulfillment</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+      <td rowspan="4">Fulfillment Method POB</td>
+      <td>POB</td>
+      <td>Tells the POB when to trigger? Shipment and Milestone are externally triggered</td>
+      <td>None</td>
+      <td>Manual</td>
+      <td>Shipment</td>
+      <td>Percent of Time</td>
+      <td>Milestone</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tracking Field on POB</td>
+      <td></td>
+      <td>FulfillmentStatus</td>
+      <td>FulfillmentStatus</td>
+      <td>FulfillmentStatus</td>
+      <td>SatisfiedPercentage</td>
+      <td>FulfillmentPercentage</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Initial Value for Tracking Field on POB</td>
+      <td></td>
+      <td>Pending until the Invoice</td>
+      <td>Pending until Manually fij</td>
+      <td>Pending until the Shipm 0.00%</td>
+      <td>0.00%</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+      <td rowspan="4">Revenue Distribution Method</td>
+      <td>The Accountant. It tells the Schedule how to slice the money once the light is green</td>
+      <td></td>
+      <td>Full Recognition</td>
+      <td>Full Recognition</td>
+      <td>Daily/Monthly Prorate</td>
+      <td>Manual/Milestone</td>
+      <td>Manual</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Distribution Behavior</td>
+      <td></td>
+      <td>Creates 100% of the value in a single "slice" immediately.</td>
+      <td>Stays dormant until signal; then creates 100% in one "slice."</td>
+      <td>Stays dormant until signal; then creates $X/mo recurring "slices."</td>
+      <td>Creates a "slice" only for the specific amount signaled by the POB.</td>
+      <td>Schedule exists as an empty shell until manually populated.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Recognition Term</td>
+      <td></td>
+      <td>N/A (One-Time)</td>
+      <td>N/A (One-Time)</td>
+      <td>12, 24, 36 Months</td>
+      <td>N/A (Event-based)</td>
+      <td>User Defined</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>SAP Transaction Cadence</td>
+      <td></td>
+      <td>Single Document (100% on Invoice Date)</td>
+      <td>Single Document (100% on Ship Date)</td>
+      <td>Recurring Monthly Documents</td>
+      <td>Ad-hoc Documents (Per Milestone)</td>
+      <td>Manual Postings.</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 </body>
 </html>
