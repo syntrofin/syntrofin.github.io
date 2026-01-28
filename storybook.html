@@ -375,7 +375,9 @@
 		const checkString = await check.text(); 
 		console.log("pass check response is below:");
 		console.log(checkString);
-		testMsg.textContent = checkString;
+		if (testMsg) {
+      		testMsg.textContent = checkString; 
+    	}
 		
       if (check.ok) {
 		  console.log("pass succeeded");
