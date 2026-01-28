@@ -196,13 +196,13 @@ export default class CustomQuoteLine extends OmniscriptBaseMixin(LightningElemen
 <p>Your custom LWC only needs to render the specific UI you want. The OmniStudio Engine handles the "stepping" (Next/Previous buttons) and the global save logic.</p>
 <div class="code-block">
 <pre>
-<template>
- <div class="custom-row">
-  <!-- Accessing data directly from the JSON bus -->
-  <p>Current Price: {omniJsonData.LinePrice}</p>
-  <button onclick={handleUpdate}>Apply Discount</button>
- </div>
-</template>
+<&zwj;template>
+ <&zwj;div class="custom-row">
+  Accessing data directly from the JSON bus 
+  <&zwj;p>Current Price: {omniJsonData.LinePrice}<&zwj;/p>
+  <&zwj;button onclick={handleUpdate}>Apply Discount<&zwj;/button>
+ <&zwj;/div>
+<&zwj;/template>
 </pre>
 </div>
 
