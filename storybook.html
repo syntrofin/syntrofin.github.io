@@ -25,8 +25,6 @@
 
     <!-- JavaScript -->
     <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
-	<script async="" src="./syntrofin_files/cssjs/analytics.js"></script>
-	<script async="" src="./syntrofin_files/cssjs/login.js"></script>
 	
 	 <!-- CSS -->
 	 <link href="./syntrofin_files/cssjs/rlm.css" rel="stylesheet">
@@ -370,22 +368,27 @@
       const check = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
         method: 'GET',
         credentials: 'include' 
+		  console.log("pass response");
       });
 
       if (check.ok) {
+		  console.log("pass succeeded");
         showContent();
       } else {
+		  console.log("pass failed");
         if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
            window.location.href = "https://www.syntrofin.com"; 
         }
       }
     } catch (err) {
+		console.log("pass errored");
       console.error("Auth check failed:", err);
     }
   };
 
   // 2. THE MANUAL LOGIN (Only if the check above fails)
   async function login() {
+	  console.log("going for manual login");
     const user = document.getElementById('user').value;
     const pass = document.getElementById('pass').value;
 
@@ -394,11 +397,14 @@
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include', 
       body: JSON.stringify({ userId: user, password: pass })
+		console.log("manual login response");
     });
 
     if (response.ok) {
+		console.log("manual login succeeded");
       showContent();
     } else {
+		console.log("manual login invalid");
       alert("Invalid Login");
     }
   }
