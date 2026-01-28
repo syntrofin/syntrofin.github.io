@@ -375,22 +375,22 @@
 		const checkString = await check.text(); 
 		console.log("pass check response is below:");
 		console.log(checkString);
-		if (testMsg) {
-      		testMsg.textContent = checkString; 
-    	}
+	
 		
       if (check.ok) {
-		  console.log("pass succeeded");
-        showContent();
+		  	console.log("pass succeeded");
+		  	if (testMsg) {testMsg.textContent = "pass succeeded";}
+        	showContent();
       } else {
 		  console.log("pass failed");
+		  if (testMsg) {testMsg.textContent = "pass failed. Try one more time";}
         if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
            /* window.location.href = "https://www.syntrofin.com"; */
         }
       }
     } catch (err) {
-		console.log("pass errored");
         console.error("Auth check failed:", err);
+		if (testMsg) {testMsg.textContent = "pass errored";}
     }
   };
 
