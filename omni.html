@@ -166,39 +166,66 @@
 <hr class="section-divider">
 
 <p class="text-h1">Omni is Not a Bunch of Custom Made LWC Components - This is a Big Misconception!</p>
-<p>Correct. You've nailed the common misunderstanding. OmniStudio is a **metadata-driven runtime engine** that *generates* or *controls* LWCs dynamically, rather than just being a toolbox of fixed components.</p>
 
+<p>Correct. You've nailed the common misunderstanding. <strong>OmniStudio is a metadata-driven runtime engine</strong> that <em>generates</em> or <em>controls</em> LWCs dynamically, rather than just being a toolbox of fixed components.</p>
 <p>Here is how that "Engine" actually works under the hood:</p>
 
 <p class="text-h2">It’s a "Code Generator" (Managed Package Runtime)</p>
-<p>In the traditional Managed Package Runtime, when you click "Activate" on an OmniScript, OmniStudio actually compiles and deploys a brand-new LWC bundle to your Salesforce org.</p>
+<p>In the traditional <a href="https://help.salesforce.com">Managed Package Runtime</a>, when you click "Activate" on an OmniScript, OmniStudio actually compiles and deploys a brand-new LWC bundle to your Salesforce org.</p>
 <ul>
-  <li>It takes your drag-and-drop design (the metadata) and "writes" the JavaScript and HTML for you.</li>
-  <li>This is why an OmniScript has its own unique LWC technical name (e.g., c:typeSubtypeEnglish).</li>
+    <li>It takes your drag-and-drop design (the metadata) and "writes" the JavaScript and HTML for you.</li>
+    <li>This is why an OmniScript has its own unique <a href="https://help.salesforce.com">LWC technical name</a> (e.g., c:typeSubtypeEnglish).</li>
 </ul>
 
 <p class="text-h2">The "Standard Runtime" Evolution</p>
-<p>Salesforce is moving toward a Standard Runtime where LWC generation is replaced by a high-performance interpreter.</p>
+<p>Salesforce is moving toward a <a href="https://help.salesforce.com">Standard Runtime</a> where LWC generation is replaced by a high-performance interpreter.</p>
 <ul>
-  <li>Instead of "writing" a new component, a Single Base LWC loads your metadata JSON at runtime and "interprets" it.</li>
-  <li>This makes updates much faster because you aren't deploying code every time you change a label—you're just updating a metadata record.</li>
+    <li>Instead of "writing" a new component, a Single Base LWC loads your metadata JSON at runtime and "interprets" it.</li>
+    <li>This makes updates much faster because you aren't deploying code every time you change a label—you're just updating a metadata record.</li>
 </ul>
 
 <p class="text-h2">The "Stateful" JSON Proxy</p>
-<p>Standard LWCs are usually isolated, but OmniStudio LWCs are engineered with a shared JSON Data Bus.</p>
+<p>Standard LWCs are usually isolated, but OmniStudio LWCs are engineered with a shared <a href="https://www.salesforceben.com">JSON Data Bus</a>.</p>
 <ul>
-  <li>Every element (input, formula, block) is a "subscriber" to a master JSON tree.</li>
-  <li>When you change one value, the engine pushes that change to the entire tree, and all other components "react" instantly. This is how 900 lines stay in sync without complex custom event handling.</li>
+    <li>Every element (input, formula, block) is a "subscriber" to a master JSON tree.</li>
+    <li>When you change one value, the engine pushes that change to the entire tree, and all other components "react" instantly. This is how 900 lines stay in sync without complex custom event handling.</li>
 </ul>
 
 <p class="text-h2">"Extensibility" Over "Customization"</p>
 <p>Because it's an engine, you don't "edit" the OmniStudio code. You extend it.</p>
 <ul>
-  <li>If a standard button isn't enough, you create a custom LWC that extends the Base OmniStudio LWC class.</li>
-  <li>Your custom component "inherits" the engine's ability to talk to the Business Rules Engine and DataRaptors automatically.</li>
+    <li>If a standard button isn't enough, you create a custom LWC that <a href="https://help.salesforce.com">extends the Base OmniStudio LWC class</a>.</li>
+    <li>Your custom component "inherits" the engine's ability to talk to the <a href="https://help.salesforce.com">Business Rules Engine</a> and <a href="https://help.salesforce.com">DataRaptors</a> automatically.</li>
 </ul>
 
 <p>Summary: You aren't just dragging boxes; you are programming a runtime engine via JSON metadata. The LWC part is just the "skin" that makes it visible in the browser.</p>
+
+<hr>
+
+<p class="text-h1">Material for Omni Architecture (Not How to Use Omni Tools)</p>
+
+<p>To understand the deep architectural layers of OmniStudio rather than just the "how-to," you should focus on resources that detail the stateless interaction model, metadata runtime, and JSON data bus.</p>
+
+<p class="text-h2">Top Technical Architecture Resources</p>
+<ul>
+    <li><strong><a href="https://architect.salesforce.com">Salesforce Architect's Decision Guide: Building Forms</a></strong><br>
+    This is the definitive "Why" guide from Salesforce. It provides a high-level solution architecture diagram and deep dives into how OmniStudio manipulates underlying JSON compared to standard LWC or Screen Flow.</li>
+    <li><strong><a href="https://imsabaf.medium.com">OmniStudio Architecture: The Three Layers (Medium Deep Dive)</a></strong><br>
+    A highly technical breakdown of the Digital Experience, Service Management, and Developer Experience layers. It explains how Integration Procedures orchestrate server-side actions into a single call to solve the "network strain" problem we discussed.</li>
+    <li><strong><a href="https://trailhead.salesforce.com">Optimize OmniStudio Architecture for Better UX (Trailhead)</a></strong><br>
+    Unlike basic "how-to" modules, this focuses on architectural optimization. It covers the Digital Experience Layer vs. Service Management Layer and how to design for performance at scale.</li>
+    <li><strong><a href="https://developer.salesforce.com">Omnistudio Student Take Home Guide (Official PDF)</a></strong><br>
+    This developer-focused guide contains job aids and technical diagrams that show how data nodes in the OmniScript JSON are updated and mapped to Salesforce objects or external APIs.</li>
+    <li><strong><a href="https://help.salesforce.com">Standard Runtime vs. Managed Package Runtime (Official Documentation)</a></strong><br>
+    Critical for understanding the "Engine" evolution. It explains how OmniStudio now runs natively on core Salesforce objects and the technical differences in how LWCs are generated and interpreted.</li>
+</ul>
+
+<p class="text-h2">Conceptual Architecture Summary</p>
+<ul>
+    <li><strong>Modular Microservices Style:</strong> OmniStudio follows a microservices architecture where UI components (FlexCards/OmniScripts) act as the presentation layer for a separate service management layer (DataRaptors/IPs).</li>
+    <li><strong>Server-Side Execution:</strong> Integration Procedures (IPs) are designed to minimize round-trip latency by 30–50% by executing multiple business logic actions in a single server-side call.</li>
+    <li><strong>JSON-First Data Flow:</strong> The architecture is centered around a hierarchical, nested JSON data structure that allows for complex data handling without custom Apex.</li>
+</ul>
 
 <hr class="section-divider">
 
