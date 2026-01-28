@@ -84,7 +84,8 @@ text-align: left;       /* Explicitly left aligned */
 color: #555555; 
 }
 .purpose{
-padding-left: 40px; 
+  display: inline-block; 
+  padding-left: 40px; 
   text-align: left;
   background-color: cyan; 
 }
@@ -4876,7 +4877,7 @@ Start by implementing
 <p class="strategy-type">Greenfield Strategic Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Start from scratch, define
 <strong>best-practice architecture and process standards</strong>
 .
@@ -4916,7 +4917,7 @@ for future enhancements
 <p class="strategy-type">Brownfield / Migration Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Start by
 <strong>mapping legacy systems to Salesforce RLM</strong>
 , migrating data and processes.
@@ -4950,7 +4951,7 @@ Prioritize
 <p class="strategy-type">Pilot / Proof-of-Concept Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Validate architecture and rules with a
 <strong>subset of products or accounts</strong>
 before full rollout.
@@ -4982,7 +4983,7 @@ with pilot scope
 <p class="strategy-type">Modular / Phased Rollout Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Implement
 <strong>core functionality first</strong>
 , then expand in phases.
@@ -5021,7 +5022,7 @@ Define
 <p class="strategy-type">Agile / Iterative Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Implement RLM
 <strong>incrementally in sprints</strong>
 , iterating on features and configurations.
@@ -5049,7 +5050,7 @@ Define sprint backlog for
 <p class="strategy-type">Integration-First Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Ensure
 <strong>end-to-end system connectivity</strong>
 before rolling out features.
@@ -5080,7 +5081,7 @@ Confirm
 <p class="strategy-type">High-Impact Feature Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Focus on
 <strong>quick wins that deliver business impact early</strong>
 .
@@ -5109,7 +5110,7 @@ for these high-impact areas
 <p class="strategy-type">Risk-Based / Compliance-First Kickoff</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Start by
 <strong>mitigating financial or operational risks</strong>
 .
@@ -5173,7 +5174,7 @@ Dynamic bundles, usage-based billing, and amendments must be architected for sca
 <p class="strategy-type">Standards-Based Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Define and enforce
 <strong>uniform standards</strong>
 for configuration, custom objects, and processes.
@@ -5207,7 +5208,7 @@ Maintain
 <p class="strategy-type">Compliance-First Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Ensure
 <strong>financial, legal, and regulatory compliance</strong>
 .
@@ -5247,7 +5248,7 @@ for all CPQ/RLM transactions
 <p class="strategy-type">Lifecycle / Change Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Govern
 <strong>changes across products, contracts, orders, and subscriptions</strong>
 .
@@ -5288,7 +5289,7 @@ Maintain
 <p class="strategy-type">Integration Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Ensure
 <strong>all integrations are standardized, secure, and reliable</strong>
 .
@@ -5326,7 +5327,7 @@ Enforce
 <p class="strategy-type">Data Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Maintain
 <strong>data integrity, quality, and consistency</strong>
 .
@@ -5364,7 +5365,7 @@ Implement
 <p class="strategy-type">Risk-Based Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Prioritize governance based on
 <strong>financial or operational risk</strong>
 .
@@ -5402,7 +5403,7 @@ Continuous monitoring of
 <p class="strategy-type">Monitoring &amp; Metrics Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Continuously
 <strong>monitor system performance, adoption, and compliance</strong>
 .
@@ -5440,7 +5441,7 @@ Track
 <p class="strategy-type">Steering Committee / Decision Governance</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Establish a
 <strong>formal decision-making body for architectural and business rules</strong>
 .
@@ -5483,7 +5484,7 @@ Form
 <p class="strategy-type">Big Bang / Full Cutover</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Move all business processes to Revenue Cloud at once.
 </p>
 
@@ -5520,7 +5521,7 @@ Move all business processes to Revenue Cloud at once.
 <p class="strategy-type">Phased / Incremental Close</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Close project module by module or business line by business line.
 </p>
 
@@ -5558,7 +5559,7 @@ Close project module by module or business line by business line.
 <p class="strategy-type">Pilot/Selective Close</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 End the project for a
 <strong>subset of products, regions, or accounts</strong>
 first.
@@ -5597,7 +5598,7 @@ first.
 <p class="strategy-type">Knowledge Transfer / Hypercare Close</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Emphasize
 <strong>operational readiness and knowledge handoff</strong>
 at project end.
@@ -5636,7 +5637,7 @@ at project end.
 <p class="strategy-type">Decommission / Sunset Strategy</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Retire legacy systems while fully transitioning to Revenue Cloud.
 </p>
 
@@ -5673,7 +5674,7 @@ Retire legacy systems while fully transitioning to Revenue Cloud.
 <p class="strategy-type">Audit &amp; Compliance Closure</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 Ensure
 <strong>all financial, contractual, and regulatory obligations are verified</strong>
 before formally ending the project.
@@ -5712,7 +5713,7 @@ before formally ending the project.
 <p class="strategy-type">Lessons Learned / Retrospective Close</p>
 
 <p>
-<strong>Core Idea:</strong>
+<strong class="purpose">Core Idea:</strong>
 End project with
 <strong>structured reflection and continuous improvement planning</strong>
 .
