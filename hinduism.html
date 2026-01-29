@@ -46,6 +46,25 @@
 	    margin-top: 5px;        /* Adds a tiny gap below the image */
 	    text-align: center;     /* Keeps it aligned with your centered image */
 		}
+.palm-leaf-header-inline {
+    display: flex;
+    align-items: baseline; /* Aligns them perfectly along the bottom of the text */
+    gap: 5px;             /* Adds a small space between them */
+}
+
+.palm-leaf-header-inline h1, 
+.palm-leaf-header-inline h2 {
+    font-size: 1.5rem;    /* Makes both font sizes equivalent */
+    margin: 0;
+}
+
+.palm-leaf-header-inline h1::after {
+    content: ",";         /* Puts the comma exactly after the H1 */
+}
+		  figure {
+    display: flex;
+    justify-content: center; /* This does the actual centering */
+}
 
 	  </style>
 </head>
@@ -58,8 +77,11 @@
 		<figcaption>Phot Courtesy — Times of India</figcaption>
 	</figure>
 	<div class="palm-leaf">
-		<h1>Hinduism is Like a Banyan Tree,</h1> 
-		<h2>The Sage Smiled and Said</h2> 
+		<div class="palm-leaf-header-inline">
+    <h1>Hinduism is Like a Banyan Tree,</h1>
+    <h2>The Sage Smiled and Said</h2>
+</div>
+
         <p>
             The Vedas are the tree’s earliest seed -  <br>
             &nbsp;&nbsp;Stories are Devas are the tree’s main stem and roots-  <br>
