@@ -2484,588 +2484,16 @@ Continuous contract with
 <p class="strategy-detail">&nbsp;</p>
 
 <!-- Assets (Safe/Vault) -->
-<p class="strategy" id="assetstr">&#127974;&nbsp;Asset strategies</p>
-
-
-
-<p class="strategy-type">One-Time Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Asset represents a
-<strong>delivered product or service with no recurring revenue</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Single instance per order item</li>
-<li>Ownership transferred immediately</li>
-<li>No subscription attached</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Asset created after order fulfillment</li>
-<li>Revenue recognized at delivery</li>
-<li>Minimal lifecycle tracking</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Physical products (hardware, machinery)</li>
-<li>One-off professional services</li>
-</ul>
-
-<p class="strategy-type">Subscription-Linked Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Asset tied to a
-<strong>recurring subscription</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Asset “exists” for the duration of subscription</li>
-<li>May have start/end dates aligned with subscription</li>
-<li>Can track usage or entitlements</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Subscription → asset mapping</li>
-<li>Asset termination triggers subscription closure</li>
-<li>Revenue recognition spread over subscription term</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>SaaS licenses</li>
-<li>Maintenance agreements</li>
-<li>Software seats</li>
-</ul>
-
-<p class="strategy-type">Consumable / Usage-Based Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>Asset consumed over time or by usage</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Metered or tracked usage</li>
-<li>May decrement quantity or units over time</li>
-<li>Can generate usage-based billing</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Asset usage feeds invoice</li>
-<li>Revenue recognition aligns with consumption</li>
-<li>Integration with usage tracking systems required</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Cloud storage / API calls</li>
-<li>Utilities (water, gas, electricity)</li>
-<li>Managed service hours</li>
-</ul>
-
-<p class="strategy-type">Amendable / Upgradable Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Asset can be
-<strong>upgraded, modified, or replaced mid-life</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Can change configuration or quantity</li>
-<li>Can trigger new subscription or order amendments</li>
-<li>May require proration for billing</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Asset linked to amendment order</li>
-<li>Revenue recognition adjusted for changes</li>
-<li>Historical asset data preserved for audit</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Software seat upgrades</li>
-<li>Hardware add-ons or replacements</li>
-</ul>
-
-<p class="strategy-type">Bundled Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Multiple assets delivered together as
-<strong>one logical unit</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Parent asset with child components</li>
-<li>Allocation rules for revenue</li>
-<li>Individual child assets may have separate lifecycles</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Revenue allocation across child assets</li>
-<li>Amendments may affect only some child assets</li>
-<li>Subscription alignment varies per component</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Telecom plan (device + service + content)</li>
-<li>Enterprise software + support bundle</li>
-</ul>
-
-<p class="strategy-type">Evergreen / Continuous Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Asset exists
-<strong>indefinitely until terminated</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Continuous billing or entitlement</li>
-<li>Cancellation event removes or deactivates asset</li>
-<li>May track ongoing usage</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Asset tied to continuous subscription</li>
-<li>Revenue recognition occurs per billing cycle</li>
-<li>Lifecycle event triggers (cancellation, upgrade)</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Cloud platforms with continuous service</li>
-<li>SaaS or streaming subscriptions</li>
-</ul>
-
-<p class="strategy-type">Entitlement / License Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Asset represents
-<strong>access rights, not physical delivery</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>May have start/end dates</li>
-<li>Drives service eligibility or SLA enforcement</li>
-<li>Can be linked to subscriptions or contracts</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Asset enforces service entitlement</li>
-<li>Revenue recognition aligned with contract/subscription period</li>
-<li>Amendments extend or reduce entitlement</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Software licenses</li>
-<li>Support or warranty entitlements</li>
-<li>Premium feature access</li>
-</ul>
-
-<p class="strategy-type">Lifecycle / Maintenance Asset</p>
-
-<p class="strategy-detail">Core Idea</p>
-
-<ul>
-<li>
-Asset tracked through
-<strong>multiple events over time</strong>
-</li>
-</ul>
-
-<p class="strategy-detail">Characteristics</p>
-
-<ul>
-<li>Can have scheduled maintenance or service events</li>
-<li>Status tracked (active, in repair, retired)</li>
-<li>May trigger recurring revenue or service charges</li>
-</ul>
-
-<p class="strategy-detail">RLM Impact</p>
-
-<ul>
-<li>Asset object stores lifecycle history</li>
-<li>Revenue recognition tied to service events</li>
-<li>Amendments or renewals may generate new revenue</li>
-</ul>
-
-<p class="strategy-detail">Use Cases</p>
-
-<ul>
-<li>Medical devices with service contracts</li>
-<li>Industrial equipment maintenance</li>
-<li>Vehicle fleets</li>
-</ul>
-
-<p class="strategy-detail">&nbsp;</p>
-
-<!-- Asset Technical (Wrench/Tools) -->
-<p class="strategy" id="assetcfg">&#128295;&nbsp;Asset , different revenue cloud advanced configurations</p>
-
-<p class="strategy-type">One-Time Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Represents a delivered product with
-<strong>one-time fulfillment and revenue</strong>
-.
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Asset Object:</strong>
-Created post-order item delivery
-</li>
-<li>
-<strong>Charge Type:</strong>
-One-time
-</li>
-<li>
-<strong>Subscription:</strong>
-Not created
-</li>
-<li>
-<strong>Invoice:</strong>
-Generated immediately
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-Full revenue recognized at delivery
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Asset status tracking (active, retired)</li>
-<li>Integration with ERP for shipped goods</li>
-<li>Optional warranty entitlement</li>
-</ul>
-
-<p class="strategy-type">Recurring / Subscription-Linked Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Asset exists
-<strong>for the duration of a subscription</strong>
-.
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Subscription Object:</strong>
-Linked to asset
-</li>
-<li>
-<strong>Asset Start/End Dates:</strong>
-Matches subscription term
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-Spread across subscription term
-</li>
-<li>
-<strong>Order Item:</strong>
-Recurring charge type
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Automated renewal creation</li>
-<li>Proration for mid-term changes</li>
-<li>Dynamic attribute-driven asset details</li>
-</ul>
-
-<p class="strategy-type">Usage-Based / Consumption Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Asset consumed over time or by usage.
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Asset Quantity / Usage Metric:</strong>
-Tracks consumption
-</li>
-<li>
-<strong>Usage Data Integration:</strong>
-API or ETL pipeline feeds actual usage
-</li>
-<li>
-<strong>Invoice Schedule:</strong>
-Arrears billing
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-Aligned with usage period
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Thresholds / overage billing</li>
-<li>True-up / true-down adjustments</li>
-<li>Integration with metering systems</li>
-</ul>
-
-<p class="strategy-type">Amendable / Upgradeable Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Supports
-<strong>mid-life modifications</strong>
-(quantity, tier, or feature).
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Linked to Amendment Order:</strong>
-Updates asset or subscription
-</li>
-<li>
-<strong>Proration Logic:</strong>
-Calculates partial-period billing
-</li>
-<li>
-<strong>Revenue Allocation:</strong>
-Adjusted for added or removed components
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Approval workflow for upgrades/downgrades</li>
-<li>Historical snapshot stored for audit</li>
-<li>Dynamic bundle handling for child assets</li>
-</ul>
-
-<p class="strategy-type">Dynamic / Bundled Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Asset composed of
-<strong>multiple child products</strong>
-, some added dynamically.
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Parent-Child Asset Relationship:</strong>
-Parent asset = bundle
-</li>
-<li>
-<strong>Order Items:</strong>
-Multiple child lines created per rules
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-Allocation across child components
-</li>
-<li>
-<strong>Invoice Schedule:</strong>
-May mix one-time and recurring charges
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Bundle composition rules (mandatory/optional children)</li>
-<li>Allocation rules for revenue recognition</li>
-<li>Proration for mid-term child changes</li>
-</ul>
-
-<p class="strategy-type">Evergreen / Continuous Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Asset exists
-<strong>indefinitely until terminated</strong>
-.
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Subscription Object:</strong>
-No end date
-</li>
-<li>
-<strong>Billing:</strong>
-Continuous until cancellation
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-Continuous per billing period
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Cancellation triggers automated order/subscription closure</li>
-<li>Usage-based adjustments supported</li>
-<li>Linked to entitlement or SLA objects</li>
-</ul>
-
-<p class="strategy-type">Entitlement / License Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Represents
-<strong>access rights rather than physical delivery</strong>
-.
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Asset Record:</strong>
-Tracks entitlement start/end dates
-</li>
-<li>
-<strong>Subscription Linkage:</strong>
-Optional, drives service eligibility
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-Based on contract/subscription duration
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Feature-level entitlements (feature toggles)</li>
-<li>Support for upgrades/downgrades mid-term</li>
-<li>Integration with service delivery systems</li>
-</ul>
-
-<p class="strategy-type">Lifecycle / Maintenance Asset</p>
-
-<p>
-<strong class="purpose">Purpose:</strong>
-Asset tracked through
-<strong>multiple lifecycle events</strong>
-(maintenance, service, upgrade).
-</p>
-
-<p class="strategy-detail">Technical Configuration</p>
-
-<ul>
-<li>
-<strong>Asset Status Field:</strong>
-Active, in-service, retired
-</li>
-<li>
-<strong>Service Milestones:</strong>
-Linked via tasks or custom object
-</li>
-<li>
-<strong>Revenue Recognition:</strong>
-May trigger per milestone or service event
-</li>
-<li>
-<strong>Order Item Linkage:</strong>
-Can generate recurring or milestone-based charges
-</li>
-</ul>
-
-<p class="strategy-detail">Advanced Config Options</p>
-
-<ul>
-<li>Automated service reminders and renewal orders</li>
-<li>Amendment handling for replacement or maintenance</li>
-<li>Integration with PSA / Field Service</li>
-</ul>
-
-<p class="strategy-detail">&nbsp;</p>
-
 
 <!-- Billing (Receipt/Invoice) -->
-<p class="strategy" id="billstr">&#129534;&nbsp;Invoice/billing strategies</p>
+<p class="strategy" id="billstr">&#129534;&nbsp;The Realization (Invoicing & Revenue Recognition)</p>
+<p>Now we get to the CFO’s favorite part: turning commitments into cash. This is the 'moment of truth' for our architecture.</p>
 
+<ul>
+<li>Billing Strategies: We decide when to send the bill—100% upfront for one time, but monthly for subscription.</li>
+<li>Revenue Recognition: We apply Revenue Recognition Strategies (ASC 606) to ensure the money is recognized correctly over the life of the service, not just when the invoice is sent.</li>
+<li>Success Metric: The ultimate goal here is Revenue Accuracy.</li>
+</ul>
 
 
 <p class="strategy-type">One-Time / Immediate Billing</p>
@@ -3837,10 +3265,600 @@ Adjust original revenue allocation
 </li>
 </ul>
 
+<p class="strategy" id="assetstr">&#127974;&nbsp;The Ongoing Relationship (Asset & Subscription Management)</p>
+
+<p>
+  In modern business, the sale is just the beginning. The goal is to keep the customer for life.
+</p>
+<ul>
+<li>Asset Strategies: We track the vehicle and its software as Assets so we know exactly what the customer owns at any given second.</li>
+<li>The Lifecycle: We prepare for Renewals and Amendments. If the customer wants to upgrade their wheels mid-lease, our Asset Advanced Configurations handle the proration and change logic seamlessly.</li>
+</ul>
+
+<p class="strategy-type">One-Time Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Asset represents a
+<strong>delivered product or service with no recurring revenue</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Single instance per order item</li>
+<li>Ownership transferred immediately</li>
+<li>No subscription attached</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Asset created after order fulfillment</li>
+<li>Revenue recognized at delivery</li>
+<li>Minimal lifecycle tracking</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Physical products (hardware, machinery)</li>
+<li>One-off professional services</li>
+</ul>
+
+<p class="strategy-type">Subscription-Linked Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Asset tied to a
+<strong>recurring subscription</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Asset “exists” for the duration of subscription</li>
+<li>May have start/end dates aligned with subscription</li>
+<li>Can track usage or entitlements</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Subscription → asset mapping</li>
+<li>Asset termination triggers subscription closure</li>
+<li>Revenue recognition spread over subscription term</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>SaaS licenses</li>
+<li>Maintenance agreements</li>
+<li>Software seats</li>
+</ul>
+
+<p class="strategy-type">Consumable / Usage-Based Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>Asset consumed over time or by usage</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Metered or tracked usage</li>
+<li>May decrement quantity or units over time</li>
+<li>Can generate usage-based billing</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Asset usage feeds invoice</li>
+<li>Revenue recognition aligns with consumption</li>
+<li>Integration with usage tracking systems required</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Cloud storage / API calls</li>
+<li>Utilities (water, gas, electricity)</li>
+<li>Managed service hours</li>
+</ul>
+
+<p class="strategy-type">Amendable / Upgradable Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Asset can be
+<strong>upgraded, modified, or replaced mid-life</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Can change configuration or quantity</li>
+<li>Can trigger new subscription or order amendments</li>
+<li>May require proration for billing</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Asset linked to amendment order</li>
+<li>Revenue recognition adjusted for changes</li>
+<li>Historical asset data preserved for audit</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Software seat upgrades</li>
+<li>Hardware add-ons or replacements</li>
+</ul>
+
+<p class="strategy-type">Bundled Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Multiple assets delivered together as
+<strong>one logical unit</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Parent asset with child components</li>
+<li>Allocation rules for revenue</li>
+<li>Individual child assets may have separate lifecycles</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Revenue allocation across child assets</li>
+<li>Amendments may affect only some child assets</li>
+<li>Subscription alignment varies per component</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Telecom plan (device + service + content)</li>
+<li>Enterprise software + support bundle</li>
+</ul>
+
+<p class="strategy-type">Evergreen / Continuous Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Asset exists
+<strong>indefinitely until terminated</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Continuous billing or entitlement</li>
+<li>Cancellation event removes or deactivates asset</li>
+<li>May track ongoing usage</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Asset tied to continuous subscription</li>
+<li>Revenue recognition occurs per billing cycle</li>
+<li>Lifecycle event triggers (cancellation, upgrade)</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Cloud platforms with continuous service</li>
+<li>SaaS or streaming subscriptions</li>
+</ul>
+
+<p class="strategy-type">Entitlement / License Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Asset represents
+<strong>access rights, not physical delivery</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>May have start/end dates</li>
+<li>Drives service eligibility or SLA enforcement</li>
+<li>Can be linked to subscriptions or contracts</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Asset enforces service entitlement</li>
+<li>Revenue recognition aligned with contract/subscription period</li>
+<li>Amendments extend or reduce entitlement</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Software licenses</li>
+<li>Support or warranty entitlements</li>
+<li>Premium feature access</li>
+</ul>
+
+<p class="strategy-type">Lifecycle / Maintenance Asset</p>
+
+<p class="strategy-detail">Core Idea</p>
+
+<ul>
+<li>
+Asset tracked through
+<strong>multiple events over time</strong>
+</li>
+</ul>
+
+<p class="strategy-detail">Characteristics</p>
+
+<ul>
+<li>Can have scheduled maintenance or service events</li>
+<li>Status tracked (active, in repair, retired)</li>
+<li>May trigger recurring revenue or service charges</li>
+</ul>
+
+<p class="strategy-detail">RLM Impact</p>
+
+<ul>
+<li>Asset object stores lifecycle history</li>
+<li>Revenue recognition tied to service events</li>
+<li>Amendments or renewals may generate new revenue</li>
+</ul>
+
+<p class="strategy-detail">Use Cases</p>
+
+<ul>
+<li>Medical devices with service contracts</li>
+<li>Industrial equipment maintenance</li>
+<li>Vehicle fleets</li>
+</ul>
+
+<p class="strategy-detail">&nbsp;</p>
+
+<!-- Asset Technical (Wrench/Tools) -->
+<p class="strategy" id="assetcfg">&#128295;&nbsp;Asset , different revenue cloud advanced configurations</p>
+
+<p class="strategy-type">One-Time Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Represents a delivered product with
+<strong>one-time fulfillment and revenue</strong>
+.
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Asset Object:</strong>
+Created post-order item delivery
+</li>
+<li>
+<strong>Charge Type:</strong>
+One-time
+</li>
+<li>
+<strong>Subscription:</strong>
+Not created
+</li>
+<li>
+<strong>Invoice:</strong>
+Generated immediately
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+Full revenue recognized at delivery
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Asset status tracking (active, retired)</li>
+<li>Integration with ERP for shipped goods</li>
+<li>Optional warranty entitlement</li>
+</ul>
+
+<p class="strategy-type">Recurring / Subscription-Linked Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Asset exists
+<strong>for the duration of a subscription</strong>
+.
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Subscription Object:</strong>
+Linked to asset
+</li>
+<li>
+<strong>Asset Start/End Dates:</strong>
+Matches subscription term
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+Spread across subscription term
+</li>
+<li>
+<strong>Order Item:</strong>
+Recurring charge type
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Automated renewal creation</li>
+<li>Proration for mid-term changes</li>
+<li>Dynamic attribute-driven asset details</li>
+</ul>
+
+<p class="strategy-type">Usage-Based / Consumption Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Asset consumed over time or by usage.
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Asset Quantity / Usage Metric:</strong>
+Tracks consumption
+</li>
+<li>
+<strong>Usage Data Integration:</strong>
+API or ETL pipeline feeds actual usage
+</li>
+<li>
+<strong>Invoice Schedule:</strong>
+Arrears billing
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+Aligned with usage period
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Thresholds / overage billing</li>
+<li>True-up / true-down adjustments</li>
+<li>Integration with metering systems</li>
+</ul>
+
+<p class="strategy-type">Amendable / Upgradeable Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Supports
+<strong>mid-life modifications</strong>
+(quantity, tier, or feature).
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Linked to Amendment Order:</strong>
+Updates asset or subscription
+</li>
+<li>
+<strong>Proration Logic:</strong>
+Calculates partial-period billing
+</li>
+<li>
+<strong>Revenue Allocation:</strong>
+Adjusted for added or removed components
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Approval workflow for upgrades/downgrades</li>
+<li>Historical snapshot stored for audit</li>
+<li>Dynamic bundle handling for child assets</li>
+</ul>
+
+<p class="strategy-type">Dynamic / Bundled Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Asset composed of
+<strong>multiple child products</strong>
+, some added dynamically.
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Parent-Child Asset Relationship:</strong>
+Parent asset = bundle
+</li>
+<li>
+<strong>Order Items:</strong>
+Multiple child lines created per rules
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+Allocation across child components
+</li>
+<li>
+<strong>Invoice Schedule:</strong>
+May mix one-time and recurring charges
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Bundle composition rules (mandatory/optional children)</li>
+<li>Allocation rules for revenue recognition</li>
+<li>Proration for mid-term child changes</li>
+</ul>
+
+<p class="strategy-type">Evergreen / Continuous Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Asset exists
+<strong>indefinitely until terminated</strong>
+.
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Subscription Object:</strong>
+No end date
+</li>
+<li>
+<strong>Billing:</strong>
+Continuous until cancellation
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+Continuous per billing period
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Cancellation triggers automated order/subscription closure</li>
+<li>Usage-based adjustments supported</li>
+<li>Linked to entitlement or SLA objects</li>
+</ul>
+
+<p class="strategy-type">Entitlement / License Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Represents
+<strong>access rights rather than physical delivery</strong>
+.
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Asset Record:</strong>
+Tracks entitlement start/end dates
+</li>
+<li>
+<strong>Subscription Linkage:</strong>
+Optional, drives service eligibility
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+Based on contract/subscription duration
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Feature-level entitlements (feature toggles)</li>
+<li>Support for upgrades/downgrades mid-term</li>
+<li>Integration with service delivery systems</li>
+</ul>
+
+<p class="strategy-type">Lifecycle / Maintenance Asset</p>
+
+<p>
+<strong class="purpose">Purpose:</strong>
+Asset tracked through
+<strong>multiple lifecycle events</strong>
+(maintenance, service, upgrade).
+</p>
+
+<p class="strategy-detail">Technical Configuration</p>
+
+<ul>
+<li>
+<strong>Asset Status Field:</strong>
+Active, in-service, retired
+</li>
+<li>
+<strong>Service Milestones:</strong>
+Linked via tasks or custom object
+</li>
+<li>
+<strong>Revenue Recognition:</strong>
+May trigger per milestone or service event
+</li>
+<li>
+<strong>Order Item Linkage:</strong>
+Can generate recurring or milestone-based charges
+</li>
+</ul>
+
+<p class="strategy-detail">Advanced Config Options</p>
+
+<ul>
+<li>Automated service reminders and renewal orders</li>
+<li>Amendment handling for replacement or maintenance</li>
+<li>Integration with PSA / Field Service</li>
+</ul>
+
+<p class="strategy-detail">&nbsp;</p>
+
 
 <!-- Success (Sparkles/Star) -->
-<p class="strategy" id="successctr">&#10024;&nbsp;Different success criteria</p>
-
+<p class="strategy" id="successctr">&#10024;&nbsp;The "Grand Finale": Success Criteria & Governance</p>
+<p>
+  We end our journey by looking at the Success Criteria. Did we reduce the Quote-to-Cash Cycle? Is the system Audit Ready?"
+</p>
+<ul>
+<li>Architectural Governance: We discuss how to keep this system clean over time so it doesn't become a 'legacy mess.'</li>
+<li>Ending Strategies: We define how to successfully close the project, ensuring a smooth handoff to the business-as-usual (BAU) teams.</li>
+</ul>
 
 
 <p class="strategy-type">Revenue Accuracy</p>
