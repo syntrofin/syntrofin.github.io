@@ -150,7 +150,7 @@ color: #007bff;
 
 <main class="main-content-area">
 <!-- Industry (Building) --> 
-<p class="strategy" id="industry">&#127981;&nbsp;The "Why" –Industry Challenges</p>
+<p class="strategy" id="industry">&#127981;&nbsp;The "Why" – Industry Challenges</p>
 <p>
   Every industry has a different way of 'breathing' revenue. A SaaS company worries about MRR and proration, while a manufacturer deals with partial shipments and milestone billing. We start here because if you don't understand the industry's specific 'pain,' you can't architect the solution.
 </p>
@@ -310,7 +310,10 @@ color: #007bff;
 
 <p class="strategy-detail">&nbsp;</p>
 
-<!-- Sales (Chart up) --> <p class="strategy" id="salesst">&#128200;&nbsp;Sales Strategies</p>
+<!-- Sales (Chart up) --> <p class="strategy" id="salesst">&#128200;&nbsp;The "How" –Sales Strategies</p>
+  <p>
+    Once we know the industry, we look at the 'handshake'—the Sales Strategy. Is it a fast-paced Transactional model where speed is king, or a complex Consultative model requiring deep configuration? The strategy dictates whether our Salesforce RLM build needs to be a 'silent automation' or a 'guided experience'.
+  </p>
 
 <p class="strategy-type">Transactional Sales</p>
 
@@ -601,7 +604,10 @@ color: #007bff;
 <p class="strategy-detail">&nbsp;</p>
 
 <!-- Products (Package/Box) --> 
-<p class="strategy" id="prdtype">&#128230;&nbsp;Sales Product types</p>
+<p class="strategy" id="prdtype">&#128230;&nbsp;The "What" – Product Types & Pricing</p>
+  <p>
+    Now we define what is being sold. In RLM, we move beyond simple SKUs. We are stitching together Hybrid Products—combining a physical Model Y (one-time) with an FSD subscription (recurring) and Supercharging (usage). This is where we configure the Price Books to reflect global complexity while maintaining a single source of truth.
+  </p>
 <p class="strategy-type">One-Time (Non-Recurring) Products</p>
 
 <p class="strategy-detail">What it is</p>
@@ -1252,9 +1258,15 @@ Programmatically populated price books, often via CPQ rules or external ERP inte
 
 
 <!-- Discounts (Percentage/Scissors) -->
-<p class="strategy" id="discstr">&#9986;&nbsp;Discount strategies</p>
-
-
+<p class="strategy" id="discstr">&#9986;&nbsp;The Negotiation & Control (Discounting & Approvals)</p>
+<p>
+  Business isn't always 'fixed price.' Once the product is in the quote, the negotiation begins. But in a high-scale enterprise like Tesla, we can't let every salesperson change prices at will.
+</p>
+<ul>
+  <li>The Strategy: We implement Discount Strategies, moving from simple line-item percentages to Volume-Based schedules.</li>
+  <li>The Guardrails: We establish Approval Guardrails to ensure that if a rep wants to give a 30% discount on a Tesla Designer Wallet, the right manager signs off.</li>
+  <li>Success Metric: We call this Discount & Pricing Compliance—protecting the company's margins while giving Sales the flexibility to close the deal.</li>
+</ul>
 
 
 <p class="strategy-type">Line-Item Discount</p>
@@ -1557,8 +1569,14 @@ Must post via
 
 
 <!-- Orders (Shopping Cart) -->
-<p class="strategy" id="orderstr">&#128722;&nbsp;Order Strategies</p>
-
+<p class="strategy" id="orderstr">&#128722;&nbsp;The Handshake (Orders & Contracts)</p>
+<p>
+ A Quote is just a promise; an Order is a commitment. This step is where we bridge the gap between Sales and Operations.
+</p>
+<ul>
+  <li>The Transition: We look at Order Strategies, deciding how a complex hybrid order (Hardware + SaaS) is split for fulfillment.</li>
+  <li>The Formalization: For enterprise clients like the 'Wake Police,' we use Contract Strategies to lock in pricing for future orders, ensuring they always get what they are promised.</li>
+</ul>
 
 
 <p class="strategy-type">One-Time / Immediate Fulfillment Order</p>
