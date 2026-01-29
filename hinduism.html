@@ -30,12 +30,15 @@
 	 <!-- CSS -->
 	 <link href="./syntrofin_files/cssjs/hinduism.css" rel="stylesheet">
 	  <style>
-		body {
-			display: grid;
-			place-items: center;       /* Shorthand for both horizontal & vertical centering */
-			min-height: 100vh;
-			margin: 0;
-		}
+		article {
+    display: flex;
+    flex-direction: column;    /* Stacks title, image, and caption vertically */
+    align-items: center;       /* Centers them horizontally */
+    justify-content: center;    /* Centers them vertically */
+    min-height: 50vh;          /* Give it some height so you can see vertical centering */
+    text-align: center;        /* Centers text lines like your figcaption */
+}
+
 		figcaption {
 	    font-size: 0.75rem;     /* Makes it smaller (approx 12px) */
 	    color: #999;            /* A classic "very light" grey */
@@ -51,7 +54,7 @@
 	<h1>What is Hinduism</h1>
 	<figure>
 		<!-- Placeholder for Banyan Tree image  -->
-		<img src="./syntrofin_files/img/banyantree.png" alt="A banyan tree illustration" style="width: 25vw; height: auto;">
+		<img src="./syntrofin_files/img/banyantree.png" alt="A banyan tree illustration" style="width: 40vw; height: auto;">
 		<figcaption>Phot Courtesy — Times of India</figcaption>
 	</figure>
 	<div class="palm-leaf">
@@ -113,6 +116,7 @@
         </section>
     </article>
 
+	<!-- More Story -->
 	<div class="palm-leaf">
 		<h1>What is Hinduism in an Intellectual Way</h1>
 		<p><em></em></p>
