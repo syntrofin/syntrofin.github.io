@@ -99,29 +99,51 @@ ul.custom-bullets li {
   background-size: 1em 1em; /* Adjusts image size */
   padding-left: 1.5em; /* Space between custom image and text */
 }
-.horizontal-menu ul {
-  display: flex; /* Arranges list items in a row */
-  list-style-type: none; /* Removes bullets */
+/* Container for the menu */
+nav {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+}
+
+/* Horizontal alignment for the list */
+nav ul {
+  display: flex; 
+  list-style: none; /* No bullets */
   padding: 0;
   margin: 0;
 }
 
-.horizontal-menu li {
-  margin-right: 20px; /* Adds space between items */
+/* Spacing for your 3 IDs */
+nav li {
+  margin-left: 20px; 
+  font-family: sans-serif;
+  cursor: pointer;
 }
+
+/* Branding your custom tool */
+#rubix {
+  font-weight: bold;
+  color: #d32f2f; /* Red-ish like the Latin 'rubrica' */
+}
+
 
 </style>
 
 </head>
 <body>
   <h1>Maturity Framework</h1>
-<nav>
-        <ul class="horizontal-menu">
-            <li><a href="#model" id="model">Model</a></li>
-            <li><a href="#assess" id="assess">Assess</a></li>
-            <li><a href="#rubix" id="rubix">Rubix</a></li>
-        </ul>
-    </nav>
+<header class="navbar">
+  <h1 class="title">My System</h1>
+  <nav>
+    <ul class="nav-links">
+      <li id="model">Model</li>
+      <li id="evaluate">Evaluate</li>
+      <li id="rubix">Rubix</li>
+    </ul>
+  </nav>
+</header>
+
+
   
 <h2>Using a Maturity Framework</h2>
 <p>Employing a formal framework, often with stages like Emerging to High-Performing, helps benchmark capabilities in areas like service, technology, and analytics.</p>
@@ -133,7 +155,7 @@ ul.custom-bullets li {
 </ol>
 
 
-<div class="maturity-model-table-container" id="model">
+<div class="maturity-model-table-container" id="Model">
 <h2>Quote-to-Cash (Q2C) Maturity Model</h2>
 <p>A Quote-to-Cash (Q2C) maturity model helps an organization evaluate and refine its end-to-end process for converting sales opportunities into realized revenue, focusing on standardizing processes, integrating technology, and leveraging data for strategic insights.
 </p>
@@ -204,7 +226,7 @@ By consistently tracking these KPIs and comparing them against industry benchmar
 </div>
   
   
-<div class="maturity-model-table-container"  id="asess">
+<div class="maturity-model-table-container"  id="Evaluate">
 <h2>Formal Assessment to Guide</h2>
 
 <p>
@@ -329,7 +351,7 @@ Once you gather the results from this questionnaire, the next step is to analyze
 </div>
 
   
-<div class="maturity-model-table-container"  id="rubic">
+<div class="maturity-model-table-container"  id="Rubrix">
 <h2>Prioritize With Scoring Rubric</h2>
 <p>
 You can prioritize the gaps identified in your assessment using a combination of impact, effort, and strategic alignment to build an effective improvement roadmap.
