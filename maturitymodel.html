@@ -31,6 +31,12 @@
   body{
     padding:20px;
   }
+  h1{
+     text-align: center; 
+  }
+  h2{
+     color: #004a99; 
+  }
 /* A wrapper to allow horizontal scrolling on mobile devices */
 .maturity-model-table-container {
   overflow-x: auto;
@@ -79,6 +85,28 @@ tbody tr:nth-of-type(even) {
 
 tbody tr:hover {
   background-color: #e0e0e0; /* Highlight row on hover */
+}
+ul.custom-bullets {
+  list-style-type: none; /* Removes default bullets */
+  padding-left: 2rem; /* Adds space for the custom image */
+}
+
+ul.custom-bullets li {
+  background-image: url("your-image.svg"); /* Your image file */
+  background-position: 0 0.2em; /* Adjusts image position */
+  background-repeat: no-repeat;
+  background-size: 1em 1em; /* Adjusts image size */
+  padding-left: 1.5em; /* Space between custom image and text */
+}
+.horizontal-menu ul {
+  display: flex; /* Arranges list items in a row */
+  list-style-type: none; /* Removes bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.horizontal-menu li {
+  margin-right: 20px; /* Adds space between items */
 }
 
 </style>
@@ -445,7 +473,7 @@ By using this rubric, you can score each indicator and get a quantitative measur
   </p>
 </div>
 
-<h2>Action plan<.h2>
+<h2>Action plan</h2>
 <p>
 Start by identifying the top 1-2 priority areas from your assessment and outlining specific tasks for the next 3 months
 </p>
