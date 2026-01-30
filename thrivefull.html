@@ -33,7 +33,7 @@
 <style>
 /* 1. Global smooth scrolling behavior */
 html {
-scroll-behavior: smooth;
+scroll-behavior: auto !important;
 scroll-padding-top: 60px; /* Offset for anchors */
 }
   
@@ -159,7 +159,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 --> 
 
   <ul>
-    <li><a href="#industry" class="clrblu controll-scroll data-speed="5" data-offset="90" style="scroll-behavior: auto;">🏭  Day 1: The "Why" – Industry</a></li>
+    <li><a href="#industry" class="clrblu controll-scroll data-speed="150" data-offset="90" style="scroll-behavior: auto;">🏭  Day 1: The "Why" – Industry</a></li>
       <li><a href="#pricebookcfg" class="clrblu" style="font-size: 0.7rem;padding-left:20px;">🚀 Leads - Accounts - Contacts</a></li>
     <li><a href="#salesst" class="clrblu">📈  Day 2: The "How" - to Sell</a></li>
       <li><a href="#pricebookcfg" class="clrblu" style="font-size: 0.7rem;padding-left:20px;">🎹 Opp - Quote - TLE</a></li>
@@ -4497,26 +4497,23 @@ and streamlining billing."
 </main>
 
 </div>
-  <script>
+  
+<script>
 $('.controll-scroll').on('click', function(e) {
-    // 1. Prevent the instant "jump"
     e.preventDefault();
-
-    // 2. Get the target (e.g., #industry)
+    
     var target = $(this.hash);
+    // Use Number() to ensure "250" is treated as a math value, not text
+    var speed = Number($(this).data('speed')) || 500;
+    var offset = Number($(this).data('offset')) || 90;
 
-    // 3. Grab your numbers (or set defaults)
-    var speed = $(this).data('speed') || 500;   // Your 250 or 900
-    var offset = $(this).data('offset') || 90;  // Your 90px gap
-
-    // 4. The Magic: Scroll over 'speed' milliseconds
     if (target.length) {
         $('html, body').stop().animate({
             scrollTop: target.offset().top - offset
         }, speed);
     }
 });
-
 </script>
+  
 </body>
 </html>
