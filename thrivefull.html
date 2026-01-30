@@ -117,6 +117,22 @@ transition: color 0.2s;
 .toc a:hover {
 color: #007bff;
 }
+
+.flex3 {
+  display: flex;
+  flex-direction: column; /* Mobile: Stacked */
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .flex3 {
+    flex-direction: row; /* Desktop: Row */
+  }
+  .flex3 > div {
+    flex: 1; /* Makes each child take 1/3 of the space */
+  }
+}
+
 </style>
 
 </head>
@@ -172,15 +188,19 @@ Day 5: RevRec, Compliance, & Implementation Strategy
       <br>
     </p>
 <!-- Industry (Building) --> 
-  <div>
+  <div class="flex3">
       <div>
-    test
+    test1
   </div>
       <div>
-    test
+    test2
   </div>
       <div>
-    tst
+    test3
+  </div>
+      </div>
+      <div>
+    test4
   </div>
   </div>
 <p class="strategy" id="industry">&#127981;&nbsp;The "Why" – Industry Challenges</p>
