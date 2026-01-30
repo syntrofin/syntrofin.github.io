@@ -180,14 +180,20 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 <main class="main-content-area">
   <h1 style="text-align:center">Enterprise Revenue Life Cycle</h1>
   <p>
-    RLM is the alignment of Sales, Product, Operations, and Finance, to make sure, they are not not poorly connected islands, and to ensure that what a company promises is exactly what it delivers, bills, and collects.
+    RLM is the alignment of Sales, Product, Operations, and Finance, and to ensure that what a company promises is exactly what it delivers, bills, and collects.
   </p>
     <p>
-    Why is this prized: When these four departments are "poorly connected islands," the enterprise pays for it in Revenue Leakage, high Audit Risk, and a slow Quote-to-Cash cycle.</p>
+    Why is this needed: When these four departments are "poorly connected islands," the enterprise pays for it in Revenue Leakage, high Audit Risk, and a slow Quote-to-Cash cycle.</p>
     <p>
       <br>
     </p>
 <!-- Industry (Building) --> 
+  <p class="strategy" id="industry">&#127981;&nbsp;The "Why" – Industry Challenges</p>
+<p>
+  Every industry has a different way of 'breathing' revenue. A SaaS company worries about MRR and proration, while a manufacturer deals with partial shipments and milestone billing. We start here because if you don't understand the industry's specific 'pain,' you can't architect the solution.
+</p>
+  
+  <!--  Test Parallel div, may not be good for book style 
   <div class="flex3">
       <div>
     test1
@@ -203,15 +209,10 @@ Day 5: RevRec, Compliance, & Implementation Strategy
     test4
   </div>
   </div>
-<p class="strategy" id="industry">&#127981;&nbsp;The "Why" – Industry Challenges</p>
-<p>
-  Every industry has a different way of 'breathing' revenue. A SaaS company worries about MRR and proration, while a manufacturer deals with partial shipments and milestone billing. We start here because if you don't understand the industry's specific 'pain,' you can't architect the solution.
-</p>
+  <!--  
 
 <p class="strategy-type">SaaS / Software / Cloud Services</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Subscriptions (monthly / annual)</li>
 <li>Usage-based (API calls, seats, storage)</li>
@@ -219,7 +220,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Mid-term upgrades/downgrades → proration complexity</li>
 <li>Usage rating accuracy &amp; late-arriving data</li>
@@ -228,9 +228,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Telecom / Media</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Bundled plans (voice + data + content)</li>
 <li>Usage + overage charges</li>
@@ -238,7 +236,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Massive product catalogs &amp; dependencies</li>
 <li>Real-time usage mediation</li>
@@ -247,9 +244,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Manufacturing (B2B / Industrial)</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Configured products (BOM-driven)</li>
 <li>One-time + service contracts</li>
@@ -257,7 +252,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Complex product configuration rules</li>
 <li>ERP-led fulfillment (Salesforce not system of truth)</li>
@@ -266,9 +260,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Life Sciences / Medical Devices</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Equipment + consumables</li>
 <li>Service &amp; maintenance contracts</li>
@@ -276,7 +268,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Regulatory pricing constraints</li>
 <li>Contractual pricing by customer type</li>
@@ -285,9 +276,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Energy / Utilities</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Metered consumption</li>
 <li>Long-duration contracts</li>
@@ -295,7 +284,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Time-based rating complexity</li>
 <li>Price adjustments after consumption</li>
@@ -304,9 +292,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Professional Services</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Fixed-price projects</li>
 <li>Time &amp; materials</li>
@@ -314,7 +300,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Revenue recognition by milestones or effort</li>
 <li>Scope creep &amp; change orders</li>
@@ -323,16 +308,13 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Financial Services / Insurance</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Premiums, fees, commissions</li>
 <li>Policy-based subscriptions</li>
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Regulatory compliance &amp; approvals</li>
 <li>Policy lifecycle ≠ sales lifecycle</li>
@@ -341,9 +323,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-type">Retail / eCommerce (B2B focus)</p>
-
 <p class="strategy-detail">Typical Revenue</p>
-
 <ul>
 <li>Volume-based pricing</li>
 <li>Contracts &amp; replenishment</li>
@@ -351,7 +331,6 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 </ul>
 
 <p class="strategy-detail">Unique Challenges</p>
-
 <ul>
 <li>Price overrides &amp; exceptions</li>
 <li>High order velocity</li>
@@ -359,9 +338,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
 <li>Margin erosion visibility</li>
 </ul>
 
-<p class="strategy-detail">&nbsp;</p>
 
-<p class="strategy-detail">&nbsp;</p>
 
 <!-- Sales (Chart up) --> <p class="strategy" id="salesst">&#128200;&nbsp;The "How" – Sales Strategies</p>
   <p>
