@@ -44,6 +44,16 @@
             background-color: #0076bf; 
             border-radius: 50%;
         }
+        .icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;          /* Moves it to the middle */
+  width: 2px;         /* Thickness of the line */
+  background: white;  /* Color of the line */
+  transform: translateX(-50%); /* Perfectly centers it over the 50% mark */
+}
 
         .tile-row1 { border-left: 5px solid #EB9400;}
         .tile-row2 { border-left: 5px solid #0076bf;}
