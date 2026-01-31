@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise RLM: Project Execution & Architectural Playbook</title>
+    <style>
+        :root { --primary: #004d99; --secondary: #00a1e0; --accent: #fbc02d; --bg: #f4f7f9; --text: #333; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); max-width: 1000px; margin: 0 auto; padding: 40px; background-color: var(--bg); }
+        .paper { background: white; padding: 60px; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 4px; }
+        h1 { color: var(--primary); border-bottom: 4px solid var(--primary); padding-bottom: 10px; font-size: 2.5em; text-transform: uppercase; }
+        h2 { color: var(--primary); border-left: 8px solid var(--secondary); padding-left: 15px; margin-top: 40px; background: #eef7ff; padding-top: 10px; padding-bottom: 10px; }
+        h3 { color: var(--secondary); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 25px; }
+        .definition-box { background: #e3f2fd; border: 2px solid var(--primary); padding: 20px; border-radius: 8px; font-style: italic; margin: 20px 0; }
+        .stage-container { margin-bottom: 30px; }
+        .gate-check { background: #fffde7; border: 1px dashed var(--accent); padding: 20px; border-radius: 8px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: var(--primary); color: white; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li::before { content: "☐ "; color: var(--primary); font-weight: bold; padding-right: 10px; }
+        .strategy-card { border: 1px solid #ccc; padding: 15px; border-radius: 8px; margin-bottom: 10px; background: #fff; }
+        .footer { margin-top: 50px; font-size: 0.9em; color: #666; border-top: 1px solid #ccc; padding-top: 20px; text-align: center; }
+        @media print { body { background: white; padding: 0; } .paper { box-shadow: none; padding: 20px; } }
+    </style>
+</head>
+<body>
+
+<div class="paper">
+    <h1>Enterprise RLM Master Playbook</h1>
+    <p><strong>A Comprehensive Guide to Leading and Executing Salesforce Revenue Lifecycle Projects</strong></p>
+
+    <div class="definition-box">
+        <strong>Industry Definition:</strong> RLM is the alignment of Sales, Product, Operations, and Finance to ensure that what a company promises is exactly what it delivers, bills, and collects. It demolishes "islands of spreadsheets" to create a single, unified commercial continent.
+    </div>
+
+    <h2>Section 1: Strategy Selection & Project Approach</h2>
+    <p>Before building, architects must determine the "Start Strategy" based on legacy debt and commercial velocity needs.</p>
+    
+    <div class="strategy-card">
+        <h3>1. Greenfield Implementation</h3>
+        <p><strong>Use Case:</strong> New business units or total legacy replacement.</p>
+        <ul class="checklist">
+            <li>Does the unit lack a formal CPQ/RLM setup?</li>
+            <li>Can the business support a "Big Bang" launch with new processes?</li>
+        </ul>
+    </div>
+
+    <div class="strategy-card">
+        <h3>2. Brownfield / Migration (M&A Focus)</h3>
+        <p><strong>Use Case:</strong> Acquisitive companies (e.g., Clarivate) with fragmented systems.</p>
+        <ul class="checklist">
+            <li>Are there 5+ years of active subscriptions to preserve?</li>
+            <li>Do we need to harmonize multiple "Revenue Languages" from different acquisitions?</li>
+        </ul>
+    </div>
+
+    <div class="strategy-card">
+        <h3>3. Feature-First / High-Impact</h3>
+        <p><strong>Use Case:</strong> Rapid ROI by solving specific bottlenecks.</p>
+        <ul class="checklist">
+            <li>Is there a specific pain point (e.g., manual billing errors) causing revenue leakage?</li>
+            <li>Can we implement the Pricing Engine (BRE) first to solve immediate accuracy issues?</li>
+        </ul>
+    </div>
+
+    <h2>Section 2: The 5-Stage Execution Roadmap</h2>
+
+    <div class="stage-container">
+        <h3>Stage 1: Discovery & Architectural Alignment</h3>
+        <p>Focus on mapping the "Revenue DNA" and identifying where data is manually "glued" between silos.</p>
+        <ul class="checklist">
+            <li>Map Quote-to-Cash journey.</li>
+            <li>Document Industry Challenges (e.g., proration, usage spikes).</li>
+            <li>Define Success Metrics (ARR Consistency, Audit Readiness).</li>
+        </ul>
+    </div>
+
+    <div class="stage-container">
+        <h3>Stage 2: Design & Metadata Architecture</h3>
+        <p>Design the "Correct by Design" blueprint using native Core objects.</p>
+        <ul class="checklist">
+            <li>PCM: Design a "Thin Catalog" using Attributes.</li>
+            <li>BRE: Map logic into Pricing Procedures and Decision Tables.</li>
+            <li>RevRec: Map ASC 606 standards to automated schedules.</li>
+        </ul>
+    </div>
+
+    <div class="gate-check">
+        <strong>Stage-Gate 1 (Design to Build):</strong>
+        <ul class="checklist">
+            <li>PCM Blueprint reduces SKU volume by 50%+.</li>
+            <li>Pricing logic is documented and approved by Finance.</li>
+            <li>API endpoints for ERP and Usage are "Contract-Ready".</li>
+        </ul>
+    </div>
+
+    <div class="stage-container">
+        <h3>Stage 3: Build & Orchestration</h3>
+        <p>Configure the modular engines. <strong>Test the Engine, not the UI.</strong></p>
+        <table>
+            <tr><th>Feature</th><th>Technical Focus</th></tr>
+            <tr><td>TLE</td><td>Customized Transaction Line Editor for hybrid quotes.</td></tr>
+            <tr><td>DRO</td><td>Order Decomposition into software/hardware fulfillment.</td></tr>
+            <tr><td>Headless</td><td>Ensuring API-first configuration logic works.</td></tr>
+        </table>
+    </div>
+
+    <div class="stage-container">
+        <h3>Stage 4: Testing & Revenue Validation</h3>
+        <p>Prove Financial Integrity through "The Golden Deal" and "Stress Tests".</p>
+        <ul class="checklist">
+            <li>E2E: Quote to Cash without manual intervention.</li>
+            <li>Stress: Mid-term upgrades/downgrades and proration.</li>
+            <li>Load: High-volume usage rating ingestion.</li>
+        </ul>
+    </div>
+
+    <div class="stage-container">
+        <h3>Stage 5: Deployment & Governance</h3>
+        <p>Transition to the "Unified Continent" and protect the architecture.</p>
+        <ul class="checklist">
+            <li>Cutover: Reconcile TCV between legacy and RLM Assets.</li>
+            <li>RCoE: Establish the Revenue Center of Excellence.</li>
+            <li>Monitoring: Build a Health Dashboard for stuck orders.</li>
+        </ul>
+    </div>
+
+    <h2>Section 3: Troubleshooting & The Architect's Checklist</h2>
+    <table>
+        <thead>
+            <tr><th>Problem</th><th>Architect's Solution</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>SKU Proliferation</td><td>Use Product Attributes + Attribute-Based Pricing.</td></tr>
+            <tr><td>Pricing Mismatch</td><td>Check BRE Pricing Procedures for override steps.</td></tr>
+            <tr><td>Decision Table Break</td><td>Always include a "Default/Catch-all" row.</td></tr>
+        </tbody>
+    </table>
+
+    <div class="gate-check">
+        <strong>The Final "Handshake" Audit:</strong>
+        <ul class="checklist">
+            <li><strong>Sales:</strong> Reps quote without spreadsheets.</li>
+            <li><strong>Product:</strong> Logic is centralized in PCM/BRE.</li>
+            <li><strong>Ops:</strong> Orders are decomposed and fulfillable.</li>
+            <li><strong>Finance:</strong> Invoices are 100% accurate and compliant.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        Enterprise Revenue Lifecycle Management | Internal Architect Training Material | 2026
+    </div>
+</div>
+
+</body>
+</html>
