@@ -29,9 +29,9 @@
 
 <style>
   body{
-    padding:20px;
+    padding:20px 40px;
   }
-  h1,h3{
+  h1{
      text-align: center; 
   }
   h2{
@@ -275,36 +275,53 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 <h3>	RLM Project Strategy Scorecard	</h3>	
 <p>	To use this tool, rate each statement for the enterprise on a scale of 1 (Strongly Disagree) to 5 (Strongly Agree).	</p>	
 <h3>	Section 1: Legacy & Data Complexity	</h3>	
+	<ul>
 	<li>Statement 1: Our current processes are so inefficient that we would rather redesign them from scratch than migrate them.	</li>	
 	<li>Statement 2: We have a massive volume of historical, active subscriptions that must remain "live" without interruption.	</li>	
 	<li>Statement 3: We have multiple, fragmented billing systems from various acquisitions that need to be unified.	</li>	
+	</ul>
 <h3>	Section 2: Risk & Speed to Value	</h3>	
+	<ul>
 	<li>Statement 4: We need a "quick win" to solve a specific financial bottleneck (e.g., manual pricing errors) immediately.	</li>	
 	<li>Statement 5: The organization is highly risk-averse and requires a small-scale proof before a global rollout.	</li>	
 	<li>Statement 6: We need the flexibility to change our pricing rules and product structures frequently based on market feedback.	</li>	
+	</ul>
 <h3>	Section 3: Technical Ecosystem	</h3>	
+	<ul>
 	<li>Statement 7: Success is 100% dependent on a perfect, real-time integration with a rigid global ERP (e.g., SAP or Oracle).	</li>	
 	<li>Statement 8: We have a high volume of metered usage data that must be ingested before we can even begin quoting.	</li>	
 	<li>Statement 9: We prefer launching core functionality (Quote-to-Order) now and adding advanced features (Renewals/Amendments) later.	</li>	
+	</ul>
 <h3>	Scoring Key & Strategy Recommendation	</h3>	
 <p>	Total the scores for the specific clusters below to find the most aligned strategy:	</p>	
 <h3>	The "Clean Slate" Path (High Scores in 1 & 9)	</h3>	
+	<ul>
 	<li>Strategy: Greenfield Implementation or Modular Rollout.	</li>	
 	<li>Narrative: Focus on building a "Correct by Design" architecture using native Salesforce Core objects.	</li>	
+	</ul>
 <h3>	The "Continuity" Path (High Scores in 2 & 3)	</h3>	
+	<ul>
 	<li>Strategy: Brownfield / Migration Approach.	</li>	
 	<li>Narrative: Focus heavily on data mapping and harmonizing "Revenue Languages" across legacy systems.	</li>	
+	</ul>
 <h3>	The "Validation" Path (High Scores in 5 & 6)	</h3>	
+	<ul>
 	<li>Strategy: Pilot / PoC or Agile Iterative Start.	</li>	
 	<li>Narrative: Focus on mitigating risk by testing complex logic (like dynamic bundles) in a controlled environment first.	</li>	
+	</ul>
 <h3>	The "Efficiency" Path (High Scores in 4 & 7)	</h3>	
+	<ul>
 	<li>Strategy: Feature-First or Integration-First.	</li>	
 	<li>Narrative: Focus on solving the biggest "Financial Bottleneck" or ERP integration hurdle to achieve immediate ROI.	</li>	
+	</ul>ul>
+	
 <p>	How this guides the Project Lifecycle	</p>	
 <p>	Once a strategy is selected, it dictates the RLM Start Considerations:	</p>	
+		<ul>
 	<li>Greenfield/Modular: Start with standard objects: Quote → Order → Subscription → Invoice.	</li>	
 	<li>Brownfield/Integration-First: Start with Data Mapping and API definitions for usage ingestion and ERP posting.	</li>	
 	<li>Feature-First/Pilot: Start with the Business Rules Engine (BRE) to configure specific pricing or discount logic for high-impact products.	</li>	
+		</ul>
 	<!-- Kick Off Checklist -->		
 <h2>	RLM Strategy Kickoff Checklists	</h2>	
 <p>	To help you move from strategy selection to execution, here are the Project Kickoff Checklists tailored to each specific RLM approach. These are designed to ensure the architecture is "Correct by Design" from the very first day.	</p>	
