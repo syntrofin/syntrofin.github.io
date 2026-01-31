@@ -140,47 +140,98 @@ nav li {
 
 /*tree path*/  /*used here for decision*/
 
-/* Paste this into your existing CSS file, replacing the media query section */
+	/* Mobile styles (stacked by default, central line) */
+.timeline-container {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically on mobile */
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* The main central vertical line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin: 20px 0;
+  width: 100%; /* Take full width on mobile */
+  text-align: center;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px; /* INCREASED PADDING = BIGGER BOXES */
+  background-color: white;
+  width: fit-content;
+  margin: 0 auto; /* Center boxes on mobile */
+}
 
 /* Desktop styles (alternating left/right layout) */
-@media (min-width: 768px) {
-  .timeline-container {
-    padding: 50px 0;
-  }
+
   
   .timeline-item {
     display: flex;
     width: 50%; /* Each item takes half the container width */
-    /* Remove text-align: left from here */
+    justify-content: flex-start;
+    text-align: left;
   }
 
   /* Right side items (every second item) */
   .timeline-item:nth-child(even) {
     margin-left: 50%; /* Push even items to the right of the central line */
-    justify-content: flex-start; /* Align the box to the start (left edge) of the right half */
-    text-align: left;
+    justify-content: flex-end;
+    text-align: right;
   }
 
   /* Left side items (every first/odd item) */
   .timeline-item:nth-child(odd) {
-    /* margin-right: 50%; <--- REMOVE THIS MARGIN */
-    justify-content: flex-end; /* Align the box to the end (right edge) of the left half */
-    text-align: right;
+    margin-right: 50%; /* Keep odd items to the left */
+    justify-content: flex-start;
+    text-align: left;
   }
 
-  /* We no longer need the horizontal connector lines, as the boxes touch the main stem */
-  .timeline-item:nth-child(odd) .box::after,
+  /* Positioning the connector lines */
+
+  /* Lines for Left side items (odd) */
+  .timeline-item:nth-child(odd) .box::after {
+    content: '';
+    position: absolute;
+    right: -30px; /* REDUCED DISTANCE */
+    top: 50%;
+    width: 10px; /* REDUCED LINE WIDTH */
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
+  }
+
+  /* Lines for Right side items (even) */
   .timeline-item:nth-child(even) .box::after {
-    display: none; 
+    content: '';
+    position: absolute;
+    left: -10px; /* REDUCED DISTANCE */
+    top: 50%;
+    width: 10px; /* REDUCED LINE WIDTH */
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
   }
 
   .box {
       position: relative;
-      margin: 0; /* Ensure no extra margins push the box away */
-      min-width: 150px; 
+      margin: 0;
+      min-width: 150px; /* ENSURE BOXES ARE WIDER */
   }
 }
-
 </style>
 
   <!--
