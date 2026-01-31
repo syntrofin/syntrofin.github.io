@@ -37,23 +37,30 @@
             border-left: 5px solid #0076bf; /* Color bar on the left */
         }
         .icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            /* In a real scenario, this would be an SVG or image */
-            background-color: #0076bf; 
-            border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-color: #0076bf; 
+        border-radius: 50%;
+        
+        /* ADD THIS LINE */
+        position: relative; 
+        
+        /* OPTIONAL: hides the line parts that stick out of the circle */
+        overflow: hidden; 
         }
+    
         .icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;          /* Moves it to the middle */
-  width: 2px;         /* Thickness of the line */
-  background: white;  /* Color of the line */
-  transform: translateX(-50%); /* Perfectly centers it over the 50% mark */
-}
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: white;
+        transform: translateX(-50%);
+        }
+
 
         .tile-row1 { border-left: 5px solid #EB9400;}
         .tile-row2 { border-left: 5px solid #0076bf;}
