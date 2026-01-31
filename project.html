@@ -136,6 +136,88 @@ nav li {
   font-weight: bold;
   color: #B89521;  /* Golden-ish like Rice husk */
 }
+
+/*tree path*/  /*used here for decision*/
+
+/* Mobile styles (stacked by default) */
+.tree-container {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically on mobile */
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+.tree-item {
+  position: relative;
+  margin-bottom: 40px; /* Space between stacked items */
+  width: 100%;
+  text-align: center;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Connecting lines for mobile (vertical line) */
+.tree-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -40px; /* Connects to the next item below */
+  width: 1px;
+  height: 40px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.tree-item:last-child::after {
+  display: none; /* Hide line after the last item */
+}
+
+/* Desktop styles (horizontal layout) */
+@media (min-width: 768px) {
+  .tree-container {
+    flex-direction: row; /* Aligns items horizontally on desktop */
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+  
+  .tree-item {
+    margin-bottom: 0;
+    width: auto;
+    position: static; /* Remove absolute positioning for desktop layout */
+  }
+
+  /* Connecting lines for desktop (horizontal line) */
+  .tree-item::after, .tree-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background-color: black;
+  }
+
+  .tree-item::before {
+    left: -50%;
+    width: 50%;
+  }
+
+  .tree-item::after {
+    right: -50%;
+    width: 50%;
+  }
+
+  .tree-item:first-child::before, .tree-item:last-child::after {
+    display: none; /* Hide lines before first and after last item */
+  }
+}
+
 </style>
 
   <!--
@@ -155,18 +237,33 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 <body>
 
 <header class="navbar">
-   <h1>Maturity Framework</h1>
+   <h1>RLM Project</h1>
   <nav>
     <ul class="nav-links">
-      <li id="model">Model</li>
+      <li id="approoach">Approoach</li>
       <li id="evaluate">Evaluate</li>
       <li id="rubix">Rubix</li>
     </ul>
   </nav>
 </header>
+<div class="tree-container">
+  <div class="tree-item">
+    <div class="box">Path A<br>Test Text Here</div>
+  </div>
+  <div class="tree-item">
+    <div class="box">Path A<br>Test Text Here</div>
+  </div>
+  <div class="tree-item">
+    <div class="box">Path A<br>Test Text Here</div>
+  </div>
+  <div class="tree-item">
+    <div class="box">Path A<br>Test Text Here</div>
+  </div>
+  <!-- You can add more items here -->
+</div>
 
-<h1>	RLM Project	</h1>	
-	<!-- Project Questionnaire -->		
+	<!-- Approach - Project Questionnaire -->		
+<section id="approoach">
 <h2>	RLM Project Questionnaire	</h2>	
 <p>	To determine the most effective project approach for an enterprise Revenue Lifecycle Management (RLM) implementation, you can use the following diagnostic questions. These are designed to translate the core characteristics and use cases of each strategy into a discovery tool for stakeholders.	</p>	
 <h3>	1. Greenfield Implementation	</h3>	
@@ -232,6 +329,8 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 	<li>Is the goal to improve revenue recognition accuracy quickly without overhauling the entire sales process?	</li>	
 	<li>Can the project scope be expanded to other RLM areas only after a high-impact "quick win" is demonstrated?	</li>	
 	</ul>		
+</section>
+<section id="decision">
 	<!-- Project Decision Tree -->		
 <h2>	RLM Project Decision Tree	</h2>	
 <p>	To help you and your stakeholders finalize a project approach, here is a visual decision tree and a summary of how these questions guide the strategy selection.	</p>	
@@ -272,7 +371,8 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 	<li>Focus: Immediate ROI.	</li>	
 	<li>Best for: Solving a singular, high-cost "Financial Bottleneck," such as manual discounting errors, without an initial full-scale overhaul.	</li>	
 	</ul>		
-	<!-- Project Score Card -->		
+</section>
+<section id="strategy">	
 <h2>	RLM Project Strategy Scorecard	</h2>	
 <p>	Here is a Project Strategy Scorecard designed to help you objectively evaluate which RLM implementation path is the best fit for an enterprise.	</p>	
 <h3>	RLM Project Strategy Scorecard	</h3>	
@@ -325,6 +425,8 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 	<li>Brownfield/Integration-First: Start with Data Mapping and API definitions for usage ingestion and ERP posting.	</li>	
 	<li>Feature-First/Pilot: Start with the Business Rules Engine (BRE) to configure specific pricing or discount logic for high-impact products.	</li>	
 		</ul>
+	</section>
+<section id="kickoff">
 	<!-- Kick Off Checklist -->		
 <h2>	RLM Strategy Kickoff Checklists	</h2>	
 <p>	To help you move from strategy selection to execution, here are the Project Kickoff Checklists tailored to each specific RLM approach. These are designed to ensure the architecture is "Correct by Design" from the very first day.	</p>	
@@ -371,7 +473,9 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 <p>	Can we bill for this? (Finance alignment)	</p>	
 <p>	Can we fulfill this? (Operations alignment)	</p>	
 <p>	Is it compliant? (Legal/Revenue alignment)	</p>	
-	</ul>		
+	</ul>	
+	</section>
+<section id="charter">
 	<!-- Project Template -->		
 <h2>	Project Charter Template	</h3>	
 <h3>	Project Charter Template for a Salesforce RLM rollout. This document formalizes the strategy and aligns the Sales, Product, Operations, and Finance teams on a single "Unified Continent".	</h2>	
@@ -409,6 +513,6 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 	<li>[ ] Data Mapping: Harmonize legacy SKUs and historical assets into the RLM core model.	</li>	
 	<li>[ ] Governance: Establish the architectural review board for all future pricing and product changes.	</li>	
 	</ul>		
-  
+  </section>
 </body>
 </html>
