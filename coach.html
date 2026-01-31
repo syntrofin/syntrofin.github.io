@@ -75,6 +75,17 @@
             color: #0076bf;
             text-decoration: none;
         }
+          /* Mobile-first: Remove on Mobile */
+          .responsive-hide {
+            display: none;
+          }
+        
+          /* Hide on Desktop (screens wider than 768px) */
+          @media (min-width: 768px) {
+            .responsive-hide {
+              visibility: hidden;  
+            }
+          }
     </style>
 </head>
 <body>
@@ -104,7 +115,7 @@
         </div>
 
         <!-- Tile 3 (The new one you requested) -->
-        <div class="tile tile-row1" style="visibility: hidden;">
+        <div class="tile tile-row1 responsive-hide">
             <div class="tile-header">
                 <span class="coach-name"><div class="icon icon-row1"></div>RevChain</span>
             </div>
