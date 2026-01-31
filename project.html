@@ -140,8 +140,8 @@ nav li {
 
 /*tree path*/  /*used here for decision*/
 
-/* Mobile styles (stacked by default) */
-.tree-container {
+/* Mobile styles (stacked by default, central line) */
+.timeline-container {
   display: flex;
   flex-direction: column; /* Stacks items vertically on mobile */
   align-items: center;
@@ -149,10 +149,22 @@ nav li {
   padding: 20px 0;
 }
 
-.tree-item {
+/* The main central vertical line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
   position: relative;
-  margin-bottom: 40px; /* Space between stacked items */
-  width: 100%;
+  margin: 20px 0;
+  width: 100%; /* Take full width on mobile */
   text-align: center;
 }
 
@@ -160,64 +172,69 @@ nav li {
   border: 1px solid black;
   padding: 10px;
   background-color: white;
-  display: inline-block;
   width: fit-content;
+  margin: 0 auto; /* Center boxes on mobile */
 }
 
-/* Connecting lines for mobile (vertical line) */
-.tree-item::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -40px; /* Connects to the next item below */
-  width: 1px;
-  height: 40px;
-  background-color: black;
-  transform: translateX(-50%);
-}
-
-.tree-item:last-child::after {
-  display: none; /* Hide line after the last item */
-}
-
-/* Desktop styles (horizontal layout) */
+/* Desktop styles (alternating left/right layout) */
 @media (min-width: 768px) {
-  .tree-container {
-    flex-direction: row; /* Aligns items horizontally on desktop */
-    justify-content: space-around;
-    align-items: flex-start;
-    padding-top: 50px;
+  .timeline-container {
+    padding: 50px 0;
   }
   
-  .tree-item {
-    margin-bottom: 0;
-    width: auto;
-    position: static; /* Remove absolute positioning for desktop layout */
+  .timeline-item {
+    display: flex;
+    width: 50%; /* Each item takes half the container width */
+    justify-content: flex-start;
+    text-align: left;
   }
 
-  /* Connecting lines for desktop (horizontal line) */
-  .tree-item::after, .tree-item::before {
+  /* Right side items (every second item) */
+  .timeline-item:nth-child(even) {
+    margin-left: 50%; /* Push even items to the right of the central line */
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  /* Left side items (every first/odd item) */
+  .timeline-item:nth-child(odd) {
+    margin-right: 50%; /* Keep odd items to the left */
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  /* Positioning the connector lines */
+
+  /* Lines for Left side items (odd) */
+  .timeline-item:nth-child(odd) .box::after {
     content: '';
     position: absolute;
-    top: 0;
+    right: -20px; /* Position line near the central axis */
+    top: 50%;
+    width: 20px;
     height: 1px;
-    background-color: black;
+    background-color: #000;
+    transform: translateY(-50%);
   }
 
-  .tree-item::before {
-    left: -50%;
-    width: 50%;
+  /* Lines for Right side items (even) */
+  .timeline-item:nth-child(even) .box::after {
+    content: '';
+    position: absolute;
+    left: -20px; /* Position line near the central axis */
+    top: 50%;
+    width: 20px;
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
   }
 
-  .tree-item::after {
-    right: -50%;
-    width: 50%;
-  }
-
-  .tree-item:first-child::before, .tree-item:last-child::after {
-    display: none; /* Hide lines before first and after last item */
+  .box {
+      position: relative; /* Needed for positioning the connector pseudo-element */
+      margin: 0; /* Remove auto margins for alignment */
   }
 }
+
 
 </style>
 
@@ -248,33 +265,22 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
   </nav>
 </header>
 		<br>
-<div class="tree-container">
-  <div class="tree-item">
+<div class="timeline-container">
+  <div class="timeline-item">
     <div class="box">Path A<br>Test Text Here</div>
   </div>
-  <div class="tree-item">
+  <div class="timeline-item">
     <div class="box">Path A<br>Test Text Here</div>
   </div>
-  <div class="tree-item">
+  <div class="timeline-item">
     <div class="box">Path A<br>Test Text Here</div>
   </div>
-  <div class="tree-item">
+  <div class="timeline-item">
     <div class="box">Path A<br>Test Text Here</div>
   </div>
-  <!-- You can add more items here -->
-	  <div class="tree-item">
-    <div class="box">Path A<br>Test Text Here</div>
-  </div>
-  <div class="tree-item">
-    <div class="box">Path A<br>Test Text Here</div>
-  </div>
-  <div class="tree-item">
-    <div class="box">Path A<br>Test Text Here</div>
-  </div>
-  <div class="tree-item">
-    <div class="box">Path A<br>Test Text Here</div>
-  </div>
+  <!-- Add more items as needed -->
 </div>
+
 
 	<!-- Approach - Project Questionnaire -->		
 <section id="approoach">
