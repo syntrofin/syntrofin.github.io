@@ -155,17 +155,17 @@ a.clrgrn {
 a.clrbrk {
   color:#777777 !important;
 }
-.dayflex {
+.flexday {
   display: flex;
   flex-direction: column; /* Mobile: Stacked */
   gap: 10px;
 }
 
 @media (min-width: 768px) {
-  .dayflex {
+  .flexday {
     flex-direction: row; /* Desktop: Row */
   }
-  .dayflex > div {
+  .flexday > div {
     flex: 1; /* Makes each child take equal space */
   }
 }
@@ -196,7 +196,223 @@ a.clrbrk {
       <li><a href="#assetstr" class="clrgrn" style="font-size: 0.7rem;padding-left:20px;">🔓 Changes</a></li>
   </ul>
 </nav>
-
+<!--- Test --->
+<p class="strategy" id="assetstr">Sat: &#127974;&nbsp;The Ongoing Relationship (Asset & Subscription Management)</p>
+<div class="flexday">
+  <div>
+<p>
+  In modern business, the sale is just the beginning. The goal is to keep the customer for life.
+</p>
+<ul>
+<li>Asset Strategies: We track the vehicle and its software as Assets so we know exactly what the customer owns at any given second.</li>
+<li>The Lifecycle: We prepare for Renewals and Amendments. If the customer wants to upgrade their wheels mid-lease, our Asset Advanced Configurations handle the proration and change logic seamlessly.</li>
+</ul>
+<p class="strategy-type">One-Time Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Asset represents a
+<strong>delivered product or service with no recurring revenue</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Single instance per order item</li>
+<li>Ownership transferred immediately</li>
+<li>No subscription attached</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Asset created after order fulfillment</li>
+<li>Revenue recognized at delivery</li>
+<li>Minimal lifecycle tracking</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Physical products (hardware, machinery)</li>
+<li>One-off professional services</li>
+</ul>
+<p class="strategy-type">Subscription-Linked Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Asset tied to a
+<strong>recurring subscription</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Asset “exists” for the duration of subscription</li>
+<li>May have start/end dates aligned with subscription</li>
+<li>Can track usage or entitlements</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Subscription → asset mapping</li>
+<li>Asset termination triggers subscription closure</li>
+<li>Revenue recognition spread over subscription term</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>SaaS licenses</li>
+<li>Maintenance agreements</li>
+<li>Software seats</li>
+</ul>
+<p class="strategy-type">Consumable / Usage-Based Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>Asset consumed over time or by usage</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Metered or tracked usage</li>
+<li>May decrement quantity or units over time</li>
+<li>Can generate usage-based billing</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Asset usage feeds invoice</li>
+<li>Revenue recognition aligns with consumption</li>
+<li>Integration with usage tracking systems required</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Cloud storage / API calls</li>
+<li>Utilities (water, gas, electricity)</li>
+<li>Managed service hours</li>
+</ul>
+<p class="strategy-type">Amendable / Upgradable Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Asset can be
+<strong>upgraded, modified, or replaced mid-life</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Can change configuration or quantity</li>
+<li>Can trigger new subscription or order amendments</li>
+<li>May require proration for billing</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Asset linked to amendment order</li>
+<li>Revenue recognition adjusted for changes</li>
+<li>Historical asset data preserved for audit</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Software seat upgrades</li>
+<li>Hardware add-ons or replacements</li>
+</ul>
+</div>
+<div>
+<p class="strategy-type">Bundled Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Multiple assets delivered together as
+<strong>one logical unit</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Parent asset with child components</li>
+<li>Allocation rules for revenue</li>
+<li>Individual child assets may have separate lifecycles</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Revenue allocation across child assets</li>
+<li>Amendments may affect only some child assets</li>
+<li>Subscription alignment varies per component</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Telecom plan (device + service + content)</li>
+<li>Enterprise software + support bundle</li>
+</ul>
+<p class="strategy-type">Evergreen / Continuous Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Asset exists
+<strong>indefinitely until terminated</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Continuous billing or entitlement</li>
+<li>Cancellation event removes or deactivates asset</li>
+<li>May track ongoing usage</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Asset tied to continuous subscription</li>
+<li>Revenue recognition occurs per billing cycle</li>
+<li>Lifecycle event triggers (cancellation, upgrade)</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Cloud platforms with continuous service</li>
+<li>SaaS or streaming subscriptions</li>
+</ul>
+<p class="strategy-type">Entitlement / License Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Asset represents
+<strong>access rights, not physical delivery</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>May have start/end dates</li>
+<li>Drives service eligibility or SLA enforcement</li>
+<li>Can be linked to subscriptions or contracts</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Asset enforces service entitlement</li>
+<li>Revenue recognition aligned with contract/subscription period</li>
+<li>Amendments extend or reduce entitlement</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Software licenses</li>
+<li>Support or warranty entitlements</li>
+<li>Premium feature access</li>
+</ul>
+<p class="strategy-type">Lifecycle / Maintenance Asset</p>
+<p class="strategy-detail">Core Idea</p>
+<ul>
+<li>
+Asset tracked through
+<strong>multiple events over time</strong>
+</li>
+</ul>
+<p class="strategy-detail">Characteristics</p>
+<ul>
+<li>Can have scheduled maintenance or service events</li>
+<li>Status tracked (active, in repair, retired)</li>
+<li>May trigger recurring revenue or service charges</li>
+</ul>
+<p class="strategy-detail">RLM Impact</p>
+<ul>
+<li>Asset object stores lifecycle history</li>
+<li>Revenue recognition tied to service events</li>
+<li>Amendments or renewals may generate new revenue</li>
+</ul>
+<p class="strategy-detail">Use Cases</p>
+<ul>
+<li>Medical devices with service contracts</li>
+<li>Industrial equipment maintenance</li>
+<li>Vehicle fleets</li>
+</ul>
+</div>
+  </div>
+<!--- Test End -->
 <div class="main-layout-container">
 <main class="main-content-area">
   <h1 style="text-align:center">Enterprise Revenue Life Cycle Curriculum</h1>
