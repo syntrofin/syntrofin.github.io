@@ -23,7 +23,7 @@
         .capability-list li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.95em; }
         .capability-list li::before { content: "→"; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
 
-        .dev-badge { background: #eef2ff; color: var(--secondary); padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold; margin-left: 5px; border: 1px solid var(--secondary); }
+        .team-badge { background: #eef2ff; color: var(--secondary); padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold; margin-left: 5px; border: 1px solid var(--secondary); }
         .gate-tag { background: #fff9e6; color: #7a5500; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8em; border: 1px solid #ffe58f; }
         
         .tech-callout { background: #f8fafc; border-left: 5px solid var(--secondary); padding: 15px; margin: 0 25px 20px 25px; border-radius: 0 4px 4px 0; }
@@ -49,9 +49,9 @@
             <div>
                 <h3>Strategy & Governance</h3>
                 <ul class="capability-list">
-                    <li><strong>Value Stream Audit:</strong> Identify Lead-to-Ledger friction points and margin leakage.</li>
-                    <li><strong>Thrive Maturity Mapping:</strong> Assess Sales/Finance cultural readiness for transparency.</li>
-                    <li><strong>Strategy Selection:</strong> Lock Greenfield vs. Brownfield path based on technical debt.</li>
+                    <li><strong>Value Stream Audit:</strong> Identify Lead-to-Ledger friction points and margin leakage.<span class="team-badge" style="background: yellow; color:">ELT</span><</li>
+                    <li><strong>Thrive Maturity Mapping:</strong> Assess Sales/Finance cultural readiness for transparency.<span class="team-badge" style="background: yellow; color:">ELT</span><<</li>
+                    <li><strong>Strategy Selection:</strong> Lock Greenfield vs. Brownfield path based on technical debt.<span class="team-badge" style="background: yellow; color:">ELT</span><<</li>
                 </ul>
             </div>
             <div>
@@ -75,16 +75,16 @@
                 <h3>1. Product & Pricing Engineering</h3>
                 <ul class="capability-list">
                     <li><strong>Advanced Catalog (PCM):</strong> Configure complex Product Bundles, Nested Options, and Attributes.</li>
-                    <li><strong>Pricing Logic (BRE):</strong> Build <strong>Decision Tables</strong> for Global Price Books and Tiered Discounts. <span class="dev-badge">DEV</span></li>
-                    <li><strong>Price Rules:</strong> Use BRE Expression Sets to automate surcharges and dynamic calculations. <span class="dev-badge">DEV</span></li>
+                    <li><strong>Pricing Logic (BRE):</strong> Build <strong>Decision Tables</strong> for Global Price Books and Tiered Discounts. <span class="team-badge">DEV</span></li>
+                    <li><strong>Price Rules:</strong> Use BRE Expression Sets to automate surcharges and dynamic calculations. <span class="team-badge">DEV</span></li>
                 </ul>
             </div>
             <div>
                 <h3>2. Quote, Approvals & DRO</h3>
                 <ul class="capability-list">
                     <li><strong>Quote Orchestration:</strong> Customize Transaction Line Editor (TLE) for hybrid deal views.</li>
-                    <li><strong>Advanced Approvals:</strong> Deploy <strong>Salesforce Flows</strong> for multi-step margin guardrails. <span class="dev-badge">DEV</span></li>
-                    <li><strong>DRO Decomposition:</strong> Design rules to split Orders into Hardware/Software fulfillment. <span class="dev-badge">DEV</span></li>
+                    <li><strong>Advanced Approvals:</strong> Deploy <strong>Salesforce Flows</strong> for multi-step margin guardrails. <span class="team-badge">DEV</span></li>
+                    <li><strong>DRO Decomposition:</strong> Design rules to split Orders into Hardware/Software fulfillment. <span class="team-badge">DEV</span></li>
                 </ul>
             </div>
         </div>
@@ -102,17 +102,17 @@
             <div>
                 <h3>3. Asset Lifecycle (ALM) & Billing</h3>
                 <ul class="capability-list">
-                    <li><strong>Assetization:</strong> Engineer <strong>Flows</strong> to transition Orders into active Subscriptions/Assets. <span class="dev-badge">DEV</span></li>
-                    <li><strong>Billing Automation:</strong> Configure Billing Treatments and Usage Rating Triggers. <span class="dev-badge">DEV</span></li>
-                    <li><strong>Lifecycle Logic:</strong> Build "Amend/Renew" logic to maintain the "Golden Thread." <span class="dev-badge">DEV</span></li>
+                    <li><strong>Assetization:</strong> Engineer <strong>Flows</strong> to transition Orders into active Subscriptions/Assets. <span class="team-badge">DEV</span></li>
+                    <li><strong>Billing Automation:</strong> Configure Billing Treatments and Usage Rating Triggers. <span class="team-badge">DEV</span></li>
+                    <li><strong>Lifecycle Logic:</strong> Build "Amend/Renew" logic to maintain the "Golden Thread." <span class="team-badge">DEV</span></li>
                 </ul>
             </div>
             <div>
                 <h3>4. RevRec, Payments & GL</h3>
                 <ul class="capability-list">
                     <li><strong>Revenue Realization:</strong> Map ASC 606/IFRS 15 schedules based on fulfillment triggers.</li>
-                    <li><strong>Payment Handshake:</strong> Build <strong>Integration Procedures</strong> for Gateways and Tax Engines. <span class="dev-badge">DEV</span></li>
-                    <li><strong>General Ledger Sync:</strong> Finalize GL mapping for ERP ingestion. <span class="dev-badge">DEV</span></li>
+                    <li><strong>Payment Handshake:</strong> Build <strong>Integration Procedures</strong> for Gateways and Tax Engines. <span class="team-badge">DEV</span></li>
+                    <li><strong>General Ledger Sync:</strong> Finalize GL mapping for ERP ingestion. <span class="team-badge">DEV</span></li>
                 </ul>
             </div>
         </div>
@@ -137,7 +137,7 @@
             <div>
                 <h3>6. Agentic Innovation & Launch</h3>
                 <ul class="capability-list">
-                    <li><strong>Agentforce Deployment:</strong> Deploy <strong>Proactive Retention</strong> and Billing Anomaly agents. <span class="dev-badge">DEV</span></li>
+                    <li><strong>Agentforce Deployment:</strong> Deploy <strong>Proactive Retention</strong> and Billing Anomaly agents. <span class="team-badge">DEV</span></li>
                     <li><strong>Production Cutover:</strong> Final legacy TCV reconciliation and hypercare kickoff.</li>
                 </ul>
             </div>
