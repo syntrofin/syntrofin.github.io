@@ -36,7 +36,7 @@ scroll-padding-top: 60px; /* Offset for anchors */
 }
   
 body {
-    padding: 0 20px;
+    padding: 20px 40px;
     font-family: sans-serif;
 }
 
@@ -84,20 +84,17 @@ color: #555555;
 ul {
 padding-left: 40px;     /* More indent to show hierarchy */
 }
-
-/* 3. ToC The Navigation (Left Column, Always Visible/Floating) */
+  /* Vertical Nav, tested, looks stylish but annoying */
+/*
 .toc {
 width: 250px; 
 min-width: 250px;
-position: sticky; /* Keeps it in the visible area as you scroll */
-top: 0; /* Sticks to the top edge of the viewport */
-height: 100vh; /* Optional: Makes the nav take full screen height */
-overflow-y: auto; /* Optional: Adds scrollbar to nav if items overflow */
-
-/* Styling from before 
-padding: 1.5rem; */
+position: sticky; 
+top: 0; 
+height: 100vh; 
+overflow-y: auto; 
 background-color: #fcfcfc;
-border-right: 1px solid #e1e4e8; /* Changed border to the right side */
+border-right: 1px solid #e1e4e8; 
 }
 .toc ul {
 list-style: none;
@@ -115,6 +112,40 @@ transition: color 0.2s;
 .toc a:hover {
 color: #007bff;
 }
+*/
+  
+/* ToC The Navigation (Top Row, Always Visible/Floating) */
+.toc {
+  width: 100%; 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  height: auto; 
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #e1e4e8; 
+  padding: 0.5rem 1rem;
+}
+
+.toc ul {
+  display: flex; 
+  gap: 1.5rem; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; 
+}
+
+.toc li {
+  margin-bottom: 0; 
+}
+
+.toc a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  display: block;
+}
+
 a.clrblu {
   color:#00ACE6 !important;
 }
@@ -124,18 +155,18 @@ a.clrgrn {
 a.clrbrk {
   color:#777777 !important;
 }
-.flex3 {
+.dayflex {
   display: flex;
   flex-direction: column; /* Mobile: Stacked */
   gap: 10px;
 }
 
 @media (min-width: 768px) {
-  .flex3 {
+  .dayflex {
     flex-direction: row; /* Desktop: Row */
   }
-  .flex3 > div {
-    flex: 1; /* Makes each child take 1/3 of the space */
+  .dayflex > div {
+    flex: 1; /* Makes each child take equal space */
   }
 }
 
@@ -143,19 +174,8 @@ a.clrbrk {
 
 </head>
 <body>
-<div class="main-layout-container">
+ <!--  Table of Contents --> 
 <nav class="toc">
- <!--  <p class="toc-title">Table of Contents</p> --> 
-  <br>
-<!-- 
-Day
-Day 1: The New Foundation & Product Catalog
-Day 2: Advanced Pricing & Business Rules Engine (BRE)
-Day 3: Quoting & The Product Configurator
-Day 4: Dynamic Revenue Orchestrator (DRO) & Billing
-Day 5: RevRec, Compliance, & Implementation Strategy
---> 
-
   <ul>
     <li><a href="#industry" class="clrblu controll-scroll data-speed="150" data-offset="90" style="scroll-behavior: auto;">🏭  Sun: The "Why" – Industry</a></li>
       <li><a href="#pricebookcfg" class="clrblu" style="font-size: 0.7rem;padding-left:20px;">🚀 Leads - Accounts - Contacts</a></li>
@@ -177,7 +197,7 @@ Day 5: RevRec, Compliance, & Implementation Strategy
   </ul>
 </nav>
 
-
+<div class="main-layout-container">
 <main class="main-content-area">
   <h1 style="text-align:center">Enterprise Revenue Life Cycle Curriculum</h1>
   <p>
