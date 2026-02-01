@@ -38,6 +38,36 @@
 			  text-align:center
 		  }
 		  .title { text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 5px; color: #333;color:#FFFDD0; }
+
+		  <style>
+  .flowcontainer {
+    display: flex;
+    flex-direction: row; /* Horizontal on desktop */
+    gap: 10px;           /* Space between the divs */
+    padding: 10px;
+  }
+
+  .flowprocess {
+    flex: 1;             /* Makes both divs equal width */
+    padding: 20px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+  }
+
+  /* Mobile Breakpoint */
+  @media (max-width: 600px) {
+    .flowcontainer {
+      flex-direction: column; /* Stacks them vertically */
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="item">Left/Top Div</div>
+  <div class="item">Right/Bottom Div</div>
+</div>
+
 	  </style>
 
 </head>
@@ -54,12 +84,9 @@
 		<div class="process-steps">
         </div>
     </div>
-	 <!-- Quote and Order -->
-	<table>
-		<tr>
-			<!-- quote -->
-			<td>
-				    <!-- Quote Layer -->
+
+<section>
+	<!-- Quote Layer -->
     <div class="stage-row">
         <div class="stage-box quote-box">Sales Intent</div>
         <div class="process-steps">
@@ -81,10 +108,9 @@
         </div>
     </div>
 	<hr>
-			</td>
-			<!-- order  -->
-			<td>
-				   <!-- Order Stage -->
+
+
+	<!-- Order Stage -->
     <div class="annotation">DecomposedOrderLines created FulfillmentOrderLines created Asset records created</div>
     <div class="stage-row">
         <div class="stage-box order-box">Obligation</div>
@@ -111,12 +137,8 @@
         </div>
     </div>
 	<hr>
-			</td>
-		</tr>
-	</table>
 
- 
-    <!-- Invoice Stage -->
+	<!-- Invoice Stage -->
     <div class="stage-row">
         <div class="stage-box invoice-box">Receivable</div>
         <div class="process-steps">
@@ -163,7 +185,9 @@
 	<hr>
 </div>
 <br><br>
-	
+</section>
+
+<section>
 <!-- RLM inside RCA -->
 <div class="lifecycle-container">
 <div class="title">RLM inside RCA</div>
@@ -232,7 +256,9 @@
 </table>
 </div>
 <br><hr>
+</section>
 
+<section>
 <!-- RevRec -->
 <div class="lifecycle-container">
 	<table class="revrec">
@@ -280,8 +306,15 @@
 
 	<hr>
 </div>
+
+</section>
+
+<section>
 <!-- RLM Flows -->
 	<h1>RLM Flows</h1>
+	
+<div class="flowcontainer">
+<div class="flowprocess">
 <h2>Quote</h2>
 
 <div class="flow-chart">
@@ -374,6 +407,8 @@
 </div>
 
 <br><hr>
+</div>
+<div class="flowprocess">
 <h2>Order</h2>
 
 <div class="flow-chart">
@@ -483,7 +518,9 @@
 </div>
 
 <br><hr>
-
+</div>
+</div>
+	
 <h2>Billing</h2>
 	<div class="flow-chart">
   <!-- Section 1: Inputs -->
@@ -654,5 +691,6 @@
     </ul>
   </div>
 </div>
+</section>
 </body>
 </html>
