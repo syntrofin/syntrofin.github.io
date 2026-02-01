@@ -339,34 +339,34 @@
 <table border="1" style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr style="background-color: #f2f2f2;">
-      <th style="padding: 10px;">Attribute</th>
-      <th style="padding: 10px;">Full Recognition (Point in Time)</th>
-      <th style="padding: 10px;">Daily/Monthly Proration (Over-Time)</th>
-      <th style="padding: 10px;">Milestone-Based (Event-Based)</th>
-      <th style="padding: 10px;">Manual Recognition</th>
+      <th style="padding: 3px;">Attribute</th>
+      <th style="padding: 3px;">Full Recognition (Point in Time)</th>
+      <th style="padding: 3px;">Daily/Monthly Proration (Over-Time)</th>
+      <th style="padding: 3px;">Milestone-Based (Event-Based)</th>
+      <th style="padding: 3px;">Manual Recognition</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row" style="padding: 10px; text-align: left; background-color: #fafafa;">How it creates the POB</th>
-      <td style="padding: 10px;">Single milestone; turns "Green" immediately upon triggering event (e.g., Invoice).</td>
-      <td style="padding: 10px;">Set to "Fulfilled" on the Service Start Date.</td>
-      <td style="padding: 10px;">Created in "Pending" (Red Light); waits for external updates like Task completion.</td>
-      <td style="padding: 10px;">Created without automated logic; stays "Not Started."</td>
+      <th style="padding: 3px; text-align: left;">How it creates the POB</th>
+      <td style="padding: 3px;">Single milestone; turns "Green" immediately upon triggering event (e.g., Invoice).</td>
+      <td style="padding: 3px;">Set to "Fulfilled" on the Service Start Date.</td>
+      <td style="padding: 3px;">Created in "Pending" (Red Light); waits for external updates like Task completion.</td>
+      <td style="padding: 3px;">Created without automated logic; stays "Not Started."</td>
     </tr>
     <tr>
-      <th scope="row" style="padding: 10px; text-align: left; background-color: #fafafa;">How it creates the Schedule</th>
-      <td style="padding: 10px;">Single RevenueTransaction for 100% of the value.</td>
-      <td style="padding: 10px;">Uses Start/End Dates to calculate days/months ("Slices").</td>
-      <td style="padding: 10px;">Remains "Active" but dormant; generates records only on percentage changes.</td>
-      <td style="padding: 10px;">Built, but requires manual user action (button click) to generate transactions.</td>
+      <th style="padding: 3px; text-align: left;">How it creates the Schedule</th>
+      <td style="padding: 3px;">Single RevenueTransaction for 100% of the value.</td>
+      <td style="padding: 3px;">Uses Start/End Dates to calculate days/months ("Slices").</td>
+      <td style="padding: 3px;">Remains "Active" but dormant; generates records only on percentage changes.</td>
+      <td style="padding: 3px;">Built, but requires manual user action (button click) to generate transactions.</td>
     </tr>
     <tr>
-      <th scope="row" style="padding: 10px; text-align: left; background-color: #fafafa;">Accounting Result</th>
-      <td style="padding: 10px;">One SAP Document Number; no monthly "bleeding."</td>
-      <td style="padding: 10px;">Multiple SAP Document Numbers (one per month).</td>
-      <td style="padding: 10px;">SAP entries created only when business milestones are reached.</td>
-      <td style="padding: 10px;">Complete manual control over the SAP BAPI trigger.</td>
+      <th style="padding: 3px; text-align: left;">Accounting Result</th>
+      <td style="padding: 3px;">One SAP Document Number; no monthly "bleeding."</td>
+      <td style="padding: 3px;">Multiple SAP Document Numbers (one per month).</td>
+      <td style="padding: 3px;">SAP entries created only when business milestones are reached.</td>
+      <td style="padding: 3px;">Complete manual control over the SAP BAPI trigger.</td>
     </tr>
   </tbody>
 </table>
