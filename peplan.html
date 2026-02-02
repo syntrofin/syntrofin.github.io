@@ -48,31 +48,31 @@
          list-style-type: disc;
          margin-left: 20px;
          }
-      
+
+      /* Mobile First */
          .container-div {
         display: flex;
         flex-direction: column; /* Stacks by default (mobile-first) */
         gap: 10px;              /* Adds space between divs */
          }
+            .item-div {
+        flex: 1; 
+        padding: 15px;
+        text-align: left;
+         background: #fff;
+         border-radius: 8px;
+         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
       
       /* Switches to side-by-side on screens larger than 768px */
       @media (min-width: 768px) {
         .container-div {
           flex-direction: row;
       }
-        .item-div {
-          flex: 1;              /* Optional: ensures columns are equal width */
-        }
       }
       
-      /* Optional styling */
-      .item-div {
-        padding: 5px;
-        text-align: left;
-         background: #fff;
-         border-radius: 8px;
-         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
+
+
 
          .caution {
          color: #d9534f;
