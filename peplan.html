@@ -3190,5 +3190,20 @@
          </p>
          <p>&nbsp;</p>
       </div>
+
+      <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Select the elements you want to flatten
+    const elements = document.querySelectorAll('p, li, span, td');
+
+    elements.forEach(el => {
+      // 1. Get the HTML
+      // 2. Replace all newlines and multiple spaces with a single space
+      // 3. Trim the ends
+      const flattened = el.innerHTML.replace(/\s+/g, ' ').trim();
+      el.innerHTML = flattened;
+    });
+  });
+</script>
    </body>
 </html>
