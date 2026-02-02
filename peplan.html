@@ -53,6 +53,30 @@
          list-style-type: disc;
          margin-left: 20px;
          }
+      
+         .container-div {
+        display: flex;
+        flex-direction: column; /* Stacks by default (mobile-first) */
+        gap: 10px;              /* Adds space between divs */
+         }
+      
+      /* Switches to side-by-side on screens larger than 768px */
+      @media (min-width: 768px) {
+        .container-div {
+          flex-direction: row;
+      }
+        .item-div {
+          flex: 1;              /* Optional: ensures columns are equal width */
+        }
+      }
+      
+      /* Optional styling */
+      .item-div {
+        background-color: skyblue;
+        padding: 20px;
+        text-align: center;
+      }
+
          .caution {
          color: #d9534f;
          font-weight: bold;
@@ -103,14 +127,8 @@
             <li><b><span
                >Why this analogy works (and where it breaks)</span></b></li>
          </ol>
-         <p><span>No
-            fluff.</span>
-         </p>
-         <div   class="centertext">
-            <span>
-               <hr>
-            </span>
-         </div>
+
+      
          <p><b><span class="title2">1. Clean, enterprise-standard stack
             (Revenue Lifecycle / Enterprise Platform)</span></b>
          </p>
@@ -145,6 +163,9 @@
             </span>
          </div>
          <p><b><span class="title3">Expanded phases (with precision)</span></b></p>
+
+      <div   class="container-div"> 
+      <div   class="item-div">
          <p><b><span>1.
             Vision &amp; Intent</span></b>
          </p>
@@ -165,11 +186,9 @@
          <p><i><span>Why
             are we building this at all?</span></i>
          </p>
-         <div   class="centertext">
-            <span>
-               <hr>
-            </span>
-         </div>
+      </div>
+         
+      <div   class="item-div">
          <p><b><span>2.
             Discovery <i>(most misunderstood phase)</i></span></b>
          </p>
@@ -208,11 +227,9 @@
          <p><i><span>What
             is actually true today?</span></i>
          </p>
-         <div   class="centertext">
-            <span>
-               <hr>
-            </span>
-         </div>
+      </div>
+      </div>
+      
          <p><b><span>3.
             Design</span></b>
          </p>
