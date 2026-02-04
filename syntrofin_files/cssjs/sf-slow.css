@@ -189,7 +189,7 @@ img {
     position: relative;
     text-align: left;
     font-family: 'Patrick Hand', cursive; /* Use the font name */
-      font-size: 14px; /* Adjust size as needed */
+      font-size: 18px; /* Adjust size as needed */
       color: #333333;  /* Optional: A dark color to mimic marker ink */
 }
 
@@ -212,7 +212,12 @@ img {
   
   /* Subtle rounded corners */
   border-radius: 8px;
-  padding:40px;
+
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:30px;
+    padding-bottom:15px;
+  
   /* Optional: Adds depth with a shadow, similar to the image */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05) inset;
 }
