@@ -154,6 +154,8 @@ img {
 }
 
 .smallentrance-cell {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     row-gap: 20px; /* Space between sticky notes/image */
     flex: 1; /* Sets default width for side columns */
