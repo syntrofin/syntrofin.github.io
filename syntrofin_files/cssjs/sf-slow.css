@@ -188,9 +188,12 @@ img {
     align-self: flex-start; /* Ensures notes align left within column */
     position: relative;
     text-align: left;
-    font-family: 'Patrick Hand', cursive; /* Use the font name */
-      font-size: 18px; /* Adjust size as needed */
-      color: #333333;  /* Optional: A dark color to mimic marker ink */
+    font-family: "gf_Patrick_Hand variant0", Tofu;
+    font-style: normal;
+    font-stretch: normal;
+    font-optical-sizing: auto;
+    font-size: 18px; /* Adjust size as needed */
+    color: #333333;  /* Optional: A dark color to mimic marker ink */
 }
 
 .smallentrance-fragment:hover {
