@@ -146,6 +146,7 @@ img {
 
 .smallentrance-row {
     display: flex;
+    flex-direction: row;
     gap: 20px;
     /* align-items: flex-start;  Keeps columns pinned to the top */
     width: 100%;
@@ -153,8 +154,6 @@ img {
 }
 
 .smallentrance-cell {
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
     row-gap: 20px; /* Space between sticky notes/image */
     flex: 1; /* Sets default width for side columns */
@@ -376,13 +375,13 @@ footer p {
 
 /* 9. Mobile Handling @media (max-width: 768px) */
 @media (max-width: 768px) {
-    .header-top {
+    .header-top, .smallentrance-row, .container2a {
         flex-direction: column;
     }
     .nav {
         display: none; /* Menu is hidden on mobile, likely replaced by a hamburger menu in HTML */
     }
-    .container2a {
+     {
         flex-direction: column;
     }
     .stackedcard-container, .feature-row, .stream-row {
