@@ -189,8 +189,9 @@ img {
     position: relative;
     text-align: left;
     font-family: 'Patrick Hand SC', sans-serif; 
-    font-size: 18px; /* Adjust size as needed */
-    color: #333333;  /* Optional: A dark color to mimic marker ink */
+    font-size: 14px; 
+    font-weight:normal;
+    color: #333333;  
 }
 
 .smallentrance-fragment:hover {
