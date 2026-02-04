@@ -260,13 +260,12 @@ img {
     width: 100%;
     height: auto;
     display: block;
-    border-raduis: 9px;
 }
 
 .text-overlay {
-    position: absolute; /* CRITICAL: Takes the text out of the normal flow */
-    top: 50%; /* Start placing from 50% down from the top */
-    left: 50%; /* Start placing from 50% across from the left */
+    position: absolute; 
+    top: 20%; /* Start placing from 50% down from the top */
+    left: 20%; /* Start placing from 50% across from the left */
     transform: translate(-50%, -50%); /* CRITICAL: Centers the block perfectly */
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
