@@ -161,7 +161,7 @@ img {
 
 /* Middle column is the only exception */
 .smallentrance-cell:nth-child(2) {
-    flex: 2; /* Double width */
+    flex: 0.5; /* Double width */
     justify-content: center; /* Vertical center for image */
     align-items: center;     /* Horizontal center for image */
     min-height: 100%;
