@@ -147,8 +147,9 @@ img {
 .smallentrance-row {
     display: flex;
     gap: 20px;
-    align-items: flex-start; /* Keeps columns pinned to the top */
+    /* align-items: flex-start;  Keeps columns pinned to the top */
     width: 100%;
+    align-items: center;
 }
 
 .smallentrance-cell {
