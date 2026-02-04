@@ -36,11 +36,6 @@ footer {
 footer p {
     margin: 0;
 }
-@media (max-width: 768px) {
-    .stackedcard, .logo  {
-        margin-top: 0px !important;
-    }
-}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -137,11 +132,6 @@ img {
     text-align: left;
     flex: 1;
     box-sizing: border-box;
-}
-
-/* 4. Section - Small Entrance (Sticky Notes Layout) */
-.smallentrance-div {
-    text-align: center;
 }
 
 .smallentrance-row {
@@ -377,10 +367,13 @@ footer p {
 
 /* 9. Mobile Handling @media (max-width: 768px) */
 @media (max-width: 768px) {
+    .stackedcard, .logo  {
+        margin-top: 0px !important;
+    }
     .header-top, .smallentrance-row, .container2a {
         flex-direction: column;
     }
-    .nav {
+    .nav, .smallentrance-image {
         display: none; /* Menu is hidden on mobile, likely replaced by a hamburger menu in HTML */
     }
      {
