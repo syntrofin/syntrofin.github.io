@@ -170,9 +170,16 @@ img {
     box-sizing: border-box;
 }
 
-.solutions-image {
+.align-image-display {
+    max-width: 100%;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+.accela-image-display {
     max-width: 50%;
     height: auto;
+    margin:0 auto;
     border-radius: 9px;
     box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
 }
