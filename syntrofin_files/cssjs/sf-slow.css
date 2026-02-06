@@ -208,8 +208,6 @@ footer p {
 
 /* Image Styling */
 .diagnosys-image {
-    height: 300px;
-    width: auto;
     display: block;
     flex-shrink: 0;
     transition: transform 0.3s ease; /* I need a starting value to animate from! */
