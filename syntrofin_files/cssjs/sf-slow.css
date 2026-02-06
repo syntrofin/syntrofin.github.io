@@ -82,6 +82,11 @@ img {
     gap: 15px;
 }
 
+.title-name{
+    font-size: 32px;
+    font-weight: 500;  
+}
+
 .title-logo {
     transform: rotate(-35deg) scaleX(-1);
     height: 50px;
