@@ -203,8 +203,6 @@ footer p {
 /* Middle column is the only exception */
 .diagnosys-column:nth-child(2) {
     flex: 0.5; /* Half width */
-    justify-content: center; /* Vertical center for image */
-    align-items: center;     /* Horizontal center for image */
     min-height: 100%;
 }
 
@@ -243,7 +241,6 @@ footer p {
     cursor: pointer;
 }
 .whiteboard {
-  /* 
   min-width: 200px;
   min-height: 150px;
   background-color: #ffffff;
@@ -254,7 +251,6 @@ footer p {
     padding-top:30px;
     padding-bottom:15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05) inset;
-    */
 }
 
 
