@@ -9,11 +9,33 @@
 }
 html, body {
     width: 100%;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
+
 }
 
-/* all margins at one place */
+body {
+    width: 100%;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+section {
+    width: 90%;
+    margin:0 auto;
+    scroll-margin-top: 50px;
+    padding: 20px;
+}
+
+.actionbuttondiv {
+    text-align: center;
+    padding: 20px;
+}
+
+/* 
 
 .smallentrance-div, .solutiondiv {
     width: 100%;    
@@ -23,6 +45,8 @@ html, body {
 .header-container, .title-top, img, .intro-row, .feature-row, .stream-row, .intro-cell, .cell2  {
         margin: 0 auto;
 }
+*/
+
 .nav-item {
     margin-left: 1.5rem;
 }
@@ -39,19 +63,6 @@ footer p {
     margin: 0;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-    overflow-x: hidden;
-}
-
-section {
-    scroll-margin-top: 50px;
-    padding: 20px;
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -63,10 +74,7 @@ img {
 .right { text-align: right; }
 .justify-center { justify-content: center !important; }
 .mirror-horizontal { transform: scaleX(-1); }
-.actionbuttondiv {
-    text-align: center;
-    padding: 20px;
-}
+
 
  .title-top {
     max-width:90%;
