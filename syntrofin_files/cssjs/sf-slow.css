@@ -63,12 +63,6 @@ footer p {
     margin: 0;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 .left { text-align: left; }
 .center { text-align: center; }
 .right { text-align: right; }
