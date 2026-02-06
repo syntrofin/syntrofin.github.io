@@ -150,10 +150,11 @@ img {
 
 .banner-image, .cell2 {
     width: 100% !important;
-    text-align: left;
+    text-align: center;
     flex: 1;
     box-sizing: border-box;
 }
+
 
 .align-row {
     display: flex;
