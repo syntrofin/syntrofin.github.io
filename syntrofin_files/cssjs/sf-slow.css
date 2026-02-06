@@ -240,26 +240,18 @@ footer p {
     cursor: pointer;
 }
 .whiteboard {
-  /* Dimensions (adjust as needed) */
+  /* 
   min-width: 200px;
   min-height: 150px;
-  
-  /* White background color */
   background-color: #ffffff;
-  
-  /* The frame/border */
   border: 10px solid #cccccc; 
-  
-  /* Subtle rounded corners */
   border-radius: 8px;
-
     padding-left:40px;
     padding-right:40px;
     padding-top:30px;
     padding-bottom:15px;
-  
-  /* Optional: Adds depth with a shadow, similar to the image */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.05) inset;
+    */
 }
 
 
