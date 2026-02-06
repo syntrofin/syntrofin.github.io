@@ -188,8 +188,6 @@ footer p {
     gap: 20px;
     /* align-items: flex-start;  Keeps columns pinned to the top */
     width: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 .diagnosys-column {
@@ -198,6 +196,9 @@ footer p {
     box-sizing: border-box;
     row-gap: 20px; /* Space between sticky notes/image */
     flex: 1; /* Sets default width for side columns */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /* Middle column is the only exception */
