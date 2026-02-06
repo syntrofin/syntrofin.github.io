@@ -14,8 +14,8 @@ html, body {
 
 body {
     width: 100%;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
+    justify-content: center!important; /* Centers horizontally */
+    align-items: center!important;     /* Centers vertically */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
