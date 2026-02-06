@@ -70,6 +70,7 @@ img {
     max-width:90%;
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -77,7 +78,8 @@ img {
 }
 
 .logo-title-group {
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     align-items: center;
     gap: 15px;
 }
@@ -93,17 +95,15 @@ img {
     width: auto;
 }
 
-
-.heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
-.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
-
 /* Menu (The fix for bullets and vertical layout) */
-.nav {
+.menu{
     display: flex !important;
+    flex-direction: row;
+}
+.nav {
     list-style: none !important;
     list-style-type: none !important;
     gap: 20px;
-    flex-direction: row;
 }
 
 .nav-item {
@@ -122,6 +122,10 @@ img {
     color: #46B0E1;
     text-decoration: none;
 }
+.heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
+.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
+
+
 
 /* 3. SECTION - Intro */
 .intro-row, .feature-row, .stream-row {
@@ -400,13 +404,7 @@ footer p {
     .stackedcard, .logo  {
         margin-top: 0px !important;
     }
-    .header-top, .smallentrance-row, .container2a {
-        flex-direction: column;
-    }
-    .nav, .smallentrance-image {
-        display: none; /* Menu is hidden on mobile, likely replaced by a hamburger menu in HTML */
-    }
-     {
+    .title-top, .smallentrance-row, .container2a {
         flex-direction: column;
     }
     .stackedcard-container, .feature-row, .stream-row {
