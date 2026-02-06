@@ -457,4 +457,8 @@ footer p {
     }
     .heroslogan { font-size: 2.5rem; }
     .diagnosys-image {transform: rotate(90deg);}
+    .accela-image-display {
+    max-width: 100%;
+    height: auto;
+    }
 }
