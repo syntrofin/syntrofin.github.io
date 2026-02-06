@@ -99,10 +99,11 @@ img {
 
 /* Menu (The fix for bullets and vertical layout) */
 .menu{
-    display: flex !important;
-    flex-direction: row;
+
 }
 .nav {
+    display: flex !important;
+    flex-direction: row;
     list-style: none !important;
     list-style-type: none !important;
     gap: 20px;
@@ -406,7 +407,7 @@ footer p {
     .stackedcard, .logo  {
         margin-top: 0px !important;
     }
-    .title-top, .smallentrance-row, .container2a {
+    .title-top, .nav, .smallentrance-row, .container2a {
         flex-direction: column;
     }
     .stackedcard-container, .feature-row, .stream-row {
