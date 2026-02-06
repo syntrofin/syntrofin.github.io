@@ -147,13 +147,18 @@ img {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #002143; 
 }
-
+.banner-text{
+        flex: 1;
+}
 
 .banner-image, .cell2 {
-    width: 100% !important;
-    text-align: center;
     flex: 1;
+    text-align: center;
     box-sizing: border-box;
+}
+.banner-image-diaplay {
+    width: 100% ;
+    height: auto;
 }
 
 
