@@ -150,7 +150,7 @@ footer p {
     box-sizing: border-box;
 }
 .banner-image-display {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
 }
 
