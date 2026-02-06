@@ -37,7 +37,7 @@ section {
 
 /* 
 
-.smallentrance-div, .solutiondiv {
+.diagnosys-div, .solutiondiv {
     width: 100%;    
     margin: 20px;   /* Margin is still outside, so use with care on 100% width */
     padding: 20px;  /* Padding is now INSIDE the 100% width */
@@ -139,7 +139,7 @@ img {
 
 
 /* 3. SECTION - Intro */
-.intro-row, .feature-row, .stream-row {
+.banner_row {
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -147,14 +147,36 @@ img {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.intro-cell, .cell2 {
+
+.banner-image, .cell2 {
     width: 100% !important;
     text-align: left;
     flex: 1;
     box-sizing: border-box;
 }
 
-.smallentrance-row {
+.align-row {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.align-text{
+    width: 100% !important;
+    text-align: left;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.solutions-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+.diagnosys-row {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -163,7 +185,7 @@ img {
     align-items: center;
 }
 
-.smallentrance-cell {
+.diagnosys-column {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -172,7 +194,7 @@ img {
 }
 
 /* Middle column is the only exception */
-.smallentrance-cell:nth-child(2) {
+.diagnosys-column:nth-child(2) {
     flex: 0.5; /* Half width */
     justify-content: center; /* Vertical center for image */
     align-items: center;     /* Horizontal center for image */
@@ -180,7 +202,7 @@ img {
 }
 
 /* Image Styling */
-.smallentrance-image {
+.diagnosys-image {
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -189,7 +211,7 @@ img {
 }
 
 /* Sticky Note Fragments */
-.smallentrance-fragment {
+.diagnosys-note {
     background-color: #fffeee;
     padding: 15px;
     border-radius: 4px;
@@ -205,7 +227,7 @@ img {
     color: #333333;  
 }
 
-.smallentrance-fragment:hover {
+.diagnosys-note:hover {
     transform: rotate(-1deg) scale(1.05);
     box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
     z-index: 10;
@@ -262,12 +284,7 @@ img {
     font-weight: bold;
 }
 
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    border-radius: 9px;
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-}
+
 
 .tech-container {
     position: relative; /* CRITICAL: This is the reference point for the overlay */
@@ -415,7 +432,7 @@ footer p {
     .stackedcard, .logo  {
         margin-top: 0px !important;
     }
-    .title-top, .nav, .smallentrance-row, .container2a {
+    .title-top, .nav, .diagnosys-row, .container2a {
         flex-direction: column;
     }
     .stackedcard-container, .feature-row, .stream-row {
