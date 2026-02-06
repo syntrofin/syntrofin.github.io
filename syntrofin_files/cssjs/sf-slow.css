@@ -189,6 +189,7 @@ footer p {
     /* align-items: flex-start;  Keeps columns pinned to the top */
     width: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .diagnosys-column {
@@ -227,10 +228,12 @@ footer p {
     align-self: flex-start; /* Ensures notes align left within column */
     position: relative;
     text-align: left;
+    /*
     font-family: 'Patrick Hand SC', sans-serif; 
     font-size: 14px; 
     font-weight:normal;
     color: #333333;  
+    */
 }
 
 .diagnosys-note:hover {
