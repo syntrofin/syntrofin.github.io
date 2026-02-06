@@ -213,6 +213,8 @@ footer p {
     height: auto;
     display: block;
     flex-shrink: 0;
+    transition: transform 0.3s ease; /* I need a starting value to animate from! */
+    transform: rotate(0deg); 
 }
 
 /* Sticky Note Fragments */
@@ -455,4 +457,5 @@ footer p {
         text-align: left;
     }
     .heroslogan { font-size: 2.5rem; }
+    .diagnosys-image {transform: rotate(90deg);}
 }
