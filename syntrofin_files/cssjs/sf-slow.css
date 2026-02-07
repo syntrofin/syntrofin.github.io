@@ -446,9 +446,9 @@ footer p {
     .heroslogan { font-size: 2.5rem; 
     }
     .diagnosys-column-center {
-      width: 90vw;
+      width:100%;
       height: auto;
-      padding-right:20px;
+      margin: 0 auto;
     }
     .diagnosys-image {
         transform: rotate(90deg);
