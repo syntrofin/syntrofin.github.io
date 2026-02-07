@@ -443,11 +443,13 @@ footer p {
     .feature-list li, .stream-list li {
         text-align: left;
     }
-    .heroslogan { font-size: 2.5rem; }
+    .heroslogan { font-size: 2.5rem; 
+    }
+    .diagnosys-column:nth-child(2) {
+    flex: 0.2; /* reuce half width to 0.2 */
+    }
     .diagnosys-image {
         transform: rotate(90deg);
-        margin-top: -40px; 
-        margin-bottom: -40px;
     }
     .accela-image-display {
     max-width: 100%;
