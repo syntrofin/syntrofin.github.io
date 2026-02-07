@@ -177,13 +177,14 @@ footer p {
     flex-direction: row;
     /*  gap: 20px; align-items: flex-start;  Keeps columns pinned to the top */
     width: 100%;
+    gap: 20px;
 }
 
 .diagnosys-column-left, .diagnosys-column-right, .diagnosys-column-center, {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    row-gap: 0px; /* Space between sticky notes/image */
+    row-gap: 20px; /* Space between sticky notes/image */
     flex: 1; /* Sets default width for side columns */
     align-items: center;
     justify-content: center;
