@@ -197,7 +197,7 @@ footer p {
 
 /* Image Styling */
 .diagnosys-image {
-    width:90px; height:auto;
+    width:80px; height:auto;
     display: block;
     flex-shrink: 0;
     transition: transform 0.3s ease; /* I need a starting value to animate from! */
@@ -446,8 +446,8 @@ footer p {
     .heroslogan { font-size: 2.5rem; 
     }
     .diagnosys-column:nth-child(2) {
-     margin-bottom: -40px;
-         margin-top: -40px;
+      width: 90vw;
+      height: auto;
     }
     .diagnosys-image {
         transform: rotate(90deg);
