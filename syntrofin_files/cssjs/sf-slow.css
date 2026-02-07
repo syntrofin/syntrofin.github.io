@@ -35,17 +35,6 @@ section {
     padding: 20px;
 }
 
-/* 
-
-.diagnosys-div, .solutiondiv {
-    width: 100%;    
-    margin: 20px;   /* Margin is still outside, so use with care on 100% width */
-    padding: 20px;  /* Padding is now INSIDE the 100% width */
-}
-.header-container, .title-top, img, .intro-row, .feature-row, .stream-row, .intro-cell, .cell2  {
-        margin: 0 auto;
-}
-*/
 
 .nav-item {
     margin-left: 1.5rem;
@@ -210,8 +199,7 @@ footer p {
 
 /* Image Styling */
 .diagnosys-image {
-    /* width:120px; height:auto; */
-    height:80%; width:auto;
+    width:100px; height:auto;
     display: block;
     flex-shrink: 0;
     transition: transform 0.3s ease; /* I need a starting value to animate from! */
