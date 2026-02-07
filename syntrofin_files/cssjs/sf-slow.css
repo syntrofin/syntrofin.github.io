@@ -194,12 +194,11 @@ footer p {
 /* Middle column is the only exception */
 .diagnosys-column:nth-child(2) {
     flex: 0.5; /* Half width */
-    min-height: 100%;
 }
 
 /* Image Styling */
 .diagnosys-image {
-    width:100px; height:auto;
+    width:90px; height:auto;
     display: block;
     flex-shrink: 0;
     transition: transform 0.3s ease; /* I need a starting value to animate from! */
@@ -446,7 +445,11 @@ footer p {
         text-align: left;
     }
     .heroslogan { font-size: 2.5rem; }
-    .diagnosys-image {transform: rotate(90deg);}
+    .diagnosys-image {
+        transform: rotate(90deg);
+        margin-top: -40px; 
+        margin-bottom: -40px;
+    }
     .accela-image-display {
     max-width: 100%;
     height: auto;
