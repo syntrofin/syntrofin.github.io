@@ -204,8 +204,12 @@ footer p {
     width:82px; height:auto;
     display: block;
     flex-shrink: 0;
-    transition: transform 0.3s ease; /* I need a starting value to animate from! */
+    border-radius: 3px;
+    /*
+    transition: transform 0.3s ease;
     transform: rotate(0deg); 
+    */
+    
 }
 
 /* Sticky Note Fragments */
