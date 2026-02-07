@@ -448,6 +448,7 @@ footer p {
     .diagnosys-column-center {
       width:100%;
       margin: 0 auto;
+      text-align:center;
     }
     /*
     .diagnosys-image {
