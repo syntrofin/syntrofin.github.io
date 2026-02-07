@@ -179,7 +179,7 @@ footer p {
     width: 100%;
 }
 
-.diagnosys-column {
+.diagnosys-column-left, .diagnosys-column-right, .diagnosys-column-center, {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -190,8 +190,8 @@ footer p {
     text-align: center;
 }
 
-/* Middle column is the only exception */
-.diagnosys-column:nth-child(2) {
+/* Middle column is has thin image */
+.diagnosys-column-center {
     flex: 0.3; 
     row-gap: 0px;
 }
@@ -446,10 +446,10 @@ footer p {
     }
     .heroslogan { font-size: 2.5rem; 
     }
-    .diagnosys-column:nth-child(2) {
+    .diagnosys-column-center {
       width: 90vw;
       height: auto;
-        padding-right:20px;
+      padding-right:20px;
     }
     .diagnosys-image {
         transform: rotate(90deg);
