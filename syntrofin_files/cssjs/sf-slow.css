@@ -192,12 +192,12 @@ footer p {
 
 /* Middle column is the only exception */
 .diagnosys-column:nth-child(2) {
-    flex: 0.5; /* Half width */
+    flex: 0.3; /* Half width */
 }
 
 /* Image Styling */
 .diagnosys-image {
-    width:80px; height:auto;
+    width:82px; height:auto;
     display: block;
     flex-shrink: 0;
     transition: transform 0.3s ease; /* I need a starting value to animate from! */
