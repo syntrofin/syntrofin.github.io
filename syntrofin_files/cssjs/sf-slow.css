@@ -181,17 +181,19 @@ footer p {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 0 auto;
 }
 
 .diagnosys-column-left, .diagnosys-column-right, .diagnosys-column-center, {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    row-gap: 20px; /* Space between sticky notes/image */
-    flex: 1; /* Sets default width for side columns */
+    row-gap: 20px; 
+    flex: 1; 
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 0 auto;
 }
 
 /* Middle column is has thin image */
@@ -453,16 +455,6 @@ footer p {
     }
     .heroslogan { font-size: 2.5rem; 
     }
-    .diagnosys-column-center {
-      width:100%;
-      margin: 0 auto;
-      text-align:center;
-    }
-    /*
-    .diagnosys-image {
-        transform: rotate(90deg);
-    }
-    */
     .accela-image-display {
     max-width: 100%;
     height: auto;
