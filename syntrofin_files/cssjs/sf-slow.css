@@ -451,8 +451,6 @@ footer p {
     }
     .diagnosys-image {
         transform: rotate(90deg);
-        width:100%;
-        height: auto;
     }
     .accela-image-display {
     max-width: 100%;
