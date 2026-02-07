@@ -192,7 +192,8 @@ footer p {
 
 /* Middle column is the only exception */
 .diagnosys-column:nth-child(2) {
-    flex: 0.3; /* Half width */
+    flex: 0.3; 
+    row-gap: 0px;
 }
 
 /* Image Styling */
@@ -448,6 +449,7 @@ footer p {
     .diagnosys-column:nth-child(2) {
       width: 90vw;
       height: auto;
+        padding-right:20px;
     }
     .diagnosys-image {
         transform: rotate(90deg);
