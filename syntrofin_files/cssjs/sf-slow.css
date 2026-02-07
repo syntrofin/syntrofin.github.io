@@ -183,7 +183,7 @@ footer p {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    row-gap: 20px; /* Space between sticky notes/image */
+    row-gap: 0px; /* Space between sticky notes/image */
     flex: 1; /* Sets default width for side columns */
     align-items: center;
     justify-content: center;
@@ -193,7 +193,6 @@ footer p {
 /* Middle column is has thin image */
 .diagnosys-column-center {
     flex: 0.3; 
-    row-gap: 0px;
 }
 
 /* Image Styling */
@@ -453,6 +452,8 @@ footer p {
     }
     .diagnosys-image {
         transform: rotate(90deg);
+        width:100%;
+        margin: 0 auto;
     }
     .accela-image-display {
     max-width: 100%;
