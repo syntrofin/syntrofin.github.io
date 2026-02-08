@@ -4,99 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coach Tiles</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-        }
-
-        .coach-container {
-            /* Use flexbox on the parent container */
-            display: flex;
-            /* Distribute available space evenly */
-            justify-content: space-between;
-            /* Allow tiles to wrap onto the next line on smaller screens */
-            flex-wrap: wrap; 
-            gap: 20px; /* Space between the tiles */
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .tile {
-            /* Each tile should take up roughly one-third of the space */
-            flex: 1; 
-            min-width: 250px; /* Prevents tiles from becoming too narrow */
-            max-width: 33%;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
-            box-sizing: border-box; /* Ensures padding is included in the width */
-            border-left: 5px solid #0076bf; /* Color bar on the left */
-        }
-        .icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        background-color: #0076bf; 
-        border-radius: 50%;
-        
-        /* ADD THIS LINE */
-        position: relative; 
-        
-        /* OPTIONAL: hides the line parts that stick out of the circle */
-        overflow: hidden; 
-        }
-
-        /*  OPTIONAL: to draw a diagnal line, tried, not looking good
-        .icon::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 1px;
-        background: white;
-        transform: translateX(-50%) rotate(5deg); 
-        }
-         */
-
-
-        .tile-row1 { border-left: 5px solid #EB9400;}
-        .tile-row2 { border-left: 5px solid #0076bf;}
-        .tile-row3 { border-left: 5px solid #B89521;}
-        .icon-row1 {background-color: #EB9400;}
-        .icon-row2 {background-color: #0076bf;}
-        .icon-row3 {background-color: #B89521;}  /* FF5F15 */
-
-        .tile-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-
-        .coach-name {
-            font-weight: bold;
-            color: #333;
-            display: flex;
-            align-items: center;
-        }
-
-        .email, .type, .url {
-            color: #666;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
-
-        .url a {
-            color: #0076bf;
-            text-decoration: none;
-        }
-         
-    </style>
+     <!-- CSS -->
+    <link href="./syntrofin_files/cssjs/rlmframework.css.css" rel="stylesheet">
 </head>
+    
 <body>
     <!-- business row -->
     <h1>To Business</h1>
