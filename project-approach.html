@@ -46,7 +46,7 @@
   }
   h2{
     text-align: left; 
-    color: #004a99; /* mostly changed inline */
+    color: #004a99; 
 	font-weight: 450;
 	padding-top:30px;
   }
@@ -61,14 +61,17 @@
   display: grid;
   /* Defines three columns: ID | Statement | Score */
   grid-template-columns: 120px 1fr 100px; 
-  gap: 10px; /* Space between cells */
+  gap: 10px; 
   width: 100%;
   max-width: 1000px;
 }
 
 /* Grouping styles for all header cells */
-.statement-header-row > div {
-    font-weight: **bold**; /* ERROR WAS HERE */
+.statement-header-row > div, 
+.col-statement-id-header, 
+.col-statement-header, 
+.col-statement-score-header {
+    font-weight: bold; 
     border-bottom: 2px solid #ccc;
     padding: 10px;
     background-color: #f2f2f2;
@@ -87,13 +90,9 @@
 }
 
 .col-statement-id, .col-statement-score {
-    text-align: center; /* Centers ID and score */
+    text-align: center; 
 }
 
-/* Add alignment to the header cells for ID and Score */
-.col-statement-id-header, .col-statement-score-header {
-    text-align: center;
-}
 
 
 /* A wrapper to allow horizontal scrolling on mobile devices */
