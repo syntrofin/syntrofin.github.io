@@ -56,6 +56,40 @@
 	font-weight: 450;
 	color:#222222;
   }
+
+.statement-container-div {
+  display: grid;
+  /* Defines three columns: ID | Statement | Score */
+  grid-template-columns: 120px 1fr 100px; 
+  gap: 10px; /* Space between cells */
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Grouping styles for all header cells */
+.statement-header-row > div {
+    font-weight: **bold**;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+/* Ensures each data row occupies the three columns defined by the grid */
+.statement-data-row {
+    display: contents; 
+}
+
+/* Grouping styles for all data cells */
+.col-statement-id, .col-statement, .col-statement-score {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.col-statement-id, .col-statement-score {
+    text-align: center; /* Centers ID and score */
+}
+
 /* A wrapper to allow horizontal scrolling on mobile devices */
 .maturity-model-table-container {
   overflow-x: auto;
@@ -296,6 +330,36 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
 <h3>	RLM Project Strategy Scorecard	</h3>	
 <p>	To use this tool, rate each statement for the enterprise on a scale of 1 (Strongly Disagree) to 5 (Strongly Agree).	</p>	
 <h3>	Section 1: Legacy & Data Complexity	</h3>	
+<div class="statement-container-div">
+  <!-- Header Row -->
+  <div class="statement-header-row">
+    <div class="col-statement-id-header">ID</div>
+    <div class="col-statement-header">Statement</div>
+    <div class="col-statement-score-header">Score</div>
+  </div>
+  
+  <!-- Data Row 1 -->
+  <div class="statement-data-row">
+    <div class="col-statement-id">Statement 1</div>
+    <div class="col-statement">Our current processes are so inefficient that we would rather redesign them from scratch than migrate them.</div>
+    <div class="col-statement-score">8/10</div> 
+  </div>
+  
+  <!-- Data Row 2 -->
+  <div class="statement-data-row">
+    <div class="col-statement-id">Statement 2</div>
+    <div class="col-statement">We have a massive volume of historical, active subscriptions that must remain "live" without interruption.</div>
+    <div class="col-statement-score">6/10</div> 
+  </div>
+  
+  <!-- Data Row 3 -->
+  <div class="statement-data-row">
+    <div class="col-statement-id">Statement 3</div>
+    <div class="col-statement">We have multiple, fragmented billing systems from various acquisitions that need to be unified.</div>
+    <div class="col-statement-score">9/10</div> 
+  </div>
+</div>
+
 	<ul>
 	<li>Statement 1: Our current processes are so inefficient that we would rather redesign them from scratch than migrate them.	</li>	
 	<li>Statement 2: We have a massive volume of historical, active subscriptions that must remain "live" without interruption.	</li>	
