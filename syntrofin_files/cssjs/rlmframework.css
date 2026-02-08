@@ -30,17 +30,7 @@ section {
     padding: 20px;
 }
 
-.actionbuttondiv {
-    text-align: center;
-    padding: 20px;
-}
 
-.grid-item img {
-    margin: 0 auto 8px auto;
-}
-.grid-item .logo-text {
-    margin-bottom: 5px;
-}
 footer {
     margin-top: 50px;
 }
@@ -64,4 +54,338 @@ footer p {
     align-items: center;
     padding: 20px;
     
+}
+h1{
+     text-align: center; 
+  	 font-weight: 500;
+	  color:#000435;
+}
+  }
+  h2{
+    text-align: left; 
+    color: #004a99; 
+	font-weight: 450;
+	padding-top:30px;
+  }
+	
+  h3{
+    text-align: left; 
+	font-weight: 450;
+	color:#222222;
+  }
+
+/* coach */
+  .coach-container {
+            /* Use flexbox on the parent container */
+            display: flex;
+            /* Distribute available space evenly */
+            justify-content: space-between;
+            /* Allow tiles to wrap onto the next line on smaller screens */
+            flex-wrap: wrap; 
+            gap: 20px; /* Space between the tiles */
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tile {
+            /* Each tile should take up roughly one-third of the space */
+            flex: 1; 
+            min-width: 250px; /* Prevents tiles from becoming too narrow */
+            max-width: 33%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+            border-left: 5px solid #0076bf; /* Color bar on the left */
+        }
+        .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-color: #0076bf; 
+        border-radius: 50%;
+        
+        /* ADD THIS LINE */
+        position: relative; 
+        
+        /* OPTIONAL: hides the line parts that stick out of the circle */
+        overflow: hidden; 
+        }
+
+        /*  OPTIONAL: to draw a diagnal line, tried, not looking good
+        .icon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        background: white;
+        transform: translateX(-50%) rotate(5deg); 
+        }
+         */
+
+
+        .tile-row1 { border-left: 5px solid #EB9400;}
+        .tile-row2 { border-left: 5px solid #0076bf;}
+        .tile-row3 { border-left: 5px solid #B89521;}
+        .icon-row1 {background-color: #EB9400;}
+        .icon-row2 {background-color: #0076bf;}
+        .icon-row3 {background-color: #B89521;}  /* FF5F15 */
+
+        .tile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .coach-name {
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .email, .type, .url {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .url a {
+            color: #0076bf;
+            text-decoration: none;
+        }
+/* project approach */
+.statement-container-div {
+  display: grid;
+  /* Defines three columns: ID | Statement | Score */
+  grid-template-columns: 120px 1fr 100px; 
+  gap: 10px; 
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Grouping styles for all header cells */
+.statement-header-row > div, 
+.col-statement-id-header, 
+.col-statement-header, 
+.col-statement-score-header {
+    font-weight: bold; 
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+/* Ensures each data row occupies the three columns defined by the grid */
+.statement-header-row, .statement-data-row {
+    display: contents; 
+}
+
+/* Grouping styles for all data cells */
+.col-statement-id, .col-statement, .col-statement-score {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.col-statement-id, .col-statement-score {
+    text-align: center; 
+}
+
+
+
+/* A wrapper to allow horizontal scrolling on mobile devices */
+.maturity-model-table-container {
+  overflow-x: auto;
+  margin: 1rem 0;
+  padding-top:20px;
+  padding-bottom:10px;
+}
+
+/* Basic table styling */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Removes space between borders */
+  min-width: 800px; /* Ensures the table is readable on small screens before scrolling */
+}
+
+caption {
+  padding: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Style for table headers */
+th {
+  background-color: #666666; 
+  /* #004a99; A professional blue */
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Style for table data cells */
+td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  vertical-align: top; /* Aligns content to the top of the cell */
+  line-height: 1.4;
+}
+
+/* Zebra striping for better readability */
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:hover {
+  background-color: #e0e0e0; /* Highlight row on hover */
+}
+ul {
+  list-style-type: none; /* Removes default bullets */
+}
+ul.custom-bullets {
+  list-style-type: none; /* Removes default bullets */
+  padding-left: 2rem; /* Adds space for the custom image */
+}
+
+ul.custom-bullets li {
+  background-image: url("your-image.svg"); /* Your image file */
+  background-position: 0 0.2em; /* Adjusts image position */
+  background-repeat: no-repeat;
+  background-size: 1em 1em; /* Adjusts image size */
+  padding-left: 1.5em; /* Space between custom image and text */
+}
+/* Container for the menu */
+nav {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+}
+
+/* Horizontal alignment for the list */
+nav ul {
+  display: flex; 
+  list-style: none; /* No bullets */
+  padding: 0;
+  margin: 0;
+}
+
+/* Spacing for your 3 IDs */
+nav li {
+  margin-left: 20px; 
+  cursor: pointer;
+}
+
+/* Branding your custom tool */
+#rubix {
+  font-weight: bold;
+  color: #d32f2f; /* Red-ish like the Latin 'rubrica' */
+}
+#evaluate {
+  font-weight: bold;
+  color: #359245 /* Geenish-ish Rice plant */
+}
+#model {
+  font-weight: bold;
+  color: #B89521;  /* Golden-ish like Rice husk */
+}
+
+/*tree path*/  /*used here for decision*/
+
+	/* Mobile styles (stacked by default, central line) */
+.timeline-container {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically on mobile */
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* The main central vertical line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin: 20px 0;
+  width: 100%; /* Take full width on mobile */
+  text-align: left;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 20px; /* INCREASED PADDING = BIGGER BOXES */
+  background-color: white;
+  width: fit-content;
+  margin: 0 auto; /* Center boxes on mobile */
+}
+
+/* Desktop styles (alternating left/right layout) */
+
+  
+  .timeline-item {
+    display: flex;
+    width: 50%; /* Each item takes half the container width */
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  /* Right side items (every second item) */
+  .timeline-item:nth-child(even) {
+    margin-left: 50%; /* Push even items to the right of the central line */
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  /* Left side items (every first/odd item) */
+  .timeline-item:nth-child(odd) {
+    margin-right: 50%; /* Keep odd items to the left */
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  /* Positioning the connector lines */
+
+  /* Lines for Left side items (odd) */
+  .timeline-item:nth-child(odd) .box::after {
+    content: '';
+    position: absolute;
+    right: -10px; /* REDUCED DISTANCE */
+    top: 50%;
+    width: 10px; /* REDUCED LINE WIDTH */
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
+  }
+
+  /* Lines for Right side items (even) */
+  .timeline-item:nth-child(even) .box::after {
+    content: '';
+    position: absolute;
+    left: -10px; /* REDUCED DISTANCE */
+    top: 50%;
+    width: 10px; /* REDUCED LINE WIDTH */
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
+  }
+
+  .box {
+      position: relative;
+      margin: 20px;
+	  width:100%
+      min-width: 150px; /* ENSURE BOXES ARE WIDER */
+  }
 }
