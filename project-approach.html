@@ -68,7 +68,7 @@
 
 /* Grouping styles for all header cells */
 .statement-header-row > div {
-    font-weight: **bold**;
+    font-weight: **bold**; /* ERROR WAS HERE */
     border-bottom: 2px solid #ccc;
     padding: 10px;
     background-color: #f2f2f2;
@@ -89,6 +89,12 @@
 .col-statement-id, .col-statement-score {
     text-align: center; /* Centers ID and score */
 }
+
+/* Add alignment to the header cells for ID and Score */
+.col-statement-id-header, .col-statement-score-header {
+    text-align: center;
+}
+
 
 /* A wrapper to allow horizontal scrolling on mobile devices */
 .maturity-model-table-container {
@@ -358,6 +364,7 @@ Rice Paddy (Light Beige/Brown): #DFD4B0
     <div class="col-statement">We have multiple, fragmented billing systems from various acquisitions that need to be unified.</div>
     <div class="col-statement-score">9/10</div> 
   </div>
+	
 </div>
 
 	<ul>
