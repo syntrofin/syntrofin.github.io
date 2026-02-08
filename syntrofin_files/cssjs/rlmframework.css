@@ -74,6 +74,43 @@ h1{
 	color:#222222;
   }
 
+hr {
+  border: none; /* Remove default border */
+  background-color: #ccc; /* Set the line color */
+  height: 1px; /* Set the line thickness */
+  margin: 1em 0; /* Add vertical spacing */
+}
+.title {
+  background-color: #2c3e50;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.tile {
+	/* Each tile should take up roughly one-third of the space */
+	flex: 1; 
+	min-width: 250px; /* Prevents tiles from becoming too narrow */
+	max-width: 33%;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	padding: 20px;
+	box-sizing: border-box; /* Ensures padding is included in the width */
+	border-left: 5px solid #0076bf; /* Color bar on the left */
+}
+
+ul {
+  list-style: none;
+  padding: 15px;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+li { margin-bottom: 5px; }
+
 /* coach */
   .coach-container {
             /* Use flexbox on the parent container */
@@ -87,18 +124,7 @@ h1{
             margin: auto;
         }
 
-        .tile {
-            /* Each tile should take up roughly one-third of the space */
-            flex: 1; 
-            min-width: 250px; /* Prevents tiles from becoming too narrow */
-            max-width: 33%;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 20px;
-            box-sizing: border-box; /* Ensures padding is included in the width */
-            border-left: 5px solid #0076bf; /* Color bar on the left */
-        }
+
         .icon {
         width: 20px;
         height: 20px;
@@ -388,4 +414,215 @@ nav li {
 	  width:100%
       min-width: 150px; /* ENSURE BOXES ARE WIDER */
   }
+
+/* login page */
+
+.maincontent {
+  display: none;
+}
+/* 1. Center the container block itself on the page (horizontal center) */
+.login {
+    width: 300px; /* Define a width */
+    margin: 0 auto; /* Centers the block horizontally */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a nice depth effect */
+    text-align: center; /* Centers the H1 text */
+}
+
+/* 2. Style the inputs within the container */
+.login input {
+    display: block; /* Makes each input take its own line */
+    width: 100%; /* Makes inputs stretch to container width */
+    padding: 10px;
+    margin-bottom: 10px; /* Adds space between inputs */
+    box-sizing: border-box; /* Ensures padding is included in the width calculation */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* 3. Style the button within the container */
+.login button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* 1. The Outer Container (The Tabletop) */
+.book-container {
+  display: flex;
+  width: 85%;
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #fff;
+  /* Deep shadow for a 3D "lifted" effect */
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+
+	/* 
+  Multiple thin borders create the "edge of the pages" look 
+  border-bottom: 4px solid #d2c5b1;
+  border-right: 3px solid #d2c5b1;
+  border-left: 3px solid #d2c5b1;
+
+  This shadow mimics the book's cover beneath the paper, The '8px #5d4037' is your book cover!
+  box-shadow: 
+    0 10px 20px rgba(0,0,0,0.2), 
+    0 0 0 8px #5d4037; 
+  */
+}
+
+/* 2. Base Page Styling */
+.page {
+  flex: 1;
+  position: relative; /* Essential for page number placement */
+  padding: 60px 50px;
+  background-color: #fdfaf0; /* Aged paper color */
+  min-height: 450px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  color: #2a2316;
+  min-width: 0; 
+}
+
+/* 3. The Spine & Realistic Curvature */
+.left-page {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  /* Shadow mimicking the page dipping into the spine */
+  box-shadow: inset -20px 0 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+.right-page {
+  box-shadow: inset 20px 0 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+.page-image{
+   max-width: 100%; /* Prevents the image from being wider than its parent div */
+  height: auto;    /* Keeps the image proportional so it doesn't stretch */
+  display: block;  /* Removes extra whitespace below the image */
+}
+
+/* 4. Page Number Positioning (Outer Corners) */
+.page-number {
+  position: absolute;
+  bottom: 25px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.left-page .page-number { left: 30px; }
+.right-page .page-number { right: 30px; }
+
+/* 5. Typography Details */
+p {
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1.5em;
+}
+
+/* Drop Cap for the Left Page */
+.left-page p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-right: 10px;
+  color: #5d4037; /* Leather/Ink color */
+}
+
+
+/*body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }*/
+  .lifecycle-container { max-width: 900px; margin: auto; }
+  .title { text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 30px; color: #333; }
+  .stage-row { display: flex; align-items: center; margin-bottom: 25px; }
+  .stage-box { width: 100px; padding: 10px; color: white; text-align: center; font-weight: bold; border-radius: 4px; margin-right: 20px; }
+  .opp-box { background-color: #8064a2;}
+  .quote-box { background-color: #8064a2;}
+  .order-box { background-color: #4f81bd; }
+  .asset-box { background-color: #4f81bd; }
+  .invoice-box { background-color: #00A36C;}
+  .revrec-box { background-color: #222222; }
+  .payment-box { background-color: #c0504d; }
+  /* Match colors */
+  .opp-title, .quote-title, .order-title, .asset-title, .invoice-title, .revrec-title, .payment-title {font-weight: 700;}
+  .opp-title { color: #8064a2;}
+  .quote-title { color: #8064a2;}
+  .order-title { color: #4f81bd; }
+  .asset-title { color: #4f81bd; }
+  .invoice-title { color: #00A36C;}
+  .revrec-title { color: #222222; }
+  .payment-title { color: #c0504d; }
+
+  .process-steps { display: flex; flex-wrap: wrap; gap: 5px; font-size: 14px; }
+  .step { display: flex; align-items: center; white-space: nowrap; margin-right: 8px; }
+  .step::after { content: '→'; margin-left: 8px; color: #666; }
+  .step:last-child::after { content: none; }
+  .annotation { font-size: 11px; color: #666; margin-bottom: 4px; margin-left: 120px; }
+
+  .rlm-table-tech { width: 100%; border-collapse: collapse; font-family: 'Segoe UI', sans-serif; font-size: 13px; margin: 20px 0; border: 1px solid #d8dde6; }
+  .rlm-table-tech th { background-color: #f3f2f2; color: #514f4d; text-align: left; padding: 12px; border-bottom: 2px solid #d8dde6; text-transform: uppercase; letter-spacing: 0.05em; }
+  .rlm-table-tech td { padding: 12px; border-bottom: 1px solid #d8dde6; vertical-align: top; }
+  .rlm-table-tech tr:hover { background-color: #faffff; }
+  .stage-label-tech { }
+  .api-name { font-family: 'Courier New', monospace; font-weight: bold; color: #c7254e; }
+  .api-group { margin-bottom: 8px; }
+  .revrec{
+    margin-left: auto; margin-right: auto;
+  }
+  .revrec td, .revrec th {
+    padding: 10px; /* Adjust the pixel value as needed */
+  }
+  .thin-z {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: 100; 
+    font-size: 150px;
+  }
+.flow-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  color: #333;
+}
+
+.box {
+  border: 2px solid #2c3e50;
+  border-radius: 4px;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.arrow {
+  font-size: 24px;
+  color: #2c3e50;
+  margin: 10px 0;
+	text-align: center;
+}
+
+.split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 500px;
+}
+
+.secondary { width: 100%; border-color: #34495e; }
+.highlight { border-color: #e67e22; }
+.output { border-color: #27ae60; }
+
+.states {
+  padding: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  border-top: 1px solid #eee;
 }
