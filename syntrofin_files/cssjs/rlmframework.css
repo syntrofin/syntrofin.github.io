@@ -1,628 +1,857 @@
 /* common to all */
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
+
 * {
-    box-sizing: border-box; /* Prevents padding from adding to width */
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	/* Prevents padding from adding to width */
+	margin: 0;
+	padding: 0;
 }
-html, body {
-    width: 100%;
+
+html,
+body {
+	width: 100%;
 
 }
 
 body {
-    width: 100%;
-    justify-content: center!important; /* Centers horizontally */
-    align-items: center!important;     /* Centers vertically */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-    overflow-x: hidden;
+	width: 100%;
+	justify-content: center !important;
+	/* Centers horizontally */
+	align-items: center !important;
+	/* Centers vertically */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: #fff;
+	overflow-x: hidden;
 }
 
 section {
-    width: 90%;
-    margin:0 auto;
-    scroll-margin-top: 50px;
-    padding: 20px;
+	width: 90%;
+	margin: 0 auto;
+	scroll-margin-top: 50px;
+	padding: 20px;
 }
 
 
 footer {
-    margin-top: 50px;
+	margin-top: 50px;
 }
+
 footer p {
-    margin: 0;
+	margin: 0;
 }
 
-.left { text-align: left; }
-.center { text-align: center; }
-.right { text-align: right; }
-.justify-center { justify-content: center !important; }
-.mirror-horizontal { transform: scaleX(-1); }
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.justify-center {
+	justify-content: center !important;
+}
+
+.mirror-horizontal {
+	transform: scaleX(-1);
+}
 
 
- .title-top {
-    max-width:90%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    
+.title-top {
+	max-width: 90%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+
 }
-h1{
-     text-align: center; 
-  	 font-weight: 500;
-	  color:#000435;
+
+h1 {
+	text-align: center;
+	font-weight: 500;
+	color: #000435;
 }
-  }
-  h2{
-    text-align: left; 
-    color: #004a99; 
+
+h2 {
+	text-align: left;
+	color: #004a99;
 	font-weight: 450;
-	padding-top:30px;
-  }
-	
-  h3{
-    text-align: left; 
+	padding-top: 30px;
+}
+
+h3 {
+	text-align: left;
 	font-weight: 450;
-	color:#222222;
-  }
+	color: #222222;
+}
 
 hr {
-  border: none; /* Remove default border */
-  background-color: #ccc; /* Set the line color */
-  height: 1px; /* Set the line thickness */
-  margin: 1em 0; /* Add vertical spacing */
+	border: none;
+	/* Remove default border */
+	background-color: #ccc;
+	/* Set the line color */
+	height: 1px;
+	/* Set the line thickness */
+	margin: 1em 0;
+	/* Add vertical spacing */
 }
+
 .title {
-  background-color: #2c3e50;
-  color: white;
-  padding: 8px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.9rem;
+	background-color: #2c3e50;
+	color: white;
+	padding: 8px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+ul {
+	list-style: none;
+	padding: 15px;
+	margin: 0;
+	font-size: 0.85rem;
+}
+
+li {
+	margin-bottom: 5px;
+}
+
+/* coach */
+.coach-container {
+	/* Use flexbox on the parent container */
+	display: flex;
+	/* Distribute available space evenly */
+	justify-content: space-between;
+	/* Allow tiles to wrap onto the next line on smaller screens */
+	flex-wrap: wrap;
+	gap: 20px;
+	/* Space between the tiles */
+	max-width: 1000px;
+	margin: auto;
 }
 
 .tile {
 	/* Each tile should take up roughly one-third of the space */
-	flex: 1; 
-	min-width: 250px; /* Prevents tiles from becoming too narrow */
+	flex: 1;
+	min-width: 250px;
+	/* Prevents tiles from becoming too narrow */
 	max-width: 33%;
 	background-color: #fff;
 	border-radius: 8px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	padding: 20px;
-	box-sizing: border-box; /* Ensures padding is included in the width */
-	border-left: 5px solid #0076bf; /* Color bar on the left */
+	box-sizing: border-box;
+	/* Ensures padding is included in the width */
+	border-left: 5px solid #0076bf;
+	/* Color bar on the left */
 }
 
-ul {
-  list-style: none;
-  padding: 15px;
-  margin: 0;
-  font-size: 0.85rem;
+.icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	background-color: #0076bf;
+	border-radius: 50%;
+
+	/* ADD THIS LINE */
+	position: relative;
+
+	/* OPTIONAL: hides the line parts that stick out of the circle */
+	overflow: hidden;
 }
 
-li { margin-bottom: 5px; }
+.tile-row1 {
+	border-left: 5px solid #EB9400;
+}
 
-/* coach */
-  .coach-container {
-            /* Use flexbox on the parent container */
-            display: flex;
-            /* Distribute available space evenly */
-            justify-content: space-between;
-            /* Allow tiles to wrap onto the next line on smaller screens */
-            flex-wrap: wrap; 
-            gap: 20px; /* Space between the tiles */
-            max-width: 1000px;
-            margin: auto;
-        }
+.tile-row2 {
+	border-left: 5px solid #0076bf;
+}
 
+.tile-row3 {
+	border-left: 5px solid #B89521;
+}
 
-        .icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        background-color: #0076bf; 
-        border-radius: 50%;
-        
-        /* ADD THIS LINE */
-        position: relative; 
-        
-        /* OPTIONAL: hides the line parts that stick out of the circle */
-        overflow: hidden; 
-        }
+.icon-row1 {
+	background-color: #EB9400;
+}
 
-        /*  OPTIONAL: to draw a diagnal line, tried, not looking good
-        .icon::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 1px;
-        background: white;
-        transform: translateX(-50%) rotate(5deg); 
-        }
-         */
+.icon-row2 {
+	background-color: #0076bf;
+}
 
+.icon-row3 {
+	background-color: #B89521;
+}
 
-        .tile-row1 { border-left: 5px solid #EB9400;}
-        .tile-row2 { border-left: 5px solid #0076bf;}
-        .tile-row3 { border-left: 5px solid #B89521;}
-        .icon-row1 {background-color: #EB9400;}
-        .icon-row2 {background-color: #0076bf;}
-        .icon-row3 {background-color: #B89521;}  /* FF5F15 */
+/* FF5F15 */
 
-        .tile-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
+.tile-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
 
-        .coach-name {
-            font-weight: bold;
-            color: #333;
-            display: flex;
-            align-items: center;
-        }
+.coach-name {
+	font-weight: bold;
+	color: #333;
+	display: flex;
+	align-items: center;
+}
 
-        .email, .type, .url {
-            color: #666;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
+.email,
+.type,
+.url {
+	color: #666;
+	margin-bottom: 5px;
+	font-size: 0.9em;
+}
 
-        .url a {
-            color: #0076bf;
-            text-decoration: none;
-        }
+.url a {
+	color: #0076bf;
+	text-decoration: none;
+}
+
 /* project approach */
 .statement-container-div {
-  display: grid;
-  /* Defines three columns: ID | Statement | Score */
-  grid-template-columns: 120px 1fr 100px; 
-  gap: 10px; 
-  width: 100%;
-  max-width: 1000px;
+	display: grid;
+	/* Defines three columns: ID | Statement | Score */
+	grid-template-columns: 120px 1fr 100px;
+	gap: 10px;
+	width: 100%;
+	max-width: 1000px;
 }
 
 /* Grouping styles for all header cells */
-.statement-header-row > div, 
-.col-statement-id-header, 
-.col-statement-header, 
+.statement-header-row>div,
+.col-statement-id-header,
+.col-statement-header,
 .col-statement-score-header {
-    font-weight: bold; 
-    border-bottom: 2px solid #ccc;
-    padding: 10px;
-    background-color: #f2f2f2;
+	font-weight: bold;
+	border-bottom: 2px solid #ccc;
+	padding: 10px;
+	background-color: #f2f2f2;
 }
 
 /* Ensures each data row occupies the three columns defined by the grid */
-.statement-header-row, .statement-data-row {
-    display: contents; 
+.statement-header-row,
+.statement-data-row {
+	display: contents;
 }
 
 /* Grouping styles for all data cells */
-.col-statement-id, .col-statement, .col-statement-score {
-    padding: 10px;
-    border: 1px solid #eee;
-    background-color: #f9f9f9;
+.col-statement-id,
+.col-statement,
+.col-statement-score {
+	padding: 10px;
+	border: 1px solid #eee;
+	background-color: #f9f9f9;
 }
 
-.col-statement-id, .col-statement-score {
-    text-align: center; 
+.col-statement-id,
+.col-statement-score {
+	text-align: center;
 }
-
 
 
 /* A wrapper to allow horizontal scrolling on mobile devices */
 .maturity-model-table-container {
-  overflow-x: auto;
-  margin: 1rem 0;
-  padding-top:20px;
-  padding-bottom:10px;
+	overflow-x: auto;
+	margin: 1rem 0;
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
 
 /* Basic table styling */
 table {
-  width: 100%;
-  border-collapse: collapse; /* Removes space between borders */
-  min-width: 800px; /* Ensures the table is readable on small screens before scrolling */
+	width: 100%;
+	border-collapse: collapse;
+	/* Removes space between borders */
+	min-width: 800px;
+	/* Ensures the table is readable on small screens before scrolling */
 }
 
 caption {
-  padding: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: left;
+	padding: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: left;
 }
 
 /* Style for table headers */
 th {
-  background-color: #666666; 
-  /* #004a99; A professional blue */
-  color: white;
-  padding: 12px 15px;
-  text-align: left;
-  border: 1px solid #ddd;
+	background-color: #666666;
+	/* #004a99; A professional blue */
+	color: white;
+	padding: 12px 15px;
+	text-align: left;
+	border: 1px solid #ddd;
 }
 
 /* Style for table data cells */
 td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  vertical-align: top; /* Aligns content to the top of the cell */
-  line-height: 1.4;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	vertical-align: top;
+	/* Aligns content to the top of the cell */
+	line-height: 1.4;
 }
 
 /* Zebra striping for better readability */
 tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
 
 tbody tr:hover {
-  background-color: #e0e0e0; /* Highlight row on hover */
+	background-color: #e0e0e0;
+	/* Highlight row on hover */
 }
+
 ul {
-  list-style-type: none; /* Removes default bullets */
+	list-style-type: none;
+	/* Removes default bullets */
 }
+
 ul.custom-bullets {
-  list-style-type: none; /* Removes default bullets */
-  padding-left: 2rem; /* Adds space for the custom image */
+	list-style-type: none;
+	/* Removes default bullets */
+	padding-left: 2rem;
+	/* Adds space for the custom image */
 }
 
 ul.custom-bullets li {
-  background-image: url("your-image.svg"); /* Your image file */
-  background-position: 0 0.2em; /* Adjusts image position */
-  background-repeat: no-repeat;
-  background-size: 1em 1em; /* Adjusts image size */
-  padding-left: 1.5em; /* Space between custom image and text */
+	background-image: url("your-image.svg");
+	/* Your image file */
+	background-position: 0 0.2em;
+	/* Adjusts image position */
+	background-repeat: no-repeat;
+	background-size: 1em 1em;
+	/* Adjusts image size */
+	padding-left: 1.5em;
+	/* Space between custom image and text */
 }
+
 /* Container for the menu */
 nav {
-  display: flex;
-  align-items: center; /* Vertical alignment */
+	display: flex;
+	align-items: center;
+	/* Vertical alignment */
 }
 
 /* Horizontal alignment for the list */
 nav ul {
-  display: flex; 
-  list-style: none; /* No bullets */
-  padding: 0;
-  margin: 0;
+	display: flex;
+	list-style: none;
+	/* No bullets */
+	padding: 0;
+	margin: 0;
 }
 
 /* Spacing for your 3 IDs */
 nav li {
-  margin-left: 20px; 
-  cursor: pointer;
+	margin-left: 20px;
+	cursor: pointer;
 }
 
 /* Branding your custom tool */
 #rubix {
-  font-weight: bold;
-  color: #d32f2f; /* Red-ish like the Latin 'rubrica' */
+	font-weight: bold;
+	color: #d32f2f;
+	/* Red-ish like the Latin 'rubrica' */
 }
+
 #evaluate {
-  font-weight: bold;
-  color: #359245 /* Geenish-ish Rice plant */
+	font-weight: bold;
+	color: #359245
+		/* Geenish-ish Rice plant */
 }
+
 #model {
-  font-weight: bold;
-  color: #B89521;  /* Golden-ish like Rice husk */
+	font-weight: bold;
+	color: #B89521;
+	/* Golden-ish like Rice husk */
 }
 
-/*tree path*/  /*used here for decision*/
+/*tree path*/
+/*used here for decision*/
 
-	/* Mobile styles (stacked by default, central line) */
+/* Mobile styles (stacked by default, central line) */
 .timeline-container {
-  display: flex;
-  flex-direction: column; /* Stacks items vertically on mobile */
-  align-items: center;
-  position: relative;
-  padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	/* Stacks items vertically on mobile */
+	align-items: center;
+	position: relative;
+	padding: 20px 0;
 }
 
 /* The main central vertical line */
 .timeline-container::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #000;
-  transform: translateX(-50%);
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background-color: #000;
+	transform: translateX(-50%);
 }
 
 .timeline-item {
-  position: relative;
-  margin: 20px 0;
-  width: 100%; /* Take full width on mobile */
-  text-align: left;
+	position: relative;
+	margin: 20px 0;
+	width: 100%;
+	/* Take full width on mobile */
+	text-align: left;
 }
 
 .box {
-  border: 1px solid black;
-  padding: 20px; /* INCREASED PADDING = BIGGER BOXES */
-  background-color: white;
-  width: fit-content;
-  margin: 0 auto; /* Center boxes on mobile */
+	border: 1px solid black;
+	padding: 20px;
+	/* INCREASED PADDING = BIGGER BOXES */
+	background-color: white;
+	width: fit-content;
+	margin: 0 auto;
+	/* Center boxes on mobile */
 }
 
 /* Desktop styles (alternating left/right layout) */
 
-  
-  .timeline-item {
-    display: flex;
-    width: 50%; /* Each item takes half the container width */
-    justify-content: flex-start;
-    text-align: left;
-  }
 
-  /* Right side items (every second item) */
-  .timeline-item:nth-child(even) {
-    margin-left: 50%; /* Push even items to the right of the central line */
-    justify-content: flex-end;
-    text-align: right;
-  }
+.timeline-item {
+	display: flex;
+	width: 50%;
+	/* Each item takes half the container width */
+	justify-content: flex-start;
+	text-align: left;
+}
 
-  /* Left side items (every first/odd item) */
-  .timeline-item:nth-child(odd) {
-    margin-right: 50%; /* Keep odd items to the left */
-    justify-content: flex-start;
-    text-align: left;
-  }
+/* Right side items (every second item) */
+.timeline-item:nth-child(even) {
+	margin-left: 50%;
+	/* Push even items to the right of the central line */
+	justify-content: flex-end;
+	text-align: right;
+}
 
-  /* Positioning the connector lines */
+/* Left side items (every first/odd item) */
+.timeline-item:nth-child(odd) {
+	margin-right: 50%;
+	/* Keep odd items to the left */
+	justify-content: flex-start;
+	text-align: left;
+}
 
-  /* Lines for Left side items (odd) */
-  .timeline-item:nth-child(odd) .box::after {
-    content: '';
-    position: absolute;
-    right: -10px; /* REDUCED DISTANCE */
-    top: 50%;
-    width: 10px; /* REDUCED LINE WIDTH */
-    height: 1px;
-    background-color: #000;
-    transform: translateY(-50%);
-  }
+/* Positioning the connector lines */
 
-  /* Lines for Right side items (even) */
-  .timeline-item:nth-child(even) .box::after {
-    content: '';
-    position: absolute;
-    left: -10px; /* REDUCED DISTANCE */
-    top: 50%;
-    width: 10px; /* REDUCED LINE WIDTH */
-    height: 1px;
-    background-color: #000;
-    transform: translateY(-50%);
-  }
+/* Lines for Left side items (odd) */
+.timeline-item:nth-child(odd) .box::after {
+	content: '';
+	position: absolute;
+	right: -10px;
+	/* REDUCED DISTANCE */
+	top: 50%;
+	width: 10px;
+	/* REDUCED LINE WIDTH */
+	height: 1px;
+	background-color: #000;
+	transform: translateY(-50%);
+}
 
-  .box {
-      position: relative;
-      margin: 20px;
-	  width:100%
-      min-width: 150px; /* ENSURE BOXES ARE WIDER */
-  }
+/* Lines for Right side items (even) */
+.timeline-item:nth-child(even) .box::after {
+	content: '';
+	position: absolute;
+	left: -10px;
+	/* REDUCED DISTANCE */
+	top: 50%;
+	width: 10px;
+	/* REDUCED LINE WIDTH */
+	height: 1px;
+	background-color: #000;
+	transform: translateY(-50%);
+}
+
+.box {
+	position: relative;
+	margin: 20px;
+	width: 100%;
+	min-width: 150px;
+}
 
 /* login page */
 
 .maincontent {
-  display: none;
+	display: none;
 }
+
 /* 1. Center the container block itself on the page (horizontal center) */
 .login {
-    width: 300px; /* Define a width */
-    margin: 0 auto; /* Centers the block horizontally */
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a nice depth effect */
-    text-align: center; /* Centers the H1 text */
+	width: 300px;
+	/* Define a width */
+	margin: 0 auto;
+	/* Centers the block horizontally */
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	/* Optional: adds a nice depth effect */
+	text-align: center;
+	/* Centers the H1 text */
 }
 
 /* 2. Style the inputs within the container */
 .login input {
-    display: block; /* Makes each input take its own line */
-    width: 100%; /* Makes inputs stretch to container width */
-    padding: 10px;
-    margin-bottom: 10px; /* Adds space between inputs */
-    box-sizing: border-box; /* Ensures padding is included in the width calculation */
-    border-radius: 4px;
-    border: 1px solid #ccc;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	border: 1px solid #ccc;
 }
 
 /* 3. Style the button within the container */
 .login button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 
 /* 1. The Outer Container (The Tabletop) */
 .book-container {
-  display: flex;
-  width: 85%;
-  max-width: 1000px;
-  margin: 50px auto;
-  background: #fff;
-  /* Deep shadow for a 3D "lifted" effect */
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  overflow: hidden;
-
-	/* 
-  Multiple thin borders create the "edge of the pages" look 
-  border-bottom: 4px solid #d2c5b1;
-  border-right: 3px solid #d2c5b1;
-  border-left: 3px solid #d2c5b1;
-
-  This shadow mimics the book's cover beneath the paper, The '8px #5d4037' is your book cover!
-  box-shadow: 
-    0 10px 20px rgba(0,0,0,0.2), 
-    0 0 0 8px #5d4037; 
-  */
+	display: flex;
+	width: 85%;
+	max-width: 1000px;
+	margin: 50px auto;
+	background: #fff;
+	box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	overflow: hidden;
 }
 
 /* 2. Base Page Styling */
 .page {
-  flex: 1;
-  position: relative; /* Essential for page number placement */
-  padding: 60px 50px;
-  background-color: #fdfaf0; /* Aged paper color */
-  min-height: 450px;
-  font-family: "Libre Baskerville", Georgia, serif;
-  color: #2a2316;
-  min-width: 0; 
+	flex: 1;
+	position: relative;
+	padding: 60px 50px;
+	background-color: #fdfaf0;
+	/* Aged paper color */
+	min-height: 450px;
+	font-family: "Libre Baskerville", Georgia, serif;
+	color: #2a2316;
+	min-width: 0;
 }
 
 /* 3. The Spine & Realistic Curvature */
 .left-page {
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  /* Shadow mimicking the page dipping into the spine */
-  box-shadow: inset -20px 0 30px -15px rgba(0, 0, 0, 0.15);
+	border-right: 1px solid rgba(0, 0, 0, 0.05);
+	/* Shadow mimicking the page dipping into the spine */
+	box-shadow: inset -20px 0 30px -15px rgba(0, 0, 0, 0.15);
 }
 
 .right-page {
-  box-shadow: inset 20px 0 30px -15px rgba(0, 0, 0, 0.15);
+	box-shadow: inset 20px 0 30px -15px rgba(0, 0, 0, 0.15);
 }
 
-.page-image{
-   max-width: 100%; /* Prevents the image from being wider than its parent div */
-  height: auto;    /* Keeps the image proportional so it doesn't stretch */
-  display: block;  /* Removes extra whitespace below the image */
+.page-image {
+	max-width: 100%;
+	/* Prevents the image from being wider than its parent div */
+	height: auto;
+	/* Keeps the image proportional so it doesn't stretch */
+	display: block;
+	/* Removes extra whitespace below the image */
 }
 
 /* 4. Page Number Positioning (Outer Corners) */
 .page-number {
-  position: absolute;
-  bottom: 25px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  opacity: 0.6;
+	position: absolute;
+	bottom: 25px;
+	font-size: 0.85rem;
+	font-weight: bold;
+	opacity: 0.6;
 }
 
-.left-page .page-number { left: 30px; }
-.right-page .page-number { right: 30px; }
+.left-page .page-number {
+	left: 30px;
+}
+
+.right-page .page-number {
+	right: 30px;
+}
 
 /* 5. Typography Details */
 p {
-  line-height: 1.7;
-  text-align: justify;
-  margin-bottom: 1.5em;
+	line-height: 1.7;
+	text-align: justify;
+	margin-bottom: 1.5em;
 }
 
 /* Drop Cap for the Left Page */
 .left-page p:first-of-type::first-letter {
-  float: left;
-  font-size: 3.5rem;
-  line-height: 1;
-  font-weight: 900;
-  margin-right: 10px;
-  color: #5d4037; /* Leather/Ink color */
+	float: left;
+	font-size: 3.5rem;
+	line-height: 1;
+	font-weight: 900;
+	margin-right: 10px;
+	color: #5d4037;
+	/* Leather/Ink color */
 }
 
 
 /*body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }*/
-  .lifecycle-container { max-width: 900px; margin: auto; }
-  .title { text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 30px; color: #333; }
-  .stage-row { display: flex; align-items: center; margin-bottom: 25px; }
-  .stage-box { width: 100px; padding: 10px; color: white; text-align: center; font-weight: bold; border-radius: 4px; margin-right: 20px; }
-  .opp-box { background-color: #8064a2;}
-  .quote-box { background-color: #8064a2;}
-  .order-box { background-color: #4f81bd; }
-  .asset-box { background-color: #4f81bd; }
-  .invoice-box { background-color: #00A36C;}
-  .revrec-box { background-color: #222222; }
-  .payment-box { background-color: #c0504d; }
-  /* Match colors */
-  .opp-title, .quote-title, .order-title, .asset-title, .invoice-title, .revrec-title, .payment-title {font-weight: 700;}
-  .opp-title { color: #8064a2;}
-  .quote-title { color: #8064a2;}
-  .order-title { color: #4f81bd; }
-  .asset-title { color: #4f81bd; }
-  .invoice-title { color: #00A36C;}
-  .revrec-title { color: #222222; }
-  .payment-title { color: #c0504d; }
+.lifecycle-container {
+	max-width: 900px;
+	margin: auto;
+}
 
-  .process-steps { display: flex; flex-wrap: wrap; gap: 5px; font-size: 14px; }
-  .step { display: flex; align-items: center; white-space: nowrap; margin-right: 8px; }
-  .step::after { content: '→'; margin-left: 8px; color: #666; }
-  .step:last-child::after { content: none; }
-  .annotation { font-size: 11px; color: #666; margin-bottom: 4px; margin-left: 120px; }
+.title {
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	color: #333;
+}
 
-  .rlm-table-tech { width: 100%; border-collapse: collapse; font-family: 'Segoe UI', sans-serif; font-size: 13px; margin: 20px 0; border: 1px solid #d8dde6; }
-  .rlm-table-tech th { background-color: #f3f2f2; color: #514f4d; text-align: left; padding: 12px; border-bottom: 2px solid #d8dde6; text-transform: uppercase; letter-spacing: 0.05em; }
-  .rlm-table-tech td { padding: 12px; border-bottom: 1px solid #d8dde6; vertical-align: top; }
-  .rlm-table-tech tr:hover { background-color: #faffff; }
-  .stage-label-tech { }
-  .api-name { font-family: 'Courier New', monospace; font-weight: bold; color: #c7254e; }
-  .api-group { margin-bottom: 8px; }
-  .revrec{
-    margin-left: auto; margin-right: auto;
-  }
-  .revrec td, .revrec th {
-    padding: 10px; /* Adjust the pixel value as needed */
-  }
-  .thin-z {
-    font-family: Arial, Helvetica, sans-serif; 
-    font-weight: 100; 
-    font-size: 150px;
-  }
+.stage-row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.stage-box {
+	width: 100px;
+	padding: 10px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 4px;
+	margin-right: 20px;
+}
+
+.opp-box {
+	background-color: #8064a2;
+}
+
+.quote-box {
+	background-color: #8064a2;
+}
+
+.order-box {
+	background-color: #4f81bd;
+}
+
+.asset-box {
+	background-color: #4f81bd;
+}
+
+.invoice-box {
+	background-color: #00A36C;
+}
+
+.revrec-box {
+	background-color: #222222;
+}
+
+.payment-box {
+	background-color: #c0504d;
+}
+
+/* Match colors */
+.opp-title,
+.quote-title,
+.order-title,
+.asset-title,
+.invoice-title,
+.revrec-title,
+.payment-title {
+	font-weight: 700;
+}
+
+.opp-title {
+	color: #8064a2;
+}
+
+.quote-title {
+	color: #8064a2;
+}
+
+.order-title {
+	color: #4f81bd;
+}
+
+.asset-title {
+	color: #4f81bd;
+}
+
+.invoice-title {
+	color: #00A36C;
+}
+
+.revrec-title {
+	color: #222222;
+}
+
+.payment-title {
+	color: #c0504d;
+}
+
+.process-steps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	font-size: 14px;
+}
+
+.step {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+	margin-right: 8px;
+}
+
+.step::after {
+	content: '→';
+	margin-left: 8px;
+	color: #666;
+}
+
+.step:last-child::after {
+	content: none;
+}
+
+.annotation {
+	font-size: 11px;
+	color: #666;
+	margin-bottom: 4px;
+	margin-left: 120px;
+}
+
+.rlm-table-tech {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 13px;
+	margin: 20px 0;
+	border: 1px solid #d8dde6;
+}
+
+.rlm-table-tech th {
+	background-color: #f3f2f2;
+	color: #514f4d;
+	text-align: left;
+	padding: 12px;
+	border-bottom: 2px solid #d8dde6;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.rlm-table-tech td {
+	padding: 12px;
+	border-bottom: 1px solid #d8dde6;
+	vertical-align: top;
+}
+
+.rlm-table-tech tr:hover {
+	background-color: #faffff;
+}
+
+.stage-label-tech {}
+
+.api-name {
+	font-family: 'Courier New', monospace;
+	font-weight: bold;
+	color: #c7254e;
+}
+
+.api-group {
+	margin-bottom: 8px;
+}
+
+.revrec {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.revrec td,
+.revrec th {
+	padding: 10px;
+	/* Adjust the pixel value as needed */
+}
+
+.thin-z {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 150px;
+}
+
 .flow-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
-  color: #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	padding: 20px;
+	color: #333;
 }
 
 .box {
-  border: 2px solid #2c3e50;
-  border-radius: 4px;
-  width: 300px;
-  background-color: #fff;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+	border: 2px solid #2c3e50;
+	border-radius: 4px;
+	width: 300px;
+	background-color: #fff;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
 .arrow {
-  font-size: 24px;
-  color: #2c3e50;
-  margin: 10px 0;
+	font-size: 24px;
+	color: #2c3e50;
+	margin: 10px 0;
 	text-align: center;
 }
 
 .split-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 500px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	width: 500px;
 }
 
-.secondary { width: 100%; border-color: #34495e; }
-.highlight { border-color: #e67e22; }
-.output { border-color: #27ae60; }
+.secondary {
+	width: 100%;
+	border-color: #34495e;
+}
+
+.highlight {
+	border-color: #e67e22;
+}
+
+.output {
+	border-color: #27ae60;
+}
 
 .states {
-  padding: 10px;
-  font-size: 0.8rem;
-  text-align: center;
-  border-top: 1px solid #eee;
+	padding: 10px;
+	font-size: 0.8rem;
+	text-align: center;
+	border-top: 1px solid #eee;
 }
