@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RLM Discovery Worksheet</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f7f7f7;
+  }
+  h1, h2 {
+    color: #2c3e50;
+  }
+  section {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  select, input[type="number"], input[type="text"], textarea {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .conditional {
+    display: none;
+    margin-top: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: left;
+  }
+  th {
+    background-color: #ecf0f1;
+  }
+  .inline {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .inline > * {
+    flex: 1;
+  }
+</style>
+</head>
+<body>
+
+<h1>RLM Discovery Worksheet</h1>
+
+<section>
+  <h2>Step 1: Sales Model</h2>
+  <label>Select all applicable Sales Models:</label>
+  <div class="inline">
+    <label><input type="checkbox" name="salesModel" value="oneTime"> One-Time Products / Services</label>
+    <label><input type="checkbox" name="salesModel" value="subscription"> Subscription / Recurring</label>
+    <label><input type="checkbox" name="salesModel" value="usage"> Usage-Based</label>
+    <label><input type="checkbox" name="salesModel" value="milestone"> Milestone / Project-Based</label>
+  </div>
+</section>
+
+<section id="fulfillmentSection">
+  <h2>Step 2: Fulfillment (How Value Is Delivered)</h2>
+
+  <!-- One-Time -->
+  <div class="conditional" id="fulfillment-oneTime">
+    <label>1. Are shipments/deliveries accurate and timely?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are handoffs causing delays or errors?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are orders reconciled across systems?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Subscription -->
+  <div class="conditional" id="fulfillment-subscription">
+    <label>1. Are digital entitlements provisioned correctly?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Is subscription activation and renewal seamless?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are recurring deliveries operationally smooth?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Usage-Based -->
+  <div class="conditional" id="fulfillment-usage">
+    <label>1. Is usage tracked accurately for billing?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are metered consumption adjustments correct?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are all systems aligned when usage changes?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Milestone -->
+  <div class="conditional" id="fulfillment-milestone">
+    <label>1. Are stage completions delivered accurately?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are dependencies between phases causing delays?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are partial deliveries tracked correctly?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+</section>
+
+<section id="revenueSection">
+  <h2>Step 3: Revenue & Risk (How Money Becomes Legitimate)</h2>
+
+  <!-- One-Time -->
+  <div class="conditional" id="revenue-oneTime">
+    <label>1. Is revenue recognized at delivery reliably?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are refunds or cancellations handled consistently?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are there audit/compliance issues?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Subscription -->
+  <div class="conditional" id="revenue-subscription">
+    <label>1. Is revenue recognized correctly over time?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are renewals/prorations handled accurately?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are multi-product bundles reflected correctly?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Usage-Based -->
+  <div class="conditional" id="revenue-usage">
+    <label>1. Are variable billing adjustments recognized correctly?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are restatements or reconciliations frequent?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are performance obligations properly captured?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Milestone -->
+  <div class="conditional" id="revenue-milestone">
+    <label>1. Are milestone completions triggering revenue correctly?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are partial milestones or delays affecting revenue?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are contracts aligned with performance obligations?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+</section>
+
+<section id="changeSection">
+  <h2>Step 4: Change Model (How Deals Evolve)</h2>
+
+  <!-- One-Time -->
+  <div class="conditional" id="change-oneTime">
+    <label>1. How often do contract amendments occur?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are amendments consistently handled?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Do returns/cancellations create reconciliation issues?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Subscription -->
+  <div class="conditional" id="change-subscription">
+    <label>1. Are upgrades/downgrades handled smoothly?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Are system changes timely?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are self-service changes accurate?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Usage-Based -->
+  <div class="conditional" id="change-usage">
+    <label>1. Are usage adjustments frequent and accurate?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Do adjustments cause reconciliation problems?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are all systems aligned when usage changes?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+
+  <!-- Milestone -->
+  <div class="conditional" id="change-milestone">
+    <label>1. Are milestone changes communicated across teams?</label>
+    <input type="number" min="1" max="5">
+    <label>2. Does scope change disrupt revenue or delivery?</label>
+    <input type="number" min="1" max="5">
+    <label>3. Are adjustments tracked cleanly?</label>
+    <input type="number" min="1" max="5">
+    <label>As-Is Control</label>
+    <input type="text">
+    <label>To-Be Control</label>
+    <input type="text">
+  </div>
+</section>
+
+<script>
+  const salesCheckboxes = document.querySelectorAll('input[name="salesModel"]');
+  salesCheckboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      const allModels = ['oneTime','subscription','usage','milestone'];
+      allModels.forEach(model => {
+        const sections = document.querySelectorAll(
+          `#fulfillment-${model}, #revenue-${model}, #change-${model}`
+        );
+        sections.forEach(sec => sec.style.display = 'none');
+      });
+      salesCheckboxes.forEach(cbInner => {
+        if(cbInner.checked){
+          const model = cbInner.value;
+          const sections = document.querySelectorAll(
+            `#fulfillment-${model}, #revenue-${model}, #change-${model}`
+          );
+          sections.forEach(sec => sec.style.display = 'block');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
