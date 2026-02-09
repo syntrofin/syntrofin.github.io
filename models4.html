@@ -74,7 +74,31 @@
   </div>
 </section>
 
+  <section id="salesIntentSection">
+  <h2>Step 0: Sales Intent / Quote</h2>
+  
+  <label>Quote Type / Intent</label>
+  <select id="quoteType">
+    <option value="">Select...</option>
+    <option value="newBusiness">New Business</option>
+    <option value="renewal">Renewal</option>
+    <option value="upsell">Upsell</option>
+    <option value="crossSell">Cross-sell</option>
+    <option value="other">Other</option>
+  </select>
+  
+  <label>Expected Deal Size (USD)</label>
+  <input type="number" id="dealSize" min="0" step="1000" placeholder="Enter amount">
+  
+  <label>Urgency / Timeline (weeks)</label>
+  <input type="number" id="timeline" min="1" max="52" placeholder="Enter number of weeks">
+  
+  <label>Notes / Context</label>
+  <textarea id="salesNotes" rows="4" placeholder="Add context or additional info here..."></textarea>
+</section>
+
 <section id="fulfillmentSection">
+  
   <h2>Step 2: Fulfillment (How Value Is Delivered)</h2>
 
   <!-- One-Time -->
