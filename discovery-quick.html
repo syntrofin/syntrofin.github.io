@@ -75,7 +75,18 @@
   .columnlist li {
     margin-bottom: 8px;
   }
-  
+
+  /* Style specifically for text inputs inside list items */
+  .and-other-input {
+    width: 300px;           /* Makes it wider */
+    height: 35px;          /* Makes it taller */
+    padding: 5px 10px;     /* Adds space inside for text */
+    border: 1px solid #ccc;
+    border-radius: 4px;    /* Optional: Rounds the corners */
+    font-size: 16px;       /* Makes the text easier to read */
+    vertical-align: middle; /* Aligns it nicely with the checkbox */
+	}
+
   /* Mobile stacking logic */
   @media (max-width: 600px) {
     .columndiv {
@@ -374,7 +385,7 @@ for (var i = 0; i < lists.length; i++) {
     lists[i].insertAdjacentHTML('beforeend', `
         <li class="other-item">
             <input type="checkbox"> Other: 
-            <input type="text" placeholder="Type here..." style="margin-left: 5px;">
+            <input type="text" class="and-other-input" placeholder="And any other, say here...">
         </li>
     `);
 }
