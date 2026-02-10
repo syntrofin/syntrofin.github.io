@@ -326,48 +326,57 @@
 </section>
 
 <!-- Revenue Recognition -->
-
 <section>
-<p class = "rectype">Full Recognition (Point in Time)</p>
-  <ul class="revrec">
+<h2>Revenue Recognition</h2>
+
+<div class="rowdiv">
+  <div class="columndiv">
+    <p class="columntitle">Full Recognition (Point in Time)</p>
+    <ul class="columnlist">
     <li><b>How it creates the POB: &nbsp; &nbsp; &nbsp; &nbsp;</b>Single milestone; turns "Green" immediately upon triggering event (e.g., Invoice).</li>
     <li><b>How it creates the Schedule: &nbsp; &nbsp;</b>Single RevenueTransaction for 100% of the value.</li>
     <li><b>Accounting Result: &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</b>One SAP Document Number; no monthly "bleeding."</li>
   </ul>
-<br>
-<br>
-  
-<p class = "rectype">Daily/Monthly Proration (Over-Time)</p>
-  <ul class="revrec">
+</div>
+<div class="columndiv">
+    <p class="columntitle">Daily/Monthly Proration (Over-Time)</p>
+    <ul class="columnlist">
     <li><b>How it creates the POB: &nbsp; &nbsp; &nbsp; &nbsp;</b>Set to "Fulfilled" on the Service Start Date.</li>
     <li><b>How it creates the Schedule: &nbsp; &nbsp;</b>Uses Start/End Dates to calculate days/months ("Slices").</li>
     <li><b>Accounting Result: &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </b>Multiple SAP Document Numbers (one per month).</li>
   </ul>
-  
+</div>
+</div>
 <br>
 <br>
-<p class = "rectype">Milestone-Based (Event-Based)</p>
-  <ul class="revrec">
+<div class="rowdiv">
+  <div class="columndiv">
+    <p class="columntitle">Milestone-Based (Event-Based)</p>
+    <ul class="columnlist">
     <li><b>How it creates the POB: &nbsp; &nbsp; &nbsp; &nbsp;</b>Created in "Pending" (Red Light); waits for external updates like Task completion.</li>
     <li><b>How it creates the Schedule: &nbsp; &nbsp;</b>Remains "Active" but dormant; generates records only on percentage changes.</li>
     <li><b>Accounting Result: &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </b>SAP entries created only when business milestones are reached.</li>
-</ul>
-
-<br>
-<br>
-<p class = "rectype">Manual Recognition</p>
-<ul class="revrec">
+  </ul>
+</div>
+<div class="columndiv">
+    <p class="columntitle">Manual Recognition</p>
+    <ul class="columnlist">
   <li><b>How it creates the POB: &nbsp; &nbsp; &nbsp; &nbsp;</b>Created without automated logic; stays "Not Started."</li>
   <li><b>How it creates the Schedule: &nbsp; &nbsp;</b>Built, but requires manual user action (button click) to generate transactions.</li>
   <li><b>Accounting Result: &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; </b>Complete manual control over the SAP BAPI trigger.</li>
-</ul>
-  
+  </ul>
+</div>
+</div>
 <br>
 <hr>
 </section>
 <br><br>
+
+<!-- Download to Excel -->
+<section>
 <button onclick="downloadAllToExcel()">Download to Excel</button>
 <br><br>
+</section>
 
 <script>
 
