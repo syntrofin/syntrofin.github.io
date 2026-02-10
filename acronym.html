@@ -36,7 +36,7 @@
 	}
 
   /* Container set to flex and allowed to wrap */
-  . rowdiv {
+  .rowdiv {
     display: flex;
     flex-wrap: wrap;
     font-family: sans-serif;
@@ -44,14 +44,14 @@
   }
   
   /* Each column takes 50% width on desktop */
-  . columndiv {
+  .columndiv {
     flex: 1;
     min-width: 300px; /* Forces stack when screen is narrow */
     background-color: #f4f9fb; /* Light blue background */
   }
   
   /* Header style with teal background */
-  . columntitle {
+  .columntitle {
     background-color: #00a680;
     color: white;
     margin: 0;
@@ -60,7 +60,7 @@
   }
   
   /* List styling */
-  . columnlist {
+  .columnlist {
     list-style: none;
     padding: 20px;
     margin: 0;
@@ -68,13 +68,13 @@
     color: #333;
   }
   
-  .list li {
+  .columnlist li {
     margin-bottom: 8px;
   }
   
   /* Mobile stacking logic */
   @media (max-width: 600px) {
-    . columndiv {
+    .columndiv {
       flex: 1 0 100%; /* Makes columns full width on small screens */
     }
   }
