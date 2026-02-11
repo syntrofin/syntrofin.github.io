@@ -78,8 +78,12 @@ footer p {
     font-weight: 500;  
 }
 
-.title-logo {
+.title-logo-rotate {
     transform: rotate(-35deg) scaleX(-1);
+    height: 50px;
+    width: auto;
+}
+.title-logo {
     height: 50px;
     width: auto;
 }
