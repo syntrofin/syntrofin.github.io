@@ -40,14 +40,40 @@
 
 	<p><h2 style="text-align:center; color:blue;">American Indian Vowel Story</h2></p>
 
-	<svg width="200" height="200" viewBox="0 0 200 200">
-  <!-- 1. The Tail -->
-  <path d="M 80 120 L 50 160 L 100 135 Z" fill="white" stroke="black" stroke-width="2" />
-  <!-- 2. The Bubble (Ellipse) -->
-  <ellipse cx="100" cy="80" rx="60" ry="40" fill="white" stroke="black" stroke-width="2" />
-  <!-- 3. The Text -->
-  <text x="100" y="85" text-anchor="middle" font-family="sans-serif" font-size="14">Hello!</text>
+<svg width="400" height="250" viewBox="0 0 400 250">
+  <!-- CHARACTER 1: Circle Guy -->
+  <g transform="translate(50, 150)">
+    <!-- Body -->
+    <circle cx="25" cy="25" r="25" fill="#FFD700" stroke="black" stroke-width="2"/>
+    <circle cx="15" cy="20" r="3" fill="black" />
+    <circle cx="35" cy="20" r="3" fill="black" />
+    <path d="M 15 35 Q 25 45 35 35" stroke="black" fill="transparent" />
+    
+    <!-- Speech Bubble (Placed above) -->
+    <g transform="translate(-25, -100)">
+      <path d="M 50 70 L 40 90 L 60 75 Z" fill="white" stroke="black" stroke-width="2" /> <!-- Tail -->
+      <rect width="100" height="50" rx="15" fill="white" stroke="black" stroke-width="2" /> <!-- Bubble -->
+      <text x="50" y="30" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">IAST is cool!</text>
+    </g>
+  </g>
+
+  <!-- CHARACTER 2: Square dude -->
+  <g transform="translate(250, 150)">
+    <!-- Body -->
+    <rect width="50" height="50" rx="10" fill="#87CEEB" stroke="black" stroke-width="2"/>
+    <rect x="10" y="15" width="8" height="8" fill="black" />
+    <rect x="32" y="15" width="8" height="8" fill="black" />
+    <rect x="15" y="35" width="20" height="4" fill="black" />
+
+    <!-- Speech Bubble (Placed above) -->
+    <g transform="translate(-25, -100)">
+      <path d="M 50 70 L 60 90 L 40 75 Z" fill="white" stroke="black" stroke-width="2" /> <!-- Tail -->
+      <rect width="100" height="50" rx="15" fill="white" stroke="black" stroke-width="2" /> <!-- Bubble -->
+      <text x="50" y="30" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">IPA is better!</text>
+    </g>
+  </g>
 </svg>
+
 <br>
 
 	<svg width="200" height="150" viewBox="0 0 200 150">
