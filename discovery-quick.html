@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+am<!DOCTYPE html>
 <html lang="en" class="gr__syntrofin_in fontawesome-i2svg-active fontawesome-i2svg-complete">
   <head>
     <!-- charset and viewport -->
@@ -95,7 +95,7 @@
     </style>
   </head>
   <body>
-    <h1 style="text-align:center; color:blue;">&#128269;&#65039;&nbsp;Discovery RLM Quick Check&nbsp;&#9201;&#65039;</h1>
+    <h1 style="text-align:center; color:blue;">&#128269;&#65039;&nbsp;Examples to Guide Discoveryk&nbsp;&#9201;&#65039;</h1>
     <br>
     <!-- Money and Assets -->
     <section>
@@ -496,16 +496,18 @@
       <br>
       <br>
     </section>
+
+	  
     <script>
       /* Add checkboxes and "Other" field to all lists */
       var lists = document.getElementsByTagName("ul");
       for (var i = 0; i < lists.length; i++) {
-        // 1. Add checkboxes to existing 
-        < li > items
+        // 1. Add checkboxes to existing LI items
         var items = lists[i].getElementsByTagName("li");
         for (var j = 0; j < items.length; j++) {
           items[j].insertAdjacentHTML('afterbegin', ' < input type = "checkbox" > ');
           }
+		  
           // 2. Append the "Other" input as the last LI
           lists[i].insertAdjacentHTML('beforeend', `
         
@@ -516,6 +518,7 @@
 																	</li>
     `);
         }
+		
         /* Download to Excel Script */
         function downloadAllWithOther() {
           const allItems = document.querySelectorAll('ul li');
