@@ -498,48 +498,57 @@ am<!DOCTYPE html>
     </section>
 
 	  
-    <script>
-      /* Add checkboxes and "Other" field to all lists */
-      var lists = document.getElementsByTagName("ul");
-      for (var i = 0; i < lists.length; i++) {
-        // 1. Add checkboxes to existing LI items
-        var items = lists[i].getElementsByTagName("li");
-        for (var j = 0; j < items.length; j++) {
-          items[j].insertAdjacentHTML('afterbegin', ' < input type = "checkbox" > ');
-          }
-		  
-          // 2. Append the "Other" input as the last LI
-          lists[i].insertAdjacentHTML('beforeend', `
-        
-															<li class="other-item">
-																<input type="checkbox"> Other: 
-            
-																	<input type="text" class="and-other-input" placeholder="And any other, say here...">
-																	</li>
+<script>
+
+/* Add checkboxes and "Other" field to all lists */
+var lists = document.getElementsByTagName("ul");
+
+for (var i = 0; i < lists.length; i++) {
+    // 1. Add checkboxes to existing <li> items
+    var items = lists[i].getElementsByTagName("li");
+    for (var j = 0; j < items.length; j++) {
+        items[j].insertAdjacentHTML('afterbegin', '<input type="checkbox"> ');
+    }
+
+    // 2. Append the "Other" input as the last LI
+    lists[i].insertAdjacentHTML('beforeend', `
+        <li class="other-item">
+            <input type="checkbox"> Other: 
+            <input type="text" class="and-other-input" placeholder="And any other, say here...">
+        </li>
     `);
-        }
-		
-        /* Download to Excel Script */
-        function downloadAllWithOther() {
-          const allItems = document.querySelectorAll('ul li');
-          const data = Array.from(allItems).map(li => {
-            const checkbox = li.querySelector('input[type="checkbox"]');
-            const textInput = li.querySelector('input[type="text"]');
-            // Determine the text: use the input value if it exists, otherwise use li text
-            let itemText = textInput ? textInput.value : li.innerText.trim();
-            // If it's the "Other" field but empty, label it as "Other (empty)"
-            if (textInput && !itemText) itemText = "Other (No input)";
-            return {
-              "Item Description": itemText,
-              "Status": checkbox.checked ? "✓" : ""
-            };
-          });
-          // Convert to Excel using SheetJS
-          const worksheet = XLSX.utils.json_to_sheet(data);
-          const workbook = XLSX.utils.book_new();
-          XLSX.utils.book_append_sheet(workbook, worksheet, "RLM_QuickList");
-          XLSX.writeFile(workbook, "Discovery_RLM_Quick_Check.xlsx");
-        }
-    </script>
+}
+
+
+/* Download to Excel Script */
+function downloadAllWithOther() {
+  const allItems = document.querySelectorAll('ul li');
+  
+  const data = Array.from(allItems).map(li => {
+    const checkbox = li.querySelector('input[type="checkbox"]');
+    const textInput = li.querySelector('input[type="text"]');
+    
+    // Determine the text: use the input value if it exists, otherwise use li text
+    let itemText = textInput ? textInput.value : li.innerText.trim();
+    
+    // If it's the "Other" field but empty, label it as "Other (empty)"
+    if (textInput && !itemText) itemText = "Other (No input)";
+
+    return {
+      "Item Description": itemText,
+      "Status": checkbox.checked ? "✓" : "" 
+    };
+  });
+
+  // Convert to Excel using SheetJS
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "RLM_QuickList");
+
+  XLSX.writeFile(workbook, "Discovery_RLM_Quick_Check.xlsx");
+}
+
+
+</script>
   </body>
 </html>
