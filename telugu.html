@@ -32,30 +32,45 @@
 	    padding: 0 20px;
 	    font-family: sans-serif;
 	}
-		div{
+	.cartoondiv{
+		width:100%;
+		display: flex;
+    	flex-direction: row; 
+    	gap: 20px;  
+	}
+		
+	.aidiv{
 			width:320px; 
 			margin: 0 auto; 
 	  		border: 1.5px solid #222;
   			/* top-left, top-right, bottom-right, bottom-left */
   			border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 			text-align: center;
-		}
+	}
 	.tasvg{
 			width:300px; 
 			height:320px; 
-		}
-		.tagger{
+	}
+	.tagger{
 			font-size:16px;
-		}
-	</style>
+	}
+
+	/* Shown vertical on small screen */
+	@media screen and (max-width: 600px) {
+  .cartoondiv {
+    display: flex;
+    flex-direction: column;          
+  }
+}
+</style>
 </head>
 <body>
 <p><h1 style="text-align:center; color:blue;">Learn Telugu</h1></p>
 
 	<p><h2 style="text-align:center; color:blue;">American Indian Vowel Story</h2></p>
-
+<div class="cartoondiv">
 <!-- Americans are in eating -->
-<div style="text-align: center;">
+<div class="aidiv">
   <!-- First SVG (Your Character) -->
   <svg class="tasvg">
     <g transform="translate(250, 150)">
@@ -86,7 +101,7 @@
 	<br><br>
 
 <!-- Wood wool -->
-<div style="text-align: center;">
+<div class="aidiv">
   <!-- First SVG (Your Character) -->
   <svg class="tasvg">
     <g transform="translate(250, 150)">
@@ -118,7 +133,7 @@
 	<br><br>
 
 <!-- Oklahoma Orio -->
-<div style="text-align: center;">
+<div class="aidiv">
   <!-- First SVG (Your Character) -->
   <svg class="tasvg">
     <g transform="translate(250, 150)">
@@ -144,40 +159,13 @@
 </p>
 	<br>
 </div>
-
+</div>
 	<br><br>
 
-<svg width="400" height="300" viewBox="0 0 400 300">
-  <!-- Character -->
-	  <!-- Character -->
-  <g transform="translate(250, 150)">
-    <circle cx="25" cy="25" r="25" fill="#FFD700" stroke="black" stroke-width="2""")/>>
-    <path d="M 15 35 Q 25 45 35 35" stroke="black" fill="transparent" />
-  </g>
+<script>
+/* Fake script taag to comment big html?
 
-
-  <!-- Speech Bubble -->
-  <g transform="translate(20, 20)">
-    <!-- The Tail -->
-    <path d="M 150 110 L 230 140 L 180 115 Z" fill="white" stroke="black" stroke-width="2" />
-    <!-- The Bubble (Larger for longer text) -->
-    <rect width="280" height="100" rx="20" fill="white" stroke="black" stroke-width="2" />
-    
-    <!-- Styled Text -->
-    <text x="140" y="55" text-anchor="middle" font-family="Arial" font-size="18">
-      <tspan font-weight="bold">A</tspan>mericans 
-      <tspan font-weight="bold">A</tspan>re 
-      <tspan font-weight="bold">I</tspan>n 
-      <tspan font-weight="bold">Ea</tspan>ting!
-    </text>
-  </g>
-</svg>
-
-
-
-<br>
-
-	<svg width="200" height="150" viewBox="0 0 200 150">
+<svg width="200" height="150" viewBox="0 0 200 150">
   <!-- Character 1: The Circle Guy -->
   <g transform="translate(40, 40)">
     <circle cx="25" cy="25" r="25" fill="#FFD700" /> <!-- Head -->
@@ -195,29 +183,7 @@
   </g>
 </svg>
 
-	<br>
-
-	
-<svg width="400" height="250" viewBox="0 0 400 250">
-
-	  <!-- Character -->
-  <g transform="translate(250, 150)">
-    <circle cx="25" cy="25" r="25" fill="#FFD700" stroke="black" stroke-width="2""")/>>
-    <path d="M 15 35 Q 25 45 35 35" stroke="black" fill="transparent" />
-		    <circle cx="15" cy="20" r="3" fill="black" />
-    <circle cx="35" cy="20" r="3" fill="black" />
-  </g>
-    
-    <!-- Speech Bubble (Placed above) -->
-    <g transform="translate(-25, -100)">
-      <path d="M 50 70 L 40 90 L 60 75 Z" fill="white" stroke="black" stroke-width="2" /> <!-- Tail -->
-      <rect width="100" height="50" rx="15" fill="white" stroke="black" stroke-width="2" /> <!-- Bubble -->
-      <text x="50" y="30" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold"><strong>A</strong>mericaans <strong>A</strong>re <strong>I</strong>n <strong>Ea</strong>ting!</text>
-    </g>
-  </g>
-
-</svg>
-
+<br>
 
 <p><h2 style="text-align:center; color:blue;">Vowels</h2></p>
   <table style="width: 100%; border-collapse: collapse; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 15px; border: 1px solid #ddd;">
@@ -322,6 +288,7 @@
     </tr>
   </tbody>
 </table>
-
+*/
+</script>
 </body>
 </html>
