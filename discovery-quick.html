@@ -497,44 +497,32 @@
 	  
 <script>
 	
-/* Sort */
-// Wrap in DOMContentLoaded to ensure the HTML is loaded before sorting
 document.addEventListener('DOMContentLoaded', () => {
-  const lists = document.querySelectorAll('ul.columnlist');
+    const lists = document.querySelectorAll('ul.columnlist');
 
-  lists.forEach(ul => {
-    // Convert <li> children to an array to use the .sort() method
-    const items = Array.from(ul.children);
+    lists.forEach(ul => {
+        // 1. Add checkboxes to existing items FIRST
+        Array.from(ul.children).forEach(li => {
+            li.insertAdjacentHTML('afterbegin', '<input type="checkbox"> ');
+        });
 
-    items.sort((a, b) => {
-      // Use localeCompare for accurate alphabetical sorting
-      return a.textContent.trim().localeCompare(b.textContent.trim());
+        // 2. SORT the items (alphabetically by text)
+        const items = Array.from(ul.children);
+        items.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim()));
+        
+        // Re-append sorted items
+        items.forEach(item => ul.appendChild(item));
+
+        // 3. Add "Other" LAST (so it's excluded from the sort)
+        ul.insertAdjacentHTML('beforeend', `
+            <li class="other-item">
+                <input type="checkbox"> Other: 
+                <input type="text" class="and-other-input" placeholder="And any other, say here...">
+            </li>
+        `);
     });
-
-    // Re-append the sorted items back to the parent <ul>
-    items.forEach(item => ul.appendChild(item));
-  });
 });
-	
 
-/* Add checkboxes and "Other" field to all lists */
-var lists = document.getElementsByTagName("ul");
-
-for (var i = 0; i < lists.length; i++) {
-    // 1. Add checkboxes to existing <li> items
-    var items = lists[i].getElementsByTagName("li");
-    for (var j = 0; j < items.length; j++) {
-        items[j].insertAdjacentHTML('afterbegin', '<input type="checkbox"> ');
-    }
-
-    // 2. Append the "Other" input as the last LI
-    lists[i].insertAdjacentHTML('beforeend', `
-        <li class="other-item">
-            <input type="checkbox"> Other: 
-            <input type="text" class="and-other-input" placeholder="And any other, say here...">
-        </li>
-    `);
-}
 
 
 /* Download to Excel Script when clicked on downlod button */
