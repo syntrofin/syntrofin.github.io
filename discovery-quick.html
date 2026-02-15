@@ -497,6 +497,26 @@
 
 	  
 <script>
+	
+/* Sort */
+// Wrap in DOMContentLoaded to ensure the HTML is loaded before sorting
+document.addEventListener('DOMContentLoaded', () => {
+  const lists = document.querySelectorAll('ul.columnlist');
+
+  lists.forEach(ul => {
+    // Convert <li> children to an array to use the .sort() method
+    const items = Array.from(ul.children);
+
+    items.sort((a, b) => {
+      // Use localeCompare for accurate alphabetical sorting
+      return a.textContent.trim().localeCompare(b.textContent.trim());
+    });
+
+    // Re-append the sorted items back to the parent <ul>
+    items.forEach(item => ul.appendChild(item));
+  });
+});
+	
 
 /* Add checkboxes and "Other" field to all lists */
 var lists = document.getElementsByTagName("ul");
@@ -518,7 +538,7 @@ for (var i = 0; i < lists.length; i++) {
 }
 
 
-/* Download to Excel Script */
+/* Download to Excel Script when clicked on downlod button */
 function downloadAllWithOther() {
   const allItems = document.querySelectorAll('ul li');
   
@@ -546,24 +566,7 @@ function downloadAllWithOther() {
   XLSX.writeFile(workbook, "Discovery_RLM_Quick_Check.xlsx");
 }
 
-/* Sort */
-// Wrap in DOMContentLoaded to ensure the HTML is loaded before sorting
-document.addEventListener('DOMContentLoaded', () => {
-  const lists = document.querySelectorAll('ul.columnlist');
 
-  lists.forEach(ul => {
-    // Convert <li> children to an array to use the .sort() method
-    const items = Array.from(ul.children);
-
-    items.sort((a, b) => {
-      // Use localeCompare for accurate alphabetical sorting
-      return a.textContent.trim().localeCompare(b.textContent.trim());
-    });
-
-    // Re-append the sorted items back to the parent <ul>
-    items.forEach(item => ul.appendChild(item));
-  });
-});
 
 </script>
   </body>
