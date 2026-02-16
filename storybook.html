@@ -373,69 +373,8 @@
 	</table></br>
 </div>
 </div>
-
-<script>
-  function showContent() {
-    const loginBox = document.querySelector('.login');
-    const mainContent = document.querySelector('.maincontent');
-	const testMsg = document.getElementById('test-msg');
-
-    if (loginBox) loginBox.style.display = 'none';
-    if (mainContent) mainContent.style.display = 'block';
-  }
-
-  // 1. AUTOMATED CHECK ON PAGE LOAD
-  window.onload = async () => {
-    try {
-      // Correct URL path is included here
-      const check = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
-        method: 'GET',
-        credentials: 'include' 
-      });
-		const checkString = await check.text(); 
-		console.log("pass check response is below:");
-		console.log(checkString);
-	
-		
-      if (check.ok) {
-		  	console.log("pass succeeded");
-        	showContent();
-      } else {
-		  console.log("pass failed");
-        if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
-           /* window.location.href = "https://www.syntrofin.com"; */
-        }
-      }
-    } catch (err) {
-        console.error("Auth check failed:", err);
-    }
-  };
-
-  // 2. THE MANUAL LOGIN (Only if the check above fails)
-  async function login() {
-	  console.log("going for manual login");
-    const user = document.getElementById('user').value;
-    const pass = document.getElementById('pass').value;
-
-    const response = await fetch('https://auth-phi-seven.vercel.app/api/auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include', 
-      body: JSON.stringify({ userId: user, password: pass })
-    });
-
-    if (response.ok) {
-		console.log("manual login succeeded");
-      showContent();
-    } else {
-		console.log("manual login invalid");
-      alert("Invalid Login");
-    }
-  }
-
-  document.getElementById('login-btn').addEventListener('click', login);
-</script>
-
+					
+ <script src="./syntrofin_files/cssjs/auth.js"></script>
 
 </body>
 </html>
