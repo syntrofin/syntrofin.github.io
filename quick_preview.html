@@ -34,6 +34,44 @@
 	    font-family: sans-serif;
 	    background-color: #f4f4f4;
 	}
+	  .rowdiv {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: sans-serif;
+        border-bottom: 2px solid #00a680;
+        /* Teal bottom border from image */
+      }
+
+	/* Each column takes 50% width on desktop */
+      .columndiv {
+        flex: 1;
+        min-width: 300px;
+        /* Forces stack when screen is narrow */
+        background-color: #f4f9fb;
+        /* Light blue background */
+      }
+
+      /* Header style with teal background */
+      .columntitle {
+        background-color: #00a680;
+        color: white;
+        margin: 0;
+        padding: 15px 20px;
+        font-weight: bold;
+      }
+
+      /* List styling */
+      .columnlist {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+        line-height: 1.4;
+        color: #333;
+      }
+
+      .columnlist li {
+        margin-bottom: 8px;
+      }
 	.stock {
 	    font-size: 0.9em;
 	    width: 100%;
@@ -91,7 +129,7 @@
 <div class="rowdiv">
   <div class="columndiv">
     <p class="columntitle">Industries and Challenges</p>
-    <ul>
+    <ul class="columnlist">
       <li> SaaS/Software/Cloud Services</li>
       <li> Telecom/Media</li>
       <li> Manufacturing (B2B/Industrial)</li>
@@ -105,7 +143,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Different success criteria</p>
-    <ul>
+    <ul class="columnlist">
       <li> Revenue Accuracy</li>
       <li> Quote-to-Cash Cycle Efficiency</li>
       <li> Billing & Invoicing Accuracy</li>
@@ -118,7 +156,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Project strategies</p>
-    <ul>
+    <ul class="columnlist">
       <li> Greenfield Implementation</li>
       <li> Brownfield/Migration Approach</li>
       <li> Pilot/Proof-of-Concept (PoC) Approach</li>
@@ -131,7 +169,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Project ending strategies</p>
-    <ul>
+    <ul class="columnlist">
       <li> Big Bang / Full Cutover</li>
       <li> Phased/Incremental Close</li>
       <li> Pilot/Selective Close</li>
@@ -144,7 +182,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Governance</p>
-    <ul>
+    <ul class="columnlist">
       <li> Standards-Based Governance</li>
       <li> Compliance-First Governance</li>
       <li> Lifecycle/Change Governance</li>
@@ -165,7 +203,7 @@
 <div class="rowdiv">
   <div class="columndiv">
     <p class="columntitle">Sales Strategies</p>
-    <ul>
+    <ul class="columnlist">
       <li> Transactional Sales</li>
       <li> Consultative Sales</li>
       <li> Solution / Value-Based Sales</li>
@@ -179,7 +217,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Pricebooks</p>
-    <ul>
+    <ul class="columnlist">
       <li> Standard Price Book</li>
       <li> Custom Price Book</li>
       <li> Active vs Inactive Price Books</li>
@@ -193,7 +231,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Discount strategies</p>
-    <ul>
+    <ul class="columnlist">
       <li> Line-Item Discount</li>
       <li> Volume / Tiered Discount</li>
       <li> Contract / Account-Level Discount</li>
@@ -207,7 +245,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Discount configurations</p>
-    <ul>
+    <ul class="columnlist">
       <li> Quote Line Discount</li>
       <li> Quote / Opportunity Level Discount</li>
       <li> Contract / Account-Level Discount</li>
@@ -229,7 +267,7 @@
 <div class="rowdiv">
   <div class="columndiv">
     <p class="columntitle">Order strategies</p>
-    <ul>
+    <ul class="columnlist">
       <li> One-Time/Immediate Fulfillment</li>
       <li> Subscription/Recurring Order</li>
       <li> Amendment/Change Order Strategy</li>
@@ -243,7 +281,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Contract strategies</p>
-    <ul>
+    <ul class="columnlist">
       <li> Standard/Fixed-Term Contract</li>
       <li> Evergreen/Continuous Contract</li>
       <li> Milestone/Project-Based Contract</li>
@@ -256,7 +294,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Sales Product types</p>
-    <ul>
+    <ul class="columnlist">
       <li> One-Time (Non-Recurring) Products</li>
       <li> Digital/Virtual Products</li>
       <li> Subscription Products</li>
@@ -271,7 +309,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">RLM Products</p>
-    <ul>
+    <ul class="columnlist">
       <li> Attribute-Driven Product</li>
       <li> Static Bundle (for contrast)</li>
       <li> Dynamic Bundle (Distinct Product Type) </li>
@@ -287,7 +325,7 @@
 <div class="rowdiv">
   <div class="columndiv">
     <p class="columntitle">Billing</p>
-    <ul>
+    <ul class="columnlist">
       <li> One-Time / Immediate Billing</li>
       <li> Recurring / Subscription Billing</li>
       <li> Usage-Based Billing</li>
@@ -302,7 +340,7 @@
   </div>
   <div class="columndiv">
     <p class="columntitle">Assets</p>
-    <ul>
+    <ul class="columnlist">
       <li> One-Time Asset</li>
       <li> Subscription-Linked Asset</li>
       <li> Consumable / Usage-Based Asset</li>
@@ -595,7 +633,65 @@
 <br><br>
 
 
+<script>
+	
+document.addEventListener('DOMContentLoaded', () => {
+    const lists = document.querySelectorAll('ul.columnlist');
 
+    lists.forEach(ul => {
+        // 1. Add checkboxes to existing items FIRST
+        Array.from(ul.children).forEach(li => {
+            li.insertAdjacentHTML('afterbegin', '<input type="checkbox"> ');
+        });
+
+        // 2. SORT the items (alphabetically by text)
+        const items = Array.from(ul.children);
+        items.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim()));
+        
+        // Re-append sorted items
+        items.forEach(item => ul.appendChild(item));
+
+        // 3. Add "Other" LAST (so it's excluded from the sort)
+        ul.insertAdjacentHTML('beforeend', `
+            <li class="other-item">
+                <input type="checkbox"> Other: 
+                <input type="text" class="and-other-input" placeholder="And any other, say here...">
+            </li>
+        `);
+    });
+});
+
+
+
+/* Download to Excel Script when clicked on downlod button */
+function downloadAllWithOther() {
+  const allItems = document.querySelectorAll('ul li');
+  
+  const data = Array.from(allItems).map(li => {
+    const checkbox = li.querySelector('input[type="checkbox"]');
+    const textInput = li.querySelector('input[type="text"]');
+    
+    // Determine the text: use the input value if it exists, otherwise use li text
+    let itemText = textInput ? textInput.value : li.innerText.trim();
+    
+    // If it's the "Other" field but empty, label it as "Other (empty)"
+    if (textInput && !itemText) itemText = "Other (No input)";
+
+    return {
+      "Item Description": itemText,
+      "Status": checkbox.checked ? "✓" : "" 
+    };
+  });
+
+  // Convert to Excel using SheetJS
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "RLM_QuickList");
+
+  XLSX.writeFile(workbook, "Discovery_RLM_Quick_Check.xlsx");
+}
+
+</script>
 
 
 </body>
