@@ -44,7 +44,10 @@
 
 	/* Each column takes 50% width on desktop */
       .columndiv {
+		  /*
         flex: 1;
+		  */
+		flex: 1 0 100%;   /* to make column full width and making long list for easier reading */
         min-width: 300px;
         /* Forces stack when screen is narrow */
         background-color: #f4f9fb;
