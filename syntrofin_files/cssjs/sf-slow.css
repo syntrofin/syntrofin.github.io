@@ -277,8 +277,17 @@ footer p {
     color: #1e293b;
 }
 
-.feature-list li::before { content: "→"; }
-.stream-list li::before { content: "o"; }
+.feature-list li::before { 
+    content: "→"; 
+}
+.stream-list li::before {
+  content: "\2022";  /* The Unicode character for a solid bullet */
+  color: #9fc5e8;       /* Your desired blue color */
+  font-weight: bold; /* Makes the dot appear more solid */
+  display: inline-block; 
+  width: 1em;        /* Creates space for the dot */
+  margin-left: -1em; /* Positions it to the left of the text */
+}
 
 .feature-list li::before, .stream-list li::before {
     position: absolute;
