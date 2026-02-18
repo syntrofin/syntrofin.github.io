@@ -88,6 +88,10 @@ footer p {
     width: auto;
 }
 
+.titlepara {
+    line-height: 1.2;
+}
+
 /* Menu (The fix for bullets and vertical layout) */
 .menu{
 
@@ -476,9 +480,10 @@ footer p {
         margin-top:20px;
         border-top: 1px solid #9fc4e7;
     }
-    .nav {
+    .titlepara, .nav {
         align-items: center;
       }
+
     .stackedcard {
         flex: none;
         max-width: 100%;
