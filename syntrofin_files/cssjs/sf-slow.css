@@ -134,16 +134,22 @@ footer p {
         flex: 1;
 }
 
-.banner-image, .cell2 {
+.banner-image{
+  flex: 1;          /* Tells the DIV to grow and fill available space */
+  min-width: 0;     /* Prevents the container from pushing past its parent */
+  overflow: hidden; /* Optional: clips any image overflow */
+}
+.banner-image img {
+   width: 100%;      /* Scales image to the container's width */
+  height: 100%;     /* Scales image to the container's height */
+  display: block;   /* Removes the tiny gap at the bottom of images */
+  object-fit: cover; /* ESSENTIAL: Prevents stretching by cropping slightl
+}
+.cell2 {
     flex: 1;
     text-align: center;
     box-sizing: border-box;
 }
-.banner-image-display {
-    max-width: 100%;
-    height: auto;
-}
-
 
 .align-row {
     display: flex;
