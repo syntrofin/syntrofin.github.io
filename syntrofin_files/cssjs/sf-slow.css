@@ -543,8 +543,8 @@ footer p {
 
 .banner-image img {
     /* width: 100%;      Scales image to the container's width */
-     max-width: 250px;
-   height: auto;     
+     max-width: 200px;
+     height: auto;     
 }
     .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
     padding: 20px 40px;
