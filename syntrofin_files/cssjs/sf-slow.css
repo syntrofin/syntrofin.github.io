@@ -326,7 +326,7 @@ footer p {
 
 /* 6. Button Styles (AmberGold, Nebula, Obsidian) */
 .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
-    padding: 15px 45px;
+    padding: 15px 60px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
@@ -473,8 +473,7 @@ footer p {
         padding: 20px; /* Ensures padding is correct on mobile stack */
     }
     .nav {
-        flex-direction: column; 
-        gap: 5px;
+        align-items: center;
       }
     .stackedcard {
         flex: none;
