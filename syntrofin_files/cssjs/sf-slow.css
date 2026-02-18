@@ -102,22 +102,41 @@ footer p {
     line-height: 1.2;
 }
 
-.title-span1{
+/* Syntro - Kept at 600 weight, but moved to a deeper "Syntropic" Navy if you want more CFO trust */
+.title-span1 {
     font-size: 32px; 
     font-weight: 600; 
-    color:#9D00FF;
+    color: #9D00FF; /* Keep your purple, or try #1A365D for a Navy look */
 }
-.title-span2{
+
+/* Fin - BUMPED to 800 weight to compensate for the light Gold color */
+.title-span2 {
     font-size: 32px; 
-    font-weight: 580; 
-    color:#D4AA04;
+    font-weight: 800; /* Heavier weight makes the gold "pop" against the purple */
+    color: #D4AA04;
 }
+
+/* Tagline - Increased letter-spacing for an "Orchestrated" look */
+.tagline {
+    width: 100%;
+    text-align: center;
+    font-size: 20px; /* Reduced slightly to create a better hierarchy with the 32px logo */
+    color: white;
+    letter-spacing: 2.5px; /* Spacing out the letters creates a "high-end" feel */
+    text-transform: uppercase; /* Optional: All caps taglines often look cleaner in banners */
+    opacity: 0.9; /* Slight softening helps the main logo stand out */
+}
+
+.bannerslogan { width:100%;text-align:center;line-height: 1.1;}
+
 .title-span3{
     font-size: 22px; 
     color:#2D2D2D;
     display:block; 
     margin-top:10px;
 }
+
+
 
 /* Menu (The fix for bullets and vertical layout) */
 .menu{
@@ -148,10 +167,6 @@ footer p {
     color: #9D00FF;
     text-decoration: none;
 }
-.heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
-.tagline { width:100%;text-align:center;font-size:32px;color:white; }
-
-
 
 /* 3. SECTION - Intro */
 .banner_row {
