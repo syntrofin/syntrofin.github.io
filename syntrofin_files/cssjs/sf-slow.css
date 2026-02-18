@@ -325,7 +325,7 @@ footer p {
 
 
 /* 6. Button Styles (AmberGold, Nebula, Obsidian) */
-.ambergoldbutton, .nebulabutton, .obsidianbutton {
+.nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
     padding: 15px 45px;
     border-radius: 8px;
     cursor: pointer;
@@ -347,6 +347,26 @@ footer p {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(167, 109, 22, 0.4);
 }
+.nebulabutton-light {
+    /* Soft sky blue to a vibrant medium blue */
+    background: radial-gradient(circle at center, #A5DEFF, #40A9FF);
+    color: #003A8C; /* Darker blue text for better readability on light BG */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooths the transform and shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nebulabutton-light:hover {
+    /* Glow matches the light blue theme */
+    box-shadow: 0 8px 20px rgba(64, 169, 255, 0.4);
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.05); /* Slight pop without washing out colors */
+}
+
 
 .nebulabutton {
     background: radial-gradient(circle at center, #69bff8, #002E5D);
