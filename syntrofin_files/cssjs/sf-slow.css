@@ -29,7 +29,19 @@ section {
     scroll-margin-top: 50px;
     padding: 20px;
 }
-
+.banner{
+ /* Dynamic 135-degree angle from Electric Purple to Deep Indigo */
+  background: linear-gradient(135deg, #9D00FF 0%, #1A0033 100%);
+  
+  /* Standard modern banner styling */
+  padding: 80px 40px;
+  text-align: center;
+  color: #FFFFFF; /* White text looks best on this gradient */
+    width:100%;
+    margin:0 auto;
+    scroll-margin-top: 50px;
+    padding: 20px;
+}
 .actionbuttondiv {
     text-align: center;
     padding: 20px;
@@ -111,14 +123,14 @@ footer p {
 
 .nav-link {
     text-decoration: none;
-    color: #70a8dd;
+    color: #1A1A1A;
     font-weight: 500;
     padding: 5px 0;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #46B0E1;
+    color: #9D00FF;
     text-decoration: none;
 }
 .heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
