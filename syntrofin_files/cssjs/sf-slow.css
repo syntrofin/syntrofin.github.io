@@ -481,9 +481,9 @@ footer p {
         border-top: 1px solid #9fc4e7;
     }
     .titlepara, .nav {
-        align-items: center;
-        text-align: center;
-      }
+        text-align: center !important;
+        align-items: center !important;
+    }
 
     .stackedcard {
         flex: none;
