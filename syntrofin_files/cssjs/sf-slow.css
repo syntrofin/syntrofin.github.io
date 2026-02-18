@@ -326,7 +326,7 @@ footer p {
 
 /* 6. Button Styles (AmberGold, Nebula, Obsidian) */
 .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
-    padding: 15px 60px;
+    padding: 25px 60px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
