@@ -120,7 +120,7 @@ footer p {
 .tagline {
     width: 100%;
     text-align: center;
-    font-size: 24px; /* Reduced slightly to create a better hierarchy with the 32px logo */
+    font-size: 20px; /* Reduced slightly to create a better hierarchy with the 32px logo */
     color: white;
     letter-spacing: 2.5px; /* Spacing out the letters creates a "high-end" feel */
     text-transform: uppercase; /* Optional: All caps taglines often look cleaner in banners */
@@ -575,7 +575,7 @@ footer p {
 }
 
     .tagline{
-    font-size: 24px; 
+    font-size: 16px; 
     }
 
 }
