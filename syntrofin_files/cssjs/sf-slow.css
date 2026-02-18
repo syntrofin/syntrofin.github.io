@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
 }
 
-.banner{
+.bannersection{
   background: linear-gradient(135deg, #9D00FF 0%, #1A0033 100%);
   text-align: center;
   color: #FFFFFF; 
@@ -120,7 +120,7 @@ footer p {
 .tagline {
     width: 100%;
     text-align: center;
-    font-size: 20px; /* Reduced slightly to create a better hierarchy with the 32px logo */
+    font-size: 24px; /* Reduced slightly to create a better hierarchy with the 32px logo */
     color: white;
     letter-spacing: 2.5px; /* Spacing out the letters creates a "high-end" feel */
     text-transform: uppercase; /* Optional: All caps taglines often look cleaner in banners */
@@ -132,6 +132,7 @@ footer p {
     text-align:center;
     line-height: 1.1;
     color: white;
+    font-size:50px;
 }
 
 .title-span3{
@@ -569,6 +570,9 @@ footer p {
     .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
     padding: 20px 40px;
     }
+.bannerslogan { 
+    font-size:35px;
+}
 
     .tagline{
     font-size: 24px; 
