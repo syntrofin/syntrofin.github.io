@@ -102,6 +102,23 @@ footer p {
     line-height: 1.2;
 }
 
+.title-span1{
+    font-size: 32px; 
+    font-weight: 600; 
+    color:#9D00FF;
+}
+.title-span2{
+    font-size: 32px; 
+    font-weight: 600; 
+    color:#D4AA04;
+}
+.title-span3{
+    font-size: 22px; 
+    color:#2D2D2D;
+    display:block; 
+    margin-top:10px;
+}
+
 /* Menu (The fix for bullets and vertical layout) */
 .menu{
 
@@ -531,6 +548,10 @@ footer p {
 }
     .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
     padding: 20px 40px;
+    }
+
+    .title-span3{
+    font-size: 18px; 
     }
 
 }
