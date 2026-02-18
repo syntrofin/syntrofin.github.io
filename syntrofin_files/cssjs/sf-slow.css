@@ -105,6 +105,8 @@ footer p {
 
 /* Syntro - Kept at 600 weight, but moved to a deeper "Syntropic" Navy if you want more CFO trust */
 .title-span1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em; 
     font-size: 32px; 
     font-weight: 500; 
     color: #9D00FF; /* Keep your purple, or try #1A365D for a Navy look */
@@ -112,6 +114,8 @@ footer p {
 
 /* Fin - BUMPED to 800 weight to compensate for the light Gold color */
 .title-span2 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em; 
     font-size: 32px; 
     font-weight: 600; /* Heavier weight makes the gold "pop" against the purple */
     color: #D4AA04;
