@@ -472,6 +472,9 @@ footer p {
         gap: 15px;
         padding: 20px; /* Ensures padding is correct on mobile stack */
     }
+    .menu{
+        margin-top:20px;
+    }
     .nav {
         align-items: center;
       }
