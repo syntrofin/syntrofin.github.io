@@ -149,7 +149,7 @@ footer p {
     text-decoration: none;
 }
 .heroslogan { font-size: 3.5rem; font-weight: 500; line-height: 1.1; }
-.tagline { font-size: 1rem; opacity: 0.8; color: #d1e6ee; }
+.tagline { width:100%;text-align:center;font-size:32px;color:white; }
 
 
 
@@ -550,8 +550,8 @@ footer p {
     padding: 20px 40px;
     }
 
-    .title-span3{
-    font-size: 18px; 
+    .tagline{
+    font-size: 24px; 
     }
 
 }
