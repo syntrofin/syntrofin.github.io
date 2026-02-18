@@ -154,10 +154,15 @@ footer p {
   overflow: hidden; /* Optional: clips any image overflow */
 }
 .banner-image img {
-   width: 100%;      /* Scales image to the container's width */
-  height: 100%;     /* Scales image to the container's height */
-  display: block;   /* Removes the tiny gap at the bottom of images */
-  object-fit: cover; /* ESSENTIAL: Prevents stretching by cropping slightl */
+     /*
+   width: 100%;     
+  height: 100%;     
+    object-fit: cover; 
+    */
+    max-width: 600px;
+    height:auto;
+  display: block;   
+  
 }
     
 .align-row {
@@ -520,7 +525,8 @@ footer p {
     }
 
 .banner-image img {
-   width: 100%;      /* Scales image to the container's width */
+    /* width: 100%;      Scales image to the container's width */
+     max-width: 300px;
    height: auto;     
 }
     .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
