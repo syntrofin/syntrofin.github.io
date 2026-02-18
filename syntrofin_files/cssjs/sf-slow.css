@@ -474,6 +474,7 @@ footer p {
     }
     .menu{
         margin-top:20px;
+        border-top: 1px solid #9fc4e7;
     }
     .nav {
         align-items: center;
