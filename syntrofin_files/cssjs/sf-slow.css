@@ -482,6 +482,7 @@ footer p {
     }
     .titlepara, .nav {
         align-items: center;
+        text-align: center;
       }
 
     .stackedcard {
