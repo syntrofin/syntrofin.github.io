@@ -143,14 +143,9 @@ footer p {
    width: 100%;      /* Scales image to the container's width */
   height: 100%;     /* Scales image to the container's height */
   display: block;   /* Removes the tiny gap at the bottom of images */
-  object-fit: cover; /* ESSENTIAL: Prevents stretching by cropping slightl
+  object-fit: cover; /* ESSENTIAL: Prevents stretching by cropping slightl */
 }
-.cell2 {
-    flex: 1;
-    text-align: center;
-    box-sizing: border-box;
-}
-
+    
 .align-row {
     display: flex;
     align-items: center;
@@ -286,7 +281,7 @@ footer p {
 .feature-list li::before { 
     content: "→"; 
 }
-.stream-list li::before {
+.stream-list li::before, .feature-list li::before {
   content: "\2022";  /* The Unicode character for a solid bullet */
   color: #9fc5e8;       /* Your desired blue color */
   font-weight: bold; /* Makes the dot appear more solid */
@@ -294,14 +289,14 @@ footer p {
   width: 1em;        /* Creates space for the dot */
   margin-left: -1em; /* Positions it to the left of the text */
 }
-
+/*
 .feature-list li::before, .stream-list li::before {
     position: absolute;
     left: 0;
     color: #3b82f6;
     font-weight: bold;
 }
-
+*/
 
 
 .tech-container {
@@ -445,12 +440,18 @@ footer p {
     color: #606060;
 }
 
+.cell2 {
+    flex: 1;
+    text-align: center;
+    box-sizing: border-box;
+}
+
 /* 9. Mobile Handling @media (max-width: 768px) */
 @media (max-width: 768px) {
     .stackedcard, .logo  {
         margin-top: 0px !important;
     }
-    .title-top, .diagnosys-row, .align-row, .container2a {
+    .title-top, .banner_row, .diagnosys-row, .align-row, .container2a {
         flex-direction: column;
     }
     .stackedcard-container, .feature-row, .stream-row {
@@ -486,6 +487,9 @@ footer p {
     height: auto;
     }
 
-
+.banner-image img {
+   width: 100%;      /* Scales image to the container's width */
+   height: auto;     
+}
 
 }
