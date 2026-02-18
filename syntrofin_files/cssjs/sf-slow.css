@@ -351,6 +351,7 @@ footer p {
     background: radial-gradient(circle at center, #A5DEFF, #40A9FF);
      border: 1px solid #3598E6;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
 .nebulabutton-light:hover {
