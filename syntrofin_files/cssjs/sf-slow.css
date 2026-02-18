@@ -507,5 +507,8 @@ footer p {
    width: 100%;      /* Scales image to the container's width */
    height: auto;     
 }
+    .nebulabutton-light, .ambergoldbutton, .nebulabutton, .obsidianbutton {
+    padding: 20px 40px;
+    }
 
 }
