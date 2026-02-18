@@ -127,7 +127,12 @@ footer p {
     opacity: 0.9; /* Slight softening helps the main logo stand out */
 }
 
-.bannerslogan { width:100%;text-align:center;line-height: 1.1;}
+.bannerslogan { 
+    width:100%;
+    text-align:center;
+    line-height: 1.1;
+    color: white;
+}
 
 .title-span3{
     font-size: 22px; 
