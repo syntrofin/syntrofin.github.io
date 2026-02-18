@@ -23,25 +23,23 @@ body {
     overflow-x: hidden;
 }
 
-section {
+.banner{
+  background: linear-gradient(135deg, #9D00FF 0%, #1A0033 100%);
+  text-align: center;
+  color: #FFFFFF; 
+width:100%;
+margin:0 auto;
+scroll-margin-top: 50px;
+padding: 20px;
+}
+
+.contentsection {
     width: 90%;
     margin:0 auto;
     scroll-margin-top: 50px;
     padding: 20px;
 }
-.banner{
- /* Dynamic 135-degree angle from Electric Purple to Deep Indigo */
-  background: linear-gradient(135deg, #9D00FF 0%, #1A0033 100%);
-  
-  /* Standard modern banner styling */
-  padding: 80px 40px;
-  text-align: center;
-  color: #FFFFFF; /* White text looks best on this gradient */
-    width:100%;
-    margin:0 auto;
-    scroll-margin-top: 50px;
-    padding: 20px;
-}
+
 .actionbuttondiv {
     text-align: center;
     padding: 20px;
