@@ -1,9 +1,13 @@
 body{
-  width:90%;
+  width:80%;
 }
 
 .rlmtopic{
 background-color:yellow;
+}
+
+.rlmtopic p {
+  font-size:24px;
 }
 
 .rlmtopic p::before {
