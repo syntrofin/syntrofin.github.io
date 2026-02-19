@@ -338,9 +338,6 @@ footer p {
     color: #1e293b;
 }
 
-.feature-list li::before { 
-    content: "→"; 
-}
 .stream-list li::before, .feature-list li::before {
   content: "\2022";  /* The Unicode character for a solid bullet */
   color: #9fc5e8;       /* Your desired blue color */
@@ -349,14 +346,31 @@ footer p {
   width: 1em;        /* Creates space for the dot */
   margin-left: -1em; /* Positions it to the left of the text */
 }
-/*
-.feature-list li::before, .stream-list li::before {
-    position: absolute;
-    left: 0;
-    color: #3b82f6;
-    font-weight: bold;
+
+/* Create the circle for every LI except the first one */
+/* Container list styling */
+.stream-list ul {
+  padding-left: 20px;
+  position: relative; /* Base for absolute positioning of circle */
 }
-*/
+
+.stream-list li {
+  margin-bottom: 20px; /* Space for the circle to sit between rows */
+  position: relative;
+}
+
+/* Create the circle ONLY after the first LI */
+.stream-list li:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  left: -20px;      /* Aligns it horizontally with the bullets */
+  bottom: -15px;    /* Positions it vertically between rows */
+  width: 8px;
+  height: 8px;
+  background-color: #3498db; /* Your blue color */
+  border-radius: 50%;        /* Makes it a circle */
+  transform: translateY(50%); /* Fine-tune middle alignment */
+}
 
 
 .tech-container {
