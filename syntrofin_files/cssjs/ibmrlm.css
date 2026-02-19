@@ -9,3 +9,68 @@ background-color:yellow;
 .rlmexplanation{
 background-color:gray;
 }
+/* Style the main TOC container */
+#table-of-contents {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+/* Style the TOC header */
+#table-of-contents h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Remove default bullets and padding from the list */
+#table-of-contents ul {
+    list-style-type: none; /* */
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Spacing for list items */
+#table-of-contents li {
+    margin-bottom: 8px;
+}
+
+/* Style the links */
+#table-of-contents a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+#table-of-contents a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it a circle */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+}
+
+#backToTop svg {
+    display: block;
+    margin: auto;
+}
