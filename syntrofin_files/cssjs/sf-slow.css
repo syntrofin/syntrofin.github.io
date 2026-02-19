@@ -362,25 +362,27 @@ footer p {
 
 /* Decoration ONLY after the first row */
 .stream-list li:nth-child(1)::after {
-  content: "";
-  position: absolute;
+  content: "";            /* Required for pseudo-elements to appear */
+  position: absolute;     /* Required to use left/bottom/transform */
   
-  /* 1. INCREASE SIZE */
-  width: 14px; 
-  height: 14px;
+  /* 1. SIZE & SHAPE */
+  width: 20px; 
+  height: 20px;
   background-color: #3498db; 
   border-radius: 50%;
 
-  /* 2. CENTER HORIZONTALLY WITH BULLETS */
-  /* If bullets are at 0, this needs to be negative. 
-     Experiment with this value to line it up perfectly. */
-  left: -22px; 
+  /* 2. HORIZONTAL CENTERING */
+  left: 50%;
+  transform: translateX(-50%); 
 
-  /* 3. CENTER VERTICALLY BETWEEN ROWS */
-  /* 'bottom' starts from the bottom of the first LI. 
-     A negative value pushes it into the gap below. */
+  /* 3. VERTICAL POSITION */
+  /* This places it 20px below the bottom of the first <li> */
   bottom: -20px; 
+  
+  /* 4. BEHIND OR ABOVE */
+  z-index: 1;             /* Optional: ensures it stays visible */
 }
+
 
 
 
