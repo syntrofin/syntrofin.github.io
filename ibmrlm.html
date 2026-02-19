@@ -39,7 +39,7 @@
 <br><br>
 	
 <section class="rlmcore">
-	<div class="rlmtopic"><h2>IBM RLM Core</h2></div>
+	<div class="rlmsectionheader"><h2>IBM RLM Core</h2></div>
 	
 <div class="rlmtopic"><p>IBM RLM Use Case and Work</p></div>
 	
@@ -851,7 +851,7 @@
 </section>
 	
 <section class="aidatacloud">
-	<div class="rlmtopic"><h2>AI and Data Cloud</h2></div>
+	<div class="rlmsectionheader"><h2>AI and Data Cloud</h2></div>
 	
 	<div class="rlmtopic"><p>Salesforce Agents and Data Cloud (S3)</p></div>
 	
@@ -1157,7 +1157,7 @@
 </section>
 	
 <section class="metadta">
-	<div class="rlmtopic"><h2>Meta Data</h2></div>
+	<div class="rlmsectionheader"><h2>Meta Data</h2></div>
 	<div class="rlmtopic"><p>package.xml manifest</p></div>
 	
 	<div class="rlmexplanation">
@@ -1210,9 +1210,11 @@
 <p>3&nbsp;<strong>Commit to Source Control:</strong>&nbsp;Once retrieved, push this structure directly into your GitHub repository (running alongside your&nbsp;syntrofin.github.io&nbsp;projects). This establishes your baseline source of truth before you start building the complex OmniScript UI in Phase 3.</p>
 <p>4&nbsp;<strong>Remember the Data:</strong>&nbsp;As a reminder, the actual&nbsp;<em>rows</em>&nbsp;of data within your Decision Matrices (the $20,000 markup logic) and the Product records themselves will not pull down via this XML. You will need your relational data migration tool for those.</p>
 <p>Would you like me to leave this channel open in case you run into any dependency errors while executing this initial metadata pull, or are you fully set to take over the terminal?</p>
-</div><div class="rlmtopic">
-<p>I never use this manifest file in CPQ, though I uploaded data. Is this specifically for development using visual code (local dev environment)</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>For development using visual code</p></div>
+	
+	<div class="rlmexplanation">
 <p>You hit the nail right on the head. Yes, the&nbsp;package.xml&nbsp;file is specifically for local development using Visual Studio Code (VS Code) alongside the Salesforce CLI (SFDX).</p>
 <p>It makes perfect sense that this feels foreign compared to your experience with legacy Salesforce CPQ. Here is exactly why the paradigm shifts when you transition into Revenue Lifecycle Management (RLM).</p>
 <p><strong>The Legacy CPQ Way (Data-Driven)</strong></p>
@@ -1276,9 +1278,11 @@
 </ul>
 <p>Making the leap to VS Code and source-driven development is a learning curve, but it fundamentally transforms how you manage and protect enterprise-grade architectures.</p>
 <p>Would you like me to detail the specific SFDX terminal commands you would run in VS Code to authorize your target sandbox and execute that very first metadata deployment?</p>
-</div><div class="rlmtopic">
-<p>a dumb question. You mean entire pricing procedure now is an XML file (meta data) that can be imported and exported?</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Pricing procedure now is an XML file (meta data) that can be imported and exported</p></div>
+	
+	<div class="rlmexplanation">
 <p>That is not a dumb question at all. In fact, it is the exact "aha!" moment every veteran CPQ architect has when they fully grasp the power of Revenue Lifecycle Management (RLM).</p>
 <p>You have hit the absolute core of why this architecture is so revolutionary.&nbsp;<strong>Yes, the entire pricing procedure is now a file that can be imported, exported, and version-controlled.</strong></p>
 <p>To be hyper-accurate, when you pull it down into VS Code using Salesforce DX (SFDX), it usually extracts as a combination of&nbsp;<strong>XML</strong>&nbsp;(for the structural definition) and&nbsp;<strong>JSON</strong>&nbsp;(for the actual waterfall logic), rather than just pure XML. But your realization is 100% correct.</p>
@@ -1382,9 +1386,11 @@
 <p><em>Architect's Note:</em>&nbsp;After you run that final deploy command, the structure of your RLM engine exists in UAT. You would then immediately use your data migration tool (like Gearset or the CPQ CLI) to push over the actual Product records and Decision Matrix data rows to complete the deployment.</p>
 <p>You now have the complete picture: the visual design, the underlying JSON structure, and the exact terminal commands to manage the application lifecycle.</p>
 <p>Would you like to look at how to set up GitHub Actions to fully automate these terminal commands, so your consulting team never has to run them manually during a release?</p>
-</div><div class="rlmtopic">
-<p>I may not run these, but other than procing procedures, what other compenents of RCA fit into this meta data model of export, import and versioning</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Other compenents of RCA fit into this meta data model of export, import and versioning</p></div>
+	
+	<div class="rlmexplanation">
 <p>Knowing exactly where the line is drawn between metadata (code) and data (records) is crucial. Even if you aren't the one running the terminal commands, as the architect designing the system, you dictate the deployment strategy. If you design a solution assuming something is version-controllable metadata when it is actually a data record, the release pipeline will break.</p>
 <p>In Revenue Lifecycle Management (RLM) and its underlying platform tools, the shift to metadata extends far beyond just the Pricing Procedures. Salesforce has moved almost the entire logic, UI, and integration layer into this exportable, version-controlled model.</p>
 <p>Here are the other major components of your architecture that fit into this XML/JSON metadata model.</p>
@@ -1484,7 +1490,7 @@
 
 <section class="licenses">
 
-<div class="rlmtopic"><h2>Salesforce permission sets and licenses</h2></div>
+<div class="rlmsectionheader"><h2>Salesforce permission sets and licenses</h2></div>
 	
 	<div class="rlmtopic"><p>Checklist of the exact Salesforce permission sets and licenses </p></div>
 	
