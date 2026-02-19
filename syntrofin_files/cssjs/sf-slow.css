@@ -390,9 +390,9 @@ footer p {
 
 
 /* Following for putting blue circle anywhee in a div */
-.blue-circle {
-  width: 14px;
-  height: 14px;
+.blue-circle1 {
+  width: 26px;
+  height: 26px;
   background-color: #3498db;
   border-radius: 50%; /* Makes the square a circle */
   
