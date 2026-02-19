@@ -349,28 +349,39 @@ footer p {
 
 /* Create the circle for every LI except the first one */
 /* Container list styling */
+/* Ensure the list is the anchor for positioning */
 .stream-list ul {
-  padding-left: 20px;
-  position: relative; /* Base for absolute positioning of circle */
-}
-
-.stream-list li {
-  margin-bottom: 20px; /* Space for the circle to sit between rows */
+  padding-left: 30px; /* Adjust based on your layout */
   position: relative;
 }
 
-/* Create the circle ONLY after the first LI */
+.stream-list li {
+  margin-bottom: 25px; /* Creates enough vertical space for the circle */
+  position: relative;
+}
+
+/* Decoration ONLY after the first row */
 .stream-list li:nth-child(1)::after {
   content: "";
   position: absolute;
-  left: -20px;      /* Aligns it horizontally with the bullets */
-  bottom: -15px;    /* Positions it vertically between rows */
-  width: 8px;
-  height: 8px;
-  background-color: #3498db; /* Your blue color */
-  border-radius: 50%;        /* Makes it a circle */
-  transform: translateY(50%); /* Fine-tune middle alignment */
+  
+  /* 1. INCREASE SIZE */
+  width: 14px; 
+  height: 14px;
+  background-color: #3498db; 
+  border-radius: 50%;
+
+  /* 2. CENTER HORIZONTALLY WITH BULLETS */
+  /* If bullets are at 0, this needs to be negative. 
+     Experiment with this value to line it up perfectly. */
+  left: -22px; 
+
+  /* 3. CENTER VERTICALLY BETWEEN ROWS */
+  /* 'bottom' starts from the bottom of the first LI. 
+     A negative value pushes it into the gap below. */
+  bottom: -20px; 
 }
+
 
 
 .tech-container {
