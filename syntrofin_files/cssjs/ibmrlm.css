@@ -17,33 +17,43 @@ section {
     display: block;
 }
 
-/* 2. Center the Table of Contents Section */
+/* Style the table-of-contents */
 #table-of-contents {
-    width: fit-content;    /* Shrinks the box to fit the text size */
-    min-width: 300px;      /* Prevents it from being too skinny */
-    max-width: 80%;        /* Prevents it from touching edges */
-    margin: 40px auto;     /* Centers the TOC box vertically and horizontally */
-    padding: 25px;
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    text-align: center;    /* Centers the 'Table of Contents' title */
+    width: fit-content;    /* Shrinks box to the size of the longest link */
+    min-width: 350px;      /* Stops it from being too narrow */
+    max-width: 90%;        /* Responsive for mobile */
+    margin: 40px auto;     /* THE MAGIC: Centers the box horizontally */
+    padding: 30px;
+    text-align: center;    /* This centers the "Table of Contents" H2 and H3s */
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 15px;
 }
 
-/* 3. Align the TOC List */
 #table-of-contents ul {
-    display: inline-block; /* Allows the list to be centered as a block */
-    text-align: left;      /* Keeps the actual links left-aligned for readability */
+    display: table;        /* Keeps the list centered as a block... */
+    margin: 10px auto 25px auto; /* ...while the contents stay left */
     padding: 0;
-    margin: 15px 0 0 0;
     list-style: none;
+    text-align: left;      /* FORCES TEXT LEFT */
 }
 
 #table-of-contents li {
-    margin-bottom: 10px;
+    text-align: left !important; /* The '!important' ensures 'Meta Data' follows the rule */
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
 }
 
-/* Style the TOC header */
+/* 3. Add a nice bullet point since we removed default list-style */
+#table-of-contents li::before {
+    content: "•";
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
 #table-of-contents h2 {
     margin-top: 0;
     font-size: 1.2rem;
@@ -62,7 +72,14 @@ section {
     color: #0056b3;
 }
 
-/* 5. Style the Topic Divs and Paragraphs */
+/* Style the Topic Divs and Paragraphs */
+.rlmsectionheader{
+    width:100%;
+}
+.rlmsectionheader p{
+    text-align:center;
+}
+
 .rlmtopic {
     margin-top: 40px;
     font-weight: bold;
@@ -75,22 +92,29 @@ section {
 }
 
 .rlmtopic p {
-    font-size: 24px;       /* Your requested large font size */
+        font-size: 24px;       /* Your requested large font size */
     margin-top: 10px;
+  display: inline-block;    /* Makes the underline only as wide as the text */
+  border-bottom: 2px solid #007bff; /* Color and thickness */
+  padding-bottom: 2px;      /* Gap between text and line */
+  margin-bottom: 10px;      /* Spacing to the next element */
 }
 
+
 .rlmtopic p::before {
-  content: "@"; /* Added a space after the symbol */
-  color: red;   /* Make it look like money */
+     /* 
+  content: "@"; 
+  color: red;   
   font-weight: bold;
-  /* margin-right: 5px;  Adjust spacing from the text */
+     */
 }
 
 .rlmexplanation p::before {
-  content: "$"; /* Added a space after the symbol */
-  color: green;   /* Make it look like money */
+    /* 
+  content: "$"; 
+  color: green;   
   font-weight: bold;
-  /* margin-right: 5px;  Adjust spacing from the text */
+    */
 }
 
 #backToTop {
