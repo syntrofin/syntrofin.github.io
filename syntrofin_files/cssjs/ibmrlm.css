@@ -1,44 +1,46 @@
-body{
-  width:80%;
+
+html {
+    scroll-behavior: smooth;
 }
 
-section, .toccontainer{
-  margin:20px auto;
-}
-.rlmtopic{
-background-color:yellow;
-}
-
-.rlmtopic p{
-  font-size:24px;
+body {
+    width: 90%;
+    max-width: 1200px; /* Prevents text from getting too long/hard to read */
+    margin: 0 auto;    /* Centers the body in the browser window */
+    font-family: sans-serif;
+    line-height: 1.6;
 }
 
-.rlmtopic p::before {
-  content: "@"; /* Added a space after the symbol */
-  color: red;   /* Make it look like money */
-  font-weight: bold;
-  /* margin-right: 5px;  Adjust spacing from the text */
+section {
+    width: 100%;           
+    margin: 30px auto;
+    display: block;
 }
 
-.rlmexplanation{
-/* background-color:gray; */
-}
-
-.rlmexplanation p::before {
-  content: "$"; /* Added a space after the symbol */
-  color: green;   /* Make it look like money */
-  font-weight: bold;
-  /* margin-right: 5px;  Adjust spacing from the text */
-}
-
-/* Style the main TOC container */
+/* 2. Center the Table of Contents Section */
 #table-of-contents {
-    background: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    max-width: 400px;
+    width: fit-content;    /* Shrinks the box to fit the text size */
+    min-width: 300px;      /* Prevents it from being too skinny */
+    max-width: 80%;        /* Prevents it from touching edges */
+    margin: 40px auto;     /* Centers the TOC box vertically and horizontally */
+    padding: 25px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    text-align: center;    /* Centers the 'Table of Contents' title */
+}
+
+/* 3. Align the TOC List */
+#table-of-contents ul {
+    display: inline-block; /* Allows the list to be centered as a block */
+    text-align: left;      /* Keeps the actual links left-aligned for readability */
+    padding: 0;
+    margin: 15px 0 0 0;
+    list-style: none;
+}
+
+#table-of-contents li {
+    margin-bottom: 10px;
 }
 
 /* Style the TOC header */
@@ -46,18 +48,6 @@ background-color:yellow;
     margin-top: 0;
     font-size: 1.2rem;
     color: #333;
-}
-
-/* Remove default bullets and padding from the list */
-#table-of-contents ul {
-    list-style-type: none; /* */
-    padding-left: 0;
-    margin: 0;
-}
-
-/* Spacing for list items */
-#table-of-contents li {
-    margin-bottom: 8px;
 }
 
 /* Style the links */
@@ -71,6 +61,38 @@ background-color:yellow;
     text-decoration: underline;
     color: #0056b3;
 }
+
+/* 5. Style the Topic Divs and Paragraphs */
+.rlmtopic {
+    margin-top: 40px;
+    font-weight: bold;
+    color: #333;
+    background-color:yellow;
+}
+
+.rlmexplanation{
+/* background-color:gray; */
+}
+
+.rlmtopic p {
+    font-size: 24px;       /* Your requested large font size */
+    margin-top: 10px;
+}
+
+.rlmtopic p::before {
+  content: "@"; /* Added a space after the symbol */
+  color: red;   /* Make it look like money */
+  font-weight: bold;
+  /* margin-right: 5px;  Adjust spacing from the text */
+}
+
+.rlmexplanation p::before {
+  content: "$"; /* Added a space after the symbol */
+  color: green;   /* Make it look like money */
+  font-weight: bold;
+  /* margin-right: 5px;  Adjust spacing from the text */
+}
+
 #backToTop {
     position: fixed;
     bottom: 20px;
