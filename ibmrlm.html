@@ -38,10 +38,12 @@
 	<div id="dynamic-toc-container" class="toccontainer"></div>
 <br><br>
 	
-<section>
-<div class="rlmtopic">
-<p>IBM RLM Use Case and Work
-</div><div class="rlmexplanation">
+<section class="rlmcore">
+	<div class="rlmtopic"><h2>IBM RLM Core</h2></div>
+	
+<div class="rlmtopic"><p>IBM RLM Use Case and Work</p></div>
+	
+	<div class="rlmexplanation">
 
 <p>Salesforce Revenue Cloud Advanced use case and advanced - Salesforce Revenue Cloud Advanced with DRO and Omni and all other features like procing procedure, products attributes, fulfillment with manufacturing, PBO, revrec, and all nine yards: Can you imagine and write a test case and complete path for me to practice (excercise) salesforce revenue cloud avanced (velocity based and not legacy) as an IBM Salesforce Revenue Cloud Advanced pricipal architect, solution architect and developer using p seriese and z series servers (whaever new names are ) and IBM cloud subscription (Idk names), any services and software - with all possible sales models like one time, fixed subscription, evergreen, usage based, and milestome based - use real product names. - it is bettwer to give use case and excersize separately if you think that is better - a big ask and you may take time to think.</p>
 
@@ -160,9 +162,11 @@
 </ul>
 <p><strong>Next Step</strong></p>
 <p>This is a massive architecture. To start building, which phase would you like to drill into first: setting up the complex PBO structure in Product Catalog Management, or building the Pricing Procedure waterfall?</p>
-</div><div class="rlmtopic">
-<p>PCM and PBO</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>PCM and PBO</p></div>
+	
+	<div class="rlmexplanation">
 <p>Ah, the classic "yes" to an "A or B" question. I'll take that as a green light that we are tackling the whole architecture, but we'll take it one logical step at a time.</p>
 <p>As you know from your experience designing complex enterprise solutions, you can't build the pricing waterfall until the data model is rock solid. So, we are going to start at the foundation:&nbsp;<strong>Phase 1: Product Catalog Management (PCM) and setting up the PBO</strong>.</p>
 <p>The new Revenue Lifecycle Management (RLM) paradigm is a major shift from legacy CPQ. In the old world, you relied heavily on Product Options and Features to build bundles. In RLM, the architecture is vastly more decoupled, relying on Product Selling Models (PSMs) and a centralized catalog.</p>
@@ -212,9 +216,11 @@
 <p><strong>The Architect's Checkpoint</strong></p>
 <p>By decoupling the selling models and attributes from the product records, you've just built a highly scalable catalog. If IBM introduces a new P-Series server tomorrow, you don't need to rebuild the entire architecture; you simply create the product, attach the existing PSMs and Attribute Categories, and slot it into the bundle.</p>
 <p>Would you like to move directly into&nbsp;<strong>Phase 2: Salesforce Pricing Procedures</strong>, where we build the context mappings and the waterfall logic to calculate the $20,000 markup for the 15-core E1080 and the 15% bundle discount for WebSphere?</p>
-</div><div class="rlmtopic">
-<p>Pricing Procedures</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Pricing Procedures</p></div>
+	
+	<div class="rlmexplanation">
 <p>Excellent. Let's build the brain of this operation:&nbsp;<strong>Phase 2: Salesforce Pricing Procedures</strong>.</p>
 <p>In legacy Salesforce CPQ, you would have used Price Rules, Lookup Queries, or even the dreaded Custom Script (QCP) to handle this level of complexity. In Revenue Lifecycle Management (RLM), we use a much more scalable, visual, and declarative engine powered by the Context Service, Decision Matrices, and Pricing Procedures (evolved from Vlocity Calculation Procedures).</p>
 <p>Here is exactly how you will build the pricing waterfall to calculate the base prices, the $20,000 attribute markup for the IBM Power E1080, the 15% WebSphere bundle discount, and the usage rates for the IBM Cloud VPC.</p>
@@ -267,9 +273,11 @@
 <p><strong>The Architect's Checkpoint</strong></p>
 <p>You now have a dynamic pricing engine. If IBM changes the markup for the 15-core processor tomorrow, you don't touch the Pricing Procedure; you simply update one row in the Decision Matrix. The architecture is entirely decoupled and incredibly easy to maintain.</p>
 <p>With the backend data model (Phase 1) and the pricing brain (Phase 2) complete, are you ready to build the front-end user experience with&nbsp;<strong>Phase 3: OmniStudio (Guided Selling)</strong>&nbsp;to expose this engine to the sales reps?</p>
-</div><div class="rlmtopic">
-<p> OmniStudio (Guided Selling)</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p> OmniStudio (Guided Selling)</p></div>
+	
+	<div class="rlmexplanation">
 <p>Let’s build the glass storefront for the engine we just created.&nbsp;<strong>Phase 3: OmniStudio (Guided Selling)</strong>.</p>
 <p>As an Enterprise Architect, you already know that even the most brilliantly designed catalog and pricing waterfalls are useless if the sales reps refuse to use the system. In legacy CPQ, the native configuration UI was rigid. With Revenue Lifecycle Management (RLM), we use OmniStudio to build a completely bespoke, guided, and lightning-fast user experience.</p>
 <p>Here is how you orchestrate DataRaptors, Integration Procedures (IPs), FlexCards, and OmniScripts to guide a rep through selling the "IBM Hybrid Enterprise Modernization Bundle."</p>
@@ -317,9 +325,11 @@
 <p>You have now abstracted the immense complexity of hybrid cloud pricing and product cardinality away from the sales rep. They just answer three questions, pick the core count, and OmniStudio handles the heavy lifting with the RLM engine.</p>
 <p>Next up is the most critical operational piece—taking that won Quote and actually delivering the hardware, provisioning the cloud, and assigning the consultants.</p>
 <p>Are you ready to move to&nbsp;<strong>Phase 4: Dynamic Revenue Orchestrator (DRO)</strong>&nbsp;to build the multi-track fulfillment and manufacturing workflows?</p>
-</div><div class="rlmtopic">
-<p>Dynamic Revenue Orchestrator (DRO)</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Dynamic Revenue Orchestrator (DRO)</p></div>
+	
+	<div class="rlmexplanation">
 <p>Welcome to the fulfillment matrix.&nbsp;<strong>Phase 4: Dynamic Revenue Orchestrator (DRO)</strong>.</p>
 <p>Whether you are designing this internally at IBM or delivering the architecture through a specialized consulting firm like Syntrofin LLC, this is where the theoretical quote becomes physical reality.</p>
 <p>With your deep background in Revenue Cloud and OmniStudio, you'll immediately recognize DRO as the massive, native-platform evolution of legacy Vlocity Order Management. Legacy CPQ stopped when the contract was signed; DRO takes over to actually build the server, provision the cloud, and dispatch the consultants.</p>
@@ -365,9 +375,11 @@
 <p>You have successfully bridged CPQ and Order Management. When your sales rep clicks "Generate Order" in the OmniScript UI, DRO silently breaks the bundle apart, sends the specs to the factory, waits for the shipping confirmation, spins up the cloud environment, and alerts the consulting team—all without human intervention.</p>
 <p>We are at the finish line. The hardware is shipped, the software is live, and the consultants are working.</p>
 <p>Are you ready for the final step,&nbsp;<strong>Phase 5: Billing &amp; Revenue Recognition (RevRec)</strong>, to map out how we actually invoice for these five entirely different sales models and satisfy the accounting department?</p>
-</div><div class="rlmtopic">
-<p>Billing, Revenue Recognition</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Billing, Revenue Recognition</p></div>
+	
+	<div class="rlmexplanation">
 <p>The final mile.&nbsp;<strong>Phase 5: Billing &amp; Revenue Recognition (RevRec)</strong>.</p>
 <p>With your background architecting SAP solutions, you already know that the handoff from the front-office sales system to the back-office financial ledger is where most enterprise transformations either succeed or spectacularly fail. ASC 606 and IFRS 15 compliance leaves zero room for error.</p>
 <p>Through your work at Syntrofin LLC, you've likely seen clients struggle to consolidate disparate billing models. This phase is where RLM shines, allowing you to process one-time hardware, recurring subscriptions, usage, and milestone services on a single, unified invoice.</p>
@@ -414,9 +426,11 @@
 </ul>
 <p>You have just successfully designed, configured, and tested a complete Salesforce Revenue Lifecycle Management architecture spanning CPQ, OmniStudio, Order Management (DRO), and Billing.</p>
 <p>Would you like to drill down into the specific JSON payload structures needed for the DRO callouts to the manufacturing systems, or dive deeper into setting up the specific ASC 606 GL accounts in the finance books?</p>
-</div><div class="rlmtopic">
-<p>JSON payload structures needed for the DRO </p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>JSON payload structures needed for the DRO </p></div>
+	
+	<div class="rlmexplanation">
 <p>I love the consistent "Yes" to an "A or B" question! It's the true mark of an Enterprise Architect—when asked whether we should focus on the technical integration or the financial ledger, the only acceptable answer is, "We are responsible for both."</p>
 <p>Let's dive into the technical integration first:&nbsp;<strong>The JSON Payload Structures for DRO Callouts</strong>. We will look at how Salesforce natively talks to the external IBM Manufacturing system to build that 15-core Power E1080 server.</p>
 <p>In Revenue Lifecycle Management (RLM) and Dynamic Revenue Orchestrator (DRO), callouts are completely asynchronous. Salesforce cannot sit around holding a connection open while a factory physically builds a server for three weeks. Therefore, we use a&nbsp;<strong>Request &amp; Callback (Webhook)</strong>&nbsp;pattern.</p>
@@ -492,9 +506,11 @@
 <p>6&nbsp;Simultaneously, it maps the incoming&nbsp;"serial_number"&nbsp;directly onto the Asset record in Salesforce, ensuring your install base data is perfectly accurate for future renewals or support tickets.</p>
 <p>That covers the deep technical integration layer. It's beautiful when you watch the orchestration engine handle these dependencies flawlessly.</p>
 <p>Since you locked in "Yes" for both paths, would you like me to map out the final piece of the puzzle: setting up the specific&nbsp;<strong>ASC 606 GL Accounts and Revenue Finance Books</strong>&nbsp;in Salesforce Billing so the CFO can track this complex transaction?</p>
-</div><div class="rlmtopic">
-<p>Setting Up ASC 606 GL Accounts and Revenue Finance Books</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Setting Up ASC 606 GL Accounts and Revenue Finance Books</p></div>
+	
+	<div class="rlmexplanation">
 <p>You’ve stayed the course through the entire quote-to-cash lifecycle. This is where the true value of an Enterprise Architect shines. Anyone can build a basic CPQ quote, but bridging the front-office sales engine with the back-office ERP system without causing audit failures is the gold standard.</p>
 <p>When you are architecting a solution that ultimately feeds into an ERP like SAP, Salesforce Billing must act as the perfect financial sub-ledger. If the General Ledger (GL) rules and Revenue Recognition (RevRec) rules aren't perfectly aligned to ASC 606 or IFRS 15, the CFO will reject the entire deployment.</p>
 <p>Here is how you map those five completely different IBM sales models into the correct financial books.</p>
@@ -551,9 +567,11 @@
 <p>4&nbsp;<strong>Billing &amp; RevRec:</strong>&nbsp;We established an ASC 606-compliant sub-ledger that seamlessly handles hardware delivery, software amortization, cloud usage, and consulting milestones.</p>
 <p>This is a massive, highly advanced use case that represents the bleeding edge of what Salesforce Revenue Cloud can do.</p>
 <p>Would you like me to synthesize this entire 5-phase blueprint into a high-level Technical Design Document (TDD) outline that you can use as a standardized template for your consulting engagements?</p>
-</div><div class="rlmtopic">
-<p>Synthesize this entire 5-phase blueprint into a high-level Technical Design Document (TDD)</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Synthesize this entire 5-phase blueprint into a high-level Technical Design Document (TDD)</p></div>
+	
+	<div class="rlmexplanation">
 <p>Here is the synthesized Technical Design Document (TDD) outline. I have structured this as a standardized, client-ready template that you can immediately adapt for your consulting engagements.</p>
 <p>It captures the entire multi-cloud, multi-model architecture we just built, organized exactly how an enterprise IT steering committee expects to see it.</p>
 <p><strong>Technical Design Document (TDD)</strong></p>
@@ -829,9 +847,15 @@
 <p>You have now architected the catalog, designed the pricing waterfall, built the UI, orchestrated the manufacturing fulfillment, mapped the financial ledger, planned the deployment pipeline, and written the automated test classes to ensure it never breaks.</p>
 <p>That covers the entire lifecycle of a highly advanced Salesforce Revenue Cloud deployment.</p>
 <p>Would you like me to compile all of these phases into a single, downloadable markdown summary block, or are we ready to close out this design session?</p>
-</div><div class="rlmtopic">
-<p>If you can, that helps. But before compiling into a single downloadable markdown summary block; can you add add a later phase (a new phase), with some examples of Salesforce Agents and Data Cloud (data cloud can be S3 as this is more popular for test scenario)</p>
-</div><div class="rlmexplanation">
+</div>
+</section>
+	
+<section class="aidatacloud">
+	<div class="rlmtopic"><h2>AI and Data Cloud</h2></div>
+	
+	<div class="rlmtopic"><p>Salesforce Agents and Data Cloud (S3)</p></div>
+	
+	<div class="rlmexplanation">
 <p>This is a brilliant addition. You are pushing the architecture past standard transactional quote-to-cash and into the predictive, AI-driven future of revenue management.</p>
 <p>For an enterprise consulting firm like Syntrofin LLC, pitching a purely mechanical RLM implementation is table stakes. Pitching an RLM implementation that actively learns from external telemetry (AWS S3) and uses AI Agents to autonomously guide sales reps is how you win the multi-million dollar transformation deals.</p>
 <p>Here is&nbsp;<strong>Phase 6</strong>, followed immediately by your complete, consolidated markdown blueprint.</p>
@@ -1128,76 +1152,13 @@
 <p>4&nbsp;Add this action to your Sales Copilot or custom Agent.</p>
 <p>When the rep says,&nbsp;<em>"Yes, generate that quote for me,"</em>&nbsp;Agentforce triggers this Apex, passes in the&nbsp;15&nbsp;cores, the IP runs the pricing waterfall, the quote is saved to the database, and the Copilot replies with the exact success message you formatted in the&nbsp;res.agentMessage&nbsp;string.</p>
 <p>That officially completes every layer of this ecosystem—from the foundational product catalog data model up to the AI-driven conversational interface and down into the financial ledger.</p>
-<p>You now have a massive, end-to-end sandbox exercise to execute. Would you like me to generate a checklist of the exact Salesforce permission sets and licenses you need to assign to your system admin user before you log into your Dev Org to start building Phase 1?</p>
-</div>
+
 	
-	<div class="rlmtopic"><p>Checklist of the exact Salesforce permission sets and licenses </p></div>
+</section>
 	
-	<div class="rlmexplanation">
-<p>This is the final hurdle before the actual build. Nothing halts an enterprise consulting project faster than a lead architect logging into a fresh sandbox on day one only to discover they can't access the Product Catalog or compile an OmniScript because of missing permissions.</p>
-<p>When you are provisioning your Syntrofin LLC lab org for this exercise, you must ensure your System Administrator user is fully loaded with the right permission sets. RLM is heavily componentized, meaning core Admin rights aren't enough—you need the specific feature licenses assigned.</p>
-<p>Here is your comprehensive provisioning checklist, categorized by the phases we just designed.</p>
-<ol>
-	<li><strong> Revenue Lifecycle Management (Core PCM &amp; Pricing)</strong></li>
-</ol>
-<p>To build the catalog, the attributes, and the pricing waterfall, you need access to the core RLM engines and the Context Service.</p>
-<ul>
-	<li><strong>Licenses Required:</strong>&nbsp;Revenue Lifecycle Management, Product Catalog Management</li>
-	<li><strong>Permission Sets to Assign:</strong></li>
-	<li><strong>Product Catalog Management Admin:</strong>&nbsp;(Allows creation of the PBO, Attributes, and PSMs).</li>
-	<li><strong>Pricing Setup User:</strong>&nbsp;(Grants access to build Decision Matrices and Pricing Procedures).</li>
-	<li><strong>Context Service Admin:</strong>&nbsp;(Allows you to map the Quote/Order fields to the pricing memory tags).</li>
-	<li><strong>Revenue Lifecycle Management Admin:</strong>&nbsp;(The overarching permission for the suite).</li>
-</ul>
-<ol start="2">
-	<li><strong> OmniStudio (The UI Layer)</strong></li>
-</ol>
-<p>To build the FlexCards, OmniScripts, and Integration Procedures for the guided selling experience.</p>
-<ul>
-	<li><strong>Licenses Required:</strong>&nbsp;OmniStudio</li>
-	<li><strong>Permission Sets to Assign:</strong></li>
-	<li><strong>OmniStudio Admin:</strong>&nbsp;(Full create/read/update/delete access to all OmniStudio components and DataRaptors).</li>
-	<li><strong>OmniStudio User:</strong>&nbsp;(Required to actually view and execute the compiled UI during your testing).</li>
-</ul>
-<ol start="3">
-	<li><strong> Dynamic Revenue Orchestrator (Fulfillment)</strong></li>
-</ol>
-<p>To configure the decomposition rules and build the outbound webhook callouts to the mock IBM Manufacturing system.</p>
-<ul>
-	<li><strong>Licenses Required:</strong>&nbsp;Dynamic Revenue Orchestrator</li>
-	<li><strong>Permission Sets to Assign:</strong></li>
-	<li><strong>Dynamic Revenue Orchestrator Admin:</strong>&nbsp;(Allows creation of Orchestration Plans and Decomposition Relationships).</li>
-	<li><strong>Dynamic Revenue Orchestrator Runtime User:</strong>&nbsp;(Allows the user to process and manually complete Orchestration Items).</li>
-</ul>
-<ol start="4">
-	<li><strong> Salesforce Billing (Financial Sub-Ledger)</strong></li>
-</ol>
-<p>To build the ASC 606 GL rules, billing treatments, and revenue recognition schedules.</p>
-<ul>
-	<li><strong>Licenses Required:</strong>&nbsp;Salesforce Billing</li>
-	<li><strong>Permission Sets to Assign:</strong></li>
-	<li><strong>Salesforce Billing Admin:</strong>&nbsp;(Full configuration access to Finance Books, Legal Entities, GL Rules, and Billing setup).</li>
-	<li><strong>Salesforce CPQ Admin:</strong>&nbsp;(Even if using RLM, Billing often requires base CPQ permissions in hybrid orgs depending on your specific package version).</li>
-</ul>
-<ol start="5">
-	<li><strong> Data Cloud &amp; Agentforce (AI &amp; Telemetry)</strong></li>
-</ol>
-<p>To set up the AWS S3 connector, write the Calculated Insight SQL, and build the custom Copilot action.</p>
-<ul>
-	<li><strong>Licenses Required:</strong>&nbsp;Data Cloud, Agentforce (or Einstein Copilot)</li>
-	<li><strong>Permission Sets to Assign:</strong></li>
-	<li><strong>Data Cloud Admin:</strong>&nbsp;(Full access to create Data Streams, DMOs, and Calculated Insights).</li>
-	<li><strong>Einstein Copilot Builder / Agentforce Admin:</strong>&nbsp;(Grants access to Agentforce Studio to create the custom actions and instructions).</li>
-	<li><strong>Prompt Builder User:</strong>&nbsp;(Required to build the conversational templates the Agent uses).</li>
-</ul>
-<p><strong>The Final Architect's Advice</strong></p>
-<p>Instead of manually assigning these 15 individual permission sets to your user, create a&nbsp;<strong>Permission Set Group</strong>&nbsp;called&nbsp;RLM_Enterprise_Architect_PSG. Add all of the above permission sets to this group, and simply assign the group to your user record. It makes managing your sandbox access infinitely cleaner.</p>
-<p>You now possess the entire blueprint, the payload structures, the deployment strategy, the testing logic, and the security provisioning checklist.</p>
-<p>Are you ready to log into your environment, spin up your developer console, and begin executing Phase 1?</p>
-</div>
-	
-	
-	<div class="rlmtopic"><p>package.xml&nbsp;manifest</p></div>
+<section class="metadta">
+	<div class="rlmtopic"><h2>Meta Data</h2></div>
+	<div class="rlmtopic"><p>package.xml manifest</p></div>
 	
 	<div class="rlmexplanation">
 <p>Here is the foundational&nbsp;package.xml&nbsp;manifest you need to retrieve your Revenue Lifecycle Management (RLM) metadata.</p>
@@ -1519,6 +1480,76 @@
   You&nbsp;<strong>must</strong>&nbsp;establish a rigid&nbsp;<strong>External ID</strong>&nbsp;strategy. Every product, attribute, and matrix row must have a unique External ID that remains perfectly identical across your Dev, UAT, and Production environments. 
   Your data deployment tool will use this External ID to "upsert" the relational data and keep the web of records intact.</p>
 </div> 
+</section>
+
+<section class="licenses">
+
+<div class="rlmtopic"><h2>Salesforce permission sets and licenses</h2></div>
+	
+	<div class="rlmtopic"><p>Checklist of the exact Salesforce permission sets and licenses </p></div>
+	
+	<div class="rlmexplanation">
+<p>This is the final hurdle before the actual build. Nothing halts an enterprise consulting project faster than a lead architect logging into a fresh sandbox on day one only to discover they can't access the Product Catalog or compile an OmniScript because of missing permissions.</p>
+<p>When you are provisioning your Syntrofin LLC lab org for this exercise, you must ensure your System Administrator user is fully loaded with the right permission sets. RLM is heavily componentized, meaning core Admin rights aren't enough—you need the specific feature licenses assigned.</p>
+<p>Here is your comprehensive provisioning checklist, categorized by the phases we just designed.</p>
+<ol>
+	<li><strong> Revenue Lifecycle Management (Core PCM &amp; Pricing)</strong></li>
+</ol>
+<p>To build the catalog, the attributes, and the pricing waterfall, you need access to the core RLM engines and the Context Service.</p>
+<ul>
+	<li><strong>Licenses Required:</strong>&nbsp;Revenue Lifecycle Management, Product Catalog Management</li>
+	<li><strong>Permission Sets to Assign:</strong></li>
+	<li><strong>Product Catalog Management Admin:</strong>&nbsp;(Allows creation of the PBO, Attributes, and PSMs).</li>
+	<li><strong>Pricing Setup User:</strong>&nbsp;(Grants access to build Decision Matrices and Pricing Procedures).</li>
+	<li><strong>Context Service Admin:</strong>&nbsp;(Allows you to map the Quote/Order fields to the pricing memory tags).</li>
+	<li><strong>Revenue Lifecycle Management Admin:</strong>&nbsp;(The overarching permission for the suite).</li>
+</ul>
+<ol start="2">
+	<li><strong> OmniStudio (The UI Layer)</strong></li>
+</ol>
+<p>To build the FlexCards, OmniScripts, and Integration Procedures for the guided selling experience.</p>
+<ul>
+	<li><strong>Licenses Required:</strong>&nbsp;OmniStudio</li>
+	<li><strong>Permission Sets to Assign:</strong></li>
+	<li><strong>OmniStudio Admin:</strong>&nbsp;(Full create/read/update/delete access to all OmniStudio components and DataRaptors).</li>
+	<li><strong>OmniStudio User:</strong>&nbsp;(Required to actually view and execute the compiled UI during your testing).</li>
+</ul>
+<ol start="3">
+	<li><strong> Dynamic Revenue Orchestrator (Fulfillment)</strong></li>
+</ol>
+<p>To configure the decomposition rules and build the outbound webhook callouts to the mock IBM Manufacturing system.</p>
+<ul>
+	<li><strong>Licenses Required:</strong>&nbsp;Dynamic Revenue Orchestrator</li>
+	<li><strong>Permission Sets to Assign:</strong></li>
+	<li><strong>Dynamic Revenue Orchestrator Admin:</strong>&nbsp;(Allows creation of Orchestration Plans and Decomposition Relationships).</li>
+	<li><strong>Dynamic Revenue Orchestrator Runtime User:</strong>&nbsp;(Allows the user to process and manually complete Orchestration Items).</li>
+</ul>
+<ol start="4">
+	<li><strong> Salesforce Billing (Financial Sub-Ledger)</strong></li>
+</ol>
+<p>To build the ASC 606 GL rules, billing treatments, and revenue recognition schedules.</p>
+<ul>
+	<li><strong>Licenses Required:</strong>&nbsp;Salesforce Billing</li>
+	<li><strong>Permission Sets to Assign:</strong></li>
+	<li><strong>Salesforce Billing Admin:</strong>&nbsp;(Full configuration access to Finance Books, Legal Entities, GL Rules, and Billing setup).</li>
+	<li><strong>Salesforce CPQ Admin:</strong>&nbsp;(Even if using RLM, Billing often requires base CPQ permissions in hybrid orgs depending on your specific package version).</li>
+</ul>
+<ol start="5">
+	<li><strong> Data Cloud &amp; Agentforce (AI &amp; Telemetry)</strong></li>
+</ol>
+<p>To set up the AWS S3 connector, write the Calculated Insight SQL, and build the custom Copilot action.</p>
+<ul>
+	<li><strong>Licenses Required:</strong>&nbsp;Data Cloud, Agentforce (or Einstein Copilot)</li>
+	<li><strong>Permission Sets to Assign:</strong></li>
+	<li><strong>Data Cloud Admin:</strong>&nbsp;(Full access to create Data Streams, DMOs, and Calculated Insights).</li>
+	<li><strong>Einstein Copilot Builder / Agentforce Admin:</strong>&nbsp;(Grants access to Agentforce Studio to create the custom actions and instructions).</li>
+	<li><strong>Prompt Builder User:</strong>&nbsp;(Required to build the conversational templates the Agent uses).</li>
+</ul>
+<p><strong>The Final Architect's Advice</strong></p>
+<p>Instead of manually assigning these 15 individual permission sets to your user, create a&nbsp;<strong>Permission Set Group</strong>&nbsp;called&nbsp;RLM_Enterprise_Architect_PSG. Add all of the above permission sets to this group, and simply assign the group to your user record. It makes managing your sandbox access infinitely cleaner.</p>
+<p>You now possess the entire blueprint, the payload structures, the deployment strategy, the testing logic, and the security provisioning checklist.</p>
+<p>Are you ready to log into your environment, spin up your developer console, and begin executing Phase 1?</p>
+</div>
 </section>
 
 <script src="./syntrofin_files/cssjs/ibmrlm.js"></script>
