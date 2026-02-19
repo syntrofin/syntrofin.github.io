@@ -356,7 +356,7 @@ footer p {
 }
 
 .stream-list li {
-  margin-bottom: 25px; /* Creates enough vertical space for the circle */
+  /*margin-bottom: 25px;  Creates enough vertical space for the circle */
   position: relative;
 }
 
@@ -366,8 +366,8 @@ footer p {
   position: absolute;     /* Required to use left/bottom/transform */
   
   /* 1. SIZE & SHAPE */
-  width: 20px; 
-  height: 20px;
+  width: 30px; 
+  height: 30px;
   background-color: #3498db; 
   border-radius: 50%;
 
@@ -377,7 +377,7 @@ footer p {
 
   /* 3. VERTICAL POSITION */
   /* This places it 20px below the bottom of the first <li> */
-  bottom: -20px; 
+  bottom: -50px; 
   
   /* 4. BEHIND OR ABOVE */
   z-index: 1;             /* Optional: ensures it stays visible */
