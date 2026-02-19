@@ -1,60 +1,41 @@
-// Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Find all your topic divs (however many there are)
     const topics = document.querySelectorAll('.rlmtopic');
-    
-    // 1. Create the TOC container and heading
+    if (topics.length === 0) return;
+
+    // 2. Create the TOC Section dynamically
     const tocSection = document.createElement('section');
     tocSection.id = 'table-of-contents';
-    const tocTitle = document.createElement('h2');
-    tocTitle.textContent = 'Table of Contents';
-    tocSection.appendChild(tocTitle);
-    
+    tocSection.innerHTML = '<h2>Table of Contents</h2>';
     const tocList = document.createElement('ul');
 
-    // 2. Loop through each topic to assign IDs and build the list
+    // 3. Loop through topics to add IDs and TOC links
     topics.forEach((topic, index) => {
-        // Assign dynamic ID (e.g., topic1, topic2, ...)
         const uniqueId = `topic${index + 1}`;
-        topic.id = uniqueId;
+        topic.id = uniqueId; // Dynamically assigns id="topic1", etc.
 
-        // Create a list item and link for the TOC
         const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = `#${uniqueId}`;
-        
-        // Use the text content of the div as the link text
-        link.textContent = topic.textContent || `Topic ${index + 1}`;
-        
-        listItem.appendChild(link);
+        listItem.innerHTML = `<a href="#${uniqueId}">${topic.textContent}</a>`;
         tocList.appendChild(listItem);
     });
 
     tocSection.appendChild(tocList);
+    document.body.prepend(tocSection); // Injects TOC at the top of the page
 
-    // 3. Insert the TOC before the first topic or at the top of the body
-    if (topics.length > 0) {
-        topics[0].before(tocSection);
-    } else {
-        document.body.prepend(tocSection);
-    }
+    // 4. Create the Floating Home Button dynamically
+    const homeBtn = document.createElement('button');
+    homeBtn.id = 'backToTop';
+    homeBtn.setAttribute('aria-label', 'Back to top');
+    homeBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>`;
+    document.body.appendChild(homeBtn); // Injects button at the end of body
+
+    // 5. Logic: Show button on scroll & Scroll to top on click
+    window.onscroll = () => {
+        homeBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+    };
+    homeBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-const backToTopBtn = document.getElementById("backToTop");
-
-// Show/Hide button based on scroll position
-window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = "block";
-    } else {
-        backToTopBtn.style.display = "none";
-    }
-};
-
-// Smooth scroll to top when clicked
-backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
