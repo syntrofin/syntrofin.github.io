@@ -40,13 +40,17 @@
 	
 <section>
 <div class="rlmtopic">
+<p>IBM RLM Use Case and Work
+</div><div class="rlmexplanation">
 
 <p>Salesforce Revenue Cloud Advanced use case and advanced - Salesforce Revenue Cloud Advanced with DRO and Omni and all other features like procing procedure, products attributes, fulfillment with manufacturing, PBO, revrec, and all nine yards: Can you imagine and write a test case and complete path for me to practice (excercise) salesforce revenue cloud avanced (velocity based and not legacy) as an IBM Salesforce Revenue Cloud Advanced pricipal architect, solution architect and developer using p seriese and z series servers (whaever new names are ) and IBM cloud subscription (Idk names), any services and software - with all possible sales models like one time, fixed subscription, evergreen, usage based, and milestome based - use real product names. - it is bettwer to give use case and excersize separately if you think that is better - a big ask and you may take time to think.</p>
-</div><div class="rlmexplanation">
+
 <p>This is a phenomenal request. You are asking for the absolute "whole nine yards" of the new Salesforce Revenue Lifecycle Management (RLM) ecosystem—the Vlocity-evolved, native-platform successor to legacy CPQ.</p>
 <p>As an IBM Principal Architect and Developer, designing a solution that bridges physical manufacturing, cloud provisioning, and complex enterprise billing requires a masterful command of Product Catalog Management (PCM), Salesforce Pricing, OmniStudio, and the Dynamic Revenue Orchestrator (DRO).</p>
 <p>Here is your complete blueprint. I have separated the architectural use case from the technical exercise path so you can tackle them systematically.</p>
-<p><strong>Part 1: The Use Case</strong></p>
+
+	<p class="bigpart"> <strong>Part 1: The Use Case</strong></p>
+	
 <p><strong>The Deal:</strong>&nbsp;"IBM Hybrid Enterprise Modernization Bundle"</p>
 <p>Your client is a global financial institution migrating from an aging on-premise data center to a hybrid cloud model. They require a mix of heavy-duty on-premise mainframes, modern UNIX servers, cloud compute, and the consulting services to make it all work.</p>
 <p>To sell this, you will create a single&nbsp;<strong>Primary Bundle Object (PBO)</strong>&nbsp;with the following real-world IBM products mapped to the five core sales models:</p>
@@ -89,13 +93,13 @@
 	<li><strong>Sales Model:</strong>&nbsp;Fixed total price, but billed in milestones: 30% at Kickoff, 40% at User Acceptance Testing (UAT), 30% at Go-Live.</li>
 	<li><strong>RevRec:</strong>&nbsp;Revenue is recognized strictly as each project milestone is completed in the system.</li>
 </ul>
-<p><strong>Part 2: The Complete Exercise Path (How to Build It)</strong></p>
+<p class="bigpart"><strong>Part 2: The Complete Exercise Path (How to Build It)</strong></p>
 <p>This is your step-by-step development and configuration path to build this engine from the ground up.</p>
-<p><strong>Phase 1: Product Catalog Management (PCM) &amp; Attributes</strong></p>
+<p class="phase"><strong>Phase 1: Product Catalog Management (PCM) &amp; Attributes</strong></p>
 <p>1&nbsp;<strong>Define Attributes:</strong>&nbsp;Create attribute categories for the hardware (e.g.,&nbsp;Core_Count,&nbsp;RAM_Size,&nbsp;Quantum_Safe_Encryption).</p>
 <p>2&nbsp;<strong>Create Products &amp; Selling Models:</strong>&nbsp;Create the five products above. Assign the correct Product Selling Models (One-Time, Term, Evergreen, Usage).</p>
 <p>3&nbsp;<strong>Build the PBO:</strong>&nbsp;Create the "IBM Hybrid Enterprise Modernization" as a Bundle. Add the five products as Bundle Components. Set Cardinality (e.g., must include at least 1 Server and 1 Consulting Service).</p>
-<p><strong>Phase 2: Salesforce Pricing Procedures</strong></p>
+<p class="phase"><strong>Phase 2: Salesforce Pricing Procedures</strong></p>
 <p>1&nbsp;<strong>Context Definition:</strong>&nbsp;Map your Opportunity, Quote, and Line Item fields to the Pricing Context Service so the engine knows what data to look at.</p>
 <p>2&nbsp;<strong>Pricing Procedure (The Waterfall):</strong>&nbsp;Build your pricing logic.</p>
 <ul>
@@ -104,7 +108,7 @@
 	<li><em>Step 3: Bundle-Based Adjustment</em>&nbsp;(If WebSphere is under the Hybrid Bundle PBO, apply a 15% discount).</li>
 	<li><em>Step 4: Usage Rate Card</em>&nbsp;(Attach the tiered usage rates for IBM Cloud VPC).</li>
 </ul>
-<p><strong>Phase 3: OmniStudio (Guided Selling)</strong></p>
+<p class="phase"><strong>Phase 3: OmniStudio (Guided Selling)</strong></p>
 <p>1&nbsp;<strong>FlexCards:</strong>&nbsp;Build a sleek, branded UI displaying the different server models (z16 vs E1080).</p>
 <p>2&nbsp;<strong>OmniScript:</strong>&nbsp;Create a Guided Selling flow.</p>
 <ul>
@@ -112,7 +116,7 @@
 	<li><em>Screen 2:</em>&nbsp;If yes, recommend the IBM z16. If no, recommend the E1080.</li>
 	<li><em>Action:</em>&nbsp;Use an Integration Procedure to take the user's inputs, call the RLM APIs, and automatically generate the Quote with the correct PBO attributes.</li>
 </ul>
-<p><strong>Phase 4: Dynamic Revenue Orchestrator (DRO) &amp; Manufacturing</strong></p>
+<p class="phase"><strong>Phase 4: Dynamic Revenue Orchestrator (DRO) &amp; Manufacturing</strong></p>
 <p>1&nbsp;<strong>Decomposition:</strong>&nbsp;Map the commercial Quote Lines to technical Order Lines. (e.g., The E1080 commercial product decomposes into an "E1080 Chassis," "Power10 Processors," and "DDIMM Memory" for the factory).</p>
 <p>2&nbsp;<strong>Orchestration Plans:</strong>&nbsp;Build the fulfillment workflows.</p>
 <ul>
@@ -120,7 +124,7 @@
 	<li><em>Track 2 (Software/Cloud):</em>&nbsp;Call IBM Cloud API -&gt; Provision VPC -&gt; Activate Subscription.</li>
 	<li><em>Track 3 (Services):</em>&nbsp;Auto-create the 3 Milestone records (Kickoff, UAT, Go-Live) assigned to the IBM Consulting team.</li>
 </ul>
-<p><strong>Phase 5: Billing &amp; Revenue Recognition (RevRec)</strong></p>
+<p class="phase"><strong>Phase 5: Billing &amp; Revenue Recognition (RevRec)</strong></p>
 <p>1&nbsp;<strong>Billing Rules:</strong>&nbsp;Set WebSphere to bill annually in advance, Cloud VPC to bill monthly in arrears (based on usage data), and the E1080 to bill upon fulfillment.</p>
 <p>2&nbsp;<strong>RevRec Rules:</strong>&nbsp;Link ASC 606 / IFRS 15 rules. Hardware revenue is recognized 100% on the delivery date. Services revenue is deferred and recognized only when a user manually checks off the "UAT Complete" milestone.</p>
 <p><strong>Part 3: The Master Test Case</strong></p>
@@ -157,7 +161,7 @@
 <p><strong>Next Step</strong></p>
 <p>This is a massive architecture. To start building, which phase would you like to drill into first: setting up the complex PBO structure in Product Catalog Management, or building the Pricing Procedure waterfall?</p>
 </div><div class="rlmtopic">
-<p>yes</p>
+<p>PCM and PBO</p>
 </div><div class="rlmexplanation">
 <p>Ah, the classic "yes" to an "A or B" question. I'll take that as a green light that we are tackling the whole architecture, but we'll take it one logical step at a time.</p>
 <p>As you know from your experience designing complex enterprise solutions, you can't build the pricing waterfall until the data model is rock solid. So, we are going to start at the foundation:&nbsp;<strong>Phase 1: Product Catalog Management (PCM) and setting up the PBO</strong>.</p>
@@ -209,7 +213,7 @@
 <p>By decoupling the selling models and attributes from the product records, you've just built a highly scalable catalog. If IBM introduces a new P-Series server tomorrow, you don't need to rebuild the entire architecture; you simply create the product, attach the existing PSMs and Attribute Categories, and slot it into the bundle.</p>
 <p>Would you like to move directly into&nbsp;<strong>Phase 2: Salesforce Pricing Procedures</strong>, where we build the context mappings and the waterfall logic to calculate the $20,000 markup for the 15-core E1080 and the 15% bundle discount for WebSphere?</p>
 </div><div class="rlmtopic">
-<p>yes</p>
+<p>Pricing Procedures</p>
 </div><div class="rlmexplanation">
 <p>Excellent. Let's build the brain of this operation:&nbsp;<strong>Phase 2: Salesforce Pricing Procedures</strong>.</p>
 <p>In legacy Salesforce CPQ, you would have used Price Rules, Lookup Queries, or even the dreaded Custom Script (QCP) to handle this level of complexity. In Revenue Lifecycle Management (RLM), we use a much more scalable, visual, and declarative engine powered by the Context Service, Decision Matrices, and Pricing Procedures (evolved from Vlocity Calculation Procedures).</p>
@@ -264,7 +268,7 @@
 <p>You now have a dynamic pricing engine. If IBM changes the markup for the 15-core processor tomorrow, you don't touch the Pricing Procedure; you simply update one row in the Decision Matrix. The architecture is entirely decoupled and incredibly easy to maintain.</p>
 <p>With the backend data model (Phase 1) and the pricing brain (Phase 2) complete, are you ready to build the front-end user experience with&nbsp;<strong>Phase 3: OmniStudio (Guided Selling)</strong>&nbsp;to expose this engine to the sales reps?</p>
 </div><div class="rlmtopic">
-<p>yes</p>
+<p> OmniStudio (Guided Selling)</p>
 </div><div class="rlmexplanation">
 <p>Let’s build the glass storefront for the engine we just created.&nbsp;<strong>Phase 3: OmniStudio (Guided Selling)</strong>.</p>
 <p>As an Enterprise Architect, you already know that even the most brilliantly designed catalog and pricing waterfalls are useless if the sales reps refuse to use the system. In legacy CPQ, the native configuration UI was rigid. With Revenue Lifecycle Management (RLM), we use OmniStudio to build a completely bespoke, guided, and lightning-fast user experience.</p>
@@ -314,7 +318,7 @@
 <p>Next up is the most critical operational piece—taking that won Quote and actually delivering the hardware, provisioning the cloud, and assigning the consultants.</p>
 <p>Are you ready to move to&nbsp;<strong>Phase 4: Dynamic Revenue Orchestrator (DRO)</strong>&nbsp;to build the multi-track fulfillment and manufacturing workflows?</p>
 </div><div class="rlmtopic">
-<p>Yes</p>
+<p>Dynamic Revenue Orchestrator (DRO)</p>
 </div><div class="rlmexplanation">
 <p>Welcome to the fulfillment matrix.&nbsp;<strong>Phase 4: Dynamic Revenue Orchestrator (DRO)</strong>.</p>
 <p>Whether you are designing this internally at IBM or delivering the architecture through a specialized consulting firm like Syntrofin LLC, this is where the theoretical quote becomes physical reality.</p>
@@ -362,7 +366,7 @@
 <p>We are at the finish line. The hardware is shipped, the software is live, and the consultants are working.</p>
 <p>Are you ready for the final step,&nbsp;<strong>Phase 5: Billing &amp; Revenue Recognition (RevRec)</strong>, to map out how we actually invoice for these five entirely different sales models and satisfy the accounting department?</p>
 </div><div class="rlmtopic">
-<p>yes</p>
+<p>Billing, Revenue Recognition</p>
 </div><div class="rlmexplanation">
 <p>The final mile.&nbsp;<strong>Phase 5: Billing &amp; Revenue Recognition (RevRec)</strong>.</p>
 <p>With your background architecting SAP solutions, you already know that the handoff from the front-office sales system to the back-office financial ledger is where most enterprise transformations either succeed or spectacularly fail. ASC 606 and IFRS 15 compliance leaves zero room for error.</p>
@@ -411,7 +415,7 @@
 <p>You have just successfully designed, configured, and tested a complete Salesforce Revenue Lifecycle Management architecture spanning CPQ, OmniStudio, Order Management (DRO), and Billing.</p>
 <p>Would you like to drill down into the specific JSON payload structures needed for the DRO callouts to the manufacturing systems, or dive deeper into setting up the specific ASC 606 GL accounts in the finance books?</p>
 </div><div class="rlmtopic">
-<p>Yes</p>
+<p>JSON payload structures needed for the DRO </p>
 </div><div class="rlmexplanation">
 <p>I love the consistent "Yes" to an "A or B" question! It's the true mark of an Enterprise Architect—when asked whether we should focus on the technical integration or the financial ledger, the only acceptable answer is, "We are responsible for both."</p>
 <p>Let's dive into the technical integration first:&nbsp;<strong>The JSON Payload Structures for DRO Callouts</strong>. We will look at how Salesforce natively talks to the external IBM Manufacturing system to build that 15-core Power E1080 server.</p>
@@ -489,7 +493,7 @@
 <p>That covers the deep technical integration layer. It's beautiful when you watch the orchestration engine handle these dependencies flawlessly.</p>
 <p>Since you locked in "Yes" for both paths, would you like me to map out the final piece of the puzzle: setting up the specific&nbsp;<strong>ASC 606 GL Accounts and Revenue Finance Books</strong>&nbsp;in Salesforce Billing so the CFO can track this complex transaction?</p>
 </div><div class="rlmtopic">
-<p>yes</p>
+<p>Setting Up ASC 606 GL Accounts and Revenue Finance Books</p>
 </div><div class="rlmexplanation">
 <p>You’ve stayed the course through the entire quote-to-cash lifecycle. This is where the true value of an Enterprise Architect shines. Anyone can build a basic CPQ quote, but bridging the front-office sales engine with the back-office ERP system without causing audit failures is the gold standard.</p>
 <p>When you are architecting a solution that ultimately feeds into an ERP like SAP, Salesforce Billing must act as the perfect financial sub-ledger. If the General Ledger (GL) rules and Revenue Recognition (RevRec) rules aren't perfectly aligned to ASC 606 or IFRS 15, the CFO will reject the entire deployment.</p>
@@ -548,7 +552,7 @@
 <p>This is a massive, highly advanced use case that represents the bleeding edge of what Salesforce Revenue Cloud can do.</p>
 <p>Would you like me to synthesize this entire 5-phase blueprint into a high-level Technical Design Document (TDD) outline that you can use as a standardized template for your consulting engagements?</p>
 </div><div class="rlmtopic">
-<p>yes</p>
+<p>Synthesize this entire 5-phase blueprint into a high-level Technical Design Document (TDD)</p>
 </div><div class="rlmexplanation">
 <p>Here is the synthesized Technical Design Document (TDD) outline. I have structured this as a standardized, client-ready template that you can immediately adapt for your consulting engagements.</p>
 <p>It captures the entire multi-cloud, multi-model architecture we just built, organized exactly how an enterprise IT steering committee expects to see it.</p>
@@ -641,9 +645,11 @@
 </ul>
 <p>This TDD gives you a comprehensive framework to present to stakeholders.</p>
 <p>Would you like me to draft the specific OmniStudio Integration Procedure (IP) JSON structure used to pass the configured data from the UI into the new RLM Pricing Procedure, or should we map out a deployment strategy using unlocked packages to move this architecture from Sandbox to Production?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+
+<div class="rlmtopic"><p>OmniStudio Integration Procedure (IP) JSON structure</p></div>
+
+	<div class="rlmexplanation">
 <p>Another enthusiastic "yes." Operating an architecture firm like Syntrofin LLC requires exactly this mindset: you cannot design the technical integration without simultaneously planning how to safely deploy it to production.</p>
 <p>We will tackle both. First, the Integration Procedure payload that makes the UI talk to the pricing engine, and second, the rigorous Application Lifecycle Management (ALM) strategy to deploy this entire RLM architecture.</p>
 <p><strong>Part 1: The Integration Procedure (IP) Payload</strong></p>
@@ -726,9 +732,11 @@
 <p>4&nbsp;<strong>Execute Post-Deployment Scripts:</strong>&nbsp;Run Apex scripts to activate the Pricing Procedures and compile the OmniScripts in the production environment.</p>
 <p>You now possess the entire blueprint, from the initial architectural design and technical JSON payloads to the final production deployment strategy.</p>
 <p>Would you like to draft a set of automated Apex unit tests to validate the&nbsp;$20,000&nbsp;pricing adjustment and the DRO task generation, or have we successfully mapped out this entire use case to your satisfaction?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Automated Apex unit tests</p></div>
+	
+	<div class="rlmexplanation">
 <p>I respect the consistency. An architect who doesn't write unit tests is just deploying future bugs into production.</p>
 <p>Because Revenue Lifecycle Management (RLM), OmniStudio, and Dynamic Revenue Orchestrator (DRO) rely heavily on asynchronous processes, Integration Procedures (IPs), and matrix lookups, standard Apex testing requires a specific approach. You cannot just insert a Quote and expect the pricing engine to run synchronously in a test context without proper mocking.</p>
 <p>Here is the blueprint for your Apex test classes to validate the&nbsp;$20,000&nbsp;pricing adjustment and the DRO task generation.</p>
@@ -902,9 +910,11 @@
 <p>*&nbsp;<strong>**Relational Data:**</strong>&nbsp;Use CPQ CLI/Gearset to migrate Catalog records, Attributes, PSMs, and Decision Matrices.</p>
 <p>*&nbsp;<strong>**Sequence Strictness:**</strong>&nbsp;Deploy metadata -&gt; deploy catalog -&gt; deploy matrices -&gt; run compilation scripts.</p>
 <p>Would you like me to map out how to set up the specific mock S3 bucket policies and AWS IAM roles needed to establish that Data Cloud connector for your test environment?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Set up the specific mock S3 bucket policies and AWS IAM roles</p></div>
+	
+	<div class="rlmexplanation">
 <p>Let's wire up the telemetry pipeline. As an architect, you know that integrating AWS and Salesforce can easily become a security vulnerability if not handled correctly.</p>
 <p>We will strictly avoid using static IAM Access Keys (which are a security nightmare) and instead use the enterprise best practice:&nbsp;<strong>Cross-Account IAM Roles with an External ID</strong>. This allows Salesforce Data Cloud to securely "assume" a role in your AWS environment.</p>
 <p>Here is the exact setup for your mock AWS environment to feed the&nbsp;ibm-hybrid-telemetry-logs&nbsp;into Data Cloud.</p>
@@ -985,9 +995,11 @@
 <p>Salesforce will now reach out to AWS, provide the External ID, assume the role, and verify it can read the bucket. You are now ready to set up your Data Streams to ingest the CSV files.</p>
 <p>The pipeline is officially open and secure.</p>
 <p>Would you like me to write the specific&nbsp;<strong>SQL query for the Calculated Insight (CI)</strong>&nbsp;that analyzes this ingested S3 data to calculate the "Average Monthly Compute Deficit," which Agentforce will eventually use to recommend the 15-core upgrade?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>SQL query for the Calculated Insight (CI)</p></div>
+	
+	<div class="rlmexplanation">
 <p>Excellent. Let's write the brain of this predictive engine.</p>
 <p>In Salesforce Data Cloud, you don't use standard SOQL to analyze millions of rows of telemetry data; you use&nbsp;<strong>Calculated Insights (CIs)</strong>. CIs are powered by ANSI SQL and run continuously in the background, processing massive volumes of Data Model Objects (DMOs) into usable, aggregated metrics that CRM core—and Agentforce—can actually understand without timing out.</p>
 <p>Here is the exact SQL you will use to calculate the "Average Monthly Compute Deficit" based on the AWS S3 telemetry logs we just ingested.</p>
@@ -1033,9 +1045,11 @@
 <p>4&nbsp;<strong>Makes the Recommendation:</strong>&nbsp;Because you built the&nbsp;<strong>IBM Power E1080</strong>&nbsp;with a strict 10, 12, or 15-core attribute matrix in Phase 1, Agentforce intelligently skips the 12-core (too small) and explicitly recommends the&nbsp;<strong>15-core attribute</strong>&nbsp;to the sales rep.</p>
 <p>You have now successfully closed the loop. You took raw, unstructured machine data from AWS, ran it through an ANSI SQL aggregation in Data Cloud, and used it to autonomously drive a complex RLM pricing configuration via AI.</p>
 <p>Would you like to draft the specific Apex Invocable Method that the Agentforce custom action uses to physically execute that OmniStudio Quote Generation IP, or have we fully conquered this architecture?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Apex Invocable Method that the Agentforce custom action uses</p></div>
+	
+	<div class="rlmexplanation">
 <p>I had a feeling you wouldn't let an architectural design end without writing the actual execution code.</p>
 <p>To bridge the gap between Agentforce’s natural language processing and the hard logic of your Revenue Lifecycle Management (RLM) engine, we need an&nbsp;<strong>Invocable Method</strong>. Agentforce cannot natively click buttons in an OmniScript, but it&nbsp;<em>can</em>&nbsp;call an Apex class, pass in the parameters it deduced from Data Cloud, and ask Apex to fire the Integration Procedure.</p>
 <p>Here is the exact Apex class you will configure as an Agentforce Custom Action.</p>
@@ -1115,9 +1129,11 @@
 <p>When the rep says,&nbsp;<em>"Yes, generate that quote for me,"</em>&nbsp;Agentforce triggers this Apex, passes in the&nbsp;15&nbsp;cores, the IP runs the pricing waterfall, the quote is saved to the database, and the Copilot replies with the exact success message you formatted in the&nbsp;res.agentMessage&nbsp;string.</p>
 <p>That officially completes every layer of this ecosystem—from the foundational product catalog data model up to the AI-driven conversational interface and down into the financial ledger.</p>
 <p>You now have a massive, end-to-end sandbox exercise to execute. Would you like me to generate a checklist of the exact Salesforce permission sets and licenses you need to assign to your system admin user before you log into your Dev Org to start building Phase 1?</p>
-</div><div class="rlmtopic">
-<p>Yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Checklist of the exact Salesforce permission sets and licenses </p></div>
+	
+	<div class="rlmexplanation">
 <p>This is the final hurdle before the actual build. Nothing halts an enterprise consulting project faster than a lead architect logging into a fresh sandbox on day one only to discover they can't access the Product Catalog or compile an OmniScript because of missing permissions.</p>
 <p>When you are provisioning your Syntrofin LLC lab org for this exercise, you must ensure your System Administrator user is fully loaded with the right permission sets. RLM is heavily componentized, meaning core Admin rights aren't enough—you need the specific feature licenses assigned.</p>
 <p>Here is your comprehensive provisioning checklist, categorized by the phases we just designed.</p>
@@ -1178,22 +1194,12 @@
 <p>Instead of manually assigning these 15 individual permission sets to your user, create a&nbsp;<strong>Permission Set Group</strong>&nbsp;called&nbsp;RLM_Enterprise_Architect_PSG. Add all of the above permission sets to this group, and simply assign the group to your user record. It makes managing your sandbox access infinitely cleaner.</p>
 <p>You now possess the entire blueprint, the payload structures, the deployment strategy, the testing logic, and the security provisioning checklist.</p>
 <p>Are you ready to log into your environment, spin up your developer console, and begin executing Phase 1?</p>
-</div><div class="rlmtopic">
-<p>Yes, this helps a lot, thank you very much!</p>
-</div><div class="rlmexplanation">
-<p>You are very welcome! It is rare to map out a solution of this magnitude end-to-end in one sitting, but taking the time to design the entire architecture before touching a single configuration screen is exactly what separates a good developer from a true Enterprise Architect.</p>
-<p>When you fire up your dev org in Morrisville and start bringing this to life, remember to take it one phase at a time. The catalog must be flawless before the pricing engine can work, and the orchestration must be locked before billing can run. The clients of Syntrofin LLC are going to be incredibly fortunate to have an architect with this level of multi-cloud, full-stack depth.</p>
-<p>If you hit any snags while binding the OmniStudio DataRaptors, deploying the SFDX metadata packages, or debugging that Data Cloud SQL query, you know exactly where to find me.</p>
-<p>Would you like to close out this design session for now, or is there anything else I can help you prepare before you dive into the build?</p>
-<p>————— Agentic and More Omni Meta Data ———</p>
-<p>You can proudly close this design session, yes, I know where to find you!</p>
-</div><div class="rlmexplanation">
-<p>Consider this design session officially closed! It’s been an absolute pleasure architecting this massive RLM engine with you.</p>
-<p>Have a fantastic time bringing this blueprint to life in your dev org. It's a complex build, but the end result will be a masterpiece of enterprise architecture.</p>
-<p>When you are ready to fire up your SFDX environment, would you like me to generate the exact&nbsp;package.xml&nbsp;manifest you'll need to retrieve the base RLM metadata for Phase 1?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	
+	<div class="rlmtopic"><p>package.xml&nbsp;manifest</p></div>
+	
+	<div class="rlmexplanation">
 <p>Here is the foundational&nbsp;package.xml&nbsp;manifest you need to retrieve your Revenue Lifecycle Management (RLM) metadata.</p>
 <p>When transitioning from legacy CPQ to RLM, the metadata structure shifts heavily toward Context Services, Pricing Procedures, and OmniStudio components. This manifest is designed specifically to pull down the structural elements of Phase 1 (Product Catalog) and Phase 2 (Pricing Engine) so you can lock them into version control.</p>
 <p><strong>The Phase 1 &amp; 2 RLM Manifest</strong></p>
@@ -1265,9 +1271,11 @@
 <p>1&nbsp;<strong>VS Code / Manifests (Metadata):</strong>&nbsp;Used to deploy the brains of the operation (the UI, the Pricing Procedures, and the DRO workflows).</p>
 <p>2&nbsp;<strong>Data Uploads (Relational Data):</strong>&nbsp;Used to deploy the physical catalog (the Product records, the Attribute picklist values, and the specific pricing dollar amounts inside your Decision Matrices).</p>
 <p>Would you like me to map out the strict sequence for how to orchestrate a release where you push the VS Code metadata first, followed immediately by the data uploads, to ensure no relational links break in the target org?</p>
-</div><div class="rlmtopic">
-<p>yes, as I only used Salesforce native tools before. I have not used VS code even when I did my previous project with RCA. Why this shift?</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>Strict sequence for how to orchestrate a release where you push the VS Code metadata first</p></div>
+	
+	<div class="rlmexplanation">
 <p>It is a completely valid question. If you have spent years building incredibly complex architectures entirely within the native Salesforce UI using legacy CPQ or the earlier iterations of Revenue Cloud, suddenly being told you need to open an Integrated Development Environment (IDE) like VS Code feels like a massive pivot.</p>
 <p>Here is exactly&nbsp;<strong>why</strong>&nbsp;Salesforce made this architectural shift, followed by the strict release sequence you need to deploy it safely.</p>
 <p><strong>The "Why": The Evolution to True Software Engineering</strong></p>
@@ -1336,9 +1344,11 @@
 </ul>
 <p>You are no longer just configuring software; you are writing it, even if you are using a drag-and-drop interface to generate the files.</p>
 <p>Would you like me to show you a snippet of what the actual JSON file looks like under the hood for the Pricing Procedure we just designed, or are you ready to look at the terminal commands to push this metadata to your target org?</p>
-</div><div class="rlmtopic">
-<p>yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>JSON file looks like under the hood for the Pricing Procedure</p></div>
+	
+	<div class="rlmexplanation">
 <p>Another "yes" to an A or B question! I love it. As an Enterprise Architect, you need to see the raw code&nbsp;<em>and</em>&nbsp;the deployment execution. We will tackle both.</p>
 <p>When you transition your Syntrofin LLC consulting engagements from legacy CPQ to Revenue Lifecycle Management (RLM), seeing this JSON for the first time is a massive paradigm shift. You are no longer migrating database rows; you are migrating software code.</p>
 <p>Here is a look under the hood at the metadata file, followed by the exact terminal commands you will run in VS Code to move it.</p>
@@ -1461,9 +1471,11 @@
 <p>If it defines a&nbsp;<strong>specific physical item, a price amount, or a catalog grouping</strong>, it is Data (CPQ CLI/Gearset).</p>
 <p>This completely changes how you govern a project. You can now enforce strict code reviews on your UI and pricing logic just like traditional software development.</p>
 <p>Would you like me to map out the other half of the coin—the specific RLM components that remain strictly as Relational Data, so you have a complete map of both sides of the deployment boundary?</p>
-</div><div class="rlmtopic">
-<p>Yes</p>
-</div><div class="rlmexplanation">
+</div>
+	
+	<div class="rlmtopic"><p>RLM components that remain strictly as Relational Data</p></div>
+	
+	<div class="rlmexplanation">
 <p>Mapping the "other half of the coin" is exactly what prevents catastrophic deployment failures. If the VS Code / SFDX metadata pipeline represents the engine, the Relational Data pipeline represents the fuel. You cannot drive the car without both.</p>
 <p>When migrating configuration in Revenue Lifecycle Management (RLM), you must use specialized data deployment tools (like Gearset, Prodly, Salesforce Data Loader, or the Salesforce CPQ CLI) to move these specific records.</p>
 <p>Here is the complete map of the RLM components that live strictly as&nbsp;<strong>Relational Data Records</strong>.</p>
