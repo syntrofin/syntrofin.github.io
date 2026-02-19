@@ -38,3 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.prepend(tocSection);
     }
 });
+
+const backToTopBtn = document.getElementById("backToTop");
+
+// Show/Hide button based on scroll position
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+// Smooth scroll to top when clicked
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
