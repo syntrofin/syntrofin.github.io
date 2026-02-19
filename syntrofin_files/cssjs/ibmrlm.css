@@ -6,9 +6,24 @@ body{
 background-color:yellow;
 }
 
-.rlmexplanation{
-background-color:gray;
+.rlmtopic p::before {
+  content: "@"; /* Added a space after the symbol */
+  color: red;   /* Make it look like money */
+  font-weight: bold;
+  /* margin-right: 5px;  Adjust spacing from the text */
 }
+
+.rlmexplanation{
+/* background-color:gray; */
+}
+
+.rlmexplanation p::before {
+  content: "$"; /* Added a space after the symbol */
+  color: green;   /* Make it look like money */
+  font-weight: bold;
+  /* margin-right: 5px;  Adjust spacing from the text */
+}
+
 /* Style the main TOC container */
 #table-of-contents {
     background: #f9f9f9;
