@@ -338,11 +338,6 @@ footer p {
     color: #1e293b;
 }
 
-/* Following only for sream list */
-.stream-list li:nth-child(2) {
-    margin-top: 50px; /* Adjust this value to fit your circle's size */
-}
-
 .stream-list li::before, .feature-list li::before {
   content: "\2022";  /* The Unicode character for a solid bullet */
   color: #9fc5e8;       /* Your desired blue color */
