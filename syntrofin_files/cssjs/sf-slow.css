@@ -352,48 +352,11 @@ footer p {
   margin-left: -1em; /* Positions it to the left of the text */
 }
 
-/* Create the circle for every LI except the first one */
-/* Container list styling */
-/* Ensure the list is the anchor for positioning */
-.stream-list ul {
-  padding-left: 30px; /* Adjust based on your layout */
-  position: relative;
-}
-
-.stream-list li {
-  /*margin-bottom: 25px;  Creates enough vertical space for the circle */
-  position: relative;
-}
-
-/* Decoration ONLY after the first row */
-.stream-list li:nth-child(1)::after {
-  content: "";            /* Required for pseudo-elements to appear */
-  position: absolute;     /* Required to use left/bottom/transform */
-  
-  /* 1. SIZE & SHAPE */
-  width: 26px; 
-  height: 26px;
-  background-color: #3498db; 
-  border-radius: 50%;
-
-  /* 2. HORIZONTAL CENTERING */
-  left: 50%;
-  transform: translateX(-50%); 
-
-  /* 3. VERTICAL POSITION */
-  /* This places it 20px below the bottom of the first <li> */
-  bottom: -50px; 
-  
-  /* 4. BEHIND OR ABOVE */
-  z-index: 1;             /* Optional: ensures it stays visible */
-}
-
-
 /* Following for putting blue circle anywhee in a div */
-.blue-circle1 {
+.decorative-circle {
   width: 26px;
   height: 26px;
-  background-color: #3498db;
+  background-color: gray;
   border-radius: 50%; /* Makes the square a circle */
   
   /* Centering logic */
@@ -401,6 +364,14 @@ footer p {
   display: block;    /* Ensures margin: auto works */
 }
 
+.circle-blue1{
+    background-color: #3498db;
+}
+
+.circle-blue2{
+    background-color: #9FC5E8;
+}
+    
 
 .tech-container {
     position: relative; /* CRITICAL: This is the reference point for the overlay */
