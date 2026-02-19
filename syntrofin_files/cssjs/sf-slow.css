@@ -353,17 +353,17 @@ footer p {
   height: 26px;
   background-color: gray;
   border-radius: 50%; /* Makes the square a circle */
-  
-  /* Centering logic */
-  margin: 20px auto; /* "auto" centers it horizontally if it's a block element */
+  margin: 0 auto;
   display: block;    /* Ensures margin: auto works */
 }
 
 .circle-blue1{
+    margin-bottom:20px;
     background-color: #3498db;
 }
 
 .circle-blue2{
+    margin: 20px auto; 
     background-color: #9FC5E8;
 }
     
