@@ -19,10 +19,10 @@ h1{
   gap: 16px;            
 }
 .pattern-type-title {
+    flex: 0 0 100%;       /* This "pushes" the other divs to the next line */
 }
 
 .pttitle {
-  flex: 0 0 100%;       /* This "pushes" the other divs to the next line */
 font-size: 1.8rem;      /* Roughly 24px */
 padding-left: 10px;     /* Indent from the left edge */
 text-align: center;       /* Explicitly left aligned */
