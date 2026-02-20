@@ -1,5 +1,18 @@
-body{
+html {
+scroll-behavior: auto !important;
+scroll-padding-top: 60px; /* Offset for anchors */
 }
+  
+body {
+    padding: 20px 40px;
+    font-family: sans-serif;
+}
+  
+h1{
+  margin-top: 0em;
+}
+
+
 .pattern-type {
   display: flex;
   flex-wrap: wrap;      
@@ -8,6 +21,14 @@ body{
 
 .pattern-type-title {
   flex: 0 0 100%;       /* This "pushes" the other divs to the next line */
+  font-size: 1.8rem;      /* Roughly 24px */
+padding-left: 10px;     /* Indent from the left edge */
+text-align: center;       /* Explicitly left aligned */
+margin-bottom: 5px;     /* Small gap before the detail */
+text-decoration: none;
+scroll-margin-top: 60px; 
+font-weight: bold;
+padding-top:60px;
 }
 
 .pattern {
@@ -15,5 +36,39 @@ body{
   min-width: 200px;     
   padding: 15px;
   border: 1px solid #ddd;
+}
+
+.pattitle {
+  min-width:300px;
+  font-size: 1.1rem;            /* Reduced font size (from 1.5rem) */
+  padding: 4px 12px;         /* Padding to create the rectangle shape */
+  display: inline-block;      /* Wraps the box tightly around the text */
+  text-align: left;
+  margin-bottom: 8px;
+  border-bottom: 1px solid blue;
+  
+  color: #003366;             /* Original dark blue text color */
+  background-color: #e6f0ff;  /* Light shade (matches your blue theme) */
+  border-radius: 4px;         /* Slight rounding for a modern look */
+  text-decoration: none;      /* Removes the underline */
+  font-weight: 500;           /* Optional: adds weight to make small text readable */
+}
+  
+.behaves{
+}
+
+.behaves p{
+font-size: 1rem;      /* Roughly 19px */ 
+text-align: left;       /* Explicitly left aligned */
+color: #555555; 
+  margin-top: 5px; 
+  margin-bottom: 5px; 
+  
+}
+
+.behaves ul {
+padding-left: 40px;     /* More indent to show hierarchy */
+margin-top:5px;
+margin-bottom:10px;
 }
 
