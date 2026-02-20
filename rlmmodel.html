@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntrofin - Enterprise RLM Architecture Loop</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .code-container {
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 1000px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .window-header {
+            background-color: #333;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .dots {
+            display: flex;
+            gap: 8px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+        .title {
+            margin-left: 15px;
+            color: #888;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        pre {
+            margin: 0 !important;
+            padding: 20px !important;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 0 0 8px 8px !important;
+            background: transparent !important;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="code-container">
+        <div class="window-header">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="title">RLM_Enterprise_Architecture.js</div>
+        </div>
+        
+<pre><code class="language-javascript">/**
+ * ============================================================================
+ * THE OMNI-CHANNEL FRONT END
+ * ============================================================================
+ */
+IF (Customer_Engagement == 'Active') {
+    // UI/API Layer
+    Render = "OmniStudio OmniScript + Flexcard";
+    Execute = "Omnistudio Data Mapper + Integration Procedure";
+    Create = "Lead -> Account + Contact -> Opportunity";
+    
+    // Evaluate Eligibility
+    Execute = "Qualification Procedure + Discovery Procedure"; 
+}
+
+/**
+ * ============================================================================
+ * STEP 1: PRODUCT CATALOGUE MANAGEMENT (PCM)
+ * How the product is structured and governed before it is priced.
+ * ============================================================================
+ */
+IF (Product.Type == 'Bundle') {
+    Apply = "Product Component Group + Product Relationship Type";
+    Execute = "Product Configuration Flow -> Product Configuration Rule";
+}
+Map = "Product Attribute Scope -> Product Attribute Mapped Scope";
+
+// THE FORK: Defining the Commercial Construct
+IF (ProductSellingModel == 'OneTime') {
+    Define = "Hardware/License Category";
+    Apply = "Attribute Definition (e.g., Color, Storage Size)";
+    
+} ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+    Define = "Subscription Category";
+    Apply = "Proration Policy"; // Essential for mid-month start dates
+    Apply = "Attribute Definition (e.g., SLA Level, Seats)";
+    
+} ELSE IF (ProductSellingModel == 'Usage') {
+    Define = "Consumption Category";
+    Create = "Consumption Schedule"; // Defines the buckets (e.g., 0-100GB, 101-500GB)
+    Create = "Transaction Usage Entitlement"; // Defines what they are allowed to consume
+    
+} ELSE IF (ProductSellingModel == 'Milestone') {
+    Define = "Service/Project Category";
+    Apply = "Attribute Definition (e.g., Number of Consultants, Region)";
+}
+
+/**
+ * ============================================================================
+ * STEP 2: PRICING OPERATIONAL CONSOLE & RATE MANAGEMENT
+ * Calculating the financial obligation (Gross to Net).
+ * ============================================================================
+ */
+Execute = "Pricing Procedure";
+Log = "Price Waterfall"; // Audits every discount applied
+
+IF (ProductSellingModel == 'OneTime') {
+    Execute = "Price Book Entry (Standard Unit Price)";
+    Apply = "Bundle Based Adjustment"; // E.g., 10% off hardware if bought in bundle
+    Calculate = "Derived Price"; 
+    
+} ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+    Execute = "Price Book Entry (Monthly/Annual Price)";
+    Apply = "Price Adjustment Schedule -> Price Adjustment Tier"; // E.g., Ramp Pricing
+    Apply = "Price Revision Policy"; // Defines rules for renewal uplifts
+    
+} ELSE IF (ProductSellingModel == 'Usage') {
+    // Usage decouples Price Book from the actual billing rate
+    Execute = "Rate Card -> Rate Card Entry"; // E.g., $0.05 per API call
+    Execute = "Index Rate + Binding Object Rate Adjustment"; // For dynamic market rates
+    
+} ELSE IF (ProductSellingModel == 'Milestone') {
+    Execute = "Price Book Entry (Total Project Value or Blended Hourly Rate)";
+    Calculate = "Cost Book -> Cost Book Entry"; // Critical for Services margin tracking
+}
+
+// Finalize the Sales construct
+Create = "Quote -> Quote Line Item Recipient"; // Maps who actually receives the item
+
+/**
+ * ============================================================================
+ * STEP 3: SALESFORCE CONTRACTS (CLM)
+ * The legal agreement and price lock-in.
+ * ============================================================================
+ */
+IF (Quote.Status == 'Accepted') {
+    Create = "Salesforce Contract + Sales Contract Line";
+    Design = "Document Template Designer -> Document Template";
+    Inject = "Document Clause Set -> Document Clause";
+
+    IF (ProductSellingModel == 'OneTime') {
+        Inject = "Document Clause (Hardware Warranty & Liability)";
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Inject = "Document Clause (Auto-Renewal Terms & SLA Guarantees)";
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Inject = "Document Clause (True-up rules & Overage Penalties)";
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        Inject = "Document Clause (Statement of Work & Acceptance Criteria)";
+    }
+
+    Generate = "Generated Document";
+    Execute = "Omni Electronic Signature Template";
+}
+
+/**
+ * ============================================================================
+ * STEP 4: DYNAMIC REVENUE ORCHESTRATOR (DRO)
+ * Order Decomposition and Fulfillment tracking.
+ * ============================================================================
+ */
+IF (Contract.Status == 'Activated') {
+    Create = "Order + Order Summary";
+    Execute = "Product Fulfillment Decomposition Rule"; // Splits commercial bundle into tech components
+    Create = "Orchestration Plan + Orchestration Run";
+
+    IF (ProductSellingModel == 'OneTime') {
+        Create = "Fulfillment Order -> Fulfillment Asset -> Fulfillment Step (Type: Shipping/Logistics)";
+        Verify = "Fulfillment Step Dependency (Wait for warehouse scan)";
+        
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Create = "Fulfillment Order -> Fulfillment Asset -> Fulfillment Step (Type: Tenant Provisioning)";
+        Execute = "Orchestration Work Item (API Callout to SaaS platform)";
+        
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Create = "Fulfillment Order -> Fulfillment Step (Type: Meter Activation)";
+        Execute = "Orchestration Work Item (Enable Data Ingestion endpoints)";
+        
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        // Here, steps align directly with billing triggers
+        Create = "Fulfillment Step (Kickoff)";
+        Create = "Fulfillment Step (UAT Sign-off)";
+        Create = "Fulfillment Step (Go-Live)";
+        Verify = "Fulfillment Step Dependency (Cannot start UAT until Kickoff is complete)";
+    }
+}
+
+/**
+ * ============================================================================
+ * STEP 5: REVENUE LIFE CYCLE MANAGEMENT (ASSETIZATION)
+ * The permanent, post-sale source of truth.
+ * ============================================================================
+ */
+IF (Fulfillment Step.Status == 'Completed') {
+    
+    IF (ProductSellingModel == 'OneTime') {
+        Create = "Asset (Static record)";
+        // End of lifecycle changes unless it's a Return Order
+        
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Create = "Asset State Period (Tracks MRR, Quantity, Term)";
+        // If customer amends later:
+        Create = "Asset Action (Upsell/Downsell/Renew) -> Asset Action Source"; 
+        
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Create = "Asset State Period (Active Status)";
+        Link = "Usage Resource (Ties the physical/digital meter to the Asset)";
+        
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        Create = "Asset (Represents the active Project/SOW)";
+    }
+}
+
+/**
+ * ============================================================================
+ * STEP 6: FINANCIAL OPERATIONS (BILLING, TAX, PAYMENTS & REV REC)
+ * Converting fulfilled assets and consumption into cash and recognized revenue.
+ * ============================================================================
+ */
+IF (Billing_Period == 'Active' || Orchestration_Trigger == 'True') {
+    
+    Calculate = "Tax Engine -> Tax Policy -> Tax Treatment";
+    
+    IF (ProductSellingModel == 'OneTime') {
+        Generate = "Invoice (Immediate, Full Amount)";
+        Create = "Finance Transaction -> Finance Balance Snapshot (Immediate Rev Rec)";
+        
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Generate = "Invoice (Recurring based on Asset State Period)";
+        Create = "Finance Transaction -> Finance Balance Snapshot (Amortized Rev Rec over time)";
+        
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        // Requires Rating Engine before Invoicing
+        Execute = "Rating Discovery Procedure -> Usage Resource";
+        Calculate = "Binding Object Rate Adjustment x Consumed Units";
+        Generate = "Invoice (Variable Amount)";
+        Create = "Finance Transaction -> Finance Balance Snapshot (Recognize exactly what was invoiced)";
+        
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        // Blocked until DRO signals completion
+        IF (Fulfillment Step(Go-Live).Status == 'Completed') {
+            Generate = "Invoice (Release funds tied to this milestone)";
+            Create = "Finance Transaction -> Finance Balance Snapshot (Percentage of Completion Rev Rec)";
+        }
+    }
+
+    // Payment Processing
+    Route = "Payment Gateway -> Digital Wallet / Card Payment Method";
+    Create = "Payment";
+    
+    // Exception Handling
+    IF (Dispute == 'True') {
+        Create = "Credit Memo -> Refund";
+    }
+}
+
+/**
+ * END OF ENTERPRISE LOOP
+ */</code></pre>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</body>
+</html>
