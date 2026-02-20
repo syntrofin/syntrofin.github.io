@@ -74,13 +74,13 @@
 </p>
 
 <p class="enterprise-option"> IF (Customer_Engagement == 'Active') { </p>
-   <p class="helptext">UI/API Layer </p>
+   <p class="helptext">//UI/API Layer </p>
 	
     Render = "OmniStudio OmniScript + Flexcard";  <br>  
     Execute = "Omnistudio Data Mapper + Integration Procedure";  <br>
     Create = "Lead -> Account + Contact -> Opportunity";  <br>
     
-   <p class="helptext">Evaluate Eligibility </p>
+   <p class="helptext">//Evaluate Eligibility </p>
     Execute = "Qualification Procedure + Discovery Procedure";  <br> 
 }
 
@@ -108,15 +108,15 @@ Map = "Product Attribute Scope -> Product Attribute Mapped Scope";  <br>
 <p class="enterprise-option"> } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) { </p>
     Define = "Subscription Category";  <br>
     Apply = "Proration Policy";  <br>
-<p class="helptext">Essential for mid-month start dates </p>
+<p class="helptext">//Essential for mid-month start dates </p>
     Apply = "Attribute Definition (e.g., SLA Level, Seats)";  <br>
     
 <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Usage') { </p>
     Define = "Consumption Category";  <br>
     Create = "Consumption Schedule";  <br>
-<p class="helptext">Defines the buckets (e.g., 0-100GB, 101-500GB) </p>
+<p class="helptext">//Defines the buckets (e.g., 0-100GB, 101-500GB) </p>
     Create = "Transaction Usage Entitlement";  <br>
-<p class="helptext">Defines what they are allowed to consume </p>
+<p class="helptext">//Defines what they are allowed to consume </p>
     
 <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Milestone') { </p>
     Define = "Service/Project Category";  <br>
@@ -134,37 +134,37 @@ Map = "Product Attribute Scope -> Product Attribute Mapped Scope";  <br>
 
 Execute = "Pricing Procedure";  <br>
 Log = "Price Waterfall";  <br>
-<p class="helptext">Audits every discount applied </p>
+<p class="helptext">//Audits every discount applied </p>
 
 <p class="enterprise-option"> IF (ProductSellingModel == 'OneTime') { </p>
     Execute = "Price Book Entry (Standard Unit Price)";  <br>
     Apply = "Bundle Based Adjustment";  <br>
-<p class="helptext">E.g., 10% off hardware if bought in bundle </p>
+<p class="helptext">//E.g., 10% off hardware if bought in bundle </p>
     Calculate = "Derived Price";  <br> 
     
 <p class="enterprise-option"> } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) { </p>
     Execute = "Price Book Entry (Monthly/Annual Price)";  <br>
     Apply = "Price Adjustment Schedule -> Price Adjustment Tier";  <br>
-<p class="helptext">E.g., Ramp Pricing (Year 1: $10, Year 2: $15) </p>
+<p class="helptext">//E.g., Ramp Pricing (Year 1: $10, Year 2: $15) </p>
     Apply = "Price Revision Policy";  <br>
-<p class="helptext">Defines rules for renewal uplifts </p>
+<p class="helptext">//Defines rules for renewal uplifts </p>
     
 <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Usage') { </p>
-   <p class="helptext">Usage decouples Price Book from the actual billing rate </p>
+   <p class="helptext">//Usage decouples Price Book from the actual billing rate </p>
     Execute = "Rate Card -> Rate Card Entry";  <br>
-<p class="helptext">E.g., $0.05 per API call </p>
+<p class="helptext">//E.g., $0.05 per API call </p>
     Execute = "Index Rate + Binding Object Rate Adjustment";  <br>
-<p class="helptext">For dynamic market rates </p>
+<p class="helptext">//For dynamic market rates </p>
     
 <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Milestone') { </p>
     Execute = "Price Book Entry (Total Project Value or Blended Hourly Rate)";  <br>
     Calculate = "Cost Book -> Cost Book Entry";  <br>
-<p class="helptext">Critical for Services margin tracking </p>
+<p class="helptext">//Critical for Services margin tracking </p>
 }
 
 // Finalize the Sales construct
 Create = "Quote -> Quote Line Item Recipient";  <br>
-<p class="helptext">Maps who actually receives the item </p>
+<p class="helptext">//Maps who actually receives the item </p>
 
 <p class="enterprise-step">
 /**
@@ -207,7 +207,7 @@ Create = "Quote -> Quote Line Item Recipient";  <br>
 <p class="enterprise-option-outer"> IF (Contract.Status == 'Activated') { </p>
     Create = "Order + Order Summary";  <br>
     Execute = "Product Fulfillment Decomposition Rule";  <br>
-<p class="helptext">Splits commercial bundle into tech components </p>
+<p class="helptext">//Splits commercial bundle into tech components </p>
     Create = "Orchestration Plan + Orchestration Run";  <br>
 
     <p class="enterprise-option"> IF (ProductSellingModel == 'OneTime') { </p>
@@ -223,7 +223,7 @@ Create = "Quote -> Quote Line Item Recipient";  <br>
         Execute = "Orchestration Work Item (Enable Data Ingestion endpoints)";  <br>
         
     <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Milestone') { </p>
-       <p class="helptext">Here, steps align directly with billing triggers </p>
+       <p class="helptext">//Here, steps align directly with billing triggers </p>
         Create = "Fulfillment Step (Kickoff)";  <br>
         Create = "Fulfillment Step (UAT Sign-off)";  <br>
         Create = "Fulfillment Step (Go-Live)";  <br>
@@ -243,11 +243,11 @@ Create = "Quote -> Quote Line Item Recipient";  <br>
     
     <p class="enterprise-option"> IF (ProductSellingModel == 'OneTime') { </p>
         Create = "Asset (Static record)";  <br>
-       <p class="helptext">End of lifecycle changes unless it's a Return Order </p>
+       <p class="helptext">//End of lifecycle changes unless it's a Return Order </p>
         
     <p class="enterprise-option"> } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) { </p>
         Create = "Asset State Period (Tracks MRR, Quantity, Term)";  <br>
-       <p class="helptext">If customer amends later: </p>
+       <p class="helptext">//If customer amends later: </p>
         Create = "Asset Action (Upsell/Downsell/Renew) -> Asset Action Source";  <br> 
         
     <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Usage') { </p>
@@ -281,25 +281,25 @@ Create = "Quote -> Quote Line Item Recipient";  <br>
         Create = "Finance Transaction -> Finance Balance Snapshot (Amortized Rev Rec over time)";  <br>
         
     <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Usage') { </p>
-       <p class="helptext">Requires Rating Engine before Invoicing </p>
+       <p class="helptext">//Requires Rating Engine before Invoicing </p>
         Execute = "Rating Discovery Procedure -> Usage Resource";  <br>
         Calculate = "Binding Object Rate Adjustment x Consumed Units";  <br>
         Generate = "Invoice (Variable Amount)";  <br>
         Create = "Finance Transaction -> Finance Balance Snapshot (Recognize exactly what was invoiced)";  <br>
         
     <p class="enterprise-option"> } ELSE IF (ProductSellingModel == 'Milestone') { </p>
-       <p class="helptext">Blocked until DRO signals completion </p>
+       <p class="helptext">//Blocked until DRO signals completion </p>
         <p class="enterprise-option"> IF (Fulfillment Step(Go-Live).Status == 'Completed') { </p>
             Generate = "Invoice (Release funds tied to this milestone)";  <br>
             Create = "Finance Transaction -> Finance Balance Snapshot (Percentage of Completion Rev Rec)";  <br>
         }
     }
 
-   <p class="helptext">Payment Processing </p>
+   <p class="helptext">//Payment Processing </p>
     Route = "Payment Gateway -> Digital Wallet / Card Payment Method";  <br>
     Create = "Payment";  <br>
     
-   <p class="helptext">Exception Handling </p>
+   <p class="helptext">//Exception Handling </p>
     <p class="enterprise-option"> IF (Dispute == 'True') { </p>
         Create = "Credit Memo -> Refund";  <br>
     }
