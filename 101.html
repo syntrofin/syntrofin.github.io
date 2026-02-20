@@ -23,74 +23,13 @@
     <!-- JavaScript -->
     <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
     <!-- CSS -->
+    <link href="./syntrofin_files/cssjs/ibmrlm.css" rel="stylesheet">
     
-    <SCRIPT>
-      html {
-        scroll - behavior: smooth;
-      }
-
-
-    /* Style the table-of-contents */
-    .table-of-syntrofin-files {
-        width: fit-content;    /* Shrinks box to the size of the longest link */
-        min-width: 350px;      /* Stops it from being too narrow */
-        max-width: 80%;        /* Responsive for mobile */
-        margin: 40px auto;     /* THE MAGIC: Centers the box horizontally */
-        padding: 30px;
-        text-align: center;    /* This centers the "Table of Contents" H2 and H3s */
-        background: #fdfdfd;
-        border: 1px solid #eee;
-        border-radius: 15px;
-        font-size: 16px;
-    }
-    
-    .table-of-syntrofin-files ul {
-        display: table;        /* Keeps the list centered as a block... */
-        margin: 10px auto 25px auto; /* ...while the contents stay left */
-        padding: 0;
-        list-style: none;
-        text-align: left;      /* FORCES TEXT LEFT */
-    }
-    
-    .table-of-syntrofin-files li {
-        text-align: left !important; /* The '!important' ensures 'Meta Data' follows the rule */
-        margin-bottom: 8px;
-        padding-left: 20px;
-        position: relative;
-    }
-    
-    /* 3. Add a nice bullet point since we removed default list-style */
-    .table-of-syntrofin-files li::before {
-        content: "•";
-        color: #007bff;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-    
-    .table-of-syntrofin-files h2 {
-        margin-top: 0;
-        font-size: 1.2rem;
-        color: #333;
-    }
-    
-    /* Style the links */
-    .table-of-syntrofin-files a {
-        text-decoration: none;
-        color: #007bff;
-        font-weight: 500;
-    }
-    
-    .table-of-syntrofin-files a:hover {
-        text-decoration: underline;
-        color: #0056b3;
-    }
-    </SCRIPT>
   </head>
   <body>
     <br>
     <br>
-    <section class="table-of-syntrofin-files">
+    <section id="table-of-contents">
       <div>
         <h2>Table of Contents</h2>
         <h3 style="margin-top: 20px;">RLM Technician</h3>
