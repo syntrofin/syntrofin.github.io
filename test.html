@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__syntrofin_in fontawesome-i2svg-active fontawesome-i2svg-complete">
+  <head>
+    <!-- charset and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- description -->
+    <meta name="description" content="SyntroFin specializes in Quote-to-Cash (Q2C) services, streamlining processes from opportunity to billing. Fix revenue leakage and boost growth today.">
+    <meta name="author" content="SyntroFin">
+    <meta property="og:url" content="http://www.syntrofin.com">
+    <meta property="org:description" content="SyntroFin specializes in Quote-to-Cash (Q2C) services, streamlining processes from opportunity to billing. Fix revenue leakage and boost growth today.">
+    <meta property="og:title" content="SyntroFin - Enterprise Revenue Life Cycle Management Services">
+    <!-- title -->
+    <title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
+    	  <!-- CSS -->
+   <link href="./syntrofin_files/cssjs/discovery.css" rel="stylesheet">
+   
+  </head>
+  <body>
+<section>
+       <div class="pattern-type">
+           <div class="pattern-type-title" id="pricebookcfg">
+              <p class="pttitle">Sun: &#127981;&nbsp;Price Book Configuration</p>
+            </div>
+            
+  
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Standard Price Book</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Default Salesforce price book; every product must have a standard price.
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Required for all products</li>
+                <li>Acts as the “base price” reference</li>
+                <li>No customer-specific pricing</li>
+                <li>No currency overrides unless multi-currency enabled</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Internal reference</li>
+                <li>Default for quotes when no custom price book is selected</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <p>Standard price is mandatory — all other price books derive from it.</p>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Custom Price Book</p>
+              <p>
+                <strong class="purpose">Definition:</strong> User-defined price book for a specific context.
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Can override standard price</li>
+                <li>Assigned to accounts or quotes</li>
+                <li> Can be <strong>active or inactive</strong>
+                </li>
+                <li>Supports multiple currencies</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Account-specific pricing</li>
+                <li>Channel / partner pricing</li>
+                <li>Promotions or temporary discounts</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <p>Multiple custom price books can exist for the same product; quote must reference the right one.</p>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Active vs Inactive Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Price books can be <strong>active</strong> (usable for quoting) or <strong>inactive</strong> (archived or historical).
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Historical deals</li>
+                <li>Phased-out products</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <ul>
+                <li> Inactive price books <strong>cannot be used in new quotes</strong> , but existing orders retain references. </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Multi-Currency Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Price books configured per currency.
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Allows different prices for same product per currency</li>
+                <li>Works with Salesforce multi-currency org</li>
+                <li>Auto-converts if quote currency differs from price book currency</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Global sales</li>
+                <li>Localized pricing</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <ul>
+                <li>Always tie price book currency to quote currency to avoid mispricing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Tiered / Volume-Based Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Price changes based on quantity or volume purchased.
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Quantity thresholds</li>
+                <li>Step or block pricing</li>
+                <li>Applies per quote line</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Discounts for bulk orders</li>
+                <li>Subscription seat pricing</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <ul>
+                <li> Often implemented with <strong>price rules or CPQ block pricing tables</strong> , not pure price book lines </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Contract / Subscription Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Price book tied to <strong>specific contract terms or subscription models</strong> .
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Term-specific prices</li>
+                <li>Supports renewals and amendments</li>
+                <li>Can lock pricing for a subscription period</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>SaaS annual vs monthly billing</li>
+                <li>Enterprise agreements</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <ul>
+                <li> Tightly integrated with <strong>Subscription and Order objects</strong>
+                </li>
+                <li>Misalignment breaks renewal and revenue recognition</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Partner / Channel Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Price books for specific <strong>partners, resellers, or channels</strong> .
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Custom margins / discounts per partner</li>
+                <li>Optional visibility restrictions</li>
+                <li>Supports rebates and incentive calculation</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Indirect sales models</li>
+                <li>Deal registration</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <ul>
+                <li>Quote must reference correct partner price book; otherwise CPQ pricing errors occur</li>
+              </ul>
+            </div>
+          </div>
+         
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Promotional / Discounted Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Temporary price books for campaigns or promotions.
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Limited time validity</li>
+                <li>Overrides standard or custom price</li>
+                <li>Often inactive after promotion</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Holiday campaigns</li>
+                <li>Marketing incentives</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Architect Note</p>
+              <ul>
+                <li>Good practice: copy existing price book → modify → revert</li>
+                <li>Avoid editing active price book for live deals</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pattern">
+            <div class="pattitle">
+              <p>Advanced / Dynamic Price Books</p>
+              <p>
+                <strong class="purpose">Definition:</strong> Programmatically populated price books, often via CPQ rules or external ERP integration.
+              </p>
+            </div>
+            <div class="behaves">
+              <p>Characteristics</p>
+              <ul>
+                <li>Prices calculated at quote time</li>
+                <li>Can include attribute-driven or dynamic bundles</li>
+                <li>Supports region-specific or account-specific logic</li>
+              </ul>
+            </div>
+            <div class="behaves">
+              <p>Use Case</p>
+              <ul>
+                <li>Large enterprise with hundreds of SKUs</li>
+                <li>Dynamic bundles and hybrid products</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+</section> 
+  </body>
+</html>
