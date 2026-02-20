@@ -35,20 +35,25 @@
   <style>
 
     body{
-      width:80%;
+      	width:80%;
+		padding-left: 80px; /* Pushes all body content */
+    	margin: 0;          /* Good practice to reset default browser margins
     }
 
     .enterprise-step{
-      padding-left:20px;
+		margin-left: -60px; 
+    	display: block;
     }
 
     .enterprise-option-outer{
-    	padding-left:40px;
+    	margin-left: -40px; 
+    	display: block;
 		color:#A52A2A;
     }
 
     .enterprise-option{
-    	padding-left:60px;
+    	margin-left: -20px; 
+    	display: block;
 		color:#4676A9;
     }
     
@@ -69,6 +74,7 @@
 
 <p class="enterprise-option"> IF (Customer_Engagement == 'Active') { </p>
    <p class="helptext">UI/API Layer </p>
+	
     Render = "OmniStudio OmniScript + Flexcard";  <br>  
     Execute = "Omnistudio Data Mapper + Integration Procedure";  <br>
     Create = "Lead -> Account + Contact -> Opportunity";  <br>
