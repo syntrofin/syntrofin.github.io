@@ -18,8 +18,10 @@ h1{
   flex-wrap: wrap;      
   gap: 16px;            
 }
-
 .pattern-type-title {
+}
+
+.pttitle {
   flex: 0 0 100%;       /* This "pushes" the other divs to the next line */
   font-size: 1.8rem;      /* Roughly 24px */
 padding-left: 10px;     /* Indent from the left edge */
@@ -39,12 +41,12 @@ padding-top:60px;
 }
 
 .pattitle {
-  min-width:300px;
+  width:100%
   font-size: 1.1rem;            /* Reduced font size (from 1.5rem) */
-  padding: 4px 12px;         /* Padding to create the rectangle shape */
+  padding: 2px 5px;         /* Padding to create the rectangle shape */
   display: inline-block;      /* Wraps the box tightly around the text */
   text-align: left;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   border-bottom: 1px solid blue;
   
   color: #003366;             /* Original dark blue text color */
