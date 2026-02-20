@@ -4,12 +4,63 @@ scroll-padding-top: 60px; /* Offset for anchors */
 }
   
 body {
-    padding: 20px 40px;
-    font-family: sans-serif;
+margin: 40px 20px;
+font-family: sans-serif;
+background-color: white;
 }
-  
+
 h1{
-  margin-top: 0em;
+color: #12164d;
+text-align:center; 
+}
+h2{
+text-align:center;
+/*
+background-color: #00a680;
+  color: white;
+*/
+padding: 15px 20px;
+  font-weight: bold;
+}
+.rowdiv {
+}
+
+.columndiv {
+}
+
+.columntitle {
+margin: 0;
+padding: 15px 20px;
+font-weight: bold;
+}
+ 
+.columnlist {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  line-height: 1.4;
+  color: #333;
+}
+
+.columnlist li {
+  margin-bottom: 8px;
+}
+
+/* Style specifically for text inputs inside list items */
+.and-other-input {
+  width: 300px;
+  /* Makes it wider */
+  height: 35px;
+  /* Makes it taller */
+  padding: 5px 10px;
+  /* Adds space inside for text */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* Optional: Rounds the corners */
+  font-size: 16px;
+  /* Makes the text easier to read */
+  vertical-align: middle;
+  /* Aligns it nicely with the checkbox */
 }
 
 
