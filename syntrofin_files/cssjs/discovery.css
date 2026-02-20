@@ -23,7 +23,7 @@ h1{
 
 .pttitle {
   flex: 0 0 100%;       /* This "pushes" the other divs to the next line */
-  font-size: 1.8rem;      /* Roughly 24px */
+font-size: 1.8rem;      /* Roughly 24px */
 padding-left: 10px;     /* Indent from the left edge */
 text-align: center;       /* Explicitly left aligned */
 margin-bottom: 5px;     /* Small gap before the detail */
@@ -42,18 +42,21 @@ padding-top:60px;
 
 .pattitle {
   width:100%
-  font-size: 1.1rem;            /* Reduced font size (from 1.5rem) */
-  padding: 2px 5px;         /* Padding to create the rectangle shape */
+  font-size: 1.4rem;            
+  text-decoration: none;      /* Removes the underline */
+  font-weight: 500;           /* Optional: adds weight to make small text readable */
   display: inline-block;      /* Wraps the box tightly around the text */
-  text-align: left;
+  text-align: center;
+  /*
+  padding: 2px 5px;         
   margin-bottom: 5px;
   border-bottom: 1px solid blue;
   
-  color: #003366;             /* Original dark blue text color */
-  background-color: #e6f0ff;  /* Light shade (matches your blue theme) */
-  border-radius: 4px;         /* Slight rounding for a modern look */
-  text-decoration: none;      /* Removes the underline */
-  font-weight: 500;           /* Optional: adds weight to make small text readable */
+  color: #003366;            
+  background-color: #e6f0ff;  
+  border-radius: 4px;         
+  */
+
 }
   
 .behaves{
