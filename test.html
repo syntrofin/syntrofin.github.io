@@ -520,24 +520,75 @@
 <section>
 <div class="section-title">RLM Flows Charts</div>
 <br>
+
+	
+<!-- FIRST SVG SECTION -->
 <h2>Flowchart 1</h2>
 <br>
 	
-<!-- Container to hold both the buttons and the SVG -->
-<div style="position: relative; width: 100vw; overflow: hidden;">
-  
-  <!-- UI Buttons Overlay -->
-  <div style="position: absolute; top: 20px; left: 20px; z-index: 100; display: flex; gap: 10px;">
-    <button id="zoom-in" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Zoom In (+)</button>
-    <button id="zoom-out" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Zoom Out (-)</button>
+<div style="position: relative; width: 100vw; margin-bottom: 20px;">
+  <div style="text-align: center; padding: 10px;">
+    <button id="zoom-in-1">Zoom In 1 (+)</button>
+    <button id="zoom-out-1">Zoom Out 1 (-)</button>
   </div>
+  <object id="svg1" data="./img/RLM-Flowchart1.svg" type="image/svg+xml" style="width: 100%; display: block;"></object>
+</div>
 
-  <!-- Using <object> allows JS access to the internal SVG data -->
-  <object id="svgObject" data="./syntrofin_files/img/RLM-Flowchart1.svg" type="image/svg+xml" 
-          style="width: 100%; height: auto; display: block;">
-  </object>
+<!-- SECOND SVG SECTION -->
+<h2>Flowchart 2</h2>
+<br>
+	
+<div style="position: relative; width: 100vw;">
+  <div style="text-align: center; padding: 10px;">
+    <button id="zoom-in-2">Zoom In 2 (+)</button>
+    <button id="zoom-out-2">Zoom Out 2 (-)</button>
+  </div>
+  <object id="svg2" data="./img/RLM-Flowchart2.svg" type="image/svg+xml" style="width: 100%; display: block;"></object>
+</div>
+
+<!-- THIRD SVG SECTION -->
+<h2>Flowchart 3</h2>
+<br>
+	
+<div style="position: relative; width: 100vw;">
+  <div style="text-align: center; padding: 10px;">
+    <button id="zoom-in-3">Zoom In 3 (+)</button>
+    <button id="zoom-out-3">Zoom Out 3 (-)</button>
+  </div>
+  <object id="svg3" data="./img/RLM-Flowchart3.svg" type="image/svg+xml" style="width: 100%; display: block;"></object>
 </div>
 
 </section>
+
+<!-- SCRIPT AT THE BOTTOM -->
+<script>
+window.onload = function() {
+  setupZoom('svg1', 'zoom-in-1', 'zoom-out-1');
+  setupZoom('svg2', 'zoom-in-2', 'zoom-out-2');
+  setupZoom('svg2', 'zoom-in-3', 'zoom-out-3');
+};
+
+function setupZoom(objId, inId, outId) {
+  const obj = document.getElementById(objId);
+  const svgItem = obj.contentDocument.querySelector('svg');
+  let vb = svgItem.viewBox.baseVal;
+  let view = { x: vb.x, y: vb.y, w: vb.width, h: vb.height };
+  const baseW = vb.width;
+
+  document.getElementById(inId).onclick = () => {
+    view.w *= 0.8; view.h *= 0.8;
+    view.x += (view.w * 0.2) / 2;
+    svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
+  };
+
+  document.getElementById(outId).onclick = () => {
+    if (view.w < baseW) {
+      view.w /= 0.8; view.h /= 0.8;
+      if (view.w > baseW) { view.w = baseW; view.x = 0; }
+      svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
+    }
+  };
+}
+</script>
 </body>
 </html>
