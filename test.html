@@ -563,32 +563,72 @@
 <!-- SCRIPT AT THE BOTTOM -->
 <script>
 window.onload = function() {
+  // Ensure IDs match your HTML buttons and objects
   setupZoom('svg1', 'zoom-in-1', 'zoom-out-1');
   setupZoom('svg2', 'zoom-in-2', 'zoom-out-2');
-  setupZoom('svg2', 'zoom-in-3', 'zoom-out-3');
+	setupZoom('svg2', 'zoom-in-3', 'zoom-out-3');
 };
 
 function setupZoom(objId, inId, outId) {
   const obj = document.getElementById(objId);
-  const svgItem = obj.contentDocument.querySelector('svg');
-  let vb = svgItem.viewBox.baseVal;
-  let view = { x: vb.x, y: vb.y, w: vb.width, h: vb.height };
-  const baseW = vb.width;
+  if (!obj) return;
 
-  document.getElementById(inId).onclick = () => {
-    view.w *= 0.8; view.h *= 0.8;
-    view.x += (view.w * 0.2) / 2;
+  // Access the SVG inside the <object>
+  const svgItem = obj.contentDocument.querySelector('svg');
+  const vb = svgItem.viewBox.baseVal;
+  
+  // Constants based on the original file dimensions
+  const baseW = vb.width;
+  const baseH = vb.height;
+
+  // 1. INITIAL STATE: Show at 50% (Camera sees 50% of the units)
+  let view = {
+    w: baseW * 0.5,
+    h: baseH * 0.5,
+    x: baseW * 0.25, // Center: (1 - 0.5) / 2
+    y: baseH * 0.25
+  };
+
+  // Limits based on your request
+  const minWidth = baseW * 0.05; // Zoom In Limit (approx 100vw detail)
+  const maxWidth = baseW * 4.0;  // Zoom Out Limit (Shows image at 25% size)
+
+  const update = () => {
     svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
   };
 
+  // Apply the 50% starting view immediately
+  update();
+
+  // 2. ZOOM IN (Smaller viewBox = Larger image)
+  document.getElementById(inId).onclick = () => {
+    if (view.w > minWidth) {
+      const oldW = view.w;
+      const oldH = view.h;
+      view.w *= 0.8;
+      view.h *= 0.8;
+      // Re-center
+      view.x += (oldW - view.w) / 2;
+      view.y += (oldH - view.h) / 2;
+      update();
+    }
+  };
+
+  // 3. ZOOM OUT (Larger viewBox = Smaller image)
   document.getElementById(outId).onclick = () => {
-    if (view.w < baseW) {
-      view.w /= 0.8; view.h /= 0.8;
-      if (view.w > baseW) { view.w = baseW; view.x = 0; }
-      svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
+    if (view.w < maxWidth) {
+      const oldW = view.w;
+      const oldH = view.h;
+      view.w /= 0.8;
+      view.h /= 0.8;
+      // Re-center
+      view.x += (oldW - view.w) / 2;
+      view.y += (oldH - view.h) / 2;
+      update();
     }
   };
 }
 </script>
+	
 </body>
 </html>
