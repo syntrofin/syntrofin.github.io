@@ -26,119 +26,128 @@
     <!-- JavaScript -->
     <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
 	
-	 <!-- CSS 
-	 <link href="./syntrofin_files/cssjs/rlmframework.css" rel="stylesheet">
-    -->
-	  <!-- override locally styles, important -->
+	 <!-- CSS -->
 	<style>
-
-body {
-	width: 90%;
-}
-
-section {
-	width: 90%;
-	margin: 0 auto;
-	padding: 20px 20px;
-}
-	  h2{
-		  text-align:center
-	  }
-	 .section-title { text-align: center; font-size: 28px; font-weight: normal; margin-bottom: 15px; color: #333;}
-	  .title { text-align: center; font-size: 20px; font-weight: normal; margin-bottom: 5px; color: #333;color:#FFFDD0; }
-
-	li {
-  list-style-type: none;
-}
-li a {
-  text-decoration: none;
-}
+		/* General Layout Fixes */
+		body {
+		    margin: 0;
+		    padding: 0;
+		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		    background-color: #f4f4f4;
+		}
+		
+		section {
+		    width: 90%;
+		    max-width: 1200px; /* Prevents it from getting too wide on huge monitors */
+		    margin: 0 auto;
+		    padding: 20px;
+		    box-sizing: border-box; /* Ensures padding doesn't add to width */
+		}
+		
+		/* Typography */
+		h2 {
+		    text-align: center;
+		}
+		
+		.section-title { 
+		    text-align: center; 
+		    font-size: 28px; 
+		    font-weight: normal; 
+		    margin-bottom: 15px; 
+		    color: #333;
+		}
+		
+		.title { 
+		    text-align: center; 
+		    font-size: 20px; 
+		    font-weight: normal; 
+		    margin-bottom: 5px; 
+		    color: #FFFDD0; 
+		}
+		
+		/* List Styling */
+		li {
+		    list-style-type: none;
+		}
+		
+		li a {
+		    text-decoration: none;
+		}
+		
+		/* Flow Chart Container */
+		.flow-chart {
+		    display: flex;
+		    flex-wrap: wrap; /* Fixed from flex-direction: wrap */
+		    align-items: center;
+		    justify-content: center;
+		    gap: 15px;
+		    color: #333;
+		    width: 100%;
+		}
+		
+		/* Boxes */
+		.box, .box-secondary {
+		    flex: 1 1 250px; /* Grow/Shrink, base size 250px */
+		    max-width: 350px;
+		    border: 2px solid #2c3e50;
+		    border-radius: 4px;
+		    background-color: #fff;
+		    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+		    min-height: 270px;
+		    display: flex;
+		    flex-direction: column;
+		}
+		
 		.box-title {
-	background-color: #2c3e50;
-	color: white;
-	padding: 8px;
-	text-align: center;
-	font-weight: bold;
-	font-size: 0.9rem;
-}
+		    background-color: #2c3e50;
+		    color: white;
+		    padding: 8px;
+		    text-align: center;
+		    font-weight: bold;
+		    font-size: 0.9rem;
+		}
+		
+		/* Grid Container */
+		.split-container {
+		    flex: 2 1 500px; /* Takes more room than single boxes */
+		    display: grid;
+		    /* This makes the grid itself responsive: 1 col on mobile, 2 on desktop */
+		    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+		    gap: 20px;
+		    /* Removed min-width: 550px to stop horizontal scrolling */
+		}
+		
+		/* Arrow Handling */
+		.arrow {
+		    flex: 0 0 auto;
+		    font-size: 24px;
+		    color: #2c3e50;
+		    text-align: center;
+		    padding: 10px;
+		}
+		
+		/* Visual States */
+		.highlight {
+		    border-color: #e67e22;
+		}
+		
+		.output {
+		    border-color: #27ae60;
+		}
+		
+		.states {
+		    padding: 10px;
+		    font-size: 0.8rem;
+		    text-align: center;
+		    border-top: 1px solid #eee;
+		    margin-top: auto; /* Pushes to bottom of box */
+		}
 
-
-
-.flow-chart {
-	display: flex;
-	flex-direction: wrap;
-	align-items: center;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	padding: 20px;
-	color: #333;
-}
-
-.box {
-  flex:1;
-	border: 2px solid #2c3e50;
-	border-radius: 4px;
-	width: 300px;
-	background-color: #fff;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-	min-width: 250px;
-	min-height: 270px;
-}
-
-.split-container {
-  flex:1;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
-		min-width: 550px;
-	min-height: 300px;
-}
-
-    .box-secondary {
-	border: 2px solid #2c3e50;
-	border-radius: 4px;
-	width: 300px;
-	background-color: #fff;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-      	width: 100%;
-	border-color: #34495e;
-			min-width: 250px;
-	min-height: 270px;
-}
-
-.arrow {
-  flex:0.25;
-	font-size: 24px;
-	color: #2c3e50;
-	margin: 10px 0;
-	text-align: center;
-}
-
-
-
-
-.highlight {
-	border-color: #e67e22;
-}
-
-.output {
-	border-color: #27ae60;
-}
-
-.states {
-	padding: 10px;
-	font-size: 0.8rem;
-	text-align: center;
-	border-top: 1px solid #eee;
-}
-
-
-
-
-
-</style>
+	</style>
 </head>
 	
 <body>
+	
 <!-- RLM Flows -->
 <section>
 <div class="section-title">RLM Flows</div>
