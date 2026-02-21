@@ -116,6 +116,12 @@
 		    gap: 20px;
 		    border: 1px solid #2c3e50;
 		}
+
+		.fan-out-line {
+		    flex-basis: 100%; /* Forces the item to take up the full width of the flex row */
+		    height: 30px;       /* use 0px to Make the div invisible if you just want a line break */
+		    margin: 15px 15px;  /* Creates the vertical gap between the top and bottom groups */
+		}
 		
 		/* Arrow Handling */
 		.arrow {
@@ -151,12 +157,7 @@
 <!-- RLM Flows -->
 <section>
 <div class="section-title">RLM Flows</div>
-<hr style="border: 1px #2596be;">
-<br>
-<h3 style="text0align:center"><u>Quote and Order</u></h3>
-<br>
-	
-
+<br><br>
 
 <h2>Quote</h2>
 
@@ -236,6 +237,7 @@
   </div>
 </div>
 
+<br><br>
 	
 <!-- order flow -->
 
@@ -290,7 +292,7 @@
 
 	
   <!-- Fan Out Separator -->
-  <div class="fan-out-line" style="flex:0">
+  <div class="fan-out-line">
     <span>FAN-OUT ▼</span>
   </div>
 
