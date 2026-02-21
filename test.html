@@ -563,71 +563,66 @@
 <!-- SCRIPT AT THE BOTTOM -->
 <script>
 window.onload = function() {
-  // Ensure IDs match your HTML buttons and objects
   setupZoom('svg1', 'zoom-in-1', 'zoom-out-1');
   setupZoom('svg2', 'zoom-in-2', 'zoom-out-2');
-	setupZoom('svg2', 'zoom-in-3', 'zoom-out-3');
+  setupZoom('svg3', 'zoom-in-3', 'zoom-out-3');
 };
 
 function setupZoom(objId, inId, outId) {
   const obj = document.getElementById(objId);
   if (!obj) return;
 
-  // Access the SVG inside the <object>
   const svgItem = obj.contentDocument.querySelector('svg');
   const vb = svgItem.viewBox.baseVal;
   
-  // Constants based on the original file dimensions
   const baseW = vb.width;
   const baseH = vb.height;
 
-  // 1. INITIAL STATE: Show at 50% (Camera sees 50% of the units)
+  // 1. INITIAL STATE: Show at 50% size (ViewBox is TWICE the drawing size)
   let view = {
-    w: baseW * 0.5,
-    h: baseH * 0.5,
-    x: baseW * 0.25, // Center: (1 - 0.5) / 2
-    y: baseH * 0.25
+    w: baseW * 2, 
+    h: baseH * 2,
+    x: -(baseW / 2), // Offset to keep the original drawing centered
+    y: -(baseH / 2)
   };
 
-  // Limits based on your request
-  const minWidth = baseW * 0.05; // Zoom In Limit (approx 100vw detail)
-  const maxWidth = baseW * 4.0;  // Zoom Out Limit (Shows image at 25% size)
+  // Limits
+  const minWidth = baseW;        // Zoom In Limit: Stop at 100% size (100vw)
+  const maxWidth = baseW * 4.0;  // Zoom Out Limit: Stop at 25% size
 
   const update = () => {
     svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
   };
 
-  // Apply the 50% starting view immediately
-  update();
+  update(); // Initialize at 50% size
 
-  // 2. ZOOM IN (Smaller viewBox = Larger image)
+  // 2. ZOOM IN (Stop when viewBox width = original file width)
   document.getElementById(inId).onclick = () => {
     if (view.w > minWidth) {
       const oldW = view.w;
       const oldH = view.h;
       view.w *= 0.8;
       view.h *= 0.8;
-      // Re-center
       view.x += (oldW - view.w) / 2;
       view.y += (oldH - view.h) / 2;
       update();
     }
   };
 
-  // 3. ZOOM OUT (Larger viewBox = Smaller image)
+  // 3. ZOOM OUT (Stop when viewBox width = 4x original file width)
   document.getElementById(outId).onclick = () => {
     if (view.w < maxWidth) {
       const oldW = view.w;
       const oldH = view.h;
       view.w /= 0.8;
       view.h /= 0.8;
-      // Re-center
       view.x += (oldW - view.w) / 2;
       view.y += (oldH - view.h) / 2;
       update();
     }
   };
 }
+
 </script>
 	
 </body>
