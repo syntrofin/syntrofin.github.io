@@ -519,8 +519,25 @@
 <!-- Flowcharts -->
 <section>
 <div class="section-title">RLM Flows Charts</div>
-<br><br>
-	<img src="./syntrofin_files/img/RLM-Flowchart1.svg" class="responsive-svg" alt="RLM Flowchart 1">
+<br>
+<h2>Flowchart 1</h2>
+<br>
+	
+<!-- Container to hold both the buttons and the SVG -->
+<div style="position: relative; width: 100vw; overflow: hidden;">
+  
+  <!-- UI Buttons Overlay -->
+  <div style="position: absolute; top: 20px; left: 20px; z-index: 100; display: flex; gap: 10px;">
+    <button id="zoom-in" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Zoom In (+)</button>
+    <button id="zoom-out" style="padding: 10px 20px; cursor: pointer; font-weight: bold;">Zoom Out (-)</button>
+  </div>
+
+  <!-- Using <object> allows JS access to the internal SVG data -->
+  <object id="svgObject" data="./syntrofin_files/img/RLM-Flowchart1.svg" type="image/svg+xml" 
+          style="width: 100%; height: auto; display: block;">
+  </object>
+</div>
+
 </section>
 </body>
 </html>
