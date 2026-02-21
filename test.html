@@ -78,6 +78,14 @@ section {
 li a {
   text-decoration: none;
 }
+		.box-title {
+	background-color: #2c3e50;
+	color: white;
+	padding: 8px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
 
 	  .flowcontainer {
 		  /*
@@ -180,7 +188,7 @@ li a {
 <div class="flow-chart">
   <!-- Catalog Section -->
   <div class="box">
-    <div class="title">CATALOG OFFERING</div>
+    <div class="box-title">CATALOG OFFERING</div>
     <ul>
       <li>• Products</li>
       <li>• Attributes</li>
@@ -189,11 +197,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Entry Point Section -->
   <div class="box">
-    <div class="title">QUOTE ENTRY POINT</div>
+    <div class="box-title">QUOTE ENTRY POINT</div>
     <ul>
       <li>• UI (Sales / Partner / API)</li>
       <li>• Guided Selling (optional)</li>
@@ -201,11 +209,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Pricing Section -->
   <div class="box">
-    <div class="title">PRICING PROCEDURES</div>
+    <div class="box-title">PRICING PROCEDURES</div>
     <ul>
       <li>• Base Price Determination</li>
       <li>• Discount & Adjustment Logic</li>
@@ -215,11 +223,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Policy Section -->
   <div class="box">
-    <div class="title">POLICY & GOVERNANCE</div>
+    <div class="box-title">POLICY & GOVERNANCE</div>
     <ul>
       <li>• Approval Policies</li>
       <li>• Margin / Discount Thresholds</li>
@@ -227,11 +235,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Artifact Section -->
   <div class="box">
-    <div class="title">SALES INTENT ARTIFACT</div>
+    <div class="box-title">SALES INTENT ARTIFACT</div>
     <ul>
       <li>• Quote</li>
       <li>• Non-binding Prices</li>
@@ -240,11 +248,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Output Section -->
   <div class="box output">
-    <div class="title">OUTPUT PROJECTIONS</div>
+    <div class="box-title">OUTPUT PROJECTIONS</div>
     <ul>
       <li>• Order Preview (Simulation)</li>
       <li>• Revenue Preview (Forecast only)</li>
@@ -260,7 +268,7 @@ li a {
 <div class="flow-chart">
   <!-- Section 1 -->
   <div class="box">
-    <div class="title">INPUT EVENTS</div>
+    <div class="box-title">INPUT EVENTS</div>
     <ul>
       <li>• Accepted Quote (optional)</li>
       <li>• Direct Order</li>
@@ -268,11 +276,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 2 -->
   <div class="box">
-    <div class="title">ORDER NORMALIZATION & CONTROL</div>
+    <div class="box-title">ORDER NORMALIZATION & CONTROL</div>
     <ul>
       <li>• Contract formation</li>
       <li>• Obligation decomposition</li>
@@ -282,12 +290,12 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 3: Two Column Split -->
   <div class="split-container">
     <div class="box-secondary">
-      <div class="title">COMMERCIAL ASSET<br><small>(System of Record)</small></div>
+      <div class="box-title">COMMERCIAL ASSET<br><small>(System of Record)</small></div>
       <ul>
         <li>• What was sold</li>
         <li>• Contractual scope</li>
@@ -296,7 +304,7 @@ li a {
     </div>
 	  
     <div class="box-secondary">
-      <div class="title">OBLIGATION DEFINITION<br><small>(Performance Duties)</small></div>
+      <div class="box-title">OBLIGATION DEFINITION<br><small>(Performance Duties)</small></div>
       <ul>
         <li>• What must be delivered</li>
         <li>• When & how</li>
@@ -305,7 +313,7 @@ li a {
     </div>
   </div>
 
- <div class="arrow">▼</div>   <!-- Center Arrow -->
+ <div class="arrow">▶</div>   <!-- Center Arrow -->
 	
   <!-- Fan Out Separator -->
   <div class="fan-out-line">
@@ -315,7 +323,7 @@ li a {
   <!-- Section 4: Grid Fan-Out -->
   <div class="fan-out-grid">
     <div class="box fan-box">
-      <div class="title">FINANCE / MID-OFFICE</div>
+      <div class="box-title">FINANCE / MID-OFFICE</div>
       <ul>
         <li>• Deferred revenue seeds</li>
         <li>• Margin / COGS hooks</li>
@@ -323,36 +331,36 @@ li a {
       </ul>
     </div>
 	  
- <div class="arrow">▼</div>         <!-- Left Arrow -->
+ <div class="arrow">▶</div>         <!-- Left Arrow -->
 	  
     <div class="box fan-box">
-      <div class="title">REVENUE ENGINE HANDSHAKE</div>
+      <div class="box-title">REVENUE ENGINE HANDSHAKE</div>
       <ul>
         <li>• Recognition rules</li>
         <li>• Timing constraints</li>
         <li>• Reversal boundaries</li>
       </ul>
     </div>
- <div class="arrow">▼</div>
+ <div class="arrow">▶</div>
     <div class="box fan-box">
-      <div class="title">MANUFACTURING / PROVISIONING</div>
+      <div class="box-title">MANUFACTURING / PROVISIONING</div>
       <ul>
         <li>• Build / config freeze</li>
         <li>• BOM / routing references</li>
       </ul>
     </div>
- <div class="arrow">▼</div>
+ <div class="arrow">▶</div>
     <div class="box fan-box">
-      <div class="title">LOGISTICS / FULFILLMENT</div>
+      <div class="box-title">LOGISTICS / FULFILLMENT</div>
       <ul>
         <li>• Shipment eligibility</li>
         <li>• Delivery milestones</li>
         <li>• Partial fulfillment rules</li>
       </ul>
     </div>
- <div class="arrow">▼</div>
+ <div class="arrow">▶</div>
     <div class="box fan-box">
-      <div class="title">SERVICE / OPERATIONS</div>
+      <div class="box-title">SERVICE / OPERATIONS</div>
       <ul>
         <li>• Service Assets (inactive)</li>
         <li>• Subscription instances</li>
@@ -375,7 +383,7 @@ li a {
 	<div class="flow-chart">
   <!-- Section 1: Inputs -->
   <div class="box">
-    <div class="title">INPUTS</div>
+    <div class="box-title">INPUTS</div>
     <ul>
       <li>• Performance Obligations (Orders)</li>
       <li>• Assets / Subscriptions</li>
@@ -384,7 +392,7 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 2: DRO Billing Orchestration -->
   <div class="box">
@@ -398,11 +406,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 3: Pricing Procedures -->
   <div class="box">
-    <div class="title">PRICE ENFORCEMENT</div>
+    <div class="box-title">PRICE ENFORCEMENT</div>
     <ul>
       <li>• Final Price Enforcement</li>
       <li>• Proration Logic</li>
@@ -412,11 +420,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 4: Billing Schedule Engine -->
   <div class="box">
-    <div class="title">BILLING SCHEDULE ENGINE</div>
+    <div class="box-title">BILLING SCHEDULE ENGINE</div>
     <ul>
       <li>• One-time</li>
       <li>• Recurring</li>
@@ -426,11 +434,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 5: Invoice Generation -->
   <div class="box">
-    <div class="title">INVOICE GENERATION</div>
+    <div class="box-title">INVOICE GENERATION</div>
     <ul>
       <li>• Invoice Lines</li>
       <li>• Charge Grouping</li>
@@ -439,11 +447,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 6: Receivable -->
   <div class="box">
-    <div class="title">RECEIVABLE</div>
+    <div class="box-title">RECEIVABLE</div>
     <ul>
       <li>• AR Posting for Subscriptions</li>
       <li>• Payment Tracking</li>
@@ -452,11 +460,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 7: Output Projections -->
   <div class="box output">
-    <div class="title">OUTPUT PROJECTIONS</div>
+    <div class="box-title">OUTPUT PROJECTIONS</div>
     <ul>
       <li>• Cash Forecast</li>
       <li>• Revenue Input (Deferred / Earned)</li>
@@ -471,7 +479,7 @@ li a {
 <div class="flow-chart">
   <!-- Section 1 -->
   <div class="box">
-    <div class="title">INPUT EVENTS</div>
+    <div class="box-title">INPUT EVENTS</div>
     <ul>
       <li>Quote Accepted (opt)</li>
       <li>Order Created</li>
@@ -481,11 +489,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 2 -->
   <div class="box">
-    <div class="title">RULES & CONSTRAINTS (CONTROL)</div>
+    <div class="box-title">RULES & CONSTRAINTS (CONTROL)</div>
     <ul>
       <li>Approval Policies <span>← Throttle</span></li>
       <li>Contract Terms <span>← Gearbox</span></li>
@@ -494,11 +502,11 @@ li a {
     </ul>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 3 -->
   <div class="box highlight">
-    <div class="title">STATE TRANSITION ENGINE (ECU)</div>
+    <div class="box-title">STATE TRANSITION ENGINE (ECU)</div>
      <ul>
       <li>Determines if transition is allowed</li>
     </ul>
@@ -508,11 +516,11 @@ li a {
     </div>
   </div>
 
-  <div class="arrow">▼</div>
+  <div class="arrow">▶</div>
 
   <!-- Section 5 -->
   <div class="box output">
-    <div class="title">REVENUE RECOGNITION (OUTPUT)</div>
+    <div class="box-title">REVENUE RECOGNITION (OUTPUT)</div>
     <ul>
       <li>Deferred → Earned</li>
       <li>Time / Usage / Milestone based</li>
