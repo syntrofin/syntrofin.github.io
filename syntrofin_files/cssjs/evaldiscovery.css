@@ -157,6 +157,10 @@ nav li {
 margin-left: 20px;
 cursor: pointer;
 }
+.top-nav-links{
+color:#003066; 
+text-decoration:none;
+}
 ul.custom-bullets {
 list-style-type: none;
 padding-left: 2rem;
