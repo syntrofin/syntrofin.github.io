@@ -156,7 +156,7 @@ nav li {
 margin-left: 20px;
 cursor: pointer;
 }
-.top-nav-links{
+.top-nav-links a{
 color:#003066; 
 text-decoration:none;
 }
