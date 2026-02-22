@@ -72,7 +72,8 @@ section {
     color: #0056b3;
 }
 .purpose{
-    margin: 16px auto;   
+    padding-left: 20px;
+    padding-right 10px;
     text-align: left;    
 }
 /* Style the Topic Divs and Paragraphs */
