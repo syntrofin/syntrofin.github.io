@@ -21,9 +21,9 @@ section {
 #table-of-contents {
     width: fit-content;    /* Shrinks box to the size of the longest link */
     min-width: 350px;      /* Stops it from being too narrow */
-    max-width: 90%;        /* Responsive for mobile */
-    margin: 40px auto;     /* THE MAGIC: Centers the box horizontally */
-    padding: 30px;
+    max-width: 700px;        /* Responsive for mobile */
+    margin: 30px auto;     /* THE MAGIC: Centers the box horizontally */
+    padding-top: 30px;
     text-align: center;    /* This centers the "Table of Contents" H2 and H3s */
     background: #fdfdfd;
     border: 1px solid #eee;
