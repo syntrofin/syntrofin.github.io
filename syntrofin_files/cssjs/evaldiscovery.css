@@ -127,11 +127,11 @@ font-weight: bold;
 text-align: left;
 }
 th {
-background-color: #666666;
-color: white;
-padding: 12px 15px;
-text-align: left;
-border: 1px solid #ddd;
+background-color: white; 
+color: #004a99; 
+margin: 10px;
+padding: 15px 20px;
+font-weight: bold;
 }
 td {
 padding: 12px 15px;
@@ -185,9 +185,9 @@ min-width: 300px;
 background-color: #f4f9fb;
 }
 .columntitle {
-background-color: #00a680;
-color: white;
-margin: 0;
+background-color: white; 
+color: #004a99; 
+margin: 10px;
 padding: 15px 20px;
 font-weight: bold;
 }
@@ -268,38 +268,7 @@ background-color: white;
 /* Light blue background #f4f9fb; */
 }
 
-/* Header style with teal background #00a680; */
-.columntitle {
-background-color: white; 
-color: #004a99; 
-margin: 10px;
-padding: 15px 20px;
-font-weight: bold;
-}
 
-/* List styling */
-.columnlist {
-list-style: none;
-padding: 20px;
-margin: 0;
-line-height: 1.4;
-color: #333;
-}
-
-.columnlist li {
-margin-bottom: 8px;
-}
-
-/* Style specifically for text inputs inside list items */
-.and-other-input {
-width: 300px;
-height: 35px;
-padding: 5px 10px;
-border: 1px solid #ccc;
-border-radius: 4px;
-font-size: 16px;
-vertical-align: middle;
-}
 
 @media (min-width: 768px) {
 .container-div {
@@ -309,12 +278,5 @@ flex-direction: row;
 @media (max-width: 600px) {
 .columndiv {
 flex: 1 0 100%;
-}
-}
- /* Mobile stacking logic */
-@media (max-width: 600px) {
-.columndiv {
-flex: 1 0 100%;
-/* Makes columns full width on small screens */
 }
 }
