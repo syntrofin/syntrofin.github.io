@@ -134,6 +134,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 .rowdiv {
 display: flex;
 flex-wrap: wrap;
+row-gap: 20px;
 font-family: sans-serif;
 border-bottom: 1px solid #004a99; 
 /* Teal bottom border from image #00a680;*/
