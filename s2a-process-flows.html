@@ -427,15 +427,14 @@
 <h1>RLM Flows Charts</h1>
 <br>
 
-<!-- FIRST SVG SECTION -->
-<h2>Flowchart 1</h2>
-<br>   
+<!-- FIRST SVG SECTION -->  
     <div class="chart-container">
 		<h2>Flowchart 1</h2><br>  
         <!-- Buttons -->
         <div class="chart-controls">
             <button id="zoom-in-1">Zoom In (+)</button>
             <button id="zoom-out-1">Zoom Out (-)</button>
+			<button id="zoom-reset-1">Reset</button> 
         </div>
 		<br>  
         <!-- SVG Object -->
@@ -444,19 +443,17 @@
                 type="image/svg+xml" 
                 class="responsive-svg">
         </object>
-		<br>  
     </div>
-<br> 
+
 	
-	<!-- SECOND SVG SECTION -->
-<h2>Flowchart 2</h2>
-<br>   
+	<!-- SECOND SVG SECTION -->   
     <div class="chart-container">
-		<h2>Flowchart 1</h2><br>  
+		<h2>Flowchart 2</h2><br>  
         <!-- Buttons -->
         <div class="chart-controls">
             <button id="zoom-in-2">Zoom In (+)</button>
             <button id="zoom-out-2">Zoom Out (-)</button>
+			<button id="zoom-reset-2">Reset</button> 
         </div>
 		<br>  
         <!-- SVG Object -->
@@ -465,19 +462,16 @@
                 type="image/svg+xml" 
                 class="responsive-svg">
         </object>
-		<br>  
     </div>
-<br> 
 	
-	<!-- THIRD SVG SECTION -->
-<h2>Flowchart 1</h2>
-<br>   
+	<!-- THIRD SVG SECTION -->  
     <div class="chart-container">
 		<h2>Flowchart 3</h2><br>  
         <!-- Buttons -->
         <div class="chart-controls">
             <button id="zoom-in-3">Zoom In (+)</button>
             <button id="zoom-out-3">Zoom Out (-)</button>
+			<button id="zoom-reset-3">Reset</button> 
         </div>
 		<br>  
         <!-- SVG Object -->
@@ -486,39 +480,106 @@
                 type="image/svg+xml" 
                 class="responsive-svg">
         </object>
-		<br>  
     </div>
-<br> 
-<!-- SECOND SVG SECTION 
-<h2>Flowchart 2</h2>
-<br>
-	
-<div style="position: relative; width: 100vw;">
-  <div style="text-align: center; padding: 10px;">
-    <button id="zoom-in-2">Zoom In 2 (+)</button>
-    <button id="zoom-out-2">Zoom Out 2 (-)</button>
-  </div>
-  <object id="svg2" data="./syntrofin_files/img/RLM-Flowchart2.svg" type="image/svg+xml" style="width: 100%; display: block;"></object>
-</div>
-
-THIRD SVG SECTION 
-	
-<h2>Flowchart 3</h2>
-<br>
-	
-<div style="position: relative; width: 100vw;">
-  <div style="text-align: center; padding: 10px;">
-    <button id="zoom-in-3">Zoom In 3 (+)</button>
-    <button id="zoom-out-3">Zoom Out 3 (-)</button>
-  </div>
-  <object id="svg3" data="./syntrofin_files/img/RLM-Flowchart3.svg" type="image/svg+xml" style="width: 100%; display: block;"></object>
-</div>
--->
-	
 </section>
 
 <!-- SCRIPT AT THE BOTTOM -->
 <script>
+window.onload = function() {
+  const configs = [
+    { objId: 'svg1', inId: 'zoom-in-1', outId: 'zoom-out-1', resetId: 'zoom-reset-1' },
+    { objId: 'svg2', inId: 'zoom-in-2', outId: 'zoom-out-2', resetId: 'zoom-reset-1' },
+    { objId: 'svg3', inId: 'zoom-in-3', outId: 'zoom-out-3', resetId: 'zoom-reset-1' }
+  ];
+
+  configs.forEach(conf => {
+    const obj = document.getElementById(conf.objId);
+    if (!obj) return;
+
+    // Wait for the SVG internal document to be fully ready
+    obj.addEventListener('load', function() {
+      setupZoom(conf.objId, conf.inId, conf.outId, conf.resetId);
+    });
+
+    // If already loaded (cached), trigger immediately
+    if (obj.contentDocument && obj.contentDocument.readyState === 'complete') {
+      setupZoom(conf.objId, conf.inId, conf.outId, conf.resetId);
+    }
+  });
+};
+
+function setupZoom(objId, inId, outId, resetId) {
+  const obj = document.getElementById(objId);
+  const svgDoc = obj.contentDocument;
+  const svgItem = svgDoc.querySelector('svg');
+  if (!svgItem) return;
+
+  const vb = svgItem.viewBox.baseVal;
+  const baseW = vb.width;
+  const baseH = vb.height;
+
+  // --- 1. DYNAMIC HEIGHT LOGIC ---
+  const updateObjectHeight = () => {
+    const currentWidth = obj.offsetWidth;
+    const aspectRatio = baseH / baseW;
+    obj.style.height = (currentWidth * aspectRatio) + "px";
+  };
+
+  updateObjectHeight();
+  window.addEventListener('resize', updateObjectHeight);
+
+  // --- 2. ZOOM STATE ---
+  // Default Initial State: 50% Zoom (viewBox is 2x larger than drawing)
+  const initialState = {
+    w: baseW * 2,
+    h: baseH * 2,
+    x: -(baseW / 2),
+    y: -(baseH / 2)
+  };
+
+  let view = { ...initialState };
+
+  const updateViewBox = () => {
+    svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
+  };
+
+  updateViewBox(); // Initialize
+
+  // --- 3. BUTTON LISTENERS ---
+
+  // Zoom In
+  document.getElementById(inId).onclick = () => {
+    if (view.w > baseW) { // Limit: 100% size
+      const oldW = view.w; const oldH = view.h;
+      view.w *= 0.8; view.h *= 0.8;
+      view.x += (oldW - view.w) / 2;
+      view.y += (oldH - view.h) / 2;
+      updateViewBox();
+    }
+  };
+
+  // Zoom Out
+  document.getElementById(outId).onclick = () => {
+    if (view.w < baseW * 4.0) { // Limit: 25% size
+      const oldW = view.w; const oldH = view.h;
+      view.w /= 0.8; view.h /= 0.8;
+      view.x += (oldW - view.w) / 2;
+      view.y += (oldH - view.h) / 2;
+      updateViewBox();
+    }
+  };
+
+  // Reset Zoom
+  const resetBtn = document.getElementById(resetId);
+  if (resetBtn) {
+    resetBtn.onclick = () => {
+      view = { ...initialState };
+      updateViewBox();
+    };
+  }
+}
+
+/*
 window.onload = function() {
   setupZoom('svg1', 'zoom-in-1', 'zoom-out-1');
   setupZoom('svg2', 'zoom-in-2', 'zoom-out-2');
@@ -579,7 +640,7 @@ function setupZoom(objId, inId, outId) {
     }
   };
 }
-
+*/
 </script>
 	
 </body>
