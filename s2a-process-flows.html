@@ -149,12 +149,31 @@
 		    border-top: 1px solid #eee;
 		    margin-top: auto; /* Pushes to bottom of box */
 		}
-		
-		.responsive-svg {
-		  width: 100vw;  /* Spans 100% of the visible screen width */
-		  height: auto;  /* Scales height automatically to maintain proportions */
-		  display: block;
+		/* Container for the specific flowchart instance */
+		.chart-container {
+			width: 100%;
+			margin-bottom: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center; /* Centers the buttons and the SVG horizontally */
 		}
+		
+		/* Button wrapper */
+		.chart-controls {
+			text-align: center;
+			padding: 10px;
+		}
+		
+		/* Updated SVG class */
+		.responsive-svg {
+			width: 100%;      /* Changed from 100vw to 100% */
+			max-width: 100%;  /* Ensures it never overflows the section */
+			display: block;
+			height: auto;
+		}
+
+		
+
 
 	</style>
 </head>
@@ -524,15 +543,23 @@
 	
 <!-- FIRST SVG SECTION -->
 <h2>Flowchart 1</h2>
-<br>
-	
-<div style="position: relative; width: 100vw; margin-bottom: 20px;">
-  <div style="text-align: center; padding: 10px;">
-    <button id="zoom-in-1">Zoom In 1 (+)</button>
-    <button id="zoom-out-1">Zoom Out 1 (-)</button>
-  </div>
-  <object id="svg1" data="./syntrofin_files/img/RLM-Flowchart1.svg" type="image/svg+xml" style="width: 100%; display: block;"></object>
-</div>
+<br>   
+    <div class="chart-container">
+		<h2>Flowchart 1</h2><br>  
+        <!-- Buttons -->
+        <div class="chart-controls">
+            <button id="zoom-in-1">Zoom In 1 (+)</button>
+            <button id="zoom-out-1">Zoom Out 1 (-)</button>
+        </div>
+		<br>  
+        <!-- SVG Object -->
+        <object id="svg1" 
+                data="./syntrofin_files/img/RLM-Flowchart1.svg" 
+                type="image/svg+xml" 
+                class="responsive-svg">
+        </object>
+		<br>  
+    </div>
 
 <!-- SECOND SVG SECTION -->
 <h2>Flowchart 2</h2>
