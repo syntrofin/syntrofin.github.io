@@ -1,0 +1,715 @@
+<!doctype html>
+<html
+  lang="en"
+  class="gr__syntrofin_in fontawesome-i2svg-active fontawesome-i2svg-complete"
+>
+  <head>
+    <!-- charset and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  description -->
+    <meta
+      name="description"
+      content="SyntroFin specializes in Quote-to-Cash (Q2C) services, streamlining processes from opportunity to billing. Fix revenue leakage and boost growth today."
+    />
+    <meta name="author" content="SyntroFin" />
+
+    <meta property="og:url" content="http://www.syntrofin.com" />
+    <meta
+      property="org:description"
+      content="SyntroFin specializes in Quote-to-Cash (Q2C) services, streamlining processes from opportunity to billing. Fix revenue leakage and boost growth today."
+    />
+    <meta
+      property="og:title"
+      content="SyntroFin - Enterprise Revenue Life Cycle Management Services"
+    />
+
+    <!-- title  -->
+    <title>SyntroFin - Enterprise Revenue Life Cycle Management Services</title>
+
+    <!-- Fav Icon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./syntrofin_files/favicon/favicon.ico?v=2"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./syntrofin_files/favicon/favicon.ico?v=2"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./syntrofin_files/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./syntrofin_files/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./syntrofin_files/favicon/favicon-16x16.png"
+    />
+
+    <!-- JavaScript -->
+    <script src="./syntrofin_files/cssjs/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link href="./evaldiscovery.css" rel="stylesheet" />
+
+    <style>
+      /* 
+		body {
+		    margin: 0;
+		    padding: 0;
+		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		    background-color: #f4f4f4;
+		}
+		
+		section {
+		    width: 90%;
+		    max-width: 1200px; 
+		    margin: 0 auto;
+		    padding: 20px;
+		    box-sizing: border-box; 
+		}
+		
+		
+		h2 {
+		    text-align: center;
+		}
+		
+
+		li {
+		    list-style-type: none;
+		}
+		
+		li a {
+		    text-decoration: none;
+		}
+		
+		*/
+    </style>
+  </head>
+
+  <body>
+    <!-- RLM Flows -->
+    <section>
+      <h1>RLM Flows</h1>
+      <br />
+
+      <h2>Quote</h2>
+
+      <div class="process-container">
+        <!-- Catalog Section -->
+        <div class="process-step">
+          <div class="process-step-title">CATALOG OFFERING</div>
+          <ul>
+            <li>• Products</li>
+            <li>• Attributes</li>
+            <li>• Eligibility Rules</li>
+            <li>• Base Pricing Inputs</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Entry Point Section -->
+        <div class="process-step">
+          <div class="process-step-title">QUOTE ENTRY POINT</div>
+          <ul>
+            <li>• UI (Sales / Partner / API)</li>
+            <li>• Guided Selling (optional)</li>
+            <li>• Amend / Reprice / Simulate</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Pricing Section -->
+        <div class="process-step">
+          <div class="process-step-title">PRICING PROCEDURES</div>
+          <ul>
+            <li>• Base Price Determination</li>
+            <li>• Discount & Adjustment Logic</li>
+            <li>• Bundling / Attribute Pricing</li>
+            <li>• Promotions</li>
+            <li>• Non-binding estimates</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Policy Section -->
+        <div class="process-step">
+          <div class="process-step-title">POLICY & GOVERNANCE</div>
+          <ul>
+            <li>• Approval Policies</li>
+            <li>• Margin / Discount Thresholds</li>
+            <li>• Exception Handling</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Artifact Section -->
+        <div class="process-step">
+          <div class="process-step-title">SALES INTENT ARTIFACT</div>
+          <ul>
+            <li>• Quote</li>
+            <li>• Non-binding Prices</li>
+            <li>• Conditional Terms</li>
+            <li>• Expiration / Validity</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Output Section -->
+        <div class="box output">
+          <div class="process-step-title">OUTPUT PROJECTIONS</div>
+          <ul>
+            <li>• Order Preview (Simulation)</li>
+            <li>• Revenue Preview (Forecast only)</li>
+            <li>• <i>No Assets / No Obligations</i></li>
+          </ul>
+        </div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <!-- order flow -->
+
+      <h2>Order</h2>
+      <div class="process-container">
+        <!-- Section 1 -->
+        <div class="process-step">
+          <div class="process-step-title">INPUT EVENTS</div>
+          <ul>
+            <li>• Accepted Quote (optional)</li>
+            <li>• Direct Order</li>
+            <li>• Amendment / Cancellation</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 2 -->
+        <div class="process-step">
+          <div class="process-step-title">ORDER NORMALIZATION & CONTROL</div>
+          <ul>
+            <li>• Contract formation</li>
+            <li>• Obligation decomposition</li>
+            <li>• Term anchoring (start / end / duration)</li>
+            <li>• Change & amendment rules</li>
+            <li>• Commercial truth finalization</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 3: -->
+        <div class="process-step">
+          <div class="process-step-title">
+            COMMERCIAL ASSET<br /><small>(System of Record)</small>
+          </div>
+          <ul>
+            <li>• What was sold</li>
+            <li>• Contractual scope</li>
+            <li>• Pricing commitment</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <div class="process-step">
+          <div class="process-step-title">
+            OBLIGATION DEFINITION<br /><small>(Performance Duties)</small>
+          </div>
+          <ul>
+            <li>• What must be delivered</li>
+            <li>• When & how</li>
+            <li>• Change boundaries</li>
+          </ul>
+        </div>
+
+        <!-- Fan Out Separator -->
+        <div class="process-fan-out-line">
+          <span>FAN-OUT ▼</span>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step-title">FINANCE / MID-OFFICE</div>
+          <ul>
+            <li>• Deferred revenue seeds</li>
+            <li>• Margin / COGS hooks</li>
+            <li>• Compliance visibility</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">|</div>
+
+        <div class="process-step">
+          <div class="process-step-title">REVENUE ENGINE HANDSHAKE</div>
+          <ul>
+            <li>• Recognition rules</li>
+            <li>• Timing constraints</li>
+            <li>• Reversal boundaries</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">|</div>
+
+        <div class="process-step">
+          <div class="process-step-title">MANUFACTURING / PROVISIONING</div>
+          <ul>
+            <li>• Build / config freeze</li>
+            <li>• BOM / routing references</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">|</div>
+
+        <div class="process-step">
+          <div class="process-step-title">LOGISTICS / FULFILLMENT</div>
+          <ul>
+            <li>• Shipment eligibility</li>
+            <li>• Delivery milestones</li>
+            <li>• Partial fulfillment rules</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">|</div>
+
+        <div class="process-step">
+          <div class="process-step-title">SERVICE / OPERATIONS</div>
+          <ul>
+            <li>• Service Assets (inactive)</li>
+            <li>• Subscription instances</li>
+            <li>• Warranty anchors</li>
+            <li>• Support entitlements</li>
+          </ul>
+        </div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <h2>Billing</h2>
+      <div class="process-container">
+        <!-- Section 1: Inputs -->
+        <div class="process-step">
+          <div class="process-step-title">INPUTS</div>
+          <ul>
+            <li>• Performance Obligations (Orders)</li>
+            <li>• Assets / Subscriptions</li>
+            <li>• Usage Events (if applicable)</li>
+            <li>• Contractual Billing Terms</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 2: DRO Billing Orchestration -->
+        <div class="process-step">
+          <div class="process-step-title">Billing Orchestration</div>
+          <ul>
+            <li>• Schedule Control</li>
+            <li>• Event-driven Billing</li>
+            <li>• Amend / Cancel Handling</li>
+            <li>• Retroactive Adjustments</li>
+            <li>• Compensation Logic</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 3: Pricing Procedures -->
+        <div class="process-step">
+          <div class="process-step-title">PRICE ENFORCEMENT</div>
+          <ul>
+            <li>• Final Price Enforcement</li>
+            <li>• Proration Logic</li>
+            <li>• Usage Rating</li>
+            <li>• Taxes & Fees</li>
+            <li>• Credits / Adjustments</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 4: Billing Schedule Engine -->
+        <div class="process-step">
+          <div class="process-step-title">BILLING SCHEDULE ENGINE</div>
+          <ul>
+            <li>• One-time</li>
+            <li>• Recurring</li>
+            <li>• Milestone-based</li>
+            <li>• Usage-based</li>
+            <li>• Hybrid</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 5: Invoice Generation -->
+        <div class="process-step">
+          <div class="process-step-title">INVOICE GENERATION</div>
+          <ul>
+            <li>• Invoice Lines</li>
+            <li>• Charge Grouping</li>
+            <li>• Currency & Tax Application</li>
+            <li>• Legal Invoice Artifact</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 6: Receivable -->
+        <div class="process-step">
+          <div class="process-step-title">RECEIVABLE</div>
+          <ul>
+            <li>• AR Posting for Subscriptions</li>
+            <li>• Payment Tracking</li>
+            <li>• Dunning / Collections</li>
+            <li>• Cash Application</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 7: Output Projections -->
+        <div class="box output">
+          <div class="process-step-title">OUTPUT PROJECTIONS</div>
+          <ul>
+            <li>• Cash Forecast</li>
+            <li>• Revenue Input (Deferred / Earned)</li>
+            <li>• Audit Trail</li>
+          </ul>
+        </div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <h2>Revenue</h2>
+      <div class="process-container">
+        <!-- Section 1 -->
+        <div class="process-step">
+          <div class="process-step-title">INPUT EVENTS</div>
+          <ul>
+            <li>Quote Accepted (opt)</li>
+            <li>Order Created</li>
+            <li>Usage Event</li>
+            <li>Milestone Completed</li>
+            <li>Amendment / Cancel</li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 2 -->
+        <div class="process-step">
+          <div class="process-step-title">RULES & CONSTRAINTS (CONTROL)</div>
+          <ul>
+            <li>Approval Policies <span>← Throttle</span></li>
+            <li>Contract Terms <span>← Gearbox</span></li>
+            <li>Accounting Rules <span>← Safety Limits</span></li>
+            <li>Recognition Policy <span>← Governors</span></li>
+          </ul>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 3 -->
+        <div class="box highlight">
+          <div class="process-step-title">STATE TRANSITION ENGINE (ECU)</div>
+          <ul>
+            <li>Determines if transition is allowed</li>
+          </ul>
+          <div class="states">
+            <span>Quoted</span> • <span>Ordered</span> • <span>Entitled</span> •
+            <span>Fulfilled</span> • <span>Billed</span> •
+            <span>Recognized</span>
+          </div>
+        </div>
+
+        <div class="process-arrow">▶</div>
+
+        <!-- Section 5 -->
+        <div class="box output">
+          <div class="process-step-title">REVENUE RECOGNITION (OUTPUT)</div>
+          <ul>
+            <li>Deferred → Earned</li>
+            <li>Time / Usage / Milestone based</li>
+            <li>Reversals handled</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <br /><br />
+
+    <!-- Flowcharts -->
+    <section>
+      <h1>RLM Flows Charts</h1>
+      <br />
+
+      <!-- FIRST SVG SECTION -->
+      <div class="chart-container">
+        <h2>Flowchart 1</h2>
+        <br />
+        <!-- Buttons -->
+        <div class="chart-controls">
+          <button id="zoom-in-1">Zoom In (+)</button>
+          <button id="zoom-out-1">Zoom Out (-)</button>
+          <button id="zoom-reset-1">Reset</button>
+        </div>
+        <br />
+        <!-- SVG Object -->
+        <object
+          id="svg1"
+          data="./syntrofin_files/img/RLM-Flowchart1.svg"
+          type="image/svg+xml"
+          class="responsive-svg"
+        ></object>
+      </div>
+
+      <!-- SECOND SVG SECTION -->
+      <div class="chart-container">
+        <h2>Flowchart 2</h2>
+        <br />
+        <!-- Buttons -->
+        <div class="chart-controls">
+          <button id="zoom-in-2">Zoom In (+)</button>
+          <button id="zoom-out-2">Zoom Out (-)</button>
+          <button id="zoom-reset-2">Reset</button>
+        </div>
+        <br />
+        <!-- SVG Object -->
+        <object
+          id="svg2"
+          data="./syntrofin_files/img/RLM-Flowchart2.svg"
+          type="image/svg+xml"
+          class="responsive-svg"
+        ></object>
+      </div>
+
+      <!-- THIRD SVG SECTION -->
+      <div class="chart-container">
+        <h2>Flowchart 3</h2>
+        <br />
+        <!-- Buttons -->
+        <div class="chart-controls">
+          <button id="zoom-in-3">Zoom In (+)</button>
+          <button id="zoom-out-3">Zoom Out (-)</button>
+          <button id="zoom-reset-3">Reset</button>
+        </div>
+        <br />
+        <!-- SVG Object -->
+        <object
+          id="svg3"
+          data="./syntrofin_files/img/RLM-Flowchart3.svg"
+          type="image/svg+xml"
+          class="responsive-svg"
+        ></object>
+      </div>
+    </section>
+
+    <!-- SCRIPT AT THE BOTTOM -->
+    <script>
+      window.onload = function () {
+        const configs = [
+          {
+            objId: "svg1",
+            inId: "zoom-in-1",
+            outId: "zoom-out-1",
+            resetId: "zoom-reset-1",
+          },
+          {
+            objId: "svg2",
+            inId: "zoom-in-2",
+            outId: "zoom-out-2",
+            resetId: "zoom-reset-1",
+          },
+          {
+            objId: "svg3",
+            inId: "zoom-in-3",
+            outId: "zoom-out-3",
+            resetId: "zoom-reset-1",
+          },
+        ];
+
+        configs.forEach((conf) => {
+          const obj = document.getElementById(conf.objId);
+          if (!obj) return;
+
+          // Wait for the SVG internal document to be fully ready
+          obj.addEventListener("load", function () {
+            setupZoom(conf.objId, conf.inId, conf.outId, conf.resetId);
+          });
+
+          // If already loaded (cached), trigger immediately
+          if (
+            obj.contentDocument &&
+            obj.contentDocument.readyState === "complete"
+          ) {
+            setupZoom(conf.objId, conf.inId, conf.outId, conf.resetId);
+          }
+        });
+      };
+
+      function setupZoom(objId, inId, outId, resetId) {
+        const obj = document.getElementById(objId);
+        const svgDoc = obj.contentDocument;
+        const svgItem = svgDoc.querySelector("svg");
+        if (!svgItem) return;
+
+        const vb = svgItem.viewBox.baseVal;
+        const baseW = vb.width;
+        const baseH = vb.height;
+
+        // --- 1. DYNAMIC HEIGHT LOGIC ---
+        const updateObjectHeight = () => {
+          const currentWidth = obj.offsetWidth;
+          const aspectRatio = baseH / baseW;
+          obj.style.height = currentWidth * aspectRatio + "px";
+        };
+
+        updateObjectHeight();
+        window.addEventListener("resize", updateObjectHeight);
+
+        // --- 2. ZOOM STATE ---
+        // Default Initial State: 50% Zoom (viewBox is 2x larger than drawing)
+        const initialState = {
+          w: baseW * 2,
+          h: baseH * 2,
+          x: -(baseW / 2),
+          y: -(baseH / 2),
+        };
+
+        let view = { ...initialState };
+
+        const updateViewBox = () => {
+          svgItem.setAttribute(
+            "viewBox",
+            `${view.x} ${view.y} ${view.w} ${view.h}`,
+          );
+        };
+
+        updateViewBox(); // Initialize
+
+        // --- 3. BUTTON LISTENERS ---
+
+        // Zoom In
+        document.getElementById(inId).onclick = () => {
+          if (view.w > baseW) {
+            // Limit: 100% size
+            const oldW = view.w;
+            const oldH = view.h;
+            view.w *= 0.8;
+            view.h *= 0.8;
+            view.x += (oldW - view.w) / 2;
+            view.y += (oldH - view.h) / 2;
+            updateViewBox();
+          }
+        };
+
+        // Zoom Out
+        document.getElementById(outId).onclick = () => {
+          if (view.w < baseW * 4.0) {
+            // Limit: 25% size
+            const oldW = view.w;
+            const oldH = view.h;
+            view.w /= 0.8;
+            view.h /= 0.8;
+            view.x += (oldW - view.w) / 2;
+            view.y += (oldH - view.h) / 2;
+            updateViewBox();
+          }
+        };
+
+        // Reset Zoom
+        const resetBtn = document.getElementById(resetId);
+        if (resetBtn) {
+          resetBtn.onclick = () => {
+            view = { ...initialState };
+            updateViewBox();
+          };
+        }
+      }
+
+      /*
+window.onload = function() {
+  setupZoom('svg1', 'zoom-in-1', 'zoom-out-1');
+  setupZoom('svg2', 'zoom-in-2', 'zoom-out-2');
+  setupZoom('svg3', 'zoom-in-3', 'zoom-out-3');
+};
+
+function setupZoom(objId, inId, outId) {
+  const obj = document.getElementById(objId);
+  if (!obj) return;
+
+  const svgItem = obj.contentDocument.querySelector('svg');
+  const vb = svgItem.viewBox.baseVal;
+  
+  const baseW = vb.width;
+  const baseH = vb.height;
+
+  // 1. INITIAL STATE: Show at 50% size (ViewBox is TWICE the drawing size)
+  let view = {
+    w: baseW * 2, 
+    h: baseH * 2,
+    x: -(baseW / 2), // Offset to keep the original drawing centered
+    y: -(baseH / 2)
+  };
+
+  // Limits
+  const minWidth = baseW;        // Zoom In Limit: Stop at 100% size (100vw)
+  const maxWidth = baseW * 4.0;  // Zoom Out Limit: Stop at 25% size
+
+  const update = () => {
+    svgItem.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`);
+  };
+
+  update(); // Initialize at 50% size
+
+  // 2. ZOOM IN (Stop when viewBox width = original file width)
+  document.getElementById(inId).onclick = () => {
+    if (view.w > minWidth) {
+      const oldW = view.w;
+      const oldH = view.h;
+      view.w *= 0.8;
+      view.h *= 0.8;
+      view.x += (oldW - view.w) / 2;
+      view.y += (oldH - view.h) / 2;
+      update();
+    }
+  };
+
+  // 3. ZOOM OUT (Stop when viewBox width = 4x original file width)
+  document.getElementById(outId).onclick = () => {
+    if (view.w < maxWidth) {
+      const oldW = view.w;
+      const oldH = view.h;
+      view.w /= 0.8;
+      view.h /= 0.8;
+      view.x += (oldW - view.w) / 2;
+      view.y += (oldH - view.h) / 2;
+      update();
+    }
+  };
+}
+*/
+    </script>
+  </body>
+</html>

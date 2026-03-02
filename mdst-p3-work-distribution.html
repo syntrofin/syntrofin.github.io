@@ -1,0 +1,1228 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Pre</title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; font-weight: 600; font-size: 2rem">
+      Distribution of Work
+    </h1>
+    <br />
+    <!-- TOC -->
+    <p>
+      <a href="#sme-workshop-to-jira">
+        Translate Workshops into Task Distribution</a
+      >
+    </p>
+    <p>
+      <a href="#sequencing-jira-with-development-lead"
+        >Sequencing JIRA Tickets</a
+      >
+    </p>
+    <p>
+      <a href="#sprint-mapping">Sprint Mapping</a>
+    </p>
+
+    <br />
+
+    <section id="section-transfromation">
+      <br />
+      <br />
+      <h1 id="sme-workshop-to-jira">
+        Translate Workshops into Task Distribution
+      </h1>
+      <h3>Agile and JIRA Tickets are method of task distribution</h3>
+      <p>
+        If you just hand a developer your raw workshop notes or say,
+        <em>"Build a rule that keeps the margin at 20%,"</em> they will hardcode
+        the number "20" into an Apex trigger, and you will have a maintenance
+        nightmare in three months. As the architect, your job is to translate
+        the <strong>Business Intent</strong> and the
+        <strong>System Gap</strong> into a highly structured Jira ticket that
+        gives the developer zero room to misinterpret the architecture.
+      </p>
+      <p>
+        Here is the exact framework to translate that 60-minute "Margin Floor"
+        workshop into a bulletproof User Story for a Revenue Cloud Advanced
+        build.
+      </p>
+      <h2 id="the-anatomy-of-an-architects-jira-ticket">
+        The Anatomy of an Architect's Jira Ticket
+      </h2>
+      <p>
+        A standard Agile user story (As a [User], I want [Feature], so that
+        [Value]) is not enough for complex CPQ builds. A true architectural Jira
+        ticket has four distinct sections:
+      </p>
+      <ol type="1">
+        <li>
+          <p>
+            <strong>The User Story:</strong> The plain-English business
+            requirement.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Business Value (The "Why"):</strong> Pulled directly
+            from your Traceability Matrix.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Technical Blueprint:</strong> The specific Revenue
+            Cloud/OmniStudio components the dev must use (this stops them from
+            going rogue).
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Acceptance Criteria (Given / When / Then):</strong> The
+            exact testing scenarios they must pass before you will review their
+            code.
+          </p>
+        </li>
+      </ol>
+      <h2 id="jira-ticket-example-automated-margin-floor-enforcement">
+        Jira Ticket Example: Automated Margin Floor Enforcement
+      </h2>
+      <p><strong>Epic:</strong> EPC &amp; Pricing Strategy Phase 1</p>
+      <p><strong>Issue Type:</strong> Story</p>
+      <p><strong>Status:</strong> Ready for Dev</p>
+      <p><strong>Assignee:</strong> [Developer Name]</p>
+      <h2 id="user-story">1. User Story</h2>
+      <p><strong>As a</strong> Sales Representative,</p>
+      <p>
+        <strong>I want</strong> the system to automatically uplift my core
+        package price (e.g., Booth Space) if my blended margin drops below the
+        approved category floor due to variable costs (e.g., Catering),
+      </p>
+      <p>
+        <strong>So that</strong> I can generate profitable quotes instantly
+        without manual Excel calculations.
+      </p>
+      <h4 id="section-28"></h4>
+      <h2 id="business-context-value">2. Business Context &amp; Value</h2>
+      <ul>
+        <li>
+          <p>
+            <strong>Current Pain:</strong> Reps are manually calculating
+            margins; quotes are frequently closing below the 20% floor.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Traceability:</strong> This fulfills the CFO's requirement
+            to eliminate margin erosion on multi-product events and reduces
+            quote turnaround time by 15 minutes per deal.
+          </p>
+        </li>
+      </ul>
+      <h4 id="section-29"></h4>
+      <h2 id="technical-blueprint-architect-notes">
+        3. Technical Blueprint (Architect Notes)
+      </h2>
+      <p>
+        <em
+          >Do not use Apex or custom triggers for this logic. This must be built
+          using standard OmniStudio components to ensure long-term declarable
+          maintenance.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Data Model Constraints:</strong> * Source variable costs
+            from the standard Cost__c object via the active Cost Book.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Source the target margin floor (e.g., 20%) from the custom
+                Margin_Targets Decision Matrix.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Build Architecture:</strong></p>
+          <ul>
+            <li>
+              <p>
+                Modify the active
+                <strong>Pricing Procedure</strong> (Event_Pricing_v2).
+              </p>
+            </li>
+            <li>
+              <p>
+                Add a <strong>Lookup Action</strong> to fetch the variable cost.
+              </p>
+            </li>
+            <li>
+              <p>
+                Add a <strong>Calculation Step</strong> utilizing a
+                <strong>Formula Element</strong>:
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <em>Logic:</em> If (Net Price - Total Cost) / Net Price &lt;
+                    Target_Margin, execute price uplift on the primary line item
+                    to reach the Target_Margin.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h4 id="section-30"></h4>
+      <h2 id="acceptance-criteria-bdd-format">
+        4. Acceptance Criteria (BDD Format)
+      </h2>
+      <p><strong>Scenario 1: Standard deal meeting the margin floor</strong></p>
+      <ul>
+        <li>
+          <p>
+            <strong>Given</strong> a Quote with a "Booth Space" ($10,000 List)
+            and "Catering" ($2,000 Cost).
+          </p>
+        </li>
+        <li>
+          <p><strong>When</strong> the pricing engine calculates the quote.</p>
+        </li>
+        <li>
+          <p>
+            <strong>Then</strong> the margin calculates at 80% and no price
+            uplift is applied. The Net Price remains $10,000.
+          </p>
+        </li>
+      </ul>
+      <p>
+        <strong
+          >Scenario 2: Deal breaching the margin floor (The Uplift)</strong
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Given</strong> a Quote with a "Booth Space" ($7,500 List)
+            and "Catering" ($6,500 Cost), creating a sub-20% margin.
+          </p>
+        </li>
+        <li>
+          <p><strong>When</strong> the pricing engine calculates the quote.</p>
+        </li>
+        <li>
+          <p>
+            <strong>Then</strong> the system references the Decision Matrix (20%
+            floor for Events) AND automatically uplifts the Booth Space Net
+            Price to $8,125 to satisfy the 20% margin requirement.
+          </p>
+        </li>
+      </ul>
+      <p><strong>Scenario 3: Negative Testing (Missing Cost Data)</strong></p>
+      <ul>
+        <li>
+          <p>
+            <strong>Given</strong> a Quote includes a product that is missing a
+            Cost__c record in the Cost Book.
+          </p>
+        </li>
+        <li>
+          <p><strong>When</strong> the pricing engine runs.</p>
+        </li>
+        <li>
+          <p>
+            <strong>Then</strong> the procedure defaults the cost to $0,
+            calculates the margin, and flags a custom checkbox
+            Missing_Cost_Data__c = TRUE for reporting.
+          </p>
+        </li>
+      </ul>
+      <h2 id="why-this-ticket-is-bulletproof">
+        Why this ticket is bulletproof
+      </h2>
+      <ol type="1">
+        <li>
+          <p>
+            <strong>It separates the "What" from the "How."</strong> The User
+            Story tells them <em>what</em> the sales rep needs. The Technical
+            Blueprint tells them <em>how</em> you expect the architecture to
+            look.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>It forces BDD (Behavior-Driven Development).</strong> By
+            writing the Acceptance Criteria in "Given/When/Then" format, you
+            have practically written the QA team's test scripts for them. The
+            developer knows exactly what math needs to work before they hit
+            "Submit for Pull Request."
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>It handles the edge cases.</strong> Scenario 3 is where most
+            CPQ projects fail—nobody tells the developer what to do when data is
+            missing. You caught it in the ticket.
+          </p>
+        </li>
+      </ol>
+      <p>
+        When you hand a developer a ticket like this, you aren't just assigning
+        work; you are governing the architecture.
+      </p>
+      <h2 id="jira-ticket-example-margin-exception-approval-routing">
+        Jira Ticket Example: Margin Exception Approval Routing
+      </h2>
+      <p>
+        This is the second half of the technical solution. You built the engine
+        to calculate the correct price; now you must build the guardrails to
+        protect it.
+      </p>
+      <p>
+        If you do not write this second ticket, a sales rep will simply look at
+        the newly uplifted $8,125 Booth Space price, manually type in a 10%
+        discount to bring it back down, and completely bypass the margin floor
+        you just engineered.
+      </p>
+      <p>
+        Here is the exact Jira ticket to configure the
+        <strong>Advanced Approvals</strong> architecture that acts as the final
+        safety net.
+      </p>
+      <p><strong>Epic:</strong> EPC &amp; Pricing Strategy Phase 1</p>
+      <p><strong>Issue Type:</strong> Story</p>
+      <p><strong>Status:</strong> Ready for Dev</p>
+      <p><strong>Assignee:</strong> [Developer Name]</p>
+      <h2 id="user-story-1">1. User Story</h2>
+      <p><strong>As the</strong> VP of Sales,</p>
+      <p>
+        <strong>I want</strong> the system to automatically lock a quote and
+        require my explicit approval if a sales representative manually applies
+        a discretionary discount that drops the blended margin below the
+        algorithmic floor,
+      </p>
+      <p>
+        <strong>So that</strong> I can prevent margin erosion and review
+        unprofitable deals before they are sent to the customer.
+      </p>
+      <h2 id="business-context-value-1">2. Business Context &amp; Value</h2>
+      <ul>
+        <li>
+          <p>
+            <strong>Current Pain:</strong> Reps are discounting packages without
+            understanding the underlying catering/event costs, and leadership
+            has no visibility until the deal is already won.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Traceability:</strong> This fulfills the Governance
+            requirement of our architecture. It ensures that 0% of deals close
+            under the 20% margin target without executive sign-off, protecting
+            the CFO's profitability KPI.
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="technical-blueprint-architect-notes-1">
+        3. Technical Blueprint (Architect Notes)
+      </h2>
+      <p>
+        <em
+          >Do not use standard Salesforce native approvals. This must be built
+          using the Revenue Cloud <strong>Advanced Approvals</strong> (sbaa)
+          managed package to allow for parallel routing and smart approvals in
+          Phase 2.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Data Model &amp; Logic:</strong> * Create a custom formula
+            field on the Quote: Margin_Delta__c (Calculated Margin vs. Target
+            Margin from the Decision Matrix).
+          </p>
+          <ul>
+            <li>
+              <p>
+                Configure an <strong>Approval Rule</strong> targeting the Quote
+                object.
+              </p>
+            </li>
+            <li>
+              <p>
+                Configure an <strong>Approval Condition</strong>: Fire when
+                Margin_Delta__c is less than 0.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Build Architecture:</strong></p>
+          <ul>
+            <li>
+              <p>
+                Create an <strong>Approver</strong> record for the VP of Sales.
+              </p>
+            </li>
+            <li>
+              <p>Link the Approval Rule to the VP of Sales Approver record.</p>
+            </li>
+            <li>
+              <p>
+                Ensure the <strong>Approval Actions</strong> are configured to
+                lock the Quote record (status = 'Pending Approval') and hide the
+                "Generate Document" button while the quote is locked.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2 id="acceptance-criteria-bdd-format-1">
+        4. Acceptance Criteria (BDD Format)
+      </h2>
+      <p>
+        <strong
+          >Scenario 1: Rep accepts the system-calculated price (No Approval
+          Needed)</strong
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Given</strong> a Quote where the Pricing Procedure has
+            calculated the Net Price to satisfy the 20% margin floor.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>When</strong> the sales rep saves the quote without applying
+            any additional manual discounts.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Then</strong> the Approval Status remains 'Approved' (or
+            bypasses the rule), and the rep can generate the proposal document
+            immediately.
+          </p>
+        </li>
+      </ul>
+      <p>
+        <strong
+          >Scenario 2: Rep attempts to bypass the floor (Approval
+          Triggered)</strong
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Given</strong> a Quote where the system calculated an $8,125
+            Net Price to protect the margin floor.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>When</strong> the sales rep manually applies a 10%
+            line-level discount, dropping the total margin to 18%.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Then</strong> the Quote Status changes to 'Pending
+            Approval', the "Generate Document" button is hidden, and an Advanced
+            Approval email is routed to the VP of Sales.
+          </p>
+        </li>
+      </ul>
+      <p><strong>Scenario 3: Smart Approvals / Re-submission</strong></p>
+      <ul>
+        <li>
+          <p>
+            <strong>Given</strong> a Quote that was previously approved by the
+            VP of Sales at an 18% margin.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>When</strong> the sales rep modifies the quote further,
+            dropping the margin down to 15%.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Then</strong> the system invalidates the previous approval
+            and re-triggers the Approval Rule, requiring a fresh sign-off from
+            the VP of Sales.
+          </p>
+        </li>
+      </ul>
+      <h2 id="the-architects-advantage">The Architect's Advantage</h2>
+      <p>
+        By writing these two tickets back-to-back, you have completely mapped
+        the technical execution of a complex business problem. The first ticket
+        handles the <strong>Automation</strong>, and this ticket handles the
+        <strong>Governance</strong>. When you hand this to your dev team, there
+        is zero ambiguity about how the system should behave.
+      </p>
+
+      <br />
+      <br />
+      <h1 id="sequencing-jira-with-development-lead">
+        Sequencing JIRA Tickets By Working With Development Lead
+      </h1>
+      <p>
+        You absolutely <strong>can</strong> and <strong>should</strong>. In
+        fact, if you try to split and sequence the sprint tickets entirely in a
+        vacuum without the Technical Lead or Senior Developer, the project is
+        almost guaranteed to hit a wall.
+      </p>
+      <p>
+        You are bringing up a crucial distinction in enterprise delivery: the
+        difference between <strong>Logical Architecture</strong> and
+        <strong>Physical Execution</strong>.
+      </p>
+      <p>
+        As the Solution Architect, you own the "What" and the "Why." The Tech
+        Lead owns the "How" and the "When." Here is exactly how that partnership
+        works and why their knowledge is the missing puzzle piece in Sprint 0.
+      </p>
+      <h2 id="the-division-of-labor">The Division of Labor</h2>
+      <p>
+        When you sit down to split the work, you are combining two completely
+        different types of expertise.
+      </p>
+      <table style="width: 100%">
+        <colgroup>
+          <col style="width: 45%" />
+          <col style="width: 54%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th><strong>The Architect Brings (The Blueprint)</strong></th>
+            <th><strong>The Tech Lead Brings (The Hammer)</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Business Value:</strong> Knows that the 20% margin rule
+              must be unbreakable to satisfy the CFO.
+            </td>
+            <td>
+              <strong>Platform Limits:</strong> Knows that putting too many
+              Calculation Steps in one OmniStudio Procedure will hit governor
+              limits.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Cross-System Impact:</strong> Knows that the Cost Book
+              must be fed by the Financial ERP.
+            </td>
+            <td>
+              <strong>Data Skew:</strong> Knows how to structure the batch API
+              job to prevent locking errors when updating 10,000 cost records.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>The "Happy Path":</strong> Defines how the quote should
+              ideally flow for the sales rep.
+            </td>
+            <td>
+              <strong>The Edge Cases:</strong> Asks, "What happens if two reps
+              try to edit the same quote at the exact same time?"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Acceptance Criteria (Business):</strong> "The quote must
+              lock if margin &lt; 20%."
+            </td>
+            <td>
+              <strong>Acceptance Criteria (Technical):</strong> "Test class must
+              achieve 85% coverage and handle bulkified triggers."
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="how-the-split-actually-happens-the-handshake">
+        How the "Split" Actually Happens (The Handshake)
+      </h2>
+      <p>
+        You do not write the granular Jira tickets alone. You bring the
+        <strong>Epic</strong> and the <strong>Technical Blueprint</strong> to
+        the Tech Lead, and together, you carve it into Sprint-sized slices.
+      </p>
+      <p>
+        Here is what that conversation sounds like for our "Dinner &amp; Drinks"
+        margin problem:
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>You (The Architect):</strong> "We need an OmniStudio Pricing
+            Procedure that fetches the catering cost, does the math, and uplifts
+            the Booth Space price to hit a 20% margin. I have the business
+            requirements right here."
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Tech Lead:</strong> "Okay, looking at the complexity of
+            that math, that is too big for one developer to build and test in a
+            single sprint. We need to split this into three tickets."
+          </p>
+          <ul>
+            <li>
+              <p>
+                <em>Ticket 1:</em> Dev A builds the DataRaptor Extract to pull
+                the Cost data.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Ticket 2:</em> Dev B builds the Decision Matrix for the
+                target margins.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Ticket 3:</em> Dev C (the Senior Dev) builds the actual
+                Pricing Procedure that calls the elements from Dev A and Dev B.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>The Result:</strong> You ensure the business rule is intact.
+            The Tech Lead ensures the work is modular, assignable, and won't
+            break the build.
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="why-you-need-them-for-sequencing">
+        Why You Need Them for Sequencing
+      </h2>
+      <p>
+        Developers know dependencies better than anyone. You might think it
+        makes sense to build the Pricing Procedure in Sprint 1 to show the
+        business some quick progress.
+      </p>
+      <p>
+        The Tech Lead will immediately stop you:
+        <em
+          >"No, we can't build the Procedure until the custom fields for
+          Internal_Cost__c and Margin_Delta__c are deployed to the sandbox. Data
+          model comes first, UI comes last."</em
+        >
+      </p>
+      <h3 id="the-three-amigos-principle">The "Three Amigos" Principle</h3>
+      <p>
+        In mature Agile teams, this splitting exercise is often called the
+        "Three Amigos" meeting. It involves:
+      </p>
+      <ol type="1">
+        <li>
+          <p>
+            <strong>The Product Owner / Architect:</strong> Represents the
+            business intent.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Tech Lead:</strong> Represents the technical reality.
+          </p>
+        </li>
+        <li>
+          <p><strong>The QA Lead:</strong> Represents the testing strategy.</p>
+        </li>
+      </ol>
+      <p>
+        When the three of you sit in a room during Sprint 0 to groom the
+        backlog, the tickets that come out are bulletproof. You ensure the right
+        problem is being solved, the Dev ensures it can actually be built, and
+        QA ensures it can be proven.
+      </p>
+
+      <br />
+      <br />
+      <h1 id="sprint-0-handoff">
+        "Sprint 0 Handoff" With Development / Tech Lead
+      </h1>
+      <p>
+        This is the critical transition point. You are passing the baton from
+        the conceptual to the physical.
+      </p>
+      <p>
+        If you just email the Tech Lead a link to a Confluence page and say,
+        <em>"Let me know if you have questions,"</em> they will build what they
+        <em>think</em> you want, not what you actually designed.
+      </p>
+      <p>
+        To prevent that, you run a highly structured
+        <strong>Sprint 0 Handoff</strong> (often called the "Three Amigos"
+        kickoff). Here is the exact agenda to ensure your Revenue Cloud
+        architecture is sliced into perfect, actionable development sprints.
+      </p>
+      <h2 id="the-sprint-0-tech-lead-handoff-agenda">
+        The Sprint 0 Tech Lead Handoff Agenda
+      </h2>
+      <p><strong>Duration:</strong> 90 Minutes</p>
+      <p>
+        <strong>Attendees:</strong> Solution Architect (You), Technical Lead, QA
+        Lead.
+      </p>
+      <p>
+        <strong>Goal:</strong> Translate the Logical Architecture into a
+        sequenced Jira Backlog.
+      </p>
+
+      <h2 id="part-1-the-north-star-the-box-15-mins">
+        Part 1: The North Star &amp; The Box (15 Mins)
+      </h2>
+      <p>
+        <em
+          >The Architect leads this. You must ground the developers in the
+          business reality before they start thinking about code.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Briefing:</strong>
+            <em
+              >"We are solving the 'Dinner &amp; Drinks' margin erosion problem.
+              The CFO's mandate is that 0% of event quotes close below a 20%
+              margin without VP approval."</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Boundaries:</strong>
+            <em
+              >"For Phase 1, we are only touching the Cost__c object,
+              configuring a Decision Matrix, and modifying the Event_Pricing_v2
+              Pricing Procedure. We are strictly ignoring contract generation or
+              billing for now."</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Output:</strong> The Tech Lead understands
+            <em>why</em> they are building this, which helps them make
+            micro-decisions during development without constantly pinging you.
+          </p>
+        </li>
+      </ul>
+      <h2 id="part-2-the-architectural-walkthrough-30-mins">
+        Part 2: The Architectural Walkthrough (30 Mins)
+      </h2>
+      <p>
+        <em
+          >The Architect presents the blueprints. You hand over the specific
+          artifacts we built earlier.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Data &amp; Integration:</strong> Walk through the 3D Gap
+            Analysis and Data Template.
+            <em
+              >"We need a nightly batch to pull the $2,500 catering costs from
+              the ERP. Tech Lead, what is our volume risk here?"</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Engine (OmniStudio):</strong> Show the Technical
+            Blueprint from your Jira ticket.
+            <em
+              >"We need a Lookup Action feeding into a Formula Element. If the
+              margin drops below 20%, it triggers a Calculation Step to uplift
+              the Booth Space price."</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Guardrails:</strong> Explain the Advanced Approvals
+            requirement.
+            <em
+              >"If a rep manually discounts the new price, the system
+              locks."</em
+            >
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="part-3-the-slicing-session-30-mins">
+        Part 3: The "Slicing" Session (30 Mins)
+      </h2>
+      <p>
+        <em
+          >The Tech Lead takes the wheel. This is where the magic happens. They
+          take your massive architectural Epics and chop them into 2-week Sprint
+          tickets.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Tech Lead Action:</strong> They look at your OmniStudio
+            requirement and split it based on platform reality:
+          </p>
+          <ul>
+            <li>
+              <p>
+                <em>Ticket A (Sprint 1):</em> Build the Custom Metadata /
+                Decision Matrix for Margin Targets.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Ticket B (Sprint 1):</em> Create the custom fields
+                (Internal_Cost__c, Margin_Delta__c).
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Ticket C (Sprint 2):</em> Build the actual Pricing Procedure
+                Formula Element.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>Architect's Role:</strong> You listen and validate. If the
+            Tech Lead suggests putting the Advanced Approval rule in Sprint 1,
+            you push back:
+            <em
+              >"We can't test the approval routing until the Pricing Procedure
+              actually outputs a Net Price in Sprint 2. Let's move Approvals to
+              Sprint 3."</em
+            >
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="part-4-definition-of-ready-dor-acceptance-criteria-15-mins">
+        Part 4: Definition of Ready (DoR) &amp; Acceptance Criteria (15 Mins)
+      </h2>
+      <p>
+        <em
+          >The QA Lead takes the wheel. You ensure the tickets are actually
+          testable.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Check:</strong> The QA lead looks at your BDD Acceptance
+            Criteria (Given/When/Then).
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Negotiation:</strong>
+            <em
+              >"Architect, you said 'System automatically uplifts the price'.
+              Tech Lead, how are we logging that uplift so QA can verify it
+              happened?"</em
+            >
+            * <strong>The Output:</strong> The Tech Lead agrees to add a hidden
+            checkbox (System_Uplift_Applied__c) to the Quote Line strictly so QA
+            can run their automated testing scripts against it.
+          </p>
+        </li>
+      </ul>
+      <h2 id="the-artifact-handover">The Artifact Handover</h2>
+      <p>
+        At the end of this 90-minute meeting, you officially hand over the keys.
+        You provide the Tech Lead with:
+      </p>
+      <ol type="1">
+        <li>
+          <p>
+            The finalized
+            <strong>Requirements Traceability Matrix (RTM)</strong>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The drafted <strong>Jira Epics</strong> (with your Business Value
+            and Technical Blueprints attached).
+          </p>
+        </li>
+        <li>
+          <p>
+            The <strong>UAT Script</strong> (so the developers know exactly how
+            the business will grade their work).
+          </p>
+        </li>
+      </ol>
+
+      <br />
+      <br />
+      <h1 id="sprint-mapping">Sprint Mapping</h1>
+      <p>
+        This is where most enterprise projects fall apart. A firm will do
+        brilliant architectural design, and then blindly throw it into a
+        two-week Scrum cycle, resulting in what we call "Wagile"—Waterfall
+        planning disguised as Agile execution.
+      </p>
+      <p>
+        If you just hand a developer the entire "Automated Margin Safeguarding"
+        epic and say, <em>"See you in two weeks,"</em> they will fail. Revenue
+        Cloud requires a strict sequence of operations because the UI depends on
+        the rules, the rules depend on the data model, and the data model
+        depends on the integration.
+      </p>
+      <p>
+        Here is how you map the Syntrofin architectural playbook into a formal,
+        sequential Agile Sprint structure.
+      </p>
+      <h2 id="the-agile-rlm-delivery-methodology">
+        The Agile RLM Delivery Methodology
+      </h2>
+      <p>
+        This structure assumes standard 2-week sprints. As the Solution
+        Architect, your job is to keep the dev team focused strictly on the
+        layer of the architecture assigned to that sprint.
+      </p>
+
+      <h2 id="sprint-0-the-runway-architecture-backlog">
+        Sprint 0: The Runway (Architecture &amp; Backlog)
+      </h2>
+      <p>
+        <em
+          >Unlike developers, the Architect does the heavy lifting in Sprint 0.
+          You cannot build a house while you are still pouring the
+          foundation.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Goal:</strong> Define the boundaries and write the
+            tickets.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Playbook Mapping:</strong> Phases 1, 2, and 3
+            (Pre-Discovery, Workshops, Gap Analysis).
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Key Artifacts Delivered:</strong> * Signed-off L1-L3 Process
+            Taxonomy.
+          </p>
+          <ul>
+            <li><p>The Requirements Traceability Matrix (RTM).</p></li>
+            <li>
+              <p>
+                A fully groomed Jira backlog with Acceptance Criteria written in
+                Given/When/Then format.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>The Architect's Rule:</strong> No code is written in Sprint
+            0. If the business cannot agree on the 20% margin rule here, you do
+            not let Sprint 1 begin.
+          </p>
+        </li>
+      </ul>
+      <h2 id="sprint-1-the-foundation-data-integration">
+        Sprint 1: The Foundation (Data &amp; Integration)
+      </h2>
+      <p>
+        <em
+          >You cannot build a dynamic Pricing Procedure if the system doesn't
+          know what things cost.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Goal:</strong> Stand up the data architecture and
+            external system connections.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Playbook Mapping:</strong> Phase 3 (Data &amp; Integration
+            Templates).
+          </p>
+        </li>
+        <li>
+          <p><strong>Sprint Backlog (What Devs Build):</strong></p>
+          <ul>
+            <li>
+              <p>
+                Configure the core standard objects: Product2, PricebookEntry,
+                and Cost__c.
+              </p>
+            </li>
+            <li>
+              <p>
+                Build the <strong>Decision Matrix</strong> structure (Target
+                Margin % by Product Family).
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Integration:</em> Configure the nightly batch API to ingest
+                catering/inventory costs from the Financial ERP into the
+                Salesforce Cost Book.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>Sprint Review Demo:</strong> Show the VP of Sales that the
+            system now holds accurate, real-time cost data.
+          </p>
+        </li>
+      </ul>
+      <h2 id="sprint-2-the-core-engine-omnistudio-pricing">
+        Sprint 2: The Core Engine (OmniStudio &amp; Pricing)
+      </h2>
+      <p>
+        <em
+          >Now that the data exists, you build the machine that does the
+          math.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Goal:</strong> Automate the margin calculations and
+            price uplifts.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Playbook Mapping:</strong> Phase 3 (System &amp; Development
+            Templates).
+          </p>
+        </li>
+        <li>
+          <p><strong>Sprint Backlog (What Devs Build):</strong></p>
+          <ul>
+            <li>
+              <p>
+                Build the <strong>Pricing Procedure</strong> (Event_Pricing_v2).
+              </p>
+            </li>
+            <li>
+              <p>
+                Configure the <strong>Lookup Action</strong> to fetch the active
+                cost from Sprint 1.
+              </p>
+            </li>
+            <li>
+              <p>
+                Configure the <strong>Formula Element</strong> and
+                <strong>Calculation Step</strong> to execute the uplift if the
+                margin drops below 20%.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>Sprint Review Demo:</strong> Build a quote live in front of
+            the Pricing Ops team (Sarah). Show the system automatically
+            adjusting the Booth Space price to absorb the catering cost spike.
+          </p>
+        </li>
+      </ul>
+      <h2 id="sprint-3-the-guardrails-governance-approvals">
+        Sprint 3: The Guardrails (Governance &amp; Approvals)
+      </h2>
+      <p>
+        <em
+          >The engine works, now you build the brakes to stop sales reps from
+          bypassing it.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Goal:</strong> Enforce the business rules on the newly
+            automated pricing.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Playbook Mapping:</strong> Phase 3 (Governance Template)
+            &amp; Architect's Jira Ticket #2.
+          </p>
+        </li>
+        <li>
+          <p><strong>Sprint Backlog (What Devs Build):</strong></p>
+          <ul>
+            <li>
+              <p>
+                Install and configure
+                <strong>Advanced Approvals</strong> (sbaa).
+              </p>
+            </li>
+            <li><p>Create the custom formula field (Margin_Delta__c).</p></li>
+            <li>
+              <p>
+                Build the Approval Rule routing negative deltas to the VP of
+                Sales.
+              </p>
+            </li>
+            <li>
+              <p>
+                Configure Quote UI rules to hide the "Generate Document" button
+                when locked.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>Sprint Review Demo:</strong> Log in as a sales rep, manually
+            discount the price to 15% margin, and show the quote locking. Log in
+            as the VP of Sales and approve it.
+          </p>
+        </li>
+      </ul>
+      <h2 id="sprint-4-hardening-uat">Sprint 4: Hardening &amp; UAT</h2>
+      <p>
+        <em
+          >The build is complete. Now you bring the business in to try and break
+          it.</em
+        >
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Goal:</strong> Business sign-off and deployment
+            readiness.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Playbook Mapping:</strong> Phase 4 (UAT Validation Script).
+          </p>
+        </li>
+        <li>
+          <p><strong>Sprint Backlog (What Devs Build):</strong></p>
+          <ul>
+            <li>
+              <p>
+                Defect resolution (fixing whatever bugs the business finds
+                during UAT).
+              </p>
+            </li>
+            <li>
+              <p>
+                Finalizing deployment packages and sandbox-to-production
+                migration scripts.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <strong>The Architect's Role:</strong> You run the UAT sessions. You
+            hand the business the exact UAT script we wrote earlier and watch
+            them execute the Given/When/Then scenarios.
+          </p>
+        </li>
+      </ul>
+      <h2 id="why-this-agile-sequence-is-non-negotiable">
+        Why this Agile sequence is non-negotiable
+      </h2>
+      <p>
+        If you let a developer build the Advanced Approvals (Sprint 3) before
+        the Cost Data is integrated (Sprint 1), the approvals will fire randomly
+        because the system is doing math with blank variables. By sequencing the
+        sprints as <strong>Data -&gt; Engine -&gt; Guardrails</strong>, you
+        ensure every sprint produces a shippable, demo-able increment of value.
+      </p>
+    </section>
+  </body>
+</html>

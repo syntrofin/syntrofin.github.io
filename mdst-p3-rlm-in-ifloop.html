@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntrofin - Interactive RLM Architecture</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .code-container {
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 1000px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .window-header {
+            background-color: #252526;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .dots { display: flex; gap: 8px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+        .title {
+            margin-left: 15px; color: #888; font-size: 14px; font-family: monospace;
+        }
+        
+        /* Accordion Styling */
+        .accordion {
+            background-color: #333333;
+            color: #4EC9B0; /* IDE-style Variable Color */
+            cursor: pointer;
+            padding: 15px 20px;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #1e1e1e;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            font-family: 'Consolas', monospace;
+            font-weight: bold;
+            transition: 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .active, .accordion:hover {
+            background-color: #3e3e42;
+        }
+        .accordion:after {
+            content: '\25BC'; /* Down Arrow */
+            font-size: 12px;
+            color: #888;
+            transition: transform 0.3s ease;
+        }
+        .active:after {
+            transform: rotate(-180deg);
+        }
+        .panel {
+            background-color: #1e1e1e;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        pre {
+            margin: 0 !important;
+            padding: 20px !important;
+            background: transparent !important;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="code-container">
+        <div class="window-header">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="title">Syntrofin_RLM_Interactive_Model.js</div>
+        </div>
+
+        <button class="accordion">THE OMNI-CHANNEL FRONT END</button>
+        <div class="panel">
+<pre><code class="language-javascript">IF (Customer_Engagement == 'Active') {
+    // UI/API Layer
+    Render = "OmniStudio OmniScript + Flexcard";
+    Execute = "Omnistudio Data Mapper + Integration Procedure";
+    Create = "Lead -> Account + Contact -> Opportunity";
+    
+    // Evaluate Eligibility
+    Execute = "Qualification Procedure + Discovery Procedure"; 
+}</code></pre>
+        </div>
+
+        <button class="accordion">STEP 1: PRODUCT CATALOGUE MANAGEMENT (PCM)</button>
+        <div class="panel">
+<pre><code class="language-javascript">IF (Product.Type == 'Bundle') {
+    Apply = "Product Component Group + Product Relationship Type";
+    Execute = "Product Configuration Flow -> Product Configuration Rule";
+}
+Map = "Product Attribute Scope -> Product Attribute Mapped Scope";
+
+// THE FORK: Defining the Commercial Construct
+IF (ProductSellingModel == 'OneTime') {
+    Define = "Hardware/License Category";
+    Apply = "Attribute Definition (e.g., Color, Storage Size)";
+    
+} ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+    Define = "Subscription Category";
+    Apply = "Proration Policy"; // Essential for mid-month start dates
+    Apply = "Attribute Definition (e.g., SLA Level, Seats)";
+    
+} ELSE IF (ProductSellingModel == 'Usage') {
+    Define = "Consumption Category";
+    Create = "Consumption Schedule"; 
+    Create = "Transaction Usage Entitlement"; 
+    
+} ELSE IF (ProductSellingModel == 'Milestone') {
+    Define = "Service/Project Category";
+    Apply = "Attribute Definition (e.g., Number of Consultants, Region)";
+}</code></pre>
+        </div>
+
+        <button class="accordion">STEP 2: PRICING OPERATIONAL CONSOLE & RATE MANAGEMENT</button>
+        <div class="panel">
+<pre><code class="language-javascript">Execute = "Pricing Procedure";
+Log = "Price Waterfall"; // Audits every discount applied
+
+IF (ProductSellingModel == 'OneTime') {
+    Execute = "Price Book Entry (Standard Unit Price)";
+    Apply = "Bundle Based Adjustment"; 
+    Calculate = "Derived Price"; 
+    
+} ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+    Execute = "Price Book Entry (Monthly/Annual Price)";
+    Apply = "Price Adjustment Schedule -> Price Adjustment Tier"; 
+    Apply = "Price Revision Policy"; // Defines rules for renewal uplifts
+    
+} ELSE IF (ProductSellingModel == 'Usage') {
+    Execute = "Rate Card -> Rate Card Entry"; 
+    Execute = "Index Rate + Binding Object Rate Adjustment"; 
+    
+} ELSE IF (ProductSellingModel == 'Milestone') {
+    Execute = "Price Book Entry (Blended Hourly Rate / Fixed Fee)";
+    Calculate = "Cost Book -> Cost Book Entry"; // Services margin tracking
+}
+
+// Finalize the Sales construct
+Create = "Quote -> Quote Line Item Recipient";</code></pre>
+        </div>
+
+        <button class="accordion">STEP 3: SALESFORCE CONTRACTS (CLM)</button>
+        <div class="panel">
+<pre><code class="language-javascript">IF (Quote.Status == 'Accepted') {
+    Create = "Salesforce Contract + Sales Contract Line";
+    Design = "Document Template Designer -> Document Template";
+    Inject = "Document Clause Set -> Document Clause";
+
+    IF (ProductSellingModel == 'OneTime') {
+        Inject = "Document Clause (Hardware Warranty & Liability)";
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Inject = "Document Clause (Auto-Renewal Terms & SLA Guarantees)";
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Inject = "Document Clause (True-up rules & Overage Penalties)";
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        Inject = "Document Clause (Statement of Work & Acceptance Criteria)";
+    }
+
+    Generate = "Generated Document";
+    Execute = "Omni Electronic Signature Template";
+}</code></pre>
+        </div>
+
+        <button class="accordion">STEP 4: DYNAMIC REVENUE ORCHESTRATOR (DRO)</button>
+        <div class="panel">
+<pre><code class="language-javascript">IF (Contract.Status == 'Activated') {
+    Create = "Order + Order Summary";
+    Execute = "Product Fulfillment Decomposition Rule"; 
+    Create = "Orchestration Plan + Orchestration Run";
+
+    IF (ProductSellingModel == 'OneTime') {
+        Create = "Fulfillment Order -> Fulfillment Asset -> Fulfillment Step (Shipping)";
+        Verify = "Fulfillment Step Dependency (Wait for warehouse scan)";
+        
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Create = "Fulfillment Order -> Fulfillment Asset -> Fulfillment Step (Provisioning)";
+        Execute = "Orchestration Work Item (API Callout to SaaS platform)";
+        
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Create = "Fulfillment Order -> Fulfillment Step (Meter Activation)";
+        Execute = "Orchestration Work Item (Enable Data Ingestion endpoints)";
+        
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        Create = "Fulfillment Step (Kickoff) -> (UAT Sign-off) -> (Go-Live)";
+        Verify = "Fulfillment Step Dependency (Must complete Kickoff before UAT)";
+    }
+}</code></pre>
+        </div>
+
+        <button class="accordion">STEP 5: REVENUE LIFE CYCLE MANAGEMENT (ASSETIZATION)</button>
+        <div class="panel">
+<pre><code class="language-javascript">IF (Fulfillment Step.Status == 'Completed') {
+    
+    IF (ProductSellingModel == 'OneTime') {
+        Create = "Asset (Static record)";
+        
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Create = "Asset State Period (Tracks MRR, Quantity, Term)";
+        // If customer amends later:
+        Create = "Asset Action (Upsell/Downsell/Renew) -> Asset Action Source"; 
+        
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Create = "Asset State Period (Active Status)";
+        Link = "Usage Resource (Ties meter to the Asset)";
+        
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        Create = "Asset (Represents the active Project/SOW)";
+    }
+}</code></pre>
+        </div>
+
+        <button class="accordion">STEP 6: FINANCIAL OPERATIONS (BILLING, TAX & PAYMENTS)</button>
+        <div class="panel">
+<pre><code class="language-javascript">IF (Billing_Period == 'Active' || Orchestration_Trigger == 'True') {
+    
+    Calculate = "Tax Engine -> Tax Policy -> Tax Treatment";
+    
+    IF (ProductSellingModel == 'OneTime') {
+        Generate = "Invoice (Immediate, Full Amount)";
+        Create = "Finance Transaction -> Finance Balance Snapshot (Immediate Rev Rec)";
+        
+    } ELSE IF (ProductSellingModel IN ['TermDefined', 'Evergreen']) {
+        Generate = "Invoice (Recurring based on Asset State Period)";
+        Create = "Finance Transaction -> Finance Balance Snapshot (Amortized Rev Rec)";
+        
+    } ELSE IF (ProductSellingModel == 'Usage') {
+        Execute = "Rating Discovery Procedure -> Usage Resource";
+        Calculate = "Binding Object Rate Adjustment x Consumed Units";
+        Generate = "Invoice (Variable Amount)";
+        Create = "Finance Transaction -> Finance Balance Snapshot (Invoiced Amount)";
+        
+    } ELSE IF (ProductSellingModel == 'Milestone') {
+        IF (Fulfillment Step(Go-Live).Status == 'Completed') {
+            Generate = "Invoice (Release milestone funds)";
+            Create = "Finance Transaction -> Finance Balance Snapshot (% Completion)";
+        }
+    }
+
+    // Payments & Exceptions
+    Route = "Payment Gateway -> Digital Wallet / Card Payment Method";
+    Create = "Payment";
+    
+    IF (Dispute == 'True') {
+        Create = "Credit Memo -> Refund";
+    }
+}</code></pre>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    // Temporarily add a large max-height to let Prism process, then calculate actual scroll height
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        
+        // Open the first panel by default for demonstration
+        setTimeout(() => {
+            acc[0].click();
+        }, 100);
+    </script>
+</body>
+</html>

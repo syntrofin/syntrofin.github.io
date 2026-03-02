@@ -1,0 +1,330 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Pre</title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="sme-workshops">
+      <br />
+      <br />
+      <h1 style="text-align: center; font-weight: 700; font-size: 2.2rem">
+        SME Workshops
+      </h1>
+      <br />
+
+      <p>
+        <strong
+          >60-minute SME deep-dive sessions for a topic like "Margin Floor
+          Calculations".</strong
+        >
+        This is where the rubber meets the road. You have your scope locked,
+        your executive alignment, and your SME (let's call her Sarah from
+        Pricing Ops) trapped in a room for exactly 60 minutes.
+      </p>
+      <p>
+        If you just ask, <em>"How do you calculate margins?"</em>, she will talk
+        for an hour, and you will leave with zero actionable requirements.
+      </p>
+      <p>
+        Instead, you run a highly structured, ruthless, and interactive session.
+        Here is the exact playbook for running the
+        <strong>L3: Margin Floor Calculations</strong> deep-dive workshop.
+      </p>
+
+      <h2 id="the-60-minute-sme-deep-dive-agenda">
+        The 60-Minute SME Deep Dive Agenda
+      </h2>
+      <p>
+        <strong>Topic:</strong> L3.2 - Margin Floor Calculations &amp; Quoting
+        Overrides <strong>Goal:</strong> Complete the
+        <em>Discovery Template</em> and identify the <em>3D Gaps</em> for this
+        specific process.
+      </p>
+      <table>
+        <colgroup>
+          <col style="width: 11%" />
+          <col style="width: 17%" />
+          <col style="width: 39%" />
+          <col style="width: 32%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Phase</th>
+            <th>The Architect's Action</th>
+            <th>The Expected Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>00:00 - 00:10</strong></td>
+            <td><strong>The Anchor</strong></td>
+            <td>
+              Set the rules of engagement and review the North Star metric.
+            </td>
+            <td>
+              SME alignment: "We are only talking about margins, nothing else."
+            </td>
+          </tr>
+          <tr>
+            <td><strong>00:10 - 00:35</strong></td>
+            <td><strong>The "Show Me" (As-Is)</strong></td>
+            <td>
+              Force the SME to share their screen and execute the process live.
+            </td>
+            <td>
+              Documented manual steps, data inputs, and system limitations.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>00:35 - 00:50</strong></td>
+            <td><strong>The Nudge (To-Be)</strong></td>
+            <td>
+              Use "What If" questions to design the future state without
+              dictating it.
+            </td>
+            <td>
+              The Business Intent (e.g., "System should auto-uplift the price").
+            </td>
+          </tr>
+          <tr>
+            <td><strong>00:50 - 01:00</strong></td>
+            <td><strong>The Playback (Gaps)</strong></td>
+            <td>
+              Summarize what you heard into Process, Data, and System gaps for
+              immediate validation.
+            </td>
+            <td>Verbal sign-off on the core problems to solve.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="step-by-step-execution-guide">Step-by-Step Execution Guide</h2>
+
+      <h2 id="part-1-the-anchor-10-mins">Part 1: The Anchor (10 Mins)</h2>
+      <p>
+        You must set boundaries immediately, or the SME will start complaining
+        about their laptop battery or a totally unrelated CPQ bug.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Script:</strong>
+            <em
+              >"Sarah, our executive goal for this phase is to eliminate margin
+              erosion on complex quotes. Today, we are specifically looking at
+              how your team calculates margins when variable costs—like event
+              catering—fluctuate. We are not looking at document generation or
+              e-signatures today. Let's dive in."</em
+            >
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="part-2-the-show-me-25-mins">Part 2: The "Show Me" (25 Mins)</h2>
+      <p>
+        <strong>Rule #1 of Discovery:</strong> Never trust what an SME
+        <em>says</em> they do. Trust what they <em>actually</em> click. Do not
+        let them explain the process verbally. Make them demonstrate it.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Script:</strong>
+            <em
+              >"Sarah, pretend I am a sales rep who just requested a quote for a
+              $15,000 Booth Space, but catering costs just spiked to $2,500.
+              Open up your screen and show me the exact steps you take today to
+              check and fix that margin."</em
+            >
+          </p>
+        </li>
+        <li>
+          <p><strong>What you are looking for (The 3D Gaps):</strong></p>
+          <ul>
+            <li>
+              <p>
+                <em>Data:</em> Watch where she gets the $2,500 cost. Is it an
+                email? A Slack message? (That is your Data Gap).
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Process:</em> Watch who she pings for approval when she
+                manually adds a surcharge. (That is your Process Gap).
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>System:</em> Watch her copy-paste from Salesforce into her
+                manual Excel calculator. (That is your System Gap).
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2 id="part-3-the-nudge-15-mins">Part 3: The Nudge (15 Mins)</h2>
+      <p>
+        Now that you have seen the messy "As-Is," it is time to define the
+        "To-Be." You use the nudging techniques we discussed earlier to guide
+        her toward the Revenue Cloud Advanced capabilities.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Script (The Elimination Nudge):</strong>
+            <em
+              >"Sarah, I saw that it took you 8 minutes to run that Excel
+              calculation and add the manual 'Surcharge' line item to the quote.
+              If the system already knew the catering cost was $2,500, what
+              would happen if the quoting engine just automatically increased
+              the Booth Space price to maintain a 20% margin, without you ever
+              opening Excel?"</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The SME Response:</strong>
+            <em
+              >"That would save us hours. But what if the rep tries to discount
+              that new price?"</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Script (The Governance Nudge):</strong>
+            <em
+              >"Great question. If they try to discount below the 20% floor, we
+              can lock the quote and route it directly to the VP. Does that
+              sound like the right future state?"</em
+            >
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="part-4-the-playback-10-mins">Part 4: The Playback (10 Mins)</h2>
+      <p>
+        You do not leave the room without validating your Gap Analysis. You
+        summarize the technical architecture into plain English.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Script:</strong>
+            <em
+              >"Alright, to summarize, here is the gap we need to close to get
+              you to that future state:</em
+            >
+          </p>
+          <ol type="1">
+            <li>
+              <p>
+                <em
+                  >We need to pipe the actual cost data into a standard object
+                  (Data Gap).</em
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                <em
+                  >We need a pricing engine rule to do the math automatically
+                  instead of Excel (System Gap).</em
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                <em
+                  >We need the VP to agree to a strict 24-hour SLA on those
+                  approval exceptions (Process Gap).</em
+                >
+                <em
+                  >Does that accurately capture the problem we are solving?"</em
+                >
+              </p>
+            </li>
+          </ol>
+        </li>
+      </ul>
+      <h2 id="the-output">The Output</h2>
+      <p>
+        When you walk out of that 60-minute meeting, you take your notes and
+        immediately drop them into the <strong>Discovery Template</strong> and
+        the <strong>3D Gap Analysis</strong> tables we built. Because you ran
+        the meeting this way, the tables practically write themselves.
+      </p>
+      <p>
+        Hopefully, this gives you a rock-solid playbook to command the room
+        during your next SME workshop. Enjoy catching up with the Duke alumni at
+        the Raleigh Beer Garden tonight—have a great time celebrating getting
+        this architecture mapped out!
+      </p>
+
+      <br />
+      <br />
+    </section>
+  </body>
+</html>
