@@ -4,15 +4,27 @@
 <title>Architectural Comparison: SAP ECC, LWC, OmniStudio</title>
    <!-- CSS -->
     <link href="./evaldiscovery.css" rel="stylesheet" />
+   <styles>
+.text-h2{
+      font-weight: bold;
+      }
+      
+   </styles>
 
 </head>
 <body>
-<h1 style="color: #CC7357;">Omni</h1>
+<h1>What Is Omni</h1>
 <br>
-<p class="text-h1">If Traditional ECC is Stateful, and Intelligent - LWC is Stateless, and Dumb - Omni is Stateless, and Intelligent</p>
+<h2>
+   Omni is Stateless, and Intelligent
+</h2>
+   <p class="text-h2">
+      If Traditional ECC is Stateful, and Intelligent - LWC is Stateless, and Dumb - Omni is Stateless, and Intelligent
+       </p>
 <p>That is a perfect architectural summary. You’ve categorized them by where the "brain" lives and how they "remember" the user. Here is the breakdown of why those labels fit so well:</p>
 
 <p class="text-h2">SAP ECC: Stateful & Intelligent</p>
+   
 <ul>
   <li>The Brain: Lives entirely on the <strong>Server</strong>.</li>
   <li>State: The server keeps a "Work Process" open for you. It remembers exactly where your cursor is and what is in your 900-line internal table.</li>
@@ -70,7 +82,7 @@
 
 <hr class="section-divider">
 
-<p class="text-h1">Then how was Omni engineered on top of LWC</p>
+<h2>Then how was Omni engineered on top of LWC</h2>
 <p>It’s a masterclass in abstraction. Salesforce (Vlocity) didn't just build components; they built a <strong>metadata-driven engine</strong> that sits on top of the LWC framework. Think of it this way: A standard LWC is a hand-coded sports car. OmniStudio is a modular factory that snaps together pre-built parts to create the car.</p>
 
 <p>Here is how it’s engineered:</p>
@@ -114,7 +126,7 @@
 
 <hr class="section-divider">
 
-<p class="text-h1">Omni Classes Can be Extended</p>
+<h2>Omni Classes Can be Extended</h2>
 <p>To extend OmniStudio, you don't "edit" their code; you inherit their engine. When you create a custom LWC to sit inside an OmniScript, you extend the <code>OmniscriptBaseMixin</code>. This gives your custom component "magical" access to the 900-line JSON data bus.</p>
 
 <p>Here is the architectural pattern for extending the "Engine":</p>
@@ -202,7 +214,7 @@ export default class CustomQuoteLine extends OmniscriptBaseMixin(LightningElemen
 
 <hr>
 
-<p class="text-h1">Material for Omni Architecture (Not How to Use Omni Tools)</p>
+<h2>Documentation for Omni Architecture (Not How to Use Omni Tools)</h2>
 
 <p>To understand the deep architectural layers of OmniStudio rather than just the "how-to," you should focus on resources that detail the stateless interaction model, metadata runtime, and JSON data bus.</p>
 
