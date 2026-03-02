@@ -44,6 +44,13 @@
   <li>The Behavior: It’s "Intelligent" because it can process complex industry-specific logic (like Telco or Insurance pricing) in bulk. It receives a "dumb" JSON array from the LWC, applies "intelligence" to it, and sends back a "smart" result.</li>
 </ul>
 
+<p class="text-h2">Conceptual Architecture Summary</p>
+<ul>
+    <li><strong>Modular Microservices Style:</strong> OmniStudio follows a microservices architecture where UI components (FlexCards/OmniScripts) act as the presentation layer for a separate service management layer (DataRaptors/IPs).</li>
+    <li><strong>Server-Side Execution:</strong> Integration Procedures (IPs) are designed to minimize round-trip latency by 30–50% by executing multiple business logic actions in a single server-side call.</li>
+    <li><strong>JSON-First Data Flow:</strong> The architecture is centered around a hierarchical, nested JSON data structure that allows for complex data handling without custom Apex.</li>
+</ul>
+   
 <p class="text-h2">The Comparison Matrix</p>
 <table>
   <thead>
@@ -231,11 +238,5 @@ export default class CustomQuoteLine extends OmniscriptBaseMixin(LightningElemen
     Critical for understanding the "Engine" evolution. It explains how OmniStudio now runs natively on core Salesforce objects and the technical differences in how LWCs are generated and interpreted.</li>
 </ul>
 
-<p class="text-h2">Conceptual Architecture Summary</p>
-<ul>
-    <li><strong>Modular Microservices Style:</strong> OmniStudio follows a microservices architecture where UI components (FlexCards/OmniScripts) act as the presentation layer for a separate service management layer (DataRaptors/IPs).</li>
-    <li><strong>Server-Side Execution:</strong> Integration Procedures (IPs) are designed to minimize round-trip latency by 30–50% by executing multiple business logic actions in a single server-side call.</li>
-    <li><strong>JSON-First Data Flow:</strong> The architecture is centered around a hierarchical, nested JSON data structure that allows for complex data handling without custom Apex.</li>
-</ul>
 </body>
 </html>
