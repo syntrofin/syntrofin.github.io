@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyntroFin - Enterprise Architecture Documentation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./sfdev.css" />
+  </head>
+  <body>
+    <div class="doc-section">
+      <h1>What Is Salesforce Agentforce (Agentic AI)</h1>
+      <h2>Agentforce is Autonomous, and Context-Grounded</h2>
+
+      <p>
+        If a Traditional Chatbot is Stateful and Rigid, and a Raw LLM (like
+        standard ChatGPT) is Stateless and Hallucinatory — Agentforce is
+        <strong>Autonomous and Context-Grounded.</strong>
+      </p>
+
+      <h3>
+        Architectural Breakdown: Traditional Bots vs. Raw LLM vs. Agentforce
+      </h3>
+
+      <p>
+        <strong>Traditional Chatbots (Einstein Bots): Stateful & Rigid</strong>
+      </p>
+      <ul>
+        <li>
+          <strong>The Brain:</strong> Lives in hardcoded decision trees and Flow
+          logic.
+        </li>
+        <li>
+          <strong>State:</strong> The server tracks exact session variables
+          (User is on Step 3 of "Reset Password").
+        </li>
+        <li>
+          <strong>The Behavior:</strong> It's "Rigid" because if the user asks a
+          question slightly outside the pre-programmed path, the bot fails and
+          routes to a human.
+        </li>
+      </ul>
+
+      <p><strong>Raw LLM: Stateless & Unbounded</strong></p>
+      <ul>
+        <li>
+          <strong>The Brain:</strong> Lives in the neural network weights of the
+          AI provider (OpenAI, Anthropic).
+        </li>
+        <li>
+          <strong>State:</strong> Purely stateless. It only knows what is in the
+          current text prompt.
+        </li>
+        <li>
+          <strong>The Behavior:</strong> It's "Unbounded." It can generate
+          amazing text, but it doesn't know your specific business rules,
+          inventory, or customer data unless you manually paste it in.
+        </li>
+      </ul>
+
+      <p><strong>Agentforce: Autonomous & Context-Grounded</strong></p>
+      <ul>
+        <li>
+          <strong>The Brain:</strong> Lives in the
+          <strong>Atlas Reasoning Engine</strong>, which sits between the user
+          and the LLM.
+        </li>
+        <li>
+          <strong>State:</strong> Contextual. It maintains a memory of the
+          conversation and dynamically retrieves state from Salesforce (via Data
+          Cloud or SOQL) <em>only</em> when needed.
+        </li>
+        <li>
+          <strong>The Behavior:</strong> It evaluates intent, creates a
+          multi-step plan, searches for standard Salesforce tools (Apex, Flows,
+          API calls) to execute that plan, and synthesizes the result.
+        </li>
+      </ul>
+
+      <h3>Conceptual Architecture Summary</h3>
+      <ul>
+        <li>
+          <strong>Agent Orchestration:</strong> Agentforce uses a ReAct (Reason
+          + Act) architecture. It doesn't just guess an answer; it thinks:
+          <em
+            >"To answer this, I first need to run the 'Get Order Status' Flow,
+            evaluate the JSON response, and then tell the user."</em
+          >
+        </li>
+        <li>
+          <strong>The Trust Layer:</strong> A secure gateway that masks PII,
+          scores for toxicity, and ensures zero-data-retention from the LLM
+          providers.
+        </li>
+        <li>
+          <strong>Actions as APIs:</strong> The engine treats your existing
+          Salesforce metadata (Flows, Apex invocable methods, Prompt Templates)
+          as a library of JSON-defined "Tools" the agent can independently
+          decide to use.
+        </li>
+      </ul>
+
+      <h3>The Comparison Matrix</h3>
+      <table>
+        <tr>
+          <th>System</th>
+          <th>Execution Style</th>
+          <th>Intelligence (Logic)</th>
+          <th>Payload Strategy</th>
+        </tr>
+        <tr>
+          <td><strong>Einstein Bot</strong></td>
+          <td>Deterministic (State Machine)</td>
+          <td>Low (If/Then Rules)</td>
+          <td>Session Variables</td>
+        </tr>
+        <tr>
+          <td><strong>Raw LLM</strong></td>
+          <td>Generative</td>
+          <td>High (General Knowledge)</td>
+          <td>Raw Text Prompts</td>
+        </tr>
+        <tr>
+          <td><strong>Agentforce</strong></td>
+          <td>Agentic Orchestration (Atlas)</td>
+          <td>High (Enterprise-Grounded)</td>
+          <td>System Prompts + JSON Tool Definitions</td>
+        </tr>
+      </table>
+
+      <h3>The Evolution: How Agentforce is Engineered</h3>
+      <p>
+        We moved from hardcoded state machines to probabilistic text generators,
+        and now to <strong>Agentic Orchestration</strong>. Agentforce is
+        engineered as a meta-layer over the LLM.
+      </p>
+
+      <p>
+        <strong>Topics and Actions vs. Hard Code</strong><br />
+        In a standard bot, you build a massive Flow charting every possible user
+        branch. In Agentforce, you define "Topics" (boundaries) and "Actions"
+        (tools). You are essentially writing instructions for the Atlas Engine,
+        not the user.
+      </p>
+
+      <p>
+        <strong>The "Tool Calling" DataBus</strong><br />
+        When you give Agentforce an Invocable Apex method to calculate a CPQ
+        discount, the Atlas Engine translates your Apex inputs/outputs into a
+        JSON schema. It feeds this schema to the LLM in the background. The LLM
+        says, <em>"I need to call this JSON endpoint with Quantity=5."</em> The
+        Atlas engine executes the Apex natively in Salesforce, gets the result,
+        and feeds it back to the LLM to format as a human-readable sentence.
+      </p>
+
+      <h3>
+        Agentforce is Not Just a ChatGPT Wrapper - This is a Big Misconception!
+      </h3>
+      <p>
+        A wrapper just passes text to an API. Agentforce is an
+        <strong>execution engine</strong>. The LLM is just the "language
+        processor," but the Atlas Engine is doing the actual enterprise work:
+        routing, permissions checking, tool execution, and data masking.
+      </p>
+
+      <pre class="code-block"><code>
+          // How you give Agentforce an "Action" via Apex
+          // The LLM reads the @InvocableMethod description to understand WHEN to use this code autonomously.
+
+
+          public class CPQDiscountCalculator {
+              @InvocableMethod(label='Calculate Max Discount' description='...')
+              public static List&lt;Decimal&gt; calculateDiscount(List&lt;DiscountRequest&gt; requests) {
+                  // ... standard Apex logic ...
+                  return results;
+              }
+          }
+      </code></pre>
+
+      <h3>Documentation for Agentforce Architecture</h3>
+      <ul>
+        <li>
+          <strong>Salesforce AI Trust Layer Architecture:</strong> Deep dive
+          into how payloads are intercepted, masked, and routed before hitting
+          external LLMs.
+        </li>
+        <li>
+          <strong>Atlas Reasoning Engine Whitepaper:</strong> Explains the ReAct
+          (Reasoning and Acting) loops and how the agent breaks down complex
+          prompts into sequential tool executions.
+        </li>
+        <li>
+          <strong>Agentforce Developer Guide:</strong> How to expose Apex,
+          Flows, and External Services as Agent Actions with proper descriptive
+          grounding.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

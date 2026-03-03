@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyntroFin - Enterprise Architecture Documentation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./sfdev.css" />
+  </head>
+  <body>
+    <div class="doc-section">
+      <h1>What Is Salesforce Data Cloud</h1>
+      <h2>Data Cloud is a Decoupled, Zero-Copy Lakehouse</h2>
+
+      <p>
+        If Traditional Core Salesforce is Transactional and Row-Based, and
+        External Data Warehouses are Analytical but Disconnected — Data Cloud is
+        a <strong>Decoupled, Zero-Copy Lakehouse.</strong>
+      </p>
+
+      <h3>Architectural Breakdown: CRM DB vs. Warehouse vs. Data Cloud</h3>
+
+      <p>
+        <strong
+          >Traditional Salesforce (Core CRM): Transactional & Relational</strong
+        >
+      </p>
+      <ul>
+        <li>
+          <strong>The Brain:</strong> Lives in the Oracle/Postgres relational
+          database engine.
+        </li>
+        <li>
+          <strong>State:</strong> Highly structured, strictly governed by object
+          schemas (Accounts, Contacts).
+        </li>
+        <li>
+          <strong>The Behavior:</strong> Engineered for OLTP (Online Transaction
+          Processing). It is incredibly fast at finding one specific record and
+          updating it. It fails miserably at aggregating 50 million web-click
+          events.
+        </li>
+      </ul>
+
+      <p>
+        <strong
+          >Traditional Data Warehouse (Snowflake/Redshift): Analytical &
+          Heavy</strong
+        >
+      </p>
+      <ul>
+        <li>
+          <strong>The Brain:</strong> Massive parallel processing servers.
+        </li>
+        <li>
+          <strong>State:</strong> Data is extracted, transformed, and loaded
+          (ETL) in massive batches.
+        </li>
+        <li>
+          <strong>The Behavior:</strong> Great for OLAP (Online Analytical
+          Processing) and historical reporting, but completely disconnected from
+          the Salesforce UI and business triggers.
+        </li>
+      </ul>
+
+      <p><strong>Salesforce Data Cloud: Decoupled Lakehouse</strong></p>
+      <ul>
+        <li>
+          <strong>The Brain:</strong> Lives on Hyperforce (AWS infrastructure),
+          utilizing big-data query engines like Trino/Presto and Vector
+          databases.
+        </li>
+        <li>
+          <strong>State:</strong> Handles both batch and real-time streaming
+          data. It doesn't force a strict schema on ingest.
+        </li>
+        <li>
+          <strong>The Behavior:</strong> It ingests massive volumes of raw data,
+          maps it to a unified semantic model, resolves identities, and then
+          <em>exposes</em> that data back to Core Salesforce without actually
+          copying the billions of rows into the CRM database.
+        </li>
+      </ul>
+
+      <h3>Conceptual Architecture Summary</h3>
+      <ul>
+        <li>
+          <strong>Lakehouse Architecture:</strong> It combines the flexibility
+          and cheap storage of a data lake (storing raw JSON, CSVs, unstructured
+          text) with the management and querying features of a data warehouse.
+        </li>
+        <li>
+          <strong>Zero-Copy Federation:</strong> Instead of building complex ETL
+          pipelines to copy data from Snowflake/BigQuery into Salesforce, Data
+          Cloud creates a "live mount." It queries the external database in
+          real-time.
+        </li>
+        <li>
+          <strong>Identity Resolution:</strong> The engine mathematically
+          evaluates fragmented records (e.g., an email from Marketing Cloud, a
+          device ID from a website, a phone number from Service Cloud) and
+          merges them into a single Unified Individual profile.
+        </li>
+      </ul>
+
+      <h3>The Comparison Matrix</h3>
+      <table>
+        <tr>
+          <th>System</th>
+          <th>Storage Architecture</th>
+          <th>Data Type</th>
+          <th>Execution Specialty</th>
+        </tr>
+        <tr>
+          <td><strong>Core Salesforce</strong></td>
+          <td>Relational Database</td>
+          <td>Structured Only</td>
+          <td>Single Record Transactions (OLTP)</td>
+        </tr>
+        <tr>
+          <td><strong>Data Warehouse</strong></td>
+          <td>Columnar DB</td>
+          <td>Structured/Semi-Structured</td>
+          <td>Batch Analytics (OLAP)</td>
+        </tr>
+        <tr>
+          <td><strong>Data Cloud</strong></td>
+          <td>Data Lakehouse (Hyperforce)</td>
+          <td>Structured, Streaming, Unstructured (Vector)</td>
+          <td>Identity Resolution, Real-time Activation, AI Grounding</td>
+        </tr>
+      </table>
+
+      <h3>The Engineering: DLOs, DMOs, and Data Graphs</h3>
+      <p>
+        Because you cannot simply dump a billion rows into a standard Salesforce
+        Custom Object, Data Cloud uses a distinct three-layer metadata
+        architecture:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Data Lake Objects (DLOs):</strong> The raw ingested data. If
+          you ingest a massive JSON file of web clicks, it lands here exactly as
+          it is.
+        </li>
+        <li>
+          <strong>Data Model Objects (DMOs):</strong> The "Harmonization" layer.
+          You map fields from the messy DLOs into standardized Salesforce
+          Customer 360 models (e.g., mapping "Cust_FName" and "FirstName" both
+          to the standard `First Name` DMO field).
+        </li>
+        <li>
+          <strong>Data Graphs:</strong> The "Pre-computed JSON DataBus." To make
+          retrieving complex relationships lightning fast for prompts or
+          OmniScripts, a Data Graph flattens multiple related DMOs into a single
+          JSON blob.
+        </li>
+      </ul>
+
+      <h3>
+        Data Cloud is Not Just Another Custom Object - This is a Big
+        Misconception!
+      </h3>
+      <p>
+        Architects often think of Data Cloud as just "Big Objects 2.0." It is
+        fundamentally different. Data Cloud does not run on the core Salesforce
+        transactional database. It is a completely separate big-data
+        infrastructure running alongside Core, connected natively via metadata
+        so it <em>looks</em> like it's in Salesforce.
+      </p>
+
+      <pre class="code-block"><code>
+          // How Data Cloud is queried vs Core Salesforce
+          // Core SOQL: Synchronous, limited by governor limits.
+          List&lt;Account&gt; accs = [SELECT Id FROM Account LIMIT 10];
+
+          // Data Cloud SQL (via API): Asynchronous, hits the Trino engine, can process billions of rows.
+          // You do not query Data Cloud with standard SOQL for large aggregations.
+          String query = 'SELECT Unified_Individual_Id__c, SUM(Purchase_Amount__c) FROM Sales_Order_DMO GROUP BY Unified_Individual_Id__c';
+       </code></pre>
+
+      <h3>Documentation for Data Cloud Architecture</h3>
+      <ul>
+        <li>
+          <strong>Data Cloud Architecture Guide:</strong> Understand the
+          separation of storage (AWS S3/Parquet) and compute (Trino).
+        </li>
+        <li>
+          <strong>Zero-Copy Partner Network Specs:</strong> Technical details on
+          how Data Cloud establishes secure, direct network links to Snowflake,
+          Databricks, and Google BigQuery.
+        </li>
+        <li>
+          <strong>Vector Database in Data Cloud:</strong> How unstructured data
+          (PDFs, knowledge articles) is chunked, vectorized, and stored in Data
+          Cloud to power Agentforce RAG (Retrieval-Augmented Generation).
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
