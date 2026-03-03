@@ -30,6 +30,12 @@
     margin: auto;
   }
 
+  .rca-variables-set-header {
+    display: flex; /* Creates the side-by-side layout */
+    border-bottom: 2px solid #00a1e0;
+    padding: 20px 0;
+  }
+
   .rca-variables-set {
     display: flex; /* Creates the side-by-side layout */
     border-bottom: 1px solid #ddd;
@@ -56,14 +62,6 @@
     color: #333;
   }
 
-  .row {
-    display: flex;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .row:last-child {
-    border-bottom: none;
-  }
 </style>
 </head>
 	
@@ -74,6 +72,13 @@
 	RCA To Be Variables
 </h1>
 	<br>
+
+	<div class="rca-variables-set">
+    	<h3 class="variables-set-title">Variables Set</h3>
+     	<h3 class="variables-set-title">Variable</h3>
+	</div>
+
+		
   <div class="rca-variables-set">
     <h3 class="variables-set-title">Product Catalogue Management</h3>
     <div class="variables-set-list">
