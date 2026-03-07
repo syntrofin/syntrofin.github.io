@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyntroFin - Enterprise Architecture Documentation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+    <script src="https://kit.fontawesome.com" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="doc-section">
+      <h1>Talking Points</h1>
+      <h1>RAW - MDST - RTM</h1>
+      <p>
+        RAW; I’m a Revenue Lifecycle Architect, and lately, my world is all
+        about modernizing RLM.
+      </p>
+      <p>
+        MDST: In these complex builds I focus on eliminating ‘requirements
+        drift.’ It’s easy to wander away from the goal if you’re stuck in a
+        theoretical, object-based Agile mindset—so I developed a framework I
+        call MDST: Maturity, Discovery, Solution, and Transformation.
+      </p>
+      <p>
+        RTM: It’s a mindset shift toward Vertical Agile and Traceability. It
+        ensures that every 'slice' we build is high-value and audit-ready from
+        day one. It basically keeps the high-speed front end perfectly syncs all
+        the way to the back-end ERP, exactly how the business intended.
+      </p>
+      <br />
+      <p>
+        🧱 My foundation is in HP and SAP, but my approach really evolved as I
+        navigated the Salesforce revenue cycle.
+      </p>
+      <p>
+        👓 When I look at a transaction, I use three lenses: velocity for Sales,
+        validation for the order, and finality for revenue recognition. My goal
+        is to give the team that front-end speed without ever compromising the
+        financial ledger.
+      </p>
+      <p>
+        ❤️ I love solving that 'missing link' between sales agility and
+        operational stability. I’m happy to dive into how MDST worked at Thrive,
+        or we can start wherever you'd like. Where should we head first?"
+      </p>
+
+      <h1>MDST - Examples of Previous Project Work Explanation Framework</h1>
+      <h2>1. The Thrive Project (Non-Profit Optimization)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "Our macro goal was to completely operationalize a high-speed,
+        student-run non-profit scaling across two universities. I needed to
+        transition them from a culture of manual, ad-hoc guessing into a highly
+        scalable, predictable sales motion to secure funding for local
+        education."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "The North Star was protecting their 'Proceeds' margins with 100%
+        certainty. However, we were constrained by a total lack of
+        standardization. They were offering over 100 random event options, which
+        was creating massive administrative overhead, unpredictable hard costs,
+        and severe risk of surprise vendor bills wiping out their fundraising."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "To solve this, I designed a rigid 'Digital Pipeline.' I enforced a
+        'Thin Catalog' architecture using CPQ, restricting offerings to
+        pre-configured event modules like 'Diamond Sponsorships.'
+      </p>
+      <p>
+        Crucially, I built a 'Cost Watchdog' workflow: I configured the system
+        to place a hard physical block on the quoting of any custom stages or
+        screens until the exact supplier costs were logged and system-approved,
+        completely eliminating rogue spending."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "The biggest takeaway for me was realizing that even in a mission-driven
+        non-profit, strict architectural guardrails are not a hindrance;
+        automated margin protection is actually what enables the business to
+        scale its mission safely."
+      </p>
+      <h2>2. Amazon Pharmacy / ATS (Complex Manufacturing)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "The business mandate was to drastically accelerate the sales and
+        manufacturing lifecycle for ATS, which engineers massive, 11,000-part
+        automated dispensing machines for Amazon Pharmacy."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "Our goal was velocity and compliance, but we were bottlenecked by a
+        highly manual quoting process that took 97 steps. Reps were tracking
+        parts in physical notebooks, making accurate costing impossible and
+        delaying time-to-market."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "I architected a solution to digitize the Bill of Materials (BOM)
+        through a unified quote record—what we called a digital 'Envelope.'
+      </p>
+      <p>
+        If a sales rep configured a machine with a net-new custom part, I built
+        an automation that instantly routed a 'photo' of the requirement
+        directly to the Supply Chain Management (SCM) team. The system enforced
+        a hard stop on the quote generation until an approved cost was returned
+        via deep integrations between the Sales and Supply Chain systems."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "This project proved how critical it is to architect systems that
+        balance competing departmental needs: aligning the Sales team's demand
+        for 'velocity' with the Supply Chain team's strict requirement for
+        'validation.' Ultimately, every machine shipped with a digital
+        'Passport' proving 100% compliance."
+      </p>
+      <h2>3. Clarivate (M&A Divestiture & Revenue Recognition)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "The executive agenda was to manage the complex platform and billing
+        architecture required when Clarivate decided to divest one of its core
+        products, ScholarOne, to Silverchair."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "The environmental constraint was severe: we had to surgically extract a
+        single business unit out of a heavily integrated suite without causing a
+        second of downtime for the end-user, and without breaking the
+        back-office billing operations."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "Instead of attempting a rigid, monolithic rebuild, I designed a modular
+        architecture centered around an 'Asset Tagging' system.
+      </p>
+      <p>
+        We simply updated the ownership tags on the ScholarOne assets. The
+        end-user maintained a single login, while I utilized the automated
+        Revenue Recognition (RevRec) engines to automatically intercept the
+        customer's payment, split it logically, and route the correct funds
+        directly to Silverchair, minus our automated management fee."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "My architectural philosophy evolved here: true enterprise scale isn't
+        just about how seamlessly you can add and integrate products; it's about
+        building a data model agile enough to seamlessly un-couple them when M&A
+        business strategies shift."
+      </p>
+      <h2>4. Iron Mountain (Compliance & Service Bundling)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "We needed to build a modern quoting engine for InSight DXP, an AI
+        medical scanning vault, while rigorously defending Iron Mountain’s legal
+        classification as a Real Estate Investment Trust (REIT)."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "Our North Star was a unified quote, but the legal constraints were
+        absolute: 75% of all revenue legally must come from real estate (the
+        physical vault storage). When sales reps gave arbitrary discounts to win
+        deals, they were accidentally reducing the real estate revenue bucket,
+        actively jeopardizing the entire company's tax status."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "I designed a 'Dual-Nature' quoting model using advanced CPQ product
+        bundling. I wrote system rules that automatically split every order
+        invisibly into a 'Rent' bucket (storage) and a 'Work' bucket (AI
+        analysis).
+      </p>
+      <p>
+        I locked the 'Rent' bucket at the system level. If a rep needed to apply
+        a competitive discount, my pricing logic forced that discount entirely
+        onto the 'Work' bucket, protecting the real estate margins."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "I learned how to act as a translator between legal and sales. An
+        architect's job is to take incredibly complex corporate tax laws and
+        code them into invisible, automated guardrails so the sales team can
+        just focus on selling."
+      </p>
+      <h2>5. Trimble (Hardware/Software Sync & Compliance)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "The goal was to orchestrate the global quoting and fulfillment
+        architecture for Trimble’s 'Best-of-Breed' construction suite, which
+        requires blending physical hardware, remote satellite software, and
+        strict local legal compliance."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "We were facing massive geopolitical liability and billing chaos. The
+        critical bottleneck was that physical hardware was frequently shipping
+        before satellite software licenses were legally cleared for use in
+        specific, highly regulated geopolitical regions."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "I implemented a strict 'Contract First' architecture. I built a 6-Point
+        Perfection check (KYC) that hard-blocked quoting until legal clearance
+        was systematically verified.
+      </p>
+      <p>
+        Once signed, I utilized an Order Management System (OMS) as a 'Splitter
+        and Stitcher.' The system automatically split the order to ship physical
+        sensors via an Address Doctor validation, while simultaneously stitching
+        the software activation to an Evergreen subscription model in the
+        billing engine."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "The ultimate takeaway was proving to the business that enforcing strict
+        discipline upfront during the quote phase is the only way to guarantee
+        flawless, liability-free execution downstream in fulfillment and
+        billing."
+      </p>
+      <h2>6. Komatsu (Guided Selling & Configuration)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "Following their acquisition of Joy Global, we needed to completely
+        modernize the sales cycle for Komatsu’s massive mining crushers. We had
+        to transform their go-to-market from a slow 'Design-to-Order' process
+        into a rapid 'Configure-to-Market' motion."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "The operational reality was grim: generating a single quote took a
+        month. Sales and Engineering were trapped in endless email loops trying
+        to manually configure over 3,200 different machine variations without
+        breaking technical dependencies."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "I extracted the tribal knowledge directly from the engineers and
+        architected a 'Guided Genie' using CPQ Guided Selling logic.
+      </p>
+      <p>
+        I mapped 3,200 variations down to just three simple user inputs: rock
+        density, volume throughput, and voltage. Based on those inputs, my
+        configuration rules instantly generated the perfect, technically viable
+        BOM."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "I learned that the best architecture doesn't just store data; it
+        democratizes complex engineering knowledge, allowing the sales team to
+        operate autonomously with incredible velocity, which in this case
+        allowed Komatsu to build and ship machines 30% faster."
+      </p>
+      <h2>7. Pure Storage (IoT Integration & Asset Lifecycle)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "Our objective was to optimize the entire sales, manufacturing, and
+        service lifecycle for Pure Storage's 100% Flash arrays as they
+        transitioned to an 'Evergreen' subscription model."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "We were fighting a decade-long issue with data fidelity. If we ordered
+        every exact screw in the ERP, we severely limited the manufacturer's
+        (Foxconn) ability to optimize costs. But if we sent vague orders, it led
+        to nightmare scenarios for our field service teams who didn't know
+        exactly what was installed at the client site."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "I architected a 'Digital Asset' shell. We quoted only high-level
+        components (L0-L2) in CPQ to give Foxconn supply chain flexibility.
+      </p>
+      <p>
+        The innovation was the feedback loop: when the physical array was
+        installed, the hardware triggered an IoT 'Call Home' signal. I
+        integrated this telemetry to automatically stitch the exact physical
+        serial numbers back into the digital asset record in Salesforce."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "This project successfully bridged the gap between a physical piece of
+        hardware and its digital 'twin' in the back-office system, providing the
+        service team with a perfect picture of the client's architecture and
+        automating our trial-to-order conversions."
+      </p>
+      <h2>8. Generic RLM (The Full Lifecycle - "Tesla" metaphor)</h2>
+      <h3>Business Shift</h3>
+      <p>
+        "The ultimate goal of this architecture is to transition a business from
+        a transactional mindset to managing the complete, end-to-end Revenue
+        Lifecycle of a complex physical asset tied to digital, usage-based
+        subscriptions."
+      </p>
+      <h3>Phase 1: Strategic Alignment (The "Walls")</h3>
+      <p>
+        "The core bottleneck preventing modern companies from scaling is
+        fragmentation. Quoting, financing, subscription billing, and asset
+        modifications usually live in disconnected silos, creating a disjointed
+        customer journey and massive revenue leakage."
+      </p>
+      <h3>Phase 2: Technical Architecture (The "Build")</h3>
+      <p>
+        "I design unified data models utilizing the full Revenue Lifecycle
+        Management (RLM) suite.
+      </p>
+      <p>
+        The architecture captures the initial quote, converts the booking
+        deposit into an Order, integrates with back-office financing, and
+        activates recurring subscriptions. Crucially, I build the system to
+        manage the asset after the sale—handling complex contract amendments,
+        usage-based true-ups, and automated billing suspensions."
+      </p>
+      <h3>Phase 3: Cognitive Evolution (The "Legacy")</h3>
+      <p>
+        "My philosophy as an architect is that the job isn't done when the deal
+        is signed. True enterprise architecture manages the entire 'story' of
+        the customer relationship—every bill, service update, and contract
+        change—for years after the initial sale until the asset is retired."
+      </p>
+    </div>
+  </body>
+</html>
