@@ -1,3 +1,4 @@
+// Authorization using Vercel, https://vercel.com/syntrofins-projects
 // Add maincontent wrapper
 // 1. Create the wrapper element
 const wrapper = document.createElement('div');
