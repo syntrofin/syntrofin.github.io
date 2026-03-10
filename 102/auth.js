@@ -1,3 +1,21 @@
+// Add maincontent wrapper
+// 1. Create the wrapper element
+const wrapper = document.createElement('div');
+
+// 2. Apply your class and style
+wrapper.className = 'maincontent';
+wrapper.style.display = 'none'; // This injects style="display: none;"
+
+// 3. Move all existing body children into the wrapper
+while (document.body.firstChild) {
+    wrapper.appendChild(document.body.firstChild);
+}
+
+// 4. Put the wrapper back into the body
+document.body.appendChild(wrapper);
+
+
+
 // Add Login-popup first
 // 1. Inject the HTML first
 document.body.insertAdjacentHTML('afterbegin', `
