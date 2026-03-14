@@ -20,7 +20,7 @@ document.body.appendChild(wrapper);
 // Add Login-popup first
 // 1. Inject the HTML first
 document.body.insertAdjacentHTML('afterbegin', `
-<div class="login">
+<div id="login-box" class="login" style="display: none;">
     <h1>Syntrofin Login!!</h1>
     <div class="login-container">
         <input id="user" placeholder="User ID" autocomplete="username">
@@ -50,6 +50,11 @@ window.addEventListener('load', async () => {
         if (check.ok) {
             showContent();
         } else {
+            // show login box, remove display none
+              const loginDiv = document.getElementById('login-box');
+              if (loginDiv) {
+                loginDiv.style.display = 'block';
+              }
             // Redirect logic if not on home page
             const path = window.location.pathname;
             if (path !== "/" && path !== "/index.html") {
