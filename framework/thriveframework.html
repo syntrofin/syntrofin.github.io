@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f8fafc;
+      }
+      h3 {
+        color: #1e293b;
+        border-bottom: 2px solid #f59e0b;
+        padding-bottom: 5px;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        margin: 15px 0;
+        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+        font-size: 0.9em;
+      }
+      th {
+        background-color: #0f172a;
+        color: #ffffff;
+        text-align: left;
+        padding: 12px;
+        font-weight: 600;
+        border: 1px solid #cbd5e1;
+      }
+      td {
+        padding: 12px;
+        border: 1px solid #e2e8f0;
+        vertical-align: top;
+      }
+      .phase-cell {
+        font-weight: bold;
+        background-color: #fef3c7;
+        color: #92400e;
+        width: 15%;
+      }
+      .object-tag {
+        font-family: monospace;
+        background-color: #e2e8f0;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #b91c1c;
+      }
+      .engine {
+        font-weight: bold;
+        color: #4338ca;
+      }
+
+      h2 {
+        color: #1e293b;
+        border-left: 5px solid #6366f1;
+        padding-left: 15px;
+        margin-top: 20px;
+      }
+      .table-wrapper {
+        overflow-x: auto;
+        margin: 20px 0;
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+      }
+      table {
+        width: 100%;
+        min-width: 1200px;
+        border-collapse: collapse;
+        background: #fff;
+        font-size: 0.9em;
+      }
+      .product-cell {
+        font-weight: bold;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        width: 15%;
+      }
+      .strategy-cell {
+        color: #475569;
+        font-style: italic;
+        font-size: 0.9em;
+        margin-top: 5px;
+        display: block;
+      }
+      tr:hover {
+        background-color: #f8fafc;
+      }
+      .kpi-title {
+        font-weight: bold;
+        color: #4338ca;
+        display: block;
+        margin-top: 10px;
+        font-size: 1.05em;
+      }
+      .kpi-title:first-child {
+        margin-top: 0;
+      }
+      .kpi-def {
+        font-size: 0.9em;
+        color: #334155;
+        margin-bottom: 5px;
+        display: block;
+      }
+      .metric-tag {
+        display: inline-block;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        background-color: #e0e7ff;
+        color: #3730a3;
+        border: 1px solid #c7d2fe;
+        margin-bottom: 8px;
+      }
+      .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        font-weight: bold;
+        /* text-transform: uppercase; */
+        color: gray;
+      }
+      .tag2 {
+        display: inline-block;
+        padding: 2px 2px;
+        font-size: 0.75em;
+      }
+
+      /* Blue Trust Colors - Mostly B2B */
+      /* Sky Blue */
+      .tag-spin {
+        background-color: #d7ffff;
+        color: #1e40af;
+      }
+      /* Light Blue */
+      .tag-gap {
+        background-color: #dbeafe;
+        /*  #E4F0F8 */
+        color: #1e40af;
+      }
+
+      /*deep blue */
+      .tag-cdj-long {
+        background-color: #008b;
+        /* #06402b; */
+        color: whitesmoke;
+      }
+
+      /* Chacolate Colors B2B or B2C*/
+      /*milk chacolate */
+      .tag-cdj-loyalty-loop {
+        background-color: #ceb5a6;
+        /*  #99c86a; #fad5a5; */
+        color: #854d0e;
+      }
+
+      /* Light Chacolate */
+      .tag-cdj-zero-touch {
+        background-color: #e6d8d0;
+        color: #854d0e;
+        font-weight: normal;
+      }
+
+      /* Green Colors - B2C*/
+      /* apple Green*/
+      .tag-cdj-b2c {
+        background-color: #99c86a;
+        /* #b7d348; #fce7f3;  #d0e5bd;*/
+        color: #854d0e;
+      }
+      /* Honedew Green*/
+      .tag-cdj-b2b2c {
+        background-color: #f0fff0;
+        /* #b8ffb8; */
+        color: #854d0e;
+      }
+
+      /* Radish Colors - Unconventional*/
+      .tag-disrupt {
+        background-color: #ffffe0;
+        /* #f0dc0c; */
+        color: orange;
+      }
+      .tag-higrowth {
+        background-color: #ffdeeb;
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>VP of Sales Dashboard: Thrive KPI Architecture</h2>
+    <p>
+      Mapping the Key Performance Indicators (KPIs) to the specific MBA sales
+      motion and revenue model.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Thrive Product</th>
+            <th>Relevant MBA Strategies</th>
+            <th>Why It Fits the Framework</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. The Turnkey Event ($50k)Milestone & Project</td>
+            <td>
+              <span class="tag tag-spin">SPIN</span>
+              <br />
+              <span class="tag tag-gap">GAP</span>
+            </td>
+            <td>
+              This is a high-risk, complex B2B enterprise sale. You must act as
+              a diagnostician to uncover deep organizational pain like staff
+              burnout and liability (SPIN), and then financially quantify the
+              distance between their inefficient "Current State" and your
+              flawlessly executed "Future State" (GAP).
+            </td>
+          </tr>
+          <tr>
+            <td>2. Club SaaS License ($199/mo)Subscription / MRR</td>
+            <td>
+              <span class="tag tag-cdj-loyalty-loop">Loyalty Loop</span>
+              <br />
+              <span class="tag tag-higrowth">High Growth</span>
+            </td>
+            <td>
+              SaaS lives and dies by predictable acquisition and low churn. You
+              use metric-driven funnels to acquire club presidents (Sales
+              Acceleration), and then embed the software so deeply into their
+              operations that the next year's renewal bypasses active evaluation
+              and becomes an automatic habit (The Loyalty Loop).
+            </td>
+          </tr>
+          <tr>
+            <td>3. Vendor Wi-Fi ($0.50/GB)Consumption / Usage</td>
+            <td>
+              <span class="tag tag-cdj-zero-touch">Zero-Friction</span>
+            </td>
+
+            <td>
+              Utilities must be invisible to succeed. By making the network
+              authentication and billing completely seamless, you eliminate the
+              customer's "Consideration" phase entirely. They don't shop for
+              competitors because your connection requires zero cognitive or
+              physical effort.
+            </td>
+          </tr>
+          <tr>
+            <td>4. Corporate Sponsorship ($15k)Volume & Ratable</td>
+            <td>
+              <span class="tag tag-disrupt">The Disruption</span>
+            </td>
+            <td>
+              B2B buyers are often stuck in entrenched procurement habits (e.g.,
+              buying standard campus newspaper ads). You cannot just "pitch" a
+              sponsorship; you must actively teach them that traditional ads
+              fail with Gen Z, thereby disrupting their worldview and
+              challenging them to pivot to experiential, cause-driven marketing.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+    <h2>VP of Sales Dashboard: Thrive KPI Architecture</h2>
+    <p>
+      Mapping the Key Performance Indicators (KPIs) to the specific MBA sales
+      motion and revenue model.
+    </p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Thrive Product & Model</th>
+            <th>The VP's Primary Goal</th>
+            <th>Top 3 Essential KPIs (How to Measure Success)</th>
+            <th>The Salesforce Report / Dashboard Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-cell">
+              1. Turnkey Event ($50k)<br />
+              <span class="strategy-cell">Strategy: SPIN / GAP (Project)</span>
+            </td>
+            <td>
+              Manage complex pipeline velocity and protect gross margins against
+              scope creep.
+            </td>
+            <td>
+              <span class="kpi-title">1. Win Rate (%)</span>
+              <span class="kpi-def"
+                >Out of 10 University Deans pitched, how many sign the final
+                SOW?</span
+              >
+
+              <span class="kpi-title">2. Average Sales Cycle Length</span>
+              <span class="kpi-def"
+                >Days from Opportunity Creation to "Closed Won". (Bureaucracies
+                are slow; keeping this under 90 days is critical).</span
+              >
+
+              <span class="kpi-title">3. Average Deal Size (ACV)</span>
+              <span class="kpi-def"
+                >Are reps successfully upselling lighting or security to push
+                the $50k base up to $65k?</span
+              >
+            </td>
+            <td>
+              Standard Opportunity Pipeline Dashboard (Stage Duration & Win/Loss
+              Ratios).
+            </td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">
+              2. Club SaaS ($199/mo)<br />
+              <span class="strategy-cell"
+                >Strategy: Sales Accel. / Loyalty Loop (MRR)</span
+              >
+            </td>
+            <td>
+              Acquire users cheaply and prevent them from cancelling at the end
+              of the semester.
+            </td>
+            <td>
+              <span class="kpi-title">1. Customer Acquisition Cost (CAC)</span>
+              <span class="kpi-def"
+                >Total marketing and sales spend divided by the number of new
+                fraternities signed.</span
+              >
+
+              <span class="kpi-title">2. Net MRR Growth</span>
+              <span class="kpi-def"
+                >(New MRR + Expansion MRR) - (Churned MRR). Shows the true
+                health of the recurring revenue engine.</span
+              >
+
+              <span class="kpi-title">3. Logo Churn Rate (%)</span>
+              <span class="kpi-def"
+                >The percentage of clubs that cancel their subscription when the
+                new president takes over in May.</span
+              >
+            </td>
+            <td>
+              Revenue Cloud ALM Dashboard (Tracking
+              <em>AssetStatePeriods</em> and MRR deltas).
+            </td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">
+              3. Vendor Wi-Fi ($0.50/GB)<br />
+              <span class="strategy-cell"
+                >Strategy: Zero-Friction (Consumption)</span
+              >
+            </td>
+            <td>
+              Maximize adoption on day one and encourage heavy data usage
+              throughout the festival.
+            </td>
+            <td>
+              <span class="kpi-title">1. Attach Rate / Activation Rate</span>
+              <span class="kpi-def"
+                >If there are 50 food trucks at the festival, how many actually
+                connect to the Thrive Wi-Fi network?</span
+              >
+
+              <span class="kpi-title">2. Average Revenue Per User (ARPU)</span>
+              <span class="kpi-def"
+                >Total Wi-Fi revenue divided by total connected vendors.
+                Measures consumption intensity.</span
+              >
+
+              <span class="kpi-title"
+                >3. Time to First Byte (Friction Metric)</span
+              >
+              <span class="kpi-def"
+                >How many seconds does it take a vendor to log in? High friction
+                = abandoned usage.</span
+              >
+            </td>
+            <td>
+              Salesforce Billing Usage Summaries (Tracking total mediated data
+              packets per Account).
+            </td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">
+              4. Corp. Sponsorship ($15k)<br />
+              <span class="strategy-cell"
+                >Strategy: Challenger (Disruption)</span
+              >
+            </td>
+            <td>
+              Disrupt traditional ad budgets and secure repeat annual buyers.
+            </td>
+            <td>
+              <span class="kpi-title"
+                >1. Lead-to-Opportunity Conversion Rate</span
+              >
+              <span class="kpi-def"
+                >Because you are disrupting the status quo, how many cold
+                pitches result in a formal meeting?</span
+              >
+
+              <span class="kpi-title"
+                >2. Year-Over-Year (YoY) Renewal Rate</span
+              >
+              <span class="kpi-def"
+                >Did the tech company get enough ROI to sponsor the Spring
+                Festival again next year?</span
+              >
+
+              <span class="kpi-title">3. Discount/Margin Degradation</span>
+              <span class="kpi-def"
+                >Are reps giving away too many free VIP booths to close the
+                deal, ruining the profit margin?</span
+              >
+            </td>
+            <td>
+              CRM Analytics (Analyzing Campaign ROI and historical account
+              retention).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+    <h2>Vendor Costing & Margin Protection Architecture</h2>
+    <p>
+      How RCA halts the quoting process to fetch external vendor costs, applies
+      markups, and protects gross margins.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Process Step</th>
+          <th>RCA Technical Action & Objects Used</th>
+          <th>The Margin Protection Mechanism</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="phase-cell">1. Flagging Custom Components</td>
+          <td>
+            <strong>Core Objects:</strong>
+            <span class="object-tag">QuoteLineItem</span><br />
+            The sales rep adds a "Custom Titanium Liner" to the quote. This
+            specific <span class="object-tag">Product2</span> record has a
+            boolean flag checked:
+            <code>Requires_Vendor_Pricing__c = TRUE</code>.
+          </td>
+          <td>
+            <span class="engine">Validation Rule:</span> The system locks the
+            quote document generation. The rep cannot send a PDF to the customer
+            as long as any Quote Line has this flag checked and the Unit Cost is
+            $0.00.
+          </td>
+        </tr>
+        <tr>
+          <td class="phase-cell">2. The Vendor RFQ (Request for Quote)</td>
+          <td>
+            <strong>Custom Object:</strong>
+            <span class="object-tag">Vendor_Bid__c</span><br />
+            A Flow automatically generates a Vendor Bid record linked to the
+            Quote Line. An email or API callout (via MuleSoft) is sent to the
+            supplier requesting a 30-day locked price for the materials.
+          </td>
+          <td>
+            <span class="engine">Data Silo:</span> The customer never sees this.
+            This ensures your internal cost negotiations are strictly separated
+            from the commercial quote.
+          </td>
+        </tr>
+        <tr>
+          <td class="phase-cell">3. Applying the Cost-Plus Markup</td>
+          <td>
+            <strong>Core Objects:</strong>
+            <span class="object-tag">QuoteLineItem</span><br />
+            The vendor replies with a cost of $10,000. This is mapped directly
+            to the <code>UnitCost</code> field on the Quote Line.
+          </td>
+          <td>
+            <span class="engine">Salesforce Pricing (BRE):</span> A Pricing
+            Procedure fires. It takes the $10,000 <code>UnitCost</code> and
+            applies a standard 40% markup, automatically setting the
+            customer-facing <code>UnitPrice</code> to $14,000.
+          </td>
+        </tr>
+        <tr>
+          <td class="phase-cell">4. Defending the Margin (Approvals)</td>
+          <td>
+            <strong>Core Engine:</strong>
+            <span class="engine">Advanced Approvals</span><br />
+            The sales rep decides $14,000 is too high and applies a manual
+            discount, dropping the price to $11,000.
+          </td>
+          <td>
+            <span class="engine">Margin Calculation:</span> The Pricing
+            Procedure recalculates the Gross Margin:
+            <em>($11,000 Price - $10,000 Cost) / $11,000 = 9% Margin</em
+            >.<br /><br />
+            Because 9% is below the corporate floor of 30%, Advanced Approvals
+            locks the quote and routes it to the VP of Sales for executive
+            override.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
