@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f8fafc;
+      }
+      h3 {
+        color: #1e293b;
+        border-bottom: 2px solid #f59e0b;
+        padding-bottom: 5px;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        margin: 15px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 0.9em;
+        text-align: center;
+      }
+      th {
+        background-color: #0f172a;
+        color: #ffffff;
+        padding: 12px;
+        font-weight: 600;
+        border: 1px solid #cbd5e1;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #e2e8f0;
+        vertical-align: middle;
+      }
+      .baseline {
+        background-color: #f1f5f9;
+      }
+      .amendment {
+        background-color: #fef3c7;
+        font-weight: bold;
+        color: #92400e;
+      }
+      .aging-alert {
+        background-color: #fee2e2;
+        color: #b91c1c;
+        font-weight: bold;
+      }
+      .total-row {
+        background-color: #e2e8f0;
+        font-weight: bold;
+        font-size: 1.05em;
+      }
+      .align-left {
+        text-align: left;
+        padding-left: 15px;
+      }
+      .object-tag {
+        font-family: monospace;
+        background-color: #e2e8f0;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>ASC 606 & AR Aging Flow</h3>
+    <p>
+      Demonstrating the separation of recognized revenue from invoiced Accounts
+      Receivable (AR). Includes a simulated payment delay in July/August to
+      trigger aging report criteria.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="align-left">Financial Period</th>
+          <th>Monthly Invoice<br />(Hits AR Ledger)</th>
+          <th>Recognized Revenue<br />(Hits Income Statement)</th>
+          <th>Deferred Revenue<br />(Balance Sheet Liability)</th>
+          <th>Outstanding AR Balance<br />(Aging Report Flow)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="baseline">
+          <td class="align-left">April</td>
+          <td>$199.00</td>
+          <td>$199.00</td>
+          <td>$1,592.00</td>
+          <td>
+            $0.00
+            <span style="font-size: 0.8em; font-weight: normal; color: #64748b"
+              ><br />(Paid Net 30)</span
+            >
+          </td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">May</td>
+          <td>$199.00</td>
+          <td>$199.00</td>
+          <td>$1,393.00</td>
+          <td>
+            $0.00
+            <span style="font-size: 0.8em; font-weight: normal; color: #64748b"
+              ><br />(Paid Net 30)</span
+            >
+          </td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">June</td>
+          <td>$199.00</td>
+          <td>$199.00</td>
+          <td>$1,194.00</td>
+          <td>
+            $0.00
+            <span style="font-size: 0.8em; font-weight: normal; color: #64748b"
+              ><br />(Paid Net 30)</span
+            >
+          </td>
+        </tr>
+
+        <tr class="amendment">
+          <td class="align-left">July (Amendment)</td>
+          <td>$398.00</td>
+          <td>$398.00</td>
+          <td>$1,990.00 (Adjusted Base)</td>
+          <td class="aging-alert">
+            $398.00
+            <span style="font-size: 0.8em; font-weight: normal"
+              ><br />(1-30 Days Past Due)</span
+            >
+          </td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">August</td>
+          <td>$398.00</td>
+          <td>$398.00</td>
+          <td>$1,592.00</td>
+          <td class="aging-alert">
+            $796.00
+            <span style="font-size: 0.8em; font-weight: normal"
+              ><br />(31-60 Days Past Due)</span
+            >
+          </td>
+        </tr>
+
+        <tr class="amendment">
+          <td class="align-left">September</td>
+          <td>$398.00</td>
+          <td>$398.00</td>
+          <td>$1,194.00</td>
+          <td>
+            $0.00
+            <span style="font-size: 0.8em; font-weight: normal; color: #065f46"
+              ><br />(Past Due Balance Cleared)</span
+            >
+          </td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">October</td>
+          <td>$398.00</td>
+          <td>$398.00</td>
+          <td>$796.00</td>
+          <td>$0.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
