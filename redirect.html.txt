@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="/mdst/">
+  <script>
+    // Executes instantly, preserving http/https and removing /framework from browser history
+    window.location.replace("/mdst/");
+  </script>
+  <meta http-equiv="refresh" content="0; url=/mdst/">
+  <title></title>
+  <style>
+    /* Completely hides the page view to guarantee a silent, flash-free transition */
+    html, body { display: none !important; visibility: hidden !important; opacity: 0 !important; }
+  </style>
+</head>
+<body>
+</body>
+</html>
+
