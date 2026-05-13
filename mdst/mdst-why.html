@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Commercial-First RLM Agile Approach</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+  </head>
+  <body>
+    <h1>
+      Why MDST: Escaping Theoretical Agile: The Commercial-First RLM Agile
+      Approach
+    </h1>
+
+    <p>
+      To avoid the "Theoretical Agile" trap, teams must adopt a Commercial-First
+      approach. This means shifting away from building isolated "features" and
+      instead focusing on End-to-End Revenue Threads. Rather than building
+      "Products" in Sprint 1 and waiting until Sprint 10 to build "Billing," the
+      goal is to build a Simple One-Time Product from Quote to Invoice
+      immediately in Sprint 1.
+    </p>
+
+    <div class="highlight">
+      <p>
+        <strong>The Core Argument:</strong> Object-based Sprints are generic and
+        not specific to RLM. RLM has three distinct features: Velocity first
+        Sales, Stability and no random errors Operation, and Legality binding
+        Finance. Sales Model-based Sprints succeed. Horizontal Progress (moving
+        across the entire lifecycle) is superior to Vertical Progress (staying
+        isolated in a single object).
+      </p>
+    </div>
+
+    <h2>The 4-Phase RLM Implementation Strategy</h2>
+    <p>
+      This four-phase approach ensures the foundation of the Revenue Lifecycle
+      Management (RLM) system survives future complexities:
+    </p>
+    <ul>
+      <li>
+        <strong>Phase 1: The "Revenue North Star" (Discovery):</strong> Stop
+        looking at the Product Catalog and start looking at the Invoice and the
+        Contract. The goal is to define every way the company makes money
+        (One-time, Subscription, Usage, Ramped) and output a Commercial Matrix.
+      </li>
+      <li>
+        <strong>Phase 2: The "Walking Skeleton" (Sprint 0 / Enabler):</strong>
+        Build one complete, thin slice of the entire lifecycle. Configuring ONE
+        product, ONE price, and ONE quote to convert into an Order and an Asset
+        catches "Foundation Errors" in week 2 instead of month 6.
+      </li>
+      <li>
+        <strong
+          >Phase 3: The "Commercial Archetype" Sprints (Agile
+          Execution):</strong
+        >
+        Group work by Sales Model, not by Salesforce Object. Sprint 1-2 focuses
+        on the One-Time Thread (hardware/fulfillment), while Sprint 3-5 tackles
+        the Subscription Thread (recurring logic, amendments, and proration).
+      </li>
+      <li>
+        <strong>Phase 4: The "Edge Case" & Scale Phase:</strong> Move into
+        complex "nice-to-haves" (like advanced discounting and high-volume
+        integrations) only after the core Sales Models are humming.
+      </li>
+    </ul>
+
+    <h2>The Subscription Evolution</h2>
+    <p>
+      Using Subscription as the next major evolution after the Sprint 1 "Steel
+      Thread" tests the time dimension by introducing Service Periods,
+      Proration, and Effective Dates. It triggers the Lifecycle Management
+      engine to handle the transition from a Quote Line to an Active Asset.
+      Furthermore, it forces the system to handle the "Boss Level" of RLM:
+      Amendment and Renewal logic.
+    </p>
+
+    <table>
+      <tr>
+        <th>Component</th>
+        <th>The "One-Time" Foundation (Sprint 1)</th>
+        <th>The "Subscription" Evolution (Sprint 2-3)</th>
+      </tr>
+      <tr>
+        <td>Product</td>
+        <td>Hardware SKU</td>
+        <td>Service SKU + Selling Model (Termed)</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>List Price</td>
+        <td>Unit Price x Quantity x Term</td>
+      </tr>
+      <tr>
+        <td>Quote</td>
+        <td>Standard Quote</td>
+        <td>Co-termination & Proration logic</td>
+      </tr>
+      <tr>
+        <td>Post-Sale</td>
+        <td>Order / Invoice</td>
+        <td>Asset / Contract / Renewal Opportunity</td>
+      </tr>
+    </table>
+
+    <h2>The "Future-Proof" Definition of Done (DoD)</h2>
+    <p>
+      A Product is not "Done" just because it exists in the Catalog; it is only
+      "Done" when it can survive the Commercial Journey. If developers push back
+      citing "velocity," remind them that closing 50 fragment stories that fail
+      in a Quote is "False Velocity".
+    </p>
+    <p>The revised DoD requires:</p>
+    <ul>
+      <li>
+        <strong>Commercial Identity:</strong> A Product Selling Model (PSM) must
+        be assigned, and lifecycle categorization must be flagged.
+      </li>
+      <li>
+        <strong>Transactional Pricing:</strong> The product must be tested
+        against a Pricing Procedure, with Waterfall validation for
+        discounts/taxes.
+      </li>
+      <li>
+        <strong>Quote-to-Order Flow:</strong> The product must generate a valid
+        Quote Line Item and successfully convert into a Sales Order.
+      </li>
+      <li>
+        <strong>Stakeholder Sign-off:</strong> Finance/Billing must confirm the
+        resulting Order Data contains necessary fields for Invoicing.
+      </li>
+    </ul>
+
+    <h2>Architecture: Process Flow vs. Data Model</h2>
+    <p>
+      In standard design frameworks, the Business Process Model (the sequence of
+      events) and the Data Architecture (the structural schema) are distinct but
+      parallel views. However, in RLM, the
+      <strong>Data Model drives the Process</strong>. Building a Product without
+      a Selling Model is like building a car without an engine—if the Data
+      Architecture isn't properly mapped to the RLM schema, the out-of-the-box
+      engines simply won't fire.
+    </p>
+
+    <br />
+
+    <h1>The RLM "Revenue DNA" Data Flow</h1>
+    <p>
+      Explain a Functional Map that shows how a single Product field (like
+      Selling Model) travels all the way to the Invoice. Product Selling Model
+      and Attributes are the "DNA" of the entire revenue lifecycle, here is the
+      data flow. This proves that if you get the Product "Foundation" wrong in
+      Sprint 1, the Invoice in Sprint 10 literally cannot be generated.
+    </p>
+
+    <h2>The RLM DNA Flow</h2>
+
+    <table>
+      <tr>
+        <th>Stage</th>
+        <th>Data Element</th>
+        <th>RLM Object / Engine</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td>1. Catalog</td>
+        <td>Product Selling Model (PSM)</td>
+        <td>ProductSellingModel</td>
+        <td>Defines the "Contractual Intent" (e.g., 12-month Termed).</td>
+      </tr>
+      <tr>
+        <td>2. Discovery</td>
+        <td>Commercial Attributes</td>
+        <td>ProductAttribute</td>
+        <td>Captures "Sales Choices" (e.g., Service Tier: Gold).</td>
+      </tr>
+      <tr>
+        <td>3. Pricing</td>
+        <td>Pricing Procedure</td>
+        <td>PricingProcedure</td>
+        <td>Uses PSM to decide: List Price x Quantity x Term.</td>
+      </tr>
+      <tr>
+        <td>4. Quote</td>
+        <td>Quote Line Item</td>
+        <td>QuoteLineItem</td>
+        <td>Stores the "Point-in-Time" agreement and Proration math.</td>
+      </tr>
+      <tr>
+        <td>5. Order</td>
+        <td>Sales Order</td>
+        <td>SalesOrder</td>
+        <td>The "Legal Commitment." Maps Attributes to provisioning.</td>
+      </tr>
+      <tr>
+        <td>6. Asset</td>
+        <td>Lifecycle Managed Asset</td>
+        <td>AssetStatePeriod</td>
+        <td>Tracks the "Current State" for Amendments/Renewals.</td>
+      </tr>
+      <tr>
+        <td>7. Finance</td>
+        <td>Billing Schedule</td>
+        <td>BillingSchedule (ERP/High-Scale)</td>
+        <td>Converts the PSM + Term into actual payment dates.</td>
+      </tr>
+    </table>
+
+    <h2>Why this Diagram wins the Argument:</h2>
+    Show this to your "Theoretical Agile" team and point to Stage 1 (PSM) and
+    Stage 7 (Billing).
+    <ol>
+      <li>
+        The "Red Thread": If the Product Selling Model (Stage 1) is set to
+        "One-Time" but the business actually sells "Subscriptions" (Stage 7),
+        the Billing Schedule will be empty. The system fails.
+      </li>
+      <li>
+        The Attribute Gap: If you don't capture the "Service Tier" (Stage 2) as
+        an Attribute, the Pricing Procedure (Stage 3) won't know which discount
+        to apply. The price will be wrong.
+      </li>
+      <li>
+        The Lifecycle Lock: If you don't define the Assetization rules in the
+        Product record (Stage 1), the customer can never Amend or Renew (Stage
+        6). You’ve built a "Dead End" product.
+      </li>
+    </ol>
+    <h2>The "Practical Architect" Takeaway:</h2>
+    <p>
+      In RLM, Attributes and Selling Models are not "details" to be added later.
+      They are the Configuration Instructions for the automated engines that
+      follow. Building a Product without a Selling Model is like building a car
+      without an engine—it looks like a car, but it won't take the customer
+      anywhere. Since you now have the "Steel Thread" logic, do you want to see
+      how to group your User Stories into "Commercial Archetypes" (e.g., The
+      Hardware Story vs. The SaaS Story) instead of Object stories?
+    </p>
+    <br />
+
+    <div class="tr-container">
+      <header>
+        <h1>
+          Path For Transformation For Each Commercial (Sales) Model or Sprint
+        </h1>
+        <!--
+        <div class="subtitle">Four stage RLM transformation roadmap</div>
+        -->
+      </header>
+      <br />
+      <!--
+      <div class="phase-box">
+        <div class="phase-header">
+          <span class="phase-title"
+            >Stage 1: Strategy, Capability & "Thrive" Assessment</span
+          >
+          <span class="gate-tag">REVENUE DNA SIGN-OFF</span>
+        </div>
+        <div class="content-grid">
+          <div>
+            <h3 class="tr-h3">Strategy & Governance</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>Value Stream Audit:</strong> Identify Lead-to-Ledger
+                friction points and margin leakage.<span class="team-badge"
+                  >ELT</span
+                >
+              </li>
+              <li>
+                <strong>Thrive Maturity Mapping:</strong> Assess Sales/Finance
+                cultural readiness for transparency.<span class="team-badge"
+                  >ELT</span
+                >
+              </li>
+              <li>
+                <strong>Strategy Selection:</strong> Lock Greenfield vs.
+                Brownfield path based on technical debt.<span class="team-badge"
+                  >ELT</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tr-h3">Foundation & AI Discovery</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>RCoE Formation:</strong> Define decision rights for
+                Global Catalog and Pricing Guardrails.<span class="team-badge"
+                  >SLT</span
+                >
+              </li>
+              <li>
+                <strong>Data Strategy:</strong> Ground Data Cloud for Agentforce
+                RLM intelligence.<span class="team-badge">SLT</span>
+              </li>
+              <li>
+                <strong>Commercial North Star:</strong> Set KPIs for Quote
+                Velocity vs. Accuracy.<span class="team-badge">SLT</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+        
+      <div class="tr-arrow-contaainer">
+        <i class="tr-arrow tr-arrow-down"></i>
+      </div>
+      -->
+
+      <div class="phase-box">
+        <div class="phase-header">
+          <span class="phase-title">
+            Commercial Logic & Order Orchestration
+          </span>
+          <span class="gate-tag">COMMERCIAL INTEGRITY</span>
+        </div>
+        <div class="content-grid">
+          <div>
+            <h3 class="tr-h3">1. Product & Pricing Engineering</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>Advanced Catalog (PCM):</strong> Configure complex
+                Product Bundles, Nested Options, and Attributes.
+              </li>
+              <li>
+                <strong>Pricing Logic (BRE):</strong> Build
+                <strong>Decision Tables</strong> for Global Price Books and
+                Tiered Discounts. <span class="team-badge">DEV</span>
+              </li>
+              <li>
+                <strong>Price Rules:</strong> Use BRE Expression Sets to
+                automate surcharges and dynamic calculations.
+                <span class="team-badge">DEV</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tr-h3">2. Quote, Approvals & DRO</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>Quote Orchestration:</strong> Customize Transaction Line
+                Editor (TLE) for hybrid deal views.
+              </li>
+              <li>
+                <strong>Advanced Approvals:</strong> Deploy
+                <strong>Salesforce Flows</strong> for multi-step margin
+                guardrails. <span class="team-badge">DEV</span>
+              </li>
+              <li>
+                <strong>DRO Decomposition:</strong> Design rules to split Orders
+                into Hardware/Software fulfillment.
+                <span class="team-badge">DEV</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tech-callout">
+          <strong>Commercial Focus:</strong> Moving beyond "config" to engineer
+          high-performance pricing math via BRE and automating the "Middle
+          Office" (Approvals/DRO) via Flow and OmniStudio.
+        </div>
+      </div>
+
+      <div class="tr-arrow-contaainer">
+        <i class="tr-arrow tr-arrow-down"></i>
+      </div>
+
+      <div class="phase-box" style="border-color: #ffa000">
+        <div class="phase-header" style="background: #ffa000">
+          <span class="phase-title">
+            Financial Realization & Lifecycle Integrity
+          </span>
+          <span class="gate-tag" style="background: #fff; color: #7a5500"
+            >FINANCIAL REALIZATION</span
+          >
+        </div>
+        <div class="content-grid">
+          <div>
+            <h3 class="tr-h3">3. Asset Lifecycle (ALM) & Billing</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>Assetization:</strong> Engineer
+                <strong>Flows</strong> to transition Orders into active
+                Subscriptions/Assets. <span class="team-badge">DEV</span>
+              </li>
+              <li>
+                <strong>Billing Automation:</strong> Configure Billing
+                Treatments and Usage Rating Triggers.
+                <span class="team-badge">DEV</span>
+              </li>
+              <li>
+                <strong>Lifecycle Logic:</strong> Build "Amend/Renew" logic to
+                maintain the "Golden Thread."
+                <span class="team-badge">DEV</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tr-h3">4. RevRec, Payments & GL</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>Revenue Realization:</strong> Map ASC 606/IFRS 15
+                schedules based on fulfillment triggers.
+              </li>
+              <li>
+                <strong>Payment Handshake:</strong> Build
+                <strong>Integration Procedures</strong> for Gateways and Tax
+                Engines. <span class="team-badge">DEV</span>
+              </li>
+              <li>
+                <strong>General Ledger Sync:</strong> Finalize GL mapping for
+                ERP ingestion. <span class="team-badge">DEV</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tech-callout" style="border-left-color: #ffa000">
+          <strong>Financial Focus:</strong> Engineering the "Back-Office
+          Handshake" using Flow and OmniStudio to ensure every commercial
+          promise becomes a GAAP-compliant dollar.
+        </div>
+      </div>
+
+      <div class="tr-arrow-contaainer">
+        <i class="tr-arrow tr-arrow-down"></i>
+      </div>
+
+      <div class="phase-box" style="border-color: var(--secondary)">
+        <div class="phase-header" style="background: var(--secondary)">
+          <span class="phase-title">
+            Validation, Agentforce & Value Realization
+          </span>
+          <span
+            class="gate-tag"
+            style="background: #fff; color: var(--secondary)"
+            >PRODUCTION READINESS</span
+          >
+        </div>
+        <div class="content-grid">
+          <div>
+            <h3 class="tr-h3">5. Integrity Testing & UAT</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>E2E Validation:</strong> "Golden Deal" audit from
+                initial Quote to final Revenue Posting.
+              </li>
+              <li>
+                <strong>Stress Testing:</strong> Validate proration logic on
+                complex mid-term cancellations.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tr-h3">6. Agentic Innovation & Launch</h3>
+            <ul class="capability-list">
+              <li>
+                <strong>Agentforce Deployment:</strong> Deploy
+                <strong>Proactive Retention</strong> and Billing Anomaly agents.
+                <span class="team-badge">DEV</span>
+              </li>
+              <li>
+                <strong>Production Cutover:</strong> Final legacy TCV
+                reconciliation and hypercare kickoff.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 
+      <footer>
+        <p>
+          Enterprise RLM Framework | Principal Architect Roadmap | Business
+          Transformation Series
+        </p>
+      </footer>
+      -->
+    </div>
+  </body>
+</html>

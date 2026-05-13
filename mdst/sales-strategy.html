@@ -1,0 +1,1942 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      html {
+        scroll-behavior: auto !important;
+        scroll-padding-top: 40px;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #2980b9;
+        margin-top: 30px;
+      }
+      /*
+           h2 {
+             margin-top: 40px;
+             color: #2c3e50;
+             border-bottom: 2px solid #3498db;
+             padding-bottom: 10px;
+           }
+      */
+
+      h3 {
+        color: #34495e;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+
+      /* 1. THE WRAPPER: Essential for mobile swiping */
+      .scroll-wrapper {
+        width: 100%;
+        overflow-x: auto; /* Enables horizontal scroll */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        background-color: #f4f7f6;
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 700px; /* Forces scroll on mobile so text doesn't squish */
+        background-color: #f4f7f6;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        font-size: 0.85em;
+      }
+
+      thead th {
+        border-bottom: 2px solid #ddd;
+      }
+
+      /* 2. THE STICKY HEADER: Keeps titles visible
+           thead th {
+             background-color: #f4f7f6 !important;
+             position: sticky;
+             top: 0;
+             z-index: 10;
+             border-bottom: 2px solid #ddd;
+           }
+             */
+
+      /* 3. MOBILE OPTIMIZATION */
+      @media (max-width: 600px) {
+        body {
+          margin: 10px auto;
+          padding: 10px;
+        }
+        th,
+        td {
+          padding: 8px; /* Tighter padding for small screens */
+          font-size: 0.8em;
+        }
+        /* Optional: indicate that there is more content to the right */
+        .scroll-wrapper::after {
+          content: "Scroll →";
+          display: block;
+          text-align: right;
+          font-size: 0.7em;
+          color: #999;
+          padding: 5px;
+        }
+      }
+
+      /* for SF like stages */
+      :root {
+        --sf-blue: #0176d3;
+        --sf-gray: #e5e5e5;
+        --text-dark: #181818;
+      }
+
+      .stage-container {
+        display: flex;
+        gap: 2px; /* Small gap to separate stages */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 40px;
+      }
+
+      .arrow-sequel {
+        position: relative;
+        width: 160px; /* Shortened length per your request */
+        height: 40px;
+        background-color: var(--sf-gray);
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: normal;
+
+        /* The "Block Arrow" shape:
+           - Points on the right (100% 50%)
+           - Indent on the left (15% 50%) */
+        clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%, 15% 50%);
+
+        /* Overlap the previous arrow's point */
+        margin-left: -20px;
+        padding-left: 15px;
+      }
+
+      /* Remove indent for the first item */
+      .arrow-sequel:first-child {
+        margin-left: 0;
+        clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+        padding-left: 0;
+      }
+
+      .arrow-sequel.current {
+        font-weight: 600;
+        background-color: var(--sf-blue);
+        color: var(--sf-gray);
+      }
+      .arrow-sequel.active {
+        font-weight: 600;
+        /*
+             background-color: var(--sf-blue);
+             color: var(--sf-gray);
+             */
+      }
+      .arrow-sequel.inactive {
+        font-weight: normal;
+      }
+
+      .stage-container.stage {
+        gap: 4px; /* Small gap to separate stages */
+        margin-top: 0px !important;
+      }
+
+      .arrow-sequel.stage {
+        background-color: #fff1f2;
+        /*# #ffd8da;
+             eeffd8
+             ;*/
+        color: var(--text-dark);
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .arrow-sequel.stage_active {
+        background-color: #a77777;
+        color: white;
+      }
+
+      /* Tesla Table */
+      .phase-cell {
+        font-weight: bold;
+        /* background-color: #f1f5f9; */
+        color: #0f172a;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.1em;
+      }
+      .step-cell {
+        font-weight: 500;
+        color: gray;
+        /*#334155;*/
+      }
+      tr:hover {
+        background-color: #f8fafc;
+      }
+      .tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        font-weight: bold;
+        /* text-transform: uppercase; */
+        color: gray;
+      }
+      .tag2 {
+        display: inline-block;
+        padding: 2px 2px;
+        font-size: 0.75em;
+      }
+
+      /* Blue Trust Colors - Mostly B2B */
+      /* Sky Blue */
+      .tag-spin {
+        background-color: #d7ffff;
+        color: #1e40af;
+      }
+      /* Light Blue */
+      .tag-gap {
+        background-color: #dbeafe;
+        /*  #E4F0F8 */
+        color: #1e40af;
+      }
+
+      /*deep blue */
+      .tag-cdj-long {
+        background-color: #008b;
+        /* #06402b; */
+        color: whitesmoke;
+      }
+
+      /* Chacolate Colors B2B or B2C*/
+      /*milk chacolate */
+      .tag-cdj-loyalty-loop {
+        background-color: #ceb5a6;
+        /*  #99c86a; #fad5a5; */
+        color: #854d0e;
+      }
+
+      /* Light Chacolate */
+      .tag-cdj-zero-touch {
+        background-color: #e6d8d0;
+        color: #854d0e;
+      }
+
+      /* Green Colors - B2C*/
+      /* apple Green*/
+      .tag-cdj-b2c {
+        background-color: #99c86a;
+        /* #b7d348; #fce7f3;  #d0e5bd;*/
+        color: #854d0e;
+      }
+      /* Honedew Green*/
+      .tag-cdj-b2b2c {
+        background-color: #f0fff0;
+        /* #b8ffb8; */
+        color: #854d0e;
+      }
+
+      /* Radish Colors - Unconventional*/
+      .tag-disrupt {
+        background-color: #ffffe0;
+        /* #f0dc0c; */
+        color: orange;
+      }
+      .tag-higrowth {
+        background-color: #ffdeeb;
+        color: orange;
+      }
+
+      /* Radish Colors - Technical - SF Objects*/
+      .tag-object {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #e2e8f0;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-size: 0.9em;
+        color: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>
+        Discovery: How Are You Selling, Fulfilling, Billing, And Receognizing
+        Revenue?
+      </h1>
+
+      <h2>Sales Strategies</h2>
+      <table>
+        <thead class="thblue">
+          <tr>
+            <th>Situation</th>
+            <th>Business Situation</th>
+            <th>Recommended Model</th>
+            <th>Strategy</th>
+            <th>Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Transactional vs. Consultative
+              <br />
+              ("The Process")
+            </td>
+            <td>
+              High-Risk/High-Cost B2B / Comples Products / Legally Mandated
+              Industries (Like Consulting, Enterprise Software, Heavy Machinery,
+              Lefe Sciences)
+            </td>
+            <td>
+              <span class="tag tag-spin"> SPIN Selling</span>
+            </td>
+            <td>
+              SPIN is designed specifically for Consultative Sales where the
+              decision has a high risk, multiple influencers are involved, and
+              the relationship continues after the sale.
+              <br />
+              In a small sale, the "Closing" is the most important part. In a
+              SPIN-style large sale, the Investigating phase is the most
+              critical. You use SPIN when your product requires a "major
+              commitment" from the buyer rather than a "low-value impulse buy."
+            </td>
+            <td>SPIN Selling: The "Complexity" Model by Neil Rackham’s</td>
+          </tr>
+
+          <tr>
+            <td>
+              Slow Adoptors. Pain of staying the same is greater than the cost
+              of changing
+              <br />
+              ("The Lag")
+            </td>
+            <td>
+              Current state vs Future state: The larger the gap, the more value
+              you have created. If there is no gap, there is no sale.
+            </td>
+            <td>
+              <span class="tag tag-gap"> Gap Selling </span>
+            </td>
+            <td>
+              The fundamental premise is that change is hard, and people only
+              buy when the pain of staying the same is greater than the cost of
+              changing. A problem-centric sales methodology that shifts the
+              focus away from the product and entirely onto the "gap" between a
+              customer's Current State and their desired Future State.
+            </td>
+            <td>Gap Selling by Jim Keenan</td>
+          </tr>
+
+          <tr>
+            <td>Active Evaluation</td>
+            <td>
+              High-Competition Markets (e.g., Telecom, Consumer Electronics)
+              <br />
+              ("The Long Evaluation")
+            </td>
+            <td>
+              <span class="tag tag-cdj-long"> Toch Point Selling (CDJ) </span>
+            </td>
+            <td>
+              Used for high-competition industries (e.g., Electronics,
+              Software). If a company’s data shows that customers spend a long
+              time in "Active Evaluation," the selling model shifts from
+              outbound pitching to providing expert content and comparison tools
+              to win the "evaluation war."
+            </td>
+            <td>
+              The Customer Decision Journey (CDJ): The "Touch-Point" Model by
+              McKinsey
+            </td>
+          </tr>
+
+          <tr>
+            <td>The Loyalty Loop</td>
+            <td>
+              Subscription/SaaS Models (e.g., Cloud services, Netflix-style B2B)
+              <br />
+              ("The Repeat")
+            </td>
+            <td>
+              <span class="tag tag-cdj-loyalty-loop">
+                Toch Point Selling (CDJ)
+              </span>
+            </td>
+            <td>
+              This model is used for companies that rely on recurring revenue
+              (e.g., SaaS, Insurance, Consumer Goods). It suggests that the
+              "post-purchase" experience is the most effective "selling"
+              situation because it triggers the "Loyalty Loop," bypassing the
+              need for a new "Awareness" phase.
+            </td>
+            <td>
+              The Customer Decision Journey (CDJ): The "Touch-point" Model by
+              McKinsey
+            </td>
+          </tr>
+
+          <tr>
+            <td>Extreme Touch Point (Zero-Friction)</td>
+            <td>
+              Consumption/Usage-Based Models (e.g., Supercharging, Vendor Wi-Fi,
+              APIs)
+              <br />
+              ("The Invisible Sale")
+            </td>
+            <td>
+              <span class="tag tag-cdj-zero-touch">
+                Zero-Friction Utility
+              </span>
+            </td>
+            <td>
+              This model relies on behavioral engineering to eliminate the
+              "Active Evaluation" phase entirely. The goal is to make the
+              purchasing and consumption process so effortless (e.g.,
+              auto-billing, plug-and-play) that the user forms a habit,
+              effectively simulating a monopoly because the friction to switch
+              is too high.
+            </td>
+            <td>
+              The Hook Model (Nir Eyal) & Frictionless Commerce (McKinsey /
+              Scott Galloway)
+            </td>
+          </tr>
+
+          <tr>
+            <td>The Direct Sale (D2C / B2C)</td>
+            <td>
+              High-Volume Transactional Retail (e.g., Tesla Web Orders, Event
+              Tickets, E-commerce)
+              <br />
+              ("The Impulse Buy")
+            </td>
+            <td>
+              <span class="tag tag-cdj-b2c"> Direct Touch Point (CDJ) </span>
+            </td>
+            <td>
+              Used when selling directly to the end-consumer where you own 100%
+              of the customer journey. The strategy is entirely marketing-led,
+              relying on UI/UX optimization, social proof (FOMO), and seamless
+              digital checkout experiences (like 1-Click or Apple Pay) to drive
+              immediate conversions without human sales interaction.
+            </td>
+            <td>
+              The Customer Decision Journey (CDJ): The "Touch-point" Model by
+              McKinsey
+            </td>
+          </tr>
+
+          <tr>
+            <td>The Channel Sale (B2B2C / Dealer Track)</td>
+            <td>
+              Wholesale & Distributor Models (e.g., Home Depot Water Tanks,
+              Dealership Networks)
+              <br />
+              ("The Supply Chain Sale")
+            </td>
+            <td>
+              <span class="tag tag-cdj-b2b2c"> Channel Enablement </span>
+            </td>
+            <td>
+              Used when you sell to an intermediary who then sells to the
+              end-user, resulting in fractured control of the customer journey.
+              The strategy shifts away from end-user psychology toward
+              operational ease—creating frictionless B2B touch points like
+              automated EDI restocking, volume rebates, and seamless partner
+              portals to keep the dealer loyal to your brand.
+            </td>
+            <td>
+              Channel Strategy & Supply Chain Optimization (Classic MBA
+              Frameworks)
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              For Startups
+              <br />
+              ("The High Growth")
+            </td>
+            <td>Start-up / High Growth</td>
+            <td>
+              <span class="tag tag-higrowth"> Sales Acceleration Formula </span>
+            </td>
+            <td>
+              Often follow the Sales Acceleration Formula. The model focuses on
+              "Sales Hiring" and "Lead Management" as a predictable engineering
+              problem rather than individual talent.
+            </td>
+            <td>
+              The Sales Acceleration Formula: Using Data, Technology, and
+              Inbound Selling to go from $0 to $100 Million, written by Mark
+              Roberge
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              For Disruptive Market
+              <br />
+              ("The Disruption")
+            </td>
+            <td>
+              Status Quo Resistance, Selling a disruptive tech where "doing
+              nothing" is your biggest competitor.
+            </td>
+            <td>
+              <span class="tag tag-disrupt"> Challenger Sale </span>
+            </td>
+            <td>
+              The Challenger Model is preferred. It assumes the customer is
+              stuck in "status quo" and needs a salesperson to "teach" them why
+              their current way of doing business is costing them money.
+            </td>
+            <td>Modern Strategy: The Challenger Sale by Matthew Dixon.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h2>Maturity - Sales Org Design</h2>
+      <br />
+      <table>
+        <tbody>
+          <tr>
+            <td>Simple Product / Wide Area</td>
+            <td>Sales Team Structure</td>
+            <td>Geographic Structure</td>
+            <td>
+              Each rep handles all products in one territory to minimize travel
+              costs.
+            </td>
+            <td>Sales Force Management: The "Structural" Models by</td>
+          </tr>
+          <tr>
+            <td>Complex Technical Product</td>
+            <td>Sales Team Structure</td>
+            <td>Product Specialization</td>
+            <td>
+              Reps specialize in one product line because the technical
+              knowledge required is too deep for a generalist.
+            </td>
+            <td>Sales Force Management by Johnston & Marshall</td>
+          </tr>
+          <tr>
+            <td>Diverse Buyer Types</td>
+            <td>Sales Team Structure</td>
+            <td>Market (Customer) Specialization</td>
+            <td>
+              Reps are assigned by industry (e.g., "Healthcare Team" vs.
+              "Government Team") because the buying language and regulations
+              differ.
+            </td>
+            <td>Sales Force Management by Johnston & Marshall</td>
+          </tr>
+          <tr>
+            <td>High-Volume/Low-Margin</td>
+            <td>Sales Team Structure</td>
+            <td>Inside Sales Model</td>
+            <td>
+              Using phone/web-based teams to lower the "Cost of Sales" (CoS) for
+              smaller accounts.
+            </td>
+            <td>Sales Force Management by Johnston & Marshall</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Note:</h3>
+      <p>
+        Go through and capture Sales, Operations, and Finance teams org
+        structures.
+      </p>
+    </section>
+    <br />
+
+    <section>
+      <h1>Discovery: How Do You Breakdown Functionally?</h1>
+      <h2>The 16 Functional Steps</h2>
+      <div class="stage-container">
+        <div class="arrow-sequel current">The Commitment</div>
+        <div class="arrow-sequel">The Delivery</div>
+        <div class="arrow-sequel">The Invoice</div>
+        <div class="arrow-sequel">The Compliance</div>
+      </div>
+      <p>
+        This is where the Sales Strategy (Gap Selling/SPIN) is codified into an
+        formal and/or legal agreement.
+      </p>
+      <div class="stage-container stage">
+        &nbsp;&nbsp;
+        <div class="arrow-sequel stage">Configure Product on Quote</div>
+        <div class="arrow-sequel stage">Set Pricing and Discounting</div>
+        <div class="arrow-sequel stage">Generate Proposal</div>
+        <div class="arrow-sequel stage">CLM</div>
+      </div>
+
+      <div class="stage-container">
+        <div class="arrow-sequel">The Commitment</div>
+        <div class="arrow-sequel current">The Delivery</div>
+        <div class="arrow-sequel">The Invoice</div>
+        <div class="arrow-sequel">The Compliance</div>
+      </div>
+      <p>
+        In your business, this is where the Sales Force Management team hands
+        off the project to Operations.
+      </p>
+      <div class="stage-container stage">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="arrow-sequel stage">Order Orchestration</div>
+        <div class="arrow-sequel stage">Inventory Allocation</div>
+        <div class="arrow-sequel stage">Logistics & Freight</div>
+        <div class="arrow-sequel stage">Proof of Delivery</div>
+      </div>
+
+      <div class="stage-container">
+        <div class="arrow-sequel">The Commitment</div>
+        <div class="arrow-sequel">The Delivery</div>
+        <div class="arrow-sequel current">The Invoice</div>
+        <div class="arrow-sequel">The Compliance</div>
+      </div>
+      <p>This is the financial execution of the contract.</p>
+      <div class="stage-container stage">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="arrow-sequel stage">When to Bill Trigger</div>
+        <div class="arrow-sequel stage">Tax & Compliance</div>
+        <div class="arrow-sequel stage">Invoice Consolidation</div>
+        <div class="arrow-sequel stage">Feed AR With Payment Terms</div>
+      </div>
+
+      <div class="stage-container">
+        <div class="arrow-sequel">The Commitment</div>
+        <div class="arrow-sequel">The Delivery</div>
+        <div class="arrow-sequel">The Invoice</div>
+        <div class="arrow-sequel current">The Compliance</div>
+      </div>
+      <p>
+        This is the accounting phase, ensuring the business follows standards
+        like ASC 606.
+      </p>
+      <div class="stage-container stage">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="arrow-sequel stage">Performance Obligations</div>
+        <div class="arrow-sequel stage">Allocation</div>
+        <div class="arrow-sequel stage">Scheduling</div>
+        <div class="arrow-sequel stage">Feed Revenue Subledger</div>
+      </div>
+
+      <h3>Note:</h3>
+      <p>
+        Use RTM to catalog these items as a connected sequence rather than
+        independent pieces; this ensures end-to-end tracking from vision to
+        execution.
+      </p>
+    </section>
+
+    <h1>Three Real World Examples</h1>
+    <section>
+      <h2>Tanks Enterprise 2-Track Model</h2>
+      <p>
+        A functional breakdown comparing high-volume Water Tank retail sales
+        against complex, engineered Chemical Tank projects.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Functional Step</th>
+            <th>
+              <span class="tag tag-spin">Industrial Track (Chemical)</span
+              ><br />
+              <span class="tag2">SPIN / Gap Selling</span>
+            </th>
+            <th>
+              <span class="tag tag-cdj-b2b2c">Dealer Track (Water Tanks)</span
+              ><br />
+              <span class="tag2">Touch-Point (CDJ)</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel active">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Configuration</td>
+            <td>
+              Consultative configuration; selecting specific liners and
+              materials based on chemical type/acidity.
+            </td>
+            <td>
+              Automated selection of standard tank sizes, capacities, and basic
+              fittings.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Pricing & Discounting</td>
+            <td>
+              Value-based pricing; heavy margin protection justified by risk
+              mitigation.
+            </td>
+            <td>
+              Tiered block pricing and pre-approved volume discounts for dealer
+              networks.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proposal Generation</td>
+            <td>
+              Formal, multi-page technical proposal including safety specs and
+              engineering schematics.
+            </td>
+            <td>Instant digital shopping cart or standard B2B order form.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Contract Lifecycle (CLM)</td>
+            <td>
+              Heavy legal redlining, indemnity clauses, and custom liability
+              agreements.
+            </td>
+            <td>
+              Standard terms & conditions; simple click-wrap or automated
+              approval.
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel active">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Order Orchestration</td>
+            <td>
+              Validating custom configurations with the manufacturing floor
+              before production begins.
+            </td>
+            <td>
+              Routing standard SKUs directly to the warehouse for immediate
+              pick/pack.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Inventory Allocation</td>
+            <td>
+              Ordering specific raw materials (specialty plastics/steel) for
+              custom industrial builds.
+            </td>
+            <td>
+              Reserving existing finished goods from the yard for a 48-hour
+              shipment window.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Logistics & Freight</td>
+            <td>
+              Coordinating specialized oversized flatbed transport and crane
+              rentals for the chemical plant.
+            </td>
+            <td>
+              Standard LTL (Less Than Truckload) freight to regional Home Depot
+              distribution centers.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proof of Delivery</td>
+            <td>
+              Formal site acceptance, technical installation sign-off, and
+              safety certification by plant engineers.
+            </td>
+            <td>
+              Standard Bill of Lading (BOL) signed at the dealer's loading dock.
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel active">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Billing Triggers</td>
+            <td>
+              Milestone billing (e.g., 30% upfront, 40% at factory completion,
+              30% after installation).
+            </td>
+            <td>
+              Triggered automatically upon shipment departure from the factory.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Taxation & Compliance</td>
+            <td>
+              Complex tax calculation, potentially including capital improvement
+              tax exemptions.
+            </td>
+            <td>
+              Standard state/local sales tax based on the dealer's delivery
+              location.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Invoice Consolidation</td>
+            <td>
+              Highly detailed project invoices including line items for tanks,
+              freight, and engineering hours.
+            </td>
+            <td>
+              Sending one consolidated monthly invoice via EDI for all tanks
+              ordered by the dealer.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Accounts Receivable (AR)</td>
+            <td>
+              Managing retainage terms (holding final payment until safety tests
+              pass); high-touch collections.
+            </td>
+            <td>
+              Standard Net 30 or Net 60 terms managed via automated collections.
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel active">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Performance Obligations</td>
+            <td>
+              Identifying multiple obligations: the chemical tank, the
+              installation labor, and the extended warranty.
+            </td>
+            <td>
+              Identifying a single obligation: the delivery of the physical
+              water tank.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Transaction Price Allocation</td>
+            <td>
+              Assigning Standalone Selling Price (SSP) portions to the tank, the
+              labor, and the service contract.
+            </td>
+            <td>
+              100% of the transaction price allocated to the physical hardware.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Revenue Scheduling</td>
+            <td>
+              Ratable/Milestone: Recognized upon final site acceptance (FOB
+              Destination), deferring warranty revenue.
+            </td>
+            <td>
+              Point-in-time: Recognized immediately upon shipment (FOB Origin).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Financial Reporting</td>
+            <td>
+              Reported as "Project" revenue with deferred liability for the
+              ongoing warranty.
+            </td>
+            <td>Reported as standard "Product/Hardware" revenue.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Tesla 4-Track Model</h2>
+      <p>
+        Comparing physical asset sales against recurring software subscriptions
+        (SaaS) and usage-based consumption.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <span class="tag">Tesla</span>
+              <br />
+              <span class="tag2">Functional Step</span>
+            </th>
+            <th>
+              <span class="tag tag-spin">Enterprise Fleet</span>
+              <br />
+              <span class="tag2"
+                >Custom Milestone Project<br />Challenger/SPIN</span
+              >
+            </th>
+            <th>
+              <span class="tag tag-cdj-b2c">Consumer Retail</span>
+              <br />
+              <span class="tag2"
+                >One-Time Hardware Sale<br />Touch-Point (CDJ)</span
+              >
+            </th>
+            <th>
+              <span class="tag tag-cdj-loyalty-loop">FSD Subscription</span
+              ><br />
+              <span class="tag2"
+                >Monthly Recurring (SaaS)<br />Loyalty Loop (CDJ)</span
+              >
+            </th>
+            <th>
+              <span class="tag tag-cdj-zero-touch">Supercharging</span><br />
+              <span class="tag2"
+                >Usage-Based (Consumption)<br />Zero-Friction (CDJ)</span
+              >
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel active">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Configuration</td>
+            <td>Custom upfits (lightbars, armor).</td>
+            <td>Standard car options (paint, wheels).</td>
+            <td>
+              <strong>In-App Toggle:</strong> Selecting vehicle eligibility
+              based on HW3/HW4 computer.
+            </td>
+            <td>
+              <strong>Zero-Friction (CDJ):</strong> Vehicle simply plugs into a
+              compatible V3/V4 Supercharger.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Pricing & Discounting</td>
+            <td>Volume-based discounting / RFP.</td>
+            <td>Standard MSRP + Tax Credits.</td>
+            <td>
+              <strong>Flat Rate:</strong> Fixed monthly price (e.g., $99/mo). No
+              discounts.
+            </td>
+            <td>
+              <strong>Dynamic Rate:</strong> Variable kW/h pricing based on
+              time-of-day (peak vs. off-peak).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proposal Generation</td>
+            <td>Formal multi-page municipal proposal.</td>
+            <td>Standard online order agreement.</td>
+            <td>
+              <strong>Digital Checkout:</strong> Standard checkout screen in the
+              Tesla mobile app.
+            </td>
+            <td>
+              <strong>UI Display:</strong> Estimated pricing displayed on the
+              car's navigation screen.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Contract Lifecycle</td>
+            <td>Redlined fleet liability agreements.</td>
+            <td>Click-wrap e-signature.</td>
+            <td>Accepting digital Terms of Service for recurring billing.</td>
+            <td>Accepting Supercharger Terms of Use and Idle Fee policies.</td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel active">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Order Orchestration</td>
+            <td>Coordinating third-party upfitters.</td>
+            <td>Validating trim in factory queue.</td>
+            <td>
+              <strong>Digital Provisioning:</strong> Pushing the Over-The-Air
+              (OTA) software update flag.
+            </td>
+            <td>
+              <strong>Authentication:</strong> Pedestal handshakes with the
+              car's VIN to authorize charge.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Inventory Allocation</td>
+            <td>Allocating bulk vehicle blocks.</td>
+            <td>Reserving a single VIN.</td>
+            <td>
+              <strong>Infinite Inventory:</strong> Cloud-based license
+              allocation.
+            </td>
+            <td>
+              <strong>Grid Management:</strong> Managing localized electricity
+              draw at the specific station.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Logistics & Freight</td>
+            <td>Secure bulk transport to precinct.</td>
+            <td>Car-hauler to delivery center.</td>
+            <td>
+              <strong>Zero Logistics:</strong> Delivered instantly via Wi-Fi or
+              cellular network.
+            </td>
+            <td>
+              <strong>Energy Routing:</strong> Pulling power from local
+              Megapacks or the main utility grid.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proof of Delivery</td>
+            <td>Fleet manager safety inspection.</td>
+            <td>Customer unlocks car via phone.</td>
+            <td>
+              Software version confirmed active on the vehicle's MCU (screen).
+            </td>
+            <td>
+              <strong>Session End:</strong> Exact kW/h dispensed is recorded by
+              both car and pedestal.
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel active">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Billing Triggers</td>
+            <td>Milestone billing (20/50/30).</td>
+            <td>Billed upon vehicle handover.</td>
+            <td>
+              <strong>Time-Based:</strong> Triggers exactly on the monthly
+              anniversary date.
+            </td>
+            <td>
+              <strong>Event-Based:</strong> Triggers the precise second the
+              charging cable is unplugged.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Taxation & Compliance</td>
+            <td>Tax-exempt municipal forms.</td>
+            <td>Local DMV and state sales tax.</td>
+            <td>Applying local digital goods and software services taxes.</td>
+            <td>
+              Applying local utility/energy taxes (highly regulated by
+              municipality).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Invoice Consolidation</td>
+            <td>Consolidated fleet parts invoice.</td>
+            <td>Single receipt for one vehicle.</td>
+            <td>Single digital line item sent via email.</td>
+            <td>
+              Aggregated monthly for fleets, or individual session receipts for
+              consumers.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Accounts Receivable</td>
+            <td>Net 60 municipal terms.</td>
+            <td>Point-of-sale cash or auto loan.</td>
+            <td>
+              <strong>Auto-Pay:</strong> Card on file charged. "Dunning" process
+              if card declines (software turns off).
+            </td>
+            <td>
+              <strong>Instant Charge:</strong> Unpaid balances instantly lock
+              the user out of future Supercharging.
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel active">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Performance Obligations</td>
+            <td>Car, armor, and 5-yr maintenance.</td>
+            <td>Physical car and warranty.</td>
+            <td>
+              Providing access to the autonomous feature set for 30 continuous
+              days.
+            </td>
+            <td>
+              Dispensing the exact requested electricity and providing parking
+              space.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Price Allocation</td>
+            <td>Base car vs. upfit vs. telematics.</td>
+            <td>Split between car and software.</td>
+            <td>100% allocated to Services/Software.</td>
+            <td>Allocated to Energy dispensed + any incurred Idle Fees.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Revenue Scheduling</td>
+            <td>Recognize hardware immediately.</td>
+            <td>Defer SLA over 5 years.</td>
+            <td>
+              <strong>Ratable:</strong> Recognized evenly over the 30-day period
+              (daily rev rec).
+            </td>
+            <td>
+              <strong>Point-in-Time:</strong> Recognized instantly when the
+              charging session ends.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Financial Reporting</td>
+            <td>"Automotive Sales" revenue.</td>
+            <td>"Automotive Sales" revenue.</td>
+            <td>"Services and Other" (High margin SaaS).</td>
+            <td>"Services and Other" (Lower margin utility).</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Thrive 5-Track Event Management</h2>
+      <p>
+        Operational workflow for the Spring Campus Festival & Tech Expo,
+        comparing project, sponsorship, volume, recurring, and consumption
+        revenue models.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <span class="tag">Thrive</span><br />
+              <span class="tag2">Functional Step</span>
+            </th>
+            <th>
+              <span class="tag tag-spin">Univ. Turnkey</span><br />
+              <span class="tag2">$50,000 Flat</span>
+            </th>
+            <th>
+              <span class="tag tag-disrupt">Sponsorship</span><br />
+              <span class="tag2">$15,000 Tier</span>
+            </th>
+            <th>
+              <span class="tag tag-cdj-b2c">Student Ticket</span><br />
+              <span class="tag2">$25/Each</span>
+            </th>
+            <th>
+              <span class="tag tag-cdj-loyalty-loop">Club SaaS</span><br />
+              <span class="tag2">$199/Month</span>
+            </th>
+            <th>
+              <span class="tag tag-cdj-zero-touch">Vendor Wi-Fi</span><br />
+              <span class="tag2">$0.50/GB</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel active">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Configuration</td>
+            <td>
+              Custom Statement of Work (SOW); Stage design, security, permits.
+            </td>
+            <td>
+              Ad bundle: 2 Main Stage banners + 10x10 premium booth space.
+            </td>
+            <td>Standard General Admission (GA) or VIP entry tier.</td>
+            <td>
+              Multi-Dimensional Quoting (MDQ) for a 3-month software term.
+            </td>
+            <td>
+              Metered usage product setup tied to unique vendor MAC addresses.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Pricing & Discounting</td>
+            <td>Fixed project fee based on cost-plus margin modeling.</td>
+            <td>Tiered pricing (Gold vs. Silver sponsor); block discounts.</td>
+            <td>Standard MSRP; dynamic "early bird" pricing discounts.</td>
+            <td>Flat monthly recurring fee.</td>
+            <td>
+              Consumption tier pricing (e.g., first 5GB free, $0.50/GB
+              thereafter).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proposal Generation</td>
+            <td>Formal, multi-page PDF presented to University Dean.</td>
+            <td>Branded pitch deck highlighting student demographic ROI.</td>
+            <td>Mobile-friendly digital shopping cart.</td>
+            <td>Digital checkout portal for club presidents.</td>
+            <td>Captive portal login screen on mobile devices.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Contract Lifecycle</td>
+            <td>
+              Heavy redlining; University legal indemnity and insurance reviews.
+            </td>
+            <td>Standard DocuSign with brand usage rights agreements.</td>
+            <td>Click-wrap liability waiver at checkout.</td>
+            <td>Click-wrap B2B Terms of Service.</td>
+            <td>Acceptance of Acceptable Use Policy (AUP) on splash page.</td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel active">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Order Orchestration</td>
+            <td>
+              Dispatching physical crews, stage builders, and talent buyers.
+            </td>
+            <td>Routing logos to print vendors for physical banners.</td>
+            <td>Generating secure, encrypted QR codes for entry.</td>
+            <td>Provisioning admin licenses and cloud tenant space.</td>
+            <td>
+              Authenticating the router and establishing the session connection.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Inventory Allocation</td>
+            <td>Reserving the physical campus quad footprint.</td>
+            <td>
+              Allocating specific high-traffic digital and physical ad slots.
+            </td>
+            <td>Capping ticket sales at the 5,000 venue fire-code limit.</td>
+            <td>Infinite software inventory.</td>
+            <td>
+              Throttling bandwidth to ensure grid stability across 30 food
+              trucks.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Logistics & Freight</td>
+            <td>Coordinating flatbed deliveries of staging and fencing.</td>
+            <td>Delivering sponsor swag bags to the VIP tent.</td>
+            <td>Instant digital delivery via email/Apple Wallet.</td>
+            <td>Instant delivery via welcome email and login credentials.</td>
+            <td>
+              Routing data packets through localized on-site mesh routers.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proof of Delivery</td>
+            <td>University sign-off on safety inspection day before event.</td>
+            <td>Photo evidence of banners hung on the main stage.</td>
+            <td>QR code successfully scanned at the front gate.</td>
+            <td>First successful login by the fraternity admin.</td>
+            <td>Data usage summaries recorded by the network gateway.</td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel active">The Invoice</div>
+                <div class="arrow-sequel">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Billing Triggers</td>
+            <td>Milestone: 50% deposit on signing, 50% post-event.</td>
+            <td>100% upfront upon signing the sponsorship agreement.</td>
+            <td>Immediate point-of-sale trigger.</td>
+            <td>Billed in advance on the 1st of every month.</td>
+            <td>
+              Billed in arrears based on usage summaries at the end of the 3-day
+              event.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Taxation & Compliance</td>
+            <td>Applying University tax-exempt status rules.</td>
+            <td>Standard corporate B2B sales tax.</td>
+            <td>Local amusement/entertainment ticket taxes.</td>
+            <td>Digital goods and software services tax.</td>
+            <td>Local utility/telecom tax regulations.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Invoice Consolidation</td>
+            <td>Single massive project invoice for the University.</td>
+            <td>Account-level invoice (if they sponsor multiple events).</td>
+            <td>Individual Stripe/Square receipt for the student.</td>
+            <td>Consolidated monthly line item for the club's account.</td>
+            <td>
+              Aggregated invoice detailing total GB consumed over 72 hours.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Accounts Receivable</td>
+            <td>Net 45 payment terms (typical for higher-ed).</td>
+            <td>
+              Net 30 terms; late fees applied if unpaid before event date.
+            </td>
+            <td>Immediate clearing via Apple Pay / Credit Card.</td>
+            <td>
+              Auto-pay via card on file; software locked if payment fails.
+            </td>
+            <td>
+              Auto-deducted from a pre-authorized deposit or card on file.
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="4" class="phase-cell">
+              <div class="stage-container">
+                <div class="arrow-sequel">The Commitment</div>
+                <div class="arrow-sequel">The Delivery</div>
+                <div class="arrow-sequel">The Invoice</div>
+                <div class="arrow-sequel active">The Compliance</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Performance Obligations</td>
+            <td>1. Event Execution 2. Post-event cleanup.</td>
+            <td>1. Brand impressions 2. Booth space provided.</td>
+            <td>Providing access to the concert venue.</td>
+            <td>Providing 24/7 access to the SaaS application.</td>
+            <td>Dispensing the exact requested data bandwidth.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Price Allocation (SSP)</td>
+            <td>100% allocated to the customized service package.</td>
+            <td>
+              Split Standalone Selling Price between physical ads and digital
+              mentions.
+            </td>
+            <td>100% allocated to the ticket asset.</td>
+            <td>100% allocated to Software/Services.</td>
+            <td>100% allocated to metered usage/utility.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Revenue Scheduling</td>
+            <td>
+              Point-in-time: Recognized the Monday after the event concludes.
+            </td>
+            <td>Ratable: Recognized evenly over the 3 days of the festival.</td>
+            <td>Point-in-time: Recognized the moment the ticket is scanned.</td>
+            <td>Ratable: Recognized daily over the 30-day billing cycle.</td>
+            <td>Point-in-time: Recognized dynamically as GBs are consumed.</td>
+          </tr>
+          <tr>
+            <td class="step-cell">Financial Reporting</td>
+            <td>Reported as "Professional Services / Events" revenue.</td>
+            <td>Reported as "Advertising / Media" revenue.</td>
+            <td>Reported as "B2C Consumer" revenue.</td>
+            <td>Reported as "Annual Recurring Revenue (ARR)".</td>
+            <td>Reported as "Usage / Variable" revenue.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!--Revenue Cloud Advanced (RCA) Architecture-->
+    <section>
+      <h1>Solution: How Do You Map To Revenue Cloud Advanced ?</h1>
+      <h2>Functional Mapping</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <!-- 
+            <tr>
+              <th>
+                <span class="tag">Funct.. Mapping</span><br />
+                <span class="tag2">Functional Step</span>
+              </th>
+              <th>
+                <span class="tag">Description</span>
+              </th>
+              <th><span class="tag">Input / Source</span></th>
+              <th><span class="tag">Action</span></th>
+              <th><span class="tag">Output</span></th>
+              <th><span class="tag">Feeds Into</span></th>
+            </tr>
+            -->
+            <tr>
+              <th>Funct.. Mapping, Functional Step</th>
+              <th>Description</th>
+              <th>&#x1F4E5; Input / Source</th>
+              <th>&#x2699; Action</th>
+              <th>&#x1F4E4; Output</th>
+              <th>&#x27A1; Feeds Into</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel active">The Commitment</div>
+                  <div class="arrow-sequel">The Delivery</div>
+                  <div class="arrow-sequel">The Invoice</div>
+                  <div class="arrow-sequel">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Configuration</td>
+              <td>
+                Selecting the right tank specs, liners, and fittings based on
+                the chemical type.
+              </td>
+              <td>Opportunity, Account, Product Catalog</td>
+              <td>
+                Select products, enforce dependencies, and validate bundles.
+              </td>
+              <td>Quote Lines</td>
+              <td>Pricing & Discounting</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Pricing & Discounting</td>
+              <td>
+                Applying volume tiers for dealers or "project-based" pricing for
+                industrial plants.
+              </td>
+              <td>Configured Quote Lines</td>
+              <td>
+                Calculate MSRP, apply block pricing, discount schedules, and
+                MDQ. Trigger approvals.
+              </td>
+              <td>Priced Quote</td>
+              <td>Proposal Generation</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Proposal Generation</td>
+              <td>Creating the professional document the customer signs.</td>
+              <td>Priced Quote, Account Details</td>
+              <td>Merge quote data into formatted template.</td>
+              <td>Quote Document (PDF)</td>
+              <td>Contract Lifecycle Management (CLM)</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Contract Lifecycle Management (CLM)</td>
+              <td>
+                Handling the "redlining" of legal terms and final e-signatures.
+              </td>
+              <td>Quote Document</td>
+              <td>Redline terms, negotiate, and capture e-signature.</td>
+              <td>Signed Contract / Accepted Quote</td>
+              <td>Order Orchestration</td>
+            </tr>
+
+            <tr>
+              <td colspan="5" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel">The Commitment</div>
+                  <div class="arrow-sequel active">The Delivery</div>
+                  <div class="arrow-sequel">The Invoice</div>
+                  <div class="arrow-sequel">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Order Orchestration</td>
+              <td>
+                Validating that the configuration can actually be built by the
+                factory.
+              </td>
+              <td>Accepted Quote / Contract</td>
+              <td>Generate primary Order and Order Products.</td>
+              <td>Activated Order</td>
+              <td>Inventory Allocation</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Inventory Allocation</td>
+              <td>
+                Reserving existing tanks for dealer orders or ordering raw
+                materials.
+              </td>
+              <td>Activated Order</td>
+              <td>
+                Check inventory levels and reserve stock or trigger procurement.
+              </td>
+              <td>Inventory Commitment</td>
+              <td>Logistics & Freight</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Logistics & Freight</td>
+              <td>
+                Coordinating the transport of oversized chemical tanks to a
+                specific site.
+              </td>
+              <td>Inventory Commitment</td>
+              <td>Schedule freight and generate shipping manifests.</td>
+              <td>Shipment Record</td>
+              <td>Proof of Delivery</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Proof of Delivery</td>
+              <td>
+                Documenting that the asset arrived on-site and was installed
+                correctly.
+              </td>
+              <td>Shipment Record</td>
+              <td>Capture delivery confirmation and site acceptance.</td>
+              <td>Delivery Date / Fulfilled Status</td>
+              <td>Billing Triggers</td>
+            </tr>
+
+            <tr>
+              <td colspan="5" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel">The Commitment</div>
+                  <div class="arrow-sequel">The Delivery</div>
+                  <div class="arrow-sequel active">The Invoice</div>
+                  <div class="arrow-sequel">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Billing Triggers</td>
+              <td>
+                Deciding *when* to bill (e.g., "On Shipment" vs "Milestone").
+              </td>
+              <td>Activated Order, Proof of Delivery</td>
+              <td>Evaluate Billing Rules and generate pending lines.</td>
+              <td>Pending Invoice Lines</td>
+              <td>Taxation & Compliance</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Taxation & Compliance</td>
+              <td>
+                Applying the correct state/local taxes based on the delivery
+                location.
+              </td>
+              <td>Pending Invoice Lines, Address</td>
+              <td>Call external tax engine to calculate jurisdiction taxes.</td>
+              <td>Tax Line Items</td>
+              <td>Invoice Consolidation</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Invoice Consolidation</td>
+              <td>
+                Sending one clean invoice instead of 50 individual receipts.
+              </td>
+              <td>Taxed Invoice Lines</td>
+              <td>
+                Group lines onto a single invoice document based on account
+                settings.
+              </td>
+              <td>Posted Invoice</td>
+              <td>Accounts Receivable (AR)</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Accounts Receivable (AR)</td>
+              <td>Managing the payment terms (e.g., Net 30 or Net 60).</td>
+              <td>Posted Invoice</td>
+              <td>Process incoming payments and allocate to invoice lines.</td>
+              <td>Payment Record, Adjusted Balance</td>
+              <td>Performance Obligations</td>
+            </tr>
+
+            <tr>
+              <td colspan="5" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel">The Commitment</div>
+                  <div class="arrow-sequel">The Delivery</div>
+                  <div class="arrow-sequel">The Invoice</div>
+                  <div class="arrow-sequel active">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Performance Obligations</td>
+              <td>
+                Identifying what was promised (tank, installation, warranty).
+              </td>
+              <td>Order Products, Contracts</td>
+              <td>Group line items into distinct accounting obligations.</td>
+              <td>Revenue Obligations</td>
+              <td>Transaction Price Allocation</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Transaction Price Allocation</td>
+              <td>
+                Assigning a portion of the total contract value to each
+                obligation.
+              </td>
+              <td>Revenue Obligations</td>
+              <td>
+                Distribute contract price based on Standalone Selling Price
+                (SSP).
+              </td>
+              <td>Allocated Revenue Amounts</td>
+              <td>Revenue Scheduling</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Revenue Scheduling</td>
+              <td>
+                Recognizing revenue immediately vs. deferring it over time.
+              </td>
+              <td>Allocated Revenue Amounts, Dates</td>
+              <td>
+                Generate schedules to amortize revenue or trigger at a
+                point-in-time.
+              </td>
+              <td>Revenue Schedules</td>
+              <td>Financial Reporting</td>
+            </tr>
+            <tr>
+              <td class="step-cell">Financial Reporting</td>
+              <td>
+                Closing the books and reporting "Earned" vs. "Unearned" revenue.
+              </td>
+              <td>Revenue Schedules, Invoices</td>
+              <td>Aggregate financial transactions for the general ledger.</td>
+              <td>GL Entries</td>
+              <td>ERP (GL)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Technical Mapping</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Tech.. Mapping, Functional Step</th>
+              <th>&#x1F4E6; Core Data Model, Standard Objects</th>
+              <th>&#x1F504; RCA Engines & Processes Used</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="3" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel active">The Commitment</div>
+                  <div class="arrow-sequel">The Delivery</div>
+                  <div class="arrow-sequel">The Invoice</div>
+                  <div class="arrow-sequel">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Configuration</td>
+              <td>
+                <span class="tag-object">Product2</span>,
+                <span class="tag-object">ProductCatalog</span>,
+                <span class="tag-object">ProductCategory</span>,
+                <span class="tag-object">AttributeDefinition</span>,
+                <span class="tag-object">Quote</span>,
+                <span class="tag-object">QuoteLineItem</span>
+              </td>
+              <td>
+                <span class="engine">Product Catalog Management (PCM):</span>
+                Utilizing Attribute-Based Configuration and Product Discovery to
+                guide the user through complex bundle selections natively.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Pricing & Discounting</td>
+              <td>
+                <span class="tag-object">Pricebook2</span>,
+                <span class="tag-object">PricebookEntry</span>,
+                <span class="tag-object">QuoteLineItem</span>
+              </td>
+              <td>
+                <span class="engine">Salesforce Pricing:</span> Replacing legacy
+                price rules with Declarative Pricing Procedures, Expression
+                Sets, Lookup Tables, and Context Rules to handle volume tiers
+                and MDQ.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Proposal Generation</td>
+              <td>
+                <span class="tag-object">QuoteDocument</span>,
+                <span class="tag-object">ContentVersion</span>
+              </td>
+              <td>
+                <span class="engine">OmniStudio Document Generation:</span>
+                Pulling JSON data from the Quote and mapping it to standardized
+                Word/PDF templates via DataRaptors.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Contract Lifecycle (CLM)</td>
+              <td>
+                <span class="tag-object">Contract</span>,
+                <span class="tag-object">DocumentClause</span>,
+                <span class="tag-object">DocumentTemplate</span>
+              </td>
+              <td>
+                <span class="engine">Salesforce Contracts:</span> Managing the
+                Clause Library for redlining, integrating natively with external
+                e-signature providers.
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="3" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel">The Commitment</div>
+                  <div class="arrow-sequel active">The Delivery</div>
+                  <div class="arrow-sequel">The Invoice</div>
+                  <div class="arrow-sequel">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Order Orchestration</td>
+              <td>
+                <span class="tag-object">Order</span>,
+                <span class="tag-object">OrderItem</span>,
+                <span class="tag-object">Asset</span>,
+                <span class="tag-object">AssetAction</span>,
+                <span class="tag-object">AssetStatePeriod</span>
+              </td>
+              <td>
+                <span class="engine">Quote-to-Order API & ALM:</span>
+                Automatically generating standard Orders. For
+                SaaS/Subscriptions, invoking Asset Lifecycle Management (ALM) to
+                track the state of the asset over time.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Inventory Allocation</td>
+              <td>
+                <span class="tag-object">Location</span>,
+                <span class="tag-object">FulfillmentOrder</span>
+              </td>
+              <td>
+                <span class="engine">Salesforce Order Management (SOM):</span>
+                Routing the OrderItems to specific fulfillment locations or
+                triggering procurement workflows.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Logistics & Freight</td>
+              <td>
+                <span class="tag-object">Shipment</span>,
+                <span class="tag-object">FulfillmentOrderLineItem</span>
+              </td>
+              <td>
+                <span class="engine">Integration Architecture:</span> Utilizing
+                MuleSoft to sync standard Shipment records with external ERPs or
+                Transportation Management Systems (TMS).
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Proof of Delivery</td>
+              <td>
+                <span class="tag-object">ServiceAppointment</span>,
+                <span class="tag-object">WorkOrder</span>
+              </td>
+              <td>
+                <span class="engine">Salesforce Field Service (SFS):</span> If
+                physical installation is required, utilizing SFS to capture site
+                acceptance and update the Order status to 'Activated'.
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="3" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel">The Commitment</div>
+                  <div class="arrow-sequel">The Delivery</div>
+                  <div class="arrow-sequel active">The Invoice</div>
+                  <div class="arrow-sequel">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Billing Triggers</td>
+              <td>
+                <span class="tag-object">BillingSchedule</span>,
+                <span class="tag-object">BillingTreatment</span>,
+                <span class="tag-object">Invoice</span>,
+                <span class="tag-object">InvoiceLine</span>
+              </td>
+              <td>
+                <span class="engine">Core Billing Engine:</span> Evaluating
+                standard OrderItems against Billing Rules to generate pending
+                Invoice lines based on milestones or shipment dates.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Taxation & Compliance</td>
+              <td>
+                <span class="tag-object">TaxTreatment</span>,
+                <span class="tag-object">TaxRate</span>
+              </td>
+              <td>
+                <span class="engine">Tax Integration:</span> Utilizing the core
+                tax engine or connecting to external platforms (e.g.,
+                Avalara/Vertex) before finalizing the Invoice.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Invoice Consolidation</td>
+              <td>
+                <span class="tag-object">Invoice</span>,
+                <span class="tag-object">InvoiceBatchRun</span>
+              </td>
+              <td>
+                <span class="engine">Invoice Schedulers:</span> Running
+                scheduled batches to group pending Invoice Lines into a single
+                consolidated document per account.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Accounts Receivable</td>
+              <td>
+                <span class="tag-object">Payment</span>,
+                <span class="tag-object">PaymentAllocation</span>,
+                <span class="tag-object">CreditMemo</span>
+              </td>
+              <td>
+                <span class="engine">Salesforce Payments:</span> Processing
+                standard payments and automatically creating PaymentAllocation
+                records against the open InvoiceLines.
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="3" class="phase-cell">
+                <div class="stage-container">
+                  <div class="arrow-sequel">The Commitment</div>
+                  <div class="arrow-sequel">The Delivery</div>
+                  <div class="arrow-sequel">The Invoice</div>
+                  <div class="arrow-sequel active">The Compliance</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Performance Obligations</td>
+              <td><span class="tag-object">RevenueObligation</span></td>
+              <td>
+                <span class="engine">Revenue Recognition Rules:</span>
+                Automatically evaluating the Contract and OrderItems to group
+                them into distinct obligations for ASC 606.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Price Allocation</td>
+              <td><span class="tag-object">RevenueAllocation</span></td>
+              <td>
+                <span class="engine">SSP Allocation:</span> Distributing the
+                total contract value across the Revenue Obligations based on
+                pre-defined Standalone Selling Price (SSP) logic.
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Revenue Scheduling</td>
+              <td>
+                <span class="tag-object">RevenueSchedule</span>,
+                <span class="tag-object">RevenueTransaction</span>
+              </td>
+              <td>
+                <span class="engine">Amortization Engine:</span> Generating
+                standard Revenue Schedules (e.g., straight-line over 12 months
+                for a subscription, or point-in-time for a physical tank).
+              </td>
+            </tr>
+            <tr>
+              <td class="step-cell">Financial Reporting</td>
+              <td>
+                <span class="tag-object">FinanceTransaction</span>,
+                <span class="tag-object">FinanceBook</span>
+              </td>
+              <td>
+                <span class="engine">Finance Logging:</span> Capturing every
+                financial event (Invoice posting, Payment allocation, Rev Rec
+                schedule) into core Finance objects for easy MuleSoft extraction
+                to the ERP General Ledger.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>

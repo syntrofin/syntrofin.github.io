@@ -1,0 +1,146 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 90%;
+    max-width: 1200px; /* Prevents text from getting too long/hard to read */
+    margin: 0 auto;    /* Centers the body in the browser window */
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    width: 100%;           
+    margin: 30px auto;
+    display: block;
+}
+
+/* Style the table-of-contents */
+#table-of-contents {
+    width: fit-content;    /* Shrinks box to the size of the longest link */
+    min-width: 350px;      /* Stops it from being too narrow */
+    max-width: 700px;        /* Responsive for mobile */
+    margin: 30px auto;     /* THE MAGIC: Centers the box horizontally */
+    padding-top: 30px;
+    text-align: center;    /* This centers the "Table of Contents" H2 and H3s */
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 15px;
+}
+
+#table-of-contents ul {
+    display: table;        /* Keeps the list centered as a block... */
+    margin: 10px auto 25px auto; /* ...while the contents stay left */
+    padding: 0;
+    list-style: none;
+    text-align: left;      /* FORCES TEXT LEFT */
+}
+
+#table-of-contents li {
+    text-align: left !important; /* The '!important' ensures 'Meta Data' follows the rule */
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* 3. Add a nice bullet point since we removed default list-style */
+#table-of-contents li::before {
+    content: "•";
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+#table-of-contents h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Style the links */
+#table-of-contents a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+#table-of-contents a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+.purpose{
+    padding-left: 20px;
+    padding-right 10px;
+    text-align: left;    
+}
+/* Style the Topic Divs and Paragraphs */
+.rlmsectionheader{
+    width:100%;
+    text-align:center;
+}
+
+.rlmtopic {
+    margin-top: 40px;
+    font-weight: bold;
+    color: #333;
+    /* background-color:yellow; */
+}
+
+.rlmexplanation{
+/* background-color:gray; */
+}
+
+.rlmtopic p {
+        font-size: 24px;       /* Your requested large font size */
+    margin-top: 10px;
+  display: inline-block;    /* Makes the underline only as wide as the text */
+  border-bottom: 2px solid #007bff; /* Color and thickness */
+  padding-bottom: 2px;      /* Gap between text and line */
+  margin-bottom: 10px;      /* Spacing to the next element */
+}
+
+
+.rlmtopic p::before {
+     /* 
+  content: "@"; 
+  color: red;   
+  font-weight: bold;
+     */
+}
+
+.rlmexplanation p::before {
+    /* 
+  content: "$"; 
+  color: green;   
+  font-weight: bold;
+    */
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it a circle */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+}
+
+#backToTop svg {
+    display: block;
+    margin: auto;
+}
