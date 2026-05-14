@@ -5,107 +5,249 @@
     <title>The Commercial-First RLM Agile Approach</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      .quadrant-box {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 1em; /* Scales perfectly with font size */
+        height: 1em;
+        border: 1px solid currentColor; /* Matches text color automatically */
+        vertical-align: middle;
+      }
+      .quadrant-box span {
+        border: 0.5px solid currentColor; /* The dividing internal lines */
+      }
+      .quadrant-box .filled {
+        background-color: currentColor; /* Fills the top-left square */
+      }
+
+      .archetype-matrix {
+        width: 100%;
+        border-collapse: collapse;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .archetype-matrix th,
+      .archetype-matrix td {
+        padding: 16px 20px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .archetype-matrix th {
+        background-color: #0f172a;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.4;
+      }
+      .archetype-matrix th:first-child {
+        width: 20%;
+      }
+      .archetype-matrix th:nth-child(2),
+      .archetype-matrix th:nth-child(3) {
+        width: 40%;
+      }
+      .archetype-matrix tr:last-child td {
+        border-bottom: none;
+      }
+      .archetype-matrix tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .archetype-matrix strong {
+        color: #1e293b;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .archetype-matrix td {
+        color: #475569;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      /* Responsive stacking for mobile */
+      @media (max-width: 768px) {
+        .archetype-matrix,
+        .archetype-matrix thead,
+        .archetype-matrix tbody,
+        .archetype-matrix th,
+        .archetype-matrix td,
+        .archetype-matrix tr {
+          display: block;
+        }
+        .archetype-matrix th {
+          display: none; /* Hide standard headers on mobile */
+        }
+        .archetype-matrix tr {
+          margin-bottom: 16px;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+        }
+        .archetype-matrix td {
+          border-bottom: 1px solid #e2e8f0;
+          padding-left: 50%;
+          position: relative;
+        }
+        .archetype-matrix td:last-child {
+          border-bottom: none;
+        }
+        .archetype-matrix td::before {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          font-weight: 600;
+          color: #0f172a;
+        }
+        /* Mobile labels */
+        .archetype-matrix td:nth-of-type(1)::before {
+          content: "Step in the Thread";
+        }
+        .archetype-matrix td:nth-of-type(2)::before {
+          content: "Sprint 1: One-Time";
+        }
+        .archetype-matrix td:nth-of-type(3)::before {
+          content: "Sprint 2: Subscription";
+        }
+      }
+    </style>
   </head>
   <body>
     <h1>
-      Why MDST: Escaping Theoretical Agile: The Commercial-First RLM Agile
-      Approach
+      The Commercial Matrix and Archetype:
+      <span style="font-size: 0.7em; font-weight: normal"
+        >Escaping Theoretical Agile in RLM</span
+      >
     </h1>
 
-    <p>
-      To avoid the "Theoretical Agile" trap, teams must adopt a Commercial-First
-      approach. This means shifting away from building isolated "features" and
-      instead focusing on End-to-End Revenue Threads. Rather than building
-      "Products" in Sprint 1 and waiting until Sprint 10 to build "Billing," the
-      goal is to build a Simple One-Time Product from Quote to Invoice
-      immediately in Sprint 1.
-    </p>
-
     <div class="highlight">
-      <p>
-        <strong>The Core Argument:</strong> Object-based Sprints are generic and
-        not specific to RLM. RLM has three distinct features: Velocity first
-        Sales, Stability and no random errors Operation, and Legality binding
-        Finance. Sales Model-based Sprints succeed. Horizontal Progress (moving
-        across the entire lifecycle) is superior to Vertical Progress (staying
-        isolated in a single object).
-      </p>
+      <h2>The Trap of "Theoretical Business Process and Agile"</h2>
     </div>
-
-    <h2>The 4-Phase RLM Implementation Strategy</h2>
     <p>
-      This four-phase approach ensures the foundation of the Revenue Lifecycle
-      Management (RLM) system survives future complexities:
-    </p>
-    <ul>
-      <li>
-        <strong>Phase 1: The "Revenue North Star" (Discovery):</strong> Stop
-        looking at the Product Catalog and start looking at the Invoice and the
-        Contract. The goal is to define every way the company makes money
-        (One-time, Subscription, Usage, Ramped) and output a Commercial Matrix.
-      </li>
-      <li>
-        <strong>Phase 2: The "Walking Skeleton" (Sprint 0 / Enabler):</strong>
-        Build one complete, thin slice of the entire lifecycle. Configuring ONE
-        product, ONE price, and ONE quote to convert into an Order and an Asset
-        catches "Foundation Errors" in week 2 instead of month 6.
-      </li>
-      <li>
-        <strong
-          >Phase 3: The "Commercial Archetype" Sprints (Agile
-          Execution):</strong
-        >
-        Group work by Sales Model, not by Salesforce Object. Sprint 1-2 focuses
-        on the One-Time Thread (hardware/fulfillment), while Sprint 3-5 tackles
-        the Subscription Thread (recurring logic, amendments, and proration).
-      </li>
-      <li>
-        <strong>Phase 4: The "Edge Case" & Scale Phase:</strong> Move into
-        complex "nice-to-haves" (like advanced discounting and high-volume
-        integrations) only after the core Sales Models are humming.
-      </li>
-    </ul>
-
-    <h2>The Subscription Evolution</h2>
-    <p>
-      Using Subscription as the next major evolution after the Sprint 1 "Steel
-      Thread" tests the time dimension by introducing Service Periods,
-      Proration, and Effective Dates. It triggers the Lifecycle Management
-      engine to handle the transition from a Quote Line to an Active Asset.
-      Furthermore, it forces the system to handle the "Boss Level" of RLM:
-      Amendment and Renewal logic.
+      Most RLM implementations fail because they build by object rather than by
+      outcome. Teams fall into the trap of "Theoretical Agile"—spending Sprint 1
+      configuring every Product in the catalog, and waiting until Sprint 10 to
+      touch Billing. This vertical approach creates "False Velocity." You might
+      close 50 fragment stories, but you won't realize your product data model
+      is fundamentally flawed until it fails to generate a legal invoice six
+      months later.
     </p>
 
-    <table>
-      <tr>
-        <th>Component</th>
-        <th>The "One-Time" Foundation (Sprint 1)</th>
-        <th>The "Subscription" Evolution (Sprint 2-3)</th>
-      </tr>
-      <tr>
-        <td>Product</td>
-        <td>Hardware SKU</td>
-        <td>Service SKU + Selling Model (Termed)</td>
-      </tr>
-      <tr>
-        <td>Pricing</td>
-        <td>List Price</td>
-        <td>Unit Price x Quantity x Term</td>
-      </tr>
-      <tr>
-        <td>Quote</td>
-        <td>Standard Quote</td>
-        <td>Co-termination & Proration logic</td>
-      </tr>
-      <tr>
-        <td>Post-Sale</td>
-        <td>Order / Invoice</td>
-        <td>Asset / Contract / Renewal Opportunity</td>
-      </tr>
-    </table>
-
-    <h2>The "Future-Proof" Definition of Done (DoD)</h2>
+    <h2>
+      <span style="color: green">&#9745;</span> The Discovery and Process
+      Solution:
+      <span style="font-size: 0.8em; font-weight: normal"
+        >Study commercial matrix and slice by commercial archetype</span
+      >
+    </h2>
     <p>
+      Recognizing from experience, RLM is not a one very big process; it must
+      bridge three unforgiving domains: high-velocity Sales, highly-stable
+      Operations, and legally-binding Finance. Because these engines are deeply
+      interdependent,
+      <strong>Object-Based Sprints will always fail</strong>. To survive the
+      complexities of RLM, teams must adopt a
+      <strong>Commercial-First Approach driven</strong> by horizontal progress.
+      This means shifting away from building isolated objects and instead
+      slicing your project by <strong>Commercial Archetypes</strong>
+      (e.g., The Simple One-Time Purchase, The SaaS Subscription, The Usage
+      Model).
+      <br />
+      Rather than building all products first and billing last, the goal is to
+      build a single Commercial Archetype end-to-end—from Quote to Invoice to
+      General Ledger—immediately in Sprint 1. Only when that horizontal "Steel
+      Thread" is proven to work do you move on to the next Archetype.
+    </p>
+
+    <h2>
+      <span class="quadrant-box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span> </span
+      >&nbsp; The Four Core Strategies
+    </h2>
+    <p>
+      To ensure the foundation of your Revenue Lifecycle Management (RLM) system
+      is built to survive future complexities, teams must adopt these four core
+      strategies:
+      <br /><br />
+      <!-- To change the color, wrap it in a styled span -->
+      <strong>
+        <span class="quadrant-box">
+          <span class="filled"></span>
+          <span></span>
+          <span class="filled"></span>
+          <span></span> </span
+        >&nbsp; Reverse-Engineer the Revenue (The Commercial Matrix):</strong
+      >
+      Stop looking at the Product Catalog and start looking at the Invoice and
+      the Contract. Before a single product is configured, you must define every
+      distinct way the company makes money (One-Time, Subscription, Usage,
+      Ramped) and map them into a master Commercial Matrix. <br /><br />
+      <strong>
+        <span class="quadrant-box">
+          <span></span>
+          <span class="filled"></span>
+          <span></span>
+          <span class="filled"></span> </span
+        >&nbsp; Prove the "Steel Thread" Architecture:</strong
+      >
+      Build one complete, thin slice of the entire lifecycle immediately. By
+      configuring ONE product, ONE price, and ONE quote to successfully convert
+      into an Order and an Asset, you force the system to prove its data
+      flow—catching architectural "Foundation Errors" in Week 2 instead of Month
+      6.
+      <br /><br />
+      <strong>
+        <span class="quadrant-box">
+          <span class="filled"></span>
+          <span class="filled"></span>
+          <span></span>
+          <span></span> </span
+        >&nbsp; Execute Horizontally by Archetype:</strong
+      >
+      Stop grouping work by Salesforce Object. Instead, execute sprints by
+      Commercial Archetype. Your initial sprints must focus entirely on proving
+      a single thread (e.g., the One-Time hardware flow). Only when that
+      specific thread is unbroken from Quote to General Ledger do you tackle the
+      next Archetype (e.g., SaaS recurring logic, amendments, and proration).
+      <br /><br />
+      <strong>
+        <span class="quadrant-box">
+          <span></span>
+          <span></span>
+          <span class="filled"></span>
+          <span class="filled"></span> </span
+        >&nbsp; Isolate Edge Cases for Scale:</strong
+      >
+      Protect the core architecture by isolating complex, high-friction logic.
+      Advanced monetization rules—such as complex nested bundles,
+      highly-customized discounting guardrails, and high-volume ERP
+      integrations—should only be introduced after the foundational Commercial
+      Archetypes are fully operational and humming.
+    </p>
+
+    <h2>
+      <span style="color: green">&#9745;</span> The Commercial Archetype
+      Example:
+      <span style="font-size: 0.8em; font-weight: normal"
+        >Progress from one-time to subscription</span
+      >
+    </h2>
+    <p>
+      <strong>Definition of Done: </strong>
+
       A Product is not "Done" just because it exists in the Catalog; it is only
       "Done" when it can survive the Commercial Journey. If developers push back
       citing "velocity," remind them that closing 50 fragment stories that fail
@@ -132,29 +274,148 @@
       </li>
     </ul>
 
-    <h2>Architecture: Process Flow vs. Data Model</h2>
+    <table class="archetype-matrix">
+      <thead>
+        <tr>
+          <th>Step in the Thread</th>
+          <th>
+            Sprint 1: The "One-Time" Archetype <br /><span
+              style="font-size: 13px; font-weight: 400; opacity: 0.8"
+              >(Hardware / Standard)</span
+            >
+          </th>
+          <th>
+            Sprint 2: The "Subscription" Archetype <br /><span
+              style="font-size: 13px; font-weight: 400; opacity: 0.8"
+              >(SaaS / Recurring)</span
+            >
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Product & Pricing</strong></td>
+          <td>
+            <strong>Foundation:</strong> Standard SKU mapped to a List Price. No
+            term limits.
+          </td>
+          <td>
+            <strong>Time Dimension:</strong> Service SKU mapped to Term Length,
+            Unit Price, and recurring logic.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>2. Quote, Approvals & DRO</strong></td>
+          <td>
+            <strong>Standard Flow:</strong> Basic transaction line editor. DRO
+            routes to physical fulfillment/shipping.
+          </td>
+          <td>
+            <strong>Complex Math:</strong> TLE handles Co-termination,
+            Proration, and Ramp pricing guardrails.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>3. Asset Lifecycle & Billing</strong></td>
+          <td>
+            <strong>One-and-Done:</strong> Order generates a single invoice upon
+            shipment. No complex active asset tracking required.
+          </td>
+          <td>
+            <strong>The Complexity Multiplier:</strong> Order triggers
+            Assetization (active contract). Billing schedules generate recurring
+            invoices.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>4. RevRec & GL Sync</strong></td>
+          <td>
+            <strong>Point-in-Time:</strong> Revenue is recognized immediately
+            upon delivery/fulfillment.
+          </td>
+          <td>
+            <strong>Ratable Recognition:</strong> Revenue is deferred and
+            recognized linearly over the subscription term.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>5. Integrity Testing</strong></td>
+          <td>
+            <strong>Linear Audit:</strong> Validate tax application, one-time
+            discounts, and standard order generation.
+          </td>
+          <td>
+            <strong>Lifecycle Audit:</strong> Stress-test mid-term amendments,
+            cancellations, and renewal generation.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>6. Production Readiness</strong></td>
+          <td>
+            <strong>Core Live:</strong> The foundation engines (Pricing, Quotes,
+            Basic Billing) are proven to fire correctly.
+          </td>
+          <td>
+            <strong>Scale Live:</strong> The advanced engines (ALM, Proration,
+            Deferred Rev) are proven and humming.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--
+    <h2>
+      <span style="color: green">&#9745;</span> The Practical Problem:
+      <span style="font-size: 0.8em; font-weight: normal"
+        >with traditional object based architecture</span
+      >
+    </h2>
+    <h2>AArchitecture: Why the Matrix and Archetype Dictate the Process</h2>
+    -->
+
+    <div class="highlight">
+      <h2>
+        The Technical Architecture Problem:
+        <span style="font-size: 0.8em; font-weight: normal"
+          >Matrix and Archetype Dictate the Process</span
+        >
+      </h2>
+    </div>
+
     <p>
-      In standard design frameworks, the Business Process Model (the sequence of
-      events) and the Data Architecture (the structural schema) are distinct but
-      parallel views. However, in RLM, the
-      <strong>Data Model drives the Process</strong>. Building a Product without
-      a Selling Model is like building a car without an engine—if the Data
-      Architecture isn't properly mapped to the RLM schema, the out-of-the-box
-      engines simply won't fire.
+      In standard software design, the "Business Process" (the sequence of
+      events) and the "Data Architecture" (how information is stored) are
+      treated as distinct, parallel tracks. In RLM, this separation is a fatal
+      flaw. Here, the Commercial Matrix dictates your reality. That Matrix
+      defines your Commercial Archetypes, and in RLM, those Archetypes
+      physically drive the system's process. When you configure a specific
+      Archetype (like a SaaS Subscription), you aren't just drawing a
+      workflow—you are embedding automated instructions directly into the
+      product's data model. Building a product without mapping it to a strict
+      Archetype is like building a car without an engine. If the foundational
+      data doesn't perfectly match the Archetype's schema, the out-of-the-box
+      RLM engines (Pricing, Billing, Assetization) simply won't fire.
     </p>
 
-    <br />
+    <h2>
+      <span style="color: green">&#9745;</span> The Practical Solution:
+      <span style="font-size: 0.8em; font-weight: normal"
+        >Follow the RLM revenue DNA flow</span
+      >
+    </h2>
 
-    <h1>The RLM "Revenue DNA" Data Flow</h1>
     <p>
-      Explain a Functional Map that shows how a single Product field (like
-      Selling Model) travels all the way to the Invoice. Product Selling Model
-      and Attributes are the "DNA" of the entire revenue lifecycle, here is the
-      data flow. This proves that if you get the Product "Foundation" wrong in
-      Sprint 1, the Invoice in Sprint 10 literally cannot be generated.
+      This deep dependency is why every cell in your Commercial Matrix must
+      translate into a precise data structure. We refer to the Product Selling
+      Model and its core attributes as the "Revenue DNA" of your Commercial
+      Archetype. The genetic code you program into the catalog determines
+      exactly how the system behaves downstream. The flow below illustrates how
+      a single foundational data element from a specific Archetype travels
+      across the entire architecture. It proves that if you configure the
+      Archetype's "DNA" incorrectly in your initial horizontal sprint, the
+      system physically cannot generate an accurate Invoice at the end of the
+      line.
     </p>
-
-    <h2>The RLM DNA Flow</h2>
 
     <table>
       <tr>
@@ -207,9 +468,8 @@
       </tr>
     </table>
 
-    <h2>Why this Diagram wins the Argument:</h2>
-    Show this to your "Theoretical Agile" team and point to Stage 1 (PSM) and
-    Stage 7 (Billing).
+    "Theoretical Agile" drawbacks becomes clear by looking through these Stages.
+
     <ol>
       <li>
         The "Red Thread": If the Product Selling Model (Stage 1) is set to
@@ -227,23 +487,28 @@
         6). You’ve built a "Dead End" product.
       </li>
     </ol>
-    <h2>The "Practical Architect" Takeaway:</h2>
-    <p>
-      In RLM, Attributes and Selling Models are not "details" to be added later.
-      They are the Configuration Instructions for the automated engines that
-      follow. Building a Product without a Selling Model is like building a car
-      without an engine—it looks like a car, but it won't take the customer
-      anywhere. Since you now have the "Steel Thread" logic, do you want to see
-      how to group your User Stories into "Commercial Archetypes" (e.g., The
-      Hardware Story vs. The SaaS Story) instead of Object stories?
-    </p>
-    <br />
 
     <div class="tr-container">
       <header>
-        <h1>
-          Path For Transformation For Each Commercial (Sales) Model or Sprint
-        </h1>
+        <h2>
+          The 6-Step Archetype Execution Path for Agentforce Revenue Management
+        </h2>
+        <p>
+          With the introduction of Agentforce, the Revenue Lifecycle Management
+          landscape has fundamentally shifted. However, AI cannot compensate for
+          a fragmented data model. Agentforce requires clean, continuous data
+          threads to execute autonomous tasks.
+        </p>
+
+        <p>
+          Do not attempt to execute these six steps across your entire product
+          catalog at once. To build an AI-ready foundation, you must select a
+          single Commercial Archetype from your Matrix and push it through all
+          six stages. Only when that unbroken thread successfully passes from
+          the catalog to the General Ledger—proving the data is clean enough for
+          autonomous agents to read—do you restart this path for your next
+          Archetype.
+        </p>
         <!--
         <div class="subtitle">Four stage RLM transformation roadmap</div>
         -->
@@ -362,9 +627,11 @@
         </div>
       </div>
 
+      <!--
       <div class="tr-arrow-contaainer">
         <i class="tr-arrow tr-arrow-down"></i>
       </div>
+      -->
 
       <div class="phase-box" style="border-color: #ffa000">
         <div class="phase-header" style="background: #ffa000">
@@ -422,9 +689,11 @@
         </div>
       </div>
 
+      <!--
       <div class="tr-arrow-contaainer">
         <i class="tr-arrow tr-arrow-down"></i>
       </div>
+      -->
 
       <div class="phase-box" style="border-color: var(--secondary)">
         <div class="phase-header" style="background: var(--secondary)">
@@ -476,6 +745,25 @@
         </p>
       </footer>
       -->
+    </div>
+
+    <div>
+      <h2>Architecting for Agentforce: The Reality of Enterprise AI</h2>
+
+      <p>
+        With the introduction of Agentforce, the Revenue Lifecycle Management
+        landscape has fundamentally shifted. However, to unlock its full
+        potential, organizations must understand how enterprise AI actually
+        functions.
+      </p>
+
+      <p>
+        In a corporate ecosystem, AI acts as an intelligent reasoning layer
+        operating on top of your transactional records. Unlike conversational
+        AI, which generates answers from its own internal pre-trained knowledge,
+        enterprise AI relies entirely on the structural integrity of your RLM
+        database to understand the business context and execute decisions.
+      </p>
     </div>
   </body>
 </html>
