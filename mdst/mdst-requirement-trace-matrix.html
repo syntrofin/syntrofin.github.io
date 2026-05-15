@@ -50,33 +50,38 @@
 
     <link rel="stylesheet" href="./evaldiscovery.css" />
 
+
+
     <style>
-      /* Override h1 alignment as there are too maany. */
-      h1 {
-        text-align: left;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-bottom: 15px;
-        padding-top: 15px;
-        font-weight: 500;
-        font-size: 1.8rem;
+
+
+      /* Adds vertical spacing between the main Roman numeral topics */
+     li {
+        margin-bottom: 12px;
+                list-style-type: none;
+        padding: 0;
+        margin: 0;
       }
+
+
     </style>
   </head>
   <body>
-    <br />
-    <h1 style="text-align: center; font-weight: 700; font-size: 2.2rem">
-      Execure MDST Through Requirements Traceability Matrix - A 12 Phase and 7
-      Steps Data Capture
-    </h1>
+        <p>
+          <span style="color: #2980b9;; font-size: 40px; font-weight: bold">
+     Executing MDST 
+          </span>
+ 
+      <span style="font-size: 20px; font-weight: normal"
+        >Through Requirements Traceability Matrix</span
+      >
+        </p>
 
-    <h3 style="text-align: left">
-      From Vision to Governance - A
-      <strong>Requirements Traceability Matrix (RTM)</strong> is the ultimate
-      defense against scope creep. It proves that every single line of code you
-      write maps directly back to a C-level business goal. If a feature doesn't
-      trace all the way up to the Vision, it gets cut.
-    </h3>
+
+    <h2 style="color: black;">From Vision to Governance</h2>
+
+
+    A Requirements Traceability Matrix (RTM) is the ultimate defense against scope creep. It proves that every piece of the solution—whether it is a declarative configuration, a data model shift, or custom code—maps directly back to a C-level business goal. If an element doesn't trace all the way up to the Vision, it gets cut.
 
     <div class="highlight">
       Note: Requirements Traceability Matrix is an additional document along
@@ -84,26 +89,54 @@
       one document to replace all.
     </div>
 
-    <br />
     <!-- TOC -->
-    <p>
-      <a href="#the-12-phase-rtm">The 12 Phase Tracability Matrix</a>
-    </p>
-    <p>
-      <a href="#rtm-how-to-use"
-        >How To Use RTM - Through Example - A Margin Safeguarding Scenario</a
-      >
-    </p>
-    <p>
-      <a href="#rtm-examples">More Example Quick Examples</a>
-    </p>
+    <p class="toctm">
+      <ul class="toctm">
+        <!-- Main Topic I -->
+        <li>
+          <a style="text-decoration: none; color: #0066cc;" href="#section-mdst-rtm"
+            >I. The Master Blueprint: The Orchestrator</a
+          >
+          <!-- Sub-topics under Topic I -->
+          <ul>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#tracability-matrix">The 12 Phase Tracability Matrix(Standardized)</a></li>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#agile-mapping">The Agile 7-Step Mapping</a></li>
+          </ul>
+        </li>
 
-    <br />
+        <!-- Main Topic II -->
+        <li>
+          <a style="text-decoration: none; color: #0066cc;"  href="#section-how-to-use"
+            >II. How to use in RLM: A Margin Safeguarding Scenario</a
+          >
+          <!-- Sub-topics under Topic II -->
+          <ul>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#templates-and-process">Templates and Process</a></li>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#architects-move">Architect's Move</a></li>
+          </ul>
+        </li>
+
+        <!-- Main Topic III -->
+        <li>
+          <a style="text-decoration: none; color: #0066cc;"  href="#section-examples">III. More RLM Examples: Summarized</a>
+                    <!-- Sub-topics under Topic II -->
+          <ul>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#example-1">Split Billing</a></li>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#example-2">Multi-Site Quoting</a></li>
+            <li><a style="text-decoration: none; color: #0066cc;"  href="#example-3">Business Shift</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p>
 
     <section id="section-mdst-rtm">
-      <h3 id="why-this-makes-you-an-elite-architect">
-        Why this makes you an elite Architect
-      </h3>
+              <h1>
+      I. The Master Blueprint:
+      <span style="font-size: 0.7em; font-weight: normal"
+        >The Orchestrator</span
+      >
+    </h1>
+
       <p>
         As an architect, this is your master blueprint—a careful orchestration
         of standard architecture phases. If a developer comes to you during the
@@ -164,20 +197,25 @@
         </li>
       </ul>
 
-      <br />
-      <h1 id="the-12-phase-rtm">The 12 Phase Tracability Matrix</h1>
+      <h2 id="tracability-matrix" style="color: #003d7a;">
+        <span style="font-size: 1.1em;">The 12 Phase Tracability Matrix (Standardized)</span>
+      </h2>
 
       <p>
-        When a client throws a curveball that threatens to derail a
-        multi-million dollar CPQ implementation, you do not panic, and you do
-        not immediately open a Salesforce sandbox.
+        This has beeen standardized purpousefully to follow enterprise
+        architecture standards as there are more stakeholders here, other than
+        RLM, mainly enterprize architecture and Project Management. When a
+        client throws a curveball that threatens to derail a multi-million
+        dollar RLM implementation, you do not panic, and you do not immediately
+        open a Salesforce sandbox.
       </p>
 
-      <p>You run the problem through the MDST Framework.</p>
+      <p>You run the problem through the Traceability Matrix.</p>
       <p>
-        Here is the consolidated master guide on how to use the 12-Phase MDST
-        (Maturity, Discovery, Solution, and Transformation) model to deconstruct
-        and solve any enterprise architecture challenge.
+        Here is the consolidated master guide on how to use the 12-Phase
+        Traceability Matrix covering MDST (Maturity, Discovery, Solution, and
+        Transformation) model to deconstruct and solve any enterprise
+        architecture challenge.
       </p>
 
       <br />
@@ -292,9 +330,10 @@
         </tbody>
       </table>
 
-      <br />
       <!-- 7-Step-->
-      <h2>The RTM to Agile 7-Step Mapping</h2>
+      <h2 style="color:#003d7a ;"  id="agile-mapping">
+        <span style="font-size: 1.1em;">The Agile 7-Step Mapping</span>
+      </h2>
 
       <table>
         <thead>
@@ -357,19 +396,28 @@
           </tr>
         </tbody>
       </table>
+    </section>
 
-      <!-- How To Use RTM - Through Example - A Margin Safeguarding Scenario -->
-      <br />
-      <br />
-      <h1 id="rtm-how-to-use">
-        How To Use RTM - Through Example - A Margin Safeguarding Scenario
-      </h1>
+    <!-- How To Use RTM - Through Example - A Margin Safeguarding Scenario -->
+    <section id="section-how-to-use">
+
+          <h1>
+      II. How to Use in RLM: 
+      <span style="font-size: 0.7em; font-weight: normal"
+        >A Margin Safeguarding Scenario in RLM</span
+      >
+    </h1>
+
       <p>
         This is where the magic happens. This is an excellent exercise. Applying
-        these seven architectural lenses to a highly specific, real-world CPQ
+        these architectural lenses to a highly specific, real-world RLM
         scenario—like dynamically protecting a 20% margin is exactly how you
         prove the value of Revenue Cloud Advanced to stakeholders.
       </p>
+
+      <h2 style="color:#003d7a ;" id="templates-and-process">
+        <span style="font-size: 1.1em;">Templates and Process</span>
+      </h2>
       <p>
         By mapping this out, we take a purely technical OmniStudio feature (a
         Formula Element in a Pricing Procedure) and elevate it into a complete
@@ -379,7 +427,7 @@
         Here are the full, expanded architectural tables for the
         <strong>Automated Margin Safeguarding</strong> solution.
       </p>
-      <h2 id="the-vision-template-the-why-north-star">
+      <h2>
         1. Vision (The "Why" &amp; North Star)
       </h2>
       <table>
@@ -424,8 +472,9 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="pre-discovery-template-the-scope-recce-matrix">
-        Pre-Discovery: The Scope &amp; Recce Matrix
+
+      <h2>
+        2. Pre-Discovery: The Scope &amp; Recce Matrix
       </h2>
       <p>
         <em
@@ -497,8 +546,8 @@
         </tbody>
       </table>
 
-      <h2 id="discovery-template-the-margin-protection-bridge">
-        1. Discovery Template: The Margin Protection Bridge
+      <h2>
+        3. Discovery: The Margin Protection Bridge
       </h2>
       <p>
         <em
@@ -574,7 +623,8 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="the-3d-gap-analysis-template">2. The 3D Gap Analysis Template</h2>
+
+      <h2>4. 3D Gap Analysis</h2>
       <p>
         <em
           >Once you finish Discovery, you write this table. This proves to the
@@ -661,8 +711,8 @@
         How this connects to the rest of the project:
       </h3>
 
-      <h2 id="the-solutioning-template-the-conceptual-architecture">
-        2. The Solutioning Template (The Conceptual Architecture)
+      <h2>
+        5. The Solutioning - Conceptual Architecture
       </h2>
       <table>
         <colgroup>
@@ -719,8 +769,9 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="the-integration-template-the-connective-tissue">
-        3. The Integration Template (The Connective Tissue)
+
+      <h2>
+        6. Integration - The Connective Tissue
       </h2>
       <table>
         <colgroup>
@@ -762,8 +813,9 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="the-data-template-the-information-architecture">
-        4. The Data Template (The Information Architecture)
+
+      <h2>
+        7. Data - The Information Architecture
       </h2>
       <table style="width: 100%">
         <colgroup>
@@ -817,8 +869,9 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="the-development-template-the-build-strategy">
-        5. The Development Template (The Build Strategy)
+
+      <h2>
+        8. Development - The Build Strategy
       </h2>
       <table style="width: 100%">
         <colgroup>
@@ -879,8 +932,9 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="the-systems-landscape-template-the-infrastructure">
-        6. The Systems / Landscape Template (The Infrastructure)
+
+      <h2>
+        9. Systems / Landscape - The Infrastructure
       </h2>
       <table>
         <colgroup>
@@ -923,8 +977,9 @@
           </tr>
         </tbody>
       </table>
-      <h2 id="the-governance-template-the-guardrails">
-        7. The Governance Template (The Guardrails)
+
+      <h2>
+        10. The Governance Template (The Guardrails)
       </h2>
       <table>
         <colgroup>
@@ -985,14 +1040,17 @@
 
       <!-- The Architect Moves -->
 
-      <h1 id="architects-move">The Architect's Move</h1>
+        <h2 style="color:#003d7a ;" id="architects-move">
+        <span style="font-size: 1.1em;">The Architect's Move</span>
+      </h2>
+   
       <p>
         The true power of this framework is that it forces a chronological
         sequence. It prevents developers from writing code before the data model
         is secure, and it prevents business stakeholders from demanding features
         that do not align with their strategic KPIs.
       </p>
-      <h2 id="stage-1-vision-and-pre-discovery-the-anchor">
+      <h2>
         Stage 1: Vision and Pre-Discovery (The Anchor)
       </h2>
       <p><em>Stop the scope creep before it starts.</em></p>
@@ -1035,7 +1093,8 @@
           </ul>
         </li>
       </ul>
-      <h2 id="stage-2-pre-discovery-leads-to-discovery-the-diagnosis">
+
+      <h2>
         Stage 2: Pre-Discovery Leads to Discovery (The Diagnosis)
       </h2>
       <p><em>Find the root cause of the business pain.</em></p>
@@ -1094,7 +1153,8 @@
           </ul>
         </li>
       </ul>
-      <h2 id="stage-3-gap-analysis-leads-to-solution-the-blueprint">
+
+      <h2>
         Stage 3: Gap Analysis Leads to Solution (The Blueprint)
       </h2>
       <p><em>Design the Salesforce architecture to bridge the gaps.</em></p>
@@ -1156,7 +1216,7 @@
         </li>
       </ul>
 
-      <h2 id="stage-4-solution-leads-to-transformation-the-execution">
+      <h2>
         Stage 4: Solution Leads to Transformation (The Execution)
       </h2>
       <p><em>Build, test, and protect the investment.</em></p>
@@ -1234,7 +1294,7 @@
         </li>
       </ul>
 
-      <h2 id="the-curveball-cheat-sheet">The Curveball Cheat Sheet</h2>
+      <h2>The Curveball Cheat Sheet</h2>
       <h3>
         How to use the12-Phase MDST framework to rapidly diagnose and design
         solutions for <em>any</em> unexpected CPQ curveball a client throws at
@@ -1299,15 +1359,41 @@
         executive-ready methodology for Syntrofin. It turns the chaos of CPQ
         implementations into a predictable science.
       </p>
+    </section>
 
+    <section id="section-examples">
       <!-- More Example Quick Examples -->
-      <br /><br />
-      <h1 id="rtm-examples">More Example Quick Examples</h1>
-      <h2>
+
+                    <h1>
+      III. More RLM Examples:
+      <span style="font-size: 0.7em; font-weight: normal"
+        >Summarized</span
+      >
+    </h1>
+
+      <p>
         Now Let's look at few other exampes, quickly this time, to see how
-        framework performs
+        framework performs agauinst these challenges.
+      </p>
+      <!-- TOC -->
+      <br />
+      <p>
+        <a href="#example-1">Split Billing</a>
+      </p>
+      <p>
+        <a href="#example-2">Multi-Site Quoting</a>
+      </p>
+      <p>
+        <a href="#example-3">Business Shift</a>
+      </p>
+      <br />
+
+      
+        <h2 style="color:#003d7a ;" id="example-1">
+        <span style="font-size: 1.1em;">Example 1: Split Billing</span>
       </h2>
-      <h1 id="split-billing">Example:- Split Billing</h1>
+
+
       <p>
         Split Billing is the ultimate stress test for an architectural
         framework. It is notoriously one of the most difficult requirements in
@@ -1630,7 +1716,10 @@
         Syntrofin engagements?
       </p>
 
-      <h1 id="multi-site-quoting">Example:- Multi Site Quoting</h1>
+              <h2 style="color:#003d7a ;" id="example-2">
+        <span style="font-size: 1.1em;">Example 2: Multi Site Quoting</span>
+      </h2>
+
       <p>
         Multi-Site Quoting is the heavyweight champion of CPQ complexity. If
         Split Billing breaks the invoice engine, Multi-Site Quoting breaks the
@@ -1908,9 +1997,10 @@
         </li>
       </ol>
 
-      <h1 id="mdst-komatsu">
-        Example:- Komatsu Surface Mining - Business Shift
-      </h1>
+              <h2 style="color:#003d7a ;" id="example-3">
+        <span style="font-size: 1.1em;">Example 3: Komatsu Surface Mining - Business Shift</span>
+      </h2>
+
       <h2 id="leadership-problem-vision">Leadership Problem/ Vision</h2>
       <p>
         Komatsu aquired Joy Global and Turned into a division called Komatsu
