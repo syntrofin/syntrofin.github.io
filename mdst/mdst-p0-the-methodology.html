@@ -1,0 +1,605 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Pre</title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Adds vertical spacing between the main Roman numeral topics */
+      li {
+        margin-bottom: 12px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="border: none; padding-bottom: 1px">
+      Executing MDST
+      <span style="font-size: 20px; font-weight: normal"
+        >Through Requirements Traceability Matrix</span
+      >
+    </h1>
+
+    <h2 style="color: black">From Vision to Governance</h2>
+
+    A Requirements Traceability Matrix (RTM) is the ultimate defense against
+    scope creep. It proves that every piece of the solution—whether it is a
+    declarative configuration, a data model shift, or custom code—maps directly
+    back to a C-level business goal. If an element doesn't trace all the way up
+    to the Vision, it gets cut.
+
+    <div class="highlight">
+      Note: Requirements Traceability Matrix is an additional document along
+      with others. This is one procedure part of MDST framework to guide and not
+      one document to replace all.
+    </div>
+
+    <section id="section-mdst-rtm">
+      <h1>
+        I. The Master Blueprint:
+        <span style="font-size: 0.7em; font-weight: normal"
+          >The Orchestrator</span
+        >
+      </h1>
+
+      <p>
+        As an architect, this is your master blueprint—a careful orchestration
+        of standard architecture phases. If a developer comes to you during the
+        Build phase (Step 9) and asks,
+        <em
+          >"Can we just build a quick custom Lightning Web Component instead of
+          a Flow for the intake form?"</em
+        >...You look at the matrix. You know that the
+        <strong>Vision (Step 1)</strong> is to scale quickly, and the
+        <strong>Governance (Step 10)</strong> requires the Ops team to maintain
+        this long-term. Your answer is:
+        <em
+          >"No. We are using standard Screen Flows so the business admins can
+          update the intake questions next year without a developer."</em
+        >
+        Every technical decision is shielded by the business justification above
+        it.
+      </p>
+
+      <h3 id="the-golden-rule-of-traceability">
+        The Golden Rule of Traceability
+      </h3>
+
+      <p>
+        If you read the matrix from <strong>Bottom to Top</strong>, you should
+        be able to say the word "Because" between every row.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <em>Why do we have a validation rule?</em>
+            <strong>Because</strong> we built a Screen Flow.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Why a Screen Flow?</em> <strong>Because</strong> we need an
+            external portal.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Why a portal?</em> <strong>Because</strong> vendors need to
+            enter their own data.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Why do they need to enter their own data?</em>
+            <strong>Because</strong> Ops is wasting 4 hours per PDF.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Why does that matter?</em> <strong>Because</strong> the Vision
+            is to reduce onboarding time by 50%.
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="tracability-matrix" style="color: #003d7a">
+        <span style="font-size: 1.1em"
+          >The 12 Phase Tracability Matrix (Standardized)</span
+        >
+      </h2>
+
+      <p>
+        This has beeen standardized purpousefully to follow enterprise
+        architecture standards as there are more stakeholders here, other than
+        RLM, mainly enterprize architecture and Project Management. When a
+        client throws a curveball that threatens to derail a multi-million
+        dollar RLM implementation, you do not panic, and you do not immediately
+        open a Salesforce sandbox.
+      </p>
+
+      <p>You run the problem through the Traceability Matrix.</p>
+      <p>
+        Here is the consolidated master guide on how to use the 12-Phase
+        Traceability Matrix covering MDST (Maturity, Discovery, Solution, and
+        Transformation) model to deconstruct and solve any enterprise
+        architecture challenge.
+      </p>
+
+      <br />
+      <table>
+        <colgroup>
+          <col style="width: 9%" />
+          <col style="width: 17%" />
+          <col style="width: 24%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Architectural Layer</th>
+            <th>The Deliverable / Artifact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3" style="text-align: left">
+              <div class="mini-highlight">
+                Maturity has vision and scope boundaries
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Vision (The 'Why')</td>
+            <td>Strategic KPI</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Pre-Discovery</td>
+            <td>Process Taxonomy (L1-L3) &amp; Scope Matrix</td>
+          </tr>
+
+          <tr>
+            <td colspan="3" style="text-align: left">
+              <div class="mini-highlight">
+                Vision, and Pre-discovery leads to discovery
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Discovery (The 'As-Is')</td>
+            <td>Pain Point</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Business Intent (The 'To-Be')</td>
+            <td>Future State</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Gap Analysis (The Delta)</td>
+            <td>Identified Gap</td>
+          </tr>
+
+          <tr>
+            <td colspan="3" style="text-align: left">
+              <div class="mini-highlight">
+                Gap analysis drives solution; process, systems, and data
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>Solutioning (The Concept)</td>
+            <td>Process Architecture and Configurations</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Systems (The Landscape)</td>
+            <td>Infrastructure</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Data (The Info Arch)</td>
+            <td>Data Model and Development</td>
+          </tr>
+
+          <tr>
+            <td colspan="3" style="text-align: left">
+              <div class="mini-highlight">
+                Solution enables the transformation
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Integration (The Connective Tissue)</td>
+            <td>System Interfaces</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Development (The Build)</td>
+            <td>Technical Specs</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>UAT</td>
+            <td>Business Validation Script</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Governance (The Guardrails)</td>
+            <td>Rules &amp; Maintenance</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 7-Step-->
+      <h2 style="color: #003d7a" id="agile-mapping">
+        <span style="font-size: 1.1em">The Agile 7-Step Mapping</span>
+      </h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>RTM Hierarchy (The Architecture View)</th>
+            <th>Agile/Jira Issue Type (The Delivery View)</th>
+            <th>Purpose & RLM Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>L1: Value Stream</strong></td>
+            <td><strong>Initiative</strong></td>
+            <td>
+              <strong>The massive, end-to-end lifecycle.</strong>
+              <span class="example">Example: Quote-to-Cash (QTC).</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L2: Process Area</strong></td>
+            <td><strong>Component / Theme</strong></td>
+            <td>
+              <strong>The major buckets within the Value Stream.</strong> Used
+              for reporting and filtering in Jira.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L3: Specific Process</strong> (Process Catalog)</td>
+            <td><strong>Epic</strong></td>
+            <td>
+              <strong>The actual task to be accomplished.</strong> This is the
+              business capability boundary. It groups the commercial threads.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>L4: The Commercial Thread</strong> (Pre-Gap Steering)
+            </td>
+            <td><strong>User Story</strong></td>
+            <td>
+              <strong>This is the "Transaction-Based" narrative.</strong> It
+              defines how the L3 capability is executed across the RLM platform
+              for a specific scenario.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L5: Architectural Gap / Risk</strong></td>
+            <td><strong>Acceptance Criteria (DoD)</strong></td>
+            <td>
+              The rules that prove the User Story survives the transaction.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L6: Technical Build Task</strong></td>
+            <td><strong>Sub-Task</strong></td>
+            <td>
+              The specific administrative actions assigned to developers to
+              satisfy the story.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+      <!-- The Architect Moves -->
+
+      <h2 style="color: #003d7a" id="architects-move">
+        <span style="font-size: 1.1em">The Architect's Move</span>
+      </h2>
+
+      <p>
+        The true power of this framework is that it forces a chronological
+        sequence. It prevents developers from writing code before the data model
+        is secure, and it prevents business stakeholders from demanding features
+        that do not align with their strategic KPIs.
+      </p>
+      <h2>Stage 1: Vision and Pre-Discovery (The Anchor)</h2>
+      <p><em>Stop the scope creep before it starts.</em></p>
+      <ul>
+        <li>
+          <p><strong>Phase 1: Vision (The 'Why')</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Define the single Strategic KPI that
+                determines project success.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> If a requirement does not
+                directly improve this KPI, politely reject it or push it to
+                Phase 2.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 2: Pre-Discovery</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Establish the Process Taxonomy (Level
+                1 to Level 3).
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Use the "Straw Man"
+                approach. Present a predefined list of in-scope processes to the
+                executive steering committee and force them to explicitly agree
+                on the boundaries.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Stage 2: Pre-Discovery Leads to Discovery (The Diagnosis)</h2>
+      <p><em>Find the root cause of the business pain.</em></p>
+      <ul>
+        <li>
+          <p><strong>Phase 3: Discovery (The 'As-Is')</strong></p>
+          <ul>
+            <li>
+              <p><strong>The Goal:</strong> Document the current Pain Point.</p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Never trust what a user
+                says; trust what they click. Make the Subject Matter Expert
+                (SME) share their screen and demonstrate the broken process
+                live.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 4: Business Intent (The 'To-Be')</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Define the Future State in plain
+                English, completely independent of technology.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Use "What If" nudges
+                (e.g., <em>"What if the system just did this for you?"</em>) to
+                guide the SME toward standard Salesforce capabilities without
+                using technical jargon.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 5: Gap Analysis (The Delta)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Break the Identified Gap into
+                Process, System, and Data deficits.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> This is the pivot point.
+                If you only identify a System Gap but ignore the Process Gap,
+                your technical solution will fail upon user adoption.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Stage 3: Gap Analysis Leads to Solution (The Blueprint)</h2>
+      <p><em>Design the Salesforce architecture to bridge the gaps.</em></p>
+      <ul>
+        <li>
+          <p><strong>Phase 6: Solutioning (The Concept)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Define the Process Architecture and
+                Configurations.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Determine your
+                architectural pivot. Are you forking the data at the Order
+                object? Are you shifting calculations to an OmniStudio Pricing
+                Procedure?
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 7: Systems (The Landscape)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Identify the required Infrastructure
+                and managed packages.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Call out the specific
+                clouds and licenses required (e.g., Revenue Cloud Advanced,
+                Salesforce Billing, Experience Cloud).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 8: Data (The Info Arch)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Map the Data Model and Development.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Define the specific
+                custom objects, required standard objects, and the relational
+                mapping (e.g., Master-Detail vs. Lookup) that will support the
+                logic.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Stage 4: Solution Leads to Transformation (The Execution)</h2>
+      <p><em>Build, test, and protect the investment.</em></p>
+      <ul>
+        <li>
+          <p><strong>Phase 9: Integration (The Connective Tissue)</strong></p>
+          <ul>
+            <li>
+              <p><strong>The Goal:</strong> Define the System Interfaces.</p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Identify inbound and
+                outbound data flows, batch schedules, API types, and
+                error-handling fallbacks for external systems (like an ERP).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 10: Development (The Build)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Write the Technical Specs
+                (Declarative vs. Programmatic).
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Hand the Tech Lead the
+                "What" and the "Why" through perfectly structured Jira tickets
+                (Given/When/Then formats). Ensure declarative tools (Flows,
+                OmniStudio) are prioritized over custom code (Apex).
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 11: UAT (User Acceptance Testing)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Execute the Business Validation
+                Script.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Do not hand the business
+                a blank sandbox. Give them a strict, step-by-step testing script
+                mapped directly to the original Phase 4 Business Intent.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><strong>Phase 12: Governance (The Guardrails)</strong></p>
+          <ul>
+            <li>
+              <p>
+                <strong>The Goal:</strong> Establish Rules &amp; Maintenance to
+                prevent regression.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>The Architect's Move:</strong> Implement technical locks
+                (like Advanced Approvals or Validation Rules) and process audits
+                (Center of Excellence reviews) to ensure users cannot bypass the
+                new architecture.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
