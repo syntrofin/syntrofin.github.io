@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise Architect - Personal Brand</title>
+    <style>
+      :root {
+        --primary-color: #0b1c2c;
+        --secondary-color: #173b5c;
+        --accent-color: #008ae6;
+        --text-main: #333333;
+        --text-light: #666666;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border-color: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+      }
+
+      body {
+        color: var(--text-main);
+        line-height: 1.6;
+        background-color: var(--bg-light);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--primary-color);
+        margin-bottom: 16px;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 48px;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--accent-color);
+        margin: 16px auto 0;
+        border-radius: 2px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        text-align: center;
+        padding: 120px 24px;
+      }
+
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+        margin-bottom: 8px;
+      }
+
+      .hero .subtitle {
+        font-size: 1.5rem;
+        color: #90cdf4;
+        margin-bottom: 24px;
+        font-weight: 500;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto 24px;
+        opacity: 0.9;
+      }
+
+      .cta-group {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      .cta-btn {
+        padding: 12px 32px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .cta-primary {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      .cta-primary:hover {
+        background-color: #0073c2;
+      }
+
+      .cta-secondary {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .cta-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Text Content Sections */
+      .text-center-block {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .text-center-block p {
+        margin-bottom: 24px;
+      }
+
+      /* Grid Layouts */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 40px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--bg-white);
+        padding: 32px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid var(--accent-color);
+      }
+
+      .card ul {
+        list-style: none;
+        margin-top: 16px;
+      }
+
+      .card ul li {
+        margin-bottom: 8px;
+        padding-left: 24px;
+        position: relative;
+      }
+
+      .card ul li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+      }
+
+      /* Evolution Timeline */
+      .evolution {
+        background: var(--bg-white);
+      }
+
+      .timeline-container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        background: var(--bg-light);
+        padding: 40px;
+        border-radius: 8px;
+      }
+
+      .timeline-step {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+        padding: 16px 0;
+      }
+
+      .timeline-arrow {
+        color: var(--accent-color);
+        font-size: 1.5rem;
+      }
+
+      /* Core Philosophy */
+      .philosophy {
+        background: var(--primary-color);
+        color: white;
+        text-align: center;
+      }
+
+      .philosophy h2,
+      .philosophy h2::after {
+        color: white;
+        background: var(--accent-color);
+      }
+
+      .philosophy-text {
+        font-size: 1.4rem;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .philosophy-text strong {
+        color: #90cdf4;
+        font-weight: 600;
+      }
+
+      /* Expertise Pills */
+      .pill-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .pill {
+        background: var(--bg-light);
+        border: 1px solid var(--border-color);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--secondary-color);
+      }
+
+      /* Experience Section */
+      .experience-item {
+        background: var(--bg-white);
+        padding: 24px;
+        border-left: 4px solid var(--accent-color);
+        margin-bottom: 24px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Footer/Motto */
+      footer {
+        background: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 60px 24px;
+      }
+
+      .motto {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #90cdf4;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .cta-group {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <h1>Enterprise Architect</h1>
+        <div class="subtitle">
+          <div class="subtitle">
+            <!-- 
+            Revenue Lifecycle Management &larr; Salesforce Technology Architect
+            &larr; SAP Technology Architect
+          </div>
+          -->
+          
+          <br />
+
+          SAP → Salesforce → Revenue Lifecycle Management
+        </div>
+        <p>
+          Helping global enterprises modernize Quote-to-Cash through
+          architecture, business transformation, and platform evolution.
+        </p>
+        <p>
+          Over two decades of enterprise technology experience spanning SAP
+          architecture, Salesforce platform engineering, and modern Revenue
+          Lifecycle Management (RLM), delivering scalable solutions for Fortune
+          500 organizations.
+        </p>
+
+        <div class="cta-group">
+          <a href="#experience" class="cta-btn cta-primary">View Experience</a>
+          <a href="#insights" class="cta-btn cta-secondary">Read Insights</a>
+          <a href="#connect" class="cta-btn cta-secondary">Connect</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- My Journey -->
+    <section id="journey" class="container text-center-block">
+      <h2>My Journey</h2>
+      <p>
+        <strong>Technology changes. Architecture principles don't.</strong>
+      </p>
+      <p>
+        My career has been about guiding organizations through major technology
+        transitions. I began in enterprise infrastructure and SAP landscapes,
+        designing highly available systems supporting mission-critical
+        operations.
+      </p>
+      <p>
+        As cloud transformed enterprise software, I moved into Salesforce
+        architecture, leading large-scale CRM, CPQ, Billing, and integration
+        programs.
+      </p>
+      <p>
+        Today, my focus is Revenue Lifecycle Management—helping organizations
+        rethink how products, pricing, quoting, contracting, subscriptions,
+        billing, and revenue work together as one connected business capability.
+      </p>
+      <p>
+        This journey allows me to connect legacy enterprise thinking with modern
+        cloud innovation.
+      </p>
+    </section>
+
+    <!-- Architecture Evolution -->
+    <section class="evolution">
+      <div class="container">
+        <h2>Architecture Evolution</h2>
+        <div class="timeline-container">
+          <div class="timeline-step">Infrastructure Architecture</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">SAP Technology Architecture</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">Enterprise Integration</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">Salesforce Platform Architecture</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">Salesforce CPQ</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">Revenue Cloud</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">Revenue Lifecycle Management</div>
+          <div class="timeline-arrow">▼</div>
+          <div class="timeline-step">Enterprise Transformation</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Do -->
+    <section class="container">
+      <h2>What I Do</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Enterprise Architecture</h3>
+          <p>Connecting business strategy with technology execution.</p>
+        </div>
+        <div class="card">
+          <h3>Revenue Lifecycle Management</h3>
+          <p>Designing scalable Quote-to-Cash ecosystems.</p>
+        </div>
+        <div class="card">
+          <h3>Salesforce Architecture</h3>
+          <ul>
+            <li>Revenue Cloud</li>
+            <li>Sales Cloud</li>
+            <li>Service Cloud</li>
+            <li>Experience Cloud</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Integration Architecture</h3>
+          <ul>
+            <li>Identity</li>
+            <li>Security</li>
+            <li>Governance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>SAP Modernization</h3>
+          <ul>
+            <li>ECC</li>
+            <li>S/4HANA</li>
+            <li>Integration</li>
+            <li>Master Data</li>
+            <li>Migration Strategy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Solution Architecture</h3>
+          <ul>
+            <li>Enterprise Integration</li>
+            <li>API Strategy</li>
+            <li>MuleSoft</li>
+            <li>ERP &amp; PLM</li>
+            <li>Commerce &amp; Pricing</li>
+            <li>Subscription Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Philosophy -->
+    <section class="philosophy">
+      <div class="container">
+        <h2>Core Philosophy</h2>
+        <div class="philosophy-text">
+          <p>
+            <strong>Technology is temporary. Architecture is enduring.</strong>
+          </p>
+          <p>Products evolve. Platforms change. Business models transform.</p>
+          <p>
+            But good architecture enables organizations to evolve without
+            starting over.
+          </p>
+          <p>
+            I believe enterprise architecture should
+            <strong>simplify complexity—not create it.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas of Expertise -->
+    <section class="container">
+      <h2>Areas of Expertise</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Enterprise Architecture</h3>
+          <div class="pill-group">
+            <span class="pill">Business Capability Modeling</span>
+            <span class="pill">Architecture Governance</span>
+            <span class="pill">Solution Architecture</span>
+            <span class="pill">Technology Strategy</span>
+            <span class="pill">Digital Transformation</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Salesforce</h3>
+          <div class="pill-group">
+            <span class="pill">Revenue Lifecycle Management</span>
+            <span class="pill">Revenue Cloud</span>
+            <span class="pill">CPQ &amp; Billing</span>
+            <span class="pill">Sales Cloud</span>
+            <span class="pill">Experience Cloud</span>
+            <span class="pill">Platform Architecture</span>
+            <span class="pill">Integration</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>SAP</h3>
+          <div class="pill-group">
+            <span class="pill">SAP Basis</span>
+            <span class="pill">SAP Technology Architecture</span>
+            <span class="pill">SAP Infrastructure</span>
+            <span class="pill">Solution Manager</span>
+            <span class="pill">SAP Integration</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Enterprise Integration</h3>
+          <div class="pill-group">
+            <span class="pill">MuleSoft</span>
+            <span class="pill">REST APIs</span>
+            <span class="pill">Event-driven Architecture</span>
+            <span class="pill">Integration Patterns</span>
+            <span class="pill">Master Data Strategy</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Quote-to-Cash</h3>
+          <div class="pill-group">
+            <span class="pill">Product Modeling</span>
+            <span class="pill">Pricing &amp; Configuration</span>
+            <span class="pill">Quoting &amp; Contracting</span>
+            <span class="pill">Subscription</span>
+            <span class="pill">Billing &amp; Revenue</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Industries</h3>
+          <div class="pill-group">
+            <span class="pill">Manufacturing</span>
+            <span class="pill">Industrial Equipment</span>
+            <span class="pill">High Technology</span>
+            <span class="pill">Financial Services</span>
+            <span class="pill">Professional Services</span>
+            <span class="pill">Public Sector</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Experience & Perspective -->
+    <section class="evolution">
+      <div class="container grid-2">
+        <div>
+          <h2>Selected Experience</h2>
+          <div class="experience-item">
+            <h3>Global Manufacturing</h3>
+            <p>
+              Reduced quote turnaround from weeks to days through Revenue Cloud
+              architecture.
+            </p>
+          </div>
+          <div class="experience-item">
+            <h3>Industrial Equipment</h3>
+            <p>
+              Modernized complex product configuration across Salesforce, ERP,
+              and PLM.
+            </p>
+          </div>
+          <div class="experience-item">
+            <h3>Financial Services</h3>
+            <p>
+              Designed enterprise Salesforce architecture supporting large-scale
+              CRM transformation.
+            </p>
+          </div>
+          <div class="experience-item">
+            <h3>Enterprise Software</h3>
+            <p>
+              Integrated Salesforce with SAP and legacy applications across
+              global business units.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2>My Perspective</h2>
+          <div class="card">
+            <p>
+              I have lived through three generations of enterprise technology:
+            </p>
+            <ul>
+              <li>
+                <strong>The ERP Era:</strong> Focused on operational excellence.
+              </li>
+              <li>
+                <strong>The CRM Era:</strong> Focused on customer engagement.
+              </li>
+              <li>
+                <strong>The Revenue Era:</strong> Focused on end-to-end
+                monetization.
+              </li>
+            </ul>
+            <p style="margin-top: 16px">
+              Understanding all three enables better architecture decisions than
+              expertise in any single platform alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thought Leadership & Stack -->
+    <section class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Thought Leadership</h3>
+          <p>Topics I write about:</p>
+          <ul>
+            <li>Revenue Lifecycle Management</li>
+            <li>Enterprise Architecture</li>
+            <li>Salesforce Revenue Cloud</li>
+            <li>SAP Modernization</li>
+            <li>Quote-to-Cash</li>
+            <li>Integration Architecture</li>
+            <li>AI for Enterprise Architects</li>
+            <li>Product Modeling</li>
+            <li>Architecture Governance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Speaking Topics</h3>
+          <ul>
+            <li>Enterprise Architecture</li>
+            <li>Revenue Lifecycle Management</li>
+            <li>Future of Quote-to-Cash</li>
+            <li>SAP to Salesforce Transformation</li>
+            <li>Modern Enterprise Integration</li>
+            <li>AI for Enterprise Architects</li>
+            <li>Architecture Leadership</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Technology Stack</h3>
+          <div class="pill-group">
+            <span class="pill">SAP</span>
+            <span class="pill">Salesforce</span>
+            <span class="pill">Revenue Cloud</span>
+            <span class="pill">Revenue Lifecycle Management</span>
+            <span class="pill">CPQ &amp; Billing</span>
+            <span class="pill">MuleSoft</span>
+            <span class="pill">PLM &amp; ERP</span>
+            <span class="pill">REST APIs</span>
+            <span class="pill">Microservices</span>
+            <span class="pill">AWS &amp; Azure</span>
+            <span class="pill">SQL</span>
+            <span class="pill">TOGAF</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="motto">
+          Architecting Change. Enabling Growth. Delivering Simplicity.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
