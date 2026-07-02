@@ -1,0 +1,374 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agent-First Revenue Lifecycle Management Architecture."
+    />
+    <meta name="author" content="Ravi Gandavarapu" />
+    <title>Agent-First Revenue Lifecycle Management Framework
+    </title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="discovery-framework">
+      <h1>Matrix Discovery: Extracting the AI Guardrails</h1>
+
+      <div class="intro-section">
+        <h3>
+          In an agent-first world, SMEs don't separate their current pain from
+          their future desires.
+        </h3>
+        <p>
+          When you ask business leaders how they handle a midterm amendment
+          today (the As-Is), they will immediately complain about manual credit
+          memos and jump straight into how they want the AI to automate it
+          tomorrow (the To-Be). The idea that Discovery is a neat, chronological
+          march from "As-Is" to "To-Be" is a theoretical fallacy.
+        </p>
+        <p>
+          You are no longer observing a "day in the life" to map a human's
+          screen clicks. You are observing the SMEs to extract the invisible,
+          deterministic business rules they use to make decisions—so you can
+          hardcode those rules into the <strong>Commercial Matrix</strong>. Here
+          is how to embrace the chaos of a workshop and organize Discovery so it
+          actually builds your agentic guardrails.
+        </p>
+      </div>
+
+      <h2>1. Organize by "Intent Cluster", Not by Phase</h2>
+      <p>
+        Stop scheduling generic "As-Is Workshops." Instead, organize your
+        Discovery sessions by the Intent Cluster or Revenue Thread. If the
+        workshop is focused on the "Renewal Lifecycle," you let the conversation
+        flow naturally through the past, present, and future of just that
+        specific conversational boundary.
+      </p>
+
+      <h2>2. The In-the-Room "Micro-Cycle"</h2>
+      <p>
+        When you are facilitating, guide the SMEs through a continuous loop for
+        every specific capability they bring up. You are translating chaos into
+        architecture in a 10-minute window:
+      </p>
+      <ul>
+        <li>
+          <strong>The Human Friction (As-Is):</strong> "Reps keep discounting
+          below our margin floor, so I have to review every deal manually."
+        </li>
+        <li>
+          <strong>The AI Intent (To-Be):</strong> "The agent should
+          automatically stop bad discounts before they are ever proposed to the
+          customer."
+        </li>
+        <li>
+          <strong>The Matrix Constraint (Pre-Gap Steering):</strong> "We will
+          build a deterministic rule in the Commercial Matrix:
+          <em
+            >If Margin < 20%, the Agent is blocked from generating the Quote
+            payload.</em
+          >
+          Are you open to standardizing this floor across all product lines?"
+        </li>
+      </ul>
+
+      <h2>3. Matrix-Guided Design</h2>
+      <p>
+        When business leaders ask, "What can the AI do?", they are inviting you
+        to shape their To-Be state to fit standard Salesforce Agentforce and RLM
+        architecture. You aren't just taking orders; you are advising them on
+        best practices for headless execution.
+      </p>
+      <ul>
+        <li>
+          <strong>If their To-Be aligns with standard AI guardrails:</strong>
+          You confirm it immediately, mapping the rule directly to Data Cloud or
+          a Revenue Cloud Pricing Procedure.
+        </li>
+        <li>
+          <strong>If their To-Be requires dangerous LLM reasoning:</strong> You
+          challenge them. "We can let the AI try to guess the proration, but
+          it's an extreme hallucination risk. If we standardize your service
+          periods into a hard matrix rule, we guarantee 100% backend
+          predictability when the payload hits the financial ledger."
+        </li>
+      </ul>
+
+      <h2>4. The Unified Matrix Discovery Document</h2>
+      <p>
+        Because the conversation happens all at once, your documentation must
+        capture it all at once. For every row, you track the friction, the
+        intent, and the exact mathematical guardrail the AI needs to function.
+      </p>
+
+      <h3>The Agent-First Matrix Discovery Template</h3>
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="width: 100%; text-align: left; border-collapse: collapse"
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Intent Cluster</th>
+            <th>Business Intent (The Goal)</th>
+            <th>Required Matrix Guardrail (Agent Constraint)</th>
+            <th>Architectural Gap / Data Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mid-Term Add-On (Amendments)</strong></td>
+            <td>
+              System should automatically calculate the exact prorated cost for
+              new seats based on the days remaining.
+            </td>
+            <td>
+              <strong>Grounding Rule:</strong> The Agent must query the existing
+              Contract End Date and apply the 'Standard Proration Rule' via Data
+              Cloud before finalizing the JSON payload.
+            </td>
+            <td>
+              <strong>High Data Risk:</strong> If legacy contract data lacks
+              accurate end dates, the Agent will hallucinate the proration. Data
+              cleanup is a prerequisite.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Margin Floor Enforcement</strong></td>
+            <td>
+              Automate a hard stop on any hardware discounts exceeding 15%.
+            </td>
+            <td>
+              <strong>Execution Rule:</strong> The Agent's Prompt Template
+              restricts negotiation. It must route through the RLM Pricing
+              Procedure to validate the Net Price.
+            </td>
+            <td>
+              <strong>Process Gap:</strong> Business must agree to standardize
+              the 15% rule across the entire hardware catalog without manual
+              overrides.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Hardware + SaaS Bundling</strong></td>
+            <td>
+              Reps need to sell the physical sensor and a 12-month software
+              subscription in the same chat prompt.
+            </td>
+            <td>
+              <strong>Orchestration Rule:</strong> The Agent must select the
+              'Hybrid Quote Archetype' to ensure the OmniStudio IP constructs
+              the payload perfectly for downstream SAP FICO split revenue
+              recognition.
+            </td>
+            <td>
+              <strong>Medium Gap:</strong> The Agent can capture the intent
+              easily, but the downstream billing schedules must be pre-mapped to
+              accept mixed Product Selling Models (One-Time vs Termed).
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr style="margin: 40px 0" />
+
+      <h2>Extend L1-L3: Process-to-Intent Mapping Hierarchy</h2>
+      <p>
+        Compiling the Intent Hierarchy before Discovery is exactly how you lock
+        down the project scope. If a specific intent is on the L3 list, the
+        agent will be trained on it; if it isn't, it is out of bounds.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="width: 100%; text-align: left; border-collapse: collapse"
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Hierarchy Level</th>
+            <th>Agile Issue Type</th>
+            <th>Agent-First Definition & Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>L1: Intent Domain</strong></td>
+            <td><strong>Initiative</strong></td>
+            <td>
+              <strong>The comprehensive conversational boundary.</strong
+              ><br /><em>Example: Revenue Lifecycle (Quote-to-Cash).</em>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L2: Intent Clusters</strong></td>
+            <td><strong>Component/Theme</strong></td>
+            <td>
+              <strong
+                >Grouped user objectives mapped to Commercial
+                Archetypes.</strong
+              ><br /><em>Example: Subscription Modifications.</em>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L3: Discrete Intents (Agent Actions)</strong></td>
+            <td><strong>Epic</strong></td>
+            <td>
+              <strong
+                >The precise objective extracted from language to execute an
+                API.</strong
+              ><br /><em>Example: Co-term a mid-year SaaS add-on.</em>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L4: Payload Blueprint</strong></td>
+            <td><strong>User Story</strong></td>
+            <td>
+              <strong>The narrative of data execution.</strong><br /><em
+                >Example: "As the AI Agent, I need to extract the target
+                quantity from the user and format the Amendment Archetype
+                payload so the RLM engine accepts the order."</em
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><strong>L5: Guardrail Verification</strong></td>
+            <td><strong>Acceptance Criteria</strong></td>
+            <td>
+              <strong
+                >The rules that prove the Agent did not hallucinate.</strong
+              ><br /><em
+                >Example: "Agent successfully retrieves Regional Discount Limit
+                from the Matrix before proposing a price."</em
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr style="margin: 40px 0" />
+
+      <h2>
+        The Architect's "Cheat Sheet": Writing Agent-First Acceptance Criteria
+      </h2>
+      <p>
+        Agile boards are just a mechanism for tracking work. The magic happens
+        when you shape those tickets to force the development team to build
+        headless architecture correctly. Business Analysts (BAs) must write
+        Acceptance Criteria (L5) that actively prevent developers from slipping
+        back into UI-heavy, rigid screen builds. Enforce these three rules:
+      </p>
+
+      <ul>
+        <li>
+          <strong>1. The "No Hallucination" Rule (Ground the AI)</strong><br />
+          The AC must mandate that the Agent queries the Commercial Matrix
+          before taking action.
+          <ul>
+            <li style="color: #d9534f">
+              <em>Bad AC:</em> "The system applies a 10% discount for volume."
+            </li>
+            <li style="color: #5cb85c">
+              <em>Agent-Ready AC:</em> "The Agent successfully retrieves the
+              Volume Discount Tier matrix from Data Cloud and applies the exact
+              percentage before generating a response."
+            </li>
+          </ul>
+        </li>
+        <br />
+        <li>
+          <strong>2. The "Headless Payload" Rule (Remove the UI)</strong><br />
+          The AC must prove the Agent can construct the data via intent, without
+          a user clicking a screen.
+          <ul>
+            <li style="color: #d9534f">
+              <em>Bad AC:</em> "The 'Hardware Type' dropdown is visible on the
+              quote page."
+            </li>
+            <li style="color: #5cb85c">
+              <em>Agent-Ready AC:</em> "The LLM successfully extracts the
+              hardware type from natural language and maps it correctly into the
+              'Hardware Archetype' JSON payload."
+            </li>
+          </ul>
+        </li>
+        <br />
+        <li>
+          <strong>3. The "Downstream Proof" Rule (The Ledger Check)</strong
+          ><br />
+          Every payload story must prove it survives the backend integration
+          without manual intervention.
+          <ul>
+            <li style="color: #d9534f">
+              <em>Bad AC:</em> "The user can generate an upgrade quote."
+            </li>
+            <li style="color: #5cb85c">
+              <em>Agent-Ready AC:</em> "The Agent's completed payload
+              successfully traverses the OmniStudio integration, updates the
+              Asset, and registers the deferred revenue schedule properly in the
+              downstream financial ledger."
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

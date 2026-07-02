@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f8fafc;
+      }
+      h3 {
+        color: #1e293b;
+        border-bottom: 2px solid #10b981;
+        padding-bottom: 5px;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        margin: 15px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 0.9em;
+        text-align: center;
+      }
+      th {
+        background-color: #0f172a;
+        color: #ffffff;
+        padding: 12px;
+        font-weight: 600;
+        border: 1px solid #cbd5e1;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #e2e8f0;
+        vertical-align: middle;
+      }
+      .baseline {
+        background-color: #f1f5f9;
+      }
+      .amendment {
+        background-color: #dcfce7;
+        font-weight: bold;
+        color: #065f46;
+      }
+      .total-row {
+        background-color: #e2e8f0;
+        font-weight: bold;
+        font-size: 1.05em;
+      }
+      .align-left {
+        text-align: left;
+        padding-left: 15px;
+      }
+      .object-tag {
+        font-family: monospace;
+        background-color: #e2e8f0;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>ASC 606 Revenue Amortization Schedule</h3>
+    <p>
+      Showing the automated creation of
+      <span class="object-tag">RevenueTransaction</span> records for the Thrive
+      Club SaaS subscription, reflecting the July 1st quantity upgrade.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="align-left">Financial Period</th>
+          <th>ALM State Active</th>
+          <th>Transaction Type</th>
+          <th>Recognized Revenue</th>
+          <th>Deferred Revenue Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="baseline">
+          <td class="align-left">January</td>
+          <td>1 License</td>
+          <td>Original Schedule</td>
+          <td>$199.00</td>
+          <td>$2,189.00</td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">February</td>
+          <td>1 License</td>
+          <td>Original Schedule</td>
+          <td>$199.00</td>
+          <td>$1,990.00</td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">March</td>
+          <td>1 License</td>
+          <td>Original Schedule</td>
+          <td>$199.00</td>
+          <td>$1,791.00</td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">April</td>
+          <td>1 License</td>
+          <td>Original Schedule</td>
+          <td>$199.00</td>
+          <td>$1,592.00</td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">May</td>
+          <td>1 License</td>
+          <td>Original Schedule</td>
+          <td>$199.00</td>
+          <td>$1,393.00</td>
+        </tr>
+        <tr class="baseline">
+          <td class="align-left">June</td>
+          <td>1 License</td>
+          <td>Original Schedule</td>
+          <td>$199.00</td>
+          <td>$1,194.00</td>
+        </tr>
+
+        <tr class="amendment">
+          <td class="align-left">July</td>
+          <td>2 Licenses</td>
+          <td>Prospective Adjustment</td>
+          <td>$398.00</td>
+          <td>$1,990.00 (Adjusted Base)</td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">August</td>
+          <td>2 Licenses</td>
+          <td>Updated Schedule</td>
+          <td>$398.00</td>
+          <td>$1,592.00</td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">September</td>
+          <td>2 Licenses</td>
+          <td>Updated Schedule</td>
+          <td>$398.00</td>
+          <td>$1,194.00</td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">October</td>
+          <td>2 Licenses</td>
+          <td>Updated Schedule</td>
+          <td>$398.00</td>
+          <td>$796.00</td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">November</td>
+          <td>2 Licenses</td>
+          <td>Updated Schedule</td>
+          <td>$398.00</td>
+          <td>$398.00</td>
+        </tr>
+        <tr class="amendment">
+          <td class="align-left">December</td>
+          <td>2 Licenses</td>
+          <td>Updated Schedule</td>
+          <td>$398.00</td>
+          <td>$0.00</td>
+        </tr>
+
+        <tr class="total-row">
+          <td class="align-left">FY Total</td>
+          <td>--</td>
+          <td>Annual Recognized</td>
+          <td>$3,582.00</td>
+          <td>--</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

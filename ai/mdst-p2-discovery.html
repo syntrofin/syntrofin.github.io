@@ -1,0 +1,407 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Discovery - The Commercial-First RLM Agile Approach</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+  </head>
+
+  <body>
+    <h1>A Day in Life Discovery</h1>
+
+    <h3>
+      In the real world, especially when dealing with complex platforms like
+      Salesforce CPQ or Revenue Cloud, SMEs don't separate their current pain
+      from their future desires.
+    </h3>
+
+    <p>
+      When you ask them about how they handle a midterm amendment today (the
+      As-Is), they will immediately complain about the manual credit memos and
+      jump straight into how they want it automated tomorrow (the To-Be). And as
+      an architect, when they look to you and ask, "Well, how does the system
+      handle this?" they are forcing a real-time Gap Analysis—your excellent
+      term, the "pre-gap." Here is how to embrace that chaotic reality and
+      organize Discovery so it actually works.
+    </p>
+
+    <div class="highlight">
+      The idea that Discovery is a neat, chronological march from "As-Is" to
+      "To-Be" to "Gap Analysis" is a theoretical fallacy.
+    </div>
+
+    <h2>1. Organize by "Commercial Thread," Not by Phase</h2>
+    <p>
+      Stop scheduling "As-Is Workshops" and "To-Be Workshops." Instead, organize
+      your Discovery sessions by the Business Process or Revenue Thread (exactly
+      like the "One-Time" vs. "Subscription" sprints we discussed earlier). If
+      the workshop is focused on the "Renewal Lifecycle," you let the
+      conversation flow naturally through the past, present, and future of just
+      that topic.
+    </p>
+
+    <h2>2. The In-the-Room "Micro-Cycle"</h2>
+    <p>
+      When you are facilitating, guide the SMEs through a continuous loop for
+      every specific capability they bring up. You are running As-Is, To-Be, and
+      Pre-Gap simultaneously in a 10-minute window:
+    </p>
+    <ul>
+      <li>
+        The Pain (As-Is): "We currently use three spreadsheets to calculate
+        proration.”
+      </li>
+      <li>
+        The Intent (To-Be): "We need the system to just do the math
+        automatically when a rep changes the quantity.”
+      </li>
+      <li>
+        The Pre-Gap (Platform Steering): This is where you leverage your
+        architecture expertise. Instead of just writing down their To-Be, you
+        guide it. "Revenue Cloud handles this out-of-the-box using the standard
+        Pricing Procedure and Assetization rules, provided we standardize your
+        service periods. Are you open to adopting the standard platform
+        calculation?”
+      </li>
+    </ul>
+    <h2>3. Managing the "Pre-Gap" (Platform-Guided Design)</h2>
+    <p>
+      When business leaders ask, "What are our options using the platform?",
+      they are giving you a massive gift. They are inviting you to shape their
+      To-Be state to fit standard Salesforce architecture. In management
+      consulting and enterprise architecture, this is often called
+      "Platform-Driven Business Design." You aren't just taking orders; you are
+      advising them on best practices.
+    </p>
+    <ul>
+      <li>
+        If their To-Be aligns with standard functionality: You confirm it
+        immediately (closing the gap on the spot).
+      </li>
+      <li>
+        If their To-Be requires heavy customization: You use the pre-gap to
+        challenge them. "We can build that custom logic, but if we adjust your
+        process slightly to fit the standard Product Selling Model, you save 200
+        hours of development and make future maintenance drastically cheaper.”
+      </li>
+    </ul>
+    <h2>4. The Unified Discovery Matrix (Documentation)</h2>
+    <p>
+      Because the conversation happens all at once, your documentation must
+      capture it all at once. Ditch the separate As-Is and To-Be documents. Use
+      a unified Capability Matrix. For every row (e.g., "Mid-Term Seat
+      Add-Ons"), you have these columns side-by-side:
+    </p>
+    <ul>
+      <li>Current State (The Pain): Manual calculation, prone to errors.</li>
+      <li>Business Intent (The Goal): Automated, accurate prorated quoting.</li>
+      <li>
+        Platform Recommendation (The Pre-Gap/Architecture): Utilize standard
+        CPQ/RLM Amendment functionality; requires standardizing subscription
+        term fields.
+      </li>
+      <li>
+        Gap / Risk: High risk if legacy data cannot be migrated cleanly into the
+        new asset structure.
+      </li>
+    </ul>
+
+    <h3>"Unified Discovery Matrix" template</h3>
+    <p>
+      "Unified Discovery Matrix" template focused specifically on a CPQ or
+      Revenue Cloud process (like Renewals or Amendments) so you can see how
+      this looks in practice When you are consulting with business leaders, your
+      "Pre-Gap" steering needs to align their To-Be state specifically with
+      RLM's modular architecture. Here is the Unified Discovery Matrix tailored
+      for an RLM architect. It captures the past, present, and the
+      platform-specific future in a single row. The RLM Unified Discovery Matrix
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Commercial Process</th>
+          <th>Current State (The Pain)</th>
+          <th>Business Intent (To-Be Goal)</th>
+          <th>RLM Platform Recommendation (Pre-Gap Steering)</th>
+          <th>Architectural Gap / Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="capability">Mid-Term Add-On (Amendments)</td>
+          <td class="pain">
+            Sales reps manually calculate prorated amounts for new seats on a
+            spreadsheet and submit a separate $0 order for tracking.
+          </td>
+          <td>
+            System should automatically calculate the exact prorated cost for
+            new seats based on the days remaining in the existing contract.
+          </td>
+          <td>
+            Adopt the standard
+            <span class="rlm-engine">ProductSellingModel</span> (Termed) and
+            flag the product as "Asset-trackable"[cite: 64, 66]. RLM's Asset
+            Lifecycle engine will handle the co-termination and generate the
+            prorated Quote Lines automatically[cite: 42, 49].
+          </td>
+          <td>
+            <strong>Low Gap, High Data Risk:</strong> RLM handles this natively,
+            but we must ensure legacy contract data is migrated accurately into
+            the new <span class="rlm-engine">AssetStatePeriod</span> object to
+            serve as the baseline[cite: 140].
+          </td>
+        </tr>
+        <tr>
+          <td class="capability">Renewal Uplift Pricing</td>
+          <td class="pain">
+            Finance applies a flat 5% uplift at renewal, but reps often override
+            this manually or forget to apply it entirely.
+          </td>
+          <td>
+            Automate a standard 5% price increase on all recurring software
+            renewals, with manager approval required for overrides.
+          </td>
+          <td>
+            Configure the <span class="rlm-engine">PricingProcedure</span> to
+            look up a Renewal Uplift attribute[cite: 140]. The standard Price
+            Waterfall will calculate the Net Price automatically during the
+            system-generated Renewal Quote[cite: 69].
+          </td>
+          <td>
+            <strong>Process Gap:</strong> Business must agree to standardize the
+            5% rule across the catalog. Custom override logic will require a new
+            step in the Pricing Procedure.
+          </td>
+        </tr>
+        <tr>
+          <td class="capability">Hardware + SaaS Bundling</td>
+          <td class="pain">
+            Hardware is quoted in an ERP, while SaaS is quoted in CRM. Invoices
+            are dispatched separately, causing customer confusion.
+          </td>
+          <td>
+            Reps need to sell the physical sensor and the 12-month software
+            subscription on the same quote and dispatch to billing together.
+          </td>
+          <td>
+            Utilize Product Discovery to configure a bundle containing a
+            One-Time PSM (Hardware) and a Termed PSM (SaaS)[cite: 64]. Both will
+            flow through the same Quote-to-Order "Steel Thread" into a unified
+            <span class="rlm-engine">SalesOrder</span>[cite: 71, 140].
+          </td>
+          <td>
+            <strong>Medium Gap:</strong> RLM easily handles mixed PSMs, but the
+            external Billing Schedule integration (ERP) must be prepared to
+            split the revenue recognition based on the different PSMs[cite:
+            140].
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    Why this format works for you:
+    <ul>
+      <li>
+        It Stops the "Customization Default": By having the RLM Platform
+        Recommendation right next to the Business Intent, you immediately anchor
+        the conversation in standard platform engines (like PricingProcedure and
+        ProductSellingModel) rather than letting them invent custom workflows.
+      </li>
+      <li>
+        It Exposes the Real Risks: The Gap/Risk column shifts the focus away
+        from "can the platform do it?" (because RLM usually can) to "is your
+        data and business process ready for it?"
+      </li>
+      <li>
+        It Feeds the Sprints: Every row in this matrix can literally be lifted
+        and dropped into your Agile backlog as an End-to-End Revenue Thread
+        Epic.
+      </li>
+    </ul>
+    <br />
+    <h1>Extend L1-3</h1>
+    <p>
+      Compiling the L1-L3 list before Discovery is exactly how you lock down the
+      project scope. If a specific process is on the L3 list, it is in scope; if
+      it isn't, it is out of scope. With L1 mapping to the massive Value Stream,
+      L2 to the major Process Area buckets, and L3 to the Specific Process
+      tasks, we have a rock-solid foundation to hand over to a Scrum Master.
+      Here is exactly how you bridge that Process Catalog into standard
+      Jira/Agile issue types to maintain your architectural control while
+      keeping the Agile team moving horizontally across the Revenue Cloud
+      lifecycle.
+    </p>
+
+    <h2>The RTM to Agile Mapping Framework</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>RTM Hierarchy (The Architecture View)</th>
+          <th>Agile/Jira Issue Type (The Delivery View)</th>
+          <th>Purpose & RLM Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>L1: Value Stream</strong></td>
+          <td><strong>Initiative</strong></td>
+          <td>
+            <strong>The massive, end-to-end lifecycle.</strong>
+            <span class="example">Example: Quote-to-Cash (QTC).</span>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L2: Process Area</strong></td>
+          <td><strong>Component / Theme</strong></td>
+          <td>
+            <strong>The major buckets within the Value Stream.</strong> Used for
+            reporting and filtering in Jira.
+            <span class="example"
+              >Example: Product Configuration, Pricing.</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L3: Specific Process</strong> (Process Catalog)</td>
+          <td><strong>Epic</strong></td>
+          <td>
+            <strong>The actual task to be accomplished.</strong> This is the
+            business capability boundary. It groups the commercial threads.
+            <span class="example"
+              >Example: Subscription Amendments or Event Quoting.</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L4: The Commercial Thread</strong> (Pre-Gap Steering)</td>
+          <td><strong>User Story</strong></td>
+          <td>
+            <strong>This is the "Transaction-Based" narrative.</strong> It
+            defines how the L3 capability is executed across the RLM platform
+            for a specific scenario.
+            <span class="example"
+              >Example: "As a Rep, I need to co-term a mid-year SaaS add-on so
+              that the Proration Rule accurately feeds the Sales Order."</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L5: Architectural Gap / Risk</strong></td>
+          <td><strong>Acceptance Criteria (DoD)</strong></td>
+          <td>
+            The rules that prove the User Story survives the transaction.
+            <span class="example"
+              >Example: "Quote Line successfully converts to an
+              AssetStatePeriod."</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L6: Technical Build Task</strong></td>
+          <td><strong>Sub-Task</strong></td>
+          <td>
+            The specific administrative actions assigned to developers to
+            satisfy the story.
+            <span class="example"
+              >Example: "Configure ProductSellingModel record," "Build
+              PricingProcedure step."</span
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Why L3 as the "Epic" is Your Best Tool</h2>
+    <p>
+      By making the L3 Process Catalog item the Jira Epic, you keep the business
+      stakeholders perfectly comfortable. When a business leader looks at the
+      Jira board, they see Epics named exactly what they asked for during
+      project kickoff and pre-discovery planning. However, underneath that L3
+      Epic, you and the Scrum Master populate the L4 User Stories strictly as
+      Commercial Threads (Horizontal Progress), not isolated objects (Vertical
+      Progress). For example, if the L3 Epic is "Vendor Onboarding":
+    </p>
+
+    <ul>
+      <li>
+        Story 1: Standard hardware vendor onboarding flow (from catalog to ERP).
+      </li>
+      <li>
+        Story 2: Complex software vendor onboarding flow (with termed revenue
+        schedules).
+      </li>
+    </ul>
+    This satisfies the Scrum Master's need for actionable, sprint-sized tickets
+    while guaranteeing that the Salesforce CPQ and Billing engines are
+    configured sequentially and logically.
+
+    <h1>The Architect's "Cheat Sheet”</h1>
+    <p>
+      At the end of the day, Agile Jira boards are just a mechanism for
+      distributing and tracking work. The magic happens when you, as the lead
+      architect, shape those work containers so they force the development team
+      to build the system correctly. When your Epics are business capabilities
+      (the L3 Process Catalog) and your Stories are End-to-End Revenue Threads,
+      you completely eliminate the risk of developers building isolated, useless
+      features. But to make this truly bulletproof, your Business Analysts (BAs)
+      need to write Acceptance Criteria (L5) that actively prevent developers
+      from slipping back into bad habits. Here are the guidelines you can hand
+      to your BAs to ensure every story adheres to Revenue Cloud best practices.
+    </p>
+
+    <h2>
+      The Architect's "Cheat Sheet" for BAs: Writing RLM Acceptance Criteria
+    </h2>
+    <p>
+      When drafting the L5 Acceptance Criteria (the Definition of Done) for any
+      Product, Pricing, or Configuration story, BAs must enforce the following
+      three rules: 1. The "No Dead Ends" Rule (Mandate the Transaction) A
+      developer cannot write a story to simply "create a product field." The
+      criteria must force that field through the transaction engine.
+    </p>
+    <ul>
+      <li>
+        Bad AC: "The 'Hardware Type' field is visible on the Product record."
+      </li>
+      <li>
+        RLM-Ready AC: "The 'Hardware Type' field is visible on the Product
+        record AND correctly maps to the Quote Line Item when added to a
+        Standard Quote."
+      </li>
+    </ul>
+
+    2. The "Engine Callout" Rule (Name the RLM Component) Salesforce Revenue
+    Cloud is a math and rules engine. BAs should not write generic pricing
+    requirements; they must specifically name the RLM component that handles the
+    logic.
+
+    <ul>
+      <li>Bad AC: "The system should apply a 10% discount for volume."</li>
+      <li>
+        RLM-Ready AC: "The Pricing Procedure evaluates the volume quantity and
+        correctly generates the Net Price on the Price Waterfall."
+      </li>
+    </ul>
+
+    3. The "Downstream Proof" Rule (The Lifecycle Check) Every subscription or
+    service story must prove it can survive beyond the initial sale. This
+    prevents the "Siloed Sprint" trap.
+
+    <ul>
+      <li>Bad AC: "The user can sell a 12-month software license."</li>
+      <li>
+        RLM-Ready AC: "The 12-month software license successfully converts from
+        a Sales Order into an Asset-trackable record with the correct start and
+        end dates for future renewals."
+      </li>
+    </ul>
+    <p>
+      Why This Empowers Your BAs By giving your BAs this framework, you are
+      essentially deputizing them to enforce your architectural vision. They
+      become the gatekeepers. If a BA writes a story that doesn't push the data
+      through to an Order or Asset, the Scrum Master will kick it back during
+      backlog refinement because it doesn't meet the "Definition of Ready."
+    </p>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RLM Case Study: Tesla Model Y</title>
+	    <!-- CSS -->
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+</head>
+<body>
+    <!--
+    <img src="./img/tesla-modely.png" alt="TeslaCS" style="width: 40vw; height: auto;">
+    <img src="./img/tesla-extcolor.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    <img src="./img/tesla-int.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    <img src="./img/tesla-tow.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    <img src="./img/tesla-charge.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    <img src="./img/tesla-acc.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    <img src="./img/tesla-wallet.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    <img src="./img/tesla-selfdrive.png" alt="TeslaCS" style="width: 20vw; height: auto;">
+    -->
+	
+    <h1>Tesla Model Y Revenue Lifecycle Case Study</h1>
+	<div style="text-align: center;">
+	<img src="./img/tesla-modely.png" alt="TeslaCS" style="width: 40vw; height: auto;">
+	</div>
+	
+    <p><strong>Scenario:</strong> 
+		Let's look at Architecting an unified commerce experience for vehicle sales, software subscriptions, and hardware accessories. 
+		Unified operations experience for One Time, Lease, Finance, Contract Sale, Usage, Order and Billing.
+	</p>
+
+    <h2 style="text-align:center;">Sales Offerings</h2>
+	<h2>Model Y Models</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>One-Time Price</th>
+                <th>Monthly Lease (Evergreen)</th>
+                <th>Finance to Own (72 Mo)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Model Y Standard</td>
+                <td>$39,990</td>
+                <td>$457.00/Month</td>
+                <td>$599.00/Month</td>
+            </tr>
+            <tr>
+                <td>Model Y Premium</td>
+                <td>$44,990</td>
+                <td>$569.00/Month</td>
+                <td>$638.00/Month</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><em>*Note: Model Y Standard includes a contract price of $30,000 for specific fleet accounts (e.g., Wake Police)[cite: 100].</em></p>
+
+    <h2>2. Configurable Attributes (Non-Product SKUs)</h2>
+    <div class="logic-note">
+        Architectural Requirement: Paint and Interior are <strong>Attributes</strong>, not standalone products[cite: 18, 19, 62].
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Selection</th>
+                <th>Price Adjustment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Paint</td>
+                <td>Stealth Gray</td>
+                <td>Included</td>
+            </tr>
+            <tr>
+                <td>Paint</td>
+                <td>Pearl White / Deep Blue</td>
+                <td>+$1,000</td>
+            </tr>
+            <tr>
+                <td>Paint</td>
+                <td>Any Other Color</td>
+                <td>+$2,000</td>
+            </tr>
+            <tr>
+                <td>Interior</td>
+                <td>All Black / Retro</td>
+                <td>Included / +$2,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Hardware & Accessories</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Constraints / Logic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>20" Helix 2.0 Wheels</td>
+                <td>$2,000</td>
+                <td>Default Selection [cite: 21]</td>
+            </tr>
+            <tr>
+                <td>19" Crossflow Wheels</td>
+                <td>($1,000)</td>
+                <td>Negative adjustment (Credit) [cite: 21]</td>
+            </tr>
+            <tr>
+                <td>Tow Package</td>
+                <td>$1,000</td>
+                <td><strong>Constraint:</strong> Only with Vehicle purchase [cite: 21, 68]</td>
+            </tr>
+            <tr>
+                <td>Home Charger</td>
+                <td>$450</td>
+                <td>One-time purchase [cite: 21]</td>
+            </tr>
+            <tr>
+                <td>Tesla Branded Wallet</td>
+                <td>$200</td>
+                <td>Volume Discount: 10% (5-10 qty), 20% (10+) [cite: 95]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Software & Services (Hybrid Models)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>One-Time</th>
+                <th>Subscription</th>
+                <th>Usage-Based</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Full Self-Driving (FSD)</td>
+                <td>$8,000</td>
+                <td>$150/Month</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>In-Person Demo</td>
+                <td>$1,000</td>
+                <td>N/A</td>
+                <td>Included at $0 with FSD [cite: 36, 70]</td>
+            </tr>
+            <tr>
+                <td>Tesla Charging</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>$1.00 / 10 Miles [cite: 35]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="logic-note">
+        <strong>Fulfillment Note:</strong> Accessories like Roof Racks or Mats may be outsourced and delivered in separate packages via DRO orchestration[cite: 25, 31].
+    </div>
+
+<h2>5. Product Selection & Logic Constraints</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rule Name</th>
+                <th>Logic / Requirement</th>
+                <th>RLM Feature</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>In-Person Demo Inclusion</td>
+                <td>Automatically given at no cost ($0) when Full Self-Driving is purchased.</td>
+                <td>Product Selection Rule / BRE</td>
+            </tr>
+            <tr>
+                <td>Standalone Demo Restriction</td>
+                <td>Purchasing "In-Person Demo" alone is not practiced/allowed.</td>
+                <td>Exclusion Constraint</td>
+            </tr>
+            <tr>
+                <td>Tow Package Dependency</td>
+                <td>Must be purchased with a vehicle; cannot be a standalone separate order.</td>
+                <td>Validation Rule / Constraint</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>6. Advanced Pricing & Discounts</h2>
+    <div class="logic-note">
+        <strong>Strategic Insight:</strong> Pricing is managed via the Business Rules Engine (BRE) and Decision Tables to ensure high-performance quote calculations.
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Adjustment Type</th>
+                <th>Application</th>
+                <th>RLM Engine</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Attribute Pricing</td>
+                <td>Paint and Interior selections impact the final base price.</td>
+                <td>Pricing Procedures</td>
+            </tr>
+            <tr>
+                <td>Tiered Discounting</td>
+                <td>Tesla Designer Wallet: 10% for 5-10 units, 20% for 10+ units.</td>
+                <td>Adjustment Schedules</td>
+            </tr>
+            <tr>
+                <td>Contracted Pricing</td>
+                <td>Wake Police Fleet: Model Y Standard fixed at $30,000.</td>
+                <td>Price Contracts</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>7. Order Fulfillment & Billing (DRO)</h2>
+    <ul>
+        <li><strong>Decomposition:</strong> Orders are broken down by fulfillment teams (Vehicle Manufacturing vs. Software Activation).</li>
+        <li><strong>Outsourced Items:</strong> Car accessories (Roof Racks, Mats) are triggered as separate fulfillment packages.</li>
+        <li><strong>Billing Policy:</strong> 100% upfront for hardware; Milestone-based or Monthly for services.</li>
+        <li><strong>Usage:</strong> Aggregated monthly total for "Tesla Charging" (e.g., total miles/kWh).</li>
+    </ul>
+
+    <hr>
+    <footer style="background: #333; color: #fff; padding: 20px; border-radius: 8px;">
+        <h3>The SB FT SR Architectural Lens</h3>
+        <p>Apply this framework to every Tesla configuration step:</p>
+        <ul style="list-style: none; padding: 0;">
+            <li><strong>S: Slogan</strong> – Modernized Sustainable Transport</li>
+            <li><strong>S: Strategy/Business Shift</strong> – Hybrid Selling (Hardware + SaaS)</li>
+            <li><strong>F: Financial Bottleneck</strong> – High-volume usage and global tax compliance</li>
+            <li><strong>T: Transactional</strong> – The Unified Quote UI</li>
+            <li><strong>S: Source of Truth</strong> – Real-time Asset Lifecycle Management</li>
+            <li><strong>R: Results</strong> – 100% automated revenue recognition</li>
+        </ul>
+    </footer>
+</body>
+</html>

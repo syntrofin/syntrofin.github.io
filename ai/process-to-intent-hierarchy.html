@@ -1,0 +1,364 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agent-First Revenue Lifecycle Management Architecture."
+    />
+    <meta name="author" content="Ravi Gandavarapu" />
+    <title>Agent-First Revenue Lifecycle Management Framework
+    </title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; font-weight: 700; font-size: 2.2rem">
+      Process to Agent Intent Mapping
+    </h1>
+
+    <h2>Intent Mapping Levels</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Area</th>
+          <th>Agentic Intent Hierarchy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>L1</strong></td>
+          <td>Intent Domain</td>
+          <td>
+            comprehensive boundary of the agent's conversational capability.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L2</strong></td>
+          <td>Intent Clusters</td>
+          <td>
+            Grouped user objectives that map to a specific Commercial Archetype.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>L3</strong></td>
+          <td>Discrete Intents (Agent Actions)</td>
+          <td>
+            The precise objective extracted from language to execute a backend
+            API payload.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Intent Mapping Guidelines (L1 - L3)</h2>
+    <table>
+      <colgroup>
+        <col style="width: 19%" />
+        <col style="width: 30%" />
+        <col style="width: 50%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>L1: Intent Domain</th>
+          <th>L2: Intent Cluster</th>
+          <th>L3: Discrete Intents (Agent Actions)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Quote-to-Cash (QTC)</strong></td>
+          <td><strong>1.0 Enterprise Product Catalog (EPC)</strong></td>
+          <td>
+            <p>1.1 Commercial Product Creation &amp; Lifecycle</p>
+            <p>1.2 Product Bundling &amp; Structuring</p>
+            <p>1.3 Attribute Definition (e.g., Size, Color, SLA)</p>
+            <p>1.4 Cost Book &amp; Base Margin Entry</p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>2.0 Pricing Strategy &amp; Logic</strong></td>
+          <td>
+            <p>2.1 Base List Pricing Setup</p>
+            <p>2.2 Attribute-Based Pricing Rules</p>
+            <p>
+              2.3 <strong>Cost-Plus / Margin Floor Calculations</strong>
+              <em>(Our Dinner &amp; Drinks scenario)</em>
+            </p>
+            <p>2.4 Discount Matrices &amp; Promotions</p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>3.0 Quoting &amp; Configuration</strong></td>
+          <td>
+            <p>3.1 Opportunity to Quote Creation</p>
+            <p>3.2 Guided Selling / Needs Analysis</p>
+            <p>3.3 Product Selection &amp; Configuration</p>
+            <p>3.4 Multi-Site / Multi-Group Quoting</p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>4.0 Deal Desk &amp; Governance</strong></td>
+          <td>
+            <p>4.1 Manual Discount Entry</p>
+            <p>4.2 Margin / Commercial Approval Routing</p>
+            <p>4.3 Non-Standard Terms Approval</p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>5.0 Document &amp; Output</strong></td>
+          <td>
+            <p>5.1 Proposal / Document Generation</p>
+            <p>5.2 E-Signature Routing</p>
+            <p>5.3 Contract Redlining</p>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>6.0 Order &amp; Asset Management</strong></td>
+          <td>
+            <p>6.1 Quote-to-Order Conversion</p>
+            <p>6.2 Asset Creation &amp; Registration</p>
+            <p>6.3 Subscription Proration &amp; Co-Terming</p>
+            <p>6.4 Renewals &amp; Amendments</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Methods to Compile Initial Process Catalogue</h2>
+
+    <p>
+      Here are the widely used methods and tools architects use to compile that
+      initial L1-L3 Process Catalog <em>before</em> Discovery begins.
+    </p>
+
+    <h3>Industry Reference Models (The Cheat Codes)</h3>
+
+    <p>
+      You don't need to guess what an event management, manufacturing, or
+      software company does. Industry consortiums have already mapped every
+      business process on earth. You download their map, highlight what you
+      think applies, and use that as your baseline.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <strong>APQC (American Productivity &amp; Quality Center):</strong>
+          This is the gold standard. APQC provides free, downloadable "Process
+          Classification Frameworks" (PCFs) for almost every industry. It gives
+          you the exact L1 to L4 taxonomy for a business.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>TM Forum (eTOM):</strong> If you are working in
+          Telecommunications or Media, this is the mandatory standard for
+          process mapping.
+        </p>
+      </li>
+      <li>
+        <p><strong>ITIL:</strong> For IT service management processes.</p>
+      </li>
+    </ul>
+
+    <h3>Artifact Harvesting (The Paper Trail)</h3>
+    <p>
+      Before you schedule a single workshop, you ask the client's IT or Project
+      Management Office (PMO) for existing documentation. You mine these
+      documents strictly for <em>nouns</em> and <em>verbs</em> to add to your
+      catalog.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <strong>The SOW / RFP:</strong> The Statement of Work or Request for
+          Proposal that initiated your project is a goldmine. If the SOW says
+          "Must support split-billing," you immediately add
+          <em>L3: Split-Billing</em> to your catalog.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong
+            >Standard Operating Procedures (SOPs) &amp; Training
+            Manuals:</strong
+          >
+          HR and onboarding teams often have step-by-step guides for new hires.
+          You aren't reading them for the pain points; you are just extracting
+          the titles of the processes.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Existing Org Charts:</strong> If you see a team called "Deal
+          Desk," you know you have to add
+          <em>L3: Non-Standard Pricing Approvals</em> to your catalog.
+        </p>
+      </li>
+    </ul>
+
+    <h3>System Snooping</h3>
+    <p>
+      If the organization is already using Salesforce (or another ERP/CRM) and
+      you are coming in to implement Revenue Cloud Advanced, their current
+      system configuration will tell you exactly what processes they run today.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <strong>Custom Objects &amp; Fields:</strong> If you look at their
+          Salesforce schema and see a custom object called Vendor_Rebate__c, you
+          immediately add <em>L3: Vendor Rebate Management</em> to your map.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Approval Processes &amp; Flows:</strong> Looking at the names
+          of active workflows gives you a literal list of automated business
+          processes.
+        </p>
+      </li>
+    </ul>
+
+    <h2>The Tools of the Trade</h2>
+    <p>
+      When compiling and presenting this catalog, architects use a mix of
+      high-tech visualization and low-tech organization tools.
+    </p>
+
+    <h3>Process Mining Tools (The High-Tech Approach)</h3>
+    <p>
+      In highly mature enterprise environments, organizations use software that
+      connects to their ERP/CRM and reads the system logs to automatically draw
+      the process maps based on what users are
+      <em>actually</em> clicking.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <strong>Celonis:</strong> The heavyweight champion of process mining.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>UiPath Process Mining:</strong> Often used if the company is
+          already heavy into robotic process automation (RPA).
+        </p>
+      </li>
+    </ul>
+
+    <h3>Enterprise Architecture (EA) &amp; Mapping Tools</h3>
+    <p>
+      These are used to visually draw the L1-L3 taxonomy boxes so executives can
+      agree on the boundaries.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <strong>Lucidchart / Visio:</strong> The standard for drawing the
+          high-level Value Streams (L1) and Process Areas (L2).
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Signavio (SAP) / ARIS / LeanIX:</strong> Heavy-duty Enterprise
+          Architecture tools that link processes to IT systems and business
+          capabilities.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Elements.cloud:</strong> Specifically built for Salesforce. It
+          allows you to map business processes and tie them directly to
+          Salesforce metadata (like fields and objects).
+        </p>
+      </li>
+    </ul>
+
+    <h3>Spreadsheets in Use</h3>
+    <p>
+      Despite all the fancy tools, 90% of architects compile their final Process
+      Catalog in <strong>Excel or Smartsheet</strong>.
+    </p>
+    <ul>
+      <li>
+        <p>
+          Why? Because a spreadsheet allows you to add columns for "In Scope /
+          Out of Scope", "Process Owner", and "Priority." It is the easiest
+          format to present to a steering committee for sign-off before
+          Discovery begins.
+        </p>
+      </li>
+    </ul>
+
+    <h2>Alignment Workshop</h2>
+    <p>
+      Once Data and Artifact Harvesting to build a draft hold alignment
+      workshops.
+      <br />
+      This may cross out, add, and change things frequnetly. Now, you are ready
+      for Discovery.
+    </p>
+  </body>
+</html>

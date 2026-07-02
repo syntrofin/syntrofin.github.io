@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+      <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agent-First Revenue Lifecycle Management Architecture."
+    />
+    <meta name="author" content="Ravi Gandavarapu" />
+    <title>Agent-First Revenue Lifecycle Management Framework
+    </title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+    <style>
+      /* Container resets the automatic counter */
+      .vertical-timeline {
+        counter-reset: step-counter; /* Creates a counter variable */
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+        color: #1a1a1a;
+      }
+
+      /* Flex layout for each step */
+      .timeline-step {
+        display: flex;
+        position: relative;
+        /* Padding creates space between steps */
+        padding-bottom: 3rem;
+      }
+
+      /* Hide the connecting line on the very last step */
+      .timeline-step:last-child {
+        padding-bottom: 0;
+      }
+      .timeline-step:last-child::before {
+        display: none;
+      }
+
+      /* The vertical dotted line */
+      .timeline-step::before {
+        content: "";
+        position: absolute;
+        /* Centers the line directly under the 32px circle */
+        left: 15px;
+        top: 36px;
+        bottom: 0;
+        border-left: 2px dotted #a3a3a3;
+      }
+
+      /* The numbered circle */
+      .step-indicator {
+        counter-increment: step-counter; /* Increases the number by 1 */
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid #555;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #555;
+        flex-shrink: 0;
+        margin-right: 1.5rem;
+        z-index: 1; /* Keeps the circle on top of the line */
+      }
+
+      /* Injects the actual number inside the circle */
+      .step-indicator::after {
+        content: counter(step-counter);
+      }
+
+      /* Typography styling for the content */
+      .step-content {
+        flex: 1;
+      }
+
+      .step-content h2 {
+        margin: 4px 0 8px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .step-content h3 {
+        margin: 0 0 16px 0;
+        font-size: 0.9rem;
+        font-style: italic;
+        font-weight: normal;
+        color: #555;
+      }
+
+      .step-content p {
+        margin: 0 0 16px 0;
+        line-height: 1.5;
+      }
+
+      .step-content ul {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+
+      .step-content li {
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+
+      /* Styling for the inline code snippets */
+      code {
+        background-color: #f1f1f1;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+
+      /* Container to constrain width and set the base font */
+      .document-container {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        max-width: 850px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        background-color: #ffffff;
+      }
+
+      /* Adds breathing room between each major block of text */
+      section {
+        margin-bottom: 2.5rem;
+      }
+
+      /* Styles the headings to match the image: grey, slightly larger, and normal font weight */
+      .doc-heading {
+        font-size: 1.5rem;
+        font-weight: 400; /* Keeps the heading from being overly bold */
+        color: #737373; /* A medium-light grey to match the screenshot */
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      /* Styles the main paragraph text for high readability */
+      .doc-body {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #262626; /* Very dark grey/almost black for contrast */
+        margin: 0;
+      }
+
+      /* Custom list styling to achieve the hollow circle bullet */
+      .doc-list {
+        list-style-type: circle; /* Creates the empty 'o' bullet */
+        padding-left: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      /* Mixes grey text with dark bold text in the list items */
+      .doc-list li {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #737373; /* The description text is grey */
+      }
+
+      .doc-list li strong {
+        color: #262626; /* The bolded prefix text is dark */
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="document-container">
+      <h1>The Problem, The Model, and The Solution</h1>
+      <section>
+        <h2 class="doc-heading">The Problem</h2>
+        <p class="doc-body">
+          Legacy CPQ deployments are burdened by massive technical debt. Complex
+          custom scripting (like heavy QCPs), endless cascading validation
+          rules, and highly customized UI components force sales teams to act as
+          data-entry clerks. When bridging these rigid frontend quoting
+          structures to complex backend ERPs (like SAP FICO) for billing and
+          revenue recognition, the integration points become incredibly brittle.
+          Every new product or pricing strategy requires weeks of UI redesign
+          and regression testing. This tightly coupled, UI-dependent
+          architecture creates a bottleneck that prevents autonomous
+          orchestration, resulting in low system adoption, slow deal velocity,
+          and high maintenance costs.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="doc-heading">The Model</h2>
+        <p class="doc-body">
+          The enterprise revenue lifecycle is no longer constrained by rigid
+          user interfaces. By deploying Agentforce as the orchestration layer
+          over Revenue Lifecycle Management (RLM), we shift from a
+          system-centric "click-path" paradigm to an intent-centric
+          orchestration model. The LLM absorbs the cognitive load of parameter
+          extraction, fuzzy searching, and constraint negotiation, while RLM and
+          the downstream financial subledgers remain mathematically, legally,
+          and contractually deterministic.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="doc-heading">The Solution</h2>
+        <h2>Pre-Discovery (Readiness & Feasibility)</h2>
+        <p class="doc-body">
+          Before committing to the architecture, you must evaluate the current
+          state of the enterprise data and the viability of a headless
+          transition.
+        </p>
+
+        <ul class="doc-list">
+          <li>
+            <strong>API Coverage Assessment:</strong> Evaluate the existing
+            product catalog and pricing rules. Can every
+          </li>
+          <li>
+            <strong>Data Quality & Harmonization Check:</strong> AI amplifies
+            bad data. Assess whether product names, descriptions, and attribute
+            schemas are clean enough to be vectorized in Data Cloud without
+            confusing the semantic search engine. Legacy Debt Identification:
+            Map out existing Apex triggers, legacy CPQ QCP scripts, and
+            hardcoded Flow logic that currently intervene during the quoting
+            process. These must be flagged for migration into the Business Rules
+            Engine (BRE). System of Record Definition: Strictly define which
+            system owns which data prior to architecture design (e.g., RLM owns
+            contract pricing, SAP FICO owns cost basis, Snowflake owns
+            historical telemetry).
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Discovery (Intent Mapping & Orchestration Design)</h2>
+        <p class="doc-body">
+          In an Agent-first paradigm, you do not design UI wireframes or
+          click-paths. You design conversational boundaries and API payloads.
+        </p>
+
+        <ul class="doc-list">
+          <li>
+            <strong>Utterance & Intent Matrix:></strong> Document the natural
+            language variations sales reps use for core tasks (e.g., "target
+            price," "discount," "swap bundle"). Map these intents to specific
+            RLM API endpoints.
+          </li>
+          <li>
+            <strong>The Probabilistic / Deterministic Split:</strong>
+            Explicitly document the "Line of Trust." Define exactly where the
+            Agent's reasoning stops and where the strict Business Rules Engine
+            (Expression Sets / Pricing Procedures) takes over.
+          </li>
+          <li>
+            <strong>Exception Negotiation Workflows:</strong>
+            Map how the system should respond when deterministic rules fail. If
+            a margin floor is violated, design the exact conversational pivot
+            the Agent must use to guide the rep to a compliant configuration.
+          </li>
+          <li>
+            <strong>Data Virtualization Strategy:</strong>
+            Identify which external datasets (live inventory, SAP cost records)
+            will be connected via Data Cloud Zero-Copy versus traditional API
+            callouts.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technical Phases</h2>
+        <p class="doc-body">
+          Transitioning to an "Agent-First" architecture requires a complete
+          inversion of how enterprise revenue systems are traditionally
+          designed. Instead of building complex, rigid UIs to guide a user
+          through a quoting process, you are building a headless deterministic
+          engine and exposing it to a probabilistic conversational router.
+        </p>
+        <p class="doc-body">
+          Given the complexities of bridging legacy ERP financial structures and
+          legacy CPQ models into modern Revenue Lifecycle Management (RLM), you
+          must sequence the build so the AI never touches the raw data directly.
+        </p>
+
+        <p class="doc-body">
+          Here is the strategic outline for proceeding with an Agent-First
+          implementation.
+        </p>
+      </section>
+    </div>
+
+    <div class="vertical-timeline">
+      <article class="timeline-step">
+        <div class="step-indicator"></div>
+        <div class="step-content">
+          <h2>Phase 1: API-fication of the Core Engine</h2>
+          <h3>The Deterministic Base</h3>
+          <p>
+            Before opening Agent Builder, your RLM foundation must be entirely
+            headless. The AI cannot click buttons; it can only pass payloads.
+          </p>
+          <ul>
+            <li>
+              <strong>Product Catalog Management (PCM):</strong>
+              <br />
+              Build dynamic bundle constraints, inclusion/exclusion rules, and
+              attributes strictly within PCM.
+            </li>
+            <li>
+              <strong>Business Rules Engine (BRE):</strong>
+              <br />
+              Migrate all pricing logic, volume tiers, and eligibility rules
+              into Pricing Procedures and Decision Matrices.
+            </li>
+            <li>
+              <strong>The Goal:</strong>
+              <br />
+              Ensure that if you hit the RLM <code>Configure Product</code> or
+              <code>Calculate Price</code> APIs via Postman with a raw JSON
+              payload, the engine perfectly enforces every rule and returns a
+              mathematically sound quote.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-step">
+        <div class="step-indicator"></div>
+        <div class="step-content">
+          <h2>Phase 2: Build the Orchestration Bridges</h2>
+          <h3>OmniStudio & Apex</h3>
+          <p>
+            Agents struggle with deeply nested JSON and complex API chaining.
+            You must build middleware to flatten the interaction.
+          </p>
+          <ul>
+            <li>
+              <strong>Integration Procedures (IPs):</strong>
+              <br />
+              Use OmniStudio IPs to chain API calls (e.g., calling the
+              configurator, then immediately calling the pricing engine).
+            </li>
+            <li>
+              <strong>Invocable Apex:</strong>
+              <br />
+              Build custom Apex for complex catalog extraction, fuzzy SOSL
+              searching, or payload transformations.
+            </li>
+            <li>
+              <strong>The Response Wrapper Pattern: </strong>
+              <br />
+              Architect every IP and Apex class to catch exceptions internally
+              and return a standardized, flat response (e.g., isSuccess,
+              errorMessage, netTotal) so the LLM can read the failure and pivot
+              the conversation rather than crashing.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-step">
+        <div class="step-indicator"></div>
+        <div class="step-content">
+          <h2>Phase 3: Centralize Semantic and Virtual Data</h2>
+          <h3>Data Cloud</h3>
+          <p>
+            If your enterprise architecture relies heavily on external systems
+            for real-time validation, integrate them before turning on the
+            Agent.
+          </p>
+          <ul>
+            <li>
+              <strong>Vector Search: </strong>
+              <br />
+              Ingest the Product Catalog into Data Cloud and generate vector
+              embeddings to support semantic, natural-language catalog searches.
+            </li>
+            <li>
+              <strong>Zero-Copy Virtualization: </strong>
+              <br />
+              If your cost-basis or live inventory sits in external data lakes,
+              set up Data Cloud live mounts. This allows your Integration
+              Procedures to read live ERP data without maintaining brittle
+              point-to-point callouts.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-step">
+        <div class="step-indicator"></div>
+        <div class="step-content">
+          <h2>Phase 4: Agent Design and Prompt-as-Code</h2>
+          <h3>Agent Builder</h3>
+          <p>
+            Only after the APIs and bridges are bulletproof do you build the
+            conversational layer.
+          </p>
+          <ul>
+            <li>
+              <strong>Topic Mapping: </strong>
+              <br />
+              Group your revenue operations logically (e.g., "Quote Creation,"
+              "Discount Optimization," "Bid Ingestion").
+            </li>
+            <li>
+              <strong>Action Instructions: </strong>
+              <br />
+              Write your prompt instructions with the same rigor as code.
+              Explicitly define how the Agent extracts parameters (like mapping
+              human dates to ISO formats or pulling IDs from the active
+              Lightning page context).
+            </li>
+            <li>
+              <strong>Pivot Instructions: </strong>
+              <br />
+              Strictly instruct the Agent on how to negotiate constraints (e.g.,
+              "If the IP returns a margin violation, you must read the rejection
+              reason and ask the user to adjust the discount tier.").
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-step">
+        <div class="step-indicator"></div>
+        <div class="step-content">
+          <h2>Phase 5: Observability and Task-Based UAT</h2>
+          <h3>Einstein Trust Layer & Task Scenarios</h3>
+          <p>
+            Agent-first systems cannot be tested with traditional click-path
+            scripts.
+          </p>
+          <ul>
+            <li>
+              <strong>Task-Based Testing: </strong>
+              <br />
+              Give UAT testers scenarios (e.g., "A customer has a strict $50k
+              budget for this bundle. Use the Agent to adjust the quote.") to
+              measure task completion rates rather than UI clicks.
+            </li>
+            <li>
+              <strong>Audit Logging: </strong>
+              <br />
+              Extend your response wrappers to write DML records tracking every
+              time the Agent attempts an action. Monitor the Einstein Trust
+              Layer audit logs in Data Cloud to catch prompt injections or
+              hallucination patterns.
+            </li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

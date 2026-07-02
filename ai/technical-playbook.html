@@ -1,0 +1,217 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agent-First Revenue Lifecycle Management Architecture."
+    />
+    <meta name="author" content="Ravi Gandavarapu" />
+    <title>Agent-First Revenue Lifecycle Management Framework
+    </title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="technical-playbook">
+      <h1>The Technical Playbook: Wiring Archetypes to Agent Actions</h1>
+
+      <div class="intro-section" style="margin-bottom: 30px">
+        <h3>Bridging the Gap Between Intent and the Ledger</h3>
+        <p>
+          An Archetype is just a blueprint. To make it functional, we must give
+          the Agentforce LLM the "hands" to execute it. In an agent-first
+          architecture, we do not build UI wizards; we build headless
+          <strong>OmniStudio Integration Procedures (IPs)</strong> and register
+          them as <strong>Agent Actions</strong>.
+        </p>
+        <p>
+          Here is the exact technical sequence for turning a Commercial
+          Archetype into an autonomous AI execution pathway.
+        </p>
+      </div>
+
+      <h2>Step 1: Build the Headless Engine (OmniStudio)</h2>
+      <p>
+        The LLM cannot update databases directly; it can only format text and
+        pass JSON. You must build an OmniStudio Integration Procedure (IP) or
+        Invocable Apex class to handle the actual API chaining, DML operations,
+        and system integrations.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Architectural Component</th>
+            <th>Role in the Agent-First Framework</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>The Input Schema</strong></td>
+            <td>
+              The exact JSON structure the IP requires. This perfectly mirrors
+              the required parameters of your chosen Commercial Archetype (e.g.,
+              Start Date, Term Length, Product ID).
+            </td>
+          </tr>
+          <tr>
+            <td><strong>The Execution Logic</strong></td>
+            <td>
+              The sequential API calls. The IP receives the JSON, hits the RLM
+              Pricing Procedure, creates the Quote object, and generates the
+              line items.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>The Output Payload</strong></td>
+            <td>
+              The success or failure response passed back to the LLM.
+              <em
+                >(e.g., "Success: Quote Q-00123 generated with a Net Total of
+                $5,000.")</em
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Step 2: Register the Agent Action</h2>
+      <p>
+        Once the headless IP is built, you must expose it to the Agentforce
+        brain. You register the IP as a standard Agent Action. The critical
+        component here is the <strong>Action Description</strong>—this is how
+        the LLM knows when to use it.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Archetype Example</th>
+            <th>The LLM Action Description (The Trigger)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Hardware Upgrade Archetype</strong></td>
+            <td>
+              <em
+                >"Use this action when a user explicitly asks to upgrade, add,
+                or replace a physical hardware node. Requires AccountId,
+                Quantity, and Shipping Region."</em
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Usage-Based Archetype</strong></td>
+            <td>
+              <em
+                >"Use this action when a user wants to purchase a metered
+                consumption or telemetry plan. Requires Base Tier, Projected
+                Volume, and Overage Rate."</em
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Step 3: Grounding the Payload (Matrix Integration)</h2>
+      <p>
+        Before the LLM is allowed to fire the Action, it must check the
+        <strong>Commercial Matrix</strong> to ensure the user's request is
+        legally and mathematically sound.
+      </p>
+      <ul>
+        <li>
+          <strong>Prompt Builder Integration:</strong> The Agent Action is
+          wrapped in a Prompt Template.
+        </li>
+        <li>
+          <strong>Data Cloud Grounding:</strong> The template queries Data Cloud
+          or RLM Decision Matrices to inject constraints (e.g.,
+          <em>"This user is in the EU, mandatory GDPR add-on required."</em>).
+        </li>
+        <li>
+          <strong>Deterministic Execution:</strong> The LLM combines the user's
+          intent, the Archetype's required JSON schema, and the Matrix's
+          constraints, then fires the OmniStudio IP to execute the flawless
+          transaction.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Syntrofin Framework - Architectural Theme
+   ========================================================================== */
+
+:root {
+    /* Architectural Color Palette */
+    --bg-primary: #FFFFFF;        /* Pure white for the main document */
+    --bg-secondary: #F8FAFC;      /* Crisp slate-gray for tables/callouts */
+    --text-primary: #0F172A;      /* Deep slate for high readability */
+    --text-secondary: #475569;    /* Mid-gray for secondary text */
+    --accent-blue: #1E3A8A;       /* Deep, authoritative navy blue */
+    --border-color: #CBD5E1;      /* Sharp structural border color */
+    
+    /* Typography */
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* --- Global Resets & Body --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Wrappers --- */
+/* Matches the div classes used across all your generated HTML pages */
+.framework-phases, 
+.discovery-framework, 
+.archetype-library, 
+.technical-playbook, 
+.traceability-ledger, 
+.framework-glossary {
+    max-width: 960px; /* Constrains line length for optimal readability */
+    margin: 0 auto;
+}
+
+/* --- Typography & Headers --- */
+h1, h2, h3, h4 {
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Tightens headers to look like print */
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    border-bottom: 3px solid var(--text-primary);
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-top: 2.5em;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--accent-blue);
+}
+
+p, li {
+    font-size: 1.05rem;
+    margin-bottom: 1em;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* --- Links --- */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-blue); /* Underline style for technical links */
+    transition: background-color 0.2s ease;
+}
+
+a:hover {
+    background-color: #E2E8F0;
+}
+
+/* --- Structural Containers --- */
+.intro-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 24px 32px;
+    margin: 20px 0 40px 0;
+    border-radius: 0px; /* Enforcing sharp, flat design */
+}
+
+.intro-section h3 {
+    margin-top: 0;
+}
+
+/* --- Tables (The core of the documentation) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+th {
+    background-color: #E2E8F0; /* Slightly darker header for contrast */
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+/* Highlights the main subject of table rows */
+td strong {
+    color: var(--accent-blue);
+    display: block; /* Puts the bold title on its own line above the description */
+    margin-bottom: 4px;
+}
+
+/* --- Formatting Utilities --- */
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 50px 0;
+}
+
+/* Optional: Wrap specific technical terms in <span class="mono"> in your HTML if you want them to look like code */
+.mono {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background-color: #E2E8F0;
+    padding: 2px 6px;
+    border-radius: 2px;
+}

@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        max-width: 1400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f8fafc;
+      }
+      h2 {
+        color: #1e293b;
+        border-left: 5px solid #0284c7;
+        padding-left: 15px;
+        margin-top: 20px;
+      }
+      .table-wrapper {
+        overflow-x: auto;
+        margin: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        min-width: 1200px;
+        border-collapse: collapse;
+        background: #fff;
+        font-size: 0.85em;
+      }
+      th {
+        background-color: #0f172a;
+        color: #ffffff;
+        text-align: left;
+        padding: 12px;
+        font-weight: 600;
+        border: 1px solid #cbd5e1;
+      }
+      td {
+        padding: 12px;
+        border: 1px solid #e2e8f0;
+        vertical-align: top;
+      }
+      .phase-cell {
+        font-weight: bold;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        vertical-align: middle;
+        text-align: center;
+        width: 10%;
+      }
+      .step-cell {
+        font-weight: bold;
+        color: #334155;
+        width: 12%;
+      }
+      .object-cell {
+        font-family: "Courier New", Courier, monospace;
+        color: #b91c1c;
+        font-size: 0.95em;
+        width: 15%;
+        background-color: #fdf8f6;
+      }
+      tr:hover {
+        background-color: #f8fafc;
+      }
+      .engine {
+        font-weight: bold;
+        color: #4338ca;
+        display: block;
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>RCA Data Model: Water Tanks vs. Chemical Tanks</h2>
+    <p>
+      Mapping the 16 functional steps to core Salesforce objects and Revenue
+      Cloud engines.
+    </p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Q2C Phase</th>
+            <th>Functional Step</th>
+            <th>Core RCA Data Model</th>
+            <th>
+              Dealer Track (Water Tanks)<br /><span
+                style="font-weight: normal; font-size: 0.9em; color: #cbd5e1"
+                >High-Volume / Standardized</span
+              >
+            </th>
+            <th>
+              Industrial Track (Chemical Tanks)<br /><span
+                style="font-weight: normal; font-size: 0.9em; color: #cbd5e1"
+                >Complex / Milestone-Based</span
+              >
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4" class="phase-cell">1. Quoting</td>
+            <td class="step-cell">Configuration</td>
+            <td class="object-cell">
+              Product2, ProductCatalog, AttributeDefinition
+            </td>
+            <td>
+              <span class="engine">Product Catalog Management:</span> Uses basic
+              product bundles with predefined SKUs (e.g., 500-gal, 1000-gal).
+            </td>
+            <td>
+              <span class="engine">Attribute-Based Configuration:</span> Uses
+              technical attributes (e.g., acidity levels, PSI) to filter and
+              select the correct custom liners and valves.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Pricing</td>
+            <td class="object-cell">
+              PricebookEntry, QuoteLineItem, ContextRule
+            </td>
+            <td>
+              <span class="engine">Salesforce Pricing:</span> Executes Pricing
+              Procedures using Lookup Tables to apply volume-tier discounts for
+              dealers.
+            </td>
+            <td>
+              <span class="engine">Salesforce Pricing:</span> Applies cost-plus
+              markup pricing and triggers Advanced Approvals for margin
+              protection.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proposal</td>
+            <td class="object-cell">QuoteDocument, ContentVersion</td>
+            <td>
+              <span class="engine">Document Generation:</span> Instantly
+              generates a standard 1-page PDF order summary.
+            </td>
+            <td>
+              <span class="engine">OmniStudio DocGen:</span> Pulls Quote JSON to
+              generate a 20-page Statement of Work (SOW) including technical
+              schematics.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">CLM</td>
+            <td class="object-cell">Contract, DocumentClause</td>
+            <td>
+              <span class="engine">Standard Approval:</span> Auto-approved
+              click-wrap acceptance via community portal.
+            </td>
+            <td>
+              <span class="engine">Salesforce Contracts:</span> Utilizes the
+              Clause Library for heavy redlining of liability and indemnity
+              terms.
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="4" class="phase-cell">2. Fulfillment</td>
+            <td class="step-cell">Orchestration</td>
+            <td class="object-cell">Order, OrderItem, Asset</td>
+            <td>
+              <span class="engine">Order Generation:</span> Converts Quote to a
+              single standard Order for immediate fulfillment.
+            </td>
+            <td>
+              <span class="engine">Order Splitting:</span> Creates multiple
+              Orders (one for manufacturing, one for field installation labor).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Allocation</td>
+            <td class="object-cell">Location, FulfillmentOrder</td>
+            <td>
+              <span class="engine">Omnichannel Inventory:</span> Reserves
+              existing finished water tanks at the nearest regional warehouse.
+            </td>
+            <td>
+              <span class="engine">Procurement Trigger:</span> Logs demand for
+              raw materials; relies on integration to trigger purchase orders in
+              the ERP.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Logistics</td>
+            <td class="object-cell">Shipment, FulfillmentOrderLineItem</td>
+            <td>
+              <span class="engine">Standard Routing:</span> Generates basic LTL
+              freight tracking records.
+            </td>
+            <td>
+              <span class="engine">Complex Logistics:</span> Tracks oversized
+              flatbed transport and coordinates arrival with site readiness.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Proof of Delivery</td>
+            <td class="object-cell">ServiceAppointment, WorkOrder</td>
+            <td>
+              <span class="engine">Status Update:</span> Shipment status changes
+              to "Delivered"; Order activates.
+            </td>
+            <td>
+              <span class="engine">Salesforce Field Service:</span> Engineers
+              complete the WorkOrder with a signed safety checklist; Order
+              activates.
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="4" class="phase-cell">3. Billing</td>
+            <td class="step-cell">Triggers</td>
+            <td class="object-cell">BillingSchedule, InvoiceLine</td>
+            <td>
+              <span class="engine">On-Shipment Billing:</span> OrderItem creates
+              a pending invoice line the moment the shipment departs.
+            </td>
+            <td>
+              <span class="engine">Milestone Billing:</span> BillingSchedules
+              dictate invoices trigger at 30% (Order), 40% (Factory Completion),
+              30% (Installation).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Taxation</td>
+            <td class="object-cell">TaxTreatment, TaxRate</td>
+            <td>
+              <span class="engine">Standard Tax Engine:</span> Applies standard
+              local sales tax based on the dealer's shipping address.
+            </td>
+            <td>
+              <span class="engine">External Tax Callout:</span> Evaluates
+              complex B2B tax exemptions (e.g., capital improvements for
+              chemical plants).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Consolidation</td>
+            <td class="object-cell">Invoice, InvoiceBatchRun</td>
+            <td>
+              <span class="engine">Batch Schedulers:</span> Groups all orders
+              placed by the dealer that month onto a single, clean invoice.
+            </td>
+            <td>
+              <span class="engine">Project Invoicing:</span> Generates a highly
+              detailed, standalone invoice for that specific chemical tank
+              project.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Accounts Rec.</td>
+            <td class="object-cell">Payment, PaymentAllocation</td>
+            <td>
+              <span class="engine">Salesforce Payments:</span> Matches EDI
+              payments or auto-drafts to the consolidated invoice.
+            </td>
+            <td>
+              <span class="engine">Retainage Handling:</span> Tracks partial
+              payments and holds final balance until the plant signs the safety
+              certificate.
+            </td>
+          </tr>
+
+          <tr>
+            <td rowspan="4" class="phase-cell">4. Rev Rec</td>
+            <td class="step-cell">Obligations</td>
+            <td class="object-cell">RevenueObligation</td>
+            <td>
+              <span class="engine">Rev Rec Rules:</span> Groups the OrderItem
+              into a single obligation (the physical water tank).
+            </td>
+            <td>
+              <span class="engine">Rev Rec Rules:</span> Splits the contract
+              into multiple distinct obligations (Tank Hardware, Installation
+              Labor, 5-Year Warranty).
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Allocation</td>
+            <td class="object-cell">RevenueAllocation</td>
+            <td>
+              <span class="engine">SSP Engine:</span> 100% of the transaction
+              price remains allocated to the physical tank.
+            </td>
+            <td>
+              <span class="engine">SSP Engine:</span> Reallocates the total
+              discounted project price across the hardware, labor, and warranty
+              based on their Standalone Selling Prices.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Scheduling</td>
+            <td class="object-cell">RevenueSchedule, RevenueTransaction</td>
+            <td>
+              <span class="engine">Point-in-Time:</span> Generates a single
+              transaction to recognize 100% of revenue upon shipment.
+            </td>
+            <td>
+              <span class="engine">Hybrid Amortization:</span> Recognizes
+              hardware/labor at point-in-time (acceptance), but creates a
+              60-month ratable schedule for the warranty.
+            </td>
+          </tr>
+          <tr>
+            <td class="step-cell">Reporting</td>
+            <td class="object-cell">FinanceTransaction, FinanceBook</td>
+            <td>
+              <span class="engine">Finance Logging:</span> Posts cleanly to the
+              "Product Revenue" general ledger account.
+            </td>
+            <td>
+              <span class="engine">Finance Logging:</span> Posts to "Project
+              Revenue" and "Deferred Services Liability" accounts for downstream
+              ERP consumption.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

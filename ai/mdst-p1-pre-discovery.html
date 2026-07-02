@@ -1,0 +1,848 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Pre</title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <h1 style="text-align: center; font-weight: 700; font-size: 2.2rem">
+      Pre or Early Discovery - Process Taxonomy And Catalogue
+    </h1>
+    <h3 style="text-align: center">
+      Maturity, Discovery, Solution, and Transformation (MDST) and Requirements
+      Traceability Matrix Framework (RTM)
+    </h3>
+    <br />
+    <!-- TOC -->
+
+    <p><a href="#where-pre-discovery-fits">Where Pre-Discovery Fits</a></p>
+    <p>
+      <a href="#harvest-documents">Harvest Documents Before Discovery Begins</a>
+    </p>
+    <p>
+      <a href="#emai-to-ask-for-docs"
+        >Emai To Ask For Pre-Discovery Documents</a
+      >
+    </p>
+    <p><a href="#process-taxonomy-rlm">Process Taxonomy - RLM</a></p>
+
+    <br />
+
+    <section id="section-straw-man">
+      <h1 id="where-pre-discovery-fits">Where Pre-Discovery Fits</h1>
+
+      <h2 id="stage-1-pre-discovery-project-initiation">
+        After Vision: Pre-Discovery (Project Initiation)
+      </h2>
+      <p>
+        <strong>What you are doing:</strong> Building the Process Catalog (The
+        "Forest"). At this stage, before you interview a single sales rep, you
+        sit with leadership to map out the high-level business capabilities. You
+        are not mapping <em>how</em> they do it; you are just listing
+        <em>what</em> they do. We break this into levels.
+      </p>
+      <table>
+        <colgroup>
+          <col style="width: 13%" />
+          <col style="width: 35%" />
+          <col style="width: 32%" />
+          <col style="width: 18%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Hierarchy</th>
+            <th>What It Is</th>
+            <th>Example for our "Thrive" Scenario</th>
+            <th>When It's Defined</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Level 1 (L1)</strong></td>
+            <td>
+              <strong>Value Stream:</strong> The massive, end-to-end lifecycle.
+            </td>
+            <td><em>Quote-to-Cash (QTC)</em></td>
+            <td>Project Kickoff (Scoping)</td>
+          </tr>
+          <tr>
+            <td><strong>Level 2 (L2)</strong></td>
+            <td>
+              <strong>Process Area:</strong> The major buckets within the Value
+              Stream.
+            </td>
+            <td>
+              <em>Product Configuration, Pricing, Contracting, Billing.</em>
+            </td>
+            <td>Project Kickoff (Scoping)</td>
+          </tr>
+          <tr>
+            <td><strong>Level 3 (L3)</strong></td>
+            <td>
+              <strong>Specific Process:</strong> The actual task to be
+              accomplished.
+            </td>
+            <td><em>Event Quoting, Margin Approval, Vendor Onboarding.</em></td>
+            <td>Pre-Discovery Planning</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>Architect's Secret:</strong> Compiling this L1-L3 list
+        <em>before</em> Discovery is how you define project scope. If "Vendor
+        Onboarding" is on the L3 list, it's in scope. If "Employee Payroll"
+        isn't on the list, it's out of scope.
+      </p>
+
+      <h2 id="stage-2-the-discovery-phase">Leading to: The Discovery Phase</h2>
+      <p>
+        <strong>What you are doing:</strong> Documenting the "As-Is" (The
+        "Trees"). Now you take your compiled L3 list into the business
+        workshops. You are no longer just listing processes; you are mapping the
+        literal steps, pain points, and actors for each one.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>You say:</strong>
+            <em
+              >"We are here to look at process L3.2: Event Quoting. Walk me
+              through exactly what you click, what spreadsheets you open, and
+              who you email to get a quote out the door today."</em
+            >
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>The Output:</strong> This is where you populate the
+            <strong>Discovery Template</strong> and the
+            <strong>3D Gap Analysis</strong> we built earlier. You identify that
+            the <em>Event Quoting</em> process is broken because it relies on
+            manual margin calculations.
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="stage-3-solutioning-design">
+        Realized Through: Solutioning, and Build
+      </h2>
+      <p>
+        <strong>What you are doing:</strong> Designing the "To-Be". You take the
+        broken As-Is processes and redraw them to leverage the new technology
+        (like Salesforce Revenue Cloud).
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The Output:</strong> A completely new process map where the
+            system handles the heavy lifting (e.g., the system calculates the
+            20% margin, not the rep).
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="stage-4-governance-post-go-live">Governed After: Post Go Live</h2>
+      <p>
+        <strong>What you are doing:</strong> Maintaining the Process Catalog.
+        The list of processes you compiled in Stage 1 is now your Center of
+        Excellence (CoE) backlog. When the business asks for a new feature, you
+        look at the Process Catalog and ask,
+        <em>"Which L3 process does this improve?"</em>
+      </p>
+      <h2 id="summary-the-timeline-of-process-compilation">
+        Summary: The Timeline of Process Compilation
+      </h2>
+      <ol type="1">
+        <li>
+          <p>
+            <strong>Before you start:</strong> You list the <em>Names</em> of
+            the processes to build boundaries (The Scope).
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>During Discovery:</strong> You document the
+            <em>Current Reality</em> of those processes (The As-Is).
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>During Solutioning:</strong> You design the
+            <em>Future State</em> of those processes (The To-Be).
+          </p>
+        </li>
+      </ol>
+
+      <br />
+      <h1 id="harvest-documents">Harvest Documents Before Discovery Begins</h1>
+      <p>
+        This is the "blank page" problem of enterprise consulting. How do you
+        know what a company does before they tell you what they do?
+      </p>
+      <p>
+        The golden rule of the Pre-Discovery (Recce) phase is:
+        <strong>You never start with a blank page.</strong> You do not wait for
+        the business to recite their processes; you bring a predefined list and
+        force them to edit it.
+      </p>
+
+      <h2 id="methods-to-compile-initial-process-catalogue">
+        Methods to Compile Initial Process Catalogue
+      </h2>
+
+      <p>
+        Here are the widely used methods and tools architects use to compile
+        that initial L1-L3 Process Catalog <em>before</em> Discovery begins.
+      </p>
+
+      <h2 id="method-1-industry-reference-models-the-cheat-codes">
+        Method 1: Industry Reference Models (The Cheat Codes)
+      </h2>
+
+      <p>
+        You don't need to guess what an event management, manufacturing, or
+        software company does. Industry consortiums have already mapped every
+        business process on earth. You download their map, highlight what you
+        think applies, and use that as your baseline.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>APQC (American Productivity &amp; Quality Center):</strong>
+            This is the gold standard. APQC provides free, downloadable "Process
+            Classification Frameworks" (PCFs) for almost every industry. It
+            gives you the exact L1 to L4 taxonomy for a business.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>TM Forum (eTOM):</strong> If you are working in
+            Telecommunications or Media, this is the mandatory standard for
+            process mapping.
+          </p>
+        </li>
+        <li>
+          <p><strong>ITIL:</strong> For IT service management processes.</p>
+        </li>
+      </ul>
+
+      <h2 id="method-2-artifact-harvesting-the-paper-trail">
+        Method 2: Artifact Harvesting (The Paper Trail)
+      </h2>
+      <p>
+        Before you schedule a single workshop, you ask the client's IT or
+        Project Management Office (PMO) for existing documentation. You mine
+        these documents strictly for <em>nouns</em> and <em>verbs</em> to add to
+        your catalog.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>The SOW / RFP:</strong> The Statement of Work or Request for
+            Proposal that initiated your project is a goldmine. If the SOW says
+            "Must support split-billing," you immediately add
+            <em>L3: Split-Billing</em> to your catalog.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong
+              >Standard Operating Procedures (SOPs) &amp; Training
+              Manuals:</strong
+            >
+            HR and onboarding teams often have step-by-step guides for new
+            hires. You aren't reading them for the pain points; you are just
+            extracting the titles of the processes.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Existing Org Charts:</strong> If you see a team called "Deal
+            Desk," you know you have to add
+            <em>L3: Non-Standard Pricing Approvals</em> to your catalog.
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="method-3-system-snooping-the-metadata-recce">
+        Method 3: System Snooping (The Metadata Recce)
+      </h2>
+      <p>
+        If the organization is already using Salesforce (or another ERP/CRM) and
+        you are coming in to implement Revenue Cloud Advanced, their current
+        system configuration will tell you exactly what processes they run
+        today.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Custom Objects &amp; Fields:</strong> If you look at their
+            Salesforce schema and see a custom object called Vendor_Rebate__c,
+            you immediately add <em>L3: Vendor Rebate Management</em> to your
+            map.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Approval Processes &amp; Flows:</strong> Looking at the
+            names of active workflows gives you a literal list of automated
+            business processes.
+          </p>
+        </li>
+      </ul>
+      <h2 id="the-tools-of-the-trade">The Tools of the Trade</h2>
+      <p>
+        When compiling and presenting this catalog, architects use a mix of
+        high-tech visualization and low-tech organization tools.
+      </p>
+
+      <h2 id="process-mining-tools-the-high-tech-approach">
+        1. Process Mining Tools (The High-Tech Approach)
+      </h2>
+      <p>
+        In highly mature enterprise environments, organizations use software
+        that connects to their ERP/CRM and reads the system logs to
+        automatically draw the process maps based on what users are
+        <em>actually</em> clicking.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Celonis:</strong> The heavyweight champion of process
+            mining.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>UiPath Process Mining:</strong> Often used if the company is
+            already heavy into robotic process automation (RPA).
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="enterprise-architecture-ea-mapping-tools">
+        2. Enterprise Architecture (EA) &amp; Mapping Tools
+      </h2>
+      <p>
+        These are used to visually draw the L1-L3 taxonomy boxes so executives
+        can agree on the boundaries.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Lucidchart / Visio:</strong> The standard for drawing the
+            high-level Value Streams (L1) and Process Areas (L2).
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Signavio (SAP) / ARIS / LeanIX:</strong> Heavy-duty
+            Enterprise Architecture tools that link processes to IT systems and
+            business capabilities.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Elements.cloud:</strong> Specifically built for Salesforce.
+            It allows you to map business processes and tie them directly to
+            Salesforce metadata (like fields and objects).
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="the-humble-spreadsheet-the-workhorse">
+        3. The Humble Spreadsheet (The Workhorse)
+      </h2>
+      <p>
+        Despite all the fancy tools, 90% of architects compile their final
+        Process Catalog in <strong>Excel or Smartsheet</strong>.
+      </p>
+      <ul>
+        <li>
+          <p>
+            Why? Because a spreadsheet allows you to add columns for "In Scope /
+            Out of Scope", "Process Owner", and "Priority." It is the easiest
+            format to present to a steering committee for sign-off before
+            Discovery begins.
+          </p>
+        </li>
+      </ul>
+      <h2 id="the-day-0-alignment-workshop">The "Day 0" Alignment Workshop</h2>
+      <p>
+        Once you have used APQC and Artifact Harvesting to build your draft
+        spreadsheet, you hold a 2-hour "Day 0" meeting with the executive
+        sponsors.
+      </p>
+      <p>You put the spreadsheet on the screen and say:</p>
+      <p>
+        <em
+          >"Based on industry standards and your existing documentation, here
+          are the 40 processes that make up your Quote-to-Cash motion. Are any
+          of these obsolete? Are we missing any major capabilities?"</em
+        >
+      </p>
+      <p>
+        They will cross out five, add two, and you walk out with your locked,
+        baseline catalog. Now, you are ready for Discovery.
+      </p>
+
+      <br />
+      <h1 id="emai-to-ask-for-docs">Emai To Ask For Pre-Discovery Documents</h1>
+      <p>
+        Here is the exact email template you can send to the project sponsor.
+      </p>
+      <p>
+        As an architect, this email does two things: it proves you are already
+        doing the heavy lifting before the clock starts, and it sets the
+        expectation that your workshops will be highly targeted, not open-ended
+        venting sessions.
+      </p>
+      <p>
+        I have tailored this specifically for a Revenue Cloud engagement under
+        your firm, so it is ready to copy, paste, and send.
+      </p>
+      <h2 id="email">Email</h2>
+      <p>
+        <strong>Subject:</strong> Pre-Discovery Artifact Request: [Client Name]
+        Revenue Cloud Transformation
+      </p>
+      <p>Hi [Sponsor Name],</p>
+      <p>
+        I am looking forward to our upcoming official kickoff for the Revenue
+        Cloud implementation.
+      </p>
+      <p>
+        To ensure we make the absolute best use of your team's time during the
+        upcoming Discovery workshops, my team at Syntrofin is currently
+        compiling the baseline "Quote-to-Cash" process catalog (Level 1 through
+        Level 3 processes).
+      </p>
+      <p>
+        Rather than starting from a blank page in our workshops, we want to map
+        as much of your current process landscape as possible beforehand. This
+        allows us to use our workshop time to focus purely on pain points, edge
+        cases, and future-state solutioning, rather than basic fact-finding.
+      </p>
+      <p>
+        Could you or your PMO please provide any existing documentation in the
+        following categories by
+        <strong>[Date - ideally 4-5 days before Day 0]</strong>?
+      </p>
+      <p><strong>1. Strategic &amp; Scope Alignment</strong></p>
+      <ul>
+        <li>
+          <p>
+            The finalized Business Case or Project Charter (focusing on KPIs
+            like margin targets or quote velocity).
+          </p>
+        </li>
+        <li>
+          <p>
+            Any existing high-level Enterprise Architecture or System Landscape
+            diagrams.
+          </p>
+        </li>
+      </ul>
+      <p><strong>2. Organizational Structure</strong></p>
+      <ul>
+        <li>
+          <p>
+            Current Org Charts for Sales, Sales Operations, Deal Desk, and
+            Finance.
+          </p>
+        </li>
+        <li>
+          <p>
+            A list of key subject matter experts (SMEs) who own the quoting,
+            pricing, and approval processes.
+          </p>
+        </li>
+      </ul>
+      <p><strong>3. Process &amp; Operational Artifacts</strong></p>
+      <ul>
+        <li>
+          <p>
+            Standard Operating Procedures (SOPs) or new-hire training manuals
+            for the sales/quoting teams.
+          </p>
+        </li>
+        <li>
+          <p>
+            Any existing process maps (Visio, Lucidchart, etc.) covering CPQ,
+            order management, or billing.
+          </p>
+        </li>
+        <li>
+          <p>
+            A copy of your current manual quoting tools (e.g., the Excel
+            spreadsheets currently used for margin calculations).
+          </p>
+        </li>
+      </ul>
+      <p><strong>4. System Context (If available)</strong></p>
+      <ul>
+        <li>
+          <p>
+            A data dictionary or schema export of your current CRM/ERP setup
+            (specifically around Products, Price Books, and custom quoting
+            objects).
+          </p>
+        </li>
+      </ul>
+      <p>
+        Please don't worry if some of these documents are outdated or
+        incomplete—we are simply looking for the "nouns and verbs" of how your
+        business operates today to build our initial process map. You can upload
+        everything directly to this secure folder:
+        <strong>[Link to Google Drive / SharePoint]</strong>.
+      </p>
+      <p>Let me know if you have any questions.</p>
+      <p>Best regards,</p>
+      <p><strong>Ravi Gandavarapu</strong> Architect, Syntrofin LLC</p>
+
+      <h2 id="why-this-email-works">Why this email works:</h2>
+      <ol type="1">
+        <li>
+          <p>
+            <strong>The "Why" is client-centric:</strong> You aren't asking for
+            homework; you are telling them you want to save their team from
+            sitting in long, boring baseline meetings.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>It requests the "Excel Spreadsheet":</strong> Specifically
+            asking for their current manual tools (like the margin calculator)
+            is the ultimate cheat code for understanding their L3 pricing
+            processes before you even talk to a rep.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>It lowers the barrier to entry:</strong> Telling them "it's
+            okay if it's outdated" ensures they actually send it, rather than
+            waiting three weeks to update a Visio file.
+          </p>
+        </li>
+      </ol>
+
+      <br />
+      <h1 id="process-taxonomy-rlm">
+        Process Taxonomy (Level 1 - Level 3) - RLM
+      </h1>
+
+      <p>
+        That is spot on. "Reconnaissance" or "scouting" is the absolute best
+        analogy for the Pre-Discovery phase.
+      </p>
+      <p>
+        If you just wander into the process forest without scouting it first,
+        the business stakeholders will drag you deep into the weeds, and you
+        will spend three weeks mapping how they order office supplies instead of
+        fixing their quoting engine.
+      </p>
+      <p>
+        Here is how your analogy perfectly maps to the architectural lifecycle:
+      </p>
+
+      <h2 id="pre-discovery-the-aerial-recce-drawing-the-map">
+        1. Pre-Discovery: The Aerial Recce (Drawing the Map)
+      </h2>
+      <p>
+        You are flying over the forest in a helicopter. You are not looking at
+        individual trees or leaves. You are identifying the boundaries of the
+        forest, the major rivers, and the mountains.
+      </p>
+      <ul>
+        <li>
+          <p><strong>The Goal:</strong> Define the perimeter.</p>
+        </li>
+        <li>
+          <p>
+            <strong>The Output:</strong> A Level 1 to Level 3 Process Taxonomy.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>What it sounds like:</strong>
+            <em
+              >"Okay, we are going to fix 'Event Quoting' and 'Vendor Intake.'
+              We are strictly ignoring the 'Employee Payroll' process over there
+              in the valley."</em
+            >
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="discovery-boots-on-the-ground-walking-the-trails">
+        2. Discovery: Boots on the Ground (Walking the Trails)
+      </h2>
+      <p>
+        Now that you have the map, you land the helicopter and walk the specific
+        trails you outlined during the recce. This is where you look at the
+        actual trees.
+      </p>
+      <ul>
+        <li>
+          <p><strong>The Goal:</strong> Find the obstacles on the path.</p>
+        </li>
+        <li>
+          <p>
+            <strong>The Output:</strong> The "As-Is" pain points and the Gap
+            Analysis.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>What it sounds like:</strong>
+            <em
+              >"Alright, we are walking the 'Event Quoting' trail today. Show me
+              exactly where you get stuck in the mud. Ah, I see you are manually
+              calculating a 20% margin in Excel here—that's a hazard we need to
+              pave over."</em
+            >
+          </p>
+        </li>
+      </ul>
+
+      <h2 id="solutioning-engineering-the-highway-the-to-be">
+        3. Solutioning: Engineering the Highway (The "To-Be")
+      </h2>
+      <p>
+        <span id="_Toc223082735" class="anchor"></span
+        ><strong
+          >Why the "Recce" is your ultimate shield as an Architect</strong
+        >
+      </p>
+      <p>
+        The most powerful thing you can do as a consultant is
+        <strong>control the scope</strong>.
+      </p>
+      <p>
+        When a sales rep inevitably brings up a totally unrelated complaint
+        during a Discovery workshop (e.g.,
+        <em>"Our lead routing is broken!"</em>), you pull out your map from the
+        Pre-Discovery recce and say:
+      </p>
+      <p>
+        <em
+          >"I hear you, and that is a real pain point. But if we look at our
+          Process Taxonomy for this phase, Lead Routing is outside our
+          perimeter. We are strictly scouting the 'Quote-to-Cash' territory
+          right now. Let's put Lead Routing in the backlog for the next
+          recce."</em
+        >
+      </p>
+      <h1 id="taxonomy-for-salesforce-cpq-and-revenue-cloud-implementation">
+        Taxonomy For Salesforce CPQ and Revenue Cloud implementation
+      </h1>
+      <ul>
+        <li>
+          <p>
+            <strong>At 10,000 feet (Level 1 &amp; Level 2):</strong> The
+            platform doesn't matter. A business must execute "Quote-to-Cash"
+            (L1) and "Pricing Strategy" (L2) whether they are using Salesforce
+            Revenue Cloud Advanced, an Oracle ERP, or a notebook. These are pure
+            business capabilities.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>At the ground level (Level 3):</strong> Knowing you are
+            moving to Revenue Cloud Advanced absolutely changes your recce.
+            Because Revenue Cloud Advanced utilizes OmniStudio, Enterprise
+            Product Catalog (EPC), and dynamic Pricing Procedures, it can
+            natively handle things that legacy CPQ cannot. Knowing this allows
+            you to scout for very specific L3 processes (like attribute-based
+            pricing or matrix-driven margin floors) because you know your future
+            platform can easily digest them.
+          </p>
+        </li>
+      </ul>
+      <p>
+        Here is your standard Pre-Discovery Process Taxonomy (The Map),
+        specifically tailored for a Salesforce Revenue Cloud Advanced
+        implementation.
+      </p>
+      <h2 id="the-revenue-cloud-advanced-process-taxonomy-l1---l3">
+        The Revenue Cloud Advanced Process Taxonomy (L1 - L3)
+      </h2>
+      <table>
+        <colgroup>
+          <col style="width: 19%" />
+          <col style="width: 30%" />
+          <col style="width: 50%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>L1: Value Stream</th>
+            <th>L2: Process Area</th>
+            <th>L3: Specific Process (The Recce Targets)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Quote-to-Cash (QTC)</strong></td>
+            <td><strong>1.0 Enterprise Product Catalog (EPC)</strong></td>
+            <td>
+              <p>1.1 Commercial Product Creation &amp; Lifecycle</p>
+              <p>1.2 Product Bundling &amp; Structuring</p>
+              <p>1.3 Attribute Definition (e.g., Size, Color, SLA)</p>
+              <p>1.4 Cost Book &amp; Base Margin Entry</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>2.0 Pricing Strategy &amp; Logic</strong></td>
+            <td>
+              <p>2.1 Base List Pricing Setup</p>
+              <p>2.2 Attribute-Based Pricing Rules</p>
+              <p>
+                2.3 <strong>Cost-Plus / Margin Floor Calculations</strong>
+                <em>(Our Dinner &amp; Drinks scenario)</em>
+              </p>
+              <p>2.4 Discount Matrices &amp; Promotions</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>3.0 Quoting &amp; Configuration</strong></td>
+            <td>
+              <p>3.1 Opportunity to Quote Creation</p>
+              <p>3.2 Guided Selling / Needs Analysis</p>
+              <p>3.3 Product Selection &amp; Configuration</p>
+              <p>3.4 Multi-Site / Multi-Group Quoting</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>4.0 Deal Desk &amp; Governance</strong></td>
+            <td>
+              <p>4.1 Manual Discount Entry</p>
+              <p>4.2 Margin / Commercial Approval Routing</p>
+              <p>4.3 Non-Standard Terms Approval</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>5.0 Document &amp; Output</strong></td>
+            <td>
+              <p>5.1 Proposal / Document Generation</p>
+              <p>5.2 E-Signature Routing</p>
+              <p>5.3 Contract Redlining</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>6.0 Order &amp; Asset Management</strong></td>
+            <td>
+              <p>6.1 Quote-to-Order Conversion</p>
+              <p>6.2 Asset Creation &amp; Registration</p>
+              <p>6.3 Subscription Proration &amp; Co-Terming</p>
+              <p>6.4 Renewals &amp; Amendments</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="how-to-use-this-map-in-your-discovery-kickoff">
+        How to use this "Map" in your Discovery Kickoff
+      </h2>
+      <p>
+        When you sit down with the VP of Sales and the CFO, you put this exact
+        taxonomy on the screen and draw physical boxes around what you are going
+        to scout.
+      </p>
+      <p>
+        <strong>The Boundary Setting:</strong>
+        <em
+          >"Looking at our QTC map, for Phase 1, we are exclusively focused on
+          resolving the margin leakage. Therefore, our discovery sessions will
+          only cover <strong>2.3 (Margin Floor Calculations)</strong>,
+          <strong>3.3 (Product Configuration)</strong>, and
+          <strong>4.2 (Approval Routing)</strong>. We are completely ignoring
+          <strong>5.3 (Contract Redlining)</strong> and
+          <strong>6.4 (Renewals)</strong> until Phase 2. Does everyone
+          agree?"</em
+        >
+      </p>
+
+      <h2 id="why-knowing-revenue-cloud-advanced-changes-the-l3-map">
+        Why knowing "Revenue Cloud Advanced" changes the L3 Map
+      </h2>
+      <p>
+        If you were just implementing standard Sales Cloud, your L3 process for
+        pricing might just be "Select Price Book."
+      </p>
+      <p>
+        But because you know you have
+        <strong>Revenue Cloud Advanced</strong> (and OmniStudio), you
+        intentionally add L3 processes like
+        <strong>2.2 (Attribute-Based Pricing)</strong> and
+        <strong>2.3 (Margin Floor Calculations)</strong> to your map. You scout
+        for those complex requirements <em>because</em> you know the platform's
+        Pricing Procedures and Decision Matrices can solve them efficiently. You
+        are hunting for the exact problems your machine was built to fix.
+      </p>
+    </section>
+  </body>
+</html>

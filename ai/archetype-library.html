@@ -1,0 +1,374 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agent-First Revenue Lifecycle Management Architecture."
+    />
+    <meta name="author" content="Ravi Gandavarapu" />
+    <title>Agent-First Revenue Lifecycle Management Framework
+    </title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="archetype-library">
+      <h1>The Commercial Archetype Library</h1>
+
+      <div class="intro-section" style="margin-bottom: 30px">
+        <h3>The Rosetta Stone of Headless Execution</h3>
+        <p>
+          When an AI agent receives a complex quote request in natural language,
+          it needs to know exactly what JSON payload structure to build. This
+          library is not a list of UI variations; it is the ultimate menu of
+          <strong>headless execution pathways</strong>.
+        </p>
+        <p>
+          Instead of building hundreds of custom quoting workflows, we map every
+          possible way the business breathes revenue into these universal
+          Archetypes. Once identified, we configure these specific pathways as
+          Actions for the Agentforce LLM, bridging human intent directly to the
+          backend ledger.
+        </p>
+      </div>
+
+      <h2>1. The Intent Domains (Industry Context)</h2>
+      <p>
+        Every industry has a different conversational vocabulary. This section
+        defines the overarching conversational boundaries the LLM must be
+        grounded in. An agent cannot parse intent if it doesn't understand the
+        domain's fundamental revenue mechanics.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Domain Focus</th>
+            <th>Typical Revenue Models</th>
+            <th>LLM Cognitive Load (What the AI must understand)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SaaS / Cloud Services</strong></td>
+            <td>Subscriptions, Usage, Tiers</td>
+            <td>
+              Proration complexity, ARR/MRR consistency, and parsing mid-term
+              upgrade/downgrade intents without losing historical data.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Manufacturing (B2B)</strong></td>
+            <td>Configured BOMs, Milestones</td>
+            <td>
+              Complex dependencies, partial shipments leading to partial
+              billing, and tying revenue directly to delivery acceptance.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Telecom / Media</strong></td>
+            <td>Bundles, Overage, Long-term</td>
+            <td>
+              Real-time usage mediation, massive product catalogs, and
+              high-volume amendment payloads.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. Orchestration Routing Logic (Sales Strategy)</h2>
+      <p>
+        Once the LLM understands the domain, it must know how to route the data.
+        This section dictates the execution flow—whether the AI can silently
+        automate the payload or if it must orchestrate a human-in-the-loop
+        approval.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Routing Logic</th>
+            <th>What it is</th>
+            <th>Agentic Implication & API Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Transactional Automation</strong></td>
+            <td>High-volume, fast close, minimal negotiation.</td>
+            <td>
+              <strong>Silent API Execution:</strong> The Agent parses intent,
+              formats the payload, and dispatches directly to the order object
+              with no human review.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Consultative & Guided</strong></td>
+            <td>Diagnose, propose, and tailor to specific needs.</td>
+            <td>
+              <strong>Draft & Approval Routing:</strong> The Agent extracts
+              parameters to build a draft configuration, triggering a workflow
+              for a human rep or manager to review before finalizing.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Usage / Consumption</strong></td>
+            <td>Pay purely for what is consumed over time.</td>
+            <td>
+              <strong>Telemetry Integration:</strong> The Agent's payload must
+              establish the usage ingestion endpoints and post-period rating
+              logic, rather than a fixed quote.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Product Payload Archetypes (The Value Commitment)</h2>
+      <p>
+        This is where the specific data structures are defined. The LLM must
+        know that if a user asks for a "Subscription Product," the payload
+        strictly requires a Start Date and Term Length to be accepted by the
+        system.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Archetype Blueprint</th>
+            <th>Key Characteristics</th>
+            <th>Required Payload Parameters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>One-Time (Non-Recurring)</strong></td>
+            <td>Hardware, perpetual licenses, installation fees.</td>
+            <td>
+              <span style="color: #337ab7"
+                >Quantity, Unit Price, Target Delivery Date.</span
+              >
+              No term lengths or proration logic allowed.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Subscription (Termed)</strong></td>
+            <td>SaaS licenses, support plans, maintenance.</td>
+            <td>
+              <span style="color: #337ab7"
+                >Start Date, Term Length, Billing Frequency.</span
+              >
+              Must include auto-renewal flags.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Hybrid Bundle (Dynamic)</strong></td>
+            <td>Mixed fixed + variable (e.g., Base fee + overages).</td>
+            <td>
+              <span style="color: #337ab7">Parent-Child Node Mapping.</span> The
+              payload must define the relational allocation between the base fee
+              and the usage tiers.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Financial Adjustment</strong></td>
+            <td>Discounts, credits, commercial corrections.</td>
+            <td>
+              <span style="color: #337ab7"
+                >Adjustment Amount/Type, Target Asset ID.</span
+              >
+              Requires strict linkage to the original order object.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Fulfillment Archetypes (The Obligation)</h2>
+      <p>
+        A Quote is just a promise; the fulfillment payload is the commitment.
+        This section instructs the Agent on how to shape the downstream order
+        data, ensuring hybrid setups are split perfectly for operations.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Fulfillment Structure</th>
+            <th>Core Concept</th>
+            <th>RLM Downstream Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>One-Time Delivery</strong></td>
+            <td>Single instance, invoiced immediately.</td>
+            <td>
+              Order is generated, ownership transfers immediately, and minimal
+              lifecycle tracking is initiated.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Subscription-Linked Asset</strong></td>
+            <td>Asset tied directly to a recurring timeline.</td>
+            <td>
+              The Agent must map the Subscription to an AssetStatePeriod object,
+              ensuring future amendments have a historical baseline.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Consumable / Metered</strong></td>
+            <td>Asset consumed over time by volume.</td>
+            <td>
+              Asset creation triggers a connection to external usage tracking
+              systems to feed future invoices.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5. Subledger Integration Archetypes (Revenue Realization)</h2>
+      <p>
+        This is the ultimate traceability test. It dictates exactly how the
+        agent must format the financial data so that when it hits SAP FICO or
+        Revenue Cloud, the ledger recognizes the money in compliance with
+        accounting standards.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="width: 100%; text-align: left; border-collapse: collapse"
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Ledger Treatment</th>
+            <th>Core Concept</th>
+            <th>Integration Contract Rules</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Immediate Recognition</strong></td>
+            <td>100% of revenue recognized at time of invoice/delivery.</td>
+            <td>
+              Payload must hit a one-time charge type. No deferred revenue
+              schedules can be generated.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Time-Based Amortization</strong></td>
+            <td>Revenue spread evenly over the subscription term.</td>
+            <td>
+              Payload must establish the start/end dates so the ledger can
+              amortize daily, monthly, or quarterly automatically.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Multi-Element Allocation</strong></td>
+            <td>Revenue mathematically split across a bundle.</td>
+            <td>
+              Payload must adhere to the standalone selling price (SSP)
+              allocation rules to satisfy audit compliance before the ledger
+              will accept it.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

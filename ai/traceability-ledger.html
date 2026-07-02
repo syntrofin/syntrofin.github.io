@@ -1,0 +1,260 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agent-First Revenue Lifecycle Management Architecture."
+    />
+    <meta name="author" content="Ravi Gandavarapu" />
+    <title>Agent-First Revenue Lifecycle Management Framework
+    </title>
+    <style>
+      /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./evaldiscovery.css" />
+
+    <style>
+      /* Override h1 alignment as there are too maany. */
+      h1 {
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 15px;
+        padding-top: 5px;
+        font-weight: 500;
+        font-size: 1.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="traceability-ledger">
+      <h1>The Traceability Ledger: Governing Agentic Execution</h1>
+
+      <div class="intro-section" style="margin-bottom: 30px">
+        <h3>Guaranteeing Backend Predictability</h3>
+        <p>
+          When you remove the UI, you remove the visual safety nets. The risk of
+          LLM hallucination requires a strict, node-based governance model. The
+          <strong>12-Phase Traceability Ledger</strong> tracks the continuous
+          lifecycle of a single conversational intent, proving that what the
+          human asked for is exactly what hits the downstream financial ledger.
+        </p>
+      </div>
+
+      <h2>The 12-Phase MDST Data Lifecycle</h2>
+      <p>
+        Every automated transaction must successfully pass through these 12
+        validation nodes without data degradation or scope creep.
+      </p>
+
+      <table
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="
+          width: 100%;
+          text-align: left;
+          border-collapse: collapse;
+          margin-bottom: 40px;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f4f5f7">
+            <th>Phase</th>
+            <th>Execution Node</th>
+            <th>The Traceability Check (What we audit)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              colspan="3"
+              style="
+                background-color: #e2e8f0;
+                font-weight: bold;
+                text-align: center;
+              "
+            >
+              Stage 1: Intent & Grounding (The AI Layer)
+            </td>
+          </tr>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Intent Extraction</td>
+            <td>
+              Did the LLM accurately isolate the Discrete Intent (e.g.,
+              "Upgrade") from the natural language prompt?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>Parameter Isolation</td>
+            <td>
+              Did the LLM correctly extract the required variables (Quantity,
+              Dates, Products) without hallucinating missing data?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>Matrix Grounding</td>
+            <td>
+              Did the LLM successfully query the Commercial Matrix and apply the
+              deterministic business rules (e.g., margin floors)?
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              colspan="3"
+              style="
+                background-color: #e2e8f0;
+                font-weight: bold;
+                text-align: center;
+              "
+            >
+              Stage 2: Orchestration & Payload (The API Layer)
+            </td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>Archetype Selection</td>
+            <td>
+              Did the Agent select the correct Action/Archetype pathway based on
+              the Intent Cluster?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td>Payload Assembly</td>
+            <td>
+              Is the constructed JSON strictly compliant with the OmniStudio
+              input schema?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td>IP Execution Hand-off</td>
+            <td>
+              Did the OmniStudio Integration Procedure accept the payload
+              without throwing validation errors?
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              colspan="3"
+              style="
+                background-color: #e2e8f0;
+                font-weight: bold;
+                text-align: center;
+              "
+            >
+              Stage 3: RLM Execution (The Salesforce Layer)
+            </td>
+          </tr>
+          <tr>
+            <td><strong>7</strong></td>
+            <td>Pricing Procedure</td>
+            <td>
+              Did the RLM engine calculate the Gross-to-Net waterfall correctly
+              based on the payload parameters?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>8</strong></td>
+            <td>Quote Generation</td>
+            <td>
+              Was the headless Quote record generated with perfect line-item
+              relational mapping?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>9</strong></td>
+            <td>Approval Routing</td>
+            <td>
+              If the Matrix flagged a boundary violation (e.g., deep discount),
+              was the payload successfully paused for human review?
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              colspan="3"
+              style="
+                background-color: #e2e8f0;
+                font-weight: bold;
+                text-align: center;
+              "
+            >
+              Stage 4: Subledger & Compliance (The ERP Layer)
+            </td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td>Order Conversion</td>
+            <td>
+              Did the Quote lines map flawlessly into the Sales Order and Order
+              Products?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>11</strong></td>
+            <td>Assetization</td>
+            <td>
+              Were the recurring products converted into AssetStatePeriods to
+              baseline future AI amendments?
+            </td>
+          </tr>
+          <tr>
+            <td><strong>12</strong></td>
+            <td>ERP Ledger Sync</td>
+            <td>
+              Did the final data hit SAP FICO / the financial subledger with
+              correct revenue recognition schedules?
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
