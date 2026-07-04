@@ -145,6 +145,12 @@
       }
 
       /* Grid Layouts */
+      .grid-1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
+        gap: 40px;
+      }
+
       .grid-2 {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -194,7 +200,7 @@
         margin: 0 auto;
         text-align: center;
         background: var(--bg-light);
-        padding: 40px;
+        padding: 10px;
         border-radius: 8px;
       }
 
@@ -202,7 +208,7 @@
         font-size: 1.2rem;
         font-weight: 600;
         color: var(--secondary-color);
-        padding: 16px 0;
+        padding: 6px 0;
       }
 
       .timeline-arrow {
@@ -278,6 +284,30 @@
         color: #90cdf4;
       }
 
+      /* Clients Section */
+      .clients-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+        gap: 15px;
+        max-width: 1200px;
+        justify-content: center;
+      }
+      .clients-item {
+        background: var(--bg-white);
+        padding: 24px;
+        border-left: 2px solid var(--accent-color);
+        border-left: 1px solid #f5f5f5;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .logo-text {
+        color: #666;
+        margin: 5px;
+      }
+      .logo-image {
+        display: none !important;
+      }
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2.5rem;
@@ -296,16 +326,8 @@
     <header class="hero">
       <div class="container">
         <h1>Enterprise Architect</h1>
+        <br />
         <div class="subtitle">
-          <div class="subtitle">
-            <!-- 
-            Revenue Lifecycle Management &larr; Salesforce Technology Architect
-            &larr; SAP Technology Architect
-          </div>
-          -->
-          
-          <br />
-
           SAP → Salesforce → Revenue Lifecycle Management
         </div>
         <p>
@@ -322,7 +344,12 @@
         <div class="cta-group">
           <a href="#experience" class="cta-btn cta-primary">View Experience</a>
           <a href="#insights" class="cta-btn cta-secondary">Read Insights</a>
-          <a href="#connect" class="cta-btn cta-secondary">Connect</a>
+          <a
+            href="javascript:void(0)"
+            id="connect"
+            class="cta-btn cta-secondary"
+            >Connect</a
+          >
         </div>
       </div>
     </header>
@@ -454,7 +481,7 @@
     </section>
 
     <!-- Areas of Expertise -->
-    <section class="container">
+    <section class="container" id="experience">
       <h2>Areas of Expertise</h2>
       <div class="grid-2">
         <div class="card">
@@ -586,7 +613,8 @@
     </section>
 
     <!-- Thought Leadership & Stack -->
-    <section class="container">
+    <section class="container" id="insights">
+      <h2>Insights</h2>
       <div class="grid-3">
         <div class="card">
           <h3>Thought Leadership</h3>
@@ -633,8 +661,102 @@
           </div>
         </div>
       </div>
+      <br />
+      <div class="experience-item">
+        <h3>Read Insights</h3>
+        <p>
+          Designed enterprise Salesforce architecture supporting large-scale CRM
+          transformation.
+        </p>
+      </div>
     </section>
+    <br /><br />
 
+    <section class="container">
+      <h2>Selected Clients</h2>
+      <div class="card">
+        <div class="clients-container">
+          <div class="pill">
+            <div class="logo-text">DoD Contractor</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/at.png"
+              alt="ATS Logo"
+            />
+          </div>
+          <div class="pill">
+            <div class="logo-text">ATS Life Sciences</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/at.png"
+              alt="ATS Logo"
+            />
+          </div>
+          <div class="pill">
+            <div class="logo-text">Clarivate</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/cl.png"
+              alt="Clarivate Logo"
+            />
+          </div>
+          <!-- Repeat the .clients-item div for every logo you have -->
+          <div class="pill">
+            <div class="logo-text">SAP</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/tr.png"
+              alt="Trimble Logo"
+            />
+          </div>
+          <div class="pill">
+            <div class="logo-text">Iron Mountain</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/im.png"
+              alt="Iron Mountain Logo"
+            />
+          </div>
+          <div class="pill">
+            <div class="logo-text">Pure</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/km.png"
+              alt="Komatsu Logo"
+            />
+          </div>
+          <div class="pill">
+            <div class="logo-text">Komatsu America</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/pu.png"
+              alt="Pure Logo"
+            />
+          </div>
+
+          <div class="pill">
+            <div class="logo-text">Truist Bank</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/ex.png"
+              alt="Extreme Networks Logo"
+            />
+          </div>
+
+          <div class="pill">
+            <div class="logo-text">Amtrak</div>
+            <img
+              class="logo-image"
+              src="syntrofin_files/img/ex.png"
+              alt="Extreme Networks Logo"
+            />
+          </div>
+          <!-- ... and so on for all images -->
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -643,5 +765,25 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      document
+        .getElementById("connect")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const email = "abc@gmail.com";
+
+          navigator.clipboard
+            .writeText(email)
+            .then(() => {
+              alert(
+                "Email address (ravi.gandavarapu@gmail.com) copied to your clipboard!",
+              );
+            })
+            .catch(() => {
+              alert("Please email us at: ravi.gandavarapu@gmail.com");
+            });
+        });
+    </script>
   </body>
 </html>
